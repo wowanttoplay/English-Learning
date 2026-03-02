@@ -49,3 +49,45 @@ When adding words to `js/words.js`, each entry must follow this structure:
   examples: ["She has a lot of influence over her students.", "..."], level: "B2" }
 ```
 IDs must be sequential. The SRS engine references words by `id` and iterates `WORD_LIST` in order to determine which new cards to introduce.
+
+## Topic System
+
+Words are tagged with 1-3 topics from `TOPIC_REGISTRY` (defined in `js/topics.js`). The 16 topic IDs are:
+
+`work`, `education`, `technology`, `health`, `environment`, `society`, `emotions`, `business`, `travel`, `communication`, `science`, `law`, `arts`, `daily-life`, `relationships`, `politics`
+
+SRS filters **new cards only** by active topics; review cards always appear regardless of topic.
+
+## Generating a Topic Word Batch
+
+File naming: `js/words_b2_{NNN}.js` (sequential batch number) or `js/words_b2_{topic}.js` (topic-specific).
+Size: 15-25 words per file.
+Start ID: check `WORD_LIST.length` after all batch files load, then use max existing ID + 1.
+
+Each word entry must follow this structure:
+```js
+{
+  id: 601,
+  word: "negotiate",
+  pos: "verb",
+  phonetic: "/nɪˈɡəʊʃieɪt/",
+  zh: "谈判；协商",
+  en: "to try to reach an agreement by formal discussion",
+  examples: [
+    "The two sides agreed to negotiate a ceasefire.",
+    "She negotiated a higher salary before accepting the job."
+  ],
+  level: "B2",
+  topics: ["business", "work"]
+}
+```
+
+Rules:
+- `zh`: Chinese translation, max 20 characters
+- `en`: English definition, max 150 characters
+- `examples`: exactly 2 sentences, each 8-15 words, context vocabulary at A2-B1 level
+- `topics`: primary topic must match the batch theme, plus 0-2 secondary topics
+- No duplicates with existing `WORD_LIST` entries (check by word string)
+- File format: `WORD_LIST.push(entry1, entry2, ...);`
+- Validate syntax after generating: `node -e "new Function(require('fs').readFileSync('js/words_b2_XXX.js','utf8'))"`
+- Add `<script>` tag in `index.html` before `word-index.js`

@@ -24,7 +24,7 @@ const SRS = (() => {
     }
     return {
       cards: {},
-      settings: { newCardsPerDay: NEW_CARDS_PER_DAY, currentPosition: 0 },
+      settings: { newCardsPerDay: NEW_CARDS_PER_DAY, currentPosition: 0, activeTopics: [] },
       history: {}
     };
   }
@@ -231,26 +231,34 @@ const SRS = (() => {
       }
     }
 
-    // Collect new cards
+    // Collect new cards (filtered by activeTopics if set)
     const newCards = [];
     if (newCardsRemaining > 0 && typeof WORD_LIST !== 'undefined') {
+      const active = data.settings.activeTopics || [];
+      const filterByTopic = active.length > 0;
+      const activeSet = filterByTopic ? new Set(active) : null;
+
       let count = 0;
       for (let i = 0; i < WORD_LIST.length && count < newCardsRemaining; i++) {
         const word = WORD_LIST[i];
-        if (!data.cards[word.id]) {
-          newCards.push({
-            wordId: word.id,
-            state: 'new',
-            ease: DEFAULT_EASE,
-            interval: 0,
-            due: todayStr,
-            dueTimestamp: now(),
-            reps: 0,
-            lapses: 0,
-            step: 0
-          });
-          count++;
+        if (data.cards[word.id]) continue;
+        // If topic filter is active, skip words that don't match any active topic
+        if (filterByTopic) {
+          const topics = word.topics || [];
+          if (!topics.some(t => activeSet.has(t))) continue;
         }
+        newCards.push({
+          wordId: word.id,
+          state: 'new',
+          ease: DEFAULT_EASE,
+          interval: 0,
+          due: todayStr,
+          dueTimestamp: now(),
+          reps: 0,
+          lapses: 0,
+          step: 0
+        });
+        count++;
       }
     }
 
@@ -364,6 +372,17 @@ const SRS = (() => {
     persist();
   }
 
+  function setActiveTopics(topicIds) {
+    const data = getData();
+    data.settings.activeTopics = topicIds || [];
+    persist();
+  }
+
+  function getActiveTopics() {
+    const data = getData();
+    return data.settings.activeTopics || [];
+  }
+
   function resetProgress() {
     SRS._cache = null;
     localStorage.removeItem(STORAGE_KEY);
@@ -382,6 +401,8 @@ const SRS = (() => {
     getCardState,
     getAllCardStates,
     setNewCardsPerDay,
+    setActiveTopics,
+    getActiveTopics,
     resetProgress,
     clearCache,
     getCard,
