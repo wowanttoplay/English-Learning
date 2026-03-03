@@ -4,55 +4,96 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A static, no-build vocabulary learning web app implementing Anki-style spaced repetition (SM-2 algorithm) for the Oxford 5000 word list. No framework, no bundler — just open `index.html` in a browser.
+A vocabulary learning web app implementing Anki-style spaced repetition (SM-2 algorithm) for the Oxford 5000 word list. Built with Vue 3 + TypeScript + Pinia + Vite. Hash-based routing for static deployment.
 
 ## Development
 
-There is no build step, test suite, or linter. To run the app, open `index.html` in a browser. To validate JavaScript syntax quickly:
-
 ```bash
-node -e "new Function(require('fs').readFileSync('js/srs.js','utf8'))"
+npm install          # Install dependencies
+npm run dev          # Start Vite dev server
+npm run build        # Production build (typecheck + bundle)
+npm run typecheck    # Type check only (vue-tsc --noEmit)
 ```
-
-To test SRS logic in Node, you must provide a `localStorage` mock and set `global.WORD_LIST` before loading `srs.js`.
 
 ## Architecture
 
-Four IIFE modules loaded in dependency order via `<script>` tags:
+Vite + Vue 3 SPA with Pinia state management, hash router, and TypeScript throughout.
 
-1. **`js/words.js`** — Exports `WORD_LIST` (global const). Array of ~200 B2-level word objects with `id`, `word`, `pos`, `phonetic`, `zh` (Chinese), `en` (English definition), `examples`, and `level`.
+### Directory structure
 
-2. **`js/srs.js`** — Exports `SRS` (global). SM-2 spaced repetition engine. Card states: `new` → `learning` → `review` (or `relearning` on lapse). Ratings: Again(1), Hard(2), Good(3), Easy(4). Learning steps: 1min → 10min → graduate to 1-day review interval. All state persisted in `localStorage['srs_data']`.
+```
+src/
+  main.ts                      # createApp + router + pinia
+  App.vue                      # RouterView + BottomNav + WordDetailModal
+  types/index.ts               # Word, Passage, SrsCard, etc.
+  router/index.ts              # 7 hash routes
+  data/                        # Static data (words, topics, passages)
+    topics.ts                  # TOPIC_REGISTRY (16 topics)
+    words-b2-001.ts            # Batch 1 (IDs 1-200)
+    words-b2-002.ts            # Batch 2 (IDs 201-400)
+    words-b2-003.ts            # Batch 3 (IDs 401-600)
+    words.ts                   # Aggregates all batches into WORD_LIST
+    passages-001.ts            # Passage batch 1
+    passages.ts                # Aggregates PASSAGES
+  lib/                         # Pure logic (no Vue dependency)
+    storage.ts                 # Unified localStorage wrapper (typed domain methods only)
+    srs-engine.ts              # Pure SM-2 algorithm + constants
+    srs-storage.ts             # SRS data persistence (withData pattern)
+    srs-queue.ts               # Queue generation, stats, rateCard
+    dict-api.ts                # dictionaryapi.dev client + cache
+    audio.ts                   # 3-tier audio (explicit init required)
+    word-index.ts              # O(1) word lookup by ID + topic index
+    format.ts                  # Shared formatting utilities (formatTopic)
+  stores/                      # Pinia stores
+    srs.ts                     # useSrsStore — imports srs-engine/storage/queue directly
+    session.ts                 # useSessionStore — study session + word list UI state
+  composables/
+    useAudio.ts                # Audio playback only (speak, speakSlow, speakSentence)
+    useDictionary.ts           # Dictionary API lookups (fetch, getCached, clearCache)
+    useStudySession.ts         # Study session logic (dict fetch, preload, auto-play)
+    usePassages.ts             # Reactive passage read state + formatTopic
+    useTheme.ts                # Dark/light theme toggle + setTheme
+    useKeyboardShortcuts.ts    # Key event bindings
+  components/                  # Reusable UI components
+    BottomNav.vue, WordDetailModal.vue, ProgressBar.vue,
+    StatsGrid.vue, WeeklyHeatmap.vue, TopicSummary.vue,
+    RatingButtons.vue, AudioControls.vue, WordTooltip.vue
+  views/                       # Route-level views
+    DashboardView.vue, StudyView.vue, TopicsView.vue,
+    WordListView.vue, ReadingView.vue, PassageView.vue,
+    SettingsView.vue
+```
 
-3. **`js/dict-api.js`** — Exports `DictAPI` (global). Fetches extra definitions from `dictionaryapi.dev`, caches in `localStorage['dict_cache']`. Purely supplementary; the app works fine without it.
+### Routes
 
-4. **`js/app.js`** — Exports `App` (global). Renders all UI by setting `innerHTML` on `#app`. Manages five screens: `dashboard`, `card` (flashcard study), `complete` (session summary), `wordlist` (browse/search/filter), `settings`. Uses `onclick` attributes in rendered HTML to call `App.*` methods.
+| Path | View | Description |
+|------|------|-------------|
+| `/` | DashboardView | Home stats + start study |
+| `/study` | StudyView | Flashcard + session complete |
+| `/topics` | TopicsView | Topic filter selection |
+| `/words` | WordListView | Browse/search/filter words |
+| `/reading` | ReadingView | Passage list |
+| `/reading/:id` | PassageView | Single passage reader |
+| `/settings` | SettingsView | Settings + reset |
 
 ### Data flow
 
-`App` calls `SRS.getCardsForToday()` to build a session queue → user rates cards via `SRS.rateCard(wordId, rating)` → SRS updates intervals/ease/due dates in localStorage → `App` re-renders.
+`useSrsStore.getCardsForToday()` builds session queue → `useSessionStore` manages queue/index/revealed → user rates via `useSrsStore.rateCard()` → SRS updates localStorage → Pinia `_version` ref triggers reactive recomputation.
 
 ### Key conventions
 
-- **Module pattern**: Each file is an IIFE returning a public API object (`const SRS = (() => { ... return { ... }; })()`)
-- **No DOM framework**: UI rendered as HTML strings via template literals; events bound via inline `onclick`
-- **Date handling**: Uses local `formatDate(d)` helper (not `toISOString`) to avoid timezone bugs
-- **Theming**: CSS custom properties in `:root` / `[data-theme="dark"]`; theme stored in `localStorage['theme']`
-- **Audio**: Browser Web Speech API (`speechSynthesis`) for pronunciation — no external audio files
-
-## Word list format
-
-When adding words to `js/words.js`, each entry must follow this structure:
-```js
-{ id: 201, word: "influence", pos: "noun", phonetic: "/ˈɪnfluəns/",
-  zh: "影响；势力", en: "the effect that somebody/something has on the way a person thinks or behaves",
-  examples: ["She has a lot of influence over her students.", "..."], level: "B2" }
-```
-IDs must be sequential. The SRS engine references words by `id` and iterates `WORD_LIST` in order to determine which new cards to introduce.
+- **TypeScript throughout**: All `.ts` and `.vue` files are typed; `src/types/index.ts` defines shared interfaces
+- **Pinia stores**: `_version` ref pattern for triggering reactivity on localStorage-backed SRS data
+- **CSS**: Global `style.css` imported in `App.vue`, uses CSS custom properties for theming
+- **Date handling**: Local `formatDate(d)` helper (not `toISOString`) to avoid timezone bugs
+- **Audio**: 3-tier fallback: dictionaryapi.dev audio URLs > Web Speech API > silent
+- **localStorage**: All access via `lib/storage.ts` typed methods; keys: `srs_data`, `dict_cache`, `theme`, `settings_audio`, `passages_read`
+- **Dependency direction**: `data → lib → stores → composables → components → views` (no reverse imports)
+- **Initialization**: `main.ts` calls `WordIndex.build()` and `AudioPlayer.init()` before mount
 
 ## Topic System
 
-Words are tagged with 1-3 topics from `TOPIC_REGISTRY` (defined in `js/topics.js`). The 16 topic IDs are:
+Words are tagged with 1-3 topics from `TOPIC_REGISTRY` (defined in `src/data/topics.ts`). The 16 topic IDs are:
 
 `work`, `education`, `technology`, `health`, `environment`, `society`, `emotions`, `business`, `travel`, `communication`, `science`, `law`, `arts`, `daily-life`, `relationships`, `politics`
 
@@ -60,12 +101,12 @@ SRS filters **new cards only** by active topics; review cards always appear rega
 
 ## Generating a Topic Word Batch
 
-File naming: `js/words_b2_{NNN}.js` (sequential batch number) or `js/words_b2_{topic}.js` (topic-specific).
+File naming: `src/data/words-b2-{NNN}.ts` (sequential batch number).
 Size: 15-25 words per file.
-Start ID: check `WORD_LIST.length` after all batch files load, then use max existing ID + 1.
+Start ID: check `WORD_LIST.length` (currently 600), then use max existing ID + 1.
 
 Each word entry must follow this structure:
-```js
+```ts
 {
   id: 601,
   word: "negotiate",
@@ -88,6 +129,6 @@ Rules:
 - `examples`: exactly 2 sentences, each 8-15 words, context vocabulary at A2-B1 level
 - `topics`: primary topic must match the batch theme, plus 0-2 secondary topics
 - No duplicates with existing `WORD_LIST` entries (check by word string)
-- File format: `WORD_LIST.push(entry1, entry2, ...);`
-- Validate syntax after generating: `node -e "new Function(require('fs').readFileSync('js/words_b2_XXX.js','utf8'))"`
-- Add `<script>` tag in `index.html` before `word-index.js`
+- File format: `import type { Word } from '@/types'` + `export const words: Word[] = [...]`
+- After creating, import in `src/data/words.ts` and spread into `WORD_LIST`
+- Validate: `npm run typecheck`

@@ -1,5 +1,7 @@
-// Contextual Short Passages - Batch 1 (covering words 1-200)
-PASSAGES.push(
+import type { Passage } from "@/types"
+
+// Contextual Short Passages - Batch 1
+export const passages: Passage[] = [
   {
     id: 1,
     title: "A Change of Plans",
@@ -96,4 +98,5 @@ PASSAGES.push(
     level: "B2",
     topic: "daily_life"
   }
-);
+
+]

@@ -1,5 +1,7 @@
+import type { Word } from "@/types"
+
 // Oxford 5000 B2 Words - Batch 1 (IDs 1-200)
-WORD_LIST.push(
+export const words: Word[] = [
   {
     id: 1,
     word: "abandon",
@@ -2800,4 +2802,5 @@ WORD_LIST.push(
     level: "B2",
     topics: ["work", "politics"]
   }
-);
+
+]
