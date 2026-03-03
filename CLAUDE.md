@@ -45,10 +45,11 @@ src/
     srs-queue.ts               # Review-only queue generation (excludes known cards), stats (includes totalKnown), rateCard
     dict-api.ts                # dictionaryapi.dev client + cache (in-memory Map + localStorage)
     audio.ts                   # 3-tier audio (explicit init required, async preload with HTMLAudioElement cache)
-    word-index.ts              # O(1) word lookup by ID, text, and topic index
+    word-index.ts              # O(1) word lookup by ID, text, and topic index + addWord() for incremental insertion
+    user-words.ts              # User word persistence (loadUserWords, saveUserWord, nextUserWordId, isUserWord)
     format.ts                  # Shared formatting utilities (formatTopic)
   stores/                      # Pinia stores
-    srs.ts                     # useSrsStore — SRS actions + addWordFromReading() + markAsKnown()/unmarkKnown()
+    srs.ts                     # useSrsStore — SRS actions + addWordFromReading() + addUserWordFromFreeTooltip() + markAsKnown()/unmarkKnown()
     session.ts                 # useSessionStore — study session + word list UI state + skipCurrent()
   composables/
     useAudio.ts                # Audio playback only (speak, speakSlow, speakSentence)
@@ -81,7 +82,7 @@ src/
 
 ### Data flow
 
-**Reading → Discovery:** user browses passage list (filterable by two simultaneous filter rows: difficulty [All / Easier / Standard] + topic [All Topics + per-topic with emoji, derived from PASSAGES data via TOPIC_REGISTRY]) → reads passage → all words in passage text are tappable (`span.plain-word`). B2 highlighted words open `WordTooltip` (definition + "Save to Deck"), plain words open `FreeWordTooltip` (universal lookup via dictionaryapi.dev showing definition, phonetic, audio, with "Search on Google" fallback; handles loading, not-found, and cached states). The two tooltips are mutually exclusive. `useSrsStore.addWordFromReading()` → `addUserWord()` creates SrsCard with state `'learning'` immediately → card appears in next study session. Bridge passages (`difficulty: 'bridge'`) use simpler sentence structures and more B1 vocabulary to ease the transition for lower-level learners.
+**Reading → Discovery:** user browses passage list (filterable by two simultaneous filter rows: difficulty [All / Easier / Standard] + topic [All Topics + per-topic with emoji, derived from PASSAGES data via TOPIC_REGISTRY]) → reads passage → all words in passage text are tappable (`span.plain-word`). B2 highlighted words open `WordTooltip` (definition + "Save to Deck"), plain words open `FreeWordTooltip` (universal lookup via dictionaryapi.dev showing definition, phonetic, audio, with "Search on Google" fallback and "Save to Deck" button; handles loading, not-found, and cached states). The two tooltips are mutually exclusive. `useSrsStore.addWordFromReading()` → `addUserWord()` creates SrsCard with state `'learning'` immediately → card appears in next study session. For non-B2 words, `useSrsStore.addUserWordFromFreeTooltip()` → `saveUserWord()` persists a user-created Word (level `'user'`, IDs 100001+) to localStorage `user_words` and inserts it into WordIndex, then creates an SRS card. Bridge passages (`difficulty: 'bridge'`) use simpler sentence structures and more B1 vocabulary to ease the transition for lower-level learners.
 
 **Study → Review only:** `useSrsStore.getCardsForToday()` returns only learning/relearning/review cards already in deck (no new card auto-introduction) → `useSessionStore` manages queue → user rates → SRS updates localStorage → `_version` ref triggers reactive recomputation.
 
@@ -94,9 +95,10 @@ src/
 - **CSS**: Global `style.css` imported in `App.vue`, Apple-style minimal design with CSS custom properties for theming (light/dark). Responsive: `@media (min-width: 768px)` breakpoint switches from mobile bottom nav to desktop sidebar nav (`--sidebar-width` CSS variable, `.side-nav` class)
 - **Date handling**: Local `formatDate(d)` helper (not `toISOString`) to avoid timezone bugs
 - **Audio**: 3-tier fallback: dictionaryapi.dev audio URLs > Web Speech API > silent. Async preload with HTMLAudioElement caching; dict-api uses in-memory Map cache to avoid repeated JSON.parse of localStorage
-- **localStorage**: All access via `lib/storage.ts` typed methods; keys: `srs_data`, `dict_cache`, `theme`, `settings_audio`, `passages_read`
+- **localStorage**: All access via `lib/storage.ts` typed methods; keys: `srs_data`, `dict_cache`, `theme`, `settings_audio`, `passages_read`, `user_words`
 - **Dependency direction**: `data → lib → stores → composables → components → views` (no reverse imports)
-- **Initialization**: `main.ts` calls `WordIndex.build()` and `AudioPlayer.init()` before mount
+- **User word IDs**: User-created words use IDs starting at 100001 (`USER_WORD_ID_START = 100000` in `user-words.ts`), with level `'user'`; WordListView has a "My Words" filter tab
+- **Initialization**: `main.ts` calls `WordIndex.build()`, loads user words into WordIndex via `loadUserWords()` + `WordIndex.addWord()`, and calls `AudioPlayer.init()` before mount
 
 ## Topic System
 

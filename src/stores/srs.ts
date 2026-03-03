@@ -3,7 +3,8 @@ import { ref, computed } from 'vue'
 import { rateCard as srsRateCard, getCardsForToday as srsGetCardsForToday, getDueCount, getStats } from '@/lib/srs-queue'
 import { getCardState as srsGetCardState, getAllCardStates as srsGetAllCardStates, resetProgress as srsResetProgress, clearCache, getCard as srsGetCard, getHistory as srsGetHistory, addUserWord as srsAddUserWord, markAsKnown as srsMarkAsKnown, unmarkKnown as srsUnmarkKnown } from '@/lib/srs-storage'
 import { WORD_LIST } from '@/data/words'
-import type { SrsStats, DueCount, CardQueue, CardState, Rating, SrsCard } from '@/types'
+import { loadUserWords, saveUserWord as persistUserWord, resetUserWords } from '@/lib/user-words'
+import type { SrsStats, DueCount, CardQueue, CardState, Rating, SrsCard, Word } from '@/types'
 
 export const useSrsStore = defineStore('srs', () => {
   // Reactive version trigger — increment to force recomputation
@@ -15,7 +16,7 @@ export const useSrsStore = defineStore('srs', () => {
 
   const stats = computed<SrsStats>(() => {
     _version.value // track
-    return getStats(WORD_LIST.length)
+    return getStats(WORD_LIST.length + loadUserWords().length)
   })
 
   const dueCount = computed<DueCount>(() => {
@@ -35,6 +36,8 @@ export const useSrsStore = defineStore('srs', () => {
 
   function resetProgress() {
     srsResetProgress()
+    resetUserWords()
+    clearCache()
     _bump()
   }
 
@@ -63,6 +66,14 @@ export const useSrsStore = defineStore('srs', () => {
     _bump()
   }
 
+  function addUserWordFromFreeTooltip(wordData: Omit<Word, 'id'>) {
+    const saved = persistUserWord(wordData)
+    if (!saved) return
+    srsAddUserWord(saved.id)
+    clearCache()
+    _bump()
+  }
+
   function markAsKnown(wordId: number) {
     srsMarkAsKnown(wordId)
     clearCache()
@@ -87,6 +98,7 @@ export const useSrsStore = defineStore('srs', () => {
     getHistory,
     getCard,
     addWordFromReading,
+    addUserWordFromFreeTooltip,
     markAsKnown,
     unmarkKnown
   }

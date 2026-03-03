@@ -1,4 +1,4 @@
-import type { SrsData, DictEntry, AudioSettings } from '@/types'
+import type { SrsData, DictEntry, AudioSettings, Word } from '@/types'
 
 // --- Storage keys ---
 
@@ -8,6 +8,7 @@ const KEYS = {
   THEME: 'theme',
   SETTINGS_AUDIO: 'settings_audio',
   PASSAGES_READ: 'passages_read',
+  USER_WORDS: 'user_words',
 } as const
 
 // --- Generic helpers ---
@@ -103,6 +104,20 @@ function markPassageRead(id: number): void {
   }
 }
 
+// --- User words ---
+
+function loadUserWords(): Word[] {
+  return loadJson(KEYS.USER_WORDS, [])
+}
+
+function saveUserWords(words: Word[]): void {
+  saveJson(KEYS.USER_WORDS, words)
+}
+
+function removeUserWords(): void {
+  remove(KEYS.USER_WORDS)
+}
+
 export const Storage = {
   loadSrsData,
   saveSrsData,
@@ -116,4 +131,7 @@ export const Storage = {
   saveAudioSettings,
   getPassagesRead,
   markPassageRead,
+  loadUserWords,
+  saveUserWords,
+  removeUserWords,
 }

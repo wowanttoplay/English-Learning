@@ -42,7 +42,7 @@
       >
         <div class="word-item-text">
           <div class="word-item-word">{{ w.word }}</div>
-          <div class="word-item-zh">{{ w.zh }}</div>
+          <div v-if="w.zh" class="word-item-zh">{{ w.zh }}</div>
         </div>
         <button
           class="word-known-btn"
@@ -69,6 +69,7 @@ import { useSrsStore } from '@/stores/srs'
 import { useSessionStore } from '@/stores/session'
 import { WORD_LIST } from '@/data/words'
 import { TOPIC_REGISTRY } from '@/data/topics'
+import { loadUserWords } from '@/lib/user-words'
 
 const WORDS_PER_PAGE = 50
 
@@ -86,10 +87,15 @@ function getState(wordId: number): string {
   return states.value[wordId] || 'unseen'
 }
 
+const allWords = computed(() => {
+  srsStore._version
+  return [...WORD_LIST, ...loadUserWords()]
+})
+
 const filtered = computed(() => {
   const search = session.wordListSearch.toLowerCase().trim()
-  return WORD_LIST.filter(w => {
-    if (search && !w.word.toLowerCase().includes(search) && !w.zh.includes(search)) return false
+  return allWords.value.filter(w => {
+    if (search && !w.word.toLowerCase().includes(search) && !(w.zh && w.zh.includes(search))) return false
     if (session.wordListTopic !== 'all') {
       const topics = w.topics || []
       if (!topics.includes(session.wordListTopic)) return false
@@ -102,6 +108,7 @@ const filtered = computed(() => {
     if (f === 'review') return state === 'review'
     if (f === 'mastered') return state === 'mastered'
     if (f === 'known') return state === 'known'
+    if (f === 'user') return w.level === 'user'
     return true
   })
 })
@@ -111,10 +118,11 @@ const visibleWords = computed(() => filtered.value.slice(0, visibleCount.value))
 const hasMore = computed(() => filtered.value.length > visibleCount.value)
 
 const filters = computed(() => {
-  const counts = { all: 0, unseen: 0, learning: 0, review: 0, mastered: 0, known: 0 }
-  for (const w of WORD_LIST) {
+  const counts = { all: 0, unseen: 0, learning: 0, review: 0, mastered: 0, known: 0, user: 0 }
+  for (const w of allWords.value) {
     const s = states.value[w.id] || 'unseen'
     counts.all++
+    if (w.level === 'user') counts.user++
     if (s === 'unseen') counts.unseen++
     else if (s === 'learning' || s === 'relearning') counts.learning++
     else if (s === 'review') counts.review++
@@ -127,7 +135,8 @@ const filters = computed(() => {
     { key: 'learning', label: 'Learning', count: counts.learning },
     { key: 'review', label: 'Review', count: counts.review },
     { key: 'mastered', label: 'Mastered', count: counts.mastered },
-    { key: 'known', label: 'Known', count: counts.known }
+    { key: 'known', label: 'Known', count: counts.known },
+    { key: 'user', label: 'My Words', count: counts.user }
   ]
 })
 

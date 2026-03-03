@@ -33,6 +33,20 @@ function getByTopic(topicId: string): Word[] {
   return byTopic[topicId] || []
 }
 
+function addWord(word: Word): void {
+  if (byId.has(word.id)) return
+  byId.set(word.id, word)
+  byText.set(word.word.toLowerCase(), word)
+  if (word.topics) {
+    for (const t of word.topics) {
+      if (!byTopic[t]) byTopic[t] = []
+      if (!byTopic[t].some(w => w.id === word.id)) {
+        byTopic[t].push(word)
+      }
+    }
+  }
+}
+
 function getAllTopicCounts(registry: TopicEntry[]): Record<string, number> {
   const counts: Record<string, number> = {}
   for (const topic of registry) {
@@ -46,5 +60,6 @@ export const WordIndex = {
   get,
   getByText,
   getByTopic,
-  getAllTopicCounts
+  getAllTopicCounts,
+  addWord
 }
