@@ -7,7 +7,7 @@ export const useSessionStore = defineStore('session', () => {
   const queue = ref<SrsCard[]>([])
   const index = ref(0)
   const revealed = ref(false)
-  const sessionType = ref<'learn' | 'review' | 'mixed' | ''>('')
+  const sessionType = ref<'review' | ''>('')
   const completeStats = ref<{ reviewed: number; type: string } | null>(null)
 
   // ── Word List UI State ───────────────────────────────────────────────
@@ -29,7 +29,7 @@ export const useSessionStore = defineStore('session', () => {
     return total > 0 ? Math.round((index.value / total) * 100) : 0
   })
 
-  function startSession(cards: SrsCard[], type: 'learn' | 'review' | 'mixed') {
+  function startSession(cards: SrsCard[], type: 'review') {
     queue.value = [...cards]
     index.value = 0
     revealed.value = false

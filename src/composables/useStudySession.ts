@@ -25,7 +25,6 @@ export function useStudySession() {
     const card = currentCard.value
     if (!card) return ''
     switch (card.state) {
-      case 'new': return 'New'
       case 'learning': return 'Learning'
       case 'relearning': return 'Relearning'
       case 'review': return 'Review'
@@ -49,15 +48,16 @@ export function useStudySession() {
   })
 
   const completeStatsItems = computed(() => [
-    { value: srsStore.stats.todayLearned, label: 'New Today', color: 'green' },
+    { value: srsStore.stats.todayLearned, label: 'Saved Today', color: 'green' },
     { value: srsStore.stats.todayReviewed, label: 'Reviewed Today', color: 'blue' },
     { value: srsStore.stats.streak, label: 'Day Streak', color: 'orange' },
     { value: srsStore.stats.totalStarted, label: 'Total Started' }
   ])
 
   // Auto-play and preload on card change
-  watch(currentWord, (word) => {
+  watch(currentWord, async (word) => {
     if (word) {
+      await audio.preloadWord(word.word)
       audio.autoPlayWord(word.word)
       preloadUpcoming()
     }

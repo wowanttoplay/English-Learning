@@ -90,7 +90,7 @@ const filtered = computed(() => {
     const f = session.wordListFilter
     if (f === 'all') return true
     if (f === 'unseen') return state === 'unseen'
-    if (f === 'learning') return state === 'learning' || state === 'relearning' || state === 'new'
+    if (f === 'learning') return state === 'learning' || state === 'relearning'
     if (f === 'review') return state === 'review'
     if (f === 'mastered') return state === 'mastered'
     return true
@@ -107,7 +107,7 @@ const filters = computed(() => {
     const s = states.value[w.id] || 'unseen'
     counts.all++
     if (s === 'unseen') counts.unseen++
-    else if (s === 'learning' || s === 'relearning' || s === 'new') counts.learning++
+    else if (s === 'learning' || s === 'relearning') counts.learning++
     else if (s === 'review') counts.review++
     else if (s === 'mastered') counts.mastered++
   }

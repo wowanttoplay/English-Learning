@@ -5,8 +5,7 @@ const router = createRouter({
   routes: [
     { path: '/', component: () => import('@/views/DashboardView.vue') },
     { path: '/study', component: () => import('@/views/StudyView.vue') },
-    { path: '/topics', component: () => import('@/views/TopicsView.vue') },
-    { path: '/words', component: () => import('@/views/WordListView.vue') },
+{ path: '/words', component: () => import('@/views/WordListView.vue') },
     { path: '/reading', component: () => import('@/views/ReadingView.vue') },
     { path: '/reading/:id', component: () => import('@/views/PassageView.vue') },
     { path: '/settings', component: () => import('@/views/SettingsView.vue') }

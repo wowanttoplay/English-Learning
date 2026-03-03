@@ -16,7 +16,7 @@
       class="btn btn-primary reading-tooltip-add"
       @click="addToDeck"
     >
-      + Add to Deck
+      Save to Deck
     </button>
   </div>
 </template>
@@ -44,8 +44,7 @@ const cardState = computed(() => {
 
 const stateLabel = computed(() => {
   switch (cardState.value) {
-    case 'unseen': return 'New'
-    case 'new': return 'Learning'
+    case 'unseen': return 'Not in deck'
     case 'learning': return 'Learning'
     case 'relearning': return 'Relearning'
     case 'review': return 'Review'

@@ -1,19 +1,24 @@
 import type { SrsCard, SrsData, CardState } from '@/types'
-import { MASTERED_INTERVAL } from './srs-engine'
+import { DEFAULT_EASE, MASTERED_INTERVAL, today, now } from './srs-engine'
 import { Storage } from './storage'
-
-const NEW_CARDS_PER_DAY = 20
 
 // --- Cache ---
 
 let _cache: SrsData | null = null
 
 export function loadData(): SrsData {
-  return Storage.loadSrsData({
+  const data = Storage.loadSrsData({
     cards: {},
-    settings: { newCardsPerDay: NEW_CARDS_PER_DAY, activeTopics: [], userAddedWords: [] },
+    settings: { userAddedWords: [] },
     history: {}
   })
+  // Migration: promote any legacy 'new' cards to 'learning'
+  for (const id in data.cards) {
+    if ((data.cards[id].state as string) === 'new') {
+      data.cards[id].state = 'learning'
+    }
+  }
+  return data
 }
 
 function readData(): SrsData {
@@ -66,23 +71,6 @@ export function getAllCardStates(): Record<string, CardState> {
 
 // --- Settings ---
 
-export function setNewCardsPerDay(count: number): void {
-  withData(data => {
-    data.settings.newCardsPerDay = count
-  })
-}
-
-export function setActiveTopics(topicIds: string[]): void {
-  withData(data => {
-    data.settings.activeTopics = topicIds || []
-  })
-}
-
-export function getActiveTopics(): string[] {
-  const data = readData()
-  return data.settings.activeTopics || []
-}
-
 export function resetProgress(): void {
   _cache = null
   Storage.removeSrsData()
@@ -100,10 +88,22 @@ export function getHistory(): Record<string, { reviewed: number; learned: number
 
 export function addUserWord(wordId: number): void {
   withData(data => {
-    const list = data.settings.userAddedWords || []
-    if (!list.includes(wordId)) {
-      list.push(wordId)
-      data.settings.userAddedWords = list
+    if (data.cards[wordId]) return // already in deck
+    const todayStr = today()
+    data.cards[wordId] = {
+      wordId,
+      state: 'learning',
+      ease: DEFAULT_EASE,
+      interval: 0,
+      due: todayStr,
+      dueTimestamp: now(),
+      reps: 0,
+      lapses: 0,
+      step: 0
     }
+    if (!data.history[todayStr]) {
+      data.history[todayStr] = { reviewed: 0, learned: 0 }
+    }
+    data.history[todayStr].learned++
   })
 }

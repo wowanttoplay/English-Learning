@@ -36,7 +36,7 @@ function formatInterval(days: number): string {
 
 const intervals = computed(() => {
   const card = props.card
-  if (card.state === 'new' || card.state === 'learning' || card.state === 'relearning') {
+  if (card.state === 'learning' || card.state === 'relearning') {
     const step = card.step || 0
     return {
       again: '1m',

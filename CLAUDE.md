@@ -25,23 +25,26 @@ Vite + Vue 3 SPA with Pinia state management, hash router, and TypeScript throug
 src/
   main.ts                      # createApp + router + pinia
   App.vue                      # RouterView + BottomNav + WordDetailModal
-  types/index.ts               # Word, Passage, SrsCard, etc.
-  router/index.ts              # 7 hash routes
+  types/index.ts               # Word, Passage (with difficulty field), SrsCard, etc.
+  router/index.ts              # 6 hash routes
   data/                        # Static data (words, topics, passages)
     topics.ts                  # TOPIC_REGISTRY (16 topics)
     words-b2-001.ts            # Batch 1 (IDs 1-200)
     words-b2-002.ts            # Batch 2 (IDs 201-400)
     words-b2-003.ts            # Batch 3 (IDs 401-600)
     words.ts                   # Aggregates batches, deduplicates, sorts by TOPIC_ORDER
-    passages-001.ts            # Passage batch 1
-    passages.ts                # Aggregates PASSAGES
+    passages-001.ts            # Passage batch 1 (legacy, not imported)
+    passages-002.ts            # Passage batch 2 (12 genre-varied passages, standard difficulty)
+    passages-003.ts            # Passage batch 3 (6 bridge passages IDs 101-106, B1→B2 difficulty)
+    passages-004.ts            # Passage batch 4 (9 bridge passages IDs 107-115, B1→B2 difficulty)
+    passages.ts                # Aggregates PASSAGES from batches 002-004
   lib/                         # Pure logic (no Vue dependency)
     storage.ts                 # Unified localStorage wrapper (typed domain methods only)
-    srs-engine.ts              # Pure SM-2 algorithm + constants
-    srs-storage.ts             # SRS data persistence (withData pattern) + addUserWord()
-    srs-queue.ts               # Queue generation, stats, rateCard
-    dict-api.ts                # dictionaryapi.dev client + cache
-    audio.ts                   # 3-tier audio (explicit init required)
+    srs-engine.ts              # Pure SM-2 algorithm + constants (no initCard)
+    srs-storage.ts             # SRS data persistence (withData pattern) + addUserWord() creates card immediately
+    srs-queue.ts               # Review-only queue generation, stats, rateCard
+    dict-api.ts                # dictionaryapi.dev client + cache (in-memory Map + localStorage)
+    audio.ts                   # 3-tier audio (explicit init required, async preload with HTMLAudioElement cache)
     word-index.ts              # O(1) word lookup by ID, text, and topic index
     format.ts                  # Shared formatting utilities (formatTopic)
   stores/                      # Pinia stores
@@ -56,10 +59,10 @@ src/
     useKeyboardShortcuts.ts    # Key event bindings
   components/                  # Reusable UI components
     BottomNav.vue, WordDetailModal.vue, ProgressBar.vue,
-    StatsGrid.vue, WeeklyHeatmap.vue, TopicSummary.vue,
+    StatsGrid.vue, WeeklyHeatmap.vue,
     RatingButtons.vue, AudioControls.vue, WordTooltip.vue
   views/                       # Route-level views
-    DashboardView.vue, StudyView.vue, TopicsView.vue,
+    DashboardView.vue, StudyView.vue,
     WordListView.vue, ReadingView.vue, PassageView.vue,
     SettingsView.vue
 ```
@@ -68,9 +71,8 @@ src/
 
 | Path | View | Description |
 |------|------|-------------|
-| `/` | DashboardView | Home stats + start study |
-| `/study` | StudyView | Flashcard + session complete |
-| `/topics` | TopicsView | Topic filter selection |
+| `/` | DashboardView | Home stats + start review |
+| `/study` | StudyView | Flashcard review + session complete |
 | `/words` | WordListView | Browse/search/filter words |
 | `/reading` | ReadingView | Passage list |
 | `/reading/:id` | PassageView | Single passage reader |
@@ -78,18 +80,18 @@ src/
 
 ### Data flow
 
-**Study path:** `useSrsStore.getCardsForToday()` builds session queue → `useSessionStore` manages queue/index/revealed → user rates via `useSrsStore.rateCard()` → SRS updates localStorage → Pinia `_version` ref triggers reactive recomputation.
+**Reading → Discovery:** user browses passage list (filterable by difficulty: All / Easier / Standard) → reads passage → taps highlighted B2 word → `WordTooltip` shows definition + "Save to Deck" → `useSrsStore.addWordFromReading()` → `addUserWord()` creates SrsCard with state `'learning'` immediately → card appears in next study session. Bridge passages (`difficulty: 'bridge'`) use simpler sentence structures and more B1 vocabulary to ease the transition for lower-level learners.
 
-**Reading-first path:** user reads passage → taps highlighted B2 word → `WordTooltip` shows definition + "Add to Deck" → `useSrsStore.addWordFromReading()` → word saved to `settings.userAddedWords` → gets priority in next study session queue.
+**Study → Review only:** `useSrsStore.getCardsForToday()` returns only learning/relearning/review cards already in deck (no new card auto-introduction) → `useSessionStore` manages queue → user rates → SRS updates localStorage → `_version` ref triggers reactive recomputation.
 
 ### Key conventions
 
 - **TypeScript throughout**: All `.ts` and `.vue` files are typed; `src/types/index.ts` defines shared interfaces
 - **Pinia stores**: `_version` ref pattern for triggering reactivity on localStorage-backed SRS data
-- **CSS**: Global `style.css` imported in `App.vue`, uses CSS custom properties for theming
+- **CSS**: Global `style.css` imported in `App.vue`, Apple-style minimal design with CSS custom properties for theming (light/dark)
 - **Date handling**: Local `formatDate(d)` helper (not `toISOString`) to avoid timezone bugs
-- **Audio**: 3-tier fallback: dictionaryapi.dev audio URLs > Web Speech API > silent
-- **localStorage**: All access via `lib/storage.ts` typed methods; keys: `srs_data` (includes `settings.userAddedWords`), `dict_cache`, `theme`, `settings_audio`, `passages_read`
+- **Audio**: 3-tier fallback: dictionaryapi.dev audio URLs > Web Speech API > silent. Async preload with HTMLAudioElement caching; dict-api uses in-memory Map cache to avoid repeated JSON.parse of localStorage
+- **localStorage**: All access via `lib/storage.ts` typed methods; keys: `srs_data`, `dict_cache`, `theme`, `settings_audio`, `passages_read`
 - **Dependency direction**: `data → lib → stores → composables → components → views` (no reverse imports)
 - **Initialization**: `main.ts` calls `WordIndex.build()` and `AudioPlayer.init()` before mount
 
@@ -99,8 +101,7 @@ Words are tagged with 1-3 topics from `TOPIC_REGISTRY` (defined in `src/data/top
 
 `work`, `education`, `technology`, `health`, `environment`, `society`, `emotions`, `business`, `travel`, `communication`, `science`, `law`, `arts`, `daily-life`, `relationships`, `politics`
 
-SRS filters **new cards only** by active topics; review cards always appear regardless of topic.
-User-added words (via "Add to Deck" in passages) bypass topic filters and get priority at the front of the new-card queue.
+Topics are used for word browsing/filtering in WordListView. There is no topic-based filtering for SRS — all word discovery happens through reading passages.
 
 ## Generating a Topic Word Batch
 
@@ -136,6 +137,39 @@ Rules:
 - File format: `import type { Word } from '@/types'` + `export const words: Word[] = [...]`
 - After creating, import in `src/data/words.ts` and spread into `WORD_LIST`
 - Validate: `npm run typecheck`
+
+## Generating Bridge Passages
+
+Bridge passages (`difficulty: 'bridge'`) are designed for learners transitioning from B1 to B2. They use simpler sentence structures and more familiar vocabulary while still introducing B2 target words in context.
+
+File naming: `src/data/passages-{NNN}.ts` (sequential batch number, currently up to 004).
+Start ID: check max existing passage ID + 1 (currently 115).
+
+Each passage entry must follow this structure:
+```ts
+{
+  id: 101,
+  title: "A Healthy Morning Routine",
+  genre: "lifestyle",
+  topic: "health",
+  difficulty: "bridge",
+  body: "Full passage text with target B2 words...",
+  words: ["adequate", "significant", "routine"]
+}
+```
+
+Rules:
+- `difficulty`: must be `'bridge'` for B1->B2 passages, `'standard'` or omitted for regular B2 passages
+- `genre`: choose from existing genres (lifestyle, narrative, informational, opinion, advice, etc.)
+- `topic`: one of the 16 topic IDs from `TOPIC_REGISTRY`
+- `body`: 120-180 words; sentence length 8-18 words; surrounding vocabulary mostly A2-B1
+- `words`: 4-8 B2 target words that appear in the passage body and exist in `WORD_LIST`
+- Each passage covers one topic; aim for diverse topic coverage across a batch
+- After creating, import in `src/data/passages.ts` and spread into `PASSAGES`
+- The `Passage` type (in `src/types/index.ts`) has `difficulty?: 'bridge' | 'standard' | 'challenging'`
+- Validate: `npm run typecheck`
+
+Current passage counts: 12 standard (batch 002) + 15 bridge (batches 003-004) = 27 total passages.
 
 ## Team Mode
 

@@ -2,7 +2,7 @@
   <div v-if="passage" class="passage-screen fade-in">
     <div class="card-header">
       <button class="back-btn" @click="router.push('/reading')">&#8592; Back</button>
-      <span class="card-progress">{{ passage.level }} &middot; {{ formatTopic(passage.topic) }}</span>
+      <span class="card-progress">{{ passage.level }}<span v-if="passage.difficulty === 'bridge'" class="difficulty-badge">Easier</span> &middot; {{ formatTopic(passage.topic) }}</span>
     </div>
 
     <div class="passage-content">

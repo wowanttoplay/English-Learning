@@ -19,8 +19,8 @@ export function useAudio() {
     }
   }
 
-  function preloadWord(word: string) {
-    AudioPlayer.preload(word)
+  async function preloadWord(word: string): Promise<void> {
+    return AudioPlayer.preload(word)
   }
 
   function stop() {

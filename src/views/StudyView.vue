@@ -77,8 +77,12 @@
     <!-- Fallback -->
     <template v-else>
       <div style="text-align:center; padding:40px">
-        <p>No cards in session.</p>
-        <button class="btn btn-secondary" @click="router.push('/')" style="margin-top:16px">Back to Dashboard</button>
+        <p>Nothing to review right now.</p>
+        <p style="color:var(--text-secondary); margin-top:8px">Read a passage to discover new words.</p>
+        <div class="action-buttons" style="margin-top:16px">
+          <button class="btn btn-primary" @click="router.push('/reading')">Go Read</button>
+          <button class="btn btn-secondary" @click="router.push('/')">Back to Dashboard</button>
+        </div>
       </div>
     </template>
   </div>
@@ -110,9 +114,9 @@ function onRate(rating: Rating) {
 
 function continueStudy() {
   const cards = srsStore.getCardsForToday()
-  const queue = [...cards.learning, ...cards.review, ...cards.new]
+  const queue = [...cards.learning, ...cards.review]
   if (queue.length === 0) return
-  session.startSession(queue, 'mixed')
+  session.startSession(queue, 'review')
 }
 
 function revealOrRate() {

@@ -2,10 +2,15 @@ import type { DictEntry } from '@/types'
 import { Storage } from './storage'
 
 const API_BASE = 'https://api.dictionaryapi.dev/api/v2/entries/en/'
+const memCache = new Map<string, DictEntry>()
 
 async function lookup(word: string): Promise<DictEntry | null> {
+  const mem = memCache.get(word)
+  if (mem) return mem
+
   const cache = Storage.loadDictCache()
   if (cache[word]) {
+    memCache.set(word, cache[word])
     return cache[word]
   }
 
@@ -54,6 +59,7 @@ async function lookup(word: string): Promise<DictEntry | null> {
 
     cache[word] = result
     Storage.saveDictCache(cache)
+    memCache.set(word, result)
     return result
   } catch (e) {
     console.warn('Dict API lookup failed for:', word, e)
@@ -62,11 +68,19 @@ async function lookup(word: string): Promise<DictEntry | null> {
 }
 
 function getCached(word: string): DictEntry | null {
+  const mem = memCache.get(word)
+  if (mem) return mem
+
   const cache = Storage.loadDictCache()
-  return cache[word] || null
+  if (cache[word]) {
+    memCache.set(word, cache[word])
+    return cache[word]
+  }
+  return null
 }
 
 function clearCache(): void {
+  memCache.clear()
   Storage.removeDictCache()
 }
 

@@ -6,19 +6,6 @@
 
     <div class="settings-section">
       <div class="settings-item">
-        <span class="settings-label">New cards per day</span>
-        <div class="settings-value">
-          <input
-            class="settings-input"
-            type="number"
-            min="1"
-            max="100"
-            :value="stats.newCardsPerDay"
-            @change="onNewCardsChange"
-          />
-        </div>
-      </div>
-      <div class="settings-item">
         <span class="settings-label">Theme</span>
         <div class="settings-value">
           <button class="filter-tab" :class="{ active: !theme.isDark.value }" @click="theme.setTheme('light')">Light</button>
@@ -46,8 +33,8 @@
         <span>{{ stats.totalWords }}</span>
       </div>
       <div class="settings-item">
-        <span class="settings-label">Words started</span>
-        <span>{{ stats.totalStarted }}</span>
+        <span class="settings-label">Words in deck</span>
+        <span>{{ stats.deckSize }}</span>
       </div>
       <div class="settings-item">
         <span class="settings-label">Mastered (21+ day interval)</span>
@@ -79,13 +66,6 @@ const dict = useDictionary()
 
 const stats = computed(() => srsStore.stats)
 const autoPlay = ref(audio.getAutoPlay())
-
-function onNewCardsChange(e: Event) {
-  const n = parseInt((e.target as HTMLInputElement).value)
-  if (n > 0 && n <= 100) {
-    srsStore.setNewCardsPerDay(n)
-  }
-}
 
 function toggleAutoPlay() {
   autoPlay.value = !autoPlay.value

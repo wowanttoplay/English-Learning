@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { rateCard as srsRateCard, getCardsForToday as srsGetCardsForToday, getDueCount, getStats } from '@/lib/srs-queue'
-import { getCardState as srsGetCardState, getAllCardStates as srsGetAllCardStates, setNewCardsPerDay as srsSetNewCardsPerDay, setActiveTopics as srsSetActiveTopics, getActiveTopics as srsGetActiveTopics, resetProgress as srsResetProgress, clearCache, getCard as srsGetCard, getHistory as srsGetHistory, addUserWord as srsAddUserWord } from '@/lib/srs-storage'
+import { getCardState as srsGetCardState, getAllCardStates as srsGetAllCardStates, resetProgress as srsResetProgress, clearCache, getCard as srsGetCard, getHistory as srsGetHistory, addUserWord as srsAddUserWord } from '@/lib/srs-storage'
 import { WORD_LIST } from '@/data/words'
 import type { SrsStats, DueCount, CardQueue, CardState, Rating, SrsCard } from '@/types'
 
@@ -31,21 +31,6 @@ export const useSrsStore = defineStore('srs', () => {
 
   function getCardsForToday(): CardQueue {
     return srsGetCardsForToday(WORD_LIST)
-  }
-
-  function setActiveTopics(topicIds: string[]) {
-    srsSetActiveTopics(topicIds)
-    clearCache()
-    _bump()
-  }
-
-  function getActiveTopics(): string[] {
-    return srsGetActiveTopics()
-  }
-
-  function setNewCardsPerDay(count: number) {
-    srsSetNewCardsPerDay(count)
-    _bump()
   }
 
   function resetProgress() {
@@ -84,9 +69,6 @@ export const useSrsStore = defineStore('srs', () => {
     dueCount,
     rateCard,
     getCardsForToday,
-    setActiveTopics,
-    getActiveTopics,
-    setNewCardsPerDay,
     resetProgress,
     getCardState,
     getAllCardStates,

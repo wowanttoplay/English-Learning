@@ -1,20 +1,15 @@
 import type { SrsCard, SrsStats, DueCount, CardQueue, Rating, Word } from '@/types'
-import { DEFAULT_EASE, MASTERED_INTERVAL, today, now, isDue, initCard, formatDate, rateLearningCard, rateReviewCard } from './srs-engine'
+import { MASTERED_INTERVAL, today, isDue, formatDate, rateLearningCard, rateReviewCard } from './srs-engine'
 import { peekData, withData } from './srs-storage'
 
 // --- Rating orchestrator ---
 
 export function rateCard(wordId: number, rating: Rating): SrsCard {
   return withData(data => {
-    if (!data.cards[wordId]) {
-      data.cards[wordId] = initCard(wordId)
-    }
-
     const card = data.cards[wordId]
-    const prevState = card.state
+    if (!card) throw new Error(`Card ${wordId} not in deck`)
 
     switch (card.state) {
-      case 'new':
       case 'learning':
       case 'relearning':
         rateLearningCard(card, rating)
@@ -31,9 +26,6 @@ export function rateCard(wordId: number, rating: Rating): SrsCard {
       data.history[todayStr] = { reviewed: 0, learned: 0 }
     }
     data.history[todayStr].reviewed++
-    if (prevState === 'new') {
-      data.history[todayStr].learned++
-    }
 
     return card
   })
@@ -41,12 +33,8 @@ export function rateCard(wordId: number, rating: Rating): SrsCard {
 
 // --- Queue generation ---
 
-export function getCardsForToday(wordList: Word[]): CardQueue {
+export function getCardsForToday(_wordList: Word[]): CardQueue {
   const data = peekData()
-  const todayStr = today()
-
-  const learnedToday = (data.history[todayStr] || { learned: 0 }).learned || 0
-  const newCardsRemaining = Math.max(0, data.settings.newCardsPerDay - learnedToday)
 
   const reviewCards: SrsCard[] = []
   const learningCards: SrsCard[] = []
@@ -60,65 +48,13 @@ export function getCardsForToday(wordList: Word[]): CardQueue {
     }
   }
 
-  const newCards: SrsCard[] = []
-  if (newCardsRemaining > 0) {
-    let count = 0
-
-    // Priority: user-added words from reading
-    const userAdded = data.settings.userAddedWords || []
-    for (const wordId of userAdded) {
-      if (count >= newCardsRemaining) break
-      if (data.cards[wordId]) continue
-      newCards.push({
-        wordId,
-        state: 'new',
-        ease: DEFAULT_EASE,
-        interval: 0,
-        due: todayStr,
-        dueTimestamp: now(),
-        reps: 0,
-        lapses: 0,
-        step: 0
-      })
-      count++
-    }
-
-    // Fill remaining slots with topic-filtered sequential intro
-    const active = data.settings.activeTopics || []
-    const filterByTopic = active.length > 0
-    const activeSet = filterByTopic ? new Set(active) : null
-
-    for (let i = 0; i < wordList.length && count < newCardsRemaining; i++) {
-      const word = wordList[i]
-      if (data.cards[word.id]) continue
-      if (newCards.some(c => c.wordId === word.id)) continue
-      if (filterByTopic) {
-        const topics = word.topics || []
-        if (!topics.some(t => activeSet!.has(t))) continue
-      }
-      newCards.push({
-        wordId: word.id,
-        state: 'new',
-        ease: DEFAULT_EASE,
-        interval: 0,
-        due: todayStr,
-        dueTimestamp: now(),
-        reps: 0,
-        lapses: 0,
-        step: 0
-      })
-      count++
-    }
-  }
-
   learningCards.sort((a, b) => a.dueTimestamp - b.dueTimestamp)
   reviewCards.sort((a, b) => (a.due > b.due ? 1 : -1))
 
   return {
     learning: learningCards,
     review: reviewCards,
-    new: newCards,
-    total: learningCards.length + reviewCards.length + newCards.length
+    total: learningCards.length + reviewCards.length
   }
 }
 
@@ -127,7 +63,6 @@ export function getDueCount(wordList: Word[]): DueCount {
   return {
     learning: cards.learning.length,
     review: cards.review.length,
-    new: cards.new.length,
     total: cards.total
   }
 }
@@ -185,6 +120,6 @@ export function getStats(totalWords: number): SrsStats {
     totalReview,
     totalMastered,
     streak,
-    newCardsPerDay: data.settings.newCardsPerDay
+    deckSize: Object.keys(data.cards).length
   }
 }

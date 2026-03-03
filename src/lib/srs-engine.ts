@@ -42,22 +42,6 @@ export function isDue(card: SrsCard): boolean {
   return card.due <= today()
 }
 
-// --- Card initialization ---
-
-export function initCard(wordId: number): SrsCard {
-  return {
-    wordId,
-    state: 'new',
-    ease: DEFAULT_EASE,
-    interval: 0,
-    due: today(),
-    dueTimestamp: now(),
-    reps: 0,
-    lapses: 0,
-    step: 0
-  }
-}
-
 // --- SM-2 Rating Logic ---
 
 export function graduateCard(card: SrsCard, interval: number): void {
@@ -69,10 +53,6 @@ export function graduateCard(card: SrsCard, interval: number): void {
 }
 
 export function rateLearningCard(card: SrsCard, rating: Rating): void {
-  if (card.state === 'new') {
-    card.state = 'learning'
-  }
-
   if (rating === 1) {
     card.step = 0
     card.dueTimestamp = addMinutes(new Date(), LEARNING_STEPS[0]).getTime()

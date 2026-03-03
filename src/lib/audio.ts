@@ -5,6 +5,8 @@ const NORMAL_RATE = 0.85
 const SLOW_RATE = 0.6
 const SENTENCE_RATE = 0.85
 
+const audioElementCache = new Map<string, HTMLAudioElement>()
+
 let preferredVoice: SpeechSynthesisVoice | null = null
 let voicesLoaded = false
 
@@ -62,11 +64,12 @@ function getAudioUrl(word: string): string | null {
   return null
 }
 
-function playAudioUrl(url: string): Promise<void> {
+function playAudioUrl(url: string, word?: string): Promise<void> {
   return new Promise((resolve, reject) => {
-    const audio = new Audio(url)
-    audio.addEventListener('ended', () => resolve())
-    audio.addEventListener('error', reject)
+    const audio = (word && audioElementCache.get(word)) || new Audio(url)
+    audio.currentTime = 0
+    audio.addEventListener('ended', () => resolve(), { once: true })
+    audio.addEventListener('error', reject, { once: true })
     audio.play().catch(reject)
   })
 }
@@ -112,7 +115,7 @@ async function playWord(word: string, speed?: 'normal' | 'slow'): Promise<void> 
   if (audioUrl) {
     try {
       if (speed !== 'slow') {
-        await playAudioUrl(audioUrl)
+        await playAudioUrl(audioUrl, word)
         return
       }
     } catch {
@@ -136,9 +139,18 @@ async function playSentence(text: string, speed?: 'normal' | 'slow'): Promise<vo
   }
 }
 
-function preload(word: string): void {
+async function preload(word: string): Promise<void> {
   if (!DictAPI.getCached(word)) {
-    DictAPI.lookup(word).catch(() => {})
+    await DictAPI.lookup(word).catch(() => {})
+  }
+  // Pre-buffer the audio file
+  const url = getAudioUrl(word)
+  if (url && !audioElementCache.has(word)) {
+    const el = new Audio()
+    el.preload = 'auto'
+    el.src = url
+    el.load()
+    audioElementCache.set(word, el)
   }
 }
 

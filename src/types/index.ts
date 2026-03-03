@@ -23,11 +23,13 @@ export interface Passage {
   wordIds: number[]
   level: string
   topic: string
+  genre?: 'news' | 'essay' | 'travel' | 'opinion' | 'story' | 'interview' | 'explainer'
+  difficulty?: 'bridge' | 'standard' | 'challenging'
 }
 
 export interface SrsCard {
   wordId: number
-  state: 'new' | 'learning' | 'review' | 'relearning'
+  state: 'learning' | 'review' | 'relearning'
   ease: number
   interval: number
   due: string
@@ -44,8 +46,6 @@ export interface SrsHistory {
 }
 
 export interface SrsSettings {
-  newCardsPerDay: number
-  activeTopics: string[]
   userAddedWords?: number[]
 }
 
@@ -65,24 +65,22 @@ export interface SrsStats {
   totalReview: number
   totalMastered: number
   streak: number
-  newCardsPerDay: number
+  deckSize: number
 }
 
 export interface DueCount {
   learning: number
   review: number
-  new: number
   total: number
 }
 
 export interface CardQueue {
   learning: SrsCard[]
   review: SrsCard[]
-  new: SrsCard[]
   total: number
 }
 
-export type CardState = 'unseen' | 'new' | 'learning' | 'relearning' | 'review' | 'mastered'
+export type CardState = 'unseen' | 'learning' | 'relearning' | 'review' | 'mastered'
 export type Rating = 1 | 2 | 3 | 4
 
 export interface DictPhonetic {

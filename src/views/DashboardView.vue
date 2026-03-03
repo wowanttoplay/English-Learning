@@ -19,32 +19,20 @@
       :learning="stats.totalLearning"
     />
 
-    <TopicSummary />
-
     <div class="action-buttons">
       <button
+        v-if="due.total > 0"
         class="btn btn-primary"
-        :disabled="due.total === 0"
-        @click="startStudy('mixed')"
+        @click="startStudy"
       >
-        Start Study
+        Start Review
         <span class="btn-count">{{ due.total }}</span>
       </button>
       <button
-        v-if="due.review + due.learning > 0"
         class="btn btn-secondary"
-        @click="startStudy('review')"
+        @click="router.push('/reading')"
       >
-        Review Due
-        <span class="btn-count">{{ due.review + due.learning }}</span>
-      </button>
-      <button
-        v-if="due.new > 0"
-        class="btn btn-secondary"
-        @click="startStudy('learn')"
-      >
-        Learn New Words
-        <span class="btn-count">{{ due.new }}</span>
+        Go Read
       </button>
     </div>
 
@@ -63,7 +51,6 @@ import { useTheme } from '@/composables/useTheme'
 import StatsGrid from '@/components/StatsGrid.vue'
 import ProgressBar from '@/components/ProgressBar.vue'
 import WeeklyHeatmap from '@/components/WeeklyHeatmap.vue'
-import TopicSummary from '@/components/TopicSummary.vue'
 
 const router = useRouter()
 const srsStore = useSrsStore()
@@ -74,9 +61,9 @@ const stats = computed(() => srsStore.stats)
 const due = computed(() => srsStore.dueCount)
 
 const topStats = computed(() => [
-  { value: due.value.new, label: 'New', color: 'blue' },
-  { value: due.value.review + due.value.learning, label: 'To Review', color: 'orange' },
-  { value: stats.value.streak, label: 'Day Streak', color: 'green' }
+  { value: due.value.total, label: 'To Review', color: 'orange' },
+  { value: stats.value.streak, label: 'Day Streak', color: 'green' },
+  { value: stats.value.deckSize, label: 'In Deck', color: 'blue' }
 ])
 
 const bottomStats = computed(() => [
@@ -84,18 +71,11 @@ const bottomStats = computed(() => [
   { value: stats.value.todayReviewed, label: 'Reviewed Today' }
 ])
 
-function startStudy(type: 'learn' | 'review' | 'mixed') {
+function startStudy() {
   const cards = srsStore.getCardsForToday()
-  let queue
-  if (type === 'review') {
-    queue = [...cards.learning, ...cards.review]
-  } else if (type === 'learn') {
-    queue = [...cards.new]
-  } else {
-    queue = [...cards.learning, ...cards.review, ...cards.new]
-  }
+  const queue = [...cards.learning, ...cards.review]
   if (queue.length === 0) return
-  session.startSession(queue, type)
+  session.startSession(queue, 'review')
   router.push('/study')
 }
 </script>
