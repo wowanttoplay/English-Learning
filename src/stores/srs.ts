@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { rateCard as srsRateCard, getCardsForToday as srsGetCardsForToday, getDueCount, getStats } from '@/lib/srs-queue'
-import { getCardState as srsGetCardState, getAllCardStates as srsGetAllCardStates, resetProgress as srsResetProgress, clearCache, getCard as srsGetCard, getHistory as srsGetHistory, addUserWord as srsAddUserWord } from '@/lib/srs-storage'
+import { getCardState as srsGetCardState, getAllCardStates as srsGetAllCardStates, resetProgress as srsResetProgress, clearCache, getCard as srsGetCard, getHistory as srsGetHistory, addUserWord as srsAddUserWord, markAsKnown as srsMarkAsKnown, unmarkKnown as srsUnmarkKnown } from '@/lib/srs-storage'
 import { WORD_LIST } from '@/data/words'
 import type { SrsStats, DueCount, CardQueue, CardState, Rating, SrsCard } from '@/types'
 
@@ -63,6 +63,18 @@ export const useSrsStore = defineStore('srs', () => {
     _bump()
   }
 
+  function markAsKnown(wordId: number) {
+    srsMarkAsKnown(wordId)
+    clearCache()
+    _bump()
+  }
+
+  function unmarkKnown(wordId: number) {
+    srsUnmarkKnown(wordId)
+    clearCache()
+    _bump()
+  }
+
   return {
     _version,
     stats,
@@ -74,6 +86,8 @@ export const useSrsStore = defineStore('srs', () => {
     getAllCardStates,
     getHistory,
     getCard,
-    addWordFromReading
+    addWordFromReading,
+    markAsKnown,
+    unmarkKnown
   }
 })

@@ -51,6 +51,7 @@ export function getCard(wordId: number): SrsCard | null {
 export function getCardState(wordId: number): CardState {
   const card = getCard(wordId)
   if (!card) return 'unseen'
+  if (card.state === 'known') return 'known'
   if (card.state === 'review' && card.interval >= MASTERED_INTERVAL) return 'mastered'
   return card.state
 }
@@ -60,7 +61,9 @@ export function getAllCardStates(): Record<string, CardState> {
   const states: Record<string, CardState> = {}
   for (const id in data.cards) {
     const card = data.cards[id]
-    if (card.state === 'review' && card.interval >= MASTERED_INTERVAL) {
+    if (card.state === 'known') {
+      states[id] = 'known'
+    } else if (card.state === 'review' && card.interval >= MASTERED_INTERVAL) {
       states[id] = 'mastered'
     } else {
       states[id] = card.state
@@ -105,5 +108,45 @@ export function addUserWord(wordId: number): void {
       data.history[todayStr] = { reviewed: 0, learned: 0 }
     }
     data.history[todayStr].learned++
+  })
+}
+
+// --- Mark as Known ---
+
+export function markAsKnown(wordId: number): void {
+  withData(data => {
+    const card = data.cards[wordId]
+    if (card) {
+      if (card.state === 'known') return // already known
+      if (card.state === 'learning' || card.state === 'review' || card.state === 'relearning') {
+        card.previousState = card.state
+      }
+      card.state = 'known'
+    } else {
+      data.cards[wordId] = {
+        wordId,
+        state: 'known',
+        ease: DEFAULT_EASE,
+        interval: 0,
+        due: today(),
+        dueTimestamp: now(),
+        reps: 0,
+        lapses: 0,
+        step: 0
+      }
+    }
+  })
+}
+
+export function unmarkKnown(wordId: number): void {
+  withData(data => {
+    const card = data.cards[wordId]
+    if (!card || card.state !== 'known') return
+    if (card.previousState) {
+      card.state = card.previousState
+      delete card.previousState
+    } else {
+      delete data.cards[wordId]
+    }
   })
 }

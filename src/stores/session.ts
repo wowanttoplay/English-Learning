@@ -58,6 +58,17 @@ export const useSessionStore = defineStore('session', () => {
     }
   }
 
+  function skipCurrent() {
+    index.value++
+    revealed.value = false
+    if (index.value >= queue.value.length) {
+      completeStats.value = {
+        reviewed: index.value,
+        type: sessionType.value
+      }
+    }
+  }
+
   const isComplete = computed(() => {
     return completeStats.value !== null
   })
@@ -94,6 +105,7 @@ export const useSessionStore = defineStore('session', () => {
     startSession,
     reveal,
     advance,
+    skipCurrent,
     openModal,
     closeModal,
     resetWordListFilters

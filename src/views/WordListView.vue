@@ -4,19 +4,21 @@
       <h2>Word List</h2>
     </div>
 
-    <input
-      class="search-box"
-      type="text"
-      placeholder="Search words..."
-      v-model="session.wordListSearch"
-    />
+    <div class="wordlist-filters-row">
+      <input
+        class="search-box"
+        type="text"
+        placeholder="Search words..."
+        v-model="session.wordListSearch"
+      />
 
-    <select class="topic-select" v-model="session.wordListTopic">
-      <option value="all">All Topics</option>
-      <option v-for="t in TOPIC_REGISTRY" :key="t.id" :value="t.id">
-        {{ t.emoji }} {{ t.name }}
-      </option>
-    </select>
+      <select class="topic-select" v-model="session.wordListTopic">
+        <option value="all">All Topics</option>
+        <option v-for="t in TOPIC_REGISTRY" :key="t.id" :value="t.id">
+          {{ t.emoji }} {{ t.name }}
+        </option>
+      </select>
+    </div>
 
     <div class="filter-tabs">
       <button
@@ -42,6 +44,12 @@
           <div class="word-item-word">{{ w.word }}</div>
           <div class="word-item-zh">{{ w.zh }}</div>
         </div>
+        <button
+          class="word-known-btn"
+          :class="{ 'is-known': getState(w.id) === 'known' }"
+          @click.stop="toggleKnown(w.id)"
+          :title="getState(w.id) === 'known' ? 'Unmark known' : 'Mark as known'"
+        >{{ getState(w.id) === 'known' ? '\u2605' : '\u2606' }}</button>
         <span class="word-item-badge" :class="'badge-' + getState(w.id)">{{ getState(w.id) }}</span>
       </div>
       <button
@@ -93,6 +101,7 @@ const filtered = computed(() => {
     if (f === 'learning') return state === 'learning' || state === 'relearning'
     if (f === 'review') return state === 'review'
     if (f === 'mastered') return state === 'mastered'
+    if (f === 'known') return state === 'known'
     return true
   })
 })
@@ -102,7 +111,7 @@ const visibleWords = computed(() => filtered.value.slice(0, visibleCount.value))
 const hasMore = computed(() => filtered.value.length > visibleCount.value)
 
 const filters = computed(() => {
-  const counts = { all: 0, unseen: 0, learning: 0, review: 0, mastered: 0 }
+  const counts = { all: 0, unseen: 0, learning: 0, review: 0, mastered: 0, known: 0 }
   for (const w of WORD_LIST) {
     const s = states.value[w.id] || 'unseen'
     counts.all++
@@ -110,17 +119,28 @@ const filters = computed(() => {
     else if (s === 'learning' || s === 'relearning') counts.learning++
     else if (s === 'review') counts.review++
     else if (s === 'mastered') counts.mastered++
+    else if (s === 'known') counts.known++
   }
   return [
     { key: 'all', label: 'All', count: counts.all },
     { key: 'unseen', label: 'Unseen', count: counts.unseen },
     { key: 'learning', label: 'Learning', count: counts.learning },
     { key: 'review', label: 'Review', count: counts.review },
-    { key: 'mastered', label: 'Mastered', count: counts.mastered }
+    { key: 'mastered', label: 'Mastered', count: counts.mastered },
+    { key: 'known', label: 'Known', count: counts.known }
   ]
 })
 
 function setFilter(f: string) {
   session.wordListFilter = f
+}
+
+function toggleKnown(wordId: number) {
+  const state = states.value[wordId]
+  if (state === 'known') {
+    srsStore.unmarkKnown(wordId)
+  } else {
+    srsStore.markAsKnown(wordId)
+  }
 }
 </script>

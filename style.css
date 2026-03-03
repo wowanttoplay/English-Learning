@@ -36,6 +36,7 @@
   --radius-lg: 20px;
   --max-width: 480px;
   --nav-height: 72px;
+  --sidebar-width: 220px;
   --font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -701,6 +702,7 @@ body {
 .badge-relearning { background: var(--red-soft); color: var(--red); }
 .badge-review { background: var(--green-soft); color: var(--green); }
 .badge-mastered { background: var(--purple-soft); color: var(--purple); }
+.badge-known { background: var(--color-warning, #f59e0b); color: #fff; }
 
 [data-theme="dark"] .badge-unseen { background: rgba(255, 255, 255, 0.06); }
 
@@ -1255,6 +1257,7 @@ body {
 .reading-tooltip-state.state-relearning { background: var(--red-soft); color: var(--red); }
 .reading-tooltip-state.state-review { background: var(--green-soft); color: var(--green); }
 .reading-tooltip-state.state-mastered { background: var(--purple-soft); color: var(--purple); }
+.reading-tooltip-state.state-known { color: var(--color-warning, #f59e0b); }
 
 .reading-tooltip-add {
   width: 100%;
@@ -1296,4 +1299,180 @@ body {
   border-radius: 4px;
   margin-left: 4px;
   vertical-align: middle;
+}
+
+/* === Known Word Controls === */
+.word-known-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 8px;
+  color: var(--text-secondary);
+  transition: color 0.15s;
+}
+.word-known-btn.is-known {
+  color: var(--color-warning, #f59e0b);
+}
+
+.card-know-wrapper {
+  margin-top: 16px;
+}
+
+.card-know-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font);
+}
+.card-know-btn:hover {
+  border-color: var(--color-warning, #f59e0b);
+  color: var(--color-warning, #f59e0b);
+}
+
+/* === Sidebar Nav (hidden on mobile, shown on desktop) === */
+.side-nav {
+  display: none;
+}
+
+/* === Desktop Layout === */
+@media (min-width: 768px) {
+  /* Hide bottom nav, show sidebar */
+  .bottom-nav { display: none !important; }
+  .side-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    background: var(--bg-card);
+    border-right: 1px solid var(--border);
+    padding: 24px 0;
+    z-index: 100;
+  }
+  .side-nav-brand {
+    padding: 0 24px 24px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+  }
+  .side-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+  }
+  .side-nav a:hover {
+    background: var(--bg-elevated);
+  }
+  .side-nav a.router-link-active {
+    color: var(--accent);
+    background: var(--bg-elevated);
+  }
+  .side-nav a .nav-icon {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+  }
+
+  /* Main content offset */
+  .app-main {
+    margin-left: var(--sidebar-width);
+    max-width: 1100px;
+    padding: 40px 48px;
+    padding-bottom: 40px;
+  }
+
+  /* Remove phone max-width on #app */
+  #app {
+    max-width: none;
+  }
+
+  /* Dashboard -- wider stats grid */
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Reading -- multi-column passage grid */
+  .passage-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+  }
+
+  /* Study -- centered flashcard */
+  .card-screen {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  /* Passage reading -- comfortable column */
+  .passage-screen {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  /* Settings -- centered narrow */
+  .settings-view-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Word list -- table style */
+  .word-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* WordList filters row */
+  .wordlist-filters-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .wordlist-filters-row .search-box {
+    flex: 1;
+  }
+  .wordlist-filters-row .topic-select {
+    width: auto;
+    min-width: 160px;
+  }
+
+  /* Word detail modal -- centered dialog instead of bottom sheet */
+  .modal-overlay .modal {
+    max-width: 540px;
+    margin: auto;
+    border-radius: 16px;
+  }
+
+  /* Filter tabs -- horizontal, not full-width */
+  .filter-tabs {
+    justify-content: flex-start;
+  }
+
+  /* Rating buttons -- spaced horizontally */
+  .rating-buttons {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Start study button -- not full width */
+  .btn-primary.start-btn, .start-study-btn {
+    max-width: 300px;
+  }
 }

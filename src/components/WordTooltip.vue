@@ -18,6 +18,27 @@
     >
       Save to Deck
     </button>
+    <button
+      v-if="cardState === 'unseen'"
+      class="btn btn-secondary reading-tooltip-add"
+      @click="markKnown"
+    >
+      Already Know This
+    </button>
+    <button
+      v-if="cardState === 'known'"
+      class="btn btn-secondary reading-tooltip-add"
+      @click="unmarkKnown"
+    >
+      Study This Word
+    </button>
+    <button
+      v-if="cardState === 'learning' || cardState === 'relearning' || cardState === 'review' || cardState === 'mastered'"
+      class="btn btn-secondary reading-tooltip-add"
+      @click="markKnown"
+    >
+      Mark as Known
+    </button>
   </div>
 </template>
 
@@ -49,6 +70,7 @@ const stateLabel = computed(() => {
     case 'relearning': return 'Relearning'
     case 'review': return 'Review'
     case 'mastered': return 'Mastered'
+    case 'known': return 'Known'
     default: return ''
   }
 })
@@ -56,6 +78,20 @@ const stateLabel = computed(() => {
 function addToDeck() {
   if (props.wordId !== null) {
     srsStore.addWordFromReading(props.wordId)
+  }
+}
+
+function markKnown() {
+  if (props.wordId !== null) {
+    srsStore.markAsKnown(props.wordId)
+    emit('close')
+  }
+}
+
+function unmarkKnown() {
+  if (props.wordId !== null) {
+    srsStore.unmarkKnown(props.wordId)
+    emit('close')
   }
 }
 </script>

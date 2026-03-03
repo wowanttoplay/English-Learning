@@ -8,6 +8,7 @@ export function rateCard(wordId: number, rating: Rating): SrsCard {
   return withData(data => {
     const card = data.cards[wordId]
     if (!card) throw new Error(`Card ${wordId} not in deck`)
+    if (card.state === 'known') throw new Error(`Card ${wordId} is marked as known and cannot be rated`)
 
     switch (card.state) {
       case 'learning':
@@ -41,6 +42,7 @@ export function getCardsForToday(_wordList: Word[]): CardQueue {
 
   for (const id in data.cards) {
     const card = data.cards[id]
+    if (card.state === 'known') continue
     if (card.state === 'review' && isDue(card)) {
       reviewCards.push(card)
     } else if ((card.state === 'learning' || card.state === 'relearning') && isDue(card)) {
@@ -77,10 +79,14 @@ export function getStats(totalWords: number): SrsStats {
   let totalLearning = 0
   let totalReview = 0
   let totalMastered = 0
+  let totalKnown = 0
 
   for (const id in data.cards) {
     const card = data.cards[id]
     switch (card.state) {
+      case 'known':
+        totalKnown++
+        break
       case 'learning':
       case 'relearning':
         totalLearning++
@@ -95,8 +101,8 @@ export function getStats(totalWords: number): SrsStats {
     }
   }
 
-  const totalStarted = Object.keys(data.cards).length
-  const unseenWords = totalWords - totalStarted
+  const totalStarted = Object.keys(data.cards).length - totalKnown
+  const unseenWords = totalWords - totalStarted - totalKnown
 
   let streak = 0
   const d = new Date()
@@ -119,7 +125,8 @@ export function getStats(totalWords: number): SrsStats {
     totalLearning,
     totalReview,
     totalMastered,
+    totalKnown,
     streak,
-    deckSize: Object.keys(data.cards).length
+    deckSize: Object.keys(data.cards).length - totalKnown
   }
 }

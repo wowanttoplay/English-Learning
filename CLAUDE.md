@@ -17,15 +17,15 @@ npm run typecheck    # Type check only (vue-tsc --noEmit)
 
 ## Architecture
 
-Vite + Vue 3 SPA with Pinia state management, hash router, and TypeScript throughout.
+Vite + Vue 3 SPA with Pinia state management, hash router, and TypeScript throughout. Responsive layout: sidebar navigation on desktop (>=768px), bottom tab bar on mobile.
 
 ### Directory structure
 
 ```
 src/
   main.ts                      # createApp + router + pinia
-  App.vue                      # RouterView + BottomNav + WordDetailModal
-  types/index.ts               # Word, Passage (with difficulty field), SrsCard, etc.
+  App.vue                      # div.app-main(RouterView) + BottomNav + WordDetailModal
+  types/index.ts               # Word, Passage (with difficulty field), SrsCard (with 'known' state + previousState), etc.
   router/index.ts              # 6 hash routes
   data/                        # Static data (words, topics, passages)
     topics.ts                  # TOPIC_REGISTRY (16 topics)
@@ -41,15 +41,15 @@ src/
   lib/                         # Pure logic (no Vue dependency)
     storage.ts                 # Unified localStorage wrapper (typed domain methods only)
     srs-engine.ts              # Pure SM-2 algorithm + constants (no initCard)
-    srs-storage.ts             # SRS data persistence (withData pattern) + addUserWord() creates card immediately
-    srs-queue.ts               # Review-only queue generation, stats, rateCard
+    srs-storage.ts             # SRS data persistence (withData pattern) + addUserWord() creates card immediately + markAsKnown()/unmarkKnown()
+    srs-queue.ts               # Review-only queue generation (excludes known cards), stats (includes totalKnown), rateCard
     dict-api.ts                # dictionaryapi.dev client + cache (in-memory Map + localStorage)
     audio.ts                   # 3-tier audio (explicit init required, async preload with HTMLAudioElement cache)
     word-index.ts              # O(1) word lookup by ID, text, and topic index
     format.ts                  # Shared formatting utilities (formatTopic)
   stores/                      # Pinia stores
-    srs.ts                     # useSrsStore — SRS actions + addWordFromReading()
-    session.ts                 # useSessionStore — study session + word list UI state
+    srs.ts                     # useSrsStore — SRS actions + addWordFromReading() + markAsKnown()/unmarkKnown()
+    session.ts                 # useSessionStore — study session + word list UI state + skipCurrent()
   composables/
     useAudio.ts                # Audio playback only (speak, speakSlow, speakSentence)
     useDictionary.ts           # Dictionary API lookups (fetch, getCached, clearCache)
@@ -58,7 +58,7 @@ src/
     useTheme.ts                # Dark/light theme toggle + setTheme
     useKeyboardShortcuts.ts    # Key event bindings
   components/                  # Reusable UI components
-    BottomNav.vue, WordDetailModal.vue, ProgressBar.vue,
+    BottomNav.vue (desktop sidebar nav + mobile bottom tab bar), WordDetailModal.vue, ProgressBar.vue,
     StatsGrid.vue, WeeklyHeatmap.vue,
     RatingButtons.vue, AudioControls.vue, WordTooltip.vue
   views/                       # Route-level views
@@ -84,11 +84,13 @@ src/
 
 **Study → Review only:** `useSrsStore.getCardsForToday()` returns only learning/relearning/review cards already in deck (no new card auto-introduction) → `useSessionStore` manages queue → user rates → SRS updates localStorage → `_version` ref triggers reactive recomputation.
 
+**Mark as Known:** user can mark a word as already known from three places: WordTooltip (in passages), StudyView (during review), or WordListView (star toggle). `useSrsStore.markAsKnown(wordId)` → `srs-storage.markAsKnown()` sets card state to `'known'` and saves `previousState` for undo. Known cards are excluded from the study queue. Users can unmark via `unmarkKnown()` which restores the `previousState`. WordListView has a dedicated "Known" filter tab. Stats include `totalKnown` count.
+
 ### Key conventions
 
 - **TypeScript throughout**: All `.ts` and `.vue` files are typed; `src/types/index.ts` defines shared interfaces
 - **Pinia stores**: `_version` ref pattern for triggering reactivity on localStorage-backed SRS data
-- **CSS**: Global `style.css` imported in `App.vue`, Apple-style minimal design with CSS custom properties for theming (light/dark)
+- **CSS**: Global `style.css` imported in `App.vue`, Apple-style minimal design with CSS custom properties for theming (light/dark). Responsive: `@media (min-width: 768px)` breakpoint switches from mobile bottom nav to desktop sidebar nav (`--sidebar-width` CSS variable, `.side-nav` class)
 - **Date handling**: Local `formatDate(d)` helper (not `toISOString`) to avoid timezone bugs
 - **Audio**: 3-tier fallback: dictionaryapi.dev audio URLs > Web Speech API > silent. Async preload with HTMLAudioElement caching; dict-api uses in-memory Map cache to avoid repeated JSON.parse of localStorage
 - **localStorage**: All access via `lib/storage.ts` typed methods; keys: `srs_data`, `dict_cache`, `theme`, `settings_audio`, `passages_read`

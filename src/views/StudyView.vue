@@ -47,6 +47,9 @@
             <div class="card-phonetic">{{ currentWord.phonetic }}</div>
             <div class="card-pos">{{ currentWord.pos }}</div>
             <AudioControls :word="currentWord.word" />
+            <div v-if="!session.revealed" class="card-know-wrapper">
+              <button class="card-know-btn" @click.stop="markCurrentAsKnown">Know This Word</button>
+            </div>
             <div v-if="!session.revealed" class="tap-hint">Tap to reveal answer</div>
           </div>
 
@@ -110,6 +113,13 @@ function onRate(rating: Rating) {
   const card = currentCard.value
   if (!card) return
   session.advance(srsStore.rateCard(card.wordId, rating))
+}
+
+function markCurrentAsKnown() {
+  const card = currentCard.value
+  if (!card) return
+  srsStore.markAsKnown(card.wordId)
+  session.skipCurrent()
 }
 
 function continueStudy() {

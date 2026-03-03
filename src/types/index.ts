@@ -29,7 +29,8 @@ export interface Passage {
 
 export interface SrsCard {
   wordId: number
-  state: 'learning' | 'review' | 'relearning'
+  state: 'learning' | 'review' | 'relearning' | 'known'
+  previousState?: 'learning' | 'review' | 'relearning'
   ease: number
   interval: number
   due: string
@@ -64,6 +65,7 @@ export interface SrsStats {
   totalLearning: number
   totalReview: number
   totalMastered: number
+  totalKnown: number
   streak: number
   deckSize: number
 }
@@ -80,7 +82,7 @@ export interface CardQueue {
   total: number
 }
 
-export type CardState = 'unseen' | 'learning' | 'relearning' | 'review' | 'mastered'
+export type CardState = 'unseen' | 'learning' | 'relearning' | 'review' | 'mastered' | 'known'
 export type Rating = 1 | 2 | 3 | 4
 
 export interface DictPhonetic {
