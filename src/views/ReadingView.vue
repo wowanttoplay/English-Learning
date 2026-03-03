@@ -13,23 +13,48 @@
     </template>
 
     <template v-else>
-      <div class="filter-tabs">
-        <button
-          class="filter-tab"
-          :class="{ active: difficultyFilter === 'all' }"
-          @click="difficultyFilter = 'all'"
-        >All</button>
-        <button
-          class="filter-tab"
-          :class="{ active: difficultyFilter === 'bridge' }"
-          @click="difficultyFilter = 'bridge'"
-        >Easier</button>
-        <button
-          class="filter-tab"
-          :class="{ active: difficultyFilter === 'standard' }"
-          @click="difficultyFilter = 'standard'"
-        >Standard</button>
+      <div class="filter-section">
+        <div class="filter-tabs">
+          <button
+            class="filter-tab"
+            :class="{ active: difficultyFilter === 'all' }"
+            @click="difficultyFilter = 'all'"
+          >All</button>
+          <button
+            class="filter-tab"
+            :class="{ active: difficultyFilter === 'bridge' }"
+            @click="difficultyFilter = 'bridge'"
+          >Easier</button>
+          <button
+            class="filter-tab"
+            :class="{ active: difficultyFilter === 'standard' }"
+            @click="difficultyFilter = 'standard'"
+          >Standard</button>
+        </div>
+
+        <div class="filter-tabs">
+          <button
+            class="filter-tab"
+            :class="{ active: topicFilter === 'all' }"
+            @click="topicFilter = 'all'"
+          >All Topics</button>
+          <button
+            v-for="topic in availableTopics"
+            :key="topic.id"
+            class="filter-tab"
+            :class="{ active: topicFilter === topic.id }"
+            @click="topicFilter = topic.id"
+          >{{ topic.emoji }} {{ topic.name }}</button>
+        </div>
       </div>
+
+      <template v-if="readyPassages.length === 0 && completedPassages.length === 0">
+        <div class="reading-empty">
+          <div class="reading-empty-icon">&#128269;</div>
+          <h3>No passages match these filters</h3>
+          <p>Try selecting a different topic or difficulty.</p>
+        </div>
+      </template>
 
       <template v-if="readyPassages.length > 0">
         <div class="reading-section-title">Available to Read</div>
@@ -82,6 +107,7 @@
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { PASSAGES } from '@/data/passages'
+import { TOPIC_REGISTRY } from '@/data/topics'
 import { usePassages } from '@/composables/usePassages'
 import { formatTopic } from '@/lib/format'
 
@@ -91,6 +117,7 @@ const passages = usePassages()
 const hasPassages = PASSAGES.length > 0
 
 const difficultyFilter = ref<'all' | 'bridge' | 'standard'>('all')
+const topicFilter = ref<string>('all')
 
 const filteredPassages = computed(() => {
   if (difficultyFilter.value === 'all') return PASSAGES
@@ -99,13 +126,23 @@ const filteredPassages = computed(() => {
   return PASSAGES.filter(p => !p.difficulty || p.difficulty === 'standard')
 })
 
+const availableTopics = computed(() => {
+  const topicIds = new Set(PASSAGES.map(p => p.topic))
+  return TOPIC_REGISTRY.filter(t => topicIds.has(t.id))
+})
+
+const topicFilteredPassages = computed(() => {
+  if (topicFilter.value === 'all') return filteredPassages.value
+  return filteredPassages.value.filter(p => p.topic === topicFilter.value)
+})
+
 const readyPassages = computed(() => {
   const readSet = new Set(passages.passagesRead.value)
-  return filteredPassages.value.filter(p => !readSet.has(p.id))
+  return topicFilteredPassages.value.filter(p => !readSet.has(p.id))
 })
 
 const completedPassages = computed(() => {
   const readSet = new Set(passages.passagesRead.value)
-  return filteredPassages.value.filter(p => readSet.has(p.id))
+  return topicFilteredPassages.value.filter(p => readSet.has(p.id))
 })
 </script>

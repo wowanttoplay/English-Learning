@@ -60,7 +60,8 @@ src/
   components/                  # Reusable UI components
     BottomNav.vue (desktop sidebar nav + mobile bottom tab bar), WordDetailModal.vue, ProgressBar.vue,
     StatsGrid.vue, WeeklyHeatmap.vue,
-    RatingButtons.vue, AudioControls.vue, WordTooltip.vue
+    RatingButtons.vue, AudioControls.vue, WordTooltip.vue,
+    FreeWordTooltip.vue              # Universal word lookup for non-B2 words via dictionaryapi.dev
   views/                       # Route-level views
     DashboardView.vue, StudyView.vue,
     WordListView.vue, ReadingView.vue, PassageView.vue,
@@ -80,7 +81,7 @@ src/
 
 ### Data flow
 
-**Reading → Discovery:** user browses passage list (filterable by difficulty: All / Easier / Standard) → reads passage → taps highlighted B2 word → `WordTooltip` shows definition + "Save to Deck" → `useSrsStore.addWordFromReading()` → `addUserWord()` creates SrsCard with state `'learning'` immediately → card appears in next study session. Bridge passages (`difficulty: 'bridge'`) use simpler sentence structures and more B1 vocabulary to ease the transition for lower-level learners.
+**Reading → Discovery:** user browses passage list (filterable by two simultaneous filter rows: difficulty [All / Easier / Standard] + topic [All Topics + per-topic with emoji, derived from PASSAGES data via TOPIC_REGISTRY]) → reads passage → all words in passage text are tappable (`span.plain-word`). B2 highlighted words open `WordTooltip` (definition + "Save to Deck"), plain words open `FreeWordTooltip` (universal lookup via dictionaryapi.dev showing definition, phonetic, audio, with "Search on Google" fallback; handles loading, not-found, and cached states). The two tooltips are mutually exclusive. `useSrsStore.addWordFromReading()` → `addUserWord()` creates SrsCard with state `'learning'` immediately → card appears in next study session. Bridge passages (`difficulty: 'bridge'`) use simpler sentence structures and more B1 vocabulary to ease the transition for lower-level learners.
 
 **Study → Review only:** `useSrsStore.getCardsForToday()` returns only learning/relearning/review cards already in deck (no new card auto-introduction) → `useSessionStore` manages queue → user rates → SRS updates localStorage → `_version` ref triggers reactive recomputation.
 

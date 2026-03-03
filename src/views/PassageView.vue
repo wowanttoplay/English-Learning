@@ -13,6 +13,11 @@
         :wordId="tooltipWordId"
         @close="tooltipWordId = null"
       />
+      <FreeWordTooltip
+        v-if="freeTooltipWord !== null"
+        :word="freeTooltipWord"
+        @close="freeTooltipWord = null"
+      />
     </div>
 
     <div class="passage-actions">
@@ -40,6 +45,7 @@ import { usePassages } from '@/composables/usePassages'
 import { formatTopic } from '@/lib/format'
 import { PASSAGES } from '@/data/passages'
 import WordTooltip from '@/components/WordTooltip.vue'
+import FreeWordTooltip from '@/components/FreeWordTooltip.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -48,6 +54,7 @@ const passages = usePassages()
 
 const passageTextRef = ref<HTMLElement | null>(null)
 const tooltipWordId = ref<number | null>(null)
+const freeTooltipWord = ref<string | null>(null)
 
 const passage = computed(() => {
   const id = Number(route.params.id)
@@ -79,7 +86,7 @@ const highlightedText = computed(() => {
       } else if (w) {
         result += `<span class="highlight-word-vocab" data-word-id="${w.id}">${escapeHtml(token)}</span>`
       } else {
-        result += escapeHtml(token)
+        result += `<span class="plain-word" data-word="${escapeHtml(token)}">${escapeHtml(token)}</span>`
       }
     } else {
       result += escapeHtml(token)
@@ -89,17 +96,37 @@ const highlightedText = computed(() => {
   return result
 })
 
-// Use event delegation for highlighted words
+// Use event delegation for highlighted words and plain words
 function onPassageClick(e: Event) {
   const target = e.target as HTMLElement
+
+  // Highlighted vocab words (B2 words in the word list)
   if (target.classList.contains('highlight-word-target') || target.classList.contains('highlight-word-vocab')) {
     const wordId = Number(target.dataset.wordId)
+    freeTooltipWord.value = null  // close free tooltip
     if (tooltipWordId.value === wordId) {
       tooltipWordId.value = null
     } else {
       tooltipWordId.value = wordId
     }
+    return
   }
+
+  // Plain words (any word not in the word list)
+  if (target.classList.contains('plain-word')) {
+    const word = target.dataset.word ?? null
+    tooltipWordId.value = null  // close vocab tooltip
+    if (freeTooltipWord.value === word) {
+      freeTooltipWord.value = null
+    } else {
+      freeTooltipWord.value = word
+    }
+    return
+  }
+
+  // Clicked outside any word — close both
+  tooltipWordId.value = null
+  freeTooltipWord.value = null
 }
 
 // Mount click listener via onMounted

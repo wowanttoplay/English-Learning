@@ -654,6 +654,21 @@ body {
   color: #fff;
 }
 
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 20px;
+}
+
+.filter-section .filter-tabs {
+  margin-bottom: 8px;
+}
+
+.filter-section .filter-tabs:last-child {
+  margin-bottom: 0;
+}
+
 .word-list {
   display: flex;
   flex-direction: column;
@@ -1333,6 +1348,77 @@ body {
 .card-know-btn:hover {
   border-color: var(--color-warning, #f59e0b);
   color: var(--color-warning, #f59e0b);
+}
+
+/* === Free Word Tooltip (universal word lookup) === */
+.plain-word {
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.12s;
+}
+
+.plain-word:hover,
+.plain-word:active {
+  background: var(--separator);
+}
+
+.free-tooltip-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--text-secondary);
+  padding: 4px 0;
+}
+
+.free-tooltip-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.free-tooltip-notfound {
+  padding: 4px 0;
+}
+
+.free-tooltip-notfound-msg {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 8px 0 12px;
+}
+
+.free-tooltip-def {
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
+.free-tooltip-example {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.free-tooltip-search {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.free-tooltip-search:hover {
+  text-decoration: underline;
 }
 
 /* === Sidebar Nav (hidden on mobile, shown on desktop) === */
