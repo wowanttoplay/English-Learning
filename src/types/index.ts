@@ -40,12 +40,13 @@ export interface SrsCard {
 export interface SrsHistory {
   reviewed: number
   learned: number
+  passagesRead?: number
 }
 
 export interface SrsSettings {
   newCardsPerDay: number
-  currentPosition: number
   activeTopics: string[]
+  userAddedWords?: number[]
 }
 
 export interface SrsData {

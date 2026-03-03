@@ -12,14 +12,6 @@
       </div>
     </template>
 
-    <template v-else-if="readyPassages.length === 0 && completedPassages.length === 0">
-      <div class="reading-empty">
-        <div class="reading-empty-icon">&#128214;</div>
-        <h3>Keep learning!</h3>
-        <p>Passages unlock when you've learned 80% of their vocabulary. Keep studying to unlock your first passage.</p>
-      </div>
-    </template>
-
     <template v-else>
       <template v-if="readyPassages.length > 0">
         <div class="reading-section-title">Available to Read</div>
@@ -104,9 +96,7 @@ const readyPassages = computed(() => {
       if (learnedIds.has(wid)) known++
     }
     const coverage = known / p.wordIds.length
-    if (coverage >= 0.8) {
-      ready.push({ passage: p, coverage })
-    }
+    ready.push({ passage: p, coverage })
   }
   ready.sort((a, b) => b.coverage - a.coverage)
   return ready

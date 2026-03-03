@@ -40,7 +40,6 @@ import { usePassages } from '@/composables/usePassages'
 import { formatTopic } from '@/lib/format'
 import { PASSAGES } from '@/data/passages'
 import WordTooltip from '@/components/WordTooltip.vue'
-import type { Word } from '@/types'
 
 const route = useRoute()
 const router = useRouter()
@@ -65,49 +64,35 @@ function escapeHtml(str: string): string {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 }
 
-function escapeRegex(str: string): string {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-}
-
 const highlightedText = computed(() => {
   if (!passage.value) return ''
 
-  const wordMap: Record<string, Word> = {}
-  for (const wid of passage.value.wordIds) {
-    const w = WordIndex.get(wid)
-    if (w) wordMap[w.word.toLowerCase()] = w
+  const targetIds = new Set(passage.value.wordIds)
+  const tokens = passage.value.text.split(/([a-zA-Z'-]+)/)
+  let result = ''
+
+  for (const token of tokens) {
+    if (/^[a-zA-Z'-]+$/.test(token)) {
+      const w = WordIndex.getByText(token)
+      if (w && targetIds.has(w.id)) {
+        result += `<span class="highlight-word-target" data-word-id="${w.id}">${escapeHtml(token)}</span>`
+      } else if (w) {
+        result += `<span class="highlight-word-vocab" data-word-id="${w.id}">${escapeHtml(token)}</span>`
+      } else {
+        result += escapeHtml(token)
+      }
+    } else {
+      result += escapeHtml(token)
+    }
   }
 
-  const wordKeys = Object.keys(wordMap)
-  if (wordKeys.length === 0) return escapeHtml(passage.value.text)
-
-  const sorted = wordKeys.sort((a, b) => b.length - a.length)
-  const pattern = new RegExp('\\b(' + sorted.map(w => escapeRegex(w)).join('|') + ')\\b', 'gi')
-
-  let result = ''
-  let lastIndex = 0
-  const text = passage.value.text
-
-  text.replace(pattern, (match: string, _word: string, offset: number) => {
-    result += escapeHtml(text.slice(lastIndex, offset))
-    const w = wordMap[match.toLowerCase()]
-    if (w) {
-      result += `<span class="highlight-word" data-word-id="${w.id}">${escapeHtml(match)}</span>`
-    } else {
-      result += escapeHtml(match)
-    }
-    lastIndex = offset + match.length
-    return match
-  })
-
-  result += escapeHtml(text.slice(lastIndex))
   return result
 })
 
 // Use event delegation for highlighted words
 function onPassageClick(e: Event) {
   const target = e.target as HTMLElement
-  if (target.classList.contains('highlight-word')) {
+  if (target.classList.contains('highlight-word-target') || target.classList.contains('highlight-word-vocab')) {
     const wordId = Number(target.dataset.wordId)
     if (tooltipWordId.value === wordId) {
       tooltipWordId.value = null

@@ -62,14 +62,36 @@ export function getCardsForToday(wordList: Word[]): CardQueue {
 
   const newCards: SrsCard[] = []
   if (newCardsRemaining > 0) {
+    let count = 0
+
+    // Priority: user-added words from reading
+    const userAdded = data.settings.userAddedWords || []
+    for (const wordId of userAdded) {
+      if (count >= newCardsRemaining) break
+      if (data.cards[wordId]) continue
+      newCards.push({
+        wordId,
+        state: 'new',
+        ease: DEFAULT_EASE,
+        interval: 0,
+        due: todayStr,
+        dueTimestamp: now(),
+        reps: 0,
+        lapses: 0,
+        step: 0
+      })
+      count++
+    }
+
+    // Fill remaining slots with topic-filtered sequential intro
     const active = data.settings.activeTopics || []
     const filterByTopic = active.length > 0
     const activeSet = filterByTopic ? new Set(active) : null
 
-    let count = 0
     for (let i = 0; i < wordList.length && count < newCardsRemaining; i++) {
       const word = wordList[i]
       if (data.cards[word.id]) continue
+      if (newCards.some(c => c.wordId === word.id)) continue
       if (filterByTopic) {
         const topics = word.topics || []
         if (!topics.some(t => activeSet!.has(t))) continue

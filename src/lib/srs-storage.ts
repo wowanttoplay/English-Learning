@@ -11,7 +11,7 @@ let _cache: SrsData | null = null
 export function loadData(): SrsData {
   return Storage.loadSrsData({
     cards: {},
-    settings: { newCardsPerDay: NEW_CARDS_PER_DAY, currentPosition: 0, activeTopics: [] },
+    settings: { newCardsPerDay: NEW_CARDS_PER_DAY, activeTopics: [], userAddedWords: [] },
     history: {}
   })
 }
@@ -96,4 +96,14 @@ export function clearCache(): void {
 
 export function getHistory(): Record<string, { reviewed: number; learned: number }> {
   return readData().history
+}
+
+export function addUserWord(wordId: number): void {
+  withData(data => {
+    const list = data.settings.userAddedWords || []
+    if (!list.includes(wordId)) {
+      list.push(wordId)
+      data.settings.userAddedWords = list
+    }
+  })
 }

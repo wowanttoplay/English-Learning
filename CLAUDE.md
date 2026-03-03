@@ -32,26 +32,26 @@ src/
     words-b2-001.ts            # Batch 1 (IDs 1-200)
     words-b2-002.ts            # Batch 2 (IDs 201-400)
     words-b2-003.ts            # Batch 3 (IDs 401-600)
-    words.ts                   # Aggregates all batches into WORD_LIST
+    words.ts                   # Aggregates batches, deduplicates, sorts by TOPIC_ORDER
     passages-001.ts            # Passage batch 1
     passages.ts                # Aggregates PASSAGES
   lib/                         # Pure logic (no Vue dependency)
     storage.ts                 # Unified localStorage wrapper (typed domain methods only)
     srs-engine.ts              # Pure SM-2 algorithm + constants
-    srs-storage.ts             # SRS data persistence (withData pattern)
+    srs-storage.ts             # SRS data persistence (withData pattern) + addUserWord()
     srs-queue.ts               # Queue generation, stats, rateCard
     dict-api.ts                # dictionaryapi.dev client + cache
     audio.ts                   # 3-tier audio (explicit init required)
-    word-index.ts              # O(1) word lookup by ID + topic index
+    word-index.ts              # O(1) word lookup by ID, text, and topic index
     format.ts                  # Shared formatting utilities (formatTopic)
   stores/                      # Pinia stores
-    srs.ts                     # useSrsStore — imports srs-engine/storage/queue directly
+    srs.ts                     # useSrsStore — SRS actions + addWordFromReading()
     session.ts                 # useSessionStore — study session + word list UI state
   composables/
     useAudio.ts                # Audio playback only (speak, speakSlow, speakSentence)
     useDictionary.ts           # Dictionary API lookups (fetch, getCached, clearCache)
     useStudySession.ts         # Study session logic (dict fetch, preload, auto-play)
-    usePassages.ts             # Reactive passage read state + formatTopic
+    usePassages.ts             # Reactive passage read state (passagesRead, isRead, markRead)
     useTheme.ts                # Dark/light theme toggle + setTheme
     useKeyboardShortcuts.ts    # Key event bindings
   components/                  # Reusable UI components
@@ -78,7 +78,9 @@ src/
 
 ### Data flow
 
-`useSrsStore.getCardsForToday()` builds session queue → `useSessionStore` manages queue/index/revealed → user rates via `useSrsStore.rateCard()` → SRS updates localStorage → Pinia `_version` ref triggers reactive recomputation.
+**Study path:** `useSrsStore.getCardsForToday()` builds session queue → `useSessionStore` manages queue/index/revealed → user rates via `useSrsStore.rateCard()` → SRS updates localStorage → Pinia `_version` ref triggers reactive recomputation.
+
+**Reading-first path:** user reads passage → taps highlighted B2 word → `WordTooltip` shows definition + "Add to Deck" → `useSrsStore.addWordFromReading()` → word saved to `settings.userAddedWords` → gets priority in next study session queue.
 
 ### Key conventions
 
@@ -87,7 +89,7 @@ src/
 - **CSS**: Global `style.css` imported in `App.vue`, uses CSS custom properties for theming
 - **Date handling**: Local `formatDate(d)` helper (not `toISOString`) to avoid timezone bugs
 - **Audio**: 3-tier fallback: dictionaryapi.dev audio URLs > Web Speech API > silent
-- **localStorage**: All access via `lib/storage.ts` typed methods; keys: `srs_data`, `dict_cache`, `theme`, `settings_audio`, `passages_read`
+- **localStorage**: All access via `lib/storage.ts` typed methods; keys: `srs_data` (includes `settings.userAddedWords`), `dict_cache`, `theme`, `settings_audio`, `passages_read`
 - **Dependency direction**: `data → lib → stores → composables → components → views` (no reverse imports)
 - **Initialization**: `main.ts` calls `WordIndex.build()` and `AudioPlayer.init()` before mount
 
@@ -98,12 +100,14 @@ Words are tagged with 1-3 topics from `TOPIC_REGISTRY` (defined in `src/data/top
 `work`, `education`, `technology`, `health`, `environment`, `society`, `emotions`, `business`, `travel`, `communication`, `science`, `law`, `arts`, `daily-life`, `relationships`, `politics`
 
 SRS filters **new cards only** by active topics; review cards always appear regardless of topic.
+User-added words (via "Add to Deck" in passages) bypass topic filters and get priority at the front of the new-card queue.
 
 ## Generating a Topic Word Batch
 
 File naming: `src/data/words-b2-{NNN}.ts` (sequential batch number).
 Size: 15-25 words per file.
 Start ID: check `WORD_LIST.length` (currently 600), then use max existing ID + 1.
+Note: `WORD_LIST` is sorted by `TOPIC_ORDER` (defined in `words.ts`) after aggregation, so card introduction order follows topic clusters, not ID order.
 
 Each word entry must follow this structure:
 ```ts
@@ -132,3 +136,9 @@ Rules:
 - File format: `import type { Word } from '@/types'` + `export const words: Word[] = [...]`
 - After creating, import in `src/data/words.ts` and spread into `WORD_LIST`
 - Validate: `npm run typecheck`
+
+## Team Mode
+
+When user says **"start team"**, activate team orchestration mode. See `memory/MEMORY.md` for full team roles and workflow.
+
+Key workflow: architect designs → workers implement in parallel → doc updater syncs all docs → verify build → report.

@@ -16,7 +16,7 @@ export const passages: Passage[] = [
     text: "The city council held a debate about carbon emissions and their impact on the environment. One group advocated for stricter rules on factories, while others argued that such measures would be too harsh on local businesses. The discussion was comprehensive, covering every aspect of the problem. Despite the controversy, a consensus was reached: the city would implement new conservation policies over the next five years. Both sides had to compromise, but everyone agreed that the issue was too crucial to ignore.",
     wordIds: [104, 47, 147, 11, 190, 73, 27, 92, 82, 200, 84, 74, 101],
     level: "B2",
-    topic: "social"
+    topic: "society"
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ export const passages: Passage[] = [
     text: "The city's heritage museum was struggling with a chronic lack of funding. The council needed to allocate more money to keep it open, but the budget was tight. A local businessman made a generous donation, which helped compensate for the deficit. The museum director was determined to demonstrate the museum's value to the community. She organized an exhibition that illustrated the evolution of the region's ethnic traditions. The response was immense — thousands of visitors came in the first week. The breakthrough convinced the council to commit to long-term support.",
     wordIds: [191, 49, 13, 137, 67, 111, 114, 197, 162, 160, 198, 43, 63],
     level: "B2",
-    topic: "daily_life"
+    topic: "daily-life"
   },
   {
     id: 6,
@@ -48,7 +48,7 @@ export const passages: Passage[] = [
     text: "The diplomatic relationship between the two countries had been tense for years. A border dispute was the main source of conflict, and both sides showed aggression in their public statements. A humanitarian crisis in the region made cooperation essential. International organizations tried to facilitate dialogue between the two governments. After months of negotiation, both countries consented to a compromise. They agreed to enforce a ceasefire and confront the underlying issues through peaceful means. The agreement was far from perfect, but it was a crucial first step toward stability.",
     wordIds: [121, 130, 12, 193, 171, 119, 83, 74, 151, 80, 101],
     level: "B2",
-    topic: "social"
+    topic: "society"
   },
   {
     id: 7,
@@ -64,7 +64,7 @@ export const passages: Passage[] = [
     text: "The coalition government faced a decisive election. Polls forecast a close race, and the outcome would determine the future of the country's democracy. The leading candidate made a bold declaration that she would eliminate corruption if elected. Her counterpart dismissed her promises as mere gestures designed to deceive voters. Media commentary on the campaign was extensive, and every statement was analyzed in detail. On election day, voter turnout exceeded expectations. The new leader was appointed with a clear mandate to implement reform, and the whole nation watched to see what would follow.",
     wordIds: [55, 107, 176, 112, 40, 108, 144, 97, 100, 106, 60, 168, 164, 23, 200],
     level: "B2",
-    topic: "social"
+    topic: "society"
   },
   {
     id: 9,
@@ -72,7 +72,7 @@ export const passages: Passage[] = [
     text: "Ocean conservation is one of the most fundamental challenges of our time. Plastic waste circulates through the water, causing fatal harm to marine life. Scientists have detected alarming levels of pollution in even the most remote areas. The erosion of coastal environments threatens communities that depend on fishing. Experts emphasize that the situation is crucial and requires a comprehensive global response. Several countries have already begun to enforce strict rules on waste disposal. If we do not confront this issue now, the damage may become impossible to reverse.",
     wordIds: [84, 185, 50, 172, 117, 158, 148, 101, 73, 151, 129, 80],
     level: "B2",
-    topic: "nature"
+    topic: "environment"
   },
   {
     id: 10,
@@ -96,7 +96,7 @@ export const passages: Passage[] = [
     text: "The construction boom had transformed the old district beyond recognition. Where there had once been quiet streets, dramatic new buildings now stood tall. Some residents felt displaced by the changes and expressed contempt for the developers. Others applauded the modern apartments and new commerce that came with them. The local council tried to convey that development and heritage could exist side by side. They committed to preserving the authentic fabric of the neighborhood while allowing growth. The contradiction between old and new was not easy to resolve, but the community was determined to find a way forward.",
     wordIds: [41, 139, 128, 89, 22, 61, 94, 191, 34, 170, 90],
     level: "B2",
-    topic: "daily_life"
+    topic: "daily-life"
   }
 
 ]

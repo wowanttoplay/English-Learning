@@ -3,6 +3,12 @@ import { words as batch1 } from './words-b2-001'
 import { words as batch2 } from './words-b2-002'
 import { words as batch3 } from './words-b2-003'
 
+const TOPIC_ORDER = [
+  'daily-life', 'work', 'education', 'technology', 'health',
+  'emotions', 'relationships', 'business', 'travel', 'communication',
+  'environment', 'society', 'science', 'arts', 'law', 'politics'
+]
+
 // Deduplicate by word string — earlier batches take priority
 function dedup(batches: Word[][]): Word[] {
   const seen = new Set<string>()
@@ -15,6 +21,12 @@ function dedup(batches: Word[][]): Word[] {
       }
     }
   }
+  // Sort by primary topic for clustered introduction
+  result.sort((a, b) => {
+    const ta = TOPIC_ORDER.indexOf(a.topics?.[0] ?? '')
+    const tb = TOPIC_ORDER.indexOf(b.topics?.[0] ?? '')
+    return (ta === -1 ? 99 : ta) - (tb === -1 ? 99 : tb)
+  })
   return result
 }
 
