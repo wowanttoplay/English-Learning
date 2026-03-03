@@ -1475,13 +1475,11 @@ body {
     text-align: center;
   }
 
-  /* Main content offset */
+  /* Main content offset + centered in remaining space */
   .app-main {
-    margin-left: var(--sidebar-width);
-    width: calc(100% - var(--sidebar-width));
-    max-width: 1100px;
-    padding: 40px 48px;
-    padding-bottom: 40px;
+    max-width: calc(1100px + var(--sidebar-width));
+    margin: 0 auto;
+    padding: 40px 48px 40px calc(var(--sidebar-width) + 48px);
   }
 
   /* Remove phone max-width on #app */
