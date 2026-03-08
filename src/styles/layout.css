@@ -1,0 +1,258 @@
+/* === Mobile-First Layout === */
+#app {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  padding-bottom: calc(var(--nav-height) + 16px);
+}
+
+/* === Bottom Navigation (mobile) === */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+  z-index: 100;
+}
+
+[data-theme="dark"] .bottom-nav {
+  background: rgba(28, 28, 30, 0.85);
+}
+
+.bottom-nav-inner {
+  display: flex;
+  max-width: var(--max-width);
+  width: 100%;
+  justify-content: space-around;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 20px;
+  border: none;
+  background: none;
+  color: var(--text-tertiary);
+  font-size: 10px;
+  cursor: pointer;
+  font-family: var(--font);
+  font-weight: 500;
+  transition: color 0.15s, transform 0.1s;
+}
+
+.nav-item:active {
+  transform: scale(0.90);
+}
+
+.nav-item .nav-icon {
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+}
+
+.nav-item .nav-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-item.active {
+  color: var(--accent);
+}
+
+/* === Tooltip overlay (bottom sheet on mobile, centered dialog on desktop) === */
+.tooltip-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.15s ease;
+}
+
+.tooltip-sheet {
+  width: 100%;
+  max-width: 500px;
+  max-height: 70vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 0 env(safe-area-inset-bottom, 0);
+  animation: tooltipSlideUp 0.25s ease;
+}
+
+.tooltip-sheet .reading-tooltip {
+  margin-top: 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes tooltipSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* === Sidebar Nav (hidden on mobile) === */
+.side-nav {
+  display: none;
+}
+
+/* === Desktop Layout === */
+@media (min-width: 768px) {
+  /* Hide bottom nav, show sidebar */
+  .bottom-nav { display: none !important; }
+  .side-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    background: var(--bg-card);
+    border-right: 1px solid var(--border);
+    padding: 24px 0;
+    z-index: 100;
+  }
+  .side-nav-brand {
+    padding: 0 24px 24px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+  }
+  .side-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+  }
+  .side-nav a:hover {
+    background: var(--bg-elevated);
+  }
+  .side-nav a.router-link-active {
+    color: var(--accent);
+    background: var(--bg-elevated);
+  }
+  .side-nav a .nav-icon {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+  }
+
+  /* Main content offset + centered in remaining space */
+  .app-main {
+    max-width: calc(1100px + var(--sidebar-width));
+    margin: 0 auto;
+    padding: 40px 48px 40px calc(var(--sidebar-width) + 48px);
+  }
+
+  /* Remove phone max-width on #app */
+  #app {
+    max-width: none;
+  }
+
+  /* Dashboard -- wider stats grid */
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Reading -- multi-column passage grid */
+  .passage-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+  }
+
+  /* Study -- centered flashcard */
+  .card-screen {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  /* Passage reading -- comfortable column */
+  .passage-screen {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  /* Tooltip as centered dialog on desktop */
+  .tooltip-overlay {
+    align-items: center;
+  }
+
+  .tooltip-sheet .reading-tooltip {
+    border-radius: var(--radius-lg);
+  }
+
+  /* Settings -- centered narrow */
+  .settings-view-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Word list -- table style */
+  .word-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* WordList filters row */
+  .wordlist-filters-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .wordlist-filters-row .search-box {
+    flex: 1;
+  }
+  .wordlist-filters-row .topic-select {
+    width: auto;
+    min-width: 160px;
+  }
+
+  /* Word detail modal -- centered dialog instead of bottom sheet */
+  .modal-overlay .modal {
+    max-width: 540px;
+    margin: auto;
+    border-radius: 16px;
+  }
+
+  /* Filter tabs -- horizontal, not full-width */
+  .filter-tabs {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+  /* Rating buttons -- spaced horizontally */
+  .rating-buttons {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Start study button -- not full width */
+  .btn-primary.start-btn, .start-study-btn {
+    max-width: 300px;
+  }
+}

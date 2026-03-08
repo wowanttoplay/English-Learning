@@ -1,122 +1,3 @@
-/* === Reset & Base === */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --bg: #f2f2f7;
-  --bg-card: #ffffff;
-  --bg-elevated: #ffffff;
-  --text: #1c1c1e;
-  --text-secondary: #8e8e93;
-  --text-tertiary: #aeaeb2;
-  --accent: #007aff;
-  --accent-hover: #0066d6;
-  --accent-soft: rgba(0, 122, 255, 0.10);
-  --green: #34c759;
-  --green-soft: rgba(52, 199, 89, 0.12);
-  --orange: #ff9500;
-  --orange-soft: rgba(255, 149, 0, 0.12);
-  --red: #ff3b30;
-  --red-soft: rgba(255, 59, 48, 0.12);
-  --blue: #007aff;
-  --purple: #af52de;
-  --purple-soft: rgba(175, 82, 222, 0.12);
-  --border: rgba(60, 60, 67, 0.12);
-  --border-strong: rgba(60, 60, 67, 0.20);
-  --separator: rgba(60, 60, 67, 0.08);
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
-  --shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.15);
-  --radius-sm: 10px;
-  --radius: 14px;
-  --radius-lg: 20px;
-  --max-width: 480px;
-  --nav-height: 72px;
-  --sidebar-width: 220px;
-  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
-}
-
-[data-theme="dark"] {
-  --bg: #000000;
-  --bg-card: #1c1c1e;
-  --bg-elevated: #2c2c2e;
-  --text: #ffffff;
-  --text-secondary: #8e8e93;
-  --text-tertiary: #636366;
-  --border: rgba(255, 255, 255, 0.10);
-  --border-strong: rgba(255, 255, 255, 0.16);
-  --separator: rgba(255, 255, 255, 0.06);
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-  --shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.7);
-  --accent-soft: rgba(10, 132, 255, 0.15);
-  --green-soft: rgba(52, 199, 89, 0.15);
-  --orange-soft: rgba(255, 159, 10, 0.15);
-  --red-soft: rgba(255, 69, 58, 0.15);
-  --purple-soft: rgba(191, 90, 242, 0.15);
-}
-
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-font-smoothing: antialiased;
-}
-
-#app {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 20px;
-  padding-bottom: calc(var(--nav-height) + 16px);
-}
-
-/* === Header === */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 0 24px;
-}
-
-.header h1 {
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-}
-
-.header-actions {
-  display: flex;
-  gap: 8px;
-}
-
-.icon-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  background: var(--bg-card);
-  color: var(--text);
-  font-size: 18px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.1s, background 0.15s;
-}
-
-.icon-btn:active {
-  transform: scale(0.90);
-  background: var(--separator);
-}
-
 /* === Stats Grid === */
 .stats-grid {
   display: grid;
@@ -229,70 +110,6 @@ body {
 .legend-dot.young { background: var(--green); }
 .legend-dot.learning { background: var(--orange); }
 .legend-dot.unseen { background: var(--separator); }
-
-/* === Action Buttons === */
-.action-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 16px 24px;
-  border: none;
-  border-radius: var(--radius);
-  font-size: 17px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.1s, opacity 0.15s;
-  font-family: var(--font);
-}
-
-.btn:active {
-  transform: scale(0.97);
-}
-
-.btn:disabled {
-  opacity: 0.35;
-  pointer-events: none;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: var(--accent-hover);
-}
-
-.btn-secondary {
-  background: var(--bg-card);
-  color: var(--text);
-}
-
-.btn-count {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 2px 10px;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.btn-secondary .btn-count {
-  background: var(--accent-soft);
-  color: var(--accent);
-}
-
-.btn-danger {
-  background: var(--red);
-  color: #fff;
-}
 
 /* === Flashcard === */
 .card-screen {
@@ -770,72 +587,6 @@ body {
   margin-bottom: 32px;
 }
 
-/* === Bottom Navigation === */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--bg-card);
-  backdrop-filter: blur(20px) saturate(1.8);
-  -webkit-backdrop-filter: blur(20px) saturate(1.8);
-  border-top: 0.5px solid var(--border);
-  display: flex;
-  justify-content: center;
-  padding: 8px 0;
-  padding-bottom: max(8px, env(safe-area-inset-bottom));
-  z-index: 100;
-}
-
-[data-theme="dark"] .bottom-nav {
-  background: rgba(28, 28, 30, 0.85);
-}
-
-.bottom-nav-inner {
-  display: flex;
-  max-width: var(--max-width);
-  width: 100%;
-  justify-content: space-around;
-}
-
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  padding: 6px 20px;
-  border: none;
-  background: none;
-  color: var(--text-tertiary);
-  font-size: 10px;
-  cursor: pointer;
-  font-family: var(--font);
-  font-weight: 500;
-  transition: color 0.15s, transform 0.1s;
-}
-
-.nav-item:active {
-  transform: scale(0.90);
-}
-
-.nav-item .nav-icon {
-  font-size: 22px;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 28px;
-}
-
-.nav-item .nav-icon svg {
-  width: 24px;
-  height: 24px;
-}
-
-.nav-item.active {
-  color: var(--accent);
-}
-
 /* === Settings === */
 .settings-section {
   background: var(--bg-card);
@@ -873,40 +624,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.8px;
   padding: 14px 20px 6px;
-}
-
-/* Toggle */
-.toggle-btn {
-  width: 50px;
-  height: 30px;
-  border-radius: 15px;
-  border: none;
-  background: var(--separator);
-  cursor: pointer;
-  position: relative;
-  transition: background 0.25s;
-  padding: 0;
-}
-
-.toggle-btn.active {
-  background: var(--green);
-}
-
-.toggle-knob {
-  display: block;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #fff;
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  transition: transform 0.25s;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-}
-
-.toggle-btn.active .toggle-knob {
-  transform: translateX(20px);
 }
 
 /* === Word Detail Modal === */
@@ -1017,22 +734,6 @@ body {
   color: var(--text-tertiary);
   text-align: right;
   flex-shrink: 0;
-}
-
-/* === Utilities === */
-.hidden { display: none !important; }
-
-.fade-in {
-  animation: fadeIn 0.25s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-::-webkit-scrollbar {
-  width: 0;
 }
 
 /* === Reading / Passages === */
@@ -1287,6 +988,9 @@ body {
   border-radius: var(--radius);
   padding: 16px 20px;
   margin-bottom: 16px;
+  position: sticky;
+  top: env(safe-area-inset-top, 0);
+  z-index: 10;
 }
 
 .player-controls {
@@ -1505,10 +1209,6 @@ body {
   flex-shrink: 0;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
 .free-tooltip-notfound {
   padding: 4px 0;
 }
@@ -1542,147 +1242,4 @@ body {
 
 .free-tooltip-search:hover {
   text-decoration: underline;
-}
-
-/* === Sidebar Nav (hidden on mobile, shown on desktop) === */
-.side-nav {
-  display: none;
-}
-
-/* === Desktop Layout === */
-@media (min-width: 768px) {
-  /* Hide bottom nav, show sidebar */
-  .bottom-nav { display: none !important; }
-  .side-nav {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: var(--sidebar-width);
-    background: var(--bg-card);
-    border-right: 1px solid var(--border);
-    padding: 24px 0;
-    z-index: 100;
-  }
-  .side-nav-brand {
-    padding: 0 24px 24px;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text);
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 8px;
-  }
-  .side-nav a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 24px;
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    transition: background 0.15s, color 0.15s;
-  }
-  .side-nav a:hover {
-    background: var(--bg-elevated);
-  }
-  .side-nav a.router-link-active {
-    color: var(--accent);
-    background: var(--bg-elevated);
-  }
-  .side-nav a .nav-icon {
-    font-size: 20px;
-    width: 24px;
-    text-align: center;
-  }
-
-  /* Main content offset + centered in remaining space */
-  .app-main {
-    max-width: calc(1100px + var(--sidebar-width));
-    margin: 0 auto;
-    padding: 40px 48px 40px calc(var(--sidebar-width) + 48px);
-  }
-
-  /* Remove phone max-width on #app */
-  #app {
-    max-width: none;
-  }
-
-  /* Dashboard -- wider stats grid */
-  .stats-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  /* Reading -- multi-column passage grid */
-  .passage-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 16px;
-  }
-
-  /* Study -- centered flashcard */
-  .card-screen {
-    max-width: 650px;
-    margin: 0 auto;
-  }
-
-  /* Passage reading -- comfortable column */
-  .passage-screen {
-    max-width: 750px;
-    margin: 0 auto;
-  }
-
-  /* Settings -- centered narrow */
-  .settings-view-inner {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  /* Word list -- table style */
-  .word-item {
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-  }
-
-  /* WordList filters row */
-  .wordlist-filters-row {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
-  .wordlist-filters-row .search-box {
-    flex: 1;
-  }
-  .wordlist-filters-row .topic-select {
-    width: auto;
-    min-width: 160px;
-  }
-
-  /* Word detail modal -- centered dialog instead of bottom sheet */
-  .modal-overlay .modal {
-    max-width: 540px;
-    margin: auto;
-    border-radius: 16px;
-  }
-
-  /* Filter tabs -- horizontal, not full-width */
-  .filter-tabs {
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    overflow-x: visible;
-  }
-
-  /* Rating buttons -- spaced horizontally */
-  .rating-buttons {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  /* Start study button -- not full width */
-  .btn-primary.start-btn, .start-study-btn {
-    max-width: 300px;
-  }
 }

@@ -14,7 +14,7 @@
 - App bootstrap in `src/main.ts` initializes two global runtime indexes before mount: `WordIndex.build(WORD_LIST)` for O(1) word/topic lookups and `AudioPlayer.init()` for speech voice selection.
 - Core flow is:
   1. `useSrsStore.getCardsForToday()` (store wrapper over `lib/srs-queue.ts`) computes due/new queue data from localStorage-backed SRS state.
-  2. `useSessionStore` owns in-session queue/index/reveal/modal UI state.
+  2. `useStudySessionStore` owns study queue/index/reveal state; `useWordListQueryStore` owns word list filters; `useUiStateStore` owns modal UI state.
   3. `StudyView` + `useStudySession` render current cards, preload next audio, and fetch dictionary definitions on reveal.
   4. Ratings call `useSrsStore.rateCard()` → `lib/srs-queue.ts`/`lib/srs-engine.ts` update SM-2 scheduling and persist via `lib/srs-storage.ts`.
 - Data is mostly static content plus persisted user progress:

@@ -46,7 +46,7 @@
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useSrsStore } from '@/stores/srs'
-import { useSessionStore } from '@/stores/session'
+import { useStudySessionStore } from '@/stores/studySession'
 import { useTheme } from '@/composables/useTheme'
 import StatsGrid from '@/components/StatsGrid.vue'
 import ProgressBar from '@/components/ProgressBar.vue'
@@ -54,7 +54,7 @@ import WeeklyHeatmap from '@/components/WeeklyHeatmap.vue'
 
 const router = useRouter()
 const srsStore = useSrsStore()
-const session = useSessionStore()
+const studySession = useStudySessionStore()
 const theme = useTheme()
 
 const stats = computed(() => srsStore.stats)
@@ -75,7 +75,7 @@ function startStudy() {
   const cards = srsStore.getCardsForToday()
   const queue = [...cards.learning, ...cards.review]
   if (queue.length === 0) return
-  session.startSession(queue, 'review')
+  studySession.startSession(queue, 'review')
   router.push('/study')
 }
 </script>

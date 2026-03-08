@@ -7,7 +7,7 @@
 - **State Management**: Pinia stores with localStorage persistence
 - **Routing**: Vue Router with hash-based routing (for static deployment)
 - **Build Tool**: Vite
-- **Styling**: Global CSS with custom properties for light/dark theming
+- **Styling**: Modular CSS in `src/styles/` (tokens, base, layout, components) with custom properties for light/dark theming
 
 ## Directory Structure
 
@@ -41,9 +41,17 @@ src/
     user-words.ts                # User word persistence (IDs 100001+, level 'user', stored in localStorage)
     format.ts                    # Shared formatting utilities (formatTopic)
 
-  stores/                        # Pinia stores
+  styles/                        # Modular CSS (imported in App.vue: tokens → base → layout → components)
+    tokens.css                   # CSS custom properties (colors, spacing, fonts) for light/dark
+    base.css                     # Reset, typography, shared utilities (.btn, .fade-in, .toggle)
+    layout.css                   # Mobile-first layout + @media (min-width: 768px) desktop overrides
+    components.css               # Component-specific styles (flashcard, tooltip, player, modal, etc.)
+
+  stores/                        # Pinia stores (focused, single-responsibility)
     srs.ts                       # useSrsStore: SRS actions, addWordFromReading(), markAsKnown()/unmarkKnown()
-    session.ts                   # useSessionStore: study session queue, word list UI state, skipCurrent()
+    studySession.ts              # useStudySessionStore: study queue, index, reveal, advance, skipCurrent
+    wordListQuery.ts             # useWordListQueryStore: word list filter/search/pagination state
+    uiState.ts                   # useUiStateStore: cross-view UI state (modal)
 
   composables/                   # Vue composables (reactive logic)
     useAudio.ts                  # Audio playback (speak, speakSlow, speakSentence)
@@ -52,12 +60,16 @@ src/
     usePassages.ts               # Reactive passage read state (passagesRead, isRead, markRead)
     useTheme.ts                  # Dark/light theme toggle
     useKeyboardShortcuts.ts      # Key event bindings
+    usePassageView.ts            # PassageView logic (tokenization, tooltip state, scroll-lock)
+    usePassageAudioPlayer.ts     # Audio player state machine (play/pause/seek/speed, fallback)
+    useFreeWordLookup.ts         # Dict lookup + save-to-deck logic for non-B2 words
 
-  components/                    # Reusable UI components
+  components/                    # Presentational UI components
     BottomNav.vue                # Desktop sidebar nav (>=768px) + mobile bottom tab bar
     WordDetailModal.vue          # Full word detail overlay
     WordTooltip.vue              # B2 word tooltip in passages (definition + Save to Deck)
-    FreeWordTooltip.vue          # Universal word lookup for non-B2 words via dictionaryapi.dev
+    FreeWordTooltip.vue          # Universal word lookup (presentational, uses useFreeWordLookup)
+    PassageAudioPlayer.vue       # Audio player (presentational, uses usePassageAudioPlayer)
     ProgressBar.vue, StatsGrid.vue, WeeklyHeatmap.vue
     RatingButtons.vue, AudioControls.vue
 
@@ -135,7 +147,9 @@ No reverse imports. `lib/` modules are pure TypeScript with no Vue dependency. S
 ### Pinia Stores
 
 - **useSrsStore**: Wraps SRS engine, storage, and queue modules. Exposes `getCardsForToday()`, `addWordFromReading()`, `addUserWordFromFreeTooltip()`, `markAsKnown()`, `unmarkKnown()`. Uses a `_version` ref to trigger Vue reactivity when localStorage-backed SRS data changes.
-- **useSessionStore**: Manages the active study session queue, word list UI state (filters, search, `wordListDomain`, `wordListTopic`), and `skipCurrent()`.
+- **useStudySessionStore**: Manages the active study session queue (queue, index, revealed, advance, skipCurrent). Study flow only.
+- **useWordListQueryStore**: Word list filter/search/pagination state (filter, search, topic, domain, page).
+- **useUiStateStore**: Cross-view UI state (modalWordId, openModal, closeModal).
 
 ### localStorage
 
@@ -164,7 +178,7 @@ All access goes through `lib/storage.ts` typed methods. Keys:
 ### Study (Review Only)
 
 1. `useSrsStore.getCardsForToday()` returns learning/relearning/review cards already in the deck. No automatic new card introduction.
-2. `useSessionStore` manages the review queue.
+2. `useStudySessionStore` manages the review queue.
 3. User rates each card (Again / Hard / Good / Easy).
 4. SRS engine updates card state in localStorage.
 5. `_version` ref increments, triggering reactive recomputation across the app.

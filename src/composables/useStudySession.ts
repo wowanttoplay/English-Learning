@@ -1,6 +1,6 @@
 import { computed, watch, ref } from 'vue'
 import { useSrsStore } from '@/stores/srs'
-import { useSessionStore } from '@/stores/session'
+import { useStudySessionStore } from '@/stores/studySession'
 import { useAudio } from '@/composables/useAudio'
 import { useDictionary } from '@/composables/useDictionary'
 // WordIndex is a pure sync lookup utility with no side effects — direct import is fine
@@ -9,7 +9,7 @@ import type { DictEntry, Word } from '@/types'
 
 export function useStudySession() {
   const srsStore = useSrsStore()
-  const session = useSessionStore()
+  const session = useStudySessionStore()
   const audio = useAudio()
   const dict = useDictionary()
 

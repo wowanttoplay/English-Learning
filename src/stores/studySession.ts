@@ -1,24 +1,13 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import type { SrsCard, DomainId, SubtopicId } from '@/types'
+import type { SrsCard } from '@/types'
 
-export const useSessionStore = defineStore('session', () => {
-  // ── Study Session State ──────────────────────────────────────────────
+export const useStudySessionStore = defineStore('studySession', () => {
   const queue = ref<SrsCard[]>([])
   const index = ref(0)
   const revealed = ref(false)
   const sessionType = ref<'review' | ''>('')
   const completeStats = ref<{ reviewed: number; type: string } | null>(null)
-
-  // ── Word List UI State ───────────────────────────────────────────────
-  const wordListFilter = ref('all')
-  const wordListSearch = ref('')
-  const wordListTopic = ref<'all' | SubtopicId>('all')
-  const wordListDomain = ref<'all' | DomainId>('all')
-  const wordListPage = ref(0)
-
-  // ── Global UI State ──────────────────────────────────────────────────
-  const modalWordId = ref<number | null>(null)
 
   const currentCard = computed<SrsCard | null>(() => {
     if (index.value >= queue.value.length) return null
@@ -29,6 +18,8 @@ export const useSessionStore = defineStore('session', () => {
     const total = queue.value.length
     return total > 0 ? Math.round((index.value / total) * 100) : 0
   })
+
+  const isComplete = computed(() => completeStats.value !== null)
 
   function startSession(cards: SrsCard[], type: 'review') {
     queue.value = [...cards]
@@ -43,7 +34,6 @@ export const useSessionStore = defineStore('session', () => {
   }
 
   function advance(updatedCard: SrsCard) {
-    // If card is still in learning/relearning steps, only re-add if actually due now
     if (updatedCard.state === 'learning' || updatedCard.state === 'relearning') {
       if (Date.now() >= updatedCard.dueTimestamp) {
         queue.value.push(updatedCard)
@@ -72,26 +62,6 @@ export const useSessionStore = defineStore('session', () => {
     }
   }
 
-  const isComplete = computed(() => {
-    return completeStats.value !== null
-  })
-
-  function openModal(wordId: number) {
-    modalWordId.value = wordId
-  }
-
-  function closeModal() {
-    modalWordId.value = null
-  }
-
-  function resetWordListFilters() {
-    wordListFilter.value = 'all'
-    wordListSearch.value = ''
-    wordListTopic.value = 'all'
-    wordListDomain.value = 'all'
-    wordListPage.value = 0
-  }
-
   return {
     queue,
     index,
@@ -101,18 +71,9 @@ export const useSessionStore = defineStore('session', () => {
     currentCard,
     progressPct,
     isComplete,
-    wordListFilter,
-    wordListSearch,
-    wordListTopic,
-    wordListDomain,
-    wordListPage,
-    modalWordId,
     startSession,
     reveal,
     advance,
-    skipCurrent,
-    openModal,
-    closeModal,
-    resetWordListFilters
+    skipCurrent
   }
 })

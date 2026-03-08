@@ -49,9 +49,16 @@ src/
     word-index.ts              # O(1) word lookup by ID, text, and topic index + addWord() for incremental insertion
     user-words.ts              # User word persistence (loadUserWords, saveUserWord, nextUserWordId, isUserWord)
     format.ts                  # Shared formatting utilities (formatTopic)
-  stores/                      # Pinia stores
+  styles/                      # Modular CSS (imported in App.vue)
+    tokens.css                 # CSS custom properties (colors, spacing, fonts) for light/dark themes
+    base.css                   # Reset, typography, shared utilities (.btn, .fade-in, .toggle)
+    layout.css                 # Mobile-first layout + @media desktop overrides (sidebar, nav)
+    components.css             # Component-specific styles (flashcard, tooltip, player, modal, etc.)
+  stores/                      # Pinia stores (focused, single-responsibility)
     srs.ts                     # useSrsStore — SRS actions + addWordFromReading() + addUserWordFromFreeTooltip() + markAsKnown()/unmarkKnown()
-    session.ts                 # useSessionStore — study session + word list UI state + skipCurrent()
+    studySession.ts            # useStudySessionStore — study queue, index, reveal, advance, skipCurrent
+    wordListQuery.ts           # useWordListQueryStore — word list filter/search/pagination state
+    uiState.ts                 # useUiStateStore — cross-view UI state (modal)
   composables/
     useAudio.ts                # Audio playback only (speak, speakSlow, speakSentence)
     useDictionary.ts           # Dictionary API lookups (fetch, getCached, clearCache)
@@ -59,11 +66,15 @@ src/
     usePassages.ts             # Reactive passage read state (passagesRead, isRead, markRead)
     useTheme.ts                # Dark/light theme toggle + setTheme
     useKeyboardShortcuts.ts    # Key event bindings
-  components/                  # Reusable UI components
+    usePassageView.ts          # PassageView logic (tokenization, tooltip state, scroll-lock)
+    usePassageAudioPlayer.ts   # Audio player state machine (play/pause/seek/speed, fallback)
+    useFreeWordLookup.ts       # Dictionary lookup + save-to-deck logic for non-B2 words
+  components/                  # Presentational UI components
     BottomNav.vue (desktop sidebar nav + mobile bottom tab bar), WordDetailModal.vue, ProgressBar.vue,
     StatsGrid.vue, WeeklyHeatmap.vue,
     RatingButtons.vue, AudioControls.vue, WordTooltip.vue,
-    FreeWordTooltip.vue              # Universal word lookup for non-B2 words via dictionaryapi.dev
+    FreeWordTooltip.vue              # Universal word lookup (presentational, uses useFreeWordLookup)
+    PassageAudioPlayer.vue           # Audio player (presentational, uses usePassageAudioPlayer)
   views/                       # Route-level views
     DashboardView.vue, StudyView.vue,
     WordListView.vue, ReadingView.vue, PassageView.vue,
@@ -87,7 +98,7 @@ scripts/
 
 **Reading → Discovery:** user browses passage list (filterable by three simultaneous filter rows: Level [All / B1 / B2] + Domain [All / life / work / society / people / knowledge] + Subtopic [per-domain subtopics]) → reads passage → all words in passage text are tappable (`span.plain-word`). B2 highlighted words open `WordTooltip` (definition + "Save to Deck"), plain words open `FreeWordTooltip` (universal lookup via dictionaryapi.dev showing definition, phonetic, audio, with "Search on Google" fallback and "Save to Deck" button; handles loading, not-found, and cached states). The two tooltips are mutually exclusive. `useSrsStore.addWordFromReading()` → `addUserWord()` creates SrsCard with state `'learning'` immediately → card appears in next study session. For non-B2 words, `useSrsStore.addUserWordFromFreeTooltip()` → `saveUserWord()` persists a user-created Word (level `'user'`, IDs 100001+) to localStorage `user_words` and inserts it into WordIndex, then creates an SRS card. B1-level passages use simpler sentence structures and more B1 vocabulary to ease the transition for lower-level learners.
 
-**Study → Review only:** `useSrsStore.getCardsForToday()` returns only learning/relearning/review cards already in deck (no new card auto-introduction) → `useSessionStore` manages queue → user rates → SRS updates localStorage → `_version` ref triggers reactive recomputation.
+**Study → Review only:** `useSrsStore.getCardsForToday()` returns only learning/relearning/review cards already in deck (no new card auto-introduction) → `useStudySessionStore` manages queue → user rates → SRS updates localStorage → `_version` ref triggers reactive recomputation.
 
 **Mark as Known:** user can mark a word as already known from three places: WordTooltip (in passages), StudyView (during review), or WordListView (star toggle). `useSrsStore.markAsKnown(wordId)` → `srs-storage.markAsKnown()` sets card state to `'known'` and saves `previousState` for undo. Known cards are excluded from the study queue. Users can unmark via `unmarkKnown()` which restores the `previousState`. WordListView has a dedicated "Known" filter tab. Stats include `totalKnown` count.
 
@@ -95,7 +106,8 @@ scripts/
 
 - **TypeScript throughout**: All `.ts` and `.vue` files are typed; `src/types/index.ts` defines shared interfaces
 - **Pinia stores**: `_version` ref pattern for triggering reactivity on localStorage-backed SRS data
-- **CSS**: Global `style.css` imported in `App.vue`, Apple-style minimal design with CSS custom properties for theming (light/dark). Responsive: `@media (min-width: 768px)` breakpoint switches from mobile bottom nav to desktop sidebar nav (`--sidebar-width` CSS variable, `.side-nav` class)
+- **CSS**: Modular CSS in `src/styles/` (tokens → base → layout → components), imported in `App.vue`. Apple-style minimal design with CSS custom properties for theming (light/dark). Responsive: `@media (min-width: 768px)` breakpoint in `layout.css` switches from mobile bottom nav to desktop sidebar nav
+- **Layout/Logic separation**: Views are pure templates — business logic lives in per-view composables (`usePassageView`, etc.). Components are presentational — logic in composables (`usePassageAudioPlayer`, `useFreeWordLookup`). Stores are focused single-responsibility (`studySession`, `wordListQuery`, `uiState`)
 - **Date handling**: Local `formatDate(d)` helper (not `toISOString`) to avoid timezone bugs
 - **Audio**: 3-tier fallback: dictionaryapi.dev audio URLs > Web Speech API > silent. Async preload with HTMLAudioElement caching; dict-api uses in-memory Map cache to avoid repeated JSON.parse of localStorage
 - **localStorage**: All access via `lib/storage.ts` typed methods; keys: `srs_data`, `dict_cache`, `theme`, `settings_audio`, `passages_read`, `user_words`

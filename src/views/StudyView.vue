@@ -1,14 +1,14 @@
 <template>
   <div class="fade-in">
     <!-- Session complete -->
-    <template v-if="session.isComplete">
+    <template v-if="studySession.isComplete">
       <div class="header">
         <h1>Oxford 5000</h1>
       </div>
       <div class="session-complete">
         <div class="session-complete-icon">&#127881;</div>
         <h2>Session Complete!</h2>
-        <p>Great work! You reviewed {{ session.completeStats?.reviewed || 0 }} cards.</p>
+        <p>Great work! You reviewed {{ studySession.completeStats?.reviewed || 0 }} cards.</p>
 
         <StatsGrid :items="completeStatsItems" :columns="2" />
 
@@ -34,26 +34,26 @@
         <div class="card-header">
           <button class="back-btn" @click="router.push('/')">&#8592; Back</button>
           <span class="card-progress">
-            {{ session.index + 1 }} / {{ session.queue.length }} &middot; {{ stateLabel }}
+            {{ studySession.index + 1 }} / {{ studySession.queue.length }} &middot; {{ stateLabel }}
           </span>
         </div>
         <div class="card-progress-bar">
-          <div class="card-progress-fill" :style="{ width: session.progressPct + '%' }"></div>
+          <div class="card-progress-fill" :style="{ width: studySession.progressPct + '%' }"></div>
         </div>
 
-        <div class="flashcard" @click="!session.revealed && session.reveal()">
+        <div class="flashcard" @click="!studySession.revealed && studySession.reveal()">
           <div class="card-front">
             <div class="card-word">{{ currentWord.word }}</div>
             <div class="card-phonetic">{{ currentWord.phonetic }}</div>
             <div class="card-pos">{{ currentWord.pos }}</div>
             <AudioControls :word="currentWord.word" />
-            <div v-if="!session.revealed" class="card-know-wrapper">
+            <div v-if="!studySession.revealed" class="card-know-wrapper">
               <button class="card-know-btn" @click.stop="markCurrentAsKnown">Know This Word</button>
             </div>
-            <div v-if="!session.revealed" class="tap-hint">Tap to reveal answer</div>
+            <div v-if="!studySession.revealed" class="tap-hint">Tap to reveal answer</div>
           </div>
 
-          <div v-if="session.revealed" class="card-back">
+          <div v-if="studySession.revealed" class="card-back">
             <div class="card-zh">{{ currentWord.zh }}</div>
             <div class="card-en">{{ currentWord.en }}</div>
             <ul class="card-examples">
@@ -73,7 +73,7 @@
           </div>
         </div>
 
-        <RatingButtons v-if="session.revealed" :card="currentCard" @rate="onRate" />
+        <RatingButtons v-if="studySession.revealed" :card="currentCard" @rate="onRate" />
       </div>
     </template>
 
@@ -94,7 +94,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { useSrsStore } from '@/stores/srs'
-import { useSessionStore } from '@/stores/session'
+import { useStudySessionStore } from '@/stores/studySession'
 import { useAudio } from '@/composables/useAudio'
 import { useStudySession } from '@/composables/useStudySession'
 import { useKeyboardShortcuts } from '@/composables/useKeyboardShortcuts'
@@ -105,43 +105,43 @@ import type { Rating } from '@/types'
 
 const router = useRouter()
 const srsStore = useSrsStore()
-const session = useSessionStore()
+const studySession = useStudySessionStore()
 const audio = useAudio()
 const { currentCard, currentWord, stateLabel, extraDefs, completeStatsItems } = useStudySession()
 
 function onRate(rating: Rating) {
   const card = currentCard.value
   if (!card) return
-  session.advance(srsStore.rateCard(card.wordId, rating))
+  studySession.advance(srsStore.rateCard(card.wordId, rating))
 }
 
 function markCurrentAsKnown() {
   const card = currentCard.value
   if (!card) return
   srsStore.markAsKnown(card.wordId)
-  session.skipCurrent()
+  studySession.skipCurrent()
 }
 
 function continueStudy() {
   const cards = srsStore.getCardsForToday()
   const queue = [...cards.learning, ...cards.review]
   if (queue.length === 0) return
-  session.startSession(queue, 'review')
+  studySession.startSession(queue, 'review')
 }
 
 function revealOrRate() {
-  if (session.isComplete) return
-  if (!session.revealed) session.reveal()
+  if (studySession.isComplete) return
+  if (!studySession.revealed) studySession.reveal()
   else onRate(3)
 }
 
 useKeyboardShortcuts({
   ' ': revealOrRate,
   'Enter': revealOrRate,
-  '1': () => { if (session.revealed && !session.isComplete) onRate(1) },
-  '2': () => { if (session.revealed && !session.isComplete) onRate(2) },
-  '3': () => { if (session.revealed && !session.isComplete) onRate(3) },
-  '4': () => { if (session.revealed && !session.isComplete) onRate(4) },
+  '1': () => { if (studySession.revealed && !studySession.isComplete) onRate(1) },
+  '2': () => { if (studySession.revealed && !studySession.isComplete) onRate(2) },
+  '3': () => { if (studySession.revealed && !studySession.isComplete) onRate(3) },
+  '4': () => { if (studySession.revealed && !studySession.isComplete) onRate(4) },
   'p': () => { if (currentWord.value) audio.speak(currentWord.value.word) },
   'P': () => { if (currentWord.value) audio.speak(currentWord.value.word) },
   'Escape': () => { router.push('/') }

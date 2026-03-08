@@ -9,37 +9,37 @@
         class="search-box"
         type="text"
         placeholder="Search words..."
-        v-model="session.wordListSearch"
+        v-model="query.search"
       />
     </div>
 
     <div class="filter-tabs">
       <button
         class="filter-tab"
-        :class="{ active: session.wordListDomain === 'all' }"
+        :class="{ active: query.domain === 'all' }"
         @click="setDomain('all')"
       >All Topics</button>
       <button
         v-for="domain in DOMAINS"
         :key="domain.id"
         class="filter-tab"
-        :class="{ active: session.wordListDomain === domain.id }"
+        :class="{ active: query.domain === domain.id }"
         @click="setDomain(domain.id)"
       >{{ domain.emoji }} {{ domain.name }}</button>
     </div>
 
-    <div v-if="session.wordListDomain !== 'all'" class="filter-tabs">
+    <div v-if="query.domain !== 'all'" class="filter-tabs">
       <button
         class="filter-tab"
-        :class="{ active: session.wordListTopic === 'all' }"
-        @click="session.wordListTopic = 'all'"
+        :class="{ active: query.topic === 'all' }"
+        @click="query.topic = 'all'"
       >All</button>
       <button
         v-for="sub in domainSubtopics"
         :key="sub.id"
         class="filter-tab"
-        :class="{ active: session.wordListTopic === sub.id }"
-        @click="session.wordListTopic = sub.id"
+        :class="{ active: query.topic === sub.id }"
+        @click="query.topic = sub.id"
       >{{ sub.emoji }} {{ sub.name }}</button>
     </div>
 
@@ -48,7 +48,7 @@
         v-for="f in filters"
         :key="f.key"
         class="filter-tab"
-        :class="{ active: session.wordListFilter === f.key }"
+        :class="{ active: query.filter === f.key }"
         @click="setFilter(f.key)"
       >
         {{ f.label }} ({{ f.count }})
@@ -61,7 +61,7 @@
         v-for="w in visibleWords"
         :key="w.id"
         class="word-item"
-        @click="session.openModal(w.id)"
+        @click="ui.openModal(w.id)"
       >
         <div class="word-item-text">
           <div class="word-item-word">{{ w.word }}</div>
@@ -78,7 +78,7 @@
       <button
         v-if="hasMore"
         class="load-more-btn"
-        @click="session.wordListPage++"
+        @click="query.page++"
       >
         Load more ({{ filtered.length - visibleCount }} remaining)
       </button>
@@ -89,7 +89,8 @@
 <script setup lang="ts">
 import { computed, watch } from 'vue'
 import { useSrsStore } from '@/stores/srs'
-import { useSessionStore } from '@/stores/session'
+import { useWordListQueryStore, type WordListFilter } from '@/stores/wordListQuery'
+import { useUiStateStore } from '@/stores/uiState'
 import { WORD_LIST } from '@/data/words'
 import { DOMAINS, getSubtopicsByDomain } from '@/data/topics'
 import { loadUserWords } from '@/lib/user-words'
@@ -98,21 +99,22 @@ import type { DomainId } from '@/types'
 const WORDS_PER_PAGE = 50
 
 const srsStore = useSrsStore()
-const session = useSessionStore()
+const query = useWordListQueryStore()
+const ui = useUiStateStore()
 
 function setDomain(d: 'all' | DomainId) {
-  session.wordListDomain = d
-  session.wordListTopic = 'all'
+  query.domain = d
+  query.topic = 'all'
 }
 
 const domainSubtopics = computed(() => {
-  if (session.wordListDomain === 'all') return []
-  return getSubtopicsByDomain(session.wordListDomain)
+  if (query.domain === 'all') return []
+  return getSubtopicsByDomain(query.domain)
 })
 
 // Reset page on filter/search change
-watch([() => session.wordListSearch, () => session.wordListFilter, () => session.wordListTopic, () => session.wordListDomain], () => {
-  session.wordListPage = 0
+watch([() => query.search, () => query.filter, () => query.topic, () => query.domain], () => {
+  query.page = 0
 })
 
 const states = computed(() => srsStore.getAllCardStates())
@@ -127,10 +129,10 @@ const allWords = computed(() => {
 })
 
 const filtered = computed(() => {
-  const search = session.wordListSearch.toLowerCase().trim()
+  const search = query.search.toLowerCase().trim()
   // Build set of subtopic IDs for domain filter
-  const domainSubIds = session.wordListDomain !== 'all'
-    ? new Set(getSubtopicsByDomain(session.wordListDomain).map(s => s.id))
+  const domainSubIds = query.domain !== 'all'
+    ? new Set(getSubtopicsByDomain(query.domain).map(s => s.id))
     : null
   return allWords.value.filter(w => {
     if (search && !w.word.toLowerCase().includes(search) && !(w.zh && w.zh.includes(search))) return false
@@ -140,12 +142,12 @@ const filtered = computed(() => {
       if (!topics.some(t => domainSubIds.has(t))) return false
     }
     // Subtopic filter
-    if (session.wordListTopic !== 'all') {
+    if (query.topic !== 'all') {
       const topics = w.topics || []
-      if (!topics.includes(session.wordListTopic as any)) return false
+      if (!topics.includes(query.topic as any)) return false
     }
     const state = states.value[w.id] || 'unseen'
-    const f = session.wordListFilter
+    const f = query.filter
     if (f === 'all') return true
     if (f === 'unseen') return state === 'unseen'
     if (f === 'learning') return state === 'learning' || state === 'relearning'
@@ -157,7 +159,7 @@ const filtered = computed(() => {
   })
 })
 
-const visibleCount = computed(() => (session.wordListPage + 1) * WORDS_PER_PAGE)
+const visibleCount = computed(() => (query.page + 1) * WORDS_PER_PAGE)
 const visibleWords = computed(() => filtered.value.slice(0, visibleCount.value))
 const hasMore = computed(() => filtered.value.length > visibleCount.value)
 
@@ -174,18 +176,18 @@ const filters = computed(() => {
     else if (s === 'known') counts.known++
   }
   return [
-    { key: 'all', label: 'All', count: counts.all },
-    { key: 'unseen', label: 'Unseen', count: counts.unseen },
-    { key: 'learning', label: 'Learning', count: counts.learning },
-    { key: 'review', label: 'Review', count: counts.review },
-    { key: 'mastered', label: 'Mastered', count: counts.mastered },
-    { key: 'known', label: 'Known', count: counts.known },
-    { key: 'user', label: 'My Words', count: counts.user }
+    { key: 'all' as WordListFilter, label: 'All', count: counts.all },
+    { key: 'unseen' as WordListFilter, label: 'Unseen', count: counts.unseen },
+    { key: 'learning' as WordListFilter, label: 'Learning', count: counts.learning },
+    { key: 'review' as WordListFilter, label: 'Review', count: counts.review },
+    { key: 'mastered' as WordListFilter, label: 'Mastered', count: counts.mastered },
+    { key: 'known' as WordListFilter, label: 'Known', count: counts.known },
+    { key: 'user' as WordListFilter, label: 'My Words', count: counts.user }
   ]
 })
 
-function setFilter(f: string) {
-  session.wordListFilter = f
+function setFilter(f: WordListFilter) {
+  query.filter = f
 }
 
 function toggleKnown(wordId: number) {
