@@ -1,0 +1,29 @@
+{
+  "name": "english-learning",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsx scripts/validate-words.ts && vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "vue-tsc --noEmit",
+    "generate-tts": "tsx scripts/generate-tts.ts",
+    "validate:words": "tsx scripts/validate-words.ts"
+  },
+  "dependencies": {
+    "pinia": "^2.3.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@google-cloud/text-to-speech": "^5.0.0",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "tsx": "^4.21.0",
+    "typescript": "~5.7.3",
+    "vite": "^6.2.0",
+    "vitest": "^4.0.18",
+    "vue-tsc": "^2.2.8"
+  }
+}
