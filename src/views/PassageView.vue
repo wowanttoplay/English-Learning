@@ -20,10 +20,12 @@
       />
     </div>
 
+    <PassageAudioPlayer
+      :passageId="passage.id"
+      :passageText="passage.text"
+    />
+
     <div class="passage-actions">
-      <button class="btn btn-secondary passage-action-btn" @click="playAudio">
-        &#9654; Play Audio
-      </button>
       <button
         v-if="!isRead"
         class="btn btn-primary passage-action-btn"
@@ -40,16 +42,15 @@
 import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { WordIndex } from '@/lib/word-index'
-import { useAudio } from '@/composables/useAudio'
 import { usePassages } from '@/composables/usePassages'
 import { formatTopic } from '@/lib/format'
 import { PASSAGES } from '@/data/passages'
 import WordTooltip from '@/components/WordTooltip.vue'
 import FreeWordTooltip from '@/components/FreeWordTooltip.vue'
+import PassageAudioPlayer from '@/components/PassageAudioPlayer.vue'
 
 const route = useRoute()
 const router = useRouter()
-const audio = useAudio()
 const passages = usePassages()
 
 const passageTextRef = ref<HTMLElement | null>(null)
@@ -139,12 +140,6 @@ onMounted(() => {
 onUnmounted(() => {
   passageTextRef.value?.removeEventListener('click', onPassageClick)
 })
-
-function playAudio() {
-  if (passage.value) {
-    audio.speakSentence(passage.value.text)
-  }
-}
 
 function markRead() {
   if (!passage.value) return
