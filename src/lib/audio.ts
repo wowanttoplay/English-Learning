@@ -5,6 +5,7 @@ const NORMAL_RATE = 0.85
 const SLOW_RATE = 0.6
 const SENTENCE_RATE = 0.85
 
+const AUDIO_CACHE_MAX = 100
 const audioElementCache = new Map<string, HTMLAudioElement>()
 
 let preferredVoice: SpeechSynthesisVoice | null = null
@@ -189,6 +190,10 @@ async function preload(word: string): Promise<void> {
   const localKey = `local:${word}`
   const localUrl = getLocalWordUrl(word)
   if (localUrl && !audioElementCache.has(localKey)) {
+    if (audioElementCache.size >= AUDIO_CACHE_MAX) {
+      const oldest = audioElementCache.keys().next().value!
+      audioElementCache.delete(oldest)
+    }
     const el = new Audio()
     el.preload = 'auto'
     el.src = localUrl
@@ -202,6 +207,10 @@ async function preload(word: string): Promise<void> {
   // Pre-buffer dictionaryapi.dev audio as fallback
   const url = getAudioUrl(word)
   if (url && !audioElementCache.has(word)) {
+    if (audioElementCache.size >= AUDIO_CACHE_MAX) {
+      const oldest = audioElementCache.keys().next().value!
+      audioElementCache.delete(oldest)
+    }
     const el = new Audio()
     el.preload = 'auto'
     el.src = url

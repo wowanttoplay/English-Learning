@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
+    "test": "vitest run",
     "typecheck": "vue-tsc --noEmit",
     "generate-tts": "tsx scripts/generate-tts.ts"
   },
@@ -16,11 +17,12 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@google-cloud/text-to-speech": "^5.0.0",
     "@vitejs/plugin-vue": "^5.2.3",
     "tsx": "^4.21.0",
     "typescript": "~5.7.3",
     "vite": "^6.2.0",
-    "vue-tsc": "^2.2.8",
-    "@google-cloud/text-to-speech": "^5.0.0"
+    "vitest": "^4.0.18",
+    "vue-tsc": "^2.2.8"
   }
 }

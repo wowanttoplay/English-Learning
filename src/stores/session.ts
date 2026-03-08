@@ -42,9 +42,11 @@ export const useSessionStore = defineStore('session', () => {
   }
 
   function advance(updatedCard: SrsCard) {
-    // If card is still in learning/relearning steps, re-add to end of queue
+    // If card is still in learning/relearning steps, only re-add if actually due now
     if (updatedCard.state === 'learning' || updatedCard.state === 'relearning') {
-      queue.value.push(updatedCard)
+      if (Date.now() >= updatedCard.dueTimestamp) {
+        queue.value.push(updatedCard)
+      }
     }
 
     index.value++

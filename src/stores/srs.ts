@@ -4,6 +4,7 @@ import { rateCard as srsRateCard, getCardsForToday as srsGetCardsForToday, getDu
 import { getCardState as srsGetCardState, getAllCardStates as srsGetAllCardStates, resetProgress as srsResetProgress, clearCache, getCard as srsGetCard, getHistory as srsGetHistory, addUserWord as srsAddUserWord, markAsKnown as srsMarkAsKnown, unmarkKnown as srsUnmarkKnown } from '@/lib/srs-storage'
 import { WORD_LIST } from '@/data/words'
 import { loadUserWords, saveUserWord as persistUserWord, resetUserWords } from '@/lib/user-words'
+import { Storage } from '@/lib/storage'
 import type { SrsStats, DueCount, CardQueue, CardState, Rating, SrsCard, Word } from '@/types'
 
 export const useSrsStore = defineStore('srs', () => {
@@ -38,6 +39,8 @@ export const useSrsStore = defineStore('srs', () => {
     srsResetProgress()
     resetUserWords()
     clearCache()
+    Storage.removePassagesRead()
+    Storage.removeAudioSettings()
     _bump()
   }
 

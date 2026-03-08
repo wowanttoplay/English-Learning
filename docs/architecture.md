@@ -1,119 +1,166 @@
-# Architecture Design & Interface Specification
+# Architecture
 
-## Module Dependency Order (index.html script loading)
+## Tech Stack
+
+- **Framework**: Vue 3 (Composition API, `<script setup>`)
+- **Language**: TypeScript throughout (`.ts` and `.vue` files)
+- **State Management**: Pinia stores with localStorage persistence
+- **Routing**: Vue Router with hash-based routing (for static deployment)
+- **Build Tool**: Vite
+- **Styling**: Global CSS with custom properties for light/dark theming
+
+## Directory Structure
 
 ```
-1. js/words.js           -- defines WORD_LIST = []
-2. js/words_b2_001.js    -- pushes words 1-200
-3. js/words_b2_002.js    -- pushes words 201-400
-4. js/words_b2_003.js    -- pushes words 401-600
-   ...more batch files...
-5. js/passages.js        -- defines PASSAGES = []
-6. js/passages_001.js    -- pushes passages 1-50
-   ...more batch files...
-7. js/srs.js             -- spaced repetition engine
-8. js/dict-api.js        -- dictionary API
-9. js/audio.js           -- NEW: audio playback module
-10. js/app.js            -- UI (must be last)
+src/
+  main.ts                        # App entry: createApp, router, pinia, WordIndex.build(), AudioPlayer.init()
+  App.vue                        # Root: RouterView + BottomNav + WordDetailModal
+  types/index.ts                 # Shared interfaces: Word, Passage, SrsCard, etc.
+  router/index.ts                # 6 hash routes
+
+  data/                          # Static data modules
+    topics.ts                    # TOPIC_REGISTRY (16 topics with IDs, labels, emojis)
+    words-b2-001.ts              # Word batch 1 (IDs 1-200)
+    words-b2-002.ts              # Word batch 2 (IDs 201-400)
+    words-b2-003.ts              # Word batch 3 (IDs 401-600)
+    words.ts                     # Aggregates batches, deduplicates, sorts by TOPIC_ORDER
+    passages-002.ts              # 12 standard B2 passages
+    passages-003.ts              # 6 bridge passages (B1->B2, IDs 101-106)
+    passages-004.ts              # 9 bridge passages (B1->B2, IDs 107-115)
+    passages.ts                  # Aggregates PASSAGES from batches 002-004
+
+  lib/                           # Pure logic (no Vue dependency)
+    storage.ts                   # Typed localStorage wrapper (domain-specific methods)
+    srs-engine.ts                # Pure SM-2 algorithm + constants
+    srs-storage.ts               # SRS data persistence (withData pattern), addUserWord(), markAsKnown()/unmarkKnown()
+    srs-queue.ts                 # Review queue generation (excludes known cards), stats, rateCard
+    dict-api.ts                  # dictionaryapi.dev client + cache (in-memory Map + localStorage)
+    audio.ts                     # 3-tier audio playback (explicit init, async preload, HTMLAudioElement cache)
+    word-index.ts                # O(1) word lookup by ID, text, and topic; addWord() for incremental insertion
+    user-words.ts                # User word persistence (IDs 100001+, level 'user', stored in localStorage)
+    format.ts                    # Shared formatting utilities (formatTopic)
+
+  stores/                        # Pinia stores
+    srs.ts                       # useSrsStore: SRS actions, addWordFromReading(), markAsKnown()/unmarkKnown()
+    session.ts                   # useSessionStore: study session queue, word list UI state, skipCurrent()
+
+  composables/                   # Vue composables (reactive logic)
+    useAudio.ts                  # Audio playback (speak, speakSlow, speakSentence)
+    useDictionary.ts             # Dictionary API lookups (fetch, getCached, clearCache)
+    useStudySession.ts           # Study session logic (dict fetch, preload, auto-play)
+    usePassages.ts               # Reactive passage read state (passagesRead, isRead, markRead)
+    useTheme.ts                  # Dark/light theme toggle
+    useKeyboardShortcuts.ts      # Key event bindings
+
+  components/                    # Reusable UI components
+    BottomNav.vue                # Desktop sidebar nav (>=768px) + mobile bottom tab bar
+    WordDetailModal.vue          # Full word detail overlay
+    WordTooltip.vue              # B2 word tooltip in passages (definition + Save to Deck)
+    FreeWordTooltip.vue          # Universal word lookup for non-B2 words via dictionaryapi.dev
+    ProgressBar.vue, StatsGrid.vue, WeeklyHeatmap.vue
+    RatingButtons.vue, AudioControls.vue
+
+  views/                         # Route-level views
+    DashboardView.vue            # Home stats + start review
+    StudyView.vue                # Flashcard review + session complete
+    WordListView.vue             # Browse/search/filter words (Known tab, My Words tab)
+    ReadingView.vue              # Passage list with difficulty + topic filters
+    PassageView.vue              # Single passage reader with tappable words
+    SettingsView.vue             # Settings + data reset
 ```
 
-## File Responsibilities & Agent Assignment
+## Dependency Flow
 
-### word-curator agent 负责的文件:
-- `js/words.js` — 改造为空数组定义 + batch loader
-- `js/words_b2_001.js` ~ `js/words_b2_008.js` — B2 词汇数据（每文件约200词，共约1500词）
-- `js/passages.js` — 定义 PASSAGES = []
-- `js/passages_001.js` — 短文数据（50篇，覆盖 words 1-500）
+Strict unidirectional dependency:
 
-### story-builder agent 负责的文件:
-- `js/app.js` 中的阅读界面部分 — 新增 Reading screen
-- 短文选择逻辑（可放在 app.js 中）
-
-### ux-audio agent 负责的文件:
-- `js/audio.js` — 全新音频模块
-- `js/app.js` — UI 增强（Dashboard、卡片模式、设置页）
-- `style.css` — 样式更新
-- `index.html` — script 标签更新
-
-## Interface Specifications
-
-### WORD_LIST (global array)
-
-```js
-// js/words.js 定义：
-const WORD_LIST = [];
-
-// 各 batch 文件 push：
-WORD_LIST.push(
-  { id: 1, word: "abandon", pos: "verb", phonetic: "/əˈbændən/",
-    zh: "放弃；遗弃", en: "to leave a place, thing, or person...",
-    examples: ["sentence1", "sentence2"], level: "B2" },
-  ...
-);
+```
+data --> lib --> stores --> composables --> components --> views
 ```
 
-### PASSAGES (global array)
+No reverse imports. `lib/` modules are pure TypeScript with no Vue dependency. Stores import from `lib/` only. Composables import from stores. Components and views consume composables.
 
-```js
-// js/passages.js 定义：
-const PASSAGES = [];
+## Routes
 
-// 各 batch 文件 push：
-PASSAGES.push(
-  { id: 1, title: "A Change of Plans",
-    text: "Sarah had always wanted to study abroad...",
-    wordIds: [1, 45, 67, 89, 102, 156],
-    level: "B2", topic: "daily_life" },
-  ...
-);
-```
+| Path             | View             | Description                  |
+|------------------|------------------|------------------------------|
+| `/`              | DashboardView    | Home stats + start review    |
+| `/study`         | StudyView        | Flashcard review session     |
+| `/words`         | WordListView     | Browse/search/filter words   |
+| `/reading`       | ReadingView      | Passage list                 |
+| `/reading/:id`   | PassageView      | Single passage reader        |
+| `/settings`      | SettingsView     | Settings + reset             |
 
-### Audio module API (js/audio.js)
+## State Management
 
-```js
-const AudioPlayer = (() => {
-  return {
-    playWord(word, speed),       // speed: 'normal' | 'slow'
-    playSentence(text, speed),   // TTS only
-    preload(word),               // pre-fetch audio URL
-    isAvailable(),               // bool
-    setAutoPlay(enabled),        // toggle
-    getPreferredVoice()          // best en-US voice
-  };
-})();
-```
+### Pinia Stores
 
-注意：不要用 `Audio` 作为模块名，会与浏览器内置 `Audio` 构造函数冲突。使用 `AudioPlayer`。
+- **useSrsStore**: Wraps SRS engine, storage, and queue modules. Exposes `getCardsForToday()`, `addWordFromReading()`, `addUserWordFromFreeTooltip()`, `markAsKnown()`, `unmarkKnown()`. Uses a `_version` ref to trigger Vue reactivity when localStorage-backed SRS data changes.
+- **useSessionStore**: Manages the active study session queue, word list UI state (filters, search), and `skipCurrent()`.
 
-### SRS module — 需要新增的接口
+### localStorage
 
-story-builder 和 ux-audio 需要调用以下现有 SRS 接口：
-- `SRS.getCardState(wordId)` — 获取单词学习状态
-- `SRS.getStats()` — 获取学习统计
-- `SRS.getDueCount()` — 获取待复习数量
+All access goes through `lib/storage.ts` typed methods. Keys:
 
-不修改 SRS 核心算法。
+| Key              | Content                                  |
+|------------------|------------------------------------------|
+| `srs_data`       | Card states, intervals, ease factors     |
+| `dict_cache`     | Dictionary API response cache            |
+| `theme`          | `"light"` or `"dark"`                    |
+| `settings_audio` | Auto-play preference                     |
+| `passages_read`  | Set of read passage IDs                  |
+| `user_words`     | User-created words (IDs 100001+)         |
 
-### App module — 新增界面
+## Data Flow
 
-需要在 app.js 中新增：
-- `reading` screen — 短文阅读界面
-- 底部导航新增 "Read" tab
-- Dashboard 增强（进度条、热力图）
-- Settings 增强（音频设置、卡片模式）
+### Reading to Discovery
 
-## Integration Rules
+1. User browses passage list in ReadingView (filterable by difficulty and topic).
+2. User opens a passage in PassageView. All words in the passage body are tappable (`span.plain-word`).
+3. **B2 words** (in WORD_LIST): open `WordTooltip` showing definition + "Save to Deck" button.
+4. **Non-B2 words**: open `FreeWordTooltip` which fetches from dictionaryapi.dev, showing definition, phonetic, audio, with "Search on Google" fallback and "Save to Deck" button.
+5. The two tooltip types are mutually exclusive (opening one closes the other).
+6. "Save to Deck" calls `useSrsStore.addWordFromReading()` (for B2 words) or `addUserWordFromFreeTooltip()` (for non-B2 words), which creates an SRS card with state `'learning'` immediately.
 
-1. **避免冲突**：story-builder 和 ux-audio 都需要修改 app.js，因此采用顺序方式 — ux-audio 先完成基础 UI 改造，story-builder 后集成阅读界面
-2. **数据独立**：word-curator 只负责数据文件，不碰逻辑代码
-3. **接口约定**：各模块通过全局变量通信（WORD_LIST, PASSAGES, SRS, AudioPlayer, DictAPI, App）
-4. **localStorage namespace**：各模块使用自己的 key，不交叉读写
+### Study (Review Only)
 
-## Phase 1 Scope (本次实现)
+1. `useSrsStore.getCardsForToday()` returns learning/relearning/review cards already in the deck. No automatic new card introduction.
+2. `useSessionStore` manages the review queue.
+3. User rates each card (Again / Hard / Good / Easy).
+4. SRS engine updates card state in localStorage.
+5. `_version` ref increments, triggering reactive recomputation across the app.
 
-优先完成产品方案的 Phase 1-4：
-1. 词汇扩展到至少 600 词 (word-curator)
-2. 音频模块 + 基础 UI 改造 (ux-audio)
-3. 短文数据 + 阅读界面 (story-builder，在 ux-audio 之后)
+### Mark as Known
 
-暂不实现：C1 词汇、卡片模式变化、里程碑庆祝、Leech 检测
+Users can mark words as already known from WordTooltip (passages), StudyView (during review), or WordListView (star toggle). `markAsKnown()` sets the card state to `'known'` and saves `previousState` for undo. Known cards are excluded from the study queue. `unmarkKnown()` restores the previous state.
+
+## Audio System
+
+Three-tier fallback implemented in `lib/audio.ts`:
+
+1. **Local MP3 files** (`public/audio/`): Pre-downloaded pronunciation files checked first.
+2. **dictionaryapi.dev audio URLs**: Fetched from the dictionary API cache; played via `HTMLAudioElement` with an in-memory element cache (max 100 entries).
+3. **Web Speech API**: Browser TTS fallback with automatic en-US voice selection. Normal rate 0.85, slow rate 0.6.
+
+Audio requires explicit initialization (`AudioPlayer.init()` in `main.ts`). Word audio is preloaded asynchronously for upcoming cards in the session queue.
+
+## SRS Algorithm
+
+SM-2 spaced repetition with these card states: `new`, `learning`, `relearning`, `review`, `known`.
+
+- Learning steps: 1 min, 10 min, then graduate to review.
+- Default ease factor: 2.5, minimum: 1.3.
+- Known cards are excluded from all queues.
+- User-created words (from passages) enter directly as `'learning'`.
+
+## Responsive Layout
+
+- **Mobile** (<768px): Bottom tab bar navigation.
+- **Desktop** (>=768px): Fixed left sidebar navigation with `--sidebar-width` CSS variable. Main content centered.
+
+## Key Conventions
+
+- **TypeScript throughout**: All files typed; shared interfaces in `src/types/index.ts`.
+- **Date handling**: Local `formatDate()` helper (not `toISOString()`) to avoid timezone bugs.
+- **Dict API caching**: In-memory `Map` cache avoids repeated `JSON.parse` of localStorage on each lookup.
+- **User word IDs**: Start at 100001 (`USER_WORD_ID_START = 100000`), with level `'user'`.
+- **Initialization order** in `main.ts`: `WordIndex.build()` -> load user words into WordIndex -> `AudioPlayer.init()` -> app mount.

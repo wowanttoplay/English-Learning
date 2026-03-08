@@ -2,7 +2,26 @@ import type { DictEntry } from '@/types'
 import { Storage } from './storage'
 
 const API_BASE = 'https://api.dictionaryapi.dev/api/v2/entries/en/'
+const DICT_CACHE_MAX = 500
+const MIN_REQUEST_INTERVAL = 100
 const memCache = new Map<string, DictEntry>()
+let lastRequestTime = 0
+
+function rateLimitDelay(): Promise<void> {
+  const now = Date.now()
+  const elapsed = now - lastRequestTime
+  if (elapsed >= MIN_REQUEST_INTERVAL) {
+    lastRequestTime = now
+    return Promise.resolve()
+  }
+  const delay = MIN_REQUEST_INTERVAL - elapsed
+  return new Promise(resolve => {
+    setTimeout(() => {
+      lastRequestTime = Date.now()
+      resolve()
+    }, delay)
+  })
+}
 
 async function lookup(word: string): Promise<DictEntry | null> {
   const mem = memCache.get(word)
@@ -15,6 +34,7 @@ async function lookup(word: string): Promise<DictEntry | null> {
   }
 
   try {
+    await rateLimitDelay()
     const response = await fetch(API_BASE + encodeURIComponent(word))
     if (!response.ok) return null
 
@@ -58,6 +78,13 @@ async function lookup(word: string): Promise<DictEntry | null> {
     }
 
     cache[word] = result
+    const keys = Object.keys(cache)
+    if (keys.length > DICT_CACHE_MAX) {
+      const removeCount = keys.length - DICT_CACHE_MAX
+      for (let i = 0; i < removeCount; i++) {
+        delete cache[keys[i]]
+      }
+    }
     Storage.saveDictCache(cache)
     memCache.set(word, result)
     return result

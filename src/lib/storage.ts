@@ -104,6 +104,14 @@ function markPassageRead(id: number): void {
   }
 }
 
+function removePassagesRead(): void {
+  remove(KEYS.PASSAGES_READ)
+}
+
+function removeAudioSettings(): void {
+  remove(KEYS.SETTINGS_AUDIO)
+}
+
 // --- User words ---
 
 function loadUserWords(): Word[] {
@@ -131,6 +139,8 @@ export const Storage = {
   saveAudioSettings,
   getPassagesRead,
   markPassageRead,
+  removePassagesRead,
+  removeAudioSettings,
   loadUserWords,
   saveUserWords,
   removeUserWords,
