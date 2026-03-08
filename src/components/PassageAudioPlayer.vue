@@ -79,7 +79,7 @@ function formatTime(seconds: number): string {
 }
 
 function getAudioUrl(): string {
-  return `${import.meta.env.BASE_URL}audio/passage-${props.passageId}.mp3`
+  return `${import.meta.env.BASE_URL}audio/passages/passage-${props.passageId}.mp3`
 }
 
 function initAudio() {

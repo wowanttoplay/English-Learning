@@ -50,6 +50,22 @@ function initVoices(): void {
   }
 }
 
+// --- Tier 0: Local TTS MP3 files ---
+
+import { WordIndex } from './word-index'
+
+function getLocalWordUrl(word: string): string | null {
+  const entry = WordIndex.getByText(word)
+  if (!entry) return null
+  return `${import.meta.env.BASE_URL}audio/words/word-${entry.id}.mp3`
+}
+
+function getLocalExampleUrl(word: string, exIndex: number): string | null {
+  const entry = WordIndex.getByText(word)
+  if (!entry) return null
+  return `${import.meta.env.BASE_URL}audio/examples/word-${entry.id}-ex${exIndex + 1}.mp3`
+}
+
 // --- Tier 1: dictionaryapi.dev audio ---
 
 function getAudioUrl(word: string): string | null {
@@ -111,6 +127,20 @@ function speakText(text: string, rate?: number): Promise<void> {
 async function playWord(word: string, speed?: 'normal' | 'slow'): Promise<void> {
   const rate = speed === 'slow' ? SLOW_RATE : NORMAL_RATE
 
+  // Tier 0: Local TTS MP3
+  if (speed !== 'slow') {
+    const localUrl = getLocalWordUrl(word)
+    if (localUrl) {
+      try {
+        await playAudioUrl(localUrl, `local:${word}`)
+        return
+      } catch {
+        // Fall through
+      }
+    }
+  }
+
+  // Tier 1: dictionaryapi.dev audio
   const audioUrl = getAudioUrl(word)
   if (audioUrl) {
     try {
@@ -123,6 +153,7 @@ async function playWord(word: string, speed?: 'normal' | 'slow'): Promise<void> 
     }
   }
 
+  // Tier 2: Web Speech API
   try {
     await speakText(word, rate)
   } catch {
@@ -130,8 +161,22 @@ async function playWord(word: string, speed?: 'normal' | 'slow'): Promise<void> 
   }
 }
 
-async function playSentence(text: string, speed?: 'normal' | 'slow'): Promise<void> {
+async function playSentence(text: string, speed?: 'normal' | 'slow', word?: string, exIndex?: number): Promise<void> {
   const rate = speed === 'slow' ? SLOW_RATE : SENTENCE_RATE
+
+  // Try local example MP3 if word and exIndex are provided
+  if (word != null && exIndex != null && speed !== 'slow') {
+    const localUrl = getLocalExampleUrl(word, exIndex)
+    if (localUrl) {
+      try {
+        await playAudioUrl(localUrl, `local:ex:${word}:${exIndex}`)
+        return
+      } catch {
+        // Fall through
+      }
+    }
+  }
+
   try {
     await speakText(text, rate)
   } catch {
@@ -140,10 +185,21 @@ async function playSentence(text: string, speed?: 'normal' | 'slow'): Promise<vo
 }
 
 async function preload(word: string): Promise<void> {
+  // Pre-buffer local TTS MP3
+  const localKey = `local:${word}`
+  const localUrl = getLocalWordUrl(word)
+  if (localUrl && !audioElementCache.has(localKey)) {
+    const el = new Audio()
+    el.preload = 'auto'
+    el.src = localUrl
+    el.load()
+    audioElementCache.set(localKey, el)
+  }
+
   if (!DictAPI.getCached(word)) {
     await DictAPI.lookup(word).catch(() => {})
   }
-  // Pre-buffer the audio file
+  // Pre-buffer dictionaryapi.dev audio as fallback
   const url = getAudioUrl(word)
   if (url && !audioElementCache.has(word)) {
     const el = new Audio()

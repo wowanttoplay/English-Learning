@@ -9,8 +9,8 @@ export function useAudio() {
     AudioPlayer.playWord(word, 'slow')
   }
 
-  function speakSentence(text: string, speed?: 'normal' | 'slow') {
-    AudioPlayer.playSentence(text, speed || 'normal')
+  function speakSentence(text: string, speed?: 'normal' | 'slow', word?: string, exIndex?: number) {
+    AudioPlayer.playSentence(text, speed || 'normal', word, exIndex)
   }
 
   function autoPlayWord(word: string) {

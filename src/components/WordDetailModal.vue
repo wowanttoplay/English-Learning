@@ -22,7 +22,7 @@
       <ul class="card-examples" style="margin-top:12px">
         <li v-for="(ex, i) in word.examples" :key="i">
           <span class="example-text">{{ ex }}</span>
-          <button class="example-play-btn" @click="audio.speakSentence(ex)" title="Play sentence">&#9654;</button>
+          <button class="example-play-btn" @click="audio.speakSentence(ex, 'normal', word.word, i)" title="Play sentence">&#9654;</button>
         </li>
       </ul>
 
