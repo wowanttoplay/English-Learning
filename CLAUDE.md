@@ -204,7 +204,7 @@ Current passage counts: 12 B2-level (batch 002) + 25 B1-level (batches 003-005) 
 
 ## Team Mode
 
-When user says **"start team"**, create team `english-learning` and spawn teammates. See `memory/MEMORY.md` for full team roles, boundaries, and workflow.
+Team mode is **always active by default**. Use team `english-learning` and spawn teammates automatically for every task. See `memory/MEMORY.md` for full team roles, boundaries, and workflow.
 
 ### Roles
 - **orchestrator** (team lead): User communication, task decomposition, review, commit decisions. Does NOT read/write code directly.
