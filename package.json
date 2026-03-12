@@ -10,7 +10,8 @@
     "test": "vitest run",
     "typecheck": "vue-tsc --noEmit",
     "generate-tts": "tsx scripts/generate-tts.ts",
-    "validate:words": "tsx scripts/validate-words.ts"
+    "validate:words": "tsx scripts/validate-words.ts",
+    "generate-timestamps": "tsx scripts/generate-timestamps.ts"
   },
   "dependencies": {
     "pinia": "^2.3.1",

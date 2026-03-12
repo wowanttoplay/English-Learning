@@ -12,7 +12,7 @@
 
       <div
         class="player-progress-wrapper"
-        @click="seek"
+        @click="onProgressClick"
         ref="progressRef"
         :class="{ disabled: isFallback }"
       >
@@ -47,26 +47,29 @@
 </template>
 
 <script setup lang="ts">
-import { usePassageAudioPlayer } from '@/composables/usePassageAudioPlayer'
+import { ref } from 'vue'
 
 const props = defineProps<{
-  passageId: number
-  passageText: string
+  speeds: readonly number[]
+  speed: number
+  isPlaying: boolean
+  currentTime: number
+  duration: number
+  isFallback: boolean
+  progressPercent: number
+  formatTime: (s: number) => string
+  togglePlay: () => void
+  stop: () => void
+  seekTo: (ratio: number) => void
+  setSpeed: (s: number) => void
 }>()
 
-const {
-  speeds,
-  speed,
-  isPlaying,
-  currentTime,
-  duration,
-  isFallback,
-  progressRef,
-  progressPercent,
-  formatTime,
-  togglePlay,
-  stop,
-  seek,
-  setSpeed
-} = usePassageAudioPlayer(() => props.passageId, () => props.passageText)
+const progressRef = ref<HTMLElement | null>(null)
+
+function onProgressClick(e: MouseEvent) {
+  if (!progressRef.value) return
+  const rect = progressRef.value.getBoundingClientRect()
+  const ratio = (e.clientX - rect.left) / rect.width
+  props.seekTo(ratio)
+}
 </script>

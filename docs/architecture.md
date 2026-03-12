@@ -40,6 +40,8 @@ src/
     word-index.ts                # O(1) word lookup by ID, text, and topic; addWord() for incremental insertion
     user-words.ts                # User word persistence (IDs 100001+, level 'user', stored in localStorage)
     format.ts                    # Shared formatting utilities (formatTopic)
+    sentence-splitter.ts         # Splits passage text into sentence spans for highlighting
+    timestamp-loader.ts          # Loads sentence timestamp sidecar files from R2
 
   styles/                        # Modular CSS (imported in App.vue: tokens → base → layout → components)
     tokens.css                   # CSS custom properties (colors, spacing, fonts) for light/dark
@@ -63,13 +65,14 @@ src/
     usePassageView.ts            # PassageView logic (tokenization, tooltip state, scroll-lock)
     usePassageAudioPlayer.ts     # Audio player state machine (play/pause/seek/speed, fallback)
     useFreeWordLookup.ts         # Dict lookup + save-to-deck logic for non-B2 words
+    usePassageSentenceSync.ts    # Syncs audio currentTime with sentence highlighting and auto-scroll
 
   components/                    # Presentational UI components
     BottomNav.vue                # Desktop sidebar nav (>=768px) + mobile bottom tab bar
     WordDetailModal.vue          # Full word detail overlay
     WordTooltip.vue              # B2 word tooltip in passages (definition + Save to Deck)
     FreeWordTooltip.vue          # Universal word lookup (presentational, uses useFreeWordLookup)
-    PassageAudioPlayer.vue       # Audio player (presentational, uses usePassageAudioPlayer)
+    PassageAudioPlayer.vue       # Audio player (presentational, receives audio state as props from PassageView)
     ProgressBar.vue, StatsGrid.vue, WeeklyHeatmap.vue
     RatingButtons.vue, AudioControls.vue
 
@@ -83,6 +86,7 @@ src/
 
 scripts/
   validate-words.ts              # Build-time validation: auto-discovers JSON in src/data/words/, validates structure
+  generate-timestamps.ts         # Generates sentence timestamp sidecar JSON files for passage audio
 ```
 
 ## Type System
@@ -118,6 +122,13 @@ interface Passage {
   level: CefrCoreLevel   // 'B1' for bridge, 'B2' for standard
   topic: SubtopicId
   genre?: 'news' | 'essay' | 'travel' | 'opinion' | 'story' | 'interview' | 'explainer'
+}
+
+interface SentenceTimestamp {
+  index: number
+  start: number
+  end: number
+  text: string
 }
 ```
 
@@ -174,6 +185,7 @@ All access goes through `lib/storage.ts` typed methods. Keys:
 4. **Non-B2 words**: open `FreeWordTooltip` which fetches from dictionaryapi.dev, showing definition, phonetic, audio, with "Search on Google" fallback and "Save to Deck" button.
 5. The two tooltip types are mutually exclusive (opening one closes the other).
 6. "Save to Deck" calls `useSrsStore.addWordFromReading()` (for B2 words) or `addUserWordFromFreeTooltip()` (for non-B2 words), which creates an SRS card with state `'learning'` immediately.
+7. During audio playback, the currently spoken sentence is highlighted and auto-scrolled into view.
 
 ### Study (Review Only)
 
@@ -205,6 +217,10 @@ Three-tier fallback implemented in `lib/audio.ts`:
 
 Audio requires explicit initialization (`AudioPlayer.init()` in `main.ts`). Word audio is preloaded asynchronously for upcoming cards in the session queue.
 
+### Sentence-Level Highlighting
+
+Passage audio playback supports sentence-level highlighting via timestamp sidecar files (`passage-{id}.timestamps.json`) hosted on R2. `usePassageSentenceSync` loads timestamps and uses `currentTime` from the audio player to imperatively toggle `.sentence-active` on sentence `<span>` elements. The audio player composable (`usePassageAudioPlayer`) is instantiated in `PassageView.vue` to share state with the sync composable. Sentence highlighting is not available in Web Speech API fallback mode.
+
 ## SRS Algorithm
 
 SM-2 spaced repetition with these card states: `new`, `learning`, `relearning`, `review`, `known`.
@@ -225,4 +241,5 @@ SM-2 spaced repetition with these card states: `new`, `learning`, `relearning`, 
 - **Date handling**: Local `formatDate()` helper (not `toISOString()`) to avoid timezone bugs.
 - **Dict API caching**: In-memory `Map` cache avoids repeated `JSON.parse` of localStorage on each lookup.
 - **User word IDs**: Start at 100001 (`USER_WORD_ID_START = 100000`), with level `'user'`.
+- **Audio**: 3-tier fallback (R2 MP3 > dictionaryapi.dev > Web Speech API). Passage audio uses timestamp sidecar files (`passage-{id}.timestamps.json`) for sentence highlighting. The audio player exposes a `seekTo(ratio)` interface for scrubbing.
 - **Initialization order** in `main.ts`: `WordIndex.build()` -> load user words into WordIndex -> `AudioPlayer.init()` -> app mount.

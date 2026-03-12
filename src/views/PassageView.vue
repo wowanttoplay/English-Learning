@@ -6,8 +6,18 @@
     </div>
 
     <PassageAudioPlayer
-      :passageId="passage.id"
-      :passageText="passage.text"
+      :speeds="audio.speeds"
+      :speed="audio.speed.value"
+      :isPlaying="audio.isPlaying.value"
+      :currentTime="audio.currentTime.value"
+      :duration="audio.duration.value"
+      :isFallback="audio.isFallback.value"
+      :progressPercent="audio.progressPercent.value"
+      :formatTime="audio.formatTime"
+      :togglePlay="audio.togglePlay"
+      :stop="audio.stop"
+      :seekTo="audio.seekTo"
+      :setSpeed="audio.setSpeed"
     />
 
     <div class="passage-content">
@@ -53,6 +63,8 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { usePassageView } from '@/composables/usePassageView'
+import { usePassageAudioPlayer } from '@/composables/usePassageAudioPlayer'
+import { usePassageSentenceSync } from '@/composables/usePassageSentenceSync'
 import { formatTopic } from '@/lib/format'
 import WordTooltip from '@/components/WordTooltip.vue'
 import FreeWordTooltip from '@/components/FreeWordTooltip.vue'
@@ -69,4 +81,18 @@ const {
   closeTooltips,
   markRead
 } = usePassageView()
+
+// Audio player — lifted from component to view for sentence sync access
+const audio = usePassageAudioPlayer(
+  () => passage.value?.id ?? 0,
+  () => passage.value?.text ?? ''
+)
+
+// Sentence highlighting sync
+usePassageSentenceSync(
+  () => passage.value?.id ?? 0,
+  () => audio.currentTime.value,
+  () => audio.isPlaying.value,
+  () => passageTextRef.value
+)
 </script>

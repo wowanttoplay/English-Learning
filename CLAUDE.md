@@ -14,6 +14,7 @@ npm run dev          # Start Vite dev server
 npm run build        # Production build (validate-words + typecheck + bundle)
 npm run typecheck    # Type check only (vue-tsc --noEmit)
 npm run validate:words  # Validate word JSON files (IDs, duplicates, topics, fields)
+npm run generate-timestamps  # Generate sentence timestamps via Whisper API
 ```
 
 ## Architecture
@@ -26,7 +27,7 @@ Vite + Vue 3 SPA with Pinia state management, hash router, and TypeScript throug
 src/
   main.ts                      # createApp + router + pinia
   App.vue                      # div.app-main(RouterView) + BottomNav + WordDetailModal
-  types/index.ts               # Word, Passage, SrsCard, CefrLevel, DomainId, SubtopicId, etc.
+  types/index.ts               # Word, Passage, SrsCard, CefrLevel, DomainId, SubtopicId, SentenceTimestamp, etc.
   router/index.ts              # 6 hash routes
   data/                        # Static data (words, topics, passages)
     topics.ts                  # DOMAINS (5) + SUBTOPICS (16) + helpers; TOPIC_REGISTRY kept as alias
@@ -49,6 +50,8 @@ src/
     word-index.ts              # O(1) word lookup by ID, text, and topic index + addWord() for incremental insertion
     user-words.ts              # User word persistence (loadUserWords, saveUserWord, nextUserWordId, isUserWord)
     format.ts                  # Shared formatting utilities (formatTopic)
+    sentence-splitter.ts         # Sentence splitting with character offsets (shared by UI + scripts)
+    timestamp-loader.ts          # Sentence timestamp fetch + in-memory cache (R2 JSON)
   styles/                      # Modular CSS (imported in App.vue)
     tokens.css                 # CSS custom properties (colors, spacing, fonts) for light/dark themes
     base.css                   # Reset, typography, shared utilities (.btn, .fade-in, .toggle)
@@ -69,18 +72,20 @@ src/
     usePassageView.ts          # PassageView logic (tokenization, tooltip state, scroll-lock)
     usePassageAudioPlayer.ts   # Audio player state machine (play/pause/seek/speed, fallback)
     useFreeWordLookup.ts       # Dictionary lookup + save-to-deck logic for non-B2 words
+    usePassageSentenceSync.ts  # Audio-to-sentence sync (timestamps + DOM highlight + scroll)
   components/                  # Presentational UI components
     BottomNav.vue (desktop sidebar nav + mobile bottom tab bar), WordDetailModal.vue, ProgressBar.vue,
     StatsGrid.vue, WeeklyHeatmap.vue,
     RatingButtons.vue, AudioControls.vue, WordTooltip.vue,
     FreeWordTooltip.vue              # Universal word lookup (presentational, uses useFreeWordLookup)
-    PassageAudioPlayer.vue           # Audio player (presentational, uses usePassageAudioPlayer)
+    PassageAudioPlayer.vue           # Audio player (presentational, receives props from view)
   views/                       # Route-level views
     DashboardView.vue, StudyView.vue,
     WordListView.vue, ReadingView.vue, PassageView.vue,
     SettingsView.vue
 scripts/
   validate-words.ts            # Build-time validation: auto-discovers JSON in src/data/words/, checks IDs, duplicates, levels, topics, fields
+  generate-timestamps.ts       # Whisper-based sentence timestamp generation for passage audio
 ```
 
 ### Routes
@@ -96,7 +101,7 @@ scripts/
 
 ### Data flow
 
-**Reading → Discovery:** user browses passage list (filterable by three simultaneous filter rows: Level [All / B1 / B2] + Domain [All / life / work / society / people / knowledge] + Subtopic [per-domain subtopics]) → reads passage → all words in passage text are tappable (`span.plain-word`). B2 highlighted words open `WordTooltip` (definition + "Save to Deck"), plain words open `FreeWordTooltip` (universal lookup via dictionaryapi.dev showing definition, phonetic, audio, with "Search on Google" fallback and "Save to Deck" button; handles loading, not-found, and cached states). The two tooltips are mutually exclusive. `useSrsStore.addWordFromReading()` → `addUserWord()` creates SrsCard with state `'learning'` immediately → card appears in next study session. For non-B2 words, `useSrsStore.addUserWordFromFreeTooltip()` → `saveUserWord()` persists a user-created Word (level `'user'`, IDs 100001+) to localStorage `user_words` and inserts it into WordIndex, then creates an SRS card. B1-level passages use simpler sentence structures and more B1 vocabulary to ease the transition for lower-level learners.
+**Reading → Discovery:** user browses passage list (filterable by three simultaneous filter rows: Level [All / B1 / B2] + Domain [All / life / work / society / people / knowledge] + Subtopic [per-domain subtopics]) → reads passage → all words in passage text are tappable (`span.plain-word`). B2 highlighted words open `WordTooltip` (definition + "Save to Deck"), plain words open `FreeWordTooltip` (universal lookup via dictionaryapi.dev showing definition, phonetic, audio, with "Search on Google" fallback and "Save to Deck" button; handles loading, not-found, and cached states). The two tooltips are mutually exclusive. `useSrsStore.addWordFromReading()` → `addUserWord()` creates SrsCard with state `'learning'` immediately → card appears in next study session. For non-B2 words, `useSrsStore.addUserWordFromFreeTooltip()` → `saveUserWord()` persists a user-created Word (level `'user'`, IDs 100001+) to localStorage `user_words` and inserts it into WordIndex, then creates an SRS card. B1-level passages use simpler sentence structures and more B1 vocabulary to ease the transition for lower-level learners. During audio playback, sentences are highlighted in sync via timestamp data loaded from R2. `usePassageSentenceSync` watches `currentTime` from the audio player and imperatively toggles `.sentence-active` class on sentence `<span>` elements. Highlighting is skipped in Web Speech API fallback mode.
 
 **Study → Review only:** `useSrsStore.getCardsForToday()` returns only learning/relearning/review cards already in deck (no new card auto-introduction) → `useStudySessionStore` manages queue → user rates → SRS updates localStorage → `_version` ref triggers reactive recomputation.
 
@@ -109,7 +114,7 @@ scripts/
 - **CSS**: Modular CSS in `src/styles/` (tokens → base → layout → components), imported in `App.vue`. Apple-style minimal design with CSS custom properties for theming (light/dark). Responsive: `@media (min-width: 768px)` breakpoint in `layout.css` switches from mobile bottom nav to desktop sidebar nav
 - **Layout/Logic separation**: Views are pure templates — business logic lives in per-view composables (`usePassageView`, etc.). Components are presentational — logic in composables (`usePassageAudioPlayer`, `useFreeWordLookup`). Stores are focused single-responsibility (`studySession`, `wordListQuery`, `uiState`)
 - **Date handling**: Local `formatDate(d)` helper (not `toISOString`) to avoid timezone bugs
-- **Audio**: 3-tier fallback: dictionaryapi.dev audio URLs > Web Speech API > silent. Async preload with HTMLAudioElement caching; dict-api uses in-memory Map cache to avoid repeated JSON.parse of localStorage
+- **Audio**: 3-tier fallback: dictionaryapi.dev audio URLs > Web Speech API > silent. Async preload with HTMLAudioElement caching; dict-api uses in-memory Map cache to avoid repeated JSON.parse of localStorage. Passage audio supports sentence-level highlighting via timestamp sidecar files (`passage-{id}.timestamps.json`) on R2; `usePassageAudioPlayer` is instantiated in `PassageView.vue` (lifted from component) to share `currentTime` with sentence sync
 - **localStorage**: All access via `lib/storage.ts` typed methods; keys: `srs_data`, `dict_cache`, `theme`, `settings_audio`, `passages_read`, `user_words`
 - **Dependency direction**: `data → lib → stores → composables → components → views` (no reverse imports)
 - **User word IDs**: User-created words use IDs starting at 100001 (`USER_WORD_ID_START = 100000` in `user-words.ts`), with level `'user'`; WordListView has a "My Words" filter tab
@@ -201,6 +206,28 @@ Rules:
 - Validate: `npm run typecheck`
 
 Current passage counts: 12 B2-level (batch 002) + 25 B1-level (batches 003-005) = 37 total passages.
+
+## Generating Timestamps
+
+Sentence-level timestamp files enable audio-synced highlighting in PassageView.
+
+File naming: `passage-{id}.timestamps.json`, hosted on R2 alongside passage MP3s.
+
+Each timestamp file:
+```json
+[
+  { "index": 0, "start": 0.0, "end": 3.2, "text": "First sentence." },
+  { "index": 1, "start": 3.2, "end": 6.8, "text": "Second sentence." }
+]
+```
+
+Generation:
+- Requires `OPENAI_API_KEY` environment variable
+- `npm run generate-timestamps` — generate all (skip existing)
+- `npm run generate-timestamps -- --force` — regenerate all
+- `npm run generate-timestamps -- --id 101,102` — specific passages
+- Upload to R2: `rclone copy output/audio/passages/ r2:$R2_BUCKET/audio/passages/ --include "*.timestamps.json" --progress`
+- Uses `splitSentences()` from `lib/sentence-splitter.ts` to align Whisper output with UI sentence indices
 
 ## Team Mode
 

@@ -863,6 +863,16 @@
   color: var(--text);
 }
 
+.sentence {
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  scroll-margin-top: 120px;
+}
+
+.sentence-active {
+  background: var(--accent-soft, rgba(0, 122, 255, 0.08));
+}
+
 .highlight-word {
   color: var(--accent);
   font-weight: 500;

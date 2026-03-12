@@ -128,3 +128,10 @@ export interface DictEntry {
 export interface AudioSettings {
   autoPlay: boolean
 }
+
+export interface SentenceTimestamp {
+  index: number
+  start: number
+  end: number
+  text: string
+}

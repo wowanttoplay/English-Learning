@@ -9,7 +9,6 @@ export function usePassageAudioPlayer(getPassageId: () => number, getPassageText
   const currentTime = ref(0)
   const duration = ref(0)
   const isFallback = ref(false)
-  const progressRef = ref<HTMLElement | null>(null)
 
   let audio: HTMLAudioElement | null = null
   let animFrame = 0
@@ -101,11 +100,10 @@ export function usePassageAudioPlayer(getPassageId: () => number, getPassageText
     cancelAnimationFrame(animFrame)
   }
 
-  function seek(e: MouseEvent) {
-    if (isFallback.value || !audio || !progressRef.value) return
-    const rect = progressRef.value.getBoundingClientRect()
-    const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width))
-    audio.currentTime = ratio * duration.value
+  function seekTo(ratio: number) {
+    if (isFallback.value || !audio) return
+    const clamped = Math.max(0, Math.min(1, ratio))
+    audio.currentTime = clamped * duration.value
     currentTime.value = audio.currentTime
   }
 
@@ -193,12 +191,11 @@ export function usePassageAudioPlayer(getPassageId: () => number, getPassageText
     currentTime,
     duration,
     isFallback,
-    progressRef,
     progressPercent,
     formatTime,
     togglePlay,
     stop,
-    seek,
+    seekTo,
     setSpeed
   }
 }
