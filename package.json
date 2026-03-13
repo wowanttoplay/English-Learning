@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsx scripts/validate-words.ts && vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
+    "preview": "npm run build && wrangler dev",
     "test": "vitest run",
     "typecheck": "vue-tsc --noEmit",
     "generate-tts": "tsx scripts/generate-tts.ts",
     "validate:words": "tsx scripts/validate-words.ts",
-    "generate-timestamps": "tsx scripts/generate-timestamps.ts"
+    "generate-timestamps": "tsx scripts/generate-timestamps.ts",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "pinia": "^2.3.1",
@@ -19,12 +20,14 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.28.0",
     "@google-cloud/text-to-speech": "^5.0.0",
     "@vitejs/plugin-vue": "^5.2.3",
     "tsx": "^4.21.0",
     "typescript": "~5.7.3",
     "vite": "^6.2.0",
     "vitest": "^4.0.18",
-    "vue-tsc": "^2.2.8"
+    "vue-tsc": "^2.2.8",
+    "wrangler": "^4.73.0"
   }
 }
