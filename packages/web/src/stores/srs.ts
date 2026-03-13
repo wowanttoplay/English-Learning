@@ -1,108 +1,128 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { rateCard as srsRateCard, getCardsForToday as srsGetCardsForToday, getDueCount, getStats } from '@/lib/srs-queue'
-import { getCardState as srsGetCardState, getAllCardStates as srsGetAllCardStates, resetProgress as srsResetProgress, clearCache, getCard as srsGetCard, getHistory as srsGetHistory, addUserWord as srsAddUserWord, markAsKnown as srsMarkAsKnown, unmarkKnown as srsUnmarkKnown } from '@/lib/srs-storage'
-import { WORD_LIST } from '@/data/words'
-import { loadUserWords, saveUserWord as persistUserWord, resetUserWords } from '@/lib/user-words'
-import { Storage } from '@/lib/storage'
-import type { SrsStats, DueCount, CardQueue, CardState, Rating, SrsCard, Word } from '@/types'
+import type { SrsCard, SrsStats, SrsHistory, DueCount, CardQueue, Rating, Word } from '@/types'
+import * as cardsApi from '@/api/cards'
+import * as userWordsApi from '@/api/userWords'
+import { buildQueue, computeStats } from '@english-learning/shared'
 
 export const useSrsStore = defineStore('srs', () => {
-  // Reactive version trigger — increment to force recomputation
-  const _version = ref(0)
+  const cards = ref<SrsCard[]>([])
+  const history = ref<Record<string, SrsHistory>>({})
+  const totalWordCount = ref(0)
+  const loading = ref(false)
+  const error = ref<string | null>(null)
 
-  function _bump() {
-    _version.value++
-  }
-
-  const stats = computed<SrsStats>(() => {
-    _version.value // track
-    return getStats(WORD_LIST.length + loadUserWords().length)
-  })
+  const stats = computed<SrsStats>(() =>
+    computeStats(cards.value, totalWordCount.value, history.value)
+  )
 
   const dueCount = computed<DueCount>(() => {
-    _version.value // track
-    return getDueCount(WORD_LIST)
+    const queue = buildQueue(cards.value)
+    return { learning: queue.learning.length, review: queue.review.length, total: queue.total }
   })
 
-  function rateCard(wordId: number, rating: Rating): SrsCard {
-    const result = srsRateCard(wordId, rating)
-    _bump()
-    return result
-  }
-
   function getCardsForToday(): CardQueue {
-    return srsGetCardsForToday(WORD_LIST)
+    return buildQueue(cards.value)
   }
 
-  function resetProgress() {
-    srsResetProgress()
-    resetUserWords()
-    clearCache()
-    Storage.removePassagesRead()
-    Storage.removeAudioSettings()
-    _bump()
+  function getCardState(wordId: number) {
+    const card = cards.value.find(c => c.wordId === wordId)
+    if (!card) return 'unseen' as const
+    if (card.state === 'known') return 'known' as const
+    if (card.state === 'review' && card.interval >= 21) return 'mastered' as const
+    return card.state
   }
 
-  function getCardState(wordId: number): CardState {
-    _version.value // track
-    return srsGetCardState(wordId)
+  function getAllCardStates(): Record<number, string> {
+    const states: Record<number, string> = {}
+    for (const card of cards.value) {
+      states[card.wordId] = getCardState(card.wordId)
+    }
+    return states
   }
 
-  function getAllCardStates(): Record<string, CardState> {
-    _version.value // track
-    return srsGetAllCardStates()
+  function getCard(wordId: number): SrsCard | undefined {
+    return cards.value.find(c => c.wordId === wordId)
   }
 
-  function getHistory(): Record<string, { reviewed: number; learned: number }> {
-    _version.value // track
-    return srsGetHistory()
+  async function loadCards(lang?: string) {
+    loading.value = true
+    error.value = null
+    try {
+      const data = await cardsApi.getCards(lang)
+      cards.value = data.cards
+      history.value = data.history
+      totalWordCount.value = data.stats.totalWords
+    } catch (e) {
+      error.value = (e as Error).message
+    } finally {
+      loading.value = false
+    }
   }
 
-  function getCard(wordId: number) {
-    return srsGetCard(wordId)
+  async function rateCard(wordId: number, rating: Rating): Promise<SrsCard> {
+    const updated = await cardsApi.rateCard(wordId, rating)
+    const idx = cards.value.findIndex(c => c.wordId === wordId)
+    if (idx >= 0) cards.value[idx] = updated
+    else cards.value.push(updated)
+    return updated
   }
 
-  function addWordFromReading(wordId: number) {
-    srsAddUserWord(wordId)
-    clearCache()
-    _bump()
+  async function addWordFromReading(wordId: number) {
+    const card = await cardsApi.addCard(wordId)
+    const idx = cards.value.findIndex(c => c.wordId === wordId)
+    if (idx >= 0) cards.value[idx] = card
+    else cards.value.push(card)
   }
 
-  function addUserWordFromFreeTooltip(wordData: Omit<Word, 'id'>) {
-    const saved = persistUserWord(wordData)
-    if (!saved) return
-    srsAddUserWord(saved.id)
-    clearCache()
-    _bump()
+  async function addUserWordFromFreeTooltip(wordData: Omit<Word, 'id'>) {
+    const created = await userWordsApi.createUserWord({
+      languageId: wordData.languageId,
+      word: wordData.word,
+      pos: wordData.pos,
+      phonetic: wordData.phonetic,
+      definitionNative: wordData.definitionNative,
+      definitionTarget: wordData.definitionTarget,
+      examples: wordData.examples,
+      topics: wordData.topics as string[],
+    })
+    // The server also creates an SRS card — reload to get it
+    await loadCards()
+    return created
   }
 
-  function markAsKnown(wordId: number) {
-    srsMarkAsKnown(wordId)
-    clearCache()
-    _bump()
+  async function markAsKnown(wordId: number) {
+    await cardsApi.markKnown(wordId, true)
+    const idx = cards.value.findIndex(c => c.wordId === wordId)
+    if (idx >= 0) {
+      cards.value[idx] = { ...cards.value[idx], state: 'known', previousState: cards.value[idx].state as any }
+    } else {
+      cards.value.push({ wordId, state: 'known', ease: 2.5, interval: 0, due: '', dueTimestamp: 0, reps: 0, lapses: 0, step: 0 })
+    }
   }
 
-  function unmarkKnown(wordId: number) {
-    srsUnmarkKnown(wordId)
-    clearCache()
-    _bump()
+  async function unmarkKnown(wordId: number) {
+    await cardsApi.markKnown(wordId, false)
+    // Reload to get accurate state
+    await loadCards()
   }
 
   return {
-    _version,
+    cards,
+    history,
     stats,
     dueCount,
+    loading,
+    error,
+    loadCards,
     rateCard,
     getCardsForToday,
-    resetProgress,
     getCardState,
     getAllCardStates,
-    getHistory,
     getCard,
     addWordFromReading,
     addUserWordFromFreeTooltip,
     markAsKnown,
-    unmarkKnown
+    unmarkKnown,
   }
 })
