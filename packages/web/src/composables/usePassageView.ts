@@ -1,9 +1,9 @@
 import { computed, ref, watch, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { WordIndex } from '@/lib/word-index'
-import { usePassages } from '@/composables/usePassages'
-import { PASSAGES } from '@/data/passages'
+import { usePassagesStore } from '@/stores/passages'
+import * as passagesApi from '@/api/passages'
 import { splitSentences } from '@/lib/sentence-splitter'
+import type { Passage, Word } from '@/types'
 
 function escapeHtml(str: string): string {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -11,47 +11,51 @@ function escapeHtml(str: string): string {
 
 export function usePassageView() {
   const route = useRoute()
-  const passages = usePassages()
+  const passagesStore = usePassagesStore()
 
   const passageTextRef = ref<HTMLElement | null>(null)
   const tooltipWordId = ref<number | null>(null)
   const freeTooltipWord = ref<string | null>(null)
+  const passage = ref<Passage | null>(null)
+  const passageWords = ref<Word[]>([])
+  const loading = ref(false)
 
-  const passage = computed(() => {
-    const id = Number(route.params.id)
-    return PASSAGES.find(p => p.id === id) || null
+  // Build a lookup set of word text -> word for this passage
+  const wordsByText = computed(() => {
+    const map = new Map<string, Word>()
+    for (const w of passageWords.value) {
+      map.set(w.word.toLowerCase(), w)
+    }
+    return map
   })
+
+  // Build set of target word IDs (the B2 words linked to this passage)
+  const targetWordIds = computed(() => new Set(passageWords.value.map(w => w.id)))
 
   const isRead = computed(() => {
     if (!passage.value) return false
-    return passages.isRead(passage.value.id)
+    return passagesStore.isRead(passage.value.id)
   })
 
   const highlightedText = computed(() => {
     if (!passage.value) return ''
-
     const text = passage.value.text
-    const targetIds = new Set(passage.value.wordIds)
     const sentences = splitSentences(text)
     let result = ''
     let lastEnd = 0
 
     for (const sentence of sentences) {
-      // Add any text between sentences (whitespace/gaps)
       if (sentence.start > lastEnd) {
         result += escapeHtml(text.slice(lastEnd, sentence.start))
       }
-
-      // Open sentence span
       result += `<span class="sentence" data-sentence-index="${sentence.index}">`
 
-      // Tokenize words within this sentence
       const sentenceText = text.slice(sentence.start, sentence.end)
       const tokens = sentenceText.split(/([a-zA-Z'-]+)/)
       for (const token of tokens) {
         if (/^[a-zA-Z'-]+$/.test(token)) {
-          const w = WordIndex.getByText(token)
-          if (w && targetIds.has(w.id)) {
+          const w = wordsByText.value.get(token.toLowerCase())
+          if (w && targetWordIds.value.has(w.id)) {
             result += `<span class="highlight-word-target" data-word-id="${w.id}">${escapeHtml(token)}</span>`
           } else if (w) {
             result += `<span class="highlight-word-vocab" data-word-id="${w.id}">${escapeHtml(token)}</span>`
@@ -62,19 +66,31 @@ export function usePassageView() {
           result += escapeHtml(token)
         }
       }
-
-      // Close sentence span
       result += '</span>'
       lastEnd = sentence.end
     }
 
-    // Any trailing text
     if (lastEnd < text.length) {
       result += escapeHtml(text.slice(lastEnd))
     }
-
     return result
   })
+
+  // Load passage from API when route changes
+  watch(() => route.params.id, async (id) => {
+    if (!id) return
+    loading.value = true
+    try {
+      const data = await passagesApi.getPassageById(Number(id))
+      passage.value = data.passage
+      passageWords.value = data.words
+    } catch {
+      passage.value = null
+      passageWords.value = []
+    } finally {
+      loading.value = false
+    }
+  }, { immediate: true })
 
   function onPassageClick(e: Event) {
     const target = e.target as HTMLElement
@@ -126,17 +142,19 @@ export function usePassageView() {
 
   function markRead(router: { push: (path: string) => void }) {
     if (!passage.value) return
-    passages.markRead(passage.value.id)
+    passagesStore.markRead(passage.value.id)
     router.push('/reading')
   }
 
   return {
     passage,
+    passageWords,
     passageTextRef,
     tooltipWordId,
     freeTooltipWord,
     isRead,
     highlightedText,
+    loading,
     closeTooltips,
     markRead
   }

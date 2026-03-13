@@ -42,29 +42,21 @@
           <span>{{ stats.totalMastered }}</span>
         </div>
       </div>
-
-      <div class="action-buttons" style="margin-top: 24px;">
-        <button class="btn btn-danger" @click="confirmReset">
-          Reset All Progress
-        </button>
-      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { computed, ref, onMounted } from 'vue'
 import { useSrsStore } from '@/stores/srs'
 import { useTheme } from '@/composables/useTheme'
 import { useAudio } from '@/composables/useAudio'
-import { useDictionary } from '@/composables/useDictionary'
 
-const router = useRouter()
 const srsStore = useSrsStore()
 const theme = useTheme()
 const audio = useAudio()
-const dict = useDictionary()
+
+onMounted(() => srsStore.loadCards())
 
 const stats = computed(() => srsStore.stats)
 const autoPlay = ref(audio.getAutoPlay())
@@ -72,13 +64,5 @@ const autoPlay = ref(audio.getAutoPlay())
 function toggleAutoPlay() {
   autoPlay.value = !autoPlay.value
   audio.setAutoPlay(autoPlay.value)
-}
-
-function confirmReset() {
-  if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
-    srsStore.resetProgress()
-    dict.clearCache()
-    router.push('/')
-  }
 }
 </script>

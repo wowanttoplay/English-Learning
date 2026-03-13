@@ -2,7 +2,6 @@ import { ref, computed, watch } from 'vue'
 import { DictAPI } from '@/lib/dict-api'
 import { useAudio } from '@/composables/useAudio'
 import { useSrsStore } from '@/stores/srs'
-import { isUserWord } from '@/lib/user-words'
 import type { DictEntry, Word } from '@/types'
 
 export function useFreeWordLookup(getWord: () => string | null) {
@@ -55,11 +54,12 @@ export function useFreeWordLookup(getWord: () => string | null) {
       word: dictEntry.value.word,
       pos: firstMeaning?.partOfSpeech ?? '',
       phonetic: firstPhonetic.value?.text ?? '',
-      zh: '',
-      en: firstDef,
+      definitionNative: '',
+      definitionTarget: firstDef,
       examples,
       level: 'user',
-      topics: []
+      topics: [],
+      languageId: 'en',
     }
     srsStore.addUserWordFromFreeTooltip(wordData)
     saved.value = true
@@ -69,7 +69,7 @@ export function useFreeWordLookup(getWord: () => string | null) {
     getWord,
     async (newWord) => {
       saved.value = false
-      alreadySaved.value = newWord ? isUserWord(newWord) : false
+      alreadySaved.value = false
 
       if (!newWord) {
         dictEntry.value = null
@@ -83,7 +83,6 @@ export function useFreeWordLookup(getWord: () => string | null) {
         dictEntry.value = cached
         loading.value = false
         notFound.value = false
-        alreadySaved.value = isUserWord(cached.word)
         return
       }
 
@@ -96,7 +95,6 @@ export function useFreeWordLookup(getWord: () => string | null) {
       if (result) {
         dictEntry.value = result
         notFound.value = false
-        alreadySaved.value = isUserWord(result.word)
       } else {
         notFound.value = true
       }

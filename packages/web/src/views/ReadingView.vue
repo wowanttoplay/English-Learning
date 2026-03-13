@@ -4,7 +4,13 @@
       <h1>Reading</h1>
     </div>
 
-    <template v-if="!hasPassages">
+    <template v-if="passagesStore.loading">
+      <div class="reading-empty">
+        <p>Loading passages...</p>
+      </div>
+    </template>
+
+    <template v-else-if="!hasPassages">
       <div class="reading-empty">
         <div class="reading-empty-icon">&#128214;</div>
         <h3>No passages available yet</h3>
@@ -86,7 +92,6 @@
                 <span class="passage-topic">{{ formatTopic(passage.topic) }}</span>
                 <span class="passage-level">{{ passage.level }}</span>
                 <span v-if="passage.level === 'B1'" class="difficulty-badge">Easier</span>
-                <span class="passage-words">{{ passage.wordIds.length }} target words</span>
               </div>
             </div>
           </div>
@@ -119,18 +124,22 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { PASSAGES } from '@/data/passages'
+import { usePassagesStore } from '@/stores/passages'
 import { DOMAINS, getSubtopicsByDomain } from '@/data/topics'
-import { usePassages } from '@/composables/usePassages'
 import { formatTopic } from '@/lib/format'
 import type { DomainId, SubtopicId } from '@/types'
 
 const router = useRouter()
-const passages = usePassages()
+const passagesStore = usePassagesStore()
 
-const hasPassages = PASSAGES.length > 0
+onMounted(() => {
+  passagesStore.loadPassages('en')
+  passagesStore.loadPassagesRead()
+})
+
+const hasPassages = computed(() => passagesStore.passages.length > 0)
 
 const levelFilter = ref<'all' | 'B1' | 'B2'>('all')
 const domainFilter = ref<'all' | DomainId>('all')
@@ -142,8 +151,8 @@ function setDomain(d: 'all' | DomainId) {
 }
 
 const filteredPassages = computed(() => {
-  if (levelFilter.value === 'all') return PASSAGES
-  return PASSAGES.filter(p => p.level === levelFilter.value)
+  if (levelFilter.value === 'all') return passagesStore.passages
+  return passagesStore.passages.filter(p => p.level === levelFilter.value)
 })
 
 const availableSubtopics = computed(() => {
@@ -165,13 +174,11 @@ const topicFilteredPassages = computed(() => {
   return list
 })
 
-const readyPassages = computed(() => {
-  const readSet = new Set(passages.passagesRead.value)
-  return topicFilteredPassages.value.filter(p => !readSet.has(p.id))
-})
+const readyPassages = computed(() =>
+  topicFilteredPassages.value.filter(p => !passagesStore.isRead(p.id))
+)
 
-const completedPassages = computed(() => {
-  const readSet = new Set(passages.passagesRead.value)
-  return topicFilteredPassages.value.filter(p => readSet.has(p.id))
-})
+const completedPassages = computed(() =>
+  topicFilteredPassages.value.filter(p => passagesStore.isRead(p.id))
+)
 </script>

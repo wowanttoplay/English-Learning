@@ -54,8 +54,8 @@
           </div>
 
           <div v-if="studySession.revealed" class="card-back">
-            <div class="card-zh">{{ currentWord.zh }}</div>
-            <div class="card-en">{{ currentWord.en }}</div>
+            <div class="card-zh">{{ currentWord.definitionNative }}</div>
+            <div class="card-en">{{ currentWord.definitionTarget }}</div>
             <ul class="card-examples">
               <li v-for="(ex, i) in currentWord.examples" :key="i">
                 <span class="example-text">{{ ex }}</span>
@@ -109,16 +109,17 @@ const studySession = useStudySessionStore()
 const audio = useAudio()
 const { currentCard, currentWord, stateLabel, extraDefs, completeStatsItems } = useStudySession()
 
-function onRate(rating: Rating) {
+async function onRate(rating: Rating) {
   const card = currentCard.value
   if (!card) return
-  studySession.advance(srsStore.rateCard(card.wordId, rating))
+  const updated = await srsStore.rateCard(card.wordId, rating)
+  studySession.advance(updated)
 }
 
-function markCurrentAsKnown() {
+async function markCurrentAsKnown() {
   const card = currentCard.value
   if (!card) return
-  srsStore.markAsKnown(card.wordId)
+  await srsStore.markAsKnown(card.wordId)
   studySession.skipCurrent()
 }
 

@@ -1,11 +1,10 @@
 import { ref, onMounted } from 'vue'
-import { Storage } from '@/lib/storage'
 
 export function useTheme() {
   const isDark = ref(false)
 
   function init() {
-    const saved = Storage.getTheme()
+    const saved = localStorage.getItem('theme')
     if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.setAttribute('data-theme', 'dark')
       isDark.value = true
@@ -16,13 +15,12 @@ export function useTheme() {
   }
 
   function toggle() {
-    const newDark = !isDark.value
-    setTheme(newDark ? 'dark' : 'light')
+    setTheme(isDark.value ? 'light' : 'dark')
   }
 
   function setTheme(theme: 'light' | 'dark') {
     document.documentElement.setAttribute('data-theme', theme)
-    Storage.setTheme(theme)
+    localStorage.setItem('theme', theme)
     isDark.value = theme === 'dark'
   }
 

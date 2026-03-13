@@ -9,8 +9,8 @@
       {{ word.phonetic }}
       <button class="example-play-btn" @click="audio.speak(word.word)" title="Play">&#9654;</button>
     </div>
-    <div class="reading-tooltip-zh">{{ word.zh }}</div>
-    <div class="reading-tooltip-en">{{ word.en }}</div>
+    <div class="reading-tooltip-zh">{{ word.definitionNative }}</div>
+    <div class="reading-tooltip-en">{{ word.definitionTarget }}</div>
     <button
       v-if="cardState === 'unseen'"
       class="btn btn-primary reading-tooltip-add"
@@ -44,18 +44,18 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { WordIndex } from '@/lib/word-index'
 import { useAudio } from '@/composables/useAudio'
 import { useSrsStore } from '@/stores/srs'
+import type { Word } from '@/types'
 
-const props = defineProps<{ wordId: number | null }>()
+const props = defineProps<{ wordId: number | null; words?: Word[] }>()
 const emit = defineEmits<{ close: [] }>()
 const audio = useAudio()
 const srsStore = useSrsStore()
 
 const word = computed(() => {
   if (props.wordId === null) return null
-  return WordIndex.get(props.wordId)
+  return (props.words ?? []).find(w => w.id === props.wordId) ?? null
 })
 
 const cardState = computed(() => {

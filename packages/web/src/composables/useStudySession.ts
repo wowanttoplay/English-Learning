@@ -3,9 +3,10 @@ import { useSrsStore } from '@/stores/srs'
 import { useStudySessionStore } from '@/stores/studySession'
 import { useAudio } from '@/composables/useAudio'
 import { useDictionary } from '@/composables/useDictionary'
-// WordIndex is a pure sync lookup utility with no side effects — direct import is fine
-import { WordIndex } from '@/lib/word-index'
+import * as wordsApi from '@/api/words'
 import type { DictEntry, Word } from '@/types'
+
+const wordCache = new Map<number, Word>()
 
 export function useStudySession() {
   const srsStore = useSrsStore()
@@ -14,12 +15,7 @@ export function useStudySession() {
   const dict = useDictionary()
 
   const currentCard = computed(() => session.currentCard)
-
-  const currentWord = computed<Word | null>(() => {
-    const card = currentCard.value
-    if (!card) return null
-    return WordIndex.get(card.wordId)
-  })
+  const currentWord = ref<Word | null>(null)
 
   const stateLabel = computed(() => {
     const card = currentCard.value
@@ -39,7 +35,7 @@ export function useStudySession() {
     const defs: { pos: string; def: string; example: string | null }[] = []
     for (const m of dictData.value.meanings) {
       for (const d of m.definitions) {
-        if (d.definition !== currentWord.value.en && defs.length < 2) {
+        if (d.definition !== currentWord.value.definitionTarget && defs.length < 2) {
           defs.push({ pos: m.partOfSpeech, def: d.definition, example: d.example })
         }
       }
@@ -54,11 +50,27 @@ export function useStudySession() {
     { value: srsStore.stats.totalStarted, label: 'Total Started' }
   ])
 
+  async function loadWord(wordId: number): Promise<Word | null> {
+    if (wordCache.has(wordId)) return wordCache.get(wordId)!
+    try {
+      const word = await wordsApi.getWordById(wordId)
+      wordCache.set(wordId, word)
+      return word
+    } catch {
+      return null
+    }
+  }
+
   // Auto-play and preload on card change
-  watch(currentWord, async (word) => {
-    if (word) {
-      await audio.preloadWord(word.word)
-      audio.autoPlayWord(word.word)
+  watch(currentCard, async (card) => {
+    if (!card) {
+      currentWord.value = null
+      return
+    }
+    currentWord.value = await loadWord(card.wordId)
+    if (currentWord.value) {
+      await audio.preloadWord(currentWord.value.word)
+      audio.autoPlayWord(currentWord.value.word)
       preloadUpcoming()
     }
   }, { immediate: true })
@@ -76,11 +88,11 @@ export function useStudySession() {
     }
   })
 
-  function preloadUpcoming() {
+  async function preloadUpcoming() {
     for (let i = session.index + 1; i < Math.min(session.index + 4, session.queue.length); i++) {
       const card = session.queue[i]
       if (card) {
-        const word = WordIndex.get(card.wordId)
+        const word = await loadWord(card.wordId)
         if (word) audio.preloadWord(word.word)
       }
     }

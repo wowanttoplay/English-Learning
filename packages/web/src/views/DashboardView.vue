@@ -36,14 +36,14 @@
       </button>
     </div>
 
-    <WeeklyHeatmap :history="srsStore.getHistory()" />
+    <WeeklyHeatmap :history="srsStore.history" />
 
     <StatsGrid :items="bottomStats" :columns="2" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useSrsStore } from '@/stores/srs'
 import { useStudySessionStore } from '@/stores/studySession'
@@ -56,6 +56,8 @@ const router = useRouter()
 const srsStore = useSrsStore()
 const studySession = useStudySessionStore()
 const theme = useTheme()
+
+onMounted(() => srsStore.loadCards())
 
 const stats = computed(() => srsStore.stats)
 const due = computed(() => srsStore.dueCount)

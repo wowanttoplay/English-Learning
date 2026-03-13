@@ -9,7 +9,7 @@
         class="search-box"
         type="text"
         placeholder="Search words..."
-        v-model="query.search"
+        v-model="searchInput"
       />
     </div>
 
@@ -32,14 +32,14 @@
       <button
         class="filter-tab"
         :class="{ active: query.topic === 'all' }"
-        @click="query.topic = 'all'"
+        @click="query.topic = 'all'; query.loadWords()"
       >All</button>
       <button
         v-for="sub in domainSubtopics"
         :key="sub.id"
         class="filter-tab"
         :class="{ active: query.topic === sub.id }"
-        @click="query.topic = sub.id"
+        @click="query.topic = sub.id; query.loadWords()"
       >{{ sub.emoji }} {{ sub.name }}</button>
     </div>
 
@@ -51,12 +51,14 @@
         :class="{ active: query.filter === f.key }"
         @click="setFilter(f.key)"
       >
-        {{ f.label }} ({{ f.count }})
+        {{ f.label }}
       </button>
     </div>
 
+    <div v-if="query.loading" class="word-list-empty">Loading...</div>
+
     <div class="word-list">
-      <div v-if="visibleWords.length === 0" class="word-list-empty">No words found</div>
+      <div v-if="!query.loading && visibleWords.length === 0" class="word-list-empty">No words found</div>
       <div
         v-for="w in visibleWords"
         :key="w.id"
@@ -65,7 +67,7 @@
       >
         <div class="word-item-text">
           <div class="word-item-word">{{ w.word }}</div>
-          <div v-if="w.zh" class="word-item-zh">{{ w.zh }}</div>
+          <div v-if="w.definitionNative" class="word-item-zh">{{ w.definitionNative }}</div>
         </div>
         <button
           class="word-known-btn"
@@ -78,43 +80,54 @@
       <button
         v-if="hasMore"
         class="load-more-btn"
-        @click="query.page++"
+        @click="query.page++; query.loadWords()"
       >
-        Load more ({{ filtered.length - visibleCount }} remaining)
+        Load more
       </button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, watch } from 'vue'
+import { computed, ref, watch, onMounted } from 'vue'
 import { useSrsStore } from '@/stores/srs'
 import { useWordListQueryStore, type WordListFilter } from '@/stores/wordListQuery'
 import { useUiStateStore } from '@/stores/uiState'
-import { WORD_LIST } from '@/data/words'
 import { DOMAINS, getSubtopicsByDomain } from '@/data/topics'
-import { loadUserWords } from '@/lib/user-words'
 import type { DomainId } from '@/types'
-
-const WORDS_PER_PAGE = 50
 
 const srsStore = useSrsStore()
 const query = useWordListQueryStore()
 const ui = useUiStateStore()
 
+const searchInput = ref(query.search)
+let searchTimeout: ReturnType<typeof setTimeout> | null = null
+
+// Debounce search input
+watch(searchInput, (val) => {
+  if (searchTimeout) clearTimeout(searchTimeout)
+  searchTimeout = setTimeout(() => {
+    query.search = val
+    query.page = 1
+    query.loadWords()
+  }, 300)
+})
+
+onMounted(() => {
+  srsStore.loadCards()
+  query.loadWords()
+})
+
 function setDomain(d: 'all' | DomainId) {
   query.domain = d
   query.topic = 'all'
+  query.page = 1
+  query.loadWords()
 }
 
 const domainSubtopics = computed(() => {
   if (query.domain === 'all') return []
   return getSubtopicsByDomain(query.domain)
-})
-
-// Reset page on filter/search change
-watch([() => query.search, () => query.filter, () => query.topic, () => query.domain], () => {
-  query.page = 0
 })
 
 const states = computed(() => srsStore.getAllCardStates())
@@ -123,32 +136,12 @@ function getState(wordId: number): string {
   return states.value[wordId] || 'unseen'
 }
 
-const allWords = computed(() => {
-  srsStore._version
-  return [...WORD_LIST, ...loadUserWords()]
-})
-
+// Client-side filtering by SRS state on top of API-loaded words
 const filtered = computed(() => {
-  const search = query.search.toLowerCase().trim()
-  // Build set of subtopic IDs for domain filter
-  const domainSubIds = query.domain !== 'all'
-    ? new Set(getSubtopicsByDomain(query.domain).map(s => s.id))
-    : null
-  return allWords.value.filter(w => {
-    if (search && !w.word.toLowerCase().includes(search) && !(w.zh && w.zh.includes(search))) return false
-    // Domain filter
-    if (domainSubIds) {
-      const topics = w.topics || []
-      if (!topics.some(t => domainSubIds.has(t))) return false
-    }
-    // Subtopic filter
-    if (query.topic !== 'all') {
-      const topics = w.topics || []
-      if (!topics.includes(query.topic as any)) return false
-    }
+  const f = query.filter
+  if (f === 'all') return query.words
+  return query.words.filter(w => {
     const state = states.value[w.id] || 'unseen'
-    const f = query.filter
-    if (f === 'all') return true
     if (f === 'unseen') return state === 'unseen'
     if (f === 'learning') return state === 'learning' || state === 'relearning'
     if (f === 'review') return state === 'review'
@@ -159,43 +152,29 @@ const filtered = computed(() => {
   })
 })
 
-const visibleCount = computed(() => (query.page + 1) * WORDS_PER_PAGE)
-const visibleWords = computed(() => filtered.value.slice(0, visibleCount.value))
-const hasMore = computed(() => filtered.value.length > visibleCount.value)
+const visibleWords = computed(() => filtered.value)
+const hasMore = computed(() => query.words.length < query.total)
 
-const filters = computed(() => {
-  const counts = { all: 0, unseen: 0, learning: 0, review: 0, mastered: 0, known: 0, user: 0 }
-  for (const w of allWords.value) {
-    const s = states.value[w.id] || 'unseen'
-    counts.all++
-    if (w.level === 'user') counts.user++
-    if (s === 'unseen') counts.unseen++
-    else if (s === 'learning' || s === 'relearning') counts.learning++
-    else if (s === 'review') counts.review++
-    else if (s === 'mastered') counts.mastered++
-    else if (s === 'known') counts.known++
-  }
-  return [
-    { key: 'all' as WordListFilter, label: 'All', count: counts.all },
-    { key: 'unseen' as WordListFilter, label: 'Unseen', count: counts.unseen },
-    { key: 'learning' as WordListFilter, label: 'Learning', count: counts.learning },
-    { key: 'review' as WordListFilter, label: 'Review', count: counts.review },
-    { key: 'mastered' as WordListFilter, label: 'Mastered', count: counts.mastered },
-    { key: 'known' as WordListFilter, label: 'Known', count: counts.known },
-    { key: 'user' as WordListFilter, label: 'My Words', count: counts.user }
-  ]
-})
+const filters = computed<{ key: WordListFilter; label: string }[]>(() => [
+  { key: 'all', label: 'All' },
+  { key: 'unseen', label: 'Unseen' },
+  { key: 'learning', label: 'Learning' },
+  { key: 'review', label: 'Review' },
+  { key: 'mastered', label: 'Mastered' },
+  { key: 'known', label: 'Known' },
+  { key: 'user', label: 'My Words' }
+])
 
 function setFilter(f: WordListFilter) {
   query.filter = f
 }
 
-function toggleKnown(wordId: number) {
+async function toggleKnown(wordId: number) {
   const state = states.value[wordId]
   if (state === 'known') {
-    srsStore.unmarkKnown(wordId)
+    await srsStore.unmarkKnown(wordId)
   } else {
-    srsStore.markAsKnown(wordId)
+    await srsStore.markAsKnown(wordId)
   }
 }
 </script>

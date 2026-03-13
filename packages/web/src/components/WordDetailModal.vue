@@ -16,8 +16,8 @@
         <span class="word-item-badge" :class="'badge-' + state">{{ state }}</span>
       </div>
 
-      <div class="card-zh" style="font-size:20px">{{ word.zh }}</div>
-      <div class="card-en" style="margin-top:8px">{{ word.en }}</div>
+      <div class="card-zh" style="font-size:20px">{{ word.definitionNative }}</div>
+      <div class="card-en" style="margin-top:8px">{{ word.definitionTarget }}</div>
 
       <ul class="card-examples" style="margin-top:12px">
         <li v-for="(ex, i) in word.examples" :key="i">
@@ -50,11 +50,11 @@
 
 <script setup lang="ts">
 import { computed, watch, ref } from 'vue'
-import { WordIndex } from '@/lib/word-index'
 import { useSrsStore } from '@/stores/srs'
 import { useAudio } from '@/composables/useAudio'
 import { useDictionary } from '@/composables/useDictionary'
-import type { DictEntry } from '@/types'
+import * as wordsApi from '@/api/words'
+import type { DictEntry, Word } from '@/types'
 
 const props = defineProps<{ wordId: number | null }>()
 const emit = defineEmits<{ close: [] }>()
@@ -63,10 +63,7 @@ const srsStore = useSrsStore()
 const audio = useAudio()
 const dict = useDictionary()
 
-const word = computed(() => {
-  if (props.wordId === null) return null
-  return WordIndex.get(props.wordId)
-})
+const word = ref<Word | null>(null)
 
 const state = computed(() => {
   if (props.wordId === null) return 'unseen'
@@ -82,15 +79,22 @@ const dictData = ref<DictEntry | null>(null)
 
 watch(() => props.wordId, async (newId) => {
   if (newId === null) {
+    word.value = null
     dictData.value = null
     return
   }
-  const w = WordIndex.get(newId)
-  if (!w) return
-  dictData.value = dict.getDictCached(w.word)
-  if (!dictData.value) {
-    await dict.fetchDictData(w.word)
-    dictData.value = dict.getDictCached(w.word)
+  try {
+    word.value = await wordsApi.getWordById(newId)
+  } catch {
+    word.value = null
+    return
+  }
+  if (word.value) {
+    dictData.value = dict.getDictCached(word.value.word)
+    if (!dictData.value) {
+      await dict.fetchDictData(word.value.word)
+      dictData.value = dict.getDictCached(word.value.word)
+    }
   }
 }, { immediate: true })
 </script>

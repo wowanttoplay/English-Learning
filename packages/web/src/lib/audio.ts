@@ -1,5 +1,4 @@
 import { DictAPI } from './dict-api'
-import { Storage } from './storage'
 
 const NORMAL_RATE = 0.85
 const SLOW_RATE = 0.6
@@ -12,6 +11,26 @@ let preferredVoice: SpeechSynthesisVoice | null = null
 let voicesLoaded = false
 
 // --- Settings persistence ---
+
+const AUDIO_SETTINGS_KEY = 'settings_audio'
+
+interface AudioSettings {
+  autoPlay: boolean
+}
+
+function loadAudioSettings(): AudioSettings {
+  try {
+    const raw = localStorage.getItem(AUDIO_SETTINGS_KEY)
+    if (raw) return JSON.parse(raw)
+  } catch {
+    // ignore
+  }
+  return { autoPlay: true }
+}
+
+function saveAudioSettings(settings: AudioSettings): void {
+  localStorage.setItem(AUDIO_SETTINGS_KEY, JSON.stringify(settings))
+}
 
 // --- Voice selection ---
 
@@ -49,24 +68,6 @@ function initVoices(): void {
   if (!voicesLoaded) {
     window.speechSynthesis.addEventListener('voiceschanged', trySelect)
   }
-}
-
-// --- Tier 0: Local TTS MP3 files ---
-
-import { WordIndex } from './word-index'
-
-const AUDIO_BASE = import.meta.env.VITE_AUDIO_BASE_URL || `${import.meta.env.BASE_URL}audio`
-
-function getLocalWordUrl(word: string): string | null {
-  const entry = WordIndex.getByText(word)
-  if (!entry) return null
-  return `${AUDIO_BASE}/words/word-${entry.id}.mp3`
-}
-
-function getLocalExampleUrl(word: string, exIndex: number): string | null {
-  const entry = WordIndex.getByText(word)
-  if (!entry) return null
-  return `${AUDIO_BASE}/examples/word-${entry.id}-ex${exIndex + 1}.mp3`
 }
 
 // --- Tier 1: dictionaryapi.dev audio ---
@@ -130,19 +131,6 @@ function speakText(text: string, rate?: number): Promise<void> {
 async function playWord(word: string, speed?: 'normal' | 'slow'): Promise<void> {
   const rate = speed === 'slow' ? SLOW_RATE : NORMAL_RATE
 
-  // Tier 0: Local TTS MP3
-  if (speed !== 'slow') {
-    const localUrl = getLocalWordUrl(word)
-    if (localUrl) {
-      try {
-        await playAudioUrl(localUrl, `local:${word}`)
-        return
-      } catch {
-        // Fall through
-      }
-    }
-  }
-
   // Tier 1: dictionaryapi.dev audio
   const audioUrl = getAudioUrl(word)
   if (audioUrl) {
@@ -164,21 +152,8 @@ async function playWord(word: string, speed?: 'normal' | 'slow'): Promise<void> 
   }
 }
 
-async function playSentence(text: string, speed?: 'normal' | 'slow', word?: string, exIndex?: number): Promise<void> {
+async function playSentence(text: string, speed?: 'normal' | 'slow', _word?: string, _exIndex?: number): Promise<void> {
   const rate = speed === 'slow' ? SLOW_RATE : SENTENCE_RATE
-
-  // Try local example MP3 if word and exIndex are provided
-  if (word != null && exIndex != null && speed !== 'slow') {
-    const localUrl = getLocalExampleUrl(word, exIndex)
-    if (localUrl) {
-      try {
-        await playAudioUrl(localUrl, `local:ex:${word}:${exIndex}`)
-        return
-      } catch {
-        // Fall through
-      }
-    }
-  }
 
   try {
     await speakText(text, rate)
@@ -188,25 +163,10 @@ async function playSentence(text: string, speed?: 'normal' | 'slow', word?: stri
 }
 
 async function preload(word: string): Promise<void> {
-  // Pre-buffer local TTS MP3
-  const localKey = `local:${word}`
-  const localUrl = getLocalWordUrl(word)
-  if (localUrl && !audioElementCache.has(localKey)) {
-    if (audioElementCache.size >= AUDIO_CACHE_MAX) {
-      const oldest = audioElementCache.keys().next().value!
-      audioElementCache.delete(oldest)
-    }
-    const el = new Audio()
-    el.preload = 'auto'
-    el.src = localUrl
-    el.load()
-    audioElementCache.set(localKey, el)
-  }
-
   if (!DictAPI.getCached(word)) {
     await DictAPI.lookup(word).catch(() => {})
   }
-  // Pre-buffer dictionaryapi.dev audio as fallback
+  // Pre-buffer dictionaryapi.dev audio
   const url = getAudioUrl(word)
   if (url && !audioElementCache.has(word)) {
     if (audioElementCache.size >= AUDIO_CACHE_MAX) {
@@ -226,13 +186,13 @@ function isAvailable(): boolean {
 }
 
 function setAutoPlay(enabled: boolean): void {
-  const settings = Storage.loadAudioSettings()
+  const settings = loadAudioSettings()
   settings.autoPlay = !!enabled
-  Storage.saveAudioSettings(settings)
+  saveAudioSettings(settings)
 }
 
 function getAutoPlay(): boolean {
-  return Storage.loadAudioSettings().autoPlay
+  return loadAudioSettings().autoPlay
 }
 
 function stop(): void {

@@ -1,11 +1,29 @@
 import type { DictEntry } from '@/types'
-import { Storage } from './storage'
 
 const API_BASE = 'https://api.dictionaryapi.dev/api/v2/entries/en/'
+const DICT_CACHE_KEY = 'dict_cache'
 const DICT_CACHE_MAX = 500
 const MIN_REQUEST_INTERVAL = 100
 const memCache = new Map<string, DictEntry>()
 let lastRequestTime = 0
+
+function loadDictCache(): Record<string, DictEntry> {
+  try {
+    const raw = localStorage.getItem(DICT_CACHE_KEY)
+    if (raw) return JSON.parse(raw)
+  } catch {
+    // ignore
+  }
+  return {}
+}
+
+function saveDictCache(cache: Record<string, DictEntry>): void {
+  try {
+    localStorage.setItem(DICT_CACHE_KEY, JSON.stringify(cache))
+  } catch {
+    // ignore quota errors
+  }
+}
 
 function rateLimitDelay(): Promise<void> {
   const now = Date.now()
@@ -27,7 +45,7 @@ async function lookup(word: string): Promise<DictEntry | null> {
   const mem = memCache.get(word)
   if (mem) return mem
 
-  const cache = Storage.loadDictCache()
+  const cache = loadDictCache()
   if (cache[word]) {
     memCache.set(word, cache[word])
     return cache[word]
@@ -85,7 +103,7 @@ async function lookup(word: string): Promise<DictEntry | null> {
         delete cache[keys[i]]
       }
     }
-    Storage.saveDictCache(cache)
+    saveDictCache(cache)
     memCache.set(word, result)
     return result
   } catch (e) {
@@ -98,7 +116,7 @@ function getCached(word: string): DictEntry | null {
   const mem = memCache.get(word)
   if (mem) return mem
 
-  const cache = Storage.loadDictCache()
+  const cache = loadDictCache()
   if (cache[word]) {
     memCache.set(word, cache[word])
     return cache[word]
@@ -108,7 +126,7 @@ function getCached(word: string): DictEntry | null {
 
 function clearCache(): void {
   memCache.clear()
-  Storage.removeDictCache()
+  localStorage.removeItem(DICT_CACHE_KEY)
 }
 
 export const DictAPI = {
