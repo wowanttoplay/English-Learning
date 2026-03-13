@@ -13,6 +13,7 @@
     "generate-timestamps": "tsx scripts/generate-timestamps.ts"
   },
   "dependencies": {
+    "@clerk/vue": "^2.0.4",
     "@english-learning/shared": "workspace:*",
     "pinia": "^2.3.1",
     "vue": "^3.5.13",
