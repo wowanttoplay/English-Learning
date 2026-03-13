@@ -9,6 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@clerk/backend": "^3.2.0",
     "@english-learning/shared": "workspace:*",
     "hono": "^4.7.0"
   },

@@ -1,0 +1,11 @@
+name = "english-learning-api"
+main = "src/index.ts"
+compatibility_date = "2025-03-01"
+
+[vars]
+ALLOWED_ORIGIN = "http://localhost:5173"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "english-learning"
+database_id = "placeholder-replace-after-d1-create"
