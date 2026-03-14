@@ -27,15 +27,12 @@
             @click="levelFilter = 'all'"
           >All</button>
           <button
+            v-for="level in cefrLevels"
+            :key="level"
             class="filter-tab"
-            :class="{ active: levelFilter === 'B1' }"
-            @click="levelFilter = 'B1'"
-          >Easier</button>
-          <button
-            class="filter-tab"
-            :class="{ active: levelFilter === 'B2' }"
-            @click="levelFilter = 'B2'"
-          >Standard</button>
+            :class="{ active: levelFilter === level }"
+            @click="levelFilter = level"
+          >{{ level }}</button>
         </div>
 
         <div class="filter-tabs">
@@ -90,8 +87,7 @@
               <div class="passage-item-title">{{ passage.title }}</div>
               <div class="passage-item-meta">
                 <span class="passage-topic">{{ formatTopic(passage.topic) }}</span>
-                <span class="passage-level">{{ passage.level }}</span>
-                <span v-if="passage.level === 'B1'" class="difficulty-badge">Easier</span>
+                <span class="level-badge" :class="'level-' + passage.level.toLowerCase()">{{ passage.level }}</span>
               </div>
             </div>
           </div>
@@ -111,8 +107,7 @@
               <div class="passage-item-title">{{ p.title }}</div>
               <div class="passage-item-meta">
                 <span class="passage-topic">{{ formatTopic(p.topic) }}</span>
-                <span class="passage-level">{{ p.level }}</span>
-                <span v-if="p.level === 'B1'" class="difficulty-badge">Easier</span>
+                <span class="level-badge" :class="'level-' + p.level.toLowerCase()">{{ p.level }}</span>
               </div>
             </div>
             <span class="passage-done-badge">&#10003; Read</span>
@@ -129,7 +124,7 @@ import { useRouter } from 'vue-router'
 import { usePassagesStore } from '@/stores/passages'
 import { DOMAINS, getSubtopicsByDomain } from '@/data/topics'
 import { formatTopic } from '@/lib/format'
-import type { DomainId, SubtopicId } from '@/types'
+import type { CefrCoreLevel, DomainId, SubtopicId } from '@/types'
 
 const router = useRouter()
 const passagesStore = usePassagesStore()
@@ -141,7 +136,8 @@ onMounted(() => {
 
 const hasPassages = computed(() => passagesStore.passages.length > 0)
 
-const levelFilter = ref<'all' | 'B1' | 'B2'>('all')
+const cefrLevels: CefrCoreLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
+const levelFilter = ref<'all' | CefrCoreLevel>('all')
 const domainFilter = ref<'all' | DomainId>('all')
 const topicFilter = ref<'all' | SubtopicId>('all')
 

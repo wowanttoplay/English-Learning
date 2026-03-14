@@ -5,7 +5,7 @@
   <div v-else-if="passage" class="passage-screen fade-in">
     <div class="card-header">
       <button class="back-btn" @click="router.push('/reading')">&#8592; Back</button>
-      <span class="card-progress">{{ passage.level }}<span v-if="passage.level === 'B1'" class="difficulty-badge">Easier</span> &middot; {{ formatTopic(passage.topic) }}</span>
+      <span class="card-progress"><span class="level-badge" :class="'level-' + passage.level.toLowerCase()">{{ passage.level }}</span> &middot; {{ formatTopic(passage.topic) }}</span>
     </div>
 
     <PassageAudioPlayer
