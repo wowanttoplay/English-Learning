@@ -43,6 +43,3 @@ export function getDomainBySubtopic(subtopicId: TopicId): Domain | undefined {
   const sub = SUBTOPICS.find(s => s.id === subtopicId)
   return sub ? DOMAINS.find(d => d.id === sub.domainId) : undefined
 }
-
-// Backward compatibility
-export const TOPIC_REGISTRY = SUBTOPICS
