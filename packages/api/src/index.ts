@@ -4,6 +4,7 @@ import { corsMiddleware } from './middleware/cors'
 import languagesRoutes from './routes/languages'
 import wordsRoutes from './routes/words'
 import passagesRoutes from './routes/passages'
+import translationsRoutes from './routes/translations'
 import { authMiddleware } from './middleware/auth'
 import cardsRoutes from './routes/cards'
 import userWordsRoutes from './routes/userWords'
@@ -22,6 +23,7 @@ app.get('/api/health', (c) => c.json({ ok: true }))
 app.route('/api/languages', languagesRoutes)
 app.route('/api/words', wordsRoutes)
 app.route('/api/passages', passagesRoutes)
+app.route('/api/translations', translationsRoutes)
 
 // Auth-protected routes
 const authApp = new Hono<{ Bindings: Env }>()
