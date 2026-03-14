@@ -5,6 +5,8 @@ import { upsertCardStatement } from '../db/queries/cards'
 import { incrementLearnedStatement } from '../db/queries/history'
 import { createNewCard, today } from '@english-learning/shared'
 
+const EASE_MULTIPLIER = 1000
+
 const userWords = new Hono<{ Bindings: Env }>()
 
 // GET /api/user-words?lang=en
@@ -23,17 +25,35 @@ userWords.post('/', async (c) => {
     return c.json({ error: 'word and languageId required', code: 'MISSING_FIELD' }, 400)
   }
 
-  // Insert user word, then look it up to get the auto-assigned ID
+  // Insert into the main words table (level='user') so the ID doesn't collide
+  // with user_words table IDs. This way the SRS card word_id correctly references words.id.
+  const wordResult = await c.env.DB
+    .prepare(`INSERT INTO words (language_id, word, pos, phonetic, definition_native, definition_target, examples, level, topics)
+      VALUES (?, ?, ?, ?, ?, ?, ?, 'user', ?)
+      RETURNING id`)
+    .bind(
+      data.languageId,
+      data.word,
+      data.pos ?? null,
+      data.phonetic ?? null,
+      data.definitionNative ?? null,
+      data.definitionTarget ?? null,
+      JSON.stringify(data.examples ?? []),
+      JSON.stringify(data.topics ?? [])
+    )
+    .first<{ id: number }>()
+
+  if (!wordResult) return c.json({ error: 'Failed to create word', code: 'CREATE_FAILED' }, 500)
+
+  const wordId = wordResult.id
+
+  // Also track in user_words for per-user ownership
   await c.env.DB.batch([
     insertUserWordStatement(c.env.DB, userId, data),
   ])
 
-  const created = await getLastInsertedUserWord(c.env.DB, userId, data.languageId, data.word)
-  if (!created) return c.json({ error: 'Failed to create word', code: 'CREATE_FAILED' }, 500)
-
-  // Now create the SRS card for this user word
-  const EASE_MULTIPLIER = 1000
-  const card = createNewCard(created.id)
+  // Create SRS card with the words table ID (no collision)
+  const card = createNewCard(wordId)
   const dbCard = { ...card, ease: Math.round(card.ease * EASE_MULTIPLIER) }
   const dateStr = today()
 
@@ -42,7 +62,18 @@ userWords.post('/', async (c) => {
     incrementLearnedStatement(c.env.DB, userId, dateStr),
   ])
 
-  return c.json(created, 201)
+  return c.json({
+    id: wordId,
+    word: data.word,
+    pos: data.pos ?? '',
+    phonetic: data.phonetic ?? '',
+    definitionNative: data.definitionNative ?? '',
+    definitionTarget: data.definitionTarget ?? '',
+    examples: data.examples ?? [],
+    level: 'user',
+    topics: data.topics ?? [],
+    languageId: data.languageId,
+  }, 201)
 })
 
 export default userWords

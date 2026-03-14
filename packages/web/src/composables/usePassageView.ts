@@ -21,10 +21,44 @@ export function usePassageView() {
   const loading = ref(false)
 
   // Build a lookup set of word text -> word for this passage
+  // Includes common inflected forms so "emphasize" matches "emphasis", etc.
   const wordsByText = computed(() => {
     const map = new Map<string, Word>()
     for (const w of passageWords.value) {
-      map.set(w.word.toLowerCase(), w)
+      const base = w.word.toLowerCase()
+      map.set(base, w)
+      // Generate common inflections
+      map.set(base + 's', w)
+      map.set(base + 'es', w)
+      map.set(base + 'ed', w)
+      map.set(base + 'ing', w)
+      map.set(base + 'ly', w)
+      map.set(base + 'er', w)
+      map.set(base + 'est', w)
+      map.set(base + 'ment', w)
+      map.set(base + 'tion', w)
+      map.set(base + 'ness', w)
+      if (base.endsWith('e')) {
+        map.set(base.slice(0, -1) + 'ing', w)  // integrate → integrating
+        map.set(base.slice(0, -1) + 'ed', w)   // integrate → integrated
+        map.set(base.slice(0, -1) + 'ion', w)  // integrate → integration
+      }
+      if (base.endsWith('y')) {
+        map.set(base.slice(0, -1) + 'ies', w)  // strategy → strategies
+        map.set(base.slice(0, -1) + 'ied', w)  // modify → modified
+      }
+      if (base.endsWith('is')) {
+        map.set(base.slice(0, -2) + 'ize', w)  // emphasis → emphasize
+        map.set(base.slice(0, -2) + 'izes', w)
+        map.set(base.slice(0, -2) + 'ized', w)
+        map.set(base.slice(0, -2) + 'izing', w)
+      }
+      if (base.endsWith('le')) {
+        map.set(base.slice(0, -1) + 'es', w)   // obstacle → obstacles
+      }
+      if (base.endsWith('or') || base.endsWith('er')) {
+        map.set(base + 's', w)                  // indicator → indicators
+      }
     }
     return map
   })
