@@ -78,7 +78,7 @@ export function useFreeWordLookup(getWord: () => string | null) {
         return
       }
 
-      const cached = DictAPI.getCached(newWord)
+      const cached = DictAPI.getCached(newWord, 'en')
       if (cached) {
         dictEntry.value = cached
         loading.value = false
@@ -90,7 +90,7 @@ export function useFreeWordLookup(getWord: () => string | null) {
       notFound.value = false
       dictEntry.value = null
 
-      const result = await DictAPI.lookup(newWord)
+      const result = await DictAPI.lookup(newWord, 'en')
       loading.value = false
       if (result) {
         dictEntry.value = result

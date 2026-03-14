@@ -1,15 +1,29 @@
 import type { DictEntry } from '@/types'
 
-const API_BASE = 'https://api.dictionaryapi.dev/api/v2/entries/en/'
-const DICT_CACHE_KEY = 'dict_cache'
+// Per-language dictionary API base URLs
+// Add new providers here as languages are added
+const DICT_PROVIDERS: Record<string, string> = {
+  en: 'https://api.dictionaryapi.dev/api/v2/entries/en/',
+  // Future: ja, es, fr, etc.
+}
+
+const DICT_CACHE_PREFIX = 'dict_cache_'
 const DICT_CACHE_MAX = 500
 const MIN_REQUEST_INTERVAL = 100
 const memCache = new Map<string, DictEntry>()
 let lastRequestTime = 0
 
-function loadDictCache(): Record<string, DictEntry> {
+function cacheKey(lang: string): string {
+  return `${DICT_CACHE_PREFIX}${lang}`
+}
+
+function memCacheKey(word: string, lang: string): string {
+  return `${lang}:${word}`
+}
+
+function loadDictCache(lang: string): Record<string, DictEntry> {
   try {
-    const raw = localStorage.getItem(DICT_CACHE_KEY)
+    const raw = localStorage.getItem(cacheKey(lang))
     if (raw) return JSON.parse(raw)
   } catch {
     // ignore
@@ -17,9 +31,9 @@ function loadDictCache(): Record<string, DictEntry> {
   return {}
 }
 
-function saveDictCache(cache: Record<string, DictEntry>): void {
+function saveDictCache(lang: string, cache: Record<string, DictEntry>): void {
   try {
-    localStorage.setItem(DICT_CACHE_KEY, JSON.stringify(cache))
+    localStorage.setItem(cacheKey(lang), JSON.stringify(cache))
   } catch {
     // ignore quota errors
   }
@@ -41,19 +55,23 @@ function rateLimitDelay(): Promise<void> {
   })
 }
 
-async function lookup(word: string): Promise<DictEntry | null> {
-  const mem = memCache.get(word)
+async function lookup(word: string, lang: string = 'en'): Promise<DictEntry | null> {
+  const mk = memCacheKey(word, lang)
+  const mem = memCache.get(mk)
   if (mem) return mem
 
-  const cache = loadDictCache()
+  const cache = loadDictCache(lang)
   if (cache[word]) {
-    memCache.set(word, cache[word])
+    memCache.set(mk, cache[word])
     return cache[word]
   }
 
+  const apiBase = DICT_PROVIDERS[lang]
+  if (!apiBase) return null
+
   try {
     await rateLimitDelay()
-    const response = await fetch(API_BASE + encodeURIComponent(word))
+    const response = await fetch(apiBase + encodeURIComponent(word))
     if (!response.ok) return null
 
     const data = await response.json()
@@ -103,8 +121,8 @@ async function lookup(word: string): Promise<DictEntry | null> {
         delete cache[keys[i]]
       }
     }
-    saveDictCache(cache)
-    memCache.set(word, result)
+    saveDictCache(lang, cache)
+    memCache.set(mk, result)
     return result
   } catch (e) {
     console.warn('Dict API lookup failed for:', word, e)
@@ -112,21 +130,38 @@ async function lookup(word: string): Promise<DictEntry | null> {
   }
 }
 
-function getCached(word: string): DictEntry | null {
-  const mem = memCache.get(word)
+function getCached(word: string, lang: string = 'en'): DictEntry | null {
+  const mk = memCacheKey(word, lang)
+  const mem = memCache.get(mk)
   if (mem) return mem
 
-  const cache = loadDictCache()
+  const cache = loadDictCache(lang)
   if (cache[word]) {
-    memCache.set(word, cache[word])
+    memCache.set(mk, cache[word])
     return cache[word]
   }
   return null
 }
 
-function clearCache(): void {
-  memCache.clear()
-  localStorage.removeItem(DICT_CACHE_KEY)
+function clearCache(lang?: string): void {
+  if (lang) {
+    // Clear specific language cache
+    for (const [key] of memCache) {
+      if (key.startsWith(`${lang}:`)) memCache.delete(key)
+    }
+    localStorage.removeItem(cacheKey(lang))
+  } else {
+    // Clear all language caches
+    memCache.clear()
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+      const key = localStorage.key(i)
+      if (key?.startsWith(DICT_CACHE_PREFIX)) {
+        localStorage.removeItem(key)
+      }
+    }
+    // Also remove legacy key for migration
+    localStorage.removeItem('dict_cache')
+  }
 }
 
 export const DictAPI = {
