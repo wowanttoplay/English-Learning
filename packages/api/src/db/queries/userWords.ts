@@ -67,13 +67,3 @@ export function insertUserWordStatement(
       JSON.stringify(data.topics ?? [])
     )
 }
-
-export async function getLastInsertedUserWord(
-  db: D1Database, userId: number, langId: string, word: string
-): Promise<Word | null> {
-  const row = await db
-    .prepare('SELECT * FROM user_words WHERE user_id = ? AND language_id = ? AND word = ?')
-    .bind(userId, langId, word)
-    .first<UserWordRow>()
-  return row ? rowToWord(row) : null
-}

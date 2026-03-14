@@ -12,4 +12,3 @@ export interface AudioSettings { autoPlay: boolean }
 // Web-only display types
 export interface Domain { id: DomainId; name: string; emoji: string }
 export interface Subtopic { id: TopicId; name: string; emoji: string; domainId: DomainId }
-export type TopicEntry = Subtopic
