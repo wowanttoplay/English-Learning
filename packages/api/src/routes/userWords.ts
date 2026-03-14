@@ -3,9 +3,7 @@ import type { Env } from '../env'
 import { getUserWords, insertUserWordStatement, getLastInsertedUserWord } from '../db/queries/userWords'
 import { upsertCardStatement } from '../db/queries/cards'
 import { incrementLearnedStatement } from '../db/queries/history'
-import { createNewCard, today } from '@english-learning/shared'
-
-const EASE_MULTIPLIER = 1000
+import { createNewCard, today, EASE_MULTIPLIER } from '@english-learning/shared'
 
 const userWords = new Hono<{ Bindings: Env }>()
 

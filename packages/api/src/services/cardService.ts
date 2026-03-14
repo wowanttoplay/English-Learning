@@ -2,12 +2,10 @@ import type { SrsCard, Rating, SrsStats, SrsHistory, CardQueue } from '@english-
 import {
   createNewCard, createKnownCard, rateCard as engineRateCard,
   markKnown as engineMarkKnown, unmarkKnown as engineUnmarkKnown,
-  computeStats, buildQueue, today
+  computeStats, buildQueue, today, EASE_MULTIPLIER
 } from '@english-learning/shared'
 import { getCardsByUser, getCardByUserAndWord, upsertCardStatement, insertReviewLogStatement, deleteCard } from '../db/queries/cards'
 import { getHistoryByUser, incrementReviewedStatement, incrementLearnedStatement } from '../db/queries/history'
-
-const EASE_MULTIPLIER = 1000
 const fromDbEase = (ease: number) => ease / EASE_MULTIPLIER
 const toDbEase = (ease: number) => Math.round(ease * EASE_MULTIPLIER)
 

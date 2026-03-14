@@ -9,6 +9,7 @@ export const EASY_INTERVAL = 4 // days
 export const DEFAULT_EASE = 2.5
 export const MIN_EASE = 1.3
 export const MASTERED_INTERVAL = 21 // days
+export const EASE_MULTIPLIER = 1000
 
 // --- Due check ---
 
