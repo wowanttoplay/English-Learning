@@ -8,6 +8,7 @@
 
 <script setup lang="ts">
 import { useUiStateStore } from '@/stores/uiState'
+import { useAuthStore } from '@/stores/auth'
 import { useTheme } from '@/composables/useTheme'
 import BottomNav from '@/components/BottomNav.vue'
 import WordDetailModal from '@/components/WordDetailModal.vue'
@@ -17,6 +18,7 @@ import '@/styles/layout.css'
 import '@/styles/components.css'
 
 const ui = useUiStateStore()
+useAuthStore() // Initialize auth — wires Clerk token into API client
 
 useTheme()
 </script>
