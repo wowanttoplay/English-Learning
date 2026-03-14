@@ -50,53 +50,14 @@
 </template>
 
 <script setup lang="ts">
-import { computed, watch, ref } from 'vue'
-import { useSrsStore } from '@/stores/srs'
+import { toRef } from 'vue'
 import { useAudio } from '@/composables/useAudio'
-import { useDictionary } from '@/composables/useDictionary'
-import * as wordsApi from '@/api/words'
-import type { DictEntry, Word } from '@/types'
+import { useWordModal } from '@/composables/useWordModal'
 import LevelBadge from '@/components/LevelBadge.vue'
 
 const props = defineProps<{ wordId: number | null }>()
 const emit = defineEmits<{ close: [] }>()
 
-const srsStore = useSrsStore()
 const audio = useAudio()
-const dict = useDictionary()
-
-const word = ref<Word | null>(null)
-
-const state = computed(() => {
-  if (props.wordId === null) return 'unseen'
-  return srsStore.getCardState(props.wordId)
-})
-
-const card = computed(() => {
-  if (props.wordId === null) return null
-  return srsStore.getCard(props.wordId)
-})
-
-const dictData = ref<DictEntry | null>(null)
-
-watch(() => props.wordId, async (newId) => {
-  if (newId === null) {
-    word.value = null
-    dictData.value = null
-    return
-  }
-  try {
-    word.value = await wordsApi.getWordById(newId)
-  } catch {
-    word.value = null
-    return
-  }
-  if (word.value) {
-    dictData.value = dict.getDictCached(word.value.word)
-    if (!dictData.value) {
-      await dict.fetchDictData(word.value.word)
-      dictData.value = dict.getDictCached(word.value.word)
-    }
-  }
-}, { immediate: true })
+const { word, state, card, dictData } = useWordModal(toRef(props, 'wordId'))
 </script>
