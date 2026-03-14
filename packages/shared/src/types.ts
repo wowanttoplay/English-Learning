@@ -1,16 +1,9 @@
 // === Levels (per-language, see levels.ts for registry) ===
 export type Level = string
 
-// Backward-compatible aliases — will be removed in a future cleanup
-export type CefrCoreLevel = Level
-export type CefrLevel = Level
-
 // === Topic Hierarchy ===
 export type DomainId = string
 export type TopicId = string
-
-// Backward-compatible alias
-export type SubtopicId = TopicId
 
 // === Language ===
 export interface Language {
