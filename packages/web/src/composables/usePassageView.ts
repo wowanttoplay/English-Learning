@@ -1,6 +1,7 @@
 import { computed, ref, watch, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { usePassagesStore } from '@/stores/passages'
+import { useSettingsStore } from '@/stores/settings'
 import * as passagesApi from '@/api/passages'
 import { splitSentences, getWordPattern } from '@/lib/sentence-splitter'
 import { AudioPlayer } from '@/lib/audio'
@@ -14,6 +15,7 @@ function escapeHtml(str: string): string {
 export function usePassageView() {
   const route = useRoute()
   const passagesStore = usePassagesStore()
+  const settingsStore = useSettingsStore()
 
   const passageTextRef = ref<HTMLElement | null>(null)
   const tooltipWordId = ref<number | null>(null)
@@ -77,7 +79,7 @@ export function usePassageView() {
     if (!id) return
     loading.value = true
     try {
-      const data = await passagesApi.getPassageById(Number(id))
+      const data = await passagesApi.getPassageById(Number(id), settingsStore.settings.selectedLocales)
       passage.value = data.passage
       passageWords.value = data.words
       // Preload dictionary data (MP3 audio URLs) for all target words in background
