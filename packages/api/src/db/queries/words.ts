@@ -1,4 +1,5 @@
 import type { Word, Level, TopicId } from '@english-learning/shared'
+import { mergeTranslations } from './translations'
 
 interface WordRow {
   id: number
@@ -6,8 +7,6 @@ interface WordRow {
   word: string
   pos: string
   phonetic: string
-  definition_native: string
-  definition_target: string
   examples: string
   level: string
   topics: string
@@ -20,8 +19,6 @@ function rowToWord(row: WordRow): Word {
     word: row.word,
     pos: row.pos,
     phonetic: row.phonetic,
-    definitionNative: row.definition_native,
-    definitionTarget: row.definition_target,
     examples: JSON.parse(row.examples ?? '[]') as string[],
     level: row.level as Level,
     topics: JSON.parse(row.topics ?? '[]') as TopicId[],
@@ -36,6 +33,7 @@ interface GetWordsOpts {
   topic?: string
   page?: number
   pageSize?: number
+  locales?: string[]
 }
 
 export async function getWords(
@@ -68,25 +66,30 @@ export async function getWords(
 
   const { results } = await db
     .prepare(
-      `SELECT id, language_id, word, pos, phonetic, definition_native, definition_target, examples, level, topics, audio_url FROM words WHERE ${where} ORDER BY id LIMIT ? OFFSET ?`
+      `SELECT id, language_id, word, pos, phonetic, examples, level, topics, audio_url FROM words WHERE ${where} ORDER BY id LIMIT ? OFFSET ?`
     )
     .bind(...params, pageSize, offset)
     .all<WordRow>()
 
-  return { items: (results ?? []).map(rowToWord), total }
+  const words = (results ?? []).map(rowToWord)
+  return { items: await mergeTranslations(db, words, opts.locales), total }
 }
 
 export async function getWordById(
   db: D1Database,
-  id: number
+  id: number,
+  locales?: string[]
 ): Promise<Word | null> {
   const row = await db
     .prepare(
-      'SELECT id, language_id, word, pos, phonetic, definition_native, definition_target, examples, level, topics, audio_url FROM words WHERE id = ?'
+      'SELECT id, language_id, word, pos, phonetic, examples, level, topics, audio_url FROM words WHERE id = ?'
     )
     .bind(id)
     .first<WordRow>()
-  return row ? rowToWord(row) : null
+  if (!row) return null
+  const word = rowToWord(row)
+  const [merged] = await mergeTranslations(db, [word], locales)
+  return merged
 }
 
 export async function getWordCount(
@@ -105,8 +108,6 @@ export interface InsertWordData {
   word: string
   pos?: string | null
   phonetic?: string | null
-  definitionNative?: string | null
-  definitionTarget?: string | null
   examples?: string[]
   topics?: string[]
 }
@@ -116,16 +117,14 @@ export async function insertWord(
   data: InsertWordData
 ): Promise<number> {
   const result = await db
-    .prepare(`INSERT INTO words (language_id, word, pos, phonetic, definition_native, definition_target, examples, level, topics)
-      VALUES (?, ?, ?, ?, ?, ?, ?, 'user', ?)
+    .prepare(`INSERT INTO words (language_id, word, pos, phonetic, examples, level, topics)
+      VALUES (?, ?, ?, ?, ?, 'user', ?)
       RETURNING id`)
     .bind(
       data.languageId,
       data.word,
       data.pos ?? null,
       data.phonetic ?? null,
-      data.definitionNative ?? null,
-      data.definitionTarget ?? null,
       JSON.stringify(data.examples ?? []),
       JSON.stringify(data.topics ?? [])
     )
@@ -136,17 +135,19 @@ export async function insertWord(
 
 export async function getWordsByIds(
   db: D1Database,
-  ids: number[]
+  ids: number[],
+  locales?: string[]
 ): Promise<Word[]> {
   if (ids.length === 0) return []
 
   const placeholders = ids.map(() => '?').join(', ')
   const { results } = await db
     .prepare(
-      `SELECT id, language_id, word, pos, phonetic, definition_native, definition_target, examples, level, topics, audio_url FROM words WHERE id IN (${placeholders}) ORDER BY id`
+      `SELECT id, language_id, word, pos, phonetic, examples, level, topics, audio_url FROM words WHERE id IN (${placeholders}) ORDER BY id`
     )
     .bind(...ids)
     .all<WordRow>()
 
-  return (results ?? []).map(rowToWord)
+  const words = (results ?? []).map(rowToWord)
+  return mergeTranslations(db, words, locales)
 }
