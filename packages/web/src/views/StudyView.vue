@@ -55,8 +55,9 @@
           </div>
 
           <div v-if="studySession.revealed" class="card-back">
-            <div class="card-zh">{{ currentWord.definitionNative }}</div>
-            <div class="card-en">{{ currentWord.definitionTarget }}</div>
+            <div v-for="(text, locale) in currentWord.translations" :key="locale" class="card-def">
+              {{ text }}
+            </div>
             <ul class="card-examples">
               <li v-for="(ex, i) in currentWord.examples" :key="i">
                 <span class="example-text">{{ ex }}</span>
