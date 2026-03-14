@@ -3,4 +3,6 @@ dist
 .claude/
 .env.local
 .env
+.dev.vars
+.wrangler/
 output
