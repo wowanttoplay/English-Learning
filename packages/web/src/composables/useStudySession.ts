@@ -1,6 +1,7 @@
 import { computed, watch, ref } from 'vue'
 import { useSrsStore } from '@/stores/srs'
 import { useStudySessionStore } from '@/stores/studySession'
+import { useSettingsStore } from '@/stores/settings'
 import { useAudio } from '@/composables/useAudio'
 import { useDictionary } from '@/composables/useDictionary'
 import * as wordsApi from '@/api/words'
@@ -11,8 +12,12 @@ const wordCache = new Map<number, Word>()
 export function useStudySession() {
   const srsStore = useSrsStore()
   const session = useStudySessionStore()
+  const settingsStore = useSettingsStore()
   const audio = useAudio()
   const dict = useDictionary()
+
+  // Clear word cache to avoid stale translations when locales change
+  wordCache.clear()
 
   const currentCard = computed(() => session.currentCard)
   const currentWord = ref<Word | null>(null)
@@ -32,10 +37,11 @@ export function useStudySession() {
 
   const extraDefs = computed(() => {
     if (!dictData.value?.meanings || !currentWord.value) return []
+    const targetDef = currentWord.value.translations?.[settingsStore.settings.currentLanguage]
     const defs: { pos: string; def: string; example: string | null }[] = []
     for (const m of dictData.value.meanings) {
       for (const d of m.definitions) {
-        if (d.definition !== currentWord.value.definitionTarget && defs.length < 2) {
+        if (d.definition !== targetDef && defs.length < 2) {
           defs.push({ pos: m.partOfSpeech, def: d.definition, example: d.example })
         }
       }
@@ -53,7 +59,7 @@ export function useStudySession() {
   async function loadWord(wordId: number): Promise<Word | null> {
     if (wordCache.has(wordId)) return wordCache.get(wordId)!
     try {
-      const word = await wordsApi.getWordById(wordId)
+      const word = await wordsApi.getWordById(wordId, settingsStore.settings.selectedLocales)
       wordCache.set(wordId, word)
       return word
     } catch {
