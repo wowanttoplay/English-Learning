@@ -1,0 +1,56 @@
+[
+  {
+    "index": 0,
+    "start": 0.01,
+    "end": 4.83,
+    "text": "Every Monday, our team holds a short meeting to talk about the week ahead."
+  },
+  {
+    "index": 1,
+    "start": 4.83,
+    "end": 9.48,
+    "text": "The lead engineer starts by giving an outline of the main tasks."
+  },
+  {
+    "index": 2,
+    "start": 9.48,
+    "end": 14.56,
+    "text": "Then each person shares what they are working on and any obstacles they face."
+  },
+  {
+    "index": 3,
+    "start": 14.56,
+    "end": 20.34,
+    "text": "Last Monday, two developers had different ideas about how to solve a rendering problem."
+  },
+  {
+    "index": 4,
+    "start": 20.34,
+    "end": 26.11,
+    "text": "One wanted to modify the existing code, while the other suggested writing it from scratch."
+  },
+  {
+    "index": 5,
+    "start": 26.11,
+    "end": 30.44,
+    "text": "The discussion was intense at times, but everyone listened carefully."
+  },
+  {
+    "index": 6,
+    "start": 30.44,
+    "end": 35.64,
+    "text": "In the end, the team reached a consensus and agreed to try the first approach."
+  },
+  {
+    "index": 7,
+    "start": 35.64,
+    "end": 41.65,
+    "text": "These meetings facilitate better communication and help us anticipate problems before they grow."
+  },
+  {
+    "index": 8,
+    "start": 41.65,
+    "end": 46.65,
+    "text": "I have noticed that when people feel heard, they become more productive and keen to contribute."
+  }
+]

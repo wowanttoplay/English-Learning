@@ -1,0 +1,68 @@
+[
+  {
+    "index": 0,
+    "start": 0.01,
+    "end": 5.18,
+    "text": "Last week, I noticed that a button on our app was not showing in the right place."
+  },
+  {
+    "index": 1,
+    "start": 5.18,
+    "end": 9.83,
+    "text": "It only happened on certain screen sizes, which made it hard to detect."
+  },
+  {
+    "index": 2,
+    "start": 9.83,
+    "end": 14.31,
+    "text": "I started by checking the recent code changes to trace the problem."
+  },
+  {
+    "index": 3,
+    "start": 14.31,
+    "end": 20.52,
+    "text": "After an hour of reading through files, I found that a small update had triggered the layout to break."
+  },
+  {
+    "index": 4,
+    "start": 20.52,
+    "end": 24.59,
+    "text": "The underlying cause was a missing value in the style rules."
+  },
+  {
+    "index": 5,
+    "start": 24.59,
+    "end": 29.45,
+    "text": "It was a minor issue, but it had a significant effect on how the page looked."
+  },
+  {
+    "index": 6,
+    "start": 29.45,
+    "end": 34.72,
+    "text": "I felt some frustration at first, but staying patient helped me think clearly."
+  },
+  {
+    "index": 7,
+    "start": 34.72,
+    "end": 39.53,
+    "text": "Once I fixed the code, I tested it thoroughly on different devices."
+  },
+  {
+    "index": 8,
+    "start": 39.53,
+    "end": 40.98,
+    "text": "The bug was gone."
+  },
+  {
+    "index": 9,
+    "start": 40.98,
+    "end": 44.83,
+    "text": "My colleague said she had overlooked the same problem earlier."
+  },
+  {
+    "index": 10,
+    "start": 44.83,
+    "end": 49.83,
+    "text": "It reminded me that even small details can have a tremendous impact on quality."
+  }
+]

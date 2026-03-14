@@ -1,0 +1,62 @@
+[
+  {
+    "index": 0,
+    "start": 0.01,
+    "end": 4.66,
+    "text": "Last month, a new developer named Li joined our rendering team."
+  },
+  {
+    "index": 1,
+    "start": 4.66,
+    "end": 8.19,
+    "text": "She had just finished university and was keen to learn."
+  },
+  {
+    "index": 2,
+    "start": 8.19,
+    "end": 13.63,
+    "text": "On her first day, we gave her a comprehensive overview of the project and its framework."
+  },
+  {
+    "index": 3,
+    "start": 13.63,
+    "end": 19.25,
+    "text": "She asked many thoughtful questions, which showed that she was eager to grasp the details."
+  },
+  {
+    "index": 4,
+    "start": 19.25,
+    "end": 24.97,
+    "text": "Her manager paired her with a senior colleague who would provide guidance during the first few weeks."
+  },
+  {
+    "index": 5,
+    "start": 24.97,
+    "end": 29.93,
+    "text": "Li found the codebase overwhelming at first, but she adapted quickly."
+  },
+  {
+    "index": 6,
+    "start": 29.93,
+    "end": 35.04,
+    "text": "By the end of her second week, she had already submitted her first code change."
+  },
+  {
+    "index": 7,
+    "start": 35.04,
+    "end": 38.8,
+    "text": "The team acknowledged her effort and gave her positive comments."
+  },
+  {
+    "index": 8,
+    "start": 38.8,
+    "end": 45.24,
+    "text": "Watching someone new integrate into the group reminded us all of how important it is to be patient and supportive."
+  },
+  {
+    "index": 9,
+    "start": 45.24,
+    "end": 50.24,
+    "text": "A welcoming atmosphere can transform a nervous newcomer into a dedicated team member."
+  }
+]

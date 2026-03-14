@@ -1,0 +1,68 @@
+[
+  {
+    "index": 0,
+    "start": 0.01,
+    "end": 6.44,
+    "text": "We had two weeks to finish the new feature, but halfway through, a major setback slowed us down."
+  },
+  {
+    "index": 1,
+    "start": 6.44,
+    "end": 10.99,
+    "text": "The design changed, and we had to redo a large part of the work."
+  },
+  {
+    "index": 2,
+    "start": 10.99,
+    "end": 13.46,
+    "text": "The strain on the team was obvious."
+  },
+  {
+    "index": 3,
+    "start": 13.46,
+    "end": 18.03,
+    "text": "Some people stayed late every night, and the atmosphere became tense."
+  },
+  {
+    "index": 4,
+    "start": 18.03,
+    "end": 24.03,
+    "text": "Our manager tried to allocate extra help, but it was hard to find people who understood the code."
+  },
+  {
+    "index": 5,
+    "start": 24.03,
+    "end": 28.29,
+    "text": "I felt a growing anxiety about whether we would finish on time."
+  },
+  {
+    "index": 6,
+    "start": 28.29,
+    "end": 33.78,
+    "text": "Nevertheless, we kept going and split the remaining tasks into smaller pieces."
+  },
+  {
+    "index": 7,
+    "start": 33.78,
+    "end": 37.24,
+    "text": "Each person was dedicated to one part and worked hard."
+  },
+  {
+    "index": 8,
+    "start": 37.24,
+    "end": 41.61,
+    "text": "On the last day, we submitted the feature just before the deadline."
+  },
+  {
+    "index": 9,
+    "start": 41.61,
+    "end": 45.66,
+    "text": "The outcome was not perfect, but it was good enough to launch."
+  },
+  {
+    "index": 10,
+    "start": 45.66,
+    "end": 50.66,
+    "text": "The experience taught me that patience and teamwork matter most under pressure."
+  }
+]

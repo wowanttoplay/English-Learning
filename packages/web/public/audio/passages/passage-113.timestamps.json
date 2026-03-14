@@ -1,0 +1,68 @@
+[
+  {
+    "index": 0,
+    "start": 0.01,
+    "end": 5.06,
+    "text": "Every morning, millions of people check the weather forecast before leaving home."
+  },
+  {
+    "index": 1,
+    "start": 5.06,
+    "end": 8.22,
+    "text": "But how do experts predict what the sky will do?"
+  },
+  {
+    "index": 2,
+    "start": 8.22,
+    "end": 11.02,
+    "text": "The process begins with data collection."
+  },
+  {
+    "index": 3,
+    "start": 11.02,
+    "end": 18.03,
+    "text": "Weather stations, satellites, and special balloons detect changes in temperature, wind, and air pressure."
+  },
+  {
+    "index": 4,
+    "start": 18.03,
+    "end": 24.86,
+    "text": "This information is fed into powerful computers that use complex models to anticipate future conditions."
+  },
+  {
+    "index": 5,
+    "start": 24.86,
+    "end": 30.5,
+    "text": "The computers generate predictions for the next few hours, days, and even weeks."
+  },
+  {
+    "index": 6,
+    "start": 30.5,
+    "end": 34.8,
+    "text": "However, forecasts become less accurate the further ahead they look."
+  },
+  {
+    "index": 7,
+    "start": 34.8,
+    "end": 40.78,
+    "text": "A five-day outlook is generally reliable, but anything beyond that is increasingly vague."
+  },
+  {
+    "index": 8,
+    "start": 40.78,
+    "end": 46.51,
+    "text": "Scientists are constantly working to enhance these models by integrating new technology."
+  },
+  {
+    "index": 9,
+    "start": 46.51,
+    "end": 54,
+    "text": "Despite the limitations, modern forecasting has undergone a tremendous transformation over the past few decades."
+  },
+  {
+    "index": 10,
+    "start": 54,
+    "end": 59,
+    "text": "It saves lives by giving people sufficient time to prepare for storms and other severe weather events."
+  }
+]

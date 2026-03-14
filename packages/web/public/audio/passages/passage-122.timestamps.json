@@ -1,0 +1,62 @@
+[
+  {
+    "index": 0,
+    "start": 0.01,
+    "end": 4.56,
+    "text": "Our rendering engine had a persistent bug that no one could fix alone."
+  },
+  {
+    "index": 1,
+    "start": 4.56,
+    "end": 8.71,
+    "text": "Images would flicker on screen whenever the user scrolled quickly."
+  },
+  {
+    "index": 2,
+    "start": 8.71,
+    "end": 13.02,
+    "text": "Three of us decided to collaborate and tackle the issue as a group."
+  },
+  {
+    "index": 3,
+    "start": 13.02,
+    "end": 19.03,
+    "text": "We started by listing every possible cause and then testing each assumption one by one."
+  },
+  {
+    "index": 4,
+    "start": 19.03,
+    "end": 21.75,
+    "text": "It took two full days of careful work."
+  },
+  {
+    "index": 5,
+    "start": 21.75,
+    "end": 28.02,
+    "text": "At one point, we discovered that the engine was trying to draw the same image twice in the same frame."
+  },
+  {
+    "index": 6,
+    "start": 28.02,
+    "end": 32.15,
+    "text": "The solution was to add a check that would prevent this from happening."
+  },
+  {
+    "index": 7,
+    "start": 32.15,
+    "end": 34.64,
+    "text": "It was a breakthrough moment for the team."
+  },
+  {
+    "index": 8,
+    "start": 34.64,
+    "end": 39.43,
+    "text": "Working alongside each other helped us grasp the problem from different angles."
+  },
+  {
+    "index": 9,
+    "start": 39.43,
+    "end": 44.43,
+    "text": "I learned that some obstacles are too complex for one person and that genuine teamwork, where people cooperate openly, can yield remarkable results."
+  }
+]

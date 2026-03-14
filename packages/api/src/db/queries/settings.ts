@@ -9,6 +9,7 @@ interface SettingsRow {
 const DEFAULT_SETTINGS: UserSettings = {
   currentLanguage: 'en',
   audioAutoPlay: false,
+  selectedLocales: [],
 }
 
 export async function getSettings(
@@ -25,13 +26,17 @@ export async function getSettings(
   return {
     currentLanguage: row.current_language,
     audioAutoPlay: extra.audioAutoPlay ?? false,
+    selectedLocales: extra.selectedLocales ?? [],
   }
 }
 
 export async function saveSettings(
   db: D1Database, userId: number, settings: UserSettings
 ): Promise<void> {
-  const extra = JSON.stringify({ audioAutoPlay: settings.audioAutoPlay })
+  const extra = JSON.stringify({
+    audioAutoPlay: settings.audioAutoPlay,
+    selectedLocales: settings.selectedLocales,
+  })
   await db
     .prepare(`INSERT INTO user_settings (user_id, current_language, settings, updated_at)
       VALUES (?, ?, ?, datetime('now'))

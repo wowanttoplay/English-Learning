@@ -1,0 +1,56 @@
+[
+  {
+    "index": 0,
+    "start": 0.01,
+    "end": 5.48,
+    "text": "When you type a question into a search engine, the answer appears in less than a second."
+  },
+  {
+    "index": 1,
+    "start": 5.48,
+    "end": 7.67,
+    "text": "But what happens behind the screen?"
+  },
+  {
+    "index": 2,
+    "start": 7.67,
+    "end": 14.59,
+    "text": "First, small programs crawl across billions of web pages to detect new or updated content."
+  },
+  {
+    "index": 3,
+    "start": 14.59,
+    "end": 19.86,
+    "text": "They store this information in a huge index, much like a library catalogue."
+  },
+  {
+    "index": 4,
+    "start": 19.86,
+    "end": 24.27,
+    "text": "When you search, the engine does not look at every page on the internet."
+  },
+  {
+    "index": 5,
+    "start": 24.27,
+    "end": 32.3,
+    "text": "Instead, it checks the index and uses a logical set of rules to decide which results match your words most precisely."
+  },
+  {
+    "index": 6,
+    "start": 32.3,
+    "end": 37.33,
+    "text": "An indicator of quality is how many other trusted pages link to a result."
+  },
+  {
+    "index": 7,
+    "start": 37.33,
+    "end": 45.08,
+    "text": "The system also tracks how users interact with the results — if people click on a page and stay, that is a good sign."
+  },
+  {
+    "index": 8,
+    "start": 45.08,
+    "end": 50.08,
+    "text": "Thanks to constant innovation, search engines now handle random spelling mistakes and even understand what you mean when your words are not exact."
+  }
+]

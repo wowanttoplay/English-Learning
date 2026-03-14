@@ -1,0 +1,62 @@
+[
+  {
+    "index": 0,
+    "start": 0.01,
+    "end": 3.62,
+    "text": "Good documentation is just as important as good code."
+  },
+  {
+    "index": 1,
+    "start": 3.62,
+    "end": 10.67,
+    "text": "When a new developer joins the team, they need to grasp how the system works without asking too many questions."
+  },
+  {
+    "index": 2,
+    "start": 10.67,
+    "end": 14.75,
+    "text": "A comprehensive guide saves time and reduces confusion."
+  },
+  {
+    "index": 3,
+    "start": 14.75,
+    "end": 19.63,
+    "text": "The first step is to outline the main parts of the system and how they connect."
+  },
+  {
+    "index": 4,
+    "start": 19.63,
+    "end": 25.3,
+    "text": "Use simple language and avoid vague descriptions that could be interpreted in different ways."
+  },
+  {
+    "index": 5,
+    "start": 25.3,
+    "end": 29.79,
+    "text": "It helps to include examples that demonstrate how each feature behaves."
+  },
+  {
+    "index": 6,
+    "start": 29.79,
+    "end": 34.13,
+    "text": "Many teams neglect documentation because they are busy writing code."
+  },
+  {
+    "index": 7,
+    "start": 34.13,
+    "end": 40.07,
+    "text": "However, this tendency leads to problems when someone leaves or when the project grows."
+  },
+  {
+    "index": 8,
+    "start": 40.07,
+    "end": 44.48,
+    "text": "Keeping your documents up to date requires ongoing effort and discipline."
+  },
+  {
+    "index": 9,
+    "start": 44.48,
+    "end": 49.48,
+    "text": "A well-written guide can transform a confusing codebase into one that any competent developer can understand readily."
+  }
+]

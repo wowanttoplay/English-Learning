@@ -1,0 +1,62 @@
+[
+  {
+    "index": 0,
+    "start": 0.01,
+    "end": 5.04,
+    "text": "Refactoring means changing the structure of code without changing what it does."
+  },
+  {
+    "index": 1,
+    "start": 5.04,
+    "end": 11.65,
+    "text": "Over time, software projects accumulate layers of quick fixes that make the code harder to read."
+  },
+  {
+    "index": 2,
+    "start": 11.65,
+    "end": 17.33,
+    "text": "A developer may encounter functions that are too long or logic that is difficult to follow."
+  },
+  {
+    "index": 3,
+    "start": 17.33,
+    "end": 22.88,
+    "text": "The goal of refactoring is to make the code cleaner and easier to modify in the future."
+  },
+  {
+    "index": 4,
+    "start": 22.88,
+    "end": 28.89,
+    "text": "It is a fundamental practice that many teams overlook because the results are not immediately visible."
+  },
+  {
+    "index": 5,
+    "start": 28.89,
+    "end": 33.19,
+    "text": "However, neglecting it can trigger serious problems down the road."
+  },
+  {
+    "index": 6,
+    "start": 33.19,
+    "end": 39.01,
+    "text": "Before starting, it is important to have good tests so you can verify that nothing breaks."
+  },
+  {
+    "index": 7,
+    "start": 39.01,
+    "end": 45.41,
+    "text": "A rational approach is to refactor small sections at a time rather than rewriting everything at once."
+  },
+  {
+    "index": 8,
+    "start": 45.41,
+    "end": 49,
+    "text": "The subsequent code is usually simpler and more stable."
+  },
+  {
+    "index": 9,
+    "start": 49,
+    "end": 54,
+    "text": "Teams that dedicate time to refactoring find that new features become easier to implement."
+  }
+]

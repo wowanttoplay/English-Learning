@@ -1,0 +1,62 @@
+[
+  {
+    "index": 0,
+    "start": 0.01,
+    "end": 3.62,
+    "text": "Code review is a common practice in software teams."
+  },
+  {
+    "index": 1,
+    "start": 3.62,
+    "end": 9.44,
+    "text": "When a developer finishes a piece of work, a colleague looks at the code before it goes live."
+  },
+  {
+    "index": 2,
+    "start": 9.44,
+    "end": 14.74,
+    "text": "The goal is to assess the quality and find anything that might cause problems later."
+  },
+  {
+    "index": 3,
+    "start": 14.74,
+    "end": 18.15,
+    "text": "Good reviewers do not merely point out mistakes."
+  },
+  {
+    "index": 4,
+    "start": 18.15,
+    "end": 21.48,
+    "text": "They also explain why a certain approach is better."
+  },
+  {
+    "index": 5,
+    "start": 21.48,
+    "end": 25.15,
+    "text": "This helps the whole team improve steadily over time."
+  },
+  {
+    "index": 6,
+    "start": 25.15,
+    "end": 31.39,
+    "text": "It can feel awkward to have someone inspect your work, but most people learn to see it as a chance to grow."
+  },
+  {
+    "index": 7,
+    "start": 31.39,
+    "end": 35.9,
+    "text": "A thorough review often catches issues that testing alone would miss."
+  },
+  {
+    "index": 8,
+    "start": 35.9,
+    "end": 40.15,
+    "text": "It is important to convey your comments in a kind and clear way."
+  },
+  {
+    "index": 9,
+    "start": 40.15,
+    "end": 45.15,
+    "text": "When done well, code review builds trust and leads to more consistent output across the project."
+  }
+]

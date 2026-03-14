@@ -1,0 +1,62 @@
+[
+  {
+    "index": 0,
+    "start": 0.01,
+    "end": 3.49,
+    "text": "Performance is a crucial aspect of any application."
+  },
+  {
+    "index": 1,
+    "start": 3.49,
+    "end": 7.57,
+    "text": "If a page takes too long to load, users will leave."
+  },
+  {
+    "index": 2,
+    "start": 7.57,
+    "end": 11.36,
+    "text": "The first step is to evaluate where the slowness comes from."
+  },
+  {
+    "index": 3,
+    "start": 11.36,
+    "end": 17.02,
+    "text": "Developers use special tools to measure how long each part of the code takes to run."
+  },
+  {
+    "index": 4,
+    "start": 17.02,
+    "end": 21.95,
+    "text": "Sometimes the problem is that the app does too many things simultaneously."
+  },
+  {
+    "index": 5,
+    "start": 21.95,
+    "end": 27.34,
+    "text": "Other times, a single slow function can become an obstacle for the whole system."
+  },
+  {
+    "index": 6,
+    "start": 27.34,
+    "end": 33.22,
+    "text": "One common strategy is to minimize the amount of work the browser has to do on each frame."
+  },
+  {
+    "index": 7,
+    "start": 33.22,
+    "end": 38.03,
+    "text": "Another is to eliminate unnecessary calculations that happen again and again."
+  },
+  {
+    "index": 8,
+    "start": 38.03,
+    "end": 42.46,
+    "text": "Setting a clear benchmark helps the team track progress over time."
+  },
+  {
+    "index": 9,
+    "start": 42.46,
+    "end": 47.46,
+    "text": "Even a swift improvement of a few milliseconds can make the experience feel much smoother for the user."
+  }
+]

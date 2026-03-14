@@ -1,0 +1,62 @@
+[
+  {
+    "index": 0,
+    "start": 0.01,
+    "end": 5.04,
+    "text": "When you open a web page, your computer does a lot of work behind the scenes."
+  },
+  {
+    "index": 1,
+    "start": 5.04,
+    "end": 9.86,
+    "text": "The rendering engine reads the code and turns it into what you see on screen."
+  },
+  {
+    "index": 2,
+    "start": 9.86,
+    "end": 13.95,
+    "text": "First, it builds a tree of all the elements on the page."
+  },
+  {
+    "index": 3,
+    "start": 13.95,
+    "end": 18.52,
+    "text": "Then it works out where each element should go and how big it should be."
+  },
+  {
+    "index": 4,
+    "start": 18.52,
+    "end": 24.24,
+    "text": "This is a fundamental step because even a small mistake can make the whole page look wrong."
+  },
+  {
+    "index": 5,
+    "start": 24.24,
+    "end": 28.7,
+    "text": "Next, the engine paints the colours and shapes onto the screen."
+  },
+  {
+    "index": 6,
+    "start": 28.7,
+    "end": 33.3,
+    "text": "Each component of the page goes through this process in a linear order."
+  },
+  {
+    "index": 7,
+    "start": 33.3,
+    "end": 38.23,
+    "text": "Modern engines are sophisticated enough to skip parts that have not changed."
+  },
+  {
+    "index": 8,
+    "start": 38.23,
+    "end": 43.49,
+    "text": "Understanding this mechanism helps developers write faster, smoother websites."
+  },
+  {
+    "index": 9,
+    "start": 43.49,
+    "end": 48.49,
+    "text": "Although users rarely think about it, the output they see is the result of many careful steps working together."
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "index": 0,
+    "start": 0.01,
+    "end": 7.05,
+    "text": "Noise-cancelling headphones seem almost magical, but the underlying mechanism is surprisingly straightforward."
+  },
+  {
+    "index": 1,
+    "start": 7.05,
+    "end": 12.49,
+    "text": "A tiny microphone on the outside of each ear cup detects incoming sound waves."
+  },
+  {
+    "index": 2,
+    "start": 12.49,
+    "end": 19.06,
+    "text": "A processor then generates a precisely opposite wave — what engineers call an anti-phase signal."
+  },
+  {
+    "index": 3,
+    "start": 19.06,
+    "end": 24.7,
+    "text": "When the two waves interact, they cancel each other out, producing near silence."
+  },
+  {
+    "index": 4,
+    "start": 24.7,
+    "end": 28.27,
+    "text": "This phenomenon is known as destructive interference."
+  },
+  {
+    "index": 5,
+    "start": 28.27,
+    "end": 34.91,
+    "text": "The technology works best on consistent, low-frequency sounds such as engine hum or air conditioning."
+  },
+  {
+    "index": 6,
+    "start": 34.91,
+    "end": 40.36,
+    "text": "It is less effective against sudden, random noises like speech or a door slamming."
+  },
+  {
+    "index": 7,
+    "start": 40.36,
+    "end": 48.07,
+    "text": "Premium models incorporate multiple microphones and sophisticated algorithms to adapt to changing environments in real time."
+  },
+  {
+    "index": 8,
+    "start": 48.07,
+    "end": 56.02,
+    "text": "The innovation has been a breakthrough for frequent travellers, office workers, and anyone who needs to concentrate in noisy settings."
+  },
+  {
+    "index": 9,
+    "start": 56.02,
+    "end": 62.41,
+    "text": "However, experts caution that prolonged use at high volume can still inflict damage on hearing."
+  },
+  {
+    "index": 10,
+    "start": 62.41,
+    "end": 67.41,
+    "text": "Like any tool, the value lies not in the technology itself but in how wisely we choose to use it."
+  }
+]
