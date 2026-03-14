@@ -1,5 +1,5 @@
 import { apiFetch } from './client'
-import type { Passage } from '@/types'
+import type { Passage, Word } from '@/types'
 
 interface GetPassagesOpts {
   lang: string
@@ -18,8 +18,9 @@ export async function getPassages(opts: GetPassagesOpts): Promise<{ items: Passa
   return apiFetch(`/api/passages?${params}`)
 }
 
-export async function getPassageById(id: number): Promise<{ passage: Passage; words: import('@/types').Word[] }> {
-  return apiFetch(`/api/passages/${id}`)
+export async function getPassageById(id: number, locales?: string[]): Promise<{ passage: Passage; words: Word[] }> {
+  const params = locales?.length ? `?locales=${locales.join(',')}` : ''
+  return apiFetch(`/api/passages/${id}${params}`)
 }
 
 export async function getPassagesRead(): Promise<{ items: number[] }> {
