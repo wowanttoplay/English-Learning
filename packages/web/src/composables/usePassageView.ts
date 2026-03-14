@@ -2,7 +2,7 @@ import { computed, ref, watch, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { usePassagesStore } from '@/stores/passages'
 import * as passagesApi from '@/api/passages'
-import { splitSentences } from '@/lib/sentence-splitter'
+import { splitSentences, getWordPattern } from '@/lib/sentence-splitter'
 import { AudioPlayer } from '@/lib/audio'
 import type { Passage, Word } from '@/types'
 import { useInflectionMatcher } from '@/composables/useInflectionMatcher'
@@ -47,9 +47,9 @@ export function usePassageView() {
       result += `<span class="sentence" data-sentence-index="${sentence.index}">`
 
       const sentenceText = text.slice(sentence.start, sentence.end)
-      const tokens = sentenceText.split(/([a-zA-Z'-]+)/)
+      const tokens = sentenceText.split(getWordPattern())
       for (const token of tokens) {
-        if (/^[a-zA-Z'-]+$/.test(token)) {
+        if (/^[a-zA-ZÀ-ÿ'-]+$/.test(token)) {
           const w = wordsByText.value.get(token.toLowerCase())
           if (w && targetWordIds.value.has(w.id)) {
             result += `<span class="highlight-word-target" data-word-id="${w.id}">${escapeHtml(token)}</span>`

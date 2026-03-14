@@ -50,7 +50,7 @@ interface TimestampEntry {
 
 async function loadSplitter() {
   const mod = await import(pathToFileURL(resolve(PROJECT_ROOT, 'src/lib/sentence-splitter.ts')).href)
-  return mod.splitSentences as (text: string) => Array<{ index: number; text: string; start: number; end: number }>
+  return mod.splitSentences as (text: string, _lang?: string) => Array<{ index: number; text: string; start: number; end: number }>
 }
 
 async function loadPassages() {
