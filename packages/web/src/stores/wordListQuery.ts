@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import type { Word, DomainId, SubtopicId, CefrLevel } from '@/types'
+import type { Word, DomainId, TopicId, Level } from '@/types'
 import * as wordsApi from '@/api/words'
 import { useLanguageStore } from './language'
 
@@ -9,9 +9,9 @@ export type WordListFilter = 'all' | 'unseen' | 'learning' | 'review' | 'mastere
 export const useWordListQueryStore = defineStore('wordListQuery', () => {
   const filter = ref<WordListFilter>('all')
   const search = ref('')
-  const topic = ref<'all' | SubtopicId>('all')
+  const topic = ref<'all' | TopicId>('all')
   const domain = ref<'all' | DomainId>('all')
-  const level = ref<'all' | CefrLevel>('all')
+  const level = ref<'all' | Level>('all')
   const page = ref(1)
   const pageSize = ref(50)
 

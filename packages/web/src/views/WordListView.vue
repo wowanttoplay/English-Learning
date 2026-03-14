@@ -20,12 +20,12 @@
         @click="setLevel('all')"
       >All Levels</button>
       <button
-        v-for="lv in cefrLevels"
-        :key="lv"
+        v-for="lv in levels"
+        :key="lv.id"
         class="filter-tab"
-        :class="{ active: query.level === lv }"
-        @click="setLevel(lv)"
-      >{{ lv }}</button>
+        :class="{ active: query.level === lv.id }"
+        @click="setLevel(lv.id)"
+      >{{ lv.name }}</button>
       <button
         class="filter-tab"
         :class="{ active: query.level === 'user' }"
@@ -115,14 +115,17 @@ import { useSrsStore } from '@/stores/srs'
 import { useWordListQueryStore, type WordListFilter } from '@/stores/wordListQuery'
 import { useUiStateStore } from '@/stores/uiState'
 import { DOMAINS, getSubtopicsByDomain } from '@/data/topics'
-import type { DomainId, CefrLevel } from '@/types'
+import type { DomainId } from '@/types'
+import { getLevels } from '@english-learning/shared'
+import { useLanguageStore } from '@/stores/language'
 import LevelBadge from '@/components/LevelBadge.vue'
 
 const srsStore = useSrsStore()
 const query = useWordListQueryStore()
 const ui = useUiStateStore()
 
-const cefrLevels: CefrLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
+const langStore = useLanguageStore()
+const levels = computed(() => getLevels(langStore.currentLanguage))
 
 const searchInput = ref(query.search)
 let searchTimeout: ReturnType<typeof setTimeout> | null = null
@@ -142,7 +145,7 @@ onMounted(() => {
   query.loadWords()
 })
 
-function setLevel(lv: 'all' | CefrLevel) {
+function setLevel(lv: 'all' | string) {
   query.level = lv
   query.page = 1
   query.loadWords()

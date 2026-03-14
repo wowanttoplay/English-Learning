@@ -1,4 +1,4 @@
-import type { SubtopicId } from '@english-learning/shared'
+import type { TopicId } from '@english-learning/shared'
 import { createNewCard, today, EASE_MULTIPLIER } from '@english-learning/shared'
 import type { Word } from '@english-learning/shared'
 import { insertWord } from '../db/queries/words'
@@ -52,7 +52,7 @@ export async function createUserWord(
     definitionTarget: data.definitionTarget ?? '',
     examples: data.examples ?? [],
     level: 'user',
-    topics: (data.topics ?? []) as SubtopicId[],
+    topics: (data.topics ?? []) as TopicId[],
     languageId: data.languageId,
   }
 }

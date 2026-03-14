@@ -38,9 +38,10 @@ package.json                   # Root scripts delegate to packages
 packages/shared/               # @english-learning/shared
   src/
     index.ts                   # Re-exports all shared modules
-    types.ts                   # Word, Passage, SrsCard, CefrLevel, DomainId, SubtopicId, etc.
+    types.ts                   # Word, Passage, SrsCard, Level, DomainId, TopicId, etc.
     srs-engine.ts              # Pure SM-2 algorithm + constants (incl. EASE_MULTIPLIER)
     date-utils.ts              # Shared date formatting utilities
+    levels.ts                  # Per-language level registry (LevelDef, getLevels, isValidLevel)
 
 packages/api/                  # @english-learning/api (Cloudflare Workers + D1)
   wrangler.toml                # Wrangler config (D1 binding, etc.)
@@ -206,26 +207,29 @@ packages/web/                  # @english-learning/web (Vue 3 + Vite)
 - **Route → Service → Query:** Routes are thin HTTP handlers. Business logic lives in `services/`. Raw SQL lives in `db/queries/`. Routes never construct SQL directly.
 - **Language strategy pattern:** English-specific logic is isolated behind strategy maps keyed by language code. Files using this pattern: `useInflectionMatcher.ts` (word inflections), `dict-api.ts` (dictionary providers via `DICT_PROVIDERS`), `sentence-splitter.ts` (word tokenization via `WORD_PATTERNS` / `getWordPattern()`). To add a new language, add an entry to each strategy map.
 - **Component purity:** Components (`components/`) must not import stores or API modules directly. Business logic lives in composables (`useWordTooltip`, `useWordModal`, `useFreeWordLookup`). Components receive reactive state and callbacks from composables.
+- **Level registry:** Per-language level definitions in `packages/shared/src/levels.ts`. UI components (`LevelBadge`, filter tabs) read from the registry via `getLevels(lang)`. Colors come from the registry's `color` field (inline style), with CSS class fallback for existing levels. Adding a new language's levels requires only adding a registry entry — no type, component, or view changes needed.
 
 ## Type System
 
-### CEFR Levels
+### Levels
 
-- `CefrCoreLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'` — standard CEFR levels
-- `CefrLevel = CefrCoreLevel | 'user'` — extends with user-created words
-- `Word.level` uses `CefrLevel`; `Passage.level` uses `CefrCoreLevel`
+- `Level = string` — language-specific difficulty level (e.g., 'A1'-'C2' for English, 'N5'-'N1' for Japanese)
+- `'user'` is a special sentinel level for user-created words (not in the level registry)
+- Level definitions live in `packages/shared/src/levels.ts` — per-language registry with `{ id, name, order, color }`
+- To add a new language's levels, add an entry to the `LEVELS` record in `levels.ts`
+- `Word.level` uses `Level`; `Passage.level` uses `Level`
 
 ### Topic Hierarchy (Domain → Subtopic)
 
-Words are tagged with 1-3 subtopics (`SubtopicId[]`). The 16 subtopics are organized into 5 domains:
+Words are tagged with 1-3 topics (`TopicId[]`). Types `DomainId` and `TopicId` are `string` aliases. The 18 topics are organized into 5 domains:
 
-| Domain (`DomainId`) | Subtopics (`SubtopicId`) |
+| Domain (`DomainId`) | Topics (`TopicId`) |
 |---|---|
-| `life` | `daily-life`, `health`, `travel` |
-| `work` | `work`, `business`, `technology` |
-| `society` | `society`, `politics`, `law`, `environment` |
+| `life` | `daily-life`, `health`, `travel`, `food`, `sports` |
+| `work` | `work`, `business` |
+| `society` | `society`, `politics`, `law` |
 | `people` | `relationships`, `emotions`, `communication` |
-| `knowledge` | `education`, `science`, `arts` |
+| `knowledge` | `education`, `science`, `arts`, `technology`, `environment` |
 
 Defined in `packages/web/src/data/topics.ts`: `DOMAINS` array, `SUBTOPICS` array, helper functions `getSubtopicsByDomain()` and `getDomainBySubtopic()`. `TOPIC_REGISTRY` is kept as a backward-compatibility alias for `SUBTOPICS`.
 

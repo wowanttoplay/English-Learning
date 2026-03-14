@@ -1,4 +1,4 @@
-import type { Word, CefrLevel, SubtopicId } from '@english-learning/shared'
+import type { Word, Level, TopicId } from '@english-learning/shared'
 
 interface WordRow {
   id: number
@@ -23,8 +23,8 @@ function rowToWord(row: WordRow): Word {
     definitionNative: row.definition_native,
     definitionTarget: row.definition_target,
     examples: JSON.parse(row.examples ?? '[]') as string[],
-    level: row.level as CefrLevel,
-    topics: JSON.parse(row.topics ?? '[]') as SubtopicId[],
+    level: row.level as Level,
+    topics: JSON.parse(row.topics ?? '[]') as TopicId[],
     languageId: row.language_id,
     ...(row.audio_url ? { audioUrl: row.audio_url } : {}),
   }

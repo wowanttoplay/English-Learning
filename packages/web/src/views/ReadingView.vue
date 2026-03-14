@@ -27,12 +27,12 @@
             @click="levelFilter = 'all'"
           >All</button>
           <button
-            v-for="level in cefrLevels"
-            :key="level"
+            v-for="lv in levels"
+            :key="lv.id"
             class="filter-tab"
-            :class="{ active: levelFilter === level }"
-            @click="levelFilter = level"
-          >{{ level }}</button>
+            :class="{ active: levelFilter === lv.id }"
+            @click="levelFilter = lv.id"
+          >{{ lv.name }}</button>
         </div>
 
         <div class="filter-tabs">
@@ -124,7 +124,8 @@ import { useRouter } from 'vue-router'
 import { usePassagesStore } from '@/stores/passages'
 import { DOMAINS, getSubtopicsByDomain } from '@/data/topics'
 import { formatTopic } from '@/lib/format'
-import type { CefrCoreLevel, DomainId, SubtopicId } from '@/types'
+import { getLevels } from '@english-learning/shared'
+import { useLanguageStore } from '@/stores/language'
 import LevelBadge from '@/components/LevelBadge.vue'
 
 const router = useRouter()
@@ -137,12 +138,13 @@ onMounted(() => {
 
 const hasPassages = computed(() => passagesStore.passages.length > 0)
 
-const cefrLevels: CefrCoreLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
-const levelFilter = ref<'all' | CefrCoreLevel>('all')
-const domainFilter = ref<'all' | DomainId>('all')
-const topicFilter = ref<'all' | SubtopicId>('all')
+const langStore = useLanguageStore()
+const levels = computed(() => getLevels(langStore.currentLanguage))
+const levelFilter = ref<'all' | string>('all')
+const domainFilter = ref<'all' | string>('all')
+const topicFilter = ref<'all' | string>('all')
 
-function setDomain(d: 'all' | DomainId) {
+function setDomain(d: 'all' | string) {
   domainFilter.value = d
   topicFilter.value = 'all'
 }
