@@ -10,8 +10,9 @@
       {{ word.phonetic }}
       <button class="example-play-btn" @click="audio.speak(word.word)" title="Play">&#9654;</button>
     </div>
-    <div class="reading-tooltip-zh">{{ word.definitionNative }}</div>
-    <div class="reading-tooltip-en">{{ word.definitionTarget }}</div>
+    <div v-for="(text, locale) in word.translations" :key="locale" class="reading-tooltip-def">
+      {{ text }}
+    </div>
     <button
       v-if="cardState === 'unseen'"
       class="btn btn-primary reading-tooltip-add"
