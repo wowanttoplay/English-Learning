@@ -10,7 +10,9 @@ const userWords = new Hono<{ Bindings: Env }>()
 userWords.get('/', async (c) => {
   const userId = c.get('userId')
   const lang = c.req.query('lang') ?? 'en'
-  const words = await getUserWords(c.env.DB, userId, lang)
+  const localesParam = c.req.query('locales')
+  const locales = localesParam ? localesParam.split(',').filter(Boolean) : undefined
+  const words = await getUserWords(c.env.DB, userId, lang, locales)
   return c.json({ items: words })
 })
 
