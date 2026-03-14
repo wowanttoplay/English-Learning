@@ -46,6 +46,7 @@
             <div class="card-word">{{ currentWord.word }}</div>
             <div class="card-phonetic">{{ currentWord.phonetic }}</div>
             <div class="card-pos">{{ currentWord.pos }}</div>
+            <LevelBadge :level="currentWord.level" />
             <AudioControls :word="currentWord.word" />
             <div v-if="!studySession.revealed" class="card-know-wrapper">
               <button class="card-know-btn" @click.stop="markCurrentAsKnown">Know This Word</button>
@@ -101,6 +102,7 @@ import { useKeyboardShortcuts } from '@/composables/useKeyboardShortcuts'
 import AudioControls from '@/components/AudioControls.vue'
 import RatingButtons from '@/components/RatingButtons.vue'
 import StatsGrid from '@/components/StatsGrid.vue'
+import LevelBadge from '@/components/LevelBadge.vue'
 import type { Rating } from '@/types'
 
 const router = useRouter()

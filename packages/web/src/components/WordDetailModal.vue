@@ -14,6 +14,7 @@
           <button class="audio-btn audio-btn-slow" @click="audio.speakSlow(word.word)" title="Slow">&#9654;&frac12;</button>
         </div>
         <span class="word-item-badge" :class="'badge-' + state">{{ state }}</span>
+        <LevelBadge :level="word.level" />
       </div>
 
       <div class="card-zh" style="font-size:20px">{{ word.definitionNative }}</div>
@@ -55,6 +56,7 @@ import { useAudio } from '@/composables/useAudio'
 import { useDictionary } from '@/composables/useDictionary'
 import * as wordsApi from '@/api/words'
 import type { DictEntry, Word } from '@/types'
+import LevelBadge from '@/components/LevelBadge.vue'
 
 const props = defineProps<{ wordId: number | null }>()
 const emit = defineEmits<{ close: [] }>()

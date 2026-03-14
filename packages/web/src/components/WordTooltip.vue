@@ -4,6 +4,7 @@
     <div class="reading-tooltip-word">
       {{ word.word }} <span class="reading-tooltip-pos">{{ word.pos }}</span>
       <span class="reading-tooltip-state" :class="'state-' + cardState">{{ stateLabel }}</span>
+      <LevelBadge v-if="word" :level="word.level" />
     </div>
     <div class="reading-tooltip-phonetic">
       {{ word.phonetic }}
@@ -47,6 +48,7 @@ import { computed } from 'vue'
 import { useAudio } from '@/composables/useAudio'
 import { useSrsStore } from '@/stores/srs'
 import type { Word } from '@/types'
+import LevelBadge from '@/components/LevelBadge.vue'
 
 const props = defineProps<{ wordId: number | null; words?: Word[] }>()
 const emit = defineEmits<{ close: [] }>()

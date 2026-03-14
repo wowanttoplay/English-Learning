@@ -69,6 +69,7 @@
           <div class="word-item-word">{{ w.word }}</div>
           <div v-if="w.definitionNative" class="word-item-zh">{{ w.definitionNative }}</div>
         </div>
+        <LevelBadge :level="w.level" />
         <button
           class="word-known-btn"
           :class="{ 'is-known': getState(w.id) === 'known' }"
@@ -95,6 +96,7 @@ import { useWordListQueryStore, type WordListFilter } from '@/stores/wordListQue
 import { useUiStateStore } from '@/stores/uiState'
 import { DOMAINS, getSubtopicsByDomain } from '@/data/topics'
 import type { DomainId } from '@/types'
+import LevelBadge from '@/components/LevelBadge.vue'
 
 const srsStore = useSrsStore()
 const query = useWordListQueryStore()
