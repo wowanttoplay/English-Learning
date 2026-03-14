@@ -87,7 +87,9 @@
       >
         <div class="word-item-text">
           <div class="word-item-word">{{ w.word }}</div>
-          <div v-if="w.definitionNative" class="word-item-zh">{{ w.definitionNative }}</div>
+          <div v-for="(text, locale) in w.translations" :key="locale" class="word-item-def">
+            {{ text }}
+          </div>
         </div>
         <LevelBadge :level="w.level" />
         <button

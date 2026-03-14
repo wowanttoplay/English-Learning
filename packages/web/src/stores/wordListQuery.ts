@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import type { Word, DomainId, TopicId, Level } from '@/types'
 import * as wordsApi from '@/api/words'
 import { useLanguageStore } from './language'
+import { useSettingsStore } from './settings'
 
 export type WordListFilter = 'all' | 'unseen' | 'learning' | 'review' | 'mastered' | 'known'
 
@@ -23,12 +24,14 @@ export const useWordListQueryStore = defineStore('wordListQuery', () => {
     loading.value = true
     try {
       const lang = useLanguageStore().currentLanguage
+      const settingsStore = useSettingsStore()
       const result = await wordsApi.getWords({
         lang,
         page: page.value,
         pageSize: pageSize.value,
         level: level.value === 'all' ? undefined : level.value,
         topic: topic.value === 'all' ? undefined : topic.value,
+        locales: settingsStore.settings.selectedLocales,
       })
       words.value = result.items
       total.value = result.total
