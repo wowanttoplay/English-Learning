@@ -10,8 +10,7 @@ export async function createUserWord(data: {
   word: string
   pos?: string
   phonetic?: string
-  definitionNative?: string
-  definitionTarget?: string
+  translations?: Record<string, string>
   examples?: string[]
   topics?: string[]
 }): Promise<Word> {
