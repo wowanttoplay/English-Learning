@@ -22,7 +22,10 @@ app.get('/', async (c) => {
     return c.json({ error: 'Invalid pageSize parameter (1-100)', code: 'INVALID_PARAM' }, 400)
   }
 
-  const result = await getWords(c.env.DB, { lang, level, topic, page, pageSize })
+  const localesParam = c.req.query('locales')
+  const locales = localesParam ? localesParam.split(',').filter(Boolean) : undefined
+
+  const result = await getWords(c.env.DB, { lang, level, topic, page, pageSize, locales })
   return c.json({ data: { ...result, page, pageSize } })
 })
 
@@ -32,7 +35,10 @@ app.get('/:id', async (c) => {
     return c.json({ error: 'Invalid word ID', code: 'INVALID_PARAM' }, 400)
   }
 
-  const word = await getWordById(c.env.DB, id)
+  const localesParam = c.req.query('locales')
+  const locales = localesParam ? localesParam.split(',').filter(Boolean) : undefined
+
+  const word = await getWordById(c.env.DB, id, locales)
   if (!word) {
     return c.json({ error: 'Word not found', code: 'NOT_FOUND' }, 404)
   }
