@@ -1,4 +1,5 @@
 import type { SrsCard, Rating, SrsStats, SrsHistory, CardQueue } from '@english-learning/shared'
+import { CardKnownError, NotFoundError } from '../errors'
 import {
   createNewCard, createKnownCard, rateCard as engineRateCard,
   markKnown as engineMarkKnown, unmarkKnown as engineUnmarkKnown,
@@ -61,12 +62,12 @@ export async function rateCardAction(
   db: D1Database, userId: number, wordId: number, rating: Rating
 ): Promise<SrsCard> {
   const raw = await getCardByUserAndWord(db, userId, wordId)
-  if (!raw) throw new Error('Card not found')
+  if (!raw) throw new NotFoundError('Card')
 
   const card = { ...raw, ease: fromDbEase(raw.ease) }
 
   if (card.state === 'known') {
-    throw new Error('Cannot rate a known card')
+    throw new CardKnownError()
   }
 
   const updated = engineRateCard(card, rating)
@@ -98,7 +99,7 @@ export async function markKnownAction(
     return { action: 'marked' }
   } else {
     const existing = await getCardByUserAndWord(db, userId, wordId)
-    if (!existing) throw new Error('Card not found')
+    if (!existing) throw new NotFoundError('Card')
     const card = { ...existing, ease: fromDbEase(existing.ease) }
     const result = engineUnmarkKnown(card)
     if (result === null) {
