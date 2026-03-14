@@ -89,6 +89,51 @@ export async function getWordById(
   return row ? rowToWord(row) : null
 }
 
+export async function getWordCount(
+  db: D1Database,
+  lang: string
+): Promise<number> {
+  const result = await db
+    .prepare('SELECT COUNT(*) as total FROM words WHERE language_id = ?')
+    .bind(lang)
+    .first<{ total: number }>()
+  return result?.total ?? 0
+}
+
+export interface InsertWordData {
+  languageId: string
+  word: string
+  pos?: string | null
+  phonetic?: string | null
+  definitionNative?: string | null
+  definitionTarget?: string | null
+  examples?: string[]
+  topics?: string[]
+}
+
+export async function insertWord(
+  db: D1Database,
+  data: InsertWordData
+): Promise<number> {
+  const result = await db
+    .prepare(`INSERT INTO words (language_id, word, pos, phonetic, definition_native, definition_target, examples, level, topics)
+      VALUES (?, ?, ?, ?, ?, ?, ?, 'user', ?)
+      RETURNING id`)
+    .bind(
+      data.languageId,
+      data.word,
+      data.pos ?? null,
+      data.phonetic ?? null,
+      data.definitionNative ?? null,
+      data.definitionTarget ?? null,
+      JSON.stringify(data.examples ?? []),
+      JSON.stringify(data.topics ?? [])
+    )
+    .first<{ id: number }>()
+  if (!result) throw new Error('Failed to insert word')
+  return result.id
+}
+
 export async function getWordsByIds(
   db: D1Database,
   ids: number[]

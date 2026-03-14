@@ -1,5 +1,7 @@
+import type { SubtopicId } from '@english-learning/shared'
 import { createNewCard, today, EASE_MULTIPLIER } from '@english-learning/shared'
 import type { Word } from '@english-learning/shared'
+import { insertWord } from '../db/queries/words'
 import { insertUserWordStatement } from '../db/queries/userWords'
 import { upsertCardStatement } from '../db/queries/cards'
 import { incrementLearnedStatement } from '../db/queries/history'
@@ -24,27 +26,7 @@ export async function createUserWord(
   }
 
   // Insert into main words table (level='user') so ID doesn't collide
-  const wordResult = await db
-    .prepare(`INSERT INTO words (language_id, word, pos, phonetic, definition_native, definition_target, examples, level, topics)
-      VALUES (?, ?, ?, ?, ?, ?, ?, 'user', ?)
-      RETURNING id`)
-    .bind(
-      data.languageId,
-      data.word,
-      data.pos ?? null,
-      data.phonetic ?? null,
-      data.definitionNative ?? null,
-      data.definitionTarget ?? null,
-      JSON.stringify(data.examples ?? []),
-      JSON.stringify(data.topics ?? [])
-    )
-    .first<{ id: number }>()
-
-  if (!wordResult) {
-    throw new Error('Failed to create word')
-  }
-
-  const wordId = wordResult.id
+  const wordId = await insertWord(db, data)
 
   // Track in user_words for per-user ownership
   await db.batch([
@@ -70,7 +52,7 @@ export async function createUserWord(
     definitionTarget: data.definitionTarget ?? '',
     examples: data.examples ?? [],
     level: 'user',
-    topics: (data.topics ?? []) as any,
+    topics: (data.topics ?? []) as SubtopicId[],
     languageId: data.languageId,
   }
 }
