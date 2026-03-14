@@ -3,6 +3,7 @@ import { useRoute } from 'vue-router'
 import { usePassagesStore } from '@/stores/passages'
 import * as passagesApi from '@/api/passages'
 import { splitSentences } from '@/lib/sentence-splitter'
+import { AudioPlayer } from '@/lib/audio'
 import type { Passage, Word } from '@/types'
 
 function escapeHtml(str: string): string {
@@ -118,6 +119,10 @@ export function usePassageView() {
       const data = await passagesApi.getPassageById(Number(id))
       passage.value = data.passage
       passageWords.value = data.words
+      // Preload dictionary data (MP3 audio URLs) for all target words in background
+      for (const w of data.words) {
+        AudioPlayer.preload(w.word)
+      }
     } catch {
       passage.value = null
       passageWords.value = []
