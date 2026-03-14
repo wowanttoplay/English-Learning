@@ -38,8 +38,11 @@ app.get('/:id', async (c) => {
     return c.json({ error: 'Passage not found', code: 'NOT_FOUND' }, 404)
   }
 
+  const localesParam = c.req.query('locales')
+  const locales = localesParam ? localesParam.split(',').filter(Boolean) : undefined
+
   const wordIds = await getPassageWordIds(c.env.DB, id)
-  const words = await getWordsByIds(c.env.DB, wordIds)
+  const words = wordIds.length > 0 ? await getWordsByIds(c.env.DB, wordIds, locales) : []
 
   return c.json({ data: { passage, words } })
 })
