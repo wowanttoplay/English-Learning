@@ -131,8 +131,10 @@ export function usePassageView() {
     document.body.style.overflow = open ? 'hidden' : ''
   })
 
-  onMounted(() => {
-    passageTextRef.value?.addEventListener('click', onPassageClick)
+  // Bind click handler after passage content renders
+  watch(passageTextRef, (el, oldEl) => {
+    oldEl?.removeEventListener('click', onPassageClick)
+    el?.addEventListener('click', onPassageClick)
   })
 
   onUnmounted(() => {
