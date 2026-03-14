@@ -1,14 +1,9 @@
-// === CEFR Levels ===
-export type CefrCoreLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'
-export type CefrLevel = CefrCoreLevel | 'user'
+// === Levels (per-language, see levels.ts for registry) ===
+export type Level = string
 
 // === Topic Hierarchy ===
-export type DomainId = 'life' | 'work' | 'society' | 'people' | 'knowledge'
-
-export type SubtopicId =
-  | 'work' | 'education' | 'technology' | 'health' | 'environment' | 'society'
-  | 'emotions' | 'business' | 'travel' | 'communication' | 'science' | 'law'
-  | 'arts' | 'daily-life' | 'relationships' | 'politics'
+export type DomainId = string
+export type TopicId = string
 
 // === Language ===
 export interface Language {
@@ -26,8 +21,8 @@ export interface Word {
   definitionNative: string
   definitionTarget: string
   examples: string[]
-  level: CefrLevel
-  topics: SubtopicId[]
+  level: Level
+  topics: TopicId[]
   languageId: string
   audioUrl?: string
 }
@@ -37,8 +32,8 @@ export interface Passage {
   id: number
   title: string
   text: string
-  level: CefrCoreLevel
-  topic: SubtopicId
+  level: Level
+  topic: TopicId
   genre: string
   languageId: string
   audioUrl?: string

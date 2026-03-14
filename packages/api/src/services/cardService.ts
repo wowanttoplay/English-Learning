@@ -1,13 +1,12 @@
 import type { SrsCard, Rating, SrsStats, SrsHistory, CardQueue } from '@english-learning/shared'
+import { CardKnownError, NotFoundError } from '../errors'
 import {
   createNewCard, createKnownCard, rateCard as engineRateCard,
   markKnown as engineMarkKnown, unmarkKnown as engineUnmarkKnown,
-  computeStats, buildQueue, today
+  computeStats, buildQueue, today, EASE_MULTIPLIER
 } from '@english-learning/shared'
 import { getCardsByUser, getCardByUserAndWord, upsertCardStatement, insertReviewLogStatement, deleteCard } from '../db/queries/cards'
 import { getHistoryByUser, incrementReviewedStatement, incrementLearnedStatement } from '../db/queries/history'
-
-const EASE_MULTIPLIER = 1000
 const fromDbEase = (ease: number) => ease / EASE_MULTIPLIER
 const toDbEase = (ease: number) => Math.round(ease * EASE_MULTIPLIER)
 
@@ -63,12 +62,12 @@ export async function rateCardAction(
   db: D1Database, userId: number, wordId: number, rating: Rating
 ): Promise<SrsCard> {
   const raw = await getCardByUserAndWord(db, userId, wordId)
-  if (!raw) throw new Error('Card not found')
+  if (!raw) throw new NotFoundError('Card')
 
   const card = { ...raw, ease: fromDbEase(raw.ease) }
 
   if (card.state === 'known') {
-    throw new Error('Cannot rate a known card')
+    throw new CardKnownError()
   }
 
   const updated = engineRateCard(card, rating)
@@ -100,7 +99,7 @@ export async function markKnownAction(
     return { action: 'marked' }
   } else {
     const existing = await getCardByUserAndWord(db, userId, wordId)
-    if (!existing) throw new Error('Card not found')
+    if (!existing) throw new NotFoundError('Card')
     const card = { ...existing, ease: fromDbEase(existing.ease) }
     const result = engineUnmarkKnown(card)
     if (result === null) {

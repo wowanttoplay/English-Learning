@@ -16,6 +16,26 @@
     <div class="filter-tabs">
       <button
         class="filter-tab"
+        :class="{ active: query.level === 'all' }"
+        @click="setLevel('all')"
+      >All Levels</button>
+      <button
+        v-for="lv in levels"
+        :key="lv.id"
+        class="filter-tab"
+        :class="{ active: query.level === lv.id }"
+        @click="setLevel(lv.id)"
+      >{{ lv.name }}</button>
+      <button
+        class="filter-tab"
+        :class="{ active: query.level === 'user' }"
+        @click="setLevel('user')"
+      >My Words</button>
+    </div>
+
+    <div class="filter-tabs">
+      <button
+        class="filter-tab"
         :class="{ active: query.domain === 'all' }"
         @click="setDomain('all')"
       >All Topics</button>
@@ -69,6 +89,7 @@
           <div class="word-item-word">{{ w.word }}</div>
           <div v-if="w.definitionNative" class="word-item-zh">{{ w.definitionNative }}</div>
         </div>
+        <LevelBadge :level="w.level" />
         <button
           class="word-known-btn"
           :class="{ 'is-known': getState(w.id) === 'known' }"
@@ -95,10 +116,16 @@ import { useWordListQueryStore, type WordListFilter } from '@/stores/wordListQue
 import { useUiStateStore } from '@/stores/uiState'
 import { DOMAINS, getSubtopicsByDomain } from '@/data/topics'
 import type { DomainId } from '@/types'
+import { getLevels } from '@english-learning/shared'
+import { useLanguageStore } from '@/stores/language'
+import LevelBadge from '@/components/LevelBadge.vue'
 
 const srsStore = useSrsStore()
 const query = useWordListQueryStore()
 const ui = useUiStateStore()
+
+const langStore = useLanguageStore()
+const levels = computed(() => getLevels(langStore.currentLanguage))
 
 const searchInput = ref(query.search)
 let searchTimeout: ReturnType<typeof setTimeout> | null = null
@@ -117,6 +144,12 @@ onMounted(() => {
   srsStore.loadCards()
   query.loadWords()
 })
+
+function setLevel(lv: 'all' | string) {
+  query.level = lv
+  query.page = 1
+  query.loadWords()
+}
 
 function setDomain(d: 'all' | DomainId) {
   query.domain = d
@@ -147,7 +180,6 @@ const filtered = computed(() => {
     if (f === 'review') return state === 'review'
     if (f === 'mastered') return state === 'mastered'
     if (f === 'known') return state === 'known'
-    if (f === 'user') return w.level === 'user'
     return true
   })
 })
@@ -162,7 +194,6 @@ const filters = computed<{ key: WordListFilter; label: string }[]>(() => [
   { key: 'review', label: 'Review' },
   { key: 'mastered', label: 'Mastered' },
   { key: 'known', label: 'Known' },
-  { key: 'user', label: 'My Words' }
 ])
 
 function setFilter(f: WordListFilter) {

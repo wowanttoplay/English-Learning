@@ -1,4 +1,4 @@
-import type { Word, SubtopicId, CefrLevel } from '@english-learning/shared'
+import type { Word, TopicId, Level } from '@english-learning/shared'
 
 interface UserWordRow {
   id: number
@@ -22,8 +22,8 @@ function rowToWord(row: UserWordRow): Word {
     definitionNative: row.definition_native ?? '',
     definitionTarget: row.definition_target ?? '',
     examples: JSON.parse(row.examples ?? '[]') as string[],
-    level: 'user' as CefrLevel,
-    topics: JSON.parse(row.topics ?? '[]') as SubtopicId[],
+    level: 'user' as Level,
+    topics: JSON.parse(row.topics ?? '[]') as TopicId[],
     languageId: row.language_id,
   }
 }
@@ -66,14 +66,4 @@ export function insertUserWordStatement(
       JSON.stringify(data.examples ?? []),
       JSON.stringify(data.topics ?? [])
     )
-}
-
-export async function getLastInsertedUserWord(
-  db: D1Database, userId: number, langId: string, word: string
-): Promise<Word | null> {
-  const row = await db
-    .prepare('SELECT * FROM user_words WHERE user_id = ? AND language_id = ? AND word = ?')
-    .bind(userId, langId, word)
-    .first<UserWordRow>()
-  return row ? rowToWord(row) : null
 }

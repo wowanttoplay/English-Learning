@@ -10,12 +10,16 @@
 import { readFileSync, readdirSync } from 'fs'
 import { join } from 'path'
 
-const VALID_LEVELS = new Set(['A1', 'A2', 'B1', 'B2', 'C1', 'C2'])
-// Must match SubtopicId union in src/types/index.ts
+import { isValidLevel } from '@english-learning/shared'
+
+// Keep VALID_TOPICS hardcoded — topics.ts uses @/ alias which is unavailable in tsx script context
+// Must match SUBTOPICS in src/data/topics.ts (18 topics across 5 domains)
 const VALID_TOPICS = new Set([
-  'work', 'education', 'technology', 'health', 'environment', 'society',
-  'emotions', 'business', 'travel', 'communication', 'science', 'law',
-  'arts', 'daily-life', 'relationships', 'politics'
+  'daily-life', 'health', 'travel', 'food', 'sports',
+  'work', 'business',
+  'society', 'politics', 'law',
+  'relationships', 'emotions', 'communication',
+  'education', 'science', 'arts', 'technology', 'environment',
 ])
 const REQUIRED_FIELDS = ['id', 'word', 'pos', 'phonetic', 'zh', 'en', 'examples', 'level'] as const
 
@@ -83,9 +87,9 @@ for (const w of allWords) {
   wordPosMap.set(key, w)
 }
 
-// 4. Invalid CEFR levels
+// 4. Invalid levels
 for (const w of allWords) {
-  if (!VALID_LEVELS.has(w.level)) {
+  if (!isValidLevel('en', w.level)) {
     error(`Word ID ${w.id} ("${w.word}"): invalid level "${w.level}"`)
   }
 }

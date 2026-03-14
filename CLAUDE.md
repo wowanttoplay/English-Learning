@@ -17,7 +17,7 @@ pnpm build:api              # Build API worker (packages/api)
 
 # Within packages/web:
 pnpm --filter @english-learning/web validate:words     # Validate word JSON files
-pnpm --filter @english-learning/web generate-timestamps  # Generate sentence timestamps via Whisper API
+pnpm --filter @english-learning/web generate-tts          # Generate TTS audio + sentence timestamps (Google Cloud TTS)
 
 # Within packages/api:
 pnpm --filter @english-learning/api dev       # Start Wrangler dev server
@@ -38,15 +38,17 @@ package.json                   # Root scripts delegate to packages
 packages/shared/               # @english-learning/shared
   src/
     index.ts                   # Re-exports all shared modules
-    types.ts                   # Word, Passage, SrsCard, CefrLevel, DomainId, SubtopicId, etc.
-    srs-engine.ts              # Pure SM-2 algorithm + constants
+    types.ts                   # Word, Passage, SrsCard, Level, DomainId, TopicId, etc.
+    srs-engine.ts              # Pure SM-2 algorithm + constants (incl. EASE_MULTIPLIER)
     date-utils.ts              # Shared date formatting utilities
+    levels.ts                  # Per-language level registry (LevelDef, getLevels, isValidLevel)
 
 packages/api/                  # @english-learning/api (Cloudflare Workers + D1)
   wrangler.toml                # Wrangler config (D1 binding, etc.)
   src/
     index.ts                   # Hono app: mounts routes, CORS, auth middleware
     env.ts                     # Env type (D1, Clerk keys, etc.)
+    errors.ts                  # Typed error classes (AppError, NotFoundError, CardKnownError, MissingFieldError)
     middleware/
       auth.ts                  # Clerk JWT validation middleware
       cors.ts                  # CORS middleware
@@ -71,8 +73,10 @@ packages/api/                  # @english-learning/api (Cloudflare Workers + D1)
         history.ts             # History query functions
         settings.ts            # Settings query functions
         languages.ts           # Language query functions
+        passagesRead.ts        # Passage read state queries
     services/
       cardService.ts           # Card business logic
+      userWordService.ts       # User word creation + SRS card atomically
   scripts/
     migrate-content.ts         # Seed D1 with word/passage data
     data/
@@ -108,10 +112,10 @@ packages/web/                  # @english-learning/web (Vue 3 + Vite)
     data/                      # Client-side static data
       topics.ts                # DOMAINS (5) + SUBTOPICS (16) + helpers
     lib/                       # Pure client-side logic (no Vue dependency)
-      dict-api.ts              # dictionaryapi.dev client + cache (in-memory Map + localStorage)
+      dict-api.ts              # Dictionary client + cache, parameterized by language (DICT_PROVIDERS map)
       audio.ts                 # 3-tier audio (explicit init required, async preload with HTMLAudioElement cache)
       format.ts                # Shared formatting utilities (formatTopic)
-      sentence-splitter.ts     # Sentence splitting with character offsets (shared by UI + scripts)
+      sentence-splitter.ts     # Sentence splitting with character offsets + language-aware word patterns (getWordPattern)
       timestamp-loader.ts      # Sentence timestamp fetch + in-memory cache (R2 JSON)
     styles/                    # Modular CSS (imported in App.vue)
       tokens.css               # CSS custom properties (colors, spacing, fonts) for light/dark themes
@@ -120,14 +124,17 @@ packages/web/                  # @english-learning/web (Vue 3 + Vite)
       components.css           # Component-specific styles (flashcard, tooltip, player, modal, etc.)
     composables/
       useAudio.ts              # Audio playback only (speak, speakSlow, speakSentence)
-      useDictionary.ts         # Dictionary API lookups (fetch, getCached, clearCache)
+      useDictionary.ts         # Dictionary API lookups (fetch, getCached, clearCache), language-aware
       useStudySession.ts       # Study session logic (dict fetch, preload, auto-play)
       useTheme.ts              # Dark/light theme toggle + setTheme
       useKeyboardShortcuts.ts  # Key event bindings
-      usePassageView.ts        # PassageView logic (tokenization, tooltip state, scroll-lock)
+      usePassageView.ts        # PassageView logic (tooltip state, scroll-lock) — delegates inflections to useInflectionMatcher
+      useInflectionMatcher.ts  # Language-aware word inflection matching (strategy pattern per language)
       usePassageAudioPlayer.ts # Audio player state machine (play/pause/seek/speed, fallback)
       useFreeWordLookup.ts     # Dictionary lookup + save-to-deck logic for non-B2 words
       usePassageSentenceSync.ts # Audio-to-sentence sync (timestamps + DOM highlight + scroll)
+      useWordTooltip.ts        # WordTooltip business logic (SRS state, card actions)
+      useWordModal.ts          # WordDetailModal data loading (word fetch, dict, SRS state)
     components/                # Presentational UI components
       BottomNav.vue (desktop sidebar nav + mobile bottom tab bar), WordDetailModal.vue, ProgressBar.vue,
       StatsGrid.vue, WeeklyHeatmap.vue,
@@ -140,8 +147,7 @@ packages/web/                  # @english-learning/web (Vue 3 + Vite)
       SettingsView.vue
   scripts/
     validate-words.ts          # Build-time validation: checks IDs, duplicates, levels, topics, fields
-    generate-timestamps.ts     # Whisper-based sentence timestamp generation for passage audio
-    generate-tts.ts            # TTS audio generation
+    generate-tts.ts            # TTS audio + sentence timestamps generation (Google Cloud TTS with SSML marks)
 ```
 
 ### Routes
@@ -187,31 +193,42 @@ packages/web/                  # @english-learning/web (Vue 3 + Vite)
 - **Layout/Logic separation**: Views are pure templates — business logic lives in per-view composables (`usePassageView`, etc.). Components are presentational — logic in composables (`usePassageAudioPlayer`, `useFreeWordLookup`). Stores are focused single-responsibility (`studySession`, `wordListQuery`, `uiState`)
 - **Date handling**: `formatDate(d)` in `packages/shared/src/date-utils.ts` (not `toISOString`) to avoid timezone bugs
 - **Audio**: 3-tier fallback: dictionaryapi.dev audio URLs > Web Speech API > silent. Async preload with HTMLAudioElement caching; dict-api uses in-memory Map cache to avoid repeated JSON.parse of localStorage. Passage audio supports sentence-level highlighting via timestamp sidecar files (`passage-{id}.timestamps.json`) on R2; `usePassageAudioPlayer` is instantiated in `PassageView.vue` (lifted from component) to share `currentTime` with sentence sync
-- **localStorage**: Only used for client-side caching/preferences: `dict_cache`, `theme`, `settings_audio`. All user data (SRS cards, passages read, user words, settings) stored in D1 via API
+- **localStorage**: Only used for client-side caching/preferences: `dict_cache_<lang>`, `theme`, `settings_audio`. All user data (SRS cards, passages read, user words, settings) stored in D1 via API
 - **Dependency direction**: `shared → api`, `shared → web`; within web: `api → stores → composables → components → views` (no reverse imports)
 - **User word IDs**: User-created words use IDs starting at 100001, with level `'user'`; WordListView has a "My Words" filter tab
 - **Auth**: Clerk integration — `@clerk/vue` on frontend, `@clerk/backend` on API. Auth store initializes in `App.vue` and wires Clerk token into API client
 - **Initialization**: `main.ts` installs Clerk plugin, creates router + pinia, and calls `AudioPlayer.init()` before mount
+- **EASE_MULTIPLIER**: Defined once in `packages/shared/src/srs-engine.ts`. Used by `cardService.ts` and `userWordService.ts` to convert between float ease (domain) and integer ease (DB storage). Never define locally.
+
+### Architecture Patterns
+
+- **Typed errors (API):** Services throw `AppError` subclasses (`NotFoundError`, `CardKnownError`, `MissingFieldError`) from `packages/api/src/errors.ts`. Routes catch `AppError` and return `{ error, code }` with appropriate HTTP status. Never match on error message strings.
+- **Route → Service → Query:** Routes are thin HTTP handlers. Business logic lives in `services/`. Raw SQL lives in `db/queries/`. Routes never construct SQL directly.
+- **Language strategy pattern:** English-specific logic is isolated behind strategy maps keyed by language code. Files using this pattern: `useInflectionMatcher.ts` (word inflections), `dict-api.ts` (dictionary providers via `DICT_PROVIDERS`), `sentence-splitter.ts` (word tokenization via `WORD_PATTERNS` / `getWordPattern()`). To add a new language, add an entry to each strategy map.
+- **Component purity:** Components (`components/`) must not import stores or API modules directly. Business logic lives in composables (`useWordTooltip`, `useWordModal`, `useFreeWordLookup`). Components receive reactive state and callbacks from composables.
+- **Level registry:** Per-language level definitions in `packages/shared/src/levels.ts`. UI components (`LevelBadge`, filter tabs) read from the registry via `getLevels(lang)`. Colors come from the registry's `color` field (inline style), with CSS class fallback for existing levels. Adding a new language's levels requires only adding a registry entry — no type, component, or view changes needed.
 
 ## Type System
 
-### CEFR Levels
+### Levels
 
-- `CefrCoreLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'` — standard CEFR levels
-- `CefrLevel = CefrCoreLevel | 'user'` — extends with user-created words
-- `Word.level` uses `CefrLevel`; `Passage.level` uses `CefrCoreLevel`
+- `Level = string` — language-specific difficulty level (e.g., 'A1'-'C2' for English, 'N5'-'N1' for Japanese)
+- `'user'` is a special sentinel level for user-created words (not in the level registry)
+- Level definitions live in `packages/shared/src/levels.ts` — per-language registry with `{ id, name, order, color }`
+- To add a new language's levels, add an entry to the `LEVELS` record in `levels.ts`
+- `Word.level` uses `Level`; `Passage.level` uses `Level`
 
 ### Topic Hierarchy (Domain → Subtopic)
 
-Words are tagged with 1-3 subtopics (`SubtopicId[]`). The 16 subtopics are organized into 5 domains:
+Words are tagged with 1-3 topics (`TopicId[]`). Types `DomainId` and `TopicId` are `string` aliases. The 18 topics are organized into 5 domains:
 
-| Domain (`DomainId`) | Subtopics (`SubtopicId`) |
+| Domain (`DomainId`) | Topics (`TopicId`) |
 |---|---|
-| `life` | `daily-life`, `health`, `travel` |
-| `work` | `work`, `business`, `technology` |
-| `society` | `society`, `politics`, `law`, `environment` |
+| `life` | `daily-life`, `health`, `travel`, `food`, `sports` |
+| `work` | `work`, `business` |
+| `society` | `society`, `politics`, `law` |
 | `people` | `relationships`, `emotions`, `communication` |
-| `knowledge` | `education`, `science`, `arts` |
+| `knowledge` | `education`, `science`, `arts`, `technology`, `environment` |
 
 Defined in `packages/web/src/data/topics.ts`: `DOMAINS` array, `SUBTOPICS` array, helper functions `getSubtopicsByDomain()` and `getDomainBySubtopic()`. `TOPIC_REGISTRY` is kept as a backward-compatibility alias for `SUBTOPICS`.
 
@@ -294,10 +311,10 @@ Each timestamp file:
 ]
 ```
 
-Generation:
-- Requires `OPENAI_API_KEY` environment variable
-- `pnpm --filter @english-learning/web generate-timestamps` — generate all (skip existing)
-- `pnpm --filter @english-learning/web generate-timestamps -- --force` — regenerate all
-- `pnpm --filter @english-learning/web generate-timestamps -- --id 101,102` — specific passages
-- Upload to R2: `rclone copy output/audio/passages/ r2:$R2_BUCKET/audio/passages/ --include "*.timestamps.json" --progress`
-- Uses `splitSentences()` from `lib/sentence-splitter.ts` to align Whisper output with UI sentence indices
+Generation: Timestamps are generated alongside MP3 audio by `generate-tts.ts` using Google Cloud TTS with SSML `<mark>` tags — no separate STT step needed.
+- Requires Google Cloud auth: `gcloud auth application-default login`
+- `pnpm --filter @english-learning/web generate-tts` — generate all (skip existing)
+- `pnpm --filter @english-learning/web generate-tts -- --force` — regenerate all
+- `pnpm --filter @english-learning/web generate-tts -- --only passages` — passages only
+- Upload to R2: `rclone copy public/audio/ r2:$R2_BUCKET/audio/ --progress`
+- Uses `splitSentences()` from `lib/sentence-splitter.ts` to build SSML with per-sentence marks

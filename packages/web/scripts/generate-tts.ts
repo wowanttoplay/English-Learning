@@ -1,36 +1,44 @@
 /**
- * Generate MP3 audio files using Google Cloud Text-to-Speech.
+ * Generate MP3 audio files + sentence timestamps using Google Cloud Text-to-Speech.
  *
- * Generates audio to local output dir, then upload to Cloudflare R2:
- *   - Passages:  audio/passages/passage-{id}.mp3
- *   - Words:     audio/words/word-{id}.mp3
- *   - Examples:  audio/examples/word-{id}-ex1.mp3, word-{id}-ex2.mp3
+ * For passages, uses SSML <mark> tags to get sentence-level timepoints in a single
+ * TTS call — no separate STT/Whisper step needed.
+ *
+ * Output:
+ *   - Passages:  public/audio/passages/passage-{id}.mp3 + passage-{id}.timestamps.json
+ *   - Words:     public/audio/words/word-{id}.mp3
+ *   - Examples:  public/audio/examples/word-{id}-ex1.mp3, word-{id}-ex2.mp3
  *
  * After generation, upload to R2:
- *   rclone copy output/audio/ r2:$R2_BUCKET/audio/ --progress
+ *   rclone copy public/audio/ r2:$R2_BUCKET/audio/ --progress
  *
  * Auth: gcloud auth application-default login
- *       OR export GOOGLE_APPLICATION_CREDENTIALS="/path/to/key.json"
  *
  * Usage:
- *   npm run generate-tts                  # Generate all (skip existing)
- *   npm run generate-tts -- --force       # Regenerate all
- *   npm run generate-tts -- --only passages
- *   npm run generate-tts -- --only words
- *   npm run generate-tts -- --only examples
+ *   npx tsx scripts/generate-tts.ts                  # Generate all (skip existing)
+ *   npx tsx scripts/generate-tts.ts --force           # Regenerate all
+ *   npx tsx scripts/generate-tts.ts --only passages
+ *   npx tsx scripts/generate-tts.ts --only words
+ *   npx tsx scripts/generate-tts.ts --only examples
  */
 
 import { resolve, dirname } from 'node:path'
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
-import { fileURLToPath } from 'node:url'
+import { existsSync, mkdirSync, writeFileSync, readFileSync } from 'node:fs'
+import { fileURLToPath, pathToFileURL } from 'node:url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const PROJECT_ROOT = resolve(__dirname, '..')
 
-async function loadPassages() {
-  const mod = await import(resolve(PROJECT_ROOT, 'src/data/passages.ts'))
-  return mod.PASSAGES as Array<{ id: number; title: string; text: string }>
+function loadPassages() {
+  const jsonPath = resolve(PROJECT_ROOT, '..', 'api', 'scripts', 'data', 'passages.json')
+  const raw = readFileSync(jsonPath, 'utf-8')
+  return JSON.parse(raw) as Array<{ id: number; title: string; text: string }>
+}
+
+async function loadSplitter() {
+  const mod = await import(pathToFileURL(resolve(PROJECT_ROOT, 'src/lib/sentence-splitter.ts')).href)
+  return mod.splitSentences as (text: string, _lang?: string) => Array<{ index: number; text: string; start: number; end: number }>
 }
 
 async function loadWords() {
@@ -38,36 +46,20 @@ async function loadWords() {
   return mod.WORD_LIST as Array<{ id: number; word: string; examples: string[] }>
 }
 
-interface TtsClient {
-  synthesizeSpeech(request: {
-    input: { text: string }
-    voice: { languageCode: string; name: string }
-    audioConfig: { audioEncoding: string; speakingRate: number; sampleRateHertz: number }
-  }): Promise<[{ audioContent?: Uint8Array | string }]>
+function escapeXml(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;')
 }
 
-async function synthesize(client: TtsClient, text: string, outPath: string, speakingRate: number): Promise<boolean> {
-  const [response] = await client.synthesizeSpeech({
-    input: { text },
-    voice: {
-      languageCode: 'en-US',
-      name: 'en-US-Neural2-J',
-    },
-    audioConfig: {
-      audioEncoding: 'MP3',
-      speakingRate,
-      sampleRateHertz: 24000,
-    },
-  })
-
-  if (response.audioContent) {
-    const buffer = response.audioContent instanceof Uint8Array
-      ? Buffer.from(response.audioContent)
-      : Buffer.from(response.audioContent as string, 'base64')
-    writeFileSync(outPath, buffer)
-    return true
-  }
-  return false
+interface TimestampEntry {
+  index: number
+  start: number
+  end: number
+  text: string
 }
 
 async function main() {
@@ -80,28 +72,85 @@ async function main() {
   const doWords = !only || only === 'words'
   const doExamples = !only || only === 'examples'
 
-  const { TextToSpeechClient } = await import('@google-cloud/text-to-speech')
-  const client = new TextToSpeechClient() as unknown as TtsClient
+  // Use v1beta1 for enable_time_pointing support
+  const { TextToSpeechClient } = await import('@google-cloud/text-to-speech/build/src/v1beta1')
+  const client = new TextToSpeechClient()
 
   let generated = 0
   let skipped = 0
 
-  // --- Passages ---
+  // --- Passages (with timestamps) ---
   if (doPassages) {
-    const passages = await loadPassages()
-    const dir = resolve(PROJECT_ROOT, 'public/audio/passages')
-    mkdirSync(dir, { recursive: true })
+    const passages = loadPassages()
+    const splitSentences = await loadSplitter()
+    const audioDir = resolve(PROJECT_ROOT, 'public/audio/passages')
+    mkdirSync(audioDir, { recursive: true })
     console.log(`\n=== Passages (${passages.length}) ===`)
 
     for (const p of passages) {
-      const outPath = resolve(dir, `passage-${p.id}.mp3`)
-      if (!force && existsSync(outPath)) {
+      const mp3Path = resolve(audioDir, `passage-${p.id}.mp3`)
+      const tsPath = resolve(audioDir, `passage-${p.id}.timestamps.json`)
+      if (!force && existsSync(mp3Path) && existsSync(tsPath)) {
         skipped++
         continue
       }
-      console.log(`  [gen] passage-${p.id}.mp3 — "${p.title}"`)
-      const ok = await synthesize(client, p.text, outPath, 0.92)
-      ok ? generated++ : console.error(`    Warning: no audio for passage ${p.id}`)
+
+      console.log(`  [gen] passage-${p.id} — "${p.title}"`)
+
+      // Split text into sentences
+      const sentences = splitSentences(p.text)
+
+      // Build SSML with <mark> before each sentence
+      let ssml = '<speak>'
+      for (const s of sentences) {
+        ssml += `<mark name="s${s.index}"/>${escapeXml(s.text)} `
+      }
+      ssml += '</speak>'
+
+      try {
+        const [response] = await client.synthesizeSpeech({
+          input: { ssml },
+          voice: { languageCode: 'en-US', name: 'en-US-Neural2-J' },
+          audioConfig: { audioEncoding: 'MP3', speakingRate: 0.92, sampleRateHertz: 24000 },
+          enableTimePointing: ['SSML_MARK'],
+        })
+
+        // Write MP3
+        if (response.audioContent) {
+          const buffer = response.audioContent instanceof Uint8Array
+            ? Buffer.from(response.audioContent)
+            : Buffer.from(response.audioContent as string, 'base64')
+          writeFileSync(mp3Path, buffer)
+        } else {
+          console.error(`    Warning: no audio for passage ${p.id}`)
+          continue
+        }
+
+        // Build timestamps from timepoints
+        const timepoints = (response.timepoints ?? []) as Array<{ markName: string; timeSeconds: number }>
+        const timestamps: TimestampEntry[] = []
+
+        for (let i = 0; i < sentences.length; i++) {
+          const tp = timepoints.find(t => t.markName === `s${i}`)
+          const nextTp = timepoints.find(t => t.markName === `s${i + 1}`)
+          const start = tp?.timeSeconds ?? 0
+          // If no next mark, estimate end from audio duration or use a fallback
+          const end = nextTp?.timeSeconds ?? (start + 5)
+
+          timestamps.push({
+            index: i,
+            start: Math.round(start * 100) / 100,
+            end: Math.round(end * 100) / 100,
+            text: sentences[i].text,
+          })
+        }
+
+        writeFileSync(tsPath, JSON.stringify(timestamps, null, 2))
+        console.log(`    ✓ MP3 + ${timestamps.length} timestamps`)
+        generated++
+      } catch (err) {
+        console.error(`    Error: ${err}`)
+      }
     }
   }
 
@@ -121,8 +170,22 @@ async function main() {
           continue
         }
         console.log(`  [gen] word-${w.id}.mp3 — "${w.word}"`)
-        const ok = await synthesize(client, w.word, outPath, 0.85)
-        ok ? generated++ : console.error(`    Warning: no audio for word ${w.id}`)
+        try {
+          const [response] = await client.synthesizeSpeech({
+            input: { text: w.word },
+            voice: { languageCode: 'en-US', name: 'en-US-Neural2-J' },
+            audioConfig: { audioEncoding: 'MP3', speakingRate: 0.85, sampleRateHertz: 24000 },
+          })
+          if (response.audioContent) {
+            const buffer = response.audioContent instanceof Uint8Array
+              ? Buffer.from(response.audioContent)
+              : Buffer.from(response.audioContent as string, 'base64')
+            writeFileSync(outPath, buffer)
+            generated++
+          }
+        } catch (err) {
+          console.error(`    Error: ${err}`)
+        }
       }
     }
 
@@ -139,14 +202,30 @@ async function main() {
             continue
           }
           console.log(`  [gen] word-${w.id}-ex${i + 1}.mp3 — "${w.examples[i].slice(0, 50)}..."`)
-          const ok = await synthesize(client, w.examples[i], outPath, 0.90)
-          ok ? generated++ : console.error(`    Warning: no audio for word ${w.id} ex${i + 1}`)
+          try {
+            const [response] = await client.synthesizeSpeech({
+              input: { text: w.examples[i] },
+              voice: { languageCode: 'en-US', name: 'en-US-Neural2-J' },
+              audioConfig: { audioEncoding: 'MP3', speakingRate: 0.90, sampleRateHertz: 24000 },
+            })
+            if (response.audioContent) {
+              const buffer = response.audioContent instanceof Uint8Array
+                ? Buffer.from(response.audioContent)
+                : Buffer.from(response.audioContent as string, 'base64')
+              writeFileSync(outPath, buffer)
+              generated++
+            }
+          } catch (err) {
+            console.error(`    Error: ${err}`)
+          }
         }
       }
     }
   }
 
   console.log(`\nDone! Generated: ${generated}, Skipped: ${skipped}`)
+  console.log('\nUpload to R2:')
+  console.log('  rclone copy public/audio/ r2:$R2_BUCKET/audio/ --progress')
 }
 
 main().catch((err) => {

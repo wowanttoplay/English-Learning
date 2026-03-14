@@ -1,16 +1,17 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import type { Word, DomainId, SubtopicId } from '@/types'
+import type { Word, DomainId, TopicId, Level } from '@/types'
 import * as wordsApi from '@/api/words'
 import { useLanguageStore } from './language'
 
-export type WordListFilter = 'all' | 'unseen' | 'learning' | 'review' | 'mastered' | 'known' | 'user'
+export type WordListFilter = 'all' | 'unseen' | 'learning' | 'review' | 'mastered' | 'known'
 
 export const useWordListQueryStore = defineStore('wordListQuery', () => {
   const filter = ref<WordListFilter>('all')
   const search = ref('')
-  const topic = ref<'all' | SubtopicId>('all')
+  const topic = ref<'all' | TopicId>('all')
   const domain = ref<'all' | DomainId>('all')
+  const level = ref<'all' | Level>('all')
   const page = ref(1)
   const pageSize = ref(50)
 
@@ -26,7 +27,7 @@ export const useWordListQueryStore = defineStore('wordListQuery', () => {
         lang,
         page: page.value,
         pageSize: pageSize.value,
-        level: filter.value === 'all' ? undefined : undefined, // level filtering handled client-side for now
+        level: level.value === 'all' ? undefined : level.value,
         topic: topic.value === 'all' ? undefined : topic.value,
       })
       words.value = result.items
@@ -41,6 +42,7 @@ export const useWordListQueryStore = defineStore('wordListQuery', () => {
     search.value = ''
     topic.value = 'all'
     domain.value = 'all'
+    level.value = 'all'
     page.value = 1
   }
 
@@ -49,6 +51,7 @@ export const useWordListQueryStore = defineStore('wordListQuery', () => {
     search,
     topic,
     domain,
+    level,
     page,
     pageSize,
     words,

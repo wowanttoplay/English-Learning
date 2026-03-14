@@ -27,15 +27,12 @@
             @click="levelFilter = 'all'"
           >All</button>
           <button
+            v-for="lv in levels"
+            :key="lv.id"
             class="filter-tab"
-            :class="{ active: levelFilter === 'B1' }"
-            @click="levelFilter = 'B1'"
-          >Easier</button>
-          <button
-            class="filter-tab"
-            :class="{ active: levelFilter === 'B2' }"
-            @click="levelFilter = 'B2'"
-          >Standard</button>
+            :class="{ active: levelFilter === lv.id }"
+            @click="levelFilter = lv.id"
+          >{{ lv.name }}</button>
         </div>
 
         <div class="filter-tabs">
@@ -90,8 +87,7 @@
               <div class="passage-item-title">{{ passage.title }}</div>
               <div class="passage-item-meta">
                 <span class="passage-topic">{{ formatTopic(passage.topic) }}</span>
-                <span class="passage-level">{{ passage.level }}</span>
-                <span v-if="passage.level === 'B1'" class="difficulty-badge">Easier</span>
+                <LevelBadge :level="passage.level" />
               </div>
             </div>
           </div>
@@ -111,8 +107,7 @@
               <div class="passage-item-title">{{ p.title }}</div>
               <div class="passage-item-meta">
                 <span class="passage-topic">{{ formatTopic(p.topic) }}</span>
-                <span class="passage-level">{{ p.level }}</span>
-                <span v-if="p.level === 'B1'" class="difficulty-badge">Easier</span>
+                <LevelBadge :level="p.level" />
               </div>
             </div>
             <span class="passage-done-badge">&#10003; Read</span>
@@ -129,7 +124,9 @@ import { useRouter } from 'vue-router'
 import { usePassagesStore } from '@/stores/passages'
 import { DOMAINS, getSubtopicsByDomain } from '@/data/topics'
 import { formatTopic } from '@/lib/format'
-import type { DomainId, SubtopicId } from '@/types'
+import { getLevels } from '@english-learning/shared'
+import { useLanguageStore } from '@/stores/language'
+import LevelBadge from '@/components/LevelBadge.vue'
 
 const router = useRouter()
 const passagesStore = usePassagesStore()
@@ -141,11 +138,13 @@ onMounted(() => {
 
 const hasPassages = computed(() => passagesStore.passages.length > 0)
 
-const levelFilter = ref<'all' | 'B1' | 'B2'>('all')
-const domainFilter = ref<'all' | DomainId>('all')
-const topicFilter = ref<'all' | SubtopicId>('all')
+const langStore = useLanguageStore()
+const levels = computed(() => getLevels(langStore.currentLanguage))
+const levelFilter = ref<'all' | string>('all')
+const domainFilter = ref<'all' | string>('all')
+const topicFilter = ref<'all' | string>('all')
 
-function setDomain(d: 'all' | DomainId) {
+function setDomain(d: 'all' | string) {
   domainFilter.value = d
   topicFilter.value = 'all'
 }

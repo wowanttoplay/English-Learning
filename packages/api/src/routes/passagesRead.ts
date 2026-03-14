@@ -1,16 +1,13 @@
 import { Hono } from 'hono'
 import type { Env } from '../env'
+import { getPassagesRead, markPassageRead } from '../db/queries/passagesRead'
 
 const passagesRead = new Hono<{ Bindings: Env }>()
 
 // GET /api/user/passages-read
 passagesRead.get('/', async (c) => {
   const userId = c.get('userId')
-  const { results } = await c.env.DB
-    .prepare('SELECT passage_id FROM passages_read WHERE user_id = ?')
-    .bind(userId)
-    .all<{ passage_id: number }>()
-  const ids = (results ?? []).map(r => r.passage_id)
+  const ids = await getPassagesRead(c.env.DB, userId)
   return c.json({ items: ids })
 })
 
@@ -20,10 +17,7 @@ passagesRead.post('/:id', async (c) => {
   const passageId = parseInt(c.req.param('id'), 10)
   if (isNaN(passageId)) return c.json({ error: 'Invalid passage ID', code: 'INVALID_PARAM' }, 400)
 
-  await c.env.DB
-    .prepare('INSERT OR IGNORE INTO passages_read (user_id, passage_id) VALUES (?, ?)')
-    .bind(userId, passageId)
-    .run()
+  await markPassageRead(c.env.DB, userId, passageId)
   return c.json({ ok: true })
 })
 

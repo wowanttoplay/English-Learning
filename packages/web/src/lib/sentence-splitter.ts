@@ -34,7 +34,14 @@ function isQuotedSpeechEnd(text: string, punctIndex: number): boolean {
   return false
 }
 
-export function splitSentences(text: string): Sentence[] {
+// Tokenizer patterns per language
+// Latin-script languages share a base pattern; CJK will need morphological analysis
+const WORD_PATTERNS: Record<string, RegExp> = {
+  en: /([a-zA-ZÀ-ÿ'-]+)/,
+  // Future: ja (needs kuromoji/mecab), zh (needs jieba), etc.
+}
+
+export function splitSentences(text: string, _lang: string = 'en'): Sentence[] {
   if (!text || !text.trim()) return []
 
   const results: Sentence[] = []
@@ -138,4 +145,8 @@ export function splitSentences(text: string): Sentence[] {
   }
 
   return results
+}
+
+export function getWordPattern(lang: string = 'en'): RegExp {
+  return WORD_PATTERNS[lang] ?? WORD_PATTERNS.en
 }

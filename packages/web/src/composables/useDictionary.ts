@@ -1,19 +1,19 @@
 import { DictAPI } from '@/lib/dict-api'
 
 export function useDictionary() {
-  function fetchDictData(word: string): Promise<void> {
-    if (!DictAPI.getCached(word)) {
-      return DictAPI.lookup(word).then(() => {})
+  function fetchDictData(word: string, lang: string = 'en'): Promise<void> {
+    if (!DictAPI.getCached(word, lang)) {
+      return DictAPI.lookup(word, lang).then(() => {})
     }
     return Promise.resolve()
   }
 
-  function getDictCached(word: string) {
-    return DictAPI.getCached(word)
+  function getDictCached(word: string, lang: string = 'en') {
+    return DictAPI.getCached(word, lang)
   }
 
-  function clearCache(): void {
-    DictAPI.clearCache()
+  function clearCache(lang?: string): void {
+    DictAPI.clearCache(lang)
   }
 
   return {

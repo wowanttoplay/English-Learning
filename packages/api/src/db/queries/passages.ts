@@ -1,4 +1,4 @@
-import type { Passage, SentenceTimestamp, CefrCoreLevel, SubtopicId } from '@english-learning/shared'
+import type { Passage, SentenceTimestamp, Level, TopicId } from '@english-learning/shared'
 
 interface PassageRow {
   id: number
@@ -25,8 +25,8 @@ interface PassageSummaryRow {
 export interface PassageSummary {
   id: number
   title: string
-  level: CefrCoreLevel
-  topic: SubtopicId
+  level: Level
+  topic: TopicId
   genre: string
   languageId: string
   audioUrl?: string
@@ -36,8 +36,8 @@ function rowToPassageSummary(row: PassageSummaryRow): PassageSummary {
   return {
     id: row.id,
     title: row.title,
-    level: row.level as CefrCoreLevel,
-    topic: row.topic as SubtopicId,
+    level: row.level as Level,
+    topic: row.topic as TopicId,
     genre: row.genre,
     languageId: row.language_id,
     ...(row.audio_url ? { audioUrl: row.audio_url } : {}),
@@ -49,8 +49,8 @@ function rowToPassage(row: PassageRow): Passage {
     id: row.id,
     title: row.title,
     text: row.text,
-    level: row.level as CefrCoreLevel,
-    topic: row.topic as SubtopicId,
+    level: row.level as Level,
+    topic: row.topic as TopicId,
     genre: row.genre,
     languageId: row.language_id,
     ...(row.audio_url ? { audioUrl: row.audio_url } : {}),

@@ -1,6 +1,6 @@
 // Re-export all shared types
 export * from '@english-learning/shared'
-import type { DomainId, SubtopicId } from '@english-learning/shared'
+import type { DomainId, TopicId } from '@english-learning/shared'
 
 // Web-only types (dictionary API)
 export interface DictPhonetic { text: string; audio: string | null }
@@ -11,5 +11,4 @@ export interface AudioSettings { autoPlay: boolean }
 
 // Web-only display types
 export interface Domain { id: DomainId; name: string; emoji: string }
-export interface Subtopic { id: SubtopicId; name: string; emoji: string; domainId: DomainId }
-export type TopicEntry = Subtopic
+export interface Subtopic { id: TopicId; name: string; emoji: string; domainId: DomainId }
