@@ -16,6 +16,26 @@
     <div class="filter-tabs">
       <button
         class="filter-tab"
+        :class="{ active: query.level === 'all' }"
+        @click="setLevel('all')"
+      >All Levels</button>
+      <button
+        v-for="lv in cefrLevels"
+        :key="lv"
+        class="filter-tab"
+        :class="{ active: query.level === lv }"
+        @click="setLevel(lv)"
+      >{{ lv }}</button>
+      <button
+        class="filter-tab"
+        :class="{ active: query.level === 'user' }"
+        @click="setLevel('user')"
+      >My Words</button>
+    </div>
+
+    <div class="filter-tabs">
+      <button
+        class="filter-tab"
         :class="{ active: query.domain === 'all' }"
         @click="setDomain('all')"
       >All Topics</button>
@@ -95,12 +115,14 @@ import { useSrsStore } from '@/stores/srs'
 import { useWordListQueryStore, type WordListFilter } from '@/stores/wordListQuery'
 import { useUiStateStore } from '@/stores/uiState'
 import { DOMAINS, getSubtopicsByDomain } from '@/data/topics'
-import type { DomainId } from '@/types'
+import type { DomainId, CefrLevel } from '@/types'
 import LevelBadge from '@/components/LevelBadge.vue'
 
 const srsStore = useSrsStore()
 const query = useWordListQueryStore()
 const ui = useUiStateStore()
+
+const cefrLevels: CefrLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
 
 const searchInput = ref(query.search)
 let searchTimeout: ReturnType<typeof setTimeout> | null = null
@@ -119,6 +141,12 @@ onMounted(() => {
   srsStore.loadCards()
   query.loadWords()
 })
+
+function setLevel(lv: 'all' | CefrLevel) {
+  query.level = lv
+  query.page = 1
+  query.loadWords()
+}
 
 function setDomain(d: 'all' | DomainId) {
   query.domain = d
@@ -149,7 +177,6 @@ const filtered = computed(() => {
     if (f === 'review') return state === 'review'
     if (f === 'mastered') return state === 'mastered'
     if (f === 'known') return state === 'known'
-    if (f === 'user') return w.level === 'user'
     return true
   })
 })
@@ -164,7 +191,6 @@ const filters = computed<{ key: WordListFilter; label: string }[]>(() => [
   { key: 'review', label: 'Review' },
   { key: 'mastered', label: 'Mastered' },
   { key: 'known', label: 'Known' },
-  { key: 'user', label: 'My Words' }
 ])
 
 function setFilter(f: WordListFilter) {
