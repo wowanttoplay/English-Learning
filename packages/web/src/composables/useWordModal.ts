@@ -1,11 +1,13 @@
 import { computed, watch, ref, type Ref } from 'vue'
 import { useSrsStore } from '@/stores/srs'
+import { useSettingsStore } from '@/stores/settings'
 import { useDictionary } from '@/composables/useDictionary'
 import * as wordsApi from '@/api/words'
 import type { DictEntry, Word } from '@/types'
 
 export function useWordModal(wordId: Ref<number | null>) {
   const srsStore = useSrsStore()
+  const settingsStore = useSettingsStore()
   const dict = useDictionary()
 
   const word = ref<Word | null>(null)
@@ -28,7 +30,7 @@ export function useWordModal(wordId: Ref<number | null>) {
       return
     }
     try {
-      word.value = await wordsApi.getWordById(newId)
+      word.value = await wordsApi.getWordById(newId, settingsStore.settings.selectedLocales)
     } catch {
       word.value = null
       return
