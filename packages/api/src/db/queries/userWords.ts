@@ -1,4 +1,5 @@
 import type { Word, TopicId, Level } from '@english-learning/shared'
+import { mergeTranslations } from './translations'
 
 interface UserWordRow {
   id: number
@@ -7,8 +8,6 @@ interface UserWordRow {
   word: string
   pos: string | null
   phonetic: string | null
-  definition_native: string | null
-  definition_target: string | null
   examples: string | null
   topics: string | null
 }
@@ -19,8 +18,6 @@ function rowToWord(row: UserWordRow): Word {
     word: row.word,
     pos: row.pos ?? '',
     phonetic: row.phonetic ?? '',
-    definitionNative: row.definition_native ?? '',
-    definitionTarget: row.definition_target ?? '',
     examples: JSON.parse(row.examples ?? '[]') as string[],
     level: 'user' as Level,
     topics: JSON.parse(row.topics ?? '[]') as TopicId[],
@@ -29,13 +26,14 @@ function rowToWord(row: UserWordRow): Word {
 }
 
 export async function getUserWords(
-  db: D1Database, userId: number, langId: string
+  db: D1Database, userId: number, langId: string, locales?: string[]
 ): Promise<Word[]> {
   const { results } = await db
     .prepare('SELECT * FROM user_words WHERE user_id = ? AND language_id = ?')
     .bind(userId, langId)
     .all<UserWordRow>()
-  return (results ?? []).map(rowToWord)
+  const words = (results ?? []).map(rowToWord)
+  return mergeTranslations(db, words, locales)
 }
 
 interface CreateUserWordData {
@@ -43,8 +41,6 @@ interface CreateUserWordData {
   word: string
   pos?: string
   phonetic?: string
-  definitionNative?: string
-  definitionTarget?: string
   examples?: string[]
   topics?: string[]
 }
@@ -53,16 +49,14 @@ export function insertUserWordStatement(
   db: D1Database, userId: number, data: CreateUserWordData
 ): D1PreparedStatement {
   return db
-    .prepare(`INSERT INTO user_words (user_id, language_id, word, pos, phonetic, definition_native, definition_target, examples, topics)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+    .prepare(`INSERT INTO user_words (user_id, language_id, word, pos, phonetic, examples, topics)
+      VALUES (?, ?, ?, ?, ?, ?, ?)`)
     .bind(
       userId,
       data.languageId,
       data.word,
       data.pos ?? null,
       data.phonetic ?? null,
-      data.definitionNative ?? null,
-      data.definitionTarget ?? null,
       JSON.stringify(data.examples ?? []),
       JSON.stringify(data.topics ?? [])
     )
