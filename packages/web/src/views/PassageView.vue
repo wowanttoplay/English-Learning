@@ -5,7 +5,7 @@
   <div v-else-if="passage" class="passage-screen fade-in">
     <div class="card-header">
       <button class="back-btn" @click="router.push('/reading')">&#8592; Back</button>
-      <span class="card-progress"><span class="level-badge" :class="'level-' + passage.level.toLowerCase()">{{ passage.level }}</span> &middot; {{ formatTopic(passage.topic) }}</span>
+      <span class="card-progress"><LevelBadge :level="passage.level" /> &middot; {{ formatTopic(passage.topic) }}</span>
     </div>
 
     <PassageAudioPlayer
@@ -73,6 +73,7 @@ import { formatTopic } from '@/lib/format'
 import WordTooltip from '@/components/WordTooltip.vue'
 import FreeWordTooltip from '@/components/FreeWordTooltip.vue'
 import PassageAudioPlayer from '@/components/PassageAudioPlayer.vue'
+import LevelBadge from '@/components/LevelBadge.vue'
 
 const router = useRouter()
 const {

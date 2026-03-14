@@ -87,7 +87,7 @@
               <div class="passage-item-title">{{ passage.title }}</div>
               <div class="passage-item-meta">
                 <span class="passage-topic">{{ formatTopic(passage.topic) }}</span>
-                <span class="level-badge" :class="'level-' + passage.level.toLowerCase()">{{ passage.level }}</span>
+                <LevelBadge :level="passage.level" />
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@
               <div class="passage-item-title">{{ p.title }}</div>
               <div class="passage-item-meta">
                 <span class="passage-topic">{{ formatTopic(p.topic) }}</span>
-                <span class="level-badge" :class="'level-' + p.level.toLowerCase()">{{ p.level }}</span>
+                <LevelBadge :level="p.level" />
               </div>
             </div>
             <span class="passage-done-badge">&#10003; Read</span>
@@ -125,6 +125,7 @@ import { usePassagesStore } from '@/stores/passages'
 import { DOMAINS, getSubtopicsByDomain } from '@/data/topics'
 import { formatTopic } from '@/lib/format'
 import type { CefrCoreLevel, DomainId, SubtopicId } from '@/types'
+import LevelBadge from '@/components/LevelBadge.vue'
 
 const router = useRouter()
 const passagesStore = usePassagesStore()
