@@ -18,9 +18,9 @@ export interface Word {
   word: string
   pos: string
   phonetic: string
-  definitionNative: string
-  definitionTarget: string
   examples: string[]
+  translations?: Record<string, string>
+  exampleTranslations?: Record<string, string[]>
   level: Level
   topics: TopicId[]
   languageId: string
@@ -100,6 +100,7 @@ export interface CardQueue {
 export interface UserSettings {
   currentLanguage: string
   audioAutoPlay: boolean
+  selectedLocales: string[]
 }
 
 // === API Response Types ===
