@@ -12,7 +12,7 @@ export const usePassagesStore = defineStore('passages', () => {
   async function loadPassages(lang: string, level?: string, topic?: string) {
     loading.value = true
     try {
-      const data = await passagesApi.getPassages({ lang, level, topic, pageSize: 200 })
+      const data = await passagesApi.getPassages({ lang, level, topic, pageSize: 100 })
       passages.value = data.items
       total.value = data.total
     } finally {

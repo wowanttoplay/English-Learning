@@ -30,5 +30,6 @@ export async function apiFetch<T>(path: string, options: RequestInit = {}): Prom
     throw new ApiError(res.status, body.code, body.error)
   }
 
-  return res.json()
+  const json = await res.json()
+  return json.data !== undefined ? json.data : json
 }

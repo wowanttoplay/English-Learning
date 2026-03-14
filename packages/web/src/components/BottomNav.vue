@@ -17,6 +17,16 @@
     <RouterLink to="/settings">
       <span class="nav-icon" v-html="sidebarItems[4].icon"></span> Settings
     </RouterLink>
+    <div class="side-nav-auth">
+      <Show when="signed-out">
+        <SignInButton mode="modal">
+          <button class="btn btn-primary" style="width:100%">Sign In</button>
+        </SignInButton>
+      </Show>
+      <Show when="signed-in">
+        <UserButton />
+      </Show>
+    </div>
   </nav>
   <!-- Mobile bottom nav -->
   <nav v-if="showBottomNav" class="bottom-nav">
@@ -38,6 +48,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { RouterLink, useRouter, useRoute } from 'vue-router'
+import { SignInButton, Show, UserButton } from '@clerk/vue'
 
 const router = useRouter()
 const route = useRoute()

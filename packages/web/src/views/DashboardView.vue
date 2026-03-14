@@ -3,6 +3,14 @@
     <div class="header">
       <h1>Oxford 5000</h1>
       <div class="header-actions">
+        <Show when="signed-out">
+          <SignInButton mode="modal">
+            <button class="btn btn-primary" style="padding:6px 16px; font-size:14px">Sign In</button>
+          </SignInButton>
+        </Show>
+        <Show when="signed-in">
+          <UserButton />
+        </Show>
         <button class="icon-btn" @click="theme.toggle()" title="Toggle theme">
           <span v-html="theme.isDark.value ? '&#9728;' : '&#9790;'"></span>
         </button>
@@ -48,6 +56,7 @@ import { useRouter } from 'vue-router'
 import { useSrsStore } from '@/stores/srs'
 import { useStudySessionStore } from '@/stores/studySession'
 import { useTheme } from '@/composables/useTheme'
+import { SignInButton, Show, UserButton } from '@clerk/vue'
 import StatsGrid from '@/components/StatsGrid.vue'
 import ProgressBar from '@/components/ProgressBar.vue'
 import WeeklyHeatmap from '@/components/WeeklyHeatmap.vue'

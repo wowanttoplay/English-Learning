@@ -3,6 +3,8 @@
 -- Run with: wrangler d1 execute english-learning --file=seed.sql
 -- ============================================================
 
+PRAGMA foreign_keys = OFF;
+
 -- Languages
 INSERT OR IGNORE INTO languages (id, name, native_name) VALUES ('en', 'English', 'English');
 
@@ -754,7 +756,7 @@ INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (10, 494);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (10, 245);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (11, 403);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (11, 245);
-INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (11, 524);
+-- Skipped: word_id 524 does not exist in words table
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (11, 136);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (11, 126);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (11, 79);
@@ -849,7 +851,7 @@ INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (108, 452);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (108, 443);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (108, 393);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (108, 479);
-INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (108, 590);
+-- Skipped: word_id 590 does not exist in words table
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (109, 492);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (109, 188);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (109, 94);
@@ -922,7 +924,7 @@ INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (115, 233);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (115, 476);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (115, 338);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (115, 245);
-INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (115, 524);
+-- Skipped: word_id 524 does not exist in words table
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (115, 68);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (116, 185);
 INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (116, 580);
