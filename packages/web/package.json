@@ -10,7 +10,7 @@
     "test": "vitest run",
     "typecheck": "vue-tsc --noEmit",
     "validate:words": "tsx scripts/validate-words.ts",
-    "generate-timestamps": "tsx scripts/generate-timestamps.ts"
+    "generate-tts": "tsx scripts/generate-tts.ts"
   },
   "dependencies": {
     "@clerk/vue": "^2.0.4",

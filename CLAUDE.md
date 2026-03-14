@@ -17,7 +17,7 @@ pnpm build:api              # Build API worker (packages/api)
 
 # Within packages/web:
 pnpm --filter @english-learning/web validate:words     # Validate word JSON files
-pnpm --filter @english-learning/web generate-timestamps  # Generate sentence timestamps via Whisper API
+pnpm --filter @english-learning/web generate-tts          # Generate TTS audio + sentence timestamps (Google Cloud TTS)
 
 # Within packages/api:
 pnpm --filter @english-learning/api dev       # Start Wrangler dev server
@@ -147,8 +147,7 @@ packages/web/                  # @english-learning/web (Vue 3 + Vite)
       SettingsView.vue
   scripts/
     validate-words.ts          # Build-time validation: checks IDs, duplicates, levels, topics, fields
-    generate-timestamps.ts     # Whisper-based sentence timestamp generation for passage audio
-    generate-tts.ts            # TTS audio generation
+    generate-tts.ts            # TTS audio + sentence timestamps generation (Google Cloud TTS with SSML marks)
 ```
 
 ### Routes
@@ -312,10 +311,10 @@ Each timestamp file:
 ]
 ```
 
-Generation:
-- Requires `OPENAI_API_KEY` environment variable
-- `pnpm --filter @english-learning/web generate-timestamps` — generate all (skip existing)
-- `pnpm --filter @english-learning/web generate-timestamps -- --force` — regenerate all
-- `pnpm --filter @english-learning/web generate-timestamps -- --id 101,102` — specific passages
-- Upload to R2: `rclone copy output/audio/passages/ r2:$R2_BUCKET/audio/passages/ --include "*.timestamps.json" --progress`
-- Uses `splitSentences()` from `lib/sentence-splitter.ts` to align Whisper output with UI sentence indices
+Generation: Timestamps are generated alongside MP3 audio by `generate-tts.ts` using Google Cloud TTS with SSML `<mark>` tags — no separate STT step needed.
+- Requires Google Cloud auth: `gcloud auth application-default login`
+- `pnpm --filter @english-learning/web generate-tts` — generate all (skip existing)
+- `pnpm --filter @english-learning/web generate-tts -- --force` — regenerate all
+- `pnpm --filter @english-learning/web generate-tts -- --only passages` — passages only
+- Upload to R2: `rclone copy public/audio/ r2:$R2_BUCKET/audio/ --progress`
+- Uses `splitSentences()` from `lib/sentence-splitter.ts` to build SSML with per-sentence marks
