@@ -7,6 +7,7 @@ interface GetWordsOpts {
   topic?: string
   page?: number
   pageSize?: number
+  locales?: string[]
 }
 
 export async function getWords(opts: GetWordsOpts): Promise<PaginatedResponse<Word>> {
@@ -15,9 +16,11 @@ export async function getWords(opts: GetWordsOpts): Promise<PaginatedResponse<Wo
   if (opts.topic) params.set('topic', opts.topic)
   if (opts.page) params.set('page', String(opts.page))
   if (opts.pageSize) params.set('pageSize', String(opts.pageSize))
+  if (opts.locales?.length) params.set('locales', opts.locales.join(','))
   return apiFetch(`/api/words?${params}`)
 }
 
-export async function getWordById(id: number): Promise<Word> {
-  return apiFetch(`/api/words/${id}`)
+export async function getWordById(id: number, locales?: string[]): Promise<Word> {
+  const params = locales?.length ? `?locales=${locales.join(',')}` : ''
+  return apiFetch(`/api/words/${id}${params}`)
 }
