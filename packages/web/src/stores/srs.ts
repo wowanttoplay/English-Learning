@@ -81,8 +81,7 @@ export const useSrsStore = defineStore('srs', () => {
       word: wordData.word,
       pos: wordData.pos,
       phonetic: wordData.phonetic,
-      definitionNative: wordData.definitionNative,
-      definitionTarget: wordData.definitionTarget,
+      translations: wordData.translations,
       examples: wordData.examples,
       topics: wordData.topics as string[],
     })
