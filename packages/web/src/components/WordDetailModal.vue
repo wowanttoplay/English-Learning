@@ -17,13 +17,17 @@
         <LevelBadge :level="word.level" />
       </div>
 
-      <div class="card-zh" style="font-size:20px">{{ word.definitionNative }}</div>
-      <div class="card-en" style="margin-top:8px">{{ word.definitionTarget }}</div>
+      <div v-for="(text, locale) in word.translations" :key="locale" class="card-def" style="margin-top:8px">
+        {{ text }}
+      </div>
 
       <ul class="card-examples" style="margin-top:12px">
         <li v-for="(ex, i) in word.examples" :key="i">
           <span class="example-text">{{ ex }}</span>
           <button class="example-play-btn" @click="audio.speakSentence(ex, 'normal', word.word, i)" title="Play sentence">&#9654;</button>
+          <div v-for="(texts, locale) in word.exampleTranslations" :key="locale" class="example-translation">
+            {{ texts[i] }}
+          </div>
         </li>
       </ul>
 
