@@ -1,102 +1,1202 @@
 [
-  { "wordId": 30001, "translation": "接受；同意" },
-  { "wordId": 30002, "translation": "达到；实现" },
-  { "wordId": 30003, "translation": "承认；准许进入" },
-  { "wordId": 30004, "translation": "买得起；负担得起" },
-  { "wordId": 30005, "translation": "同意；赞成" },
-  { "wordId": 30006, "translation": "允许；准许" },
-  { "wordId": 30007, "translation": "出现；看起来" },
-  { "wordId": 30008, "translation": "申请；应用" },
-  { "wordId": 30009, "translation": "安排；整理" },
-  { "wordId": 30010, "translation": "出席；参加" },
-  { "wordId": 30011, "translation": "避免；避开" },
-  { "wordId": 30012, "translation": "借入；借用" },
-  { "wordId": 30013, "translation": "取消；撤销" },
-  { "wordId": 30014, "translation": "比较；对比" },
-  { "wordId": 30015, "translation": "抱怨；投诉" },
-  { "wordId": 30016, "translation": "确认；证实" },
-  { "wordId": 30017, "translation": "连接；联系" },
-  { "wordId": 30018, "translation": "考虑；认为" },
-  { "wordId": 30019, "translation": "包含；容纳" },
-  { "wordId": 30020, "translation": "继续；持续" },
-  { "wordId": 30021, "translation": "说服；使信服" },
-  { "wordId": 30022, "translation": "创造；创建" },
-  { "wordId": 30023, "translation": "递送；交付" },
-  { "wordId": 30024, "translation": "要求；需要" },
-  { "wordId": 30025, "translation": "依靠；取决于" },
-  { "wordId": 30026, "translation": "描述；形容" },
-  { "wordId": 30027, "translation": "发展；开发" },
-  { "wordId": 30028, "translation": "讨论；商议" },
-  { "wordId": 30029, "translation": "赚取；挣得" },
-  { "wordId": 30030, "translation": "鼓励；激励" },
-  { "wordId": 30031, "translation": "期望；预期" },
-  { "wordId": 30032, "translation": "解释；说明" },
-  { "wordId": 30033, "translation": "表达；表示" },
-  { "wordId": 30034, "translation": "失败；未能" },
-  { "wordId": 30035, "translation": "改善；提高" },
-  { "wordId": 30036, "translation": "包括；包含" },
-  { "wordId": 30037, "translation": "增加；增长" },
-  { "wordId": 30038, "translation": "通知；告知" },
-  { "wordId": 30039, "translation": "坚持；坚决要求" },
-  { "wordId": 30040, "translation": "介绍；引进" },
-  { "wordId": 30041, "translation": "邀请；招待" },
-  { "wordId": 30042, "translation": "涉及；包含" },
-  { "wordId": 30043, "translation": "管理；设法做到" },
-  { "wordId": 30044, "translation": "提到；说起" },
-  { "wordId": 30045, "translation": "注意到；察觉" },
-  { "wordId": 30046, "translation": "提供；提议" },
-  { "wordId": 30047, "translation": "组织；安排" },
-  { "wordId": 30048, "translation": "表演；执行" },
-  { "wordId": 30049, "translation": "说服；劝说" },
-  { "wordId": 30050, "translation": "更喜欢；偏好" },
-  { "wordId": 30051, "translation": "准备；预备" },
-  { "wordId": 30052, "translation": "防止；阻止" },
-  { "wordId": 30053, "translation": "生产；制造" },
-  { "wordId": 30054, "translation": "承诺；答应" },
-  { "wordId": 30055, "translation": "保护；防护" },
-  { "wordId": 30056, "translation": "提供；供给" },
-  { "wordId": 30057, "translation": "意识到；认识到" },
-  { "wordId": 30058, "translation": "收到；接收" },
-  { "wordId": 30059, "translation": "认出；识别" },
-  { "wordId": 30060, "translation": "推荐；建议" },
-  { "wordId": 30061, "translation": "减少；降低" },
-  { "wordId": 30062, "translation": "拒绝；回绝" },
-  { "wordId": 30063, "translation": "提醒；使想起" },
-  { "wordId": 30064, "translation": "修理；修补" },
-  { "wordId": 30065, "translation": "替换；更换" },
-  { "wordId": 30066, "translation": "需要；要求" },
-  { "wordId": 30067, "translation": "回应；回答" },
-  { "wordId": 30068, "translation": "搜索；搜寻" },
-  { "wordId": 30069, "translation": "分开；分离" },
-  { "wordId": 30070, "translation": "服务；供应" },
-  { "wordId": 30071, "translation": "建议；暗示" },
-  { "wordId": 30072, "translation": "支持；支援" },
-  { "wordId": 30073, "translation": "幸存；存活" },
-  { "wordId": 30074, "translation": "警告；提醒" },
-  { "wordId": 30075, "translation": "优势；好处" },
-  { "wordId": 30076, "translation": "行为；举止" },
-  { "wordId": 30077, "translation": "好处；利益" },
-  { "wordId": 30078, "translation": "职业；事业" },
-  { "wordId": 30079, "translation": "挑战；难题" },
-  { "wordId": 30080, "translation": "社区；群体" },
-  { "wordId": 30081, "translation": "竞争；比赛" },
-  { "wordId": 30082, "translation": "信心；自信" },
-  { "wordId": 30083, "translation": "联系；连接" },
-  { "wordId": 30084, "translation": "后果；结果" },
-  { "wordId": 30085, "translation": "顾客；客户" },
-  { "wordId": 30086, "translation": "决定；决策" },
-  { "wordId": 30087, "translation": "目的地；终点" },
-  { "wordId": 30088, "translation": "环境；自然环境" },
-  { "wordId": 30089, "translation": "设备；装备" },
-  { "wordId": 30090, "translation": "经验；经历" },
-  { "wordId": 30091, "translation": "政府；内阁" },
-  { "wordId": 30092, "translation": "机会；时机" },
-  { "wordId": 30093, "translation": "人口；人口数量" },
-  { "wordId": 30094, "translation": "质量；品质" },
-  { "wordId": 30095, "translation": "可用的；有空的" },
-  { "wordId": 30096, "translation": "舒适的；舒服的" },
-  { "wordId": 30097, "translation": "必要的；必不可少的" },
-  { "wordId": 30098, "translation": "负责的；有责任的" },
-  { "wordId": 30099, "translation": "成功的；有成就的" },
-  { "wordId": 30100, "translation": "不幸地；遗憾地" }
+  {
+    "wordId": 30001,
+    "translation": "接受；同意"
+  },
+  {
+    "wordId": 30002,
+    "translation": "达到；实现"
+  },
+  {
+    "wordId": 30003,
+    "translation": "承认；准许进入"
+  },
+  {
+    "wordId": 30004,
+    "translation": "买得起；负担得起"
+  },
+  {
+    "wordId": 30005,
+    "translation": "同意；赞成"
+  },
+  {
+    "wordId": 30006,
+    "translation": "允许；准许"
+  },
+  {
+    "wordId": 30007,
+    "translation": "出现；看起来"
+  },
+  {
+    "wordId": 30008,
+    "translation": "申请；应用"
+  },
+  {
+    "wordId": 30009,
+    "translation": "安排；整理"
+  },
+  {
+    "wordId": 30010,
+    "translation": "出席；参加"
+  },
+  {
+    "wordId": 30011,
+    "translation": "避免；避开"
+  },
+  {
+    "wordId": 30012,
+    "translation": "借入；借用"
+  },
+  {
+    "wordId": 30013,
+    "translation": "取消；撤销"
+  },
+  {
+    "wordId": 30014,
+    "translation": "比较；对比"
+  },
+  {
+    "wordId": 30015,
+    "translation": "抱怨；投诉"
+  },
+  {
+    "wordId": 30016,
+    "translation": "确认；证实"
+  },
+  {
+    "wordId": 30017,
+    "translation": "连接；联系"
+  },
+  {
+    "wordId": 30018,
+    "translation": "考虑；认为"
+  },
+  {
+    "wordId": 30019,
+    "translation": "包含；容纳"
+  },
+  {
+    "wordId": 30020,
+    "translation": "继续；持续"
+  },
+  {
+    "wordId": 30021,
+    "translation": "说服；使信服"
+  },
+  {
+    "wordId": 30022,
+    "translation": "创造；创建"
+  },
+  {
+    "wordId": 30023,
+    "translation": "递送；交付"
+  },
+  {
+    "wordId": 30024,
+    "translation": "要求；需要"
+  },
+  {
+    "wordId": 30025,
+    "translation": "依靠；取决于"
+  },
+  {
+    "wordId": 30026,
+    "translation": "描述；形容"
+  },
+  {
+    "wordId": 30027,
+    "translation": "发展；开发"
+  },
+  {
+    "wordId": 30028,
+    "translation": "讨论；商议"
+  },
+  {
+    "wordId": 30029,
+    "translation": "赚取；挣得"
+  },
+  {
+    "wordId": 30030,
+    "translation": "鼓励；激励"
+  },
+  {
+    "wordId": 30031,
+    "translation": "期望；预期"
+  },
+  {
+    "wordId": 30032,
+    "translation": "解释；说明"
+  },
+  {
+    "wordId": 30033,
+    "translation": "表达；表示"
+  },
+  {
+    "wordId": 30034,
+    "translation": "失败；未能"
+  },
+  {
+    "wordId": 30035,
+    "translation": "改善；提高"
+  },
+  {
+    "wordId": 30036,
+    "translation": "包括；包含"
+  },
+  {
+    "wordId": 30037,
+    "translation": "增加；增长"
+  },
+  {
+    "wordId": 30038,
+    "translation": "通知；告知"
+  },
+  {
+    "wordId": 30039,
+    "translation": "坚持；坚决要求"
+  },
+  {
+    "wordId": 30040,
+    "translation": "介绍；引进"
+  },
+  {
+    "wordId": 30041,
+    "translation": "邀请；招待"
+  },
+  {
+    "wordId": 30042,
+    "translation": "涉及；包含"
+  },
+  {
+    "wordId": 30043,
+    "translation": "管理；设法做到"
+  },
+  {
+    "wordId": 30044,
+    "translation": "提到；说起"
+  },
+  {
+    "wordId": 30045,
+    "translation": "注意到；察觉"
+  },
+  {
+    "wordId": 30046,
+    "translation": "提供；提议"
+  },
+  {
+    "wordId": 30047,
+    "translation": "组织；安排"
+  },
+  {
+    "wordId": 30048,
+    "translation": "表演；执行"
+  },
+  {
+    "wordId": 30049,
+    "translation": "说服；劝说"
+  },
+  {
+    "wordId": 30050,
+    "translation": "更喜欢；偏好"
+  },
+  {
+    "wordId": 30051,
+    "translation": "准备；预备"
+  },
+  {
+    "wordId": 30052,
+    "translation": "防止；阻止"
+  },
+  {
+    "wordId": 30053,
+    "translation": "生产；制造"
+  },
+  {
+    "wordId": 30054,
+    "translation": "承诺；答应"
+  },
+  {
+    "wordId": 30055,
+    "translation": "保护；防护"
+  },
+  {
+    "wordId": 30056,
+    "translation": "提供；供给"
+  },
+  {
+    "wordId": 30057,
+    "translation": "意识到；认识到"
+  },
+  {
+    "wordId": 30058,
+    "translation": "收到；接收"
+  },
+  {
+    "wordId": 30059,
+    "translation": "认出；识别"
+  },
+  {
+    "wordId": 30060,
+    "translation": "推荐；建议"
+  },
+  {
+    "wordId": 30061,
+    "translation": "减少；降低"
+  },
+  {
+    "wordId": 30062,
+    "translation": "拒绝；回绝"
+  },
+  {
+    "wordId": 30063,
+    "translation": "提醒；使想起"
+  },
+  {
+    "wordId": 30064,
+    "translation": "修理；修补"
+  },
+  {
+    "wordId": 30065,
+    "translation": "替换；更换"
+  },
+  {
+    "wordId": 30066,
+    "translation": "需要；要求"
+  },
+  {
+    "wordId": 30067,
+    "translation": "回应；回答"
+  },
+  {
+    "wordId": 30068,
+    "translation": "搜索；搜寻"
+  },
+  {
+    "wordId": 30069,
+    "translation": "分开；分离"
+  },
+  {
+    "wordId": 30070,
+    "translation": "服务；供应"
+  },
+  {
+    "wordId": 30071,
+    "translation": "建议；暗示"
+  },
+  {
+    "wordId": 30072,
+    "translation": "支持；支援"
+  },
+  {
+    "wordId": 30073,
+    "translation": "幸存；存活"
+  },
+  {
+    "wordId": 30074,
+    "translation": "警告；提醒"
+  },
+  {
+    "wordId": 30075,
+    "translation": "优势；好处"
+  },
+  {
+    "wordId": 30076,
+    "translation": "行为；举止"
+  },
+  {
+    "wordId": 30077,
+    "translation": "好处；利益"
+  },
+  {
+    "wordId": 30078,
+    "translation": "职业；事业"
+  },
+  {
+    "wordId": 30079,
+    "translation": "挑战；难题"
+  },
+  {
+    "wordId": 30080,
+    "translation": "社区；群体"
+  },
+  {
+    "wordId": 30081,
+    "translation": "竞争；比赛"
+  },
+  {
+    "wordId": 30082,
+    "translation": "信心；自信"
+  },
+  {
+    "wordId": 30083,
+    "translation": "联系；连接"
+  },
+  {
+    "wordId": 30084,
+    "translation": "后果；结果"
+  },
+  {
+    "wordId": 30085,
+    "translation": "顾客；客户"
+  },
+  {
+    "wordId": 30086,
+    "translation": "决定；决策"
+  },
+  {
+    "wordId": 30087,
+    "translation": "目的地；终点"
+  },
+  {
+    "wordId": 30088,
+    "translation": "环境；自然环境"
+  },
+  {
+    "wordId": 30089,
+    "translation": "设备；装备"
+  },
+  {
+    "wordId": 30090,
+    "translation": "经验；经历"
+  },
+  {
+    "wordId": 30091,
+    "translation": "政府；内阁"
+  },
+  {
+    "wordId": 30092,
+    "translation": "机会；时机"
+  },
+  {
+    "wordId": 30093,
+    "translation": "人口；人口数量"
+  },
+  {
+    "wordId": 30094,
+    "translation": "质量；品质"
+  },
+  {
+    "wordId": 30095,
+    "translation": "可用的；有空的"
+  },
+  {
+    "wordId": 30096,
+    "translation": "舒适的；舒服的"
+  },
+  {
+    "wordId": 30097,
+    "translation": "必要的；必不可少的"
+  },
+  {
+    "wordId": 30098,
+    "translation": "负责的；有责任的"
+  },
+  {
+    "wordId": 30099,
+    "translation": "成功的；有成就的"
+  },
+  {
+    "wordId": 30100,
+    "translation": "不幸地；遗憾地"
+  },
+  {
+    "wordId": 30101,
+    "translation": "账户；描述"
+  },
+  {
+    "wordId": 30102,
+    "translation": "数量；金额"
+  },
+  {
+    "wordId": 30103,
+    "translation": "外貌；出现"
+  },
+  {
+    "wordId": 30104,
+    "translation": "争论；论点"
+  },
+  {
+    "wordId": 30105,
+    "translation": "安排；布置"
+  },
+  {
+    "wordId": 30106,
+    "translation": "尝试；企图"
+  },
+  {
+    "wordId": 30107,
+    "translation": "态度；看法"
+  },
+  {
+    "wordId": 30108,
+    "translation": "观众；听众"
+  },
+  {
+    "wordId": 30109,
+    "translation": "背景；出身"
+  },
+  {
+    "wordId": 30110,
+    "translation": "信念；信仰"
+  },
+  {
+    "wordId": 30111,
+    "translation": "边界；边境"
+  },
+  {
+    "wordId": 30112,
+    "translation": "大脑；脑"
+  },
+  {
+    "wordId": 30113,
+    "translation": "类别；种类"
+  },
+  {
+    "wordId": 30114,
+    "translation": "原因；事业"
+  },
+  {
+    "wordId": 30115,
+    "translation": "世纪；百年"
+  },
+  {
+    "wordId": 30116,
+    "translation": "章节；篇章"
+  },
+  {
+    "wordId": 30117,
+    "translation": "角色；性格"
+  },
+  {
+    "wordId": 30118,
+    "translation": "选择；选项"
+  },
+  {
+    "wordId": 30119,
+    "translation": "气候"
+  },
+  {
+    "wordId": 30120,
+    "translation": "教练；指导者"
+  },
+  {
+    "wordId": 30121,
+    "translation": "海岸；海滨"
+  },
+  {
+    "wordId": 30122,
+    "translation": "收藏；收集品"
+  },
+  {
+    "wordId": 30123,
+    "translation": "评论；意见"
+  },
+  {
+    "wordId": 30124,
+    "translation": "状况；条件"
+  },
+  {
+    "wordId": 30125,
+    "translation": "冲突；矛盾"
+  },
+  {
+    "wordId": 30126,
+    "translation": "合同；契约"
+  },
+  {
+    "wordId": 30127,
+    "translation": "对话；交谈"
+  },
+  {
+    "wordId": 30128,
+    "translation": "勇气；胆量"
+  },
+  {
+    "wordId": 30129,
+    "translation": "批评；批判"
+  },
+  {
+    "wordId": 30130,
+    "translation": "文化"
+  },
+  {
+    "wordId": 30131,
+    "translation": "货币"
+  },
+  {
+    "wordId": 30132,
+    "translation": "损害；损坏"
+  },
+  {
+    "wordId": 30133,
+    "translation": "数据；资料"
+  },
+  {
+    "wordId": 30134,
+    "translation": "交易；协议"
+  },
+  {
+    "wordId": 30135,
+    "translation": "债务；欠款"
+  },
+  {
+    "wordId": 30136,
+    "translation": "学位；度"
+  },
+  {
+    "wordId": 30137,
+    "translation": "递送；交付"
+  },
+  {
+    "wordId": 30138,
+    "translation": "部门；系"
+  },
+  {
+    "wordId": 30139,
+    "translation": "描述；说明"
+  },
+  {
+    "wordId": 30140,
+    "translation": "细节；详情"
+  },
+  {
+    "wordId": 30141,
+    "translation": "饮食；节食"
+  },
+  {
+    "wordId": 30142,
+    "translation": "困难；难题"
+  },
+  {
+    "wordId": 30143,
+    "translation": "方向；指示"
+  },
+  {
+    "wordId": 30144,
+    "translation": "讨论；商议"
+  },
+  {
+    "wordId": 30145,
+    "translation": "距离；远处"
+  },
+  {
+    "wordId": 30146,
+    "translation": "文件；文档"
+  },
+  {
+    "wordId": 30147,
+    "translation": "经济"
+  },
+  {
+    "wordId": 30148,
+    "translation": "影响；效果"
+  },
+  {
+    "wordId": 30149,
+    "translation": "选举"
+  },
+  {
+    "wordId": 30150,
+    "translation": "紧急情况"
+  },
+  {
+    "wordId": 30151,
+    "translation": "情感；情绪"
+  },
+  {
+    "wordId": 30152,
+    "translation": "就业；雇用"
+  },
+  {
+    "wordId": 30153,
+    "translation": "能量；精力"
+  },
+  {
+    "wordId": 30154,
+    "translation": "娱乐；消遣"
+  },
+  {
+    "wordId": 30155,
+    "translation": "事件；活动"
+  },
+  {
+    "wordId": 30156,
+    "translation": "证据；证明"
+  },
+  {
+    "wordId": 30157,
+    "translation": "交换；兑换"
+  },
+  {
+    "wordId": 30158,
+    "translation": "锻炼；练习"
+  },
+  {
+    "wordId": 30159,
+    "translation": "实验；试验"
+  },
+  {
+    "wordId": 30160,
+    "translation": "解释；说明"
+  },
+  {
+    "wordId": 30161,
+    "translation": "表情；表达"
+  },
+  {
+    "wordId": 30162,
+    "translation": "因素；要素"
+  },
+  {
+    "wordId": 30163,
+    "translation": "失败；故障"
+  },
+  {
+    "wordId": 30164,
+    "translation": "特征；特点"
+  },
+  {
+    "wordId": 30165,
+    "translation": "数字；人物"
+  },
+  {
+    "wordId": 30166,
+    "translation": "航班；飞行"
+  },
+  {
+    "wordId": 30167,
+    "translation": "力量；武力"
+  },
+  {
+    "wordId": 30168,
+    "translation": "功能；作用"
+  },
+  {
+    "wordId": 30169,
+    "translation": "一代人；世代"
+  },
+  {
+    "wordId": 30170,
+    "translation": "目标；进球"
+  },
+  {
+    "wordId": 30171,
+    "translation": "增长；成长"
+  },
+  {
+    "wordId": 30172,
+    "translation": "习惯"
+  },
+  {
+    "wordId": 30173,
+    "translation": "说明；指示"
+  },
+  {
+    "wordId": 30174,
+    "translation": "保险"
+  },
+  {
+    "wordId": 30175,
+    "translation": "兴趣；利息"
+  },
+  {
+    "wordId": 30176,
+    "translation": "调查；研究"
+  },
+  {
+    "wordId": 30177,
+    "translation": "旅程；旅行"
+  },
+  {
+    "wordId": 30178,
+    "translation": "知识；了解"
+  },
+  {
+    "wordId": 30179,
+    "translation": "缺乏；不足"
+  },
+  {
+    "wordId": 30180,
+    "translation": "讲座；演讲"
+  },
+  {
+    "wordId": 30181,
+    "translation": "实际的；真实的"
+  },
+  {
+    "wordId": 30182,
+    "translation": "额外的；附加的"
+  },
+  {
+    "wordId": 30183,
+    "translation": "古代的；古老的"
+  },
+  {
+    "wordId": 30184,
+    "translation": "适当的；合适的"
+  },
+  {
+    "wordId": 30185,
+    "translation": "意识到的；知道的"
+  },
+  {
+    "wordId": 30186,
+    "translation": "基本的；基础的"
+  },
+  {
+    "wordId": 30187,
+    "translation": "出色的；明亮的"
+  },
+  {
+    "wordId": 30188,
+    "translation": "平静的；冷静的"
+  },
+  {
+    "wordId": 30189,
+    "translation": "有能力的；能干的"
+  },
+  {
+    "wordId": 30190,
+    "translation": "中心的；核心的"
+  },
+  {
+    "wordId": 30191,
+    "translation": "确定的；某些的"
+  },
+  {
+    "wordId": 30192,
+    "translation": "常见的；普通的"
+  },
+  {
+    "wordId": 30193,
+    "translation": "复杂的"
+  },
+  {
+    "wordId": 30194,
+    "translation": "有意识的；自觉的"
+  },
+  {
+    "wordId": 30195,
+    "translation": "不断的；恒定的"
+  },
+  {
+    "wordId": 30196,
+    "translation": "方便的；便利的"
+  },
+  {
+    "wordId": 30197,
+    "translation": "正确的；对的"
+  },
+  {
+    "wordId": 30198,
+    "translation": "关键的；批判的"
+  },
+  {
+    "wordId": 30199,
+    "translation": "文化的"
+  },
+  {
+    "wordId": 30200,
+    "translation": "当前的；现在的"
+  },
+  {
+    "wordId": 30201,
+    "translation": "深的；深刻的"
+  },
+  {
+    "wordId": 30202,
+    "translation": "直接的；直达的"
+  },
+  {
+    "wordId": 30203,
+    "translation": "国内的；家庭的"
+  },
+  {
+    "wordId": 30204,
+    "translation": "渴望的；热切的"
+  },
+  {
+    "wordId": 30205,
+    "translation": "经济的"
+  },
+  {
+    "wordId": 30206,
+    "translation": "有效的；起作用的"
+  },
+  {
+    "wordId": 30207,
+    "translation": "电子的"
+  },
+  {
+    "wordId": 30208,
+    "translation": "情感的；激动的"
+  },
+  {
+    "wordId": 30209,
+    "translation": "巨大的；庞大的"
+  },
+  {
+    "wordId": 30210,
+    "translation": "整个的；全部的"
+  },
+  {
+    "wordId": 30211,
+    "translation": "平等的；相等的"
+  },
+  {
+    "wordId": 30212,
+    "translation": "确切的；精确的"
+  },
+  {
+    "wordId": 30213,
+    "translation": "优秀的；极好的"
+  },
+  {
+    "wordId": 30214,
+    "translation": "极端的；极度的"
+  },
+  {
+    "wordId": 30215,
+    "translation": "公平的；合理的"
+  },
+  {
+    "wordId": 30216,
+    "translation": "熟悉的；常见的"
+  },
+  {
+    "wordId": 30217,
+    "translation": "女性的；雌性的"
+  },
+  {
+    "wordId": 30218,
+    "translation": "财务的；金融的"
+  },
+  {
+    "wordId": 30219,
+    "translation": "灵活的；可变通的"
+  },
+  {
+    "wordId": 30220,
+    "translation": "以前的；前任的"
+  },
+  {
+    "wordId": 30221,
+    "translation": "频繁的；经常的"
+  },
+  {
+    "wordId": 30222,
+    "translation": "一般的；总体的"
+  },
+  {
+    "wordId": 30223,
+    "translation": "全球的；全世界的"
+  },
+  {
+    "wordId": 30224,
+    "translation": "感激的；感谢的"
+  },
+  {
+    "wordId": 30225,
+    "translation": "有罪的；内疚的"
+  },
+  {
+    "wordId": 30226,
+    "translation": "诚实的；坦率的"
+  },
+  {
+    "wordId": 30227,
+    "translation": "巨大的；庞大的"
+  },
+  {
+    "wordId": 30228,
+    "translation": "理想的；完美的"
+  },
+  {
+    "wordId": 30229,
+    "translation": "立即的；直接的"
+  },
+  {
+    "wordId": 30230,
+    "translation": "不可能的"
+  },
+  {
+    "wordId": 30231,
+    "translation": "令人印象深刻的"
+  },
+  {
+    "wordId": 30232,
+    "translation": "独立的；自主的"
+  },
+  {
+    "wordId": 30233,
+    "translation": "个人的；个别的"
+  },
+  {
+    "wordId": 30234,
+    "translation": "聪明的；有智慧的"
+  },
+  {
+    "wordId": 30235,
+    "translation": "法律的；合法的"
+  },
+  {
+    "wordId": 30236,
+    "translation": "可能的；大概的"
+  },
+  {
+    "wordId": 30237,
+    "translation": "有限的"
+  },
+  {
+    "wordId": 30238,
+    "translation": "主要的；重大的"
+  },
+  {
+    "wordId": 30239,
+    "translation": "男性的；雄性的"
+  },
+  {
+    "wordId": 30240,
+    "translation": "精神的；心理的"
+  },
+  {
+    "wordId": 30241,
+    "translation": "现代的；时髦的"
+  },
+  {
+    "wordId": 30242,
+    "translation": "狭窄的；勉强的"
+  },
+  {
+    "wordId": 30243,
+    "translation": "自然的；天然的"
+  },
+  {
+    "wordId": 30244,
+    "translation": "消极的；负面的"
+  },
+  {
+    "wordId": 30245,
+    "translation": "正常的；普通的"
+  },
+  {
+    "wordId": 30246,
+    "translation": "明显的；显然的"
+  },
+  {
+    "wordId": 30247,
+    "translation": "官方的；正式的"
+  },
+  {
+    "wordId": 30248,
+    "translation": "相反的；对面的"
+  },
+  {
+    "wordId": 30249,
+    "translation": "原来的；独创的"
+  },
+  {
+    "wordId": 30250,
+    "translation": "特定的；特别的"
+  },
+  {
+    "wordId": 30251,
+    "translation": "个人的；私人的"
+  },
+  {
+    "wordId": 30252,
+    "translation": "身体的；物质的"
+  },
+  {
+    "wordId": 30253,
+    "translation": "愉快的；宜人的"
+  },
+  {
+    "wordId": 30254,
+    "translation": "政治的"
+  },
+  {
+    "wordId": 30255,
+    "translation": "受欢迎的；流行的"
+  },
+  {
+    "wordId": 30256,
+    "translation": "积极的；正面的"
+  },
+  {
+    "wordId": 30257,
+    "translation": "强大的；有力的"
+  },
+  {
+    "wordId": 30258,
+    "translation": "实际的；实用的"
+  },
+  {
+    "wordId": 30259,
+    "translation": "以前的；先前的"
+  },
+  {
+    "wordId": 30260,
+    "translation": "专业的；职业的"
+  },
+  {
+    "wordId": 30261,
+    "translation": "绝对地；完全地"
+  },
+  {
+    "wordId": 30262,
+    "translation": "实际上；事实上"
+  },
+  {
+    "wordId": 30263,
+    "translation": "显然；据说"
+  },
+  {
+    "wordId": 30264,
+    "translation": "基本上；主要地"
+  },
+  {
+    "wordId": 30265,
+    "translation": "仔细地；小心地"
+  },
+  {
+    "wordId": 30266,
+    "translation": "当然；无疑地"
+  },
+  {
+    "wordId": 30267,
+    "translation": "清楚地；显然地"
+  },
+  {
+    "wordId": 30268,
+    "translation": "紧密地；仔细地"
+  },
+  {
+    "wordId": 30269,
+    "translation": "完全地；彻底地"
+  },
+  {
+    "wordId": 30270,
+    "translation": "不断地；经常地"
+  },
+  {
+    "wordId": 30271,
+    "translation": "目前；现在"
+  },
+  {
+    "wordId": 30272,
+    "translation": "深深地；非常"
+  },
+  {
+    "wordId": 30273,
+    "translation": "肯定地；确实"
+  },
+  {
+    "wordId": 30274,
+    "translation": "直接地；径直地"
+  },
+  {
+    "wordId": 30275,
+    "translation": "完全地；整个地"
+  },
+  {
+    "wordId": 30276,
+    "translation": "平等地；同样地"
+  },
+  {
+    "wordId": 30277,
+    "translation": "特别；尤其"
+  },
+  {
+    "wordId": 30278,
+    "translation": "最终；终于"
+  },
+  {
+    "wordId": 30279,
+    "translation": "恰好；完全地"
+  },
+  {
+    "wordId": 30280,
+    "translation": "极其；非常"
+  },
+  {
+    "wordId": 30281,
+    "translation": "相当地；公平地"
+  },
+  {
+    "wordId": 30282,
+    "translation": "频繁地；经常地"
+  },
+  {
+    "wordId": 30283,
+    "translation": "完全地；充分地"
+  },
+  {
+    "wordId": 30284,
+    "translation": "通常；一般地"
+  },
+  {
+    "wordId": 30285,
+    "translation": "逐渐地；逐步地"
+  },
+  {
+    "wordId": 30286,
+    "translation": "几乎不；勉强"
+  },
+  {
+    "wordId": 30287,
+    "translation": "高度地；非常"
+  },
+  {
+    "wordId": 30288,
+    "translation": "立即；马上"
+  },
+  {
+    "wordId": 30289,
+    "translation": "主要地"
+  },
+  {
+    "wordId": 30290,
+    "translation": "自然地；当然"
+  },
+  {
+    "wordId": 30291,
+    "translation": "通常；正常地"
+  },
+  {
+    "wordId": 30292,
+    "translation": "明显地；显然"
+  },
+  {
+    "wordId": 30293,
+    "translation": "偶尔；有时"
+  },
+  {
+    "wordId": 30294,
+    "translation": "完美地；完全地"
+  },
+  {
+    "wordId": 30295,
+    "translation": "可能；也许"
+  },
+  {
+    "wordId": 30296,
+    "translation": "正确地；适当地"
+  },
+  {
+    "wordId": 30297,
+    "translation": "很少地；难得"
+  },
+  {
+    "wordId": 30298,
+    "translation": "最近；近来"
+  },
+  {
+    "wordId": 30299,
+    "translation": "认真地；严重地"
+  },
+  {
+    "wordId": 30300,
+    "translation": "稍微；轻微地"
+  }
 ]
