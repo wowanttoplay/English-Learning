@@ -41,10 +41,16 @@ app.get('/:id', async (c) => {
   const localesParam = c.req.query('locales')
   const locales = localesParam ? localesParam.split(',').filter(Boolean) : undefined
 
-  const wordIds = await getPassageWordIds(c.env.DB, id)
+  const passageWords = await getPassageWordIds(c.env.DB, id)
+  const wordIds = passageWords.map(pw => pw.wordId)
   const words = wordIds.length > 0 ? await getWordsByIds(c.env.DB, wordIds, locales) : []
 
-  return c.json({ data: { passage, words } })
+  const newWordIds = passageWords.filter(pw => pw.role === 'new').map(pw => pw.wordId)
+  const reviewWordIds = passageWords.filter(pw => pw.role === 'review').map(pw => pw.wordId)
+
+  const fullPassage = { ...passage, newWordIds, reviewWordIds }
+
+  return c.json({ data: { passage: fullPassage, words } })
 })
 
 export default app

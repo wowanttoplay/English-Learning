@@ -9,6 +9,7 @@ interface PassageRow {
   genre: string
   speakers: string | null
   turns: string | null
+  sequence: number | null
 }
 
 interface PassageSummaryRow {
@@ -19,6 +20,7 @@ interface PassageSummaryRow {
   topic: string
   genre: string
   speakers: string | null
+  sequence: number | null
 }
 
 function rowToPassageSummary(row: PassageSummaryRow): PassageSummary {
@@ -32,10 +34,11 @@ function rowToPassageSummary(row: PassageSummaryRow): PassageSummary {
     speakers: row.speakers
       ? JSON.parse(row.speakers).map((s: { name: string }) => ({ name: s.name }))
       : [],
+    sequence: row.sequence ?? null,
   }
 }
 
-function rowToPassage(row: PassageRow): Passage {
+function rowToPassage(row: PassageRow): Omit<Passage, 'newWordIds' | 'reviewWordIds'> {
   return {
     id: row.id,
     title: row.title,
@@ -45,6 +48,7 @@ function rowToPassage(row: PassageRow): Passage {
     languageId: row.language_id,
     speakers: row.speakers ? JSON.parse(row.speakers) : [],
     turns: row.turns ? JSON.parse(row.turns) : [],
+    sequence: row.sequence ?? null,
   }
 }
 
@@ -86,7 +90,7 @@ export async function getPassages(
 
   const { results } = await db
     .prepare(
-      `SELECT id, language_id, title, level, topic, genre, speakers FROM passages WHERE ${where} ORDER BY id LIMIT ? OFFSET ?`
+      `SELECT id, language_id, title, level, topic, genre, speakers, sequence FROM passages WHERE ${where} ORDER BY sequence NULLS LAST, id LIMIT ? OFFSET ?`
     )
     .bind(...params, pageSize, offset)
     .all<PassageSummaryRow>()
@@ -97,10 +101,10 @@ export async function getPassages(
 export async function getPassageById(
   db: D1Database,
   id: number
-): Promise<Passage | null> {
+): Promise<Omit<Passage, 'newWordIds' | 'reviewWordIds'> | null> {
   const row = await db
     .prepare(
-      'SELECT id, language_id, title, level, topic, genre, speakers, turns FROM passages WHERE id = ?'
+      'SELECT id, language_id, title, level, topic, genre, speakers, turns, sequence FROM passages WHERE id = ?'
     )
     .bind(id)
     .first<PassageRow>()
@@ -110,10 +114,10 @@ export async function getPassageById(
 export async function getPassageWordIds(
   db: D1Database,
   passageId: number
-): Promise<number[]> {
+): Promise<{ wordId: number; role: 'new' | 'review' }[]> {
   const { results } = await db
-    .prepare('SELECT word_id FROM passage_words WHERE passage_id = ? ORDER BY word_id')
+    .prepare('SELECT word_id, role FROM passage_words WHERE passage_id = ? ORDER BY word_id')
     .bind(passageId)
-    .all<{ word_id: number }>()
-  return (results ?? []).map((r) => r.word_id)
+    .all<{ word_id: number; role: 'new' | 'review' }>()
+  return (results ?? []).map((r) => ({ wordId: r.word_id, role: r.role }))
 }
