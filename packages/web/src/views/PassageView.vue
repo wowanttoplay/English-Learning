@@ -25,7 +25,17 @@
 
     <div class="passage-content">
       <h2 class="passage-title">{{ passage.title }}</h2>
-      <div ref="passageTextRef" class="passage-text" v-html="highlightedText"></div>
+      <div ref="passageTextRef" class="passage-text">
+        <div v-for="(turn, i) in passage.turns" :key="i"
+             class="dialogue-turn"
+             :class="{ 'turn-active': audio.currentTurnIndex.value === i }"
+             :data-turn-index="i">
+          <span class="speaker-name" :class="`speaker-${turn.speaker}`">
+            {{ passage.speakers[turn.speaker].name }}
+          </span>
+          <span class="turn-text" v-html="highlightedTurns[i]"></span>
+        </div>
+      </div>
     </div>
 
     <!-- Tooltip overlay for mobile (bottom sheet) -->
@@ -65,11 +75,13 @@
 </template>
 
 <script setup lang="ts">
+import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { usePassageView } from '@/composables/usePassageView'
 import { usePassageAudioPlayer } from '@/composables/usePassageAudioPlayer'
-import { usePassageSentenceSync } from '@/composables/usePassageSentenceSync'
+import { TimestampLoader } from '@/lib/timestamp-loader'
 import { formatTopic } from '@/lib/format'
+import type { TurnTimestamp } from '@english-learning/shared'
 import WordTooltip from '@/components/WordTooltip.vue'
 import FreeWordTooltip from '@/components/FreeWordTooltip.vue'
 import PassageAudioPlayer from '@/components/PassageAudioPlayer.vue'
@@ -83,23 +95,32 @@ const {
   tooltipWordId,
   freeTooltipWord,
   isRead,
-  highlightedText,
+  highlightedTurns,
+  turnUrls,
+  fallbackText,
   loading,
   closeTooltips,
   markRead
 } = usePassageView()
 
-// Audio player — lifted from component to view for sentence sync access
+// Load timestamps for audio sync
+const timestamps = ref<TurnTimestamp[]>([])
+watch(() => passage.value?.id, async (id) => {
+  if (!id) { timestamps.value = []; return }
+  timestamps.value = await TimestampLoader.loadTimestamps(id) ?? []
+}, { immediate: true })
+
+// Audio player — sequential turn playback
 const audio = usePassageAudioPlayer(
-  () => passage.value?.id ?? 0,
-  () => passage.value?.text ?? ''
+  () => turnUrls.value,
+  () => timestamps.value,
+  () => fallbackText.value
 )
 
-// Sentence highlighting sync
-usePassageSentenceSync(
-  () => passage.value?.id ?? 0,
-  () => audio.currentTime.value,
-  () => audio.isPlaying.value,
-  () => passageTextRef.value
-)
+// Auto-scroll to active turn during playback
+watch(() => audio.currentTurnIndex.value, (idx) => {
+  if (idx < 0) return
+  const el = document.querySelector(`[data-turn-index="${idx}"]`)
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+})
 </script>

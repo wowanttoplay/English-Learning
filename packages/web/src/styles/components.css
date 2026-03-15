@@ -1130,6 +1130,31 @@
   margin-top: 10px;
 }
 
+/* Dialogue turns */
+.dialogue-turn {
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.dialogue-turn.turn-active {
+  background-color: var(--color-highlight-bg, rgba(59, 130, 246, 0.08));
+}
+
+.speaker-name {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.speaker-0 { color: var(--color-speaker-0, #2563eb); }
+.speaker-1 { color: var(--color-speaker-1, #d946ef); }
+
+.turn-text {
+  line-height: 1.6;
+}
+
 /* Passage action buttons */
 .passage-actions {
   display: flex;
