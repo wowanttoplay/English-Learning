@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import type { Passage } from '@/types'
+import type { PassageSummary } from '@/types'
 import * as passagesApi from '@/api/passages'
 
 export const usePassagesStore = defineStore('passages', () => {
-  const passages = ref<Passage[]>([])
+  const passages = ref<PassageSummary[]>([])
   const total = ref(0)
   const passagesRead = ref<Set<number>>(new Set())
   const loading = ref(false)
