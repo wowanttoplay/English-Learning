@@ -7281,5 +7281,2952 @@
       "science",
       "education"
     ]
+  },
+  {
+    "id": 30501,
+    "word": "aim",
+    "pos": "verb",
+    "phonetic": "/eɪm/",
+    "examples": [
+      "She aims to finish the project by next Friday.",
+      "He aimed the camera at the beautiful sunset."
+    ],
+    "topics": [
+      "communication"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30502,
+    "word": "argue",
+    "pos": "verb",
+    "phonetic": "/ˈɑːɡjuː/",
+    "examples": [
+      "They always argue about what to watch on television.",
+      "She argued that the plan was too expensive."
+    ],
+    "topics": [
+      "communication",
+      "relationships"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30503,
+    "word": "attach",
+    "pos": "verb",
+    "phonetic": "/əˈtætʃ/",
+    "examples": [
+      "Please attach your photo to the application form.",
+      "He attached the document to the email before sending it."
+    ],
+    "topics": [
+      "work",
+      "communication"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30504,
+    "word": "balance",
+    "pos": "verb",
+    "phonetic": "/ˈbæləns/",
+    "examples": [
+      "It is hard to balance work and family life.",
+      "She balanced the books on top of her head."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30505,
+    "word": "blame",
+    "pos": "verb",
+    "phonetic": "/bleɪm/",
+    "examples": [
+      "Do not blame others for your own mistakes.",
+      "The teacher blamed the students for the broken window."
+    ],
+    "topics": [
+      "relationships",
+      "communication"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30506,
+    "word": "block",
+    "pos": "verb",
+    "phonetic": "/blɒk/",
+    "examples": [
+      "A fallen tree blocked the road after the storm.",
+      "She blocked the annoying caller on her phone."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30507,
+    "word": "breathe",
+    "pos": "verb",
+    "phonetic": "/briːð/",
+    "examples": [
+      "It is important to breathe deeply when you feel stressed.",
+      "The air was so clean that it felt great to breathe."
+    ],
+    "topics": [
+      "health"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30508,
+    "word": "burn",
+    "pos": "verb",
+    "phonetic": "/bɜːn/",
+    "examples": [
+      "Be careful not to burn yourself on the hot pan.",
+      "The campfire burned brightly through the night."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30509,
+    "word": "celebrate",
+    "pos": "verb",
+    "phonetic": "/ˈselɪbreɪt/",
+    "examples": [
+      "We celebrated her birthday with a big party.",
+      "The whole town celebrated when the team won."
+    ],
+    "topics": [
+      "relationships",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30510,
+    "word": "charge",
+    "pos": "verb",
+    "phonetic": "/tʃɑːdʒ/",
+    "examples": [
+      "The hotel charged us fifty pounds for one night.",
+      "I need to charge my phone before we leave."
+    ],
+    "topics": [
+      "business",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30511,
+    "word": "cheat",
+    "pos": "verb",
+    "phonetic": "/tʃiːt/",
+    "examples": [
+      "Students who cheat on exams will receive zero marks.",
+      "He felt angry when he found out she cheated."
+    ],
+    "topics": [
+      "education",
+      "relationships"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30512,
+    "word": "check",
+    "pos": "verb",
+    "phonetic": "/tʃek/",
+    "examples": [
+      "Please check your email for the meeting invitation.",
+      "She checked the time on her watch before leaving."
+    ],
+    "topics": [
+      "daily-life",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30513,
+    "word": "climb",
+    "pos": "verb",
+    "phonetic": "/klaɪm/",
+    "examples": [
+      "They climbed the mountain on a bright sunny morning.",
+      "The cat climbed the tree and could not get down."
+    ],
+    "topics": [
+      "sports",
+      "travel"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30514,
+    "word": "combine",
+    "pos": "verb",
+    "phonetic": "/kəmˈbaɪn/",
+    "examples": [
+      "She combined work and study to save time.",
+      "Combine the flour and sugar in a large bowl."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30515,
+    "word": "commit",
+    "pos": "verb",
+    "phonetic": "/kəˈmɪt/",
+    "examples": [
+      "He committed himself to learning a new language this year.",
+      "The man committed a serious crime and went to prison."
+    ],
+    "topics": [
+      "law",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30516,
+    "word": "communicate",
+    "pos": "verb",
+    "phonetic": "/kəˈmjuːnɪkeɪt/",
+    "examples": [
+      "It is important to communicate clearly with your team.",
+      "They communicated by email while she was abroad."
+    ],
+    "topics": [
+      "communication",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30517,
+    "word": "concentrate",
+    "pos": "verb",
+    "phonetic": "/ˈkɒnsəntreɪt/",
+    "examples": [
+      "I cannot concentrate when there is too much noise.",
+      "She concentrated hard on the difficult maths problem."
+    ],
+    "topics": [
+      "education"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30518,
+    "word": "consist",
+    "pos": "verb",
+    "phonetic": "/kənˈsɪst/",
+    "examples": [
+      "The team consists of five men and five women.",
+      "A healthy breakfast consists of fruit, bread, and milk."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30519,
+    "word": "construct",
+    "pos": "verb",
+    "phonetic": "/kənˈstrʌkt/",
+    "examples": [
+      "They plan to construct a new bridge across the river.",
+      "The children constructed a small house out of cardboard."
+    ],
+    "topics": [
+      "society",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30520,
+    "word": "consume",
+    "pos": "verb",
+    "phonetic": "/kənˈsjuːm/",
+    "examples": [
+      "People consume too much sugar in modern diets.",
+      "The fire consumed the entire building in just one hour."
+    ],
+    "topics": [
+      "health",
+      "food"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30521,
+    "word": "cope",
+    "pos": "verb",
+    "phonetic": "/kəʊp/",
+    "examples": [
+      "She learned to cope with stress through daily exercise.",
+      "It is hard to cope when you have too much work."
+    ],
+    "topics": [
+      "emotions",
+      "health"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30522,
+    "word": "crash",
+    "pos": "verb",
+    "phonetic": "/kræʃ/",
+    "examples": [
+      "The car crashed into a wall on the icy road.",
+      "My computer crashed and I lost all my work."
+    ],
+    "topics": [
+      "daily-life",
+      "technology"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30523,
+    "word": "cure",
+    "pos": "verb",
+    "phonetic": "/kjʊə(r)/",
+    "examples": [
+      "Scientists are working hard to cure this disease.",
+      "Rest and good food can help cure a common cold."
+    ],
+    "topics": [
+      "health",
+      "science"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30524,
+    "word": "dare",
+    "pos": "verb",
+    "phonetic": "/deə(r)/",
+    "examples": [
+      "She did not dare to jump into the cold water.",
+      "He dared his friend to eat the very hot pepper."
+    ],
+    "topics": [
+      "emotions"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30525,
+    "word": "disappear",
+    "pos": "verb",
+    "phonetic": "/ˌdɪsəˈpɪə(r)/",
+    "examples": [
+      "The sun disappeared behind the dark rain clouds.",
+      "My keys have disappeared and I cannot find them."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30526,
+    "word": "disagree",
+    "pos": "verb",
+    "phonetic": "/ˌdɪsəˈɡriː/",
+    "examples": [
+      "They often disagree about which restaurant to go to.",
+      "I disagree with the idea that money brings happiness."
+    ],
+    "topics": [
+      "communication",
+      "relationships"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30527,
+    "word": "discover",
+    "pos": "verb",
+    "phonetic": "/dɪˈskʌvə(r)/",
+    "examples": [
+      "She discovered a wonderful little cafe near the park.",
+      "Scientists discovered a new type of fish last year."
+    ],
+    "topics": [
+      "science",
+      "travel"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30528,
+    "word": "disturb",
+    "pos": "verb",
+    "phonetic": "/dɪˈstɜːb/",
+    "examples": [
+      "Please do not disturb me while I am studying.",
+      "The loud music disturbed the neighbours late at night."
+    ],
+    "topics": [
+      "daily-life",
+      "relationships"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30529,
+    "word": "doubt",
+    "pos": "verb",
+    "phonetic": "/daʊt/",
+    "examples": [
+      "I doubt that it will rain tomorrow morning.",
+      "She doubted his story because it sounded too strange."
+    ],
+    "topics": [
+      "emotions",
+      "communication"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30530,
+    "word": "drag",
+    "pos": "verb",
+    "phonetic": "/dræɡ/",
+    "examples": [
+      "He dragged the heavy box across the kitchen floor.",
+      "She dragged the file into the folder on her computer."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30531,
+    "word": "draw",
+    "pos": "verb",
+    "phonetic": "/drɔː/",
+    "examples": [
+      "The little girl loves to draw pictures of animals.",
+      "The match ended in a draw with both teams scoring twice."
+    ],
+    "topics": [
+      "arts",
+      "sports"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30532,
+    "word": "dress",
+    "pos": "verb",
+    "phonetic": "/dres/",
+    "examples": [
+      "She dressed quickly because she was late for work.",
+      "He always dresses smartly for important business meetings."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30533,
+    "word": "drop",
+    "pos": "verb",
+    "phonetic": "/drɒp/",
+    "examples": [
+      "She dropped her phone and the screen cracked.",
+      "The temperature dropped sharply during the cold night."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30534,
+    "word": "elect",
+    "pos": "verb",
+    "phonetic": "/ɪˈlekt/",
+    "examples": [
+      "The people elected a new president last November.",
+      "She was elected leader of the student council."
+    ],
+    "topics": [
+      "politics",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30535,
+    "word": "employ",
+    "pos": "verb",
+    "phonetic": "/ɪmˈplɔɪ/",
+    "examples": [
+      "The factory employs over two hundred local workers.",
+      "She was employed as a teacher at the primary school."
+    ],
+    "topics": [
+      "work",
+      "business"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30536,
+    "word": "enable",
+    "pos": "verb",
+    "phonetic": "/ɪˈneɪbl/",
+    "examples": [
+      "Technology enables people to work from home easily.",
+      "The scholarship enabled her to attend the university."
+    ],
+    "topics": [
+      "technology",
+      "education"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30537,
+    "word": "engage",
+    "pos": "verb",
+    "phonetic": "/ɪnˈɡeɪdʒ/",
+    "examples": [
+      "The teacher tried to engage the students in discussion.",
+      "She engaged in volunteer work every weekend."
+    ],
+    "topics": [
+      "communication",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30538,
+    "word": "ensure",
+    "pos": "verb",
+    "phonetic": "/ɪnˈʃʊə(r)/",
+    "examples": [
+      "Please ensure that all windows are closed before leaving.",
+      "The manager ensured that everyone received fair pay."
+    ],
+    "topics": [
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30539,
+    "word": "establish",
+    "pos": "verb",
+    "phonetic": "/ɪˈstæblɪʃ/",
+    "examples": [
+      "The company was established in nineteen ninety-five.",
+      "They established new rules for the school canteen."
+    ],
+    "topics": [
+      "business",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30540,
+    "word": "estimate",
+    "pos": "verb",
+    "phonetic": "/ˈestɪmeɪt/",
+    "examples": [
+      "The builder estimated the cost of repairs at five thousand.",
+      "She estimated that the journey would take about three hours."
+    ],
+    "topics": [
+      "business",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30541,
+    "word": "examine",
+    "pos": "verb",
+    "phonetic": "/ɪɡˈzæmɪn/",
+    "examples": [
+      "The doctor examined the patient carefully before giving advice.",
+      "Police examined the scene of the accident for clues."
+    ],
+    "topics": [
+      "health",
+      "science"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30542,
+    "word": "explore",
+    "pos": "verb",
+    "phonetic": "/ɪkˈsplɔː(r)/",
+    "examples": [
+      "We spent the afternoon exploring the old part of town.",
+      "Scientists want to explore the deepest parts of the ocean."
+    ],
+    "topics": [
+      "travel",
+      "science"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30543,
+    "word": "extend",
+    "pos": "verb",
+    "phonetic": "/ɪkˈstend/",
+    "examples": [
+      "The school decided to extend the lunch break by ten minutes.",
+      "The park extends from the river to the main road."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30544,
+    "word": "fade",
+    "pos": "verb",
+    "phonetic": "/feɪd/",
+    "examples": [
+      "The colour of her shirt faded after many washes.",
+      "His memories of childhood slowly faded over time."
+    ],
+    "topics": [
+      "daily-life",
+      "emotions"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30545,
+    "word": "float",
+    "pos": "verb",
+    "phonetic": "/fləʊt/",
+    "examples": [
+      "The boat floated gently down the calm river.",
+      "Leaves floated on the surface of the swimming pool."
+    ],
+    "topics": [
+      "daily-life",
+      "science"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30546,
+    "word": "flow",
+    "pos": "verb",
+    "phonetic": "/fləʊ/",
+    "examples": [
+      "The river flows through the centre of the city.",
+      "Traffic was flowing smoothly on the motorway this morning."
+    ],
+    "topics": [
+      "environment",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30547,
+    "word": "fold",
+    "pos": "verb",
+    "phonetic": "/fəʊld/",
+    "examples": [
+      "She folded the letter and put it in an envelope.",
+      "Please fold your clothes and put them in the drawer."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30548,
+    "word": "forgive",
+    "pos": "verb",
+    "phonetic": "/fəˈɡɪv/",
+    "examples": [
+      "It took her a long time to forgive his mistake.",
+      "She forgave her friend and they became close again."
+    ],
+    "topics": [
+      "relationships",
+      "emotions"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30549,
+    "word": "freeze",
+    "pos": "verb",
+    "phonetic": "/friːz/",
+    "examples": [
+      "Water freezes when the temperature falls below zero degrees.",
+      "We froze the leftover soup to eat another day."
+    ],
+    "topics": [
+      "food",
+      "science"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30550,
+    "word": "frighten",
+    "pos": "verb",
+    "phonetic": "/ˈfraɪtn/",
+    "examples": [
+      "The loud thunder frightened the children during the night.",
+      "Spiders frighten many people even though they are harmless."
+    ],
+    "topics": [
+      "emotions"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30551,
+    "word": "fund",
+    "pos": "verb",
+    "phonetic": "/fʌnd/",
+    "examples": [
+      "The government funded the building of the new hospital.",
+      "They raised money to fund the local sports club."
+    ],
+    "topics": [
+      "business",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30552,
+    "word": "gather",
+    "pos": "verb",
+    "phonetic": "/ˈɡæðə(r)/",
+    "examples": [
+      "The family gathered around the table for Sunday dinner.",
+      "She gathered information from many different sources online."
+    ],
+    "topics": [
+      "relationships",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30553,
+    "word": "generate",
+    "pos": "verb",
+    "phonetic": "/ˈdʒenəreɪt/",
+    "examples": [
+      "The wind farm generates electricity for the whole town.",
+      "Her speech generated a lot of interest in the topic."
+    ],
+    "topics": [
+      "technology",
+      "environment"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30554,
+    "word": "grab",
+    "pos": "verb",
+    "phonetic": "/ɡræb/",
+    "examples": [
+      "She grabbed her bag and ran to catch the bus.",
+      "He grabbed a quick sandwich before the meeting started."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30555,
+    "word": "hang",
+    "pos": "verb",
+    "phonetic": "/hæŋ/",
+    "examples": [
+      "She hung the painting on the wall above the sofa.",
+      "We hung our wet clothes outside to dry in the sun."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30556,
+    "word": "heat",
+    "pos": "verb",
+    "phonetic": "/hiːt/",
+    "examples": [
+      "Please heat the soup on the stove for five minutes.",
+      "The sun heated the sand until it was too hot."
+    ],
+    "topics": [
+      "food",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30557,
+    "word": "hesitate",
+    "pos": "verb",
+    "phonetic": "/ˈhezɪteɪt/",
+    "examples": [
+      "Do not hesitate to ask if you need any help.",
+      "She hesitated before answering the difficult interview question."
+    ],
+    "topics": [
+      "communication",
+      "emotions"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30558,
+    "word": "highlight",
+    "pos": "verb",
+    "phonetic": "/ˈhaɪlaɪt/",
+    "examples": [
+      "The report highlighted the need for better public transport.",
+      "She highlighted the important words in the text with yellow."
+    ],
+    "topics": [
+      "education",
+      "communication"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30559,
+    "word": "host",
+    "pos": "verb",
+    "phonetic": "/həʊst/",
+    "examples": [
+      "Japan will host the next international sports competition.",
+      "They hosted a dinner party for all their neighbours."
+    ],
+    "topics": [
+      "society",
+      "relationships"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30560,
+    "word": "hunt",
+    "pos": "verb",
+    "phonetic": "/hʌnt/",
+    "examples": [
+      "The cat hunted mice in the garden every night.",
+      "She spent weeks hunting for the perfect birthday present."
+    ],
+    "topics": [
+      "environment",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30561,
+    "word": "identify",
+    "pos": "verb",
+    "phonetic": "/aɪˈdentɪfaɪ/",
+    "examples": [
+      "The police asked her to identify the man from photos.",
+      "We need to identify the main cause of the problem."
+    ],
+    "topics": [
+      "science",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30562,
+    "word": "ignore",
+    "pos": "verb",
+    "phonetic": "/ɪɡˈnɔː(r)/",
+    "examples": [
+      "You should not ignore your doctor's advice about rest.",
+      "He ignored the warning signs and continued driving fast."
+    ],
+    "topics": [
+      "communication",
+      "relationships"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30563,
+    "word": "imagine",
+    "pos": "verb",
+    "phonetic": "/ɪˈmædʒɪn/",
+    "examples": [
+      "Can you imagine living in a house with no electricity?",
+      "She imagined herself travelling around the world one day."
+    ],
+    "topics": [
+      "emotions",
+      "arts"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30564,
+    "word": "indicate",
+    "pos": "verb",
+    "phonetic": "/ˈɪndɪkeɪt/",
+    "examples": [
+      "The sign indicates that the museum is closed on Mondays.",
+      "Research indicates that exercise helps reduce stress levels."
+    ],
+    "topics": [
+      "science",
+      "communication"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30565,
+    "word": "intend",
+    "pos": "verb",
+    "phonetic": "/ɪnˈtend/",
+    "examples": [
+      "She intends to study medicine at university next year.",
+      "We intended to leave early but the traffic delayed us."
+    ],
+    "topics": [
+      "daily-life",
+      "education"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30566,
+    "word": "interrupt",
+    "pos": "verb",
+    "phonetic": "/ˌɪntəˈrʌpt/",
+    "examples": [
+      "Please do not interrupt when someone else is speaking.",
+      "The phone call interrupted our dinner conversation last night."
+    ],
+    "topics": [
+      "communication",
+      "relationships"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30567,
+    "word": "iron",
+    "pos": "verb",
+    "phonetic": "/ˈaɪən/",
+    "examples": [
+      "She ironed her shirt before going to the job interview.",
+      "He does not like ironing clothes on Sunday mornings."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30568,
+    "word": "issue",
+    "pos": "verb",
+    "phonetic": "/ˈɪʃuː/",
+    "examples": [
+      "The government issued a warning about the coming storm.",
+      "The bank issued a new credit card to the customer."
+    ],
+    "topics": [
+      "politics",
+      "business"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30569,
+    "word": "justify",
+    "pos": "verb",
+    "phonetic": "/ˈdʒʌstɪfaɪ/",
+    "examples": [
+      "He tried to justify his decision to leave the company.",
+      "Nothing can justify being rude to other people."
+    ],
+    "topics": [
+      "communication",
+      "law"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30570,
+    "word": "knock",
+    "pos": "verb",
+    "phonetic": "/nɒk/",
+    "examples": [
+      "Someone knocked on the door while we were eating dinner.",
+      "She knocked over the glass of water by accident."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30571,
+    "word": "alarm",
+    "pos": "noun",
+    "phonetic": "/əˈlɑːm/",
+    "examples": [
+      "The alarm woke him up at six thirty every morning.",
+      "The fire alarm rang and everyone left the building quickly."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30572,
+    "word": "album",
+    "pos": "noun",
+    "phonetic": "/ˈælbəm/",
+    "examples": [
+      "She put all her holiday photos in a new album.",
+      "The band released their first album last summer."
+    ],
+    "topics": [
+      "arts",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30573,
+    "word": "angle",
+    "pos": "noun",
+    "phonetic": "/ˈæŋɡl/",
+    "examples": [
+      "The photographer took the picture from an unusual angle.",
+      "A triangle has three angles that add up to one eighty."
+    ],
+    "topics": [
+      "arts",
+      "science"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30574,
+    "word": "pile",
+    "pos": "noun",
+    "phonetic": "/paɪl/",
+    "examples": [
+      "There was a huge pile of dirty clothes on the floor.",
+      "She put the books in a neat pile on her desk."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30575,
+    "word": "apartment",
+    "pos": "noun",
+    "phonetic": "/əˈpɑːtmənt/",
+    "examples": [
+      "They moved into a new apartment near the city centre.",
+      "The apartment has two bedrooms and a small kitchen."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30576,
+    "word": "asset",
+    "pos": "noun",
+    "phonetic": "/ˈæset/",
+    "examples": [
+      "Her ability to speak three languages is a great asset.",
+      "The company sold some of its assets to pay debts."
+    ],
+    "topics": [
+      "business"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30577,
+    "word": "atmosphere",
+    "pos": "noun",
+    "phonetic": "/ˈætməsfɪə(r)/",
+    "examples": [
+      "The restaurant had a warm and friendly atmosphere.",
+      "The atmosphere of the earth protects us from the sun."
+    ],
+    "topics": [
+      "environment",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30578,
+    "word": "battery",
+    "pos": "noun",
+    "phonetic": "/ˈbætəri/",
+    "examples": [
+      "My phone battery died in the middle of the call.",
+      "You need to replace the batteries in the remote control."
+    ],
+    "topics": [
+      "technology",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30579,
+    "word": "bench",
+    "pos": "noun",
+    "phonetic": "/bentʃ/",
+    "examples": [
+      "They sat on a bench in the park and fed the birds.",
+      "There is a wooden bench outside the library entrance."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30580,
+    "word": "blade",
+    "pos": "noun",
+    "phonetic": "/bleɪd/",
+    "examples": [
+      "Be careful with the blade because it is very sharp.",
+      "A single blade of grass pushed through the dry soil."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30581,
+    "word": "brick",
+    "pos": "noun",
+    "phonetic": "/brɪk/",
+    "examples": [
+      "The old house was built with beautiful red bricks.",
+      "He carried bricks to help build the garden wall."
+    ],
+    "topics": [
+      "daily-life",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30582,
+    "word": "budget",
+    "pos": "noun",
+    "phonetic": "/ˈbʌdʒɪt/",
+    "examples": [
+      "We need to plan a budget before going on holiday.",
+      "The project went over budget and cost more than expected."
+    ],
+    "topics": [
+      "business",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30583,
+    "word": "cabin",
+    "pos": "noun",
+    "phonetic": "/ˈkæbɪn/",
+    "examples": [
+      "They rented a small cabin by the lake for summer.",
+      "The cabin crew asked passengers to fasten their seat belts."
+    ],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30584,
+    "word": "cage",
+    "pos": "noun",
+    "phonetic": "/keɪdʒ/",
+    "examples": [
+      "The bird sang happily even though it was in a cage.",
+      "The zoo keeps the lions in a large open cage."
+    ],
+    "topics": [
+      "environment",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30585,
+    "word": "carpet",
+    "pos": "noun",
+    "phonetic": "/ˈkɑːpɪt/",
+    "examples": [
+      "We bought a new carpet for the living room floor.",
+      "The red carpet was rolled out for the film premiere."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30586,
+    "word": "ceiling",
+    "pos": "noun",
+    "phonetic": "/ˈsiːlɪŋ/",
+    "examples": [
+      "The ceiling in the old church was decorated with paintings.",
+      "There was a crack in the ceiling above the bathroom."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30587,
+    "word": "chain",
+    "pos": "noun",
+    "phonetic": "/tʃeɪn/",
+    "examples": [
+      "She wore a gold chain around her neck to the party.",
+      "The dog was tied to a chain in the back garden."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30588,
+    "word": "champion",
+    "pos": "noun",
+    "phonetic": "/ˈtʃæmpiən/",
+    "examples": [
+      "She became the national swimming champion at age sixteen.",
+      "The champion received a gold medal and a big prize."
+    ],
+    "topics": [
+      "sports"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30589,
+    "word": "channel",
+    "pos": "noun",
+    "phonetic": "/ˈtʃænl/",
+    "examples": [
+      "What channel is the football match on tonight?",
+      "The English Channel separates England and France."
+    ],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30590,
+    "word": "chart",
+    "pos": "noun",
+    "phonetic": "/tʃɑːt/",
+    "examples": [
+      "The chart shows how sales have grown over five years.",
+      "The teacher used a chart to explain the weather patterns."
+    ],
+    "topics": [
+      "education",
+      "business"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30591,
+    "word": "clay",
+    "pos": "noun",
+    "phonetic": "/kleɪ/",
+    "examples": [
+      "The children made animals out of clay in art class.",
+      "The soil in our garden contains a lot of heavy clay."
+    ],
+    "topics": [
+      "arts",
+      "science"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30592,
+    "word": "cliff",
+    "pos": "noun",
+    "phonetic": "/klɪf/",
+    "examples": [
+      "They stood on the cliff and looked down at the sea.",
+      "The white cliffs are one of the most famous landmarks."
+    ],
+    "topics": [
+      "travel",
+      "environment"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30593,
+    "word": "cloth",
+    "pos": "noun",
+    "phonetic": "/klɒθ/",
+    "examples": [
+      "She wiped the table with a clean damp cloth.",
+      "The market sold beautiful cloth in many different colours."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30594,
+    "word": "column",
+    "pos": "noun",
+    "phonetic": "/ˈkɒləm/",
+    "examples": [
+      "The building has tall stone columns at the front entrance.",
+      "She writes a weekly column for the local newspaper."
+    ],
+    "topics": [
+      "arts",
+      "communication"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30595,
+    "word": "shade",
+    "pos": "noun",
+    "phonetic": "/ʃeɪd/",
+    "examples": [
+      "We sat in the shade of a large tree to cool down.",
+      "The walls were painted in a light shade of blue."
+    ],
+    "topics": [
+      "daily-life",
+      "environment"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30596,
+    "word": "concept",
+    "pos": "noun",
+    "phonetic": "/ˈkɒnsept/",
+    "examples": [
+      "The concept of fairness is important in every society.",
+      "She explained the basic concept of gravity to the children."
+    ],
+    "topics": [
+      "education",
+      "science"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30597,
+    "word": "contest",
+    "pos": "noun",
+    "phonetic": "/ˈkɒntest/",
+    "examples": [
+      "She won first place in the school writing contest.",
+      "Over two hundred people entered the cooking contest this year."
+    ],
+    "topics": [
+      "education",
+      "arts"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30598,
+    "word": "contribution",
+    "pos": "noun",
+    "phonetic": "/ˌkɒntrɪˈbjuːʃn/",
+    "examples": [
+      "Her contribution to the project was very valuable.",
+      "The charity received generous contributions from local businesses."
+    ],
+    "topics": [
+      "society",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30599,
+    "word": "core",
+    "pos": "noun",
+    "phonetic": "/kɔː(r)/",
+    "examples": [
+      "Honesty is at the core of every good relationship.",
+      "The core of the earth is extremely hot."
+    ],
+    "topics": [
+      "science",
+      "relationships"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30600,
+    "word": "cottage",
+    "pos": "noun",
+    "phonetic": "/ˈkɒtɪdʒ/",
+    "examples": [
+      "They spent the weekend in a lovely cottage in the country.",
+      "The old stone cottage had a garden full of flowers."
+    ],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30601,
+    "word": "counter",
+    "pos": "noun",
+    "phonetic": "/ˈkaʊntə(r)/",
+    "examples": [
+      "She left the keys on the kitchen counter by mistake.",
+      "There was a long queue at the checkout counter."
+    ],
+    "topics": [
+      "daily-life",
+      "business"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30602,
+    "word": "creature",
+    "pos": "noun",
+    "phonetic": "/ˈkriːtʃə(r)/",
+    "examples": [
+      "The forest is home to many interesting wild creatures.",
+      "Some deep sea creatures can produce their own light."
+    ],
+    "topics": [
+      "environment",
+      "science"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30603,
+    "word": "crew",
+    "pos": "noun",
+    "phonetic": "/kruː/",
+    "examples": [
+      "The ship's crew worked hard during the rough storm.",
+      "A film crew arrived in town to start shooting scenes."
+    ],
+    "topics": [
+      "work",
+      "travel"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30604,
+    "word": "crop",
+    "pos": "noun",
+    "phonetic": "/krɒp/",
+    "examples": [
+      "The dry weather damaged many of the farmer's crops.",
+      "Rice is the most important crop in many Asian countries."
+    ],
+    "topics": [
+      "food",
+      "environment"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30605,
+    "word": "crown",
+    "pos": "noun",
+    "phonetic": "/kraʊn/",
+    "examples": [
+      "The queen wore a beautiful crown made of gold.",
+      "He won the boxing crown after a very tough fight."
+    ],
+    "topics": [
+      "society",
+      "sports"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30606,
+    "word": "curtain",
+    "pos": "noun",
+    "phonetic": "/ˈkɜːtn/",
+    "examples": [
+      "She closed the curtains to block out the morning sun.",
+      "The curtain rose and the play began on the stage."
+    ],
+    "topics": [
+      "daily-life",
+      "arts"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30607,
+    "word": "curve",
+    "pos": "noun",
+    "phonetic": "/kɜːv/",
+    "examples": [
+      "The road has a dangerous curve near the top of the hill.",
+      "The graph shows a gentle curve going upward over time."
+    ],
+    "topics": [
+      "science",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30608,
+    "word": "cycle",
+    "pos": "noun",
+    "phonetic": "/ˈsaɪkl/",
+    "examples": [
+      "The water cycle is an important topic in geography class.",
+      "She rides her cycle to work every day to stay fit."
+    ],
+    "topics": [
+      "science",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30609,
+    "word": "disaster",
+    "pos": "noun",
+    "phonetic": "/dɪˈzɑːstə(r)/",
+    "examples": [
+      "The earthquake was the worst natural disaster in years.",
+      "Forgetting her lines on stage was a complete disaster."
+    ],
+    "topics": [
+      "environment",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30610,
+    "word": "display",
+    "pos": "noun",
+    "phonetic": "/dɪˈspleɪ/",
+    "examples": [
+      "There was a beautiful display of flowers at the show.",
+      "The museum has a new display of ancient Roman coins."
+    ],
+    "topics": [
+      "arts",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30611,
+    "word": "dust",
+    "pos": "noun",
+    "phonetic": "/dʌst/",
+    "examples": [
+      "A thick layer of dust covered the old furniture.",
+      "She cleaned the dust from the shelves every Saturday."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30612,
+    "word": "edition",
+    "pos": "noun",
+    "phonetic": "/ɪˈdɪʃn/",
+    "examples": [
+      "Have you read the latest edition of the school magazine?",
+      "This is the third edition of the popular English textbook."
+    ],
+    "topics": [
+      "education",
+      "arts"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30613,
+    "word": "empire",
+    "pos": "noun",
+    "phonetic": "/ˈempaɪə(r)/",
+    "examples": [
+      "The Roman Empire ruled much of Europe for many centuries.",
+      "He built a business empire starting from a small shop."
+    ],
+    "topics": [
+      "society",
+      "business"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30614,
+    "word": "engine",
+    "pos": "noun",
+    "phonetic": "/ˈendʒɪn/",
+    "examples": [
+      "The car engine made a strange noise when she started it.",
+      "Steam engines were used in factories during the industrial age."
+    ],
+    "topics": [
+      "technology"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30615,
+    "word": "envelope",
+    "pos": "noun",
+    "phonetic": "/ˈenvələʊp/",
+    "examples": [
+      "She put the letter in an envelope and posted it.",
+      "The invitation came in a beautiful white envelope."
+    ],
+    "topics": [
+      "daily-life",
+      "communication"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30616,
+    "word": "era",
+    "pos": "noun",
+    "phonetic": "/ˈɪərə/",
+    "examples": [
+      "We are living in the era of digital technology.",
+      "The Victorian era lasted from eighteen thirty-seven to nineteen oh one."
+    ],
+    "topics": [
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30617,
+    "word": "estate",
+    "pos": "noun",
+    "phonetic": "/ɪˈsteɪt/",
+    "examples": [
+      "They live on a large housing estate outside the city.",
+      "His estate was divided among his three children after he died."
+    ],
+    "topics": [
+      "business",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30618,
+    "word": "exception",
+    "pos": "noun",
+    "phonetic": "/ɪkˈsepʃn/",
+    "examples": [
+      "Everyone must follow the rules without any exception.",
+      "She makes an exception for her youngest child at bedtime."
+    ],
+    "topics": [
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30619,
+    "word": "executive",
+    "pos": "noun",
+    "phonetic": "/ɪɡˈzekjətɪv/",
+    "examples": [
+      "She works as a marketing executive at a big company.",
+      "The top executives met to discuss the new company strategy."
+    ],
+    "topics": [
+      "business",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30620,
+    "word": "facility",
+    "pos": "noun",
+    "phonetic": "/fəˈsɪləti/",
+    "examples": [
+      "The hotel has excellent sports and swimming facilities.",
+      "The new research facility will open next spring."
+    ],
+    "topics": [
+      "daily-life",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30621,
+    "word": "fame",
+    "pos": "noun",
+    "phonetic": "/feɪm/",
+    "examples": [
+      "She found fame after her first novel became a bestseller.",
+      "The actor's fame spread quickly after the hit movie."
+    ],
+    "topics": [
+      "arts",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30622,
+    "word": "fate",
+    "pos": "noun",
+    "phonetic": "/feɪt/",
+    "examples": [
+      "She believes that fate brought them together that day.",
+      "The fate of the old building is still being decided."
+    ],
+    "topics": [
+      "emotions",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30623,
+    "word": "ribbon",
+    "pos": "noun",
+    "phonetic": "/ˈrɪbən/",
+    "examples": [
+      "She tied a red ribbon around the birthday present.",
+      "The little girl wore a pretty ribbon in her hair."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30624,
+    "word": "flood",
+    "pos": "noun",
+    "phonetic": "/flʌd/",
+    "examples": [
+      "Heavy rain caused a serious flood in the town centre.",
+      "After the flood, many families lost their homes and belongings."
+    ],
+    "topics": [
+      "environment",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30625,
+    "word": "flour",
+    "pos": "noun",
+    "phonetic": "/ˈflaʊə(r)/",
+    "examples": [
+      "You need two cups of flour to make this cake.",
+      "She spilled flour all over the kitchen while baking bread."
+    ],
+    "topics": [
+      "food"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30626,
+    "word": "folk",
+    "pos": "noun",
+    "phonetic": "/fəʊk/",
+    "examples": [
+      "The old folk in the village still remember the war.",
+      "Folk music is very popular in the countryside."
+    ],
+    "topics": [
+      "arts",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30627,
+    "word": "formula",
+    "pos": "noun",
+    "phonetic": "/ˈfɔːmjələ/",
+    "examples": [
+      "The teacher wrote the maths formula on the whiteboard.",
+      "There is no simple formula for success in business."
+    ],
+    "topics": [
+      "science",
+      "education"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30628,
+    "word": "fortune",
+    "pos": "noun",
+    "phonetic": "/ˈfɔːtʃuːn/",
+    "examples": [
+      "He made a fortune by selling his technology company.",
+      "She had the good fortune to find a job she loved."
+    ],
+    "topics": [
+      "business"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30629,
+    "word": "foundation",
+    "pos": "noun",
+    "phonetic": "/faʊnˈdeɪʃn/",
+    "examples": [
+      "Trust is the foundation of every good friendship.",
+      "The charity foundation helps children get a better education."
+    ],
+    "topics": [
+      "society",
+      "relationships"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30630,
+    "word": "gap",
+    "pos": "noun",
+    "phonetic": "/ɡæp/",
+    "examples": [
+      "There is a big gap between the rich and the poor.",
+      "The cat squeezed through a small gap in the fence."
+    ],
+    "topics": [
+      "society",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30631,
+    "word": "garage",
+    "pos": "noun",
+    "phonetic": "/ˈɡærɑːʒ/",
+    "examples": [
+      "He parks his car in the garage every evening.",
+      "I took my car to the garage for its annual service."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30632,
+    "word": "gear",
+    "pos": "noun",
+    "phonetic": "/ɡɪə(r)/",
+    "examples": [
+      "Make sure you bring the right gear for the hiking trip.",
+      "She put the car into first gear and drove away slowly."
+    ],
+    "topics": [
+      "sports",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30633,
+    "word": "globe",
+    "pos": "noun",
+    "phonetic": "/ɡləʊb/",
+    "examples": [
+      "The classroom had a big globe showing all the countries.",
+      "This problem affects people all around the globe."
+    ],
+    "topics": [
+      "education",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30634,
+    "word": "grief",
+    "pos": "noun",
+    "phonetic": "/ɡriːf/",
+    "examples": [
+      "She was filled with grief after losing her grandmother.",
+      "Talking about your grief can help you feel a bit better."
+    ],
+    "topics": [
+      "emotions",
+      "relationships"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30635,
+    "word": "headline",
+    "pos": "noun",
+    "phonetic": "/ˈhedlaɪn/",
+    "examples": [
+      "The news headline shocked everyone in the country today.",
+      "She made the headlines when she won the science prize."
+    ],
+    "topics": [
+      "communication",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30636,
+    "word": "hint",
+    "pos": "noun",
+    "phonetic": "/hɪnt/",
+    "examples": [
+      "Can you give me a hint about what the answer is?",
+      "There was a hint of sadness in her voice that evening."
+    ],
+    "topics": [
+      "communication",
+      "emotions"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30637,
+    "word": "horizon",
+    "pos": "noun",
+    "phonetic": "/həˈraɪzn/",
+    "examples": [
+      "The sun slowly sank below the horizon at sunset.",
+      "New opportunities appeared on the horizon for the company."
+    ],
+    "topics": [
+      "environment",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30638,
+    "word": "household",
+    "pos": "noun",
+    "phonetic": "/ˈhaʊshəʊld/",
+    "examples": [
+      "The average household spends a lot of money on food.",
+      "Everyone in the household helps with the daily cleaning."
+    ],
+    "topics": [
+      "daily-life",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30639,
+    "word": "immigrant",
+    "pos": "noun",
+    "phonetic": "/ˈɪmɪɡrənt/",
+    "examples": [
+      "Many immigrants came to the country looking for better jobs.",
+      "Her grandparents were immigrants who arrived by boat in the fifties."
+    ],
+    "topics": [
+      "society",
+      "politics"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30640,
+    "word": "incident",
+    "pos": "noun",
+    "phonetic": "/ˈɪnsɪdənt/",
+    "examples": [
+      "The police are investigating the incident that happened last night.",
+      "Nobody was hurt in the incident at the factory today."
+    ],
+    "topics": [
+      "society",
+      "law"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30641,
+    "word": "label",
+    "pos": "verb",
+    "phonetic": "/ˈleɪbl/",
+    "examples": [
+      "Please label all the boxes before we move to the office.",
+      "The food company must label products with allergy information."
+    ],
+    "topics": [
+      "work",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30642,
+    "word": "land",
+    "pos": "verb",
+    "phonetic": "/lænd/",
+    "examples": [
+      "The plane landed safely at the airport despite the fog.",
+      "She landed a great job at a marketing firm."
+    ],
+    "topics": [
+      "travel",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30643,
+    "word": "lean",
+    "pos": "verb",
+    "phonetic": "/liːn/",
+    "examples": [
+      "He leaned against the wall while waiting for the bus.",
+      "She leaned forward to hear what he was saying quietly."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30644,
+    "word": "lie",
+    "pos": "verb",
+    "phonetic": "/laɪ/",
+    "examples": [
+      "She told him not to lie about what really happened.",
+      "He lay down on the sofa and fell asleep after dinner."
+    ],
+    "topics": [
+      "communication",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30645,
+    "word": "load",
+    "pos": "verb",
+    "phonetic": "/ləʊd/",
+    "examples": [
+      "They loaded the car with suitcases before the long drive.",
+      "The website took a long time to load on my phone."
+    ],
+    "topics": [
+      "daily-life",
+      "technology"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30646,
+    "word": "lock",
+    "pos": "verb",
+    "phonetic": "/lɒk/",
+    "examples": [
+      "Always lock the door when you leave the house.",
+      "She locked her bike to the fence outside the shop."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30647,
+    "word": "lower",
+    "pos": "verb",
+    "phonetic": "/ˈləʊə(r)/",
+    "examples": [
+      "The shop lowered prices to attract more customers this month.",
+      "Please lower your voice because the baby is sleeping upstairs."
+    ],
+    "topics": [
+      "business",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30648,
+    "word": "maintain",
+    "pos": "verb",
+    "phonetic": "/meɪnˈteɪn/",
+    "examples": [
+      "It costs a lot of money to maintain an old house.",
+      "She maintained a positive attitude despite the difficulties."
+    ],
+    "topics": [
+      "daily-life",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30649,
+    "word": "manufacture",
+    "pos": "verb",
+    "phonetic": "/ˌmænjuˈfæktʃə(r)/",
+    "examples": [
+      "The factory manufactures car parts for several major brands.",
+      "These shoes were manufactured in Italy using traditional methods."
+    ],
+    "topics": [
+      "business",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30650,
+    "word": "mark",
+    "pos": "verb",
+    "phonetic": "/mɑːk/",
+    "examples": [
+      "The teacher marked the essays and returned them on Friday.",
+      "This year marks the tenth anniversary of the school opening."
+    ],
+    "topics": [
+      "education"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30651,
+    "word": "match",
+    "pos": "verb",
+    "phonetic": "/mætʃ/",
+    "examples": [
+      "Her shoes matched her bag perfectly for the wedding.",
+      "Can you match each word with the correct definition?"
+    ],
+    "topics": [
+      "daily-life",
+      "education"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30652,
+    "word": "matter",
+    "pos": "verb",
+    "phonetic": "/ˈmætə(r)/",
+    "examples": [
+      "It does not matter if you arrive a few minutes late.",
+      "What matters most is that everyone stays safe and healthy."
+    ],
+    "topics": [
+      "daily-life",
+      "relationships"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30653,
+    "word": "melt",
+    "pos": "verb",
+    "phonetic": "/melt/",
+    "examples": [
+      "The ice cream melted quickly in the hot summer sun.",
+      "The snow began to melt as the weather grew warmer."
+    ],
+    "topics": [
+      "environment",
+      "food"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30654,
+    "word": "mix",
+    "pos": "verb",
+    "phonetic": "/mɪks/",
+    "examples": [
+      "Mix the butter and sugar together in a large bowl.",
+      "She mixed with people from many different countries at school."
+    ],
+    "topics": [
+      "food",
+      "relationships"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30655,
+    "word": "observe",
+    "pos": "verb",
+    "phonetic": "/əbˈzɜːv/",
+    "examples": [
+      "Scientists observed the behaviour of the animals carefully.",
+      "She observed that the children were much quieter than usual."
+    ],
+    "topics": [
+      "science"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30656,
+    "word": "occur",
+    "pos": "verb",
+    "phonetic": "/əˈkɜː(r)/",
+    "examples": [
+      "Earthquakes occur more often in some parts of the world.",
+      "It suddenly occurred to me that I forgot my wallet."
+    ],
+    "topics": [
+      "science",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30657,
+    "word": "pack",
+    "pos": "verb",
+    "phonetic": "/pæk/",
+    "examples": [
+      "She packed her suitcase the night before the early flight.",
+      "The children packed their school bags for the next morning."
+    ],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30658,
+    "word": "panic",
+    "pos": "verb",
+    "phonetic": "/ˈpænɪk/",
+    "examples": [
+      "Do not panic if the fire alarm goes off suddenly.",
+      "She panicked when she could not find her passport at home."
+    ],
+    "topics": [
+      "emotions"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30659,
+    "word": "park",
+    "pos": "verb",
+    "phonetic": "/pɑːk/",
+    "examples": [
+      "You can park your car in the space behind the building.",
+      "She parked close to the entrance because it was raining."
+    ],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30660,
+    "word": "participate",
+    "pos": "verb",
+    "phonetic": "/pɑːˈtɪsɪpeɪt/",
+    "examples": [
+      "All students are encouraged to participate in sports activities.",
+      "She participated in a cooking competition last weekend."
+    ],
+    "topics": [
+      "education",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30661,
+    "word": "absent",
+    "pos": "adjective",
+    "phonetic": "/ˈæbsənt/",
+    "examples": [
+      "She was absent from school because she had a bad cold.",
+      "Three members were absent from the important team meeting."
+    ],
+    "topics": [
+      "education",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30662,
+    "word": "accurate",
+    "pos": "adjective",
+    "phonetic": "/ˈækjərət/",
+    "examples": [
+      "The weather forecast was accurate and it rained all day.",
+      "Make sure the information in the report is completely accurate."
+    ],
+    "topics": [
+      "science",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30663,
+    "word": "aggressive",
+    "pos": "adjective",
+    "phonetic": "/əˈɡresɪv/",
+    "examples": [
+      "The dog became aggressive when strangers came near the house.",
+      "His aggressive behaviour upset everyone in the office."
+    ],
+    "topics": [
+      "emotions",
+      "relationships"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30664,
+    "word": "annual",
+    "pos": "adjective",
+    "phonetic": "/ˈænjuəl/",
+    "examples": [
+      "The company holds an annual meeting every January.",
+      "Her annual salary increased by five percent this year."
+    ],
+    "topics": [
+      "work",
+      "business"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30665,
+    "word": "artificial",
+    "pos": "adjective",
+    "phonetic": "/ˌɑːtɪˈfɪʃl/",
+    "examples": [
+      "The flowers on the table looked real but were artificial.",
+      "Artificial intelligence is changing the way we live and work."
+    ],
+    "topics": [
+      "technology",
+      "science"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30666,
+    "word": "bare",
+    "pos": "adjective",
+    "phonetic": "/beə(r)/",
+    "examples": [
+      "The trees were bare because all the leaves had fallen.",
+      "He walked across the cold floor with bare feet."
+    ],
+    "topics": [
+      "daily-life",
+      "environment"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30667,
+    "word": "bitter",
+    "pos": "adjective",
+    "phonetic": "/ˈbɪtə(r)/",
+    "examples": [
+      "The coffee was too bitter so she added some sugar.",
+      "He felt bitter about losing his job after twenty years."
+    ],
+    "topics": [
+      "food",
+      "emotions"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30668,
+    "word": "blank",
+    "pos": "adjective",
+    "phonetic": "/blæŋk/",
+    "examples": [
+      "She stared at the blank page not knowing what to write.",
+      "His face went blank when he heard the surprising news."
+    ],
+    "topics": [
+      "daily-life",
+      "emotions"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30669,
+    "word": "blind",
+    "pos": "adjective",
+    "phonetic": "/blaɪnd/",
+    "examples": [
+      "The blind man used a guide dog to help him walk.",
+      "She was blind to the problems that were right in front."
+    ],
+    "topics": [
+      "health",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30670,
+    "word": "brief",
+    "pos": "adjective",
+    "phonetic": "/briːf/",
+    "examples": [
+      "He gave a brief speech that lasted only five minutes.",
+      "After a brief pause, she continued reading the story aloud."
+    ],
+    "topics": [
+      "communication"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30671,
+    "word": "broad",
+    "pos": "adjective",
+    "phonetic": "/brɔːd/",
+    "examples": [
+      "The river was too broad to swim across safely.",
+      "She has a broad knowledge of European history and culture."
+    ],
+    "topics": [
+      "daily-life",
+      "education"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30672,
+    "word": "classic",
+    "pos": "adjective",
+    "phonetic": "/ˈklæsɪk/",
+    "examples": [
+      "This is a classic example of good teamwork in action.",
+      "She loves reading classic novels from the nineteenth century."
+    ],
+    "topics": [
+      "arts",
+      "education"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30673,
+    "word": "commercial",
+    "pos": "adjective",
+    "phonetic": "/kəˈmɜːʃl/",
+    "examples": [
+      "The building is used for commercial purposes, not housing.",
+      "The area around the station has many commercial shops."
+    ],
+    "topics": [
+      "business"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30674,
+    "word": "double",
+    "pos": "adjective",
+    "phonetic": "/ˈdʌbl/",
+    "examples": [
+      "They booked a double room for their stay at the hotel.",
+      "The recipe needs a double amount of sugar for this cake."
+    ],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30675,
+    "word": "dull",
+    "pos": "adjective",
+    "phonetic": "/dʌl/",
+    "examples": [
+      "The lecture was so dull that several students fell asleep.",
+      "The sky was dull and grey all morning before it rained."
+    ],
+    "topics": [
+      "daily-life",
+      "emotions"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30676,
+    "word": "empty",
+    "pos": "adjective",
+    "phonetic": "/ˈempti/",
+    "examples": [
+      "The room was completely empty with nothing on the walls.",
+      "He returned home to find the fridge was almost empty."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30677,
+    "word": "loose",
+    "pos": "adjective",
+    "phonetic": "/luːs/",
+    "examples": [
+      "One of the buttons on his coat was coming loose.",
+      "She prefers wearing loose clothing when the weather is hot."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30678,
+    "word": "dense",
+    "pos": "adjective",
+    "phonetic": "/dens/",
+    "examples": [
+      "The forest was so dense that sunlight could barely enter.",
+      "London is one of the most densely populated cities."
+    ],
+    "topics": [
+      "environment",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30679,
+    "word": "loyal",
+    "pos": "adjective",
+    "phonetic": "/ˈlɔɪəl/",
+    "examples": [
+      "She has been a loyal friend to me for many years.",
+      "The loyal customers always come back to this small cafe."
+    ],
+    "topics": [
+      "relationships",
+      "business"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30680,
+    "word": "firm",
+    "pos": "adjective",
+    "phonetic": "/fɜːm/",
+    "examples": [
+      "She gave a firm handshake when she met the new manager.",
+      "He was firm in his decision and would not change his mind."
+    ],
+    "topics": [
+      "work",
+      "communication"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30681,
+    "word": "passive",
+    "pos": "adjective",
+    "phonetic": "/ˈpæsɪv/",
+    "examples": [
+      "She took a passive role and let others make decisions.",
+      "Watching television is often seen as a passive activity."
+    ],
+    "topics": [
+      "communication",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30682,
+    "word": "flat",
+    "pos": "adjective",
+    "phonetic": "/flæt/",
+    "examples": [
+      "The land around the village is very flat and good for farming.",
+      "She got a flat tyre on the way to the airport."
+    ],
+    "topics": [
+      "daily-life",
+      "environment"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30683,
+    "word": "desperate",
+    "pos": "adjective",
+    "phonetic": "/ˈdespərət/",
+    "examples": [
+      "She was desperate to find a job before the rent was due.",
+      "The team made a desperate attempt to score in the last minute."
+    ],
+    "topics": [
+      "emotions"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30684,
+    "word": "permanent",
+    "pos": "adjective",
+    "phonetic": "/ˈpɜːmənənt/",
+    "examples": [
+      "She is looking for a permanent job instead of temporary work.",
+      "The accident left a permanent scar on his left hand."
+    ],
+    "topics": [
+      "work",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30685,
+    "word": "precious",
+    "pos": "adjective",
+    "phonetic": "/ˈpreʃəs/",
+    "examples": [
+      "Time is precious so do not waste it on small worries.",
+      "She kept the precious ring in a box under her bed."
+    ],
+    "topics": [
+      "emotions",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30686,
+    "word": "gentle",
+    "pos": "adjective",
+    "phonetic": "/ˈdʒentl/",
+    "examples": [
+      "He was very gentle when he held the tiny baby.",
+      "A gentle breeze blew through the open window that afternoon."
+    ],
+    "topics": [
+      "emotions",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30687,
+    "word": "distant",
+    "pos": "adjective",
+    "phonetic": "/ˈdɪstənt/",
+    "examples": [
+      "She could see distant mountains covered in white snow.",
+      "He became distant and quiet after hearing the bad news."
+    ],
+    "topics": [
+      "daily-life",
+      "emotions"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30688,
+    "word": "sharp",
+    "pos": "adjective",
+    "phonetic": "/ʃɑːp/",
+    "examples": [
+      "Be careful with that knife because the blade is very sharp.",
+      "She has a sharp mind and always finds solutions quickly."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30689,
+    "word": "solid",
+    "pos": "adjective",
+    "phonetic": "/ˈsɒlɪd/",
+    "examples": [
+      "The table is made of solid wood and will last for years.",
+      "She has a solid understanding of basic mathematics."
+    ],
+    "topics": [
+      "daily-life",
+      "science"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30690,
+    "word": "tough",
+    "pos": "adjective",
+    "phonetic": "/tʌf/",
+    "examples": [
+      "The exam was really tough and many students struggled.",
+      "She is a tough woman who never gives up on anything."
+    ],
+    "topics": [
+      "emotions",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30691,
+    "word": "vast",
+    "pos": "adjective",
+    "phonetic": "/vɑːst/",
+    "examples": [
+      "The Sahara is a vast desert that covers much of Africa.",
+      "She has a vast collection of books from around the world."
+    ],
+    "topics": [
+      "environment",
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30692,
+    "word": "elegant",
+    "pos": "adjective",
+    "phonetic": "/ˈelɪɡənt/",
+    "examples": [
+      "She wore an elegant dress to the formal dinner party.",
+      "The hotel lobby had elegant furniture and crystal lights."
+    ],
+    "topics": [
+      "daily-life",
+      "arts"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30693,
+    "word": "evil",
+    "pos": "adjective",
+    "phonetic": "/ˈiːvl/",
+    "examples": [
+      "The evil character in the story scared all the children.",
+      "Some people believe that money is the root of all evil."
+    ],
+    "topics": [
+      "emotions",
+      "arts"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30694,
+    "word": "tight",
+    "pos": "adjective",
+    "phonetic": "/taɪt/",
+    "examples": [
+      "These shoes are too tight and hurt my feet.",
+      "The deadline is very tight so we must work quickly."
+    ],
+    "topics": [
+      "daily-life",
+      "work"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30695,
+    "word": "tiny",
+    "pos": "adjective",
+    "phonetic": "/ˈtaɪni/",
+    "examples": [
+      "The baby's hands were so tiny and perfectly formed.",
+      "They live in a tiny apartment with just one bedroom."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30696,
+    "word": "wealthy",
+    "pos": "adjective",
+    "phonetic": "/ˈwelθi/",
+    "examples": [
+      "The wealthy businessman donated money to build the new school.",
+      "She grew up in a wealthy family but stayed humble."
+    ],
+    "topics": [
+      "business",
+      "society"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30697,
+    "word": "rough",
+    "pos": "adjective",
+    "phonetic": "/rʌf/",
+    "examples": [
+      "The road was rough and full of holes after the storm.",
+      "He gave a rough estimate of how much the repairs would cost."
+    ],
+    "topics": [
+      "daily-life"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30698,
+    "word": "grand",
+    "pos": "adjective",
+    "phonetic": "/ɡrænd/",
+    "examples": [
+      "The hotel has a grand entrance with wide marble stairs.",
+      "They have grand plans to open three new offices next year."
+    ],
+    "topics": [
+      "daily-life",
+      "business"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30699,
+    "word": "sacred",
+    "pos": "adjective",
+    "phonetic": "/ˈseɪkrɪd/",
+    "examples": [
+      "The ancient temple is a sacred place for many visitors.",
+      "Music was considered sacred in many early cultures."
+    ],
+    "topics": [
+      "society",
+      "arts"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": 30700,
+    "word": "grave",
+    "pos": "adjective",
+    "phonetic": "/ɡreɪv/",
+    "examples": [
+      "The doctor spoke in a grave tone about the patient's health.",
+      "Pollution is a grave threat to wildlife in this area."
+    ],
+    "topics": [
+      "health",
+      "environment"
+    ],
+    "level": "B1"
   }
 ]

@@ -1998,5 +1998,805 @@
   {
     "wordId": 30500,
     "translation": "分类；归类"
+  },
+  {
+    "wordId": 30501,
+    "translation": "瞄准；目标是"
+  },
+  {
+    "wordId": 30502,
+    "translation": "争论；辩论"
+  },
+  {
+    "wordId": 30503,
+    "translation": "附上；贴上"
+  },
+  {
+    "wordId": 30504,
+    "translation": "平衡；使均衡"
+  },
+  {
+    "wordId": 30505,
+    "translation": "责备；归咎于"
+  },
+  {
+    "wordId": 30506,
+    "translation": "阻塞；封锁"
+  },
+  {
+    "wordId": 30507,
+    "translation": "呼吸"
+  },
+  {
+    "wordId": 30508,
+    "translation": "燃烧；烧伤"
+  },
+  {
+    "wordId": 30509,
+    "translation": "庆祝；庆贺"
+  },
+  {
+    "wordId": 30510,
+    "translation": "收费；充电"
+  },
+  {
+    "wordId": 30511,
+    "translation": "作弊；欺骗"
+  },
+  {
+    "wordId": 30512,
+    "translation": "检查；核实"
+  },
+  {
+    "wordId": 30513,
+    "translation": "攀登；爬"
+  },
+  {
+    "wordId": 30514,
+    "translation": "结合；组合"
+  },
+  {
+    "wordId": 30515,
+    "translation": "犯（罪）；承诺"
+  },
+  {
+    "wordId": 30516,
+    "translation": "沟通；交流"
+  },
+  {
+    "wordId": 30517,
+    "translation": "集中注意力；专心"
+  },
+  {
+    "wordId": 30518,
+    "translation": "由…组成"
+  },
+  {
+    "wordId": 30519,
+    "translation": "建造；修建"
+  },
+  {
+    "wordId": 30520,
+    "translation": "消费；消耗"
+  },
+  {
+    "wordId": 30521,
+    "translation": "应对；处理"
+  },
+  {
+    "wordId": 30522,
+    "translation": "碰撞；坠毁"
+  },
+  {
+    "wordId": 30523,
+    "translation": "治愈；治好"
+  },
+  {
+    "wordId": 30524,
+    "translation": "敢；胆敢"
+  },
+  {
+    "wordId": 30525,
+    "translation": "消失；不见"
+  },
+  {
+    "wordId": 30526,
+    "translation": "不同意；反对"
+  },
+  {
+    "wordId": 30527,
+    "translation": "发现；发觉"
+  },
+  {
+    "wordId": 30528,
+    "translation": "打扰；使不安"
+  },
+  {
+    "wordId": 30529,
+    "translation": "怀疑；不确定"
+  },
+  {
+    "wordId": 30530,
+    "translation": "拖；拉"
+  },
+  {
+    "wordId": 30531,
+    "translation": "画；绘画"
+  },
+  {
+    "wordId": 30532,
+    "translation": "穿衣；打扮"
+  },
+  {
+    "wordId": 30533,
+    "translation": "掉落；落下"
+  },
+  {
+    "wordId": 30534,
+    "translation": "选举；推选"
+  },
+  {
+    "wordId": 30535,
+    "translation": "雇用；聘用"
+  },
+  {
+    "wordId": 30536,
+    "translation": "使能够；使可能"
+  },
+  {
+    "wordId": 30537,
+    "translation": "参与；从事"
+  },
+  {
+    "wordId": 30538,
+    "translation": "确保；保证"
+  },
+  {
+    "wordId": 30539,
+    "translation": "建立；设立"
+  },
+  {
+    "wordId": 30540,
+    "translation": "估计；估算"
+  },
+  {
+    "wordId": 30541,
+    "translation": "检查；审查"
+  },
+  {
+    "wordId": 30542,
+    "translation": "探索；考察"
+  },
+  {
+    "wordId": 30543,
+    "translation": "延伸；扩展"
+  },
+  {
+    "wordId": 30544,
+    "translation": "褪色；逐渐消失"
+  },
+  {
+    "wordId": 30545,
+    "translation": "漂浮；浮动"
+  },
+  {
+    "wordId": 30546,
+    "translation": "流动；流淌"
+  },
+  {
+    "wordId": 30547,
+    "translation": "折叠；对折"
+  },
+  {
+    "wordId": 30548,
+    "translation": "原谅；宽恕"
+  },
+  {
+    "wordId": 30549,
+    "translation": "冻结；结冰"
+  },
+  {
+    "wordId": 30550,
+    "translation": "使害怕；惊吓"
+  },
+  {
+    "wordId": 30551,
+    "translation": "资助；拨款"
+  },
+  {
+    "wordId": 30552,
+    "translation": "聚集；收集"
+  },
+  {
+    "wordId": 30553,
+    "translation": "产生；发电"
+  },
+  {
+    "wordId": 30554,
+    "translation": "抓住；夺取"
+  },
+  {
+    "wordId": 30555,
+    "translation": "悬挂；挂"
+  },
+  {
+    "wordId": 30556,
+    "translation": "加热；使变热"
+  },
+  {
+    "wordId": 30557,
+    "translation": "犹豫；迟疑"
+  },
+  {
+    "wordId": 30558,
+    "translation": "强调；突出"
+  },
+  {
+    "wordId": 30559,
+    "translation": "主办；举办"
+  },
+  {
+    "wordId": 30560,
+    "translation": "狩猎；搜寻"
+  },
+  {
+    "wordId": 30561,
+    "translation": "识别；鉴定"
+  },
+  {
+    "wordId": 30562,
+    "translation": "忽视；不理会"
+  },
+  {
+    "wordId": 30563,
+    "translation": "想象；设想"
+  },
+  {
+    "wordId": 30564,
+    "translation": "表明；显示"
+  },
+  {
+    "wordId": 30565,
+    "translation": "打算；意图"
+  },
+  {
+    "wordId": 30566,
+    "translation": "打断；中断"
+  },
+  {
+    "wordId": 30567,
+    "translation": "熨烫；熨平"
+  },
+  {
+    "wordId": 30568,
+    "translation": "发行；发布"
+  },
+  {
+    "wordId": 30569,
+    "translation": "为…辩护；证明"
+  },
+  {
+    "wordId": 30570,
+    "translation": "敲；敲击"
+  },
+  {
+    "wordId": 30571,
+    "translation": "闹钟；警报"
+  },
+  {
+    "wordId": 30572,
+    "translation": "相册；专辑"
+  },
+  {
+    "wordId": 30573,
+    "translation": "角；角度"
+  },
+  {
+    "wordId": 30574,
+    "translation": "堆；一堆"
+  },
+  {
+    "wordId": 30575,
+    "translation": "公寓；套房"
+  },
+  {
+    "wordId": 30576,
+    "translation": "资产；有价值的东西"
+  },
+  {
+    "wordId": 30577,
+    "translation": "气氛；大气层"
+  },
+  {
+    "wordId": 30578,
+    "translation": "电池"
+  },
+  {
+    "wordId": 30579,
+    "translation": "长凳；长椅"
+  },
+  {
+    "wordId": 30580,
+    "translation": "刀片；叶片"
+  },
+  {
+    "wordId": 30581,
+    "translation": "砖；砖块"
+  },
+  {
+    "wordId": 30582,
+    "translation": "预算；经费"
+  },
+  {
+    "wordId": 30583,
+    "translation": "小木屋；客舱"
+  },
+  {
+    "wordId": 30584,
+    "translation": "笼子"
+  },
+  {
+    "wordId": 30585,
+    "translation": "地毯"
+  },
+  {
+    "wordId": 30586,
+    "translation": "天花板"
+  },
+  {
+    "wordId": 30587,
+    "translation": "链条；连锁店"
+  },
+  {
+    "wordId": 30588,
+    "translation": "冠军"
+  },
+  {
+    "wordId": 30589,
+    "translation": "频道；渠道"
+  },
+  {
+    "wordId": 30590,
+    "translation": "图表"
+  },
+  {
+    "wordId": 30591,
+    "translation": "黏土；陶土"
+  },
+  {
+    "wordId": 30592,
+    "translation": "悬崖；峭壁"
+  },
+  {
+    "wordId": 30593,
+    "translation": "布；织物"
+  },
+  {
+    "wordId": 30594,
+    "translation": "柱子；专栏"
+  },
+  {
+    "wordId": 30595,
+    "translation": "阴凉处；色调"
+  },
+  {
+    "wordId": 30596,
+    "translation": "概念；观念"
+  },
+  {
+    "wordId": 30597,
+    "translation": "竞赛；比赛"
+  },
+  {
+    "wordId": 30598,
+    "translation": "贡献；捐赠"
+  },
+  {
+    "wordId": 30599,
+    "translation": "核心；中心"
+  },
+  {
+    "wordId": 30600,
+    "translation": "乡村小屋"
+  },
+  {
+    "wordId": 30601,
+    "translation": "柜台；计数器"
+  },
+  {
+    "wordId": 30602,
+    "translation": "生物；动物"
+  },
+  {
+    "wordId": 30603,
+    "translation": "全体船员；工作人员"
+  },
+  {
+    "wordId": 30604,
+    "translation": "农作物；庄稼"
+  },
+  {
+    "wordId": 30605,
+    "translation": "王冠"
+  },
+  {
+    "wordId": 30606,
+    "translation": "窗帘；幕布"
+  },
+  {
+    "wordId": 30607,
+    "translation": "曲线；弯道"
+  },
+  {
+    "wordId": 30608,
+    "translation": "循环；周期"
+  },
+  {
+    "wordId": 30609,
+    "translation": "灾难；灾害"
+  },
+  {
+    "wordId": 30610,
+    "translation": "展示；陈列"
+  },
+  {
+    "wordId": 30611,
+    "translation": "灰尘；尘土"
+  },
+  {
+    "wordId": 30612,
+    "translation": "版本；版次"
+  },
+  {
+    "wordId": 30613,
+    "translation": "帝国"
+  },
+  {
+    "wordId": 30614,
+    "translation": "引擎；发动机"
+  },
+  {
+    "wordId": 30615,
+    "translation": "信封"
+  },
+  {
+    "wordId": 30616,
+    "translation": "时代；纪元"
+  },
+  {
+    "wordId": 30617,
+    "translation": "地产；遗产"
+  },
+  {
+    "wordId": 30618,
+    "translation": "例外；除外"
+  },
+  {
+    "wordId": 30619,
+    "translation": "高管；行政人员"
+  },
+  {
+    "wordId": 30620,
+    "translation": "设施；场所"
+  },
+  {
+    "wordId": 30621,
+    "translation": "名声；名望"
+  },
+  {
+    "wordId": 30622,
+    "translation": "命运；天意"
+  },
+  {
+    "wordId": 30623,
+    "translation": "丝带；缎带"
+  },
+  {
+    "wordId": 30624,
+    "translation": "洪水；水灾"
+  },
+  {
+    "wordId": 30625,
+    "translation": "面粉"
+  },
+  {
+    "wordId": 30626,
+    "translation": "人们；民间音乐"
+  },
+  {
+    "wordId": 30627,
+    "translation": "公式；配方"
+  },
+  {
+    "wordId": 30628,
+    "translation": "财富；运气"
+  },
+  {
+    "wordId": 30629,
+    "translation": "基础；基金会"
+  },
+  {
+    "wordId": 30630,
+    "translation": "差距；缺口"
+  },
+  {
+    "wordId": 30631,
+    "translation": "车库"
+  },
+  {
+    "wordId": 30632,
+    "translation": "装备；齿轮"
+  },
+  {
+    "wordId": 30633,
+    "translation": "地球仪；全球"
+  },
+  {
+    "wordId": 30634,
+    "translation": "悲伤；悲痛"
+  },
+  {
+    "wordId": 30635,
+    "translation": "头条新闻；标题"
+  },
+  {
+    "wordId": 30636,
+    "translation": "提示；暗示"
+  },
+  {
+    "wordId": 30637,
+    "translation": "地平线；视野"
+  },
+  {
+    "wordId": 30638,
+    "translation": "家庭；一家人"
+  },
+  {
+    "wordId": 30639,
+    "translation": "移民"
+  },
+  {
+    "wordId": 30640,
+    "translation": "事件；事故"
+  },
+  {
+    "wordId": 30641,
+    "translation": "贴标签；标注"
+  },
+  {
+    "wordId": 30642,
+    "translation": "着陆；登陆"
+  },
+  {
+    "wordId": 30643,
+    "translation": "倚靠；倾斜"
+  },
+  {
+    "wordId": 30644,
+    "translation": "说谎；躺"
+  },
+  {
+    "wordId": 30645,
+    "translation": "装载；加载"
+  },
+  {
+    "wordId": 30646,
+    "translation": "锁；锁上"
+  },
+  {
+    "wordId": 30647,
+    "translation": "降低；放低"
+  },
+  {
+    "wordId": 30648,
+    "translation": "维持；保养"
+  },
+  {
+    "wordId": 30649,
+    "translation": "制造；生产"
+  },
+  {
+    "wordId": 30650,
+    "translation": "标记；打分"
+  },
+  {
+    "wordId": 30651,
+    "translation": "匹配；搭配"
+  },
+  {
+    "wordId": 30652,
+    "translation": "要紧；有关系"
+  },
+  {
+    "wordId": 30653,
+    "translation": "融化；溶化"
+  },
+  {
+    "wordId": 30654,
+    "translation": "混合；搅拌"
+  },
+  {
+    "wordId": 30655,
+    "translation": "观察；注意到"
+  },
+  {
+    "wordId": 30656,
+    "translation": "发生；出现"
+  },
+  {
+    "wordId": 30657,
+    "translation": "打包；收拾行李"
+  },
+  {
+    "wordId": 30658,
+    "translation": "恐慌；惊慌"
+  },
+  {
+    "wordId": 30659,
+    "translation": "停车"
+  },
+  {
+    "wordId": 30660,
+    "translation": "参加；参与"
+  },
+  {
+    "wordId": 30661,
+    "translation": "缺席的；不在的"
+  },
+  {
+    "wordId": 30662,
+    "translation": "准确的；精确的"
+  },
+  {
+    "wordId": 30663,
+    "translation": "好斗的；侵略性的"
+  },
+  {
+    "wordId": 30664,
+    "translation": "年度的；每年的"
+  },
+  {
+    "wordId": 30665,
+    "translation": "人造的；人工的"
+  },
+  {
+    "wordId": 30666,
+    "translation": "赤裸的；光秃的"
+  },
+  {
+    "wordId": 30667,
+    "translation": "苦的；痛苦的"
+  },
+  {
+    "wordId": 30668,
+    "translation": "空白的"
+  },
+  {
+    "wordId": 30669,
+    "translation": "失明的；盲目的"
+  },
+  {
+    "wordId": 30670,
+    "translation": "简短的；短暂的"
+  },
+  {
+    "wordId": 30671,
+    "translation": "宽广的；广泛的"
+  },
+  {
+    "wordId": 30672,
+    "translation": "经典的；一流的"
+  },
+  {
+    "wordId": 30673,
+    "translation": "商业的；商务的"
+  },
+  {
+    "wordId": 30674,
+    "translation": "两倍的；双重的"
+  },
+  {
+    "wordId": 30675,
+    "translation": "枯燥的；暗淡的"
+  },
+  {
+    "wordId": 30676,
+    "translation": "空的；空荡的"
+  },
+  {
+    "wordId": 30677,
+    "translation": "松的；宽松的"
+  },
+  {
+    "wordId": 30678,
+    "translation": "密集的；浓密的"
+  },
+  {
+    "wordId": 30679,
+    "translation": "忠诚的；忠实的"
+  },
+  {
+    "wordId": 30680,
+    "translation": "坚定的；结实的"
+  },
+  {
+    "wordId": 30681,
+    "translation": "被动的；消极的"
+  },
+  {
+    "wordId": 30682,
+    "translation": "平坦的；扁平的"
+  },
+  {
+    "wordId": 30683,
+    "translation": "绝望的；不顾一切的"
+  },
+  {
+    "wordId": 30684,
+    "translation": "永久的；长期的"
+  },
+  {
+    "wordId": 30685,
+    "translation": "珍贵的；宝贵的"
+  },
+  {
+    "wordId": 30686,
+    "translation": "温柔的；轻柔的"
+  },
+  {
+    "wordId": 30687,
+    "translation": "遥远的；冷淡的"
+  },
+  {
+    "wordId": 30688,
+    "translation": "锋利的；敏锐的"
+  },
+  {
+    "wordId": 30689,
+    "translation": "固体的；坚固的"
+  },
+  {
+    "wordId": 30690,
+    "translation": "艰难的；强硬的"
+  },
+  {
+    "wordId": 30691,
+    "translation": "广阔的；大量的"
+  },
+  {
+    "wordId": 30692,
+    "translation": "优雅的；高雅的"
+  },
+  {
+    "wordId": 30693,
+    "translation": "邪恶的；恶毒的"
+  },
+  {
+    "wordId": 30694,
+    "translation": "紧的；紧密的"
+  },
+  {
+    "wordId": 30695,
+    "translation": "极小的；微小的"
+  },
+  {
+    "wordId": 30696,
+    "translation": "富有的；富裕的"
+  },
+  {
+    "wordId": 30697,
+    "translation": "粗糙的；大致的"
+  },
+  {
+    "wordId": 30698,
+    "translation": "宏大的；壮丽的"
+  },
+  {
+    "wordId": 30699,
+    "translation": "神圣的；庄严的"
+  },
+  {
+    "wordId": 30700,
+    "translation": "严重的；严肃的"
   }
 ]
