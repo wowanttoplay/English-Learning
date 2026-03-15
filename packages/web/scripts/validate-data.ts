@@ -1,28 +1,24 @@
 /**
- * Validates word and translation JSON files:
+ * Validates word, translation, and passage JSON files:
  * 1. Word files in packages/api/scripts/data/words/ — id, word, pos, phonetic, examples, level, topics
  * 2. Translation files in packages/api/scripts/data/translations/ — wordId references, translation field
- * 3. Duplicate words (word+pos combination, case-insensitive)
- * 4. Duplicate IDs
- * 5. Invalid CEFR levels
- * 6. Invalid topic references
- * 7. Example count (must be exactly 2)
+ * 3. Passage files in packages/api/scripts/data/passages/ — id, title, text, genre, level, topic, wordIds
+ * 4. Cross-reference: passage wordIds must exist in word data
+ * 5. Duplicate words (word+pos combination, case-insensitive)
+ * 6. Duplicate IDs (words and passages)
+ * 7. Invalid CEFR levels
+ * 8. Invalid topic/genre references
+ * 9. Example count (must be exactly 2)
  */
 import { readFileSync, readdirSync, existsSync, statSync } from 'fs'
 import { join } from 'path'
 
-import { isValidLevel } from '@english-learning/shared'
+import { isValidLevel, VALID_TOPIC_IDS, VALID_GENRES } from '@english-learning/shared'
 
-// Keep VALID_TOPICS hardcoded — topics.ts uses @/ alias which is unavailable in tsx script context
-// Must match SUBTOPICS in src/data/topics.ts (18 topics across 5 domains)
-const VALID_TOPICS = new Set([
-  'daily-life', 'health', 'travel', 'food', 'sports',
-  'work', 'business',
-  'society', 'politics', 'law',
-  'relationships', 'emotions', 'communication',
-  'education', 'science', 'arts', 'technology', 'environment',
-])
+const VALID_TOPICS = new Set<string>(VALID_TOPIC_IDS)
+const VALID_GENRE_SET = new Set<string>(VALID_GENRES)
 const REQUIRED_WORD_FIELDS = ['id', 'word', 'pos', 'phonetic', 'examples', 'level'] as const
+const REQUIRED_PASSAGE_FIELDS = ['id', 'title', 'text', 'genre', 'level', 'topic', 'wordIds'] as const
 
 interface WordEntry {
   id: number
@@ -37,6 +33,16 @@ interface WordEntry {
 interface TranslationEntry {
   wordId: number
   translation: string
+}
+
+interface PassageEntry {
+  id: number
+  title: string
+  text: string
+  genre: string
+  level: string
+  topic: string
+  wordIds: number[]
 }
 
 let errors = 0
@@ -175,8 +181,88 @@ if (existsSync(translationsDir)) {
 }
 
 // ---------------------------------------------------------------------------
+// 3. Load and validate passage files from packages/api/scripts/data/passages/
+// ---------------------------------------------------------------------------
+
+const passagesDir = join(apiDataDir, 'passages')
+let passageCount = 0
+
+if (existsSync(passagesDir)) {
+  const passageFiles = readdirSync(passagesDir).filter(f => f.endsWith('.json')).sort()
+
+  if (passageFiles.length === 0) {
+    console.warn('WARNING: No JSON passage files found in packages/api/scripts/data/passages/')
+  }
+
+  const allPassages: PassageEntry[] = []
+  for (const file of passageFiles) {
+    const filePath = join(passagesDir, file)
+    const passages: PassageEntry[] = JSON.parse(readFileSync(filePath, 'utf-8'))
+    console.log(`  Loaded passages/${file}: ${passages.length} passages`)
+    allPassages.push(...passages)
+  }
+
+  // Check required fields
+  for (const p of allPassages) {
+    for (const field of REQUIRED_PASSAGE_FIELDS) {
+      if (p[field] === undefined || p[field] === null) {
+        error(`Passage ID ${p.id} ("${p.title}"): missing required field "${field}"`)
+      }
+    }
+  }
+
+  // Duplicate passage IDs
+  const passageIdMap = new Map<number, PassageEntry>()
+  for (const p of allPassages) {
+    if (passageIdMap.has(p.id)) {
+      error(`Duplicate passage ID ${p.id}: "${p.title}" and "${passageIdMap.get(p.id)!.title}"`)
+    }
+    passageIdMap.set(p.id, p)
+  }
+
+  // Validate genre
+  for (const p of allPassages) {
+    if (!VALID_GENRE_SET.has(p.genre)) {
+      error(`Passage ID ${p.id} ("${p.title}"): invalid genre "${p.genre}"`)
+    }
+  }
+
+  // Validate topic
+  for (const p of allPassages) {
+    if (!VALID_TOPICS.has(p.topic)) {
+      error(`Passage ID ${p.id} ("${p.title}"): invalid topic "${p.topic}"`)
+    }
+  }
+
+  // Validate level
+  for (const p of allPassages) {
+    if (!isValidLevel('en', p.level)) {
+      error(`Passage ID ${p.id} ("${p.title}"): invalid level "${p.level}"`)
+    }
+  }
+
+  // Cross-reference: every wordId in passage.wordIds must exist in word data
+  for (const p of allPassages) {
+    if (Array.isArray(p.wordIds)) {
+      for (const wid of p.wordIds) {
+        if (!idMap.has(wid)) {
+          error(`Passage ID ${p.id} ("${p.title}"): wordId ${wid} does not exist in word data`)
+        }
+      }
+    }
+  }
+
+  passageCount = allPassages.length
+  console.log(`\nValidated ${passageCount} passages across ${passageFiles.length} file(s)`)
+} else {
+  console.warn('WARNING: No passages directory found — skipping passage validation')
+}
+
+// ---------------------------------------------------------------------------
 // Summary
 // ---------------------------------------------------------------------------
+
+console.log(`\nSummary: Validated ${allWords.length} words, ${translationCount} translations, ${passageCount} passages`)
 
 if (errors > 0) {
   console.error(`\n${errors} error(s) found`)

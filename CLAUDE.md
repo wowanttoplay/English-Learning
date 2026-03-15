@@ -16,7 +16,7 @@ pnpm typecheck              # Type check all packages (pnpm -r typecheck)
 pnpm build:api              # Build API worker (packages/api)
 
 # Within packages/web:
-pnpm --filter @english-learning/web validate:words     # Validate word JSON files
+pnpm --filter @english-learning/web validate:data      # Validate word, translation, and passage JSON files
 pnpm --filter @english-learning/web generate-tts          # Generate TTS audio + sentence timestamps (Google Cloud TTS)
 
 # Within packages/api:
@@ -146,7 +146,7 @@ packages/web/                  # @english-learning/web (Vue 3 + Vite)
       WordListView.vue, ReadingView.vue, PassageView.vue,
       SettingsView.vue
   scripts/
-    validate-words.ts          # Build-time validation: checks IDs, duplicates, levels, topics, fields
+    validate-data.ts           # Build-time validation: checks IDs, duplicates, levels, topics, fields, passage cross-refs
     generate-tts.ts            # TTS audio + sentence timestamps generation (Google Cloud TTS with SSML marks)
 ```
 
@@ -264,8 +264,8 @@ Rules:
 - `examples`: exactly 2 sentences, each 8-15 words, context vocabulary at A2-B1 level
 - `topics`: 1-3 subtopic IDs from the hierarchy above
 - `level`: valid `CefrLevel` (typically `"B2"` for current dataset)
-- No duplicates with existing entries (checked by `validate-words` at build time)
-- Validate: `pnpm --filter @english-learning/web validate:words`
+- No duplicates with existing entries (checked by `validate:data` at build time)
+- Validate: `pnpm --filter @english-learning/web validate:data`
 
 ## Generating Passages
 
