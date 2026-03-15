@@ -16,11 +16,15 @@
       :duration="audio.duration.value"
       :isFallback="audio.isFallback.value"
       :progressPercent="audio.progressPercent.value"
+      :currentTurnIndex="audio.currentTurnIndex.value"
+      :turnCount="passage?.turns?.length ?? 0"
       :formatTime="audio.formatTime"
       :togglePlay="audio.togglePlay"
       :stop="audio.stop"
       :seekTo="audio.seekTo"
       :setSpeed="audio.setSpeed"
+      @skip-prev="audio.skipPrev"
+      @skip-next="audio.skipNext"
     />
 
     <div class="passage-content">
