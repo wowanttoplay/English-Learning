@@ -4,6 +4,10 @@ const NORMAL_RATE = 0.85
 const SLOW_RATE = 0.6
 const SENTENCE_RATE = 0.85
 
+function getAudioBase(): string {
+  return import.meta.env.VITE_AUDIO_BASE_URL || (import.meta.env.BASE_URL + 'audio')
+}
+
 const AUDIO_CACHE_MAX = 100
 const audioElementCache = new Map<string, HTMLAudioElement>()
 
@@ -84,10 +88,11 @@ function getAudioUrl(word: string): string | null {
   return null
 }
 
-function playAudioUrl(url: string, word?: string): Promise<void> {
+function playAudioUrl(url: string, word?: string, playbackRate?: number): Promise<void> {
   return new Promise((resolve, reject) => {
     const audio = (word && audioElementCache.get(word)) || new Audio(url)
     audio.currentTime = 0
+    audio.playbackRate = playbackRate || 1.0
     audio.addEventListener('ended', () => resolve(), { once: true })
     audio.addEventListener('error', reject, { once: true })
     audio.play().catch(reject)
@@ -128,37 +133,58 @@ function speakText(text: string, rate?: number): Promise<void> {
 
 // --- Public API ---
 
-async function playWord(word: string, speed?: 'normal' | 'slow'): Promise<void> {
+async function playWord(word: string, speed?: 'normal' | 'slow', wordId?: number): Promise<void> {
   const rate = speed === 'slow' ? SLOW_RATE : NORMAL_RATE
+  const playbackRate = speed === 'slow' ? SLOW_RATE / NORMAL_RATE : 1.0
 
   // Tier 1: dictionaryapi.dev audio
   const audioUrl = getAudioUrl(word)
   if (audioUrl) {
     try {
-      if (speed !== 'slow') {
-        await playAudioUrl(audioUrl, word)
-        return
-      }
+      await playAudioUrl(audioUrl, word, playbackRate)
+      return
     } catch {
-      // Fall through to Tier 2
+      // Fall through
+    }
+  }
+
+  // Tier 2: Generated Chirp 3 HD MP3 from R2
+  if (wordId) {
+    try {
+      await playAudioUrl(`${getAudioBase()}/words/word-${wordId}.mp3`, undefined, playbackRate)
+      return
+    } catch {
+      // Fall through
+    }
+  }
+
+  // Tier 3: Web Speech API
+  try {
+    await speakText(word, rate)
+  } catch {
+    // No audio
+  }
+}
+
+async function playSentence(text: string, speed?: 'normal' | 'slow', wordId?: number, exIndex?: number): Promise<void> {
+  const rate = speed === 'slow' ? SLOW_RATE : SENTENCE_RATE
+
+  // Tier 1: Generated Chirp 3 HD MP3 from R2
+  if (wordId !== undefined && exIndex !== undefined) {
+    try {
+      const playbackRate = speed === 'slow' ? SLOW_RATE / SENTENCE_RATE : 1.0
+      await playAudioUrl(`${getAudioBase()}/examples/word-${wordId}-ex${exIndex + 1}.mp3`, undefined, playbackRate)
+      return
+    } catch {
+      // Fall through
     }
   }
 
   // Tier 2: Web Speech API
   try {
-    await speakText(word, rate)
-  } catch {
-    // Tier 3: No audio available
-  }
-}
-
-async function playSentence(text: string, speed?: 'normal' | 'slow', _word?: string, _exIndex?: number): Promise<void> {
-  const rate = speed === 'slow' ? SLOW_RATE : SENTENCE_RATE
-
-  try {
     await speakText(text, rate)
   } catch {
-    // No audio available
+    // No audio
   }
 }
 
