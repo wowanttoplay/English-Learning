@@ -286,8 +286,10 @@ This table is used to verify review coverage before generating any dialogue cont
 
 ### Phased Delivery
 
-- **Phase 1 (current):** Renumber B2 + add B1 vocabulary (200-300 words) + generate B1×20 + B2×20 passages → validate spiral mechanism
-- **Phase 2+:** Incrementally expand vocabulary and passages per level
+- **Phase 1a (current):** Renumber B2 words to 40001+ range, schema migration, code changes
+- **Phase 1b:** Supplement full A2 + B1 vocabulary (~1000 + ~1500 words) with English definitions and Chinese translations. Words are stable foundation data and should be completed before passage generation.
+- **Phase 2:** Generate passages following spiral progression, starting with B1×20 + B2×20 to validate the mechanism
+- **Phase 3+:** Incrementally expand passages per level toward full coverage
 
 ---
 
