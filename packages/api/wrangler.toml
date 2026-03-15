@@ -8,5 +8,5 @@ ALLOWED_ORIGIN = "http://localhost:5173"
 [[d1_databases]]
 binding = "DB"
 database_name = "english-learning"
-database_id = "placeholder-replace-after-d1-create"
+database_id = "cc87aa3f-a04c-4414-a1b4-8f2ef3592c5e"
 migrations_dir = "src/db/migrations"
