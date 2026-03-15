@@ -23,17 +23,21 @@
  */
 
 import { resolve, dirname } from 'node:path'
-import { existsSync, mkdirSync, writeFileSync, readFileSync } from 'node:fs'
+import { existsSync, mkdirSync, writeFileSync, readFileSync, readdirSync } from 'node:fs'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const PROJECT_ROOT = resolve(__dirname, '..')
+const DATA_DIR = resolve(PROJECT_ROOT, '..', 'api', 'scripts', 'data')
 
 function loadPassages() {
-  const jsonPath = resolve(PROJECT_ROOT, '..', 'api', 'scripts', 'data', 'passages.json')
-  const raw = readFileSync(jsonPath, 'utf-8')
-  return JSON.parse(raw) as Array<{ id: number; title: string; text: string }>
+  const passagesDir = resolve(DATA_DIR, 'passages')
+  const files = readdirSync(passagesDir).filter(f => f.endsWith('.json'))
+  return files.flatMap(f => {
+    const raw = readFileSync(resolve(passagesDir, f), 'utf-8')
+    return JSON.parse(raw) as Array<{ id: number; title: string; text: string }>
+  })
 }
 
 async function loadSplitter() {
@@ -41,9 +45,13 @@ async function loadSplitter() {
   return mod.splitSentences as (text: string, _lang?: string) => Array<{ index: number; text: string; start: number; end: number }>
 }
 
-async function loadWords() {
-  const mod = await import(resolve(PROJECT_ROOT, 'src/data/words.ts'))
-  return mod.WORD_LIST as Array<{ id: number; word: string; examples: string[] }>
+function loadWords() {
+  const wordsDir = resolve(DATA_DIR, 'words')
+  const files = readdirSync(wordsDir).filter(f => f.endsWith('.json'))
+  return files.flatMap(f => {
+    const raw = readFileSync(resolve(wordsDir, f), 'utf-8')
+    return JSON.parse(raw) as Array<{ id: number; word: string; examples: string[] }>
+  })
 }
 
 function escapeXml(text: string): string {
@@ -156,7 +164,7 @@ async function main() {
 
   // --- Words ---
   if (doWords || doExamples) {
-    const words = await loadWords()
+    const words = loadWords()
 
     if (doWords) {
       const dir = resolve(PROJECT_ROOT, 'public/audio/words')

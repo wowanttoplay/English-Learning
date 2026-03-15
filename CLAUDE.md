@@ -80,12 +80,14 @@ packages/api/                  # @english-learning/api (Cloudflare Workers + D1)
   scripts/
     migrate-content.ts         # Seed D1 with word/passage data
     data/
-      b2.json                  # B2 word data (source for migration)
-      passages-002.ts          # Passage batch 2 (12 B2-level passages)
-      passages-003.ts          # Passage batch 3 (6 B1-level passages, IDs 101-106)
-      passages-004.ts          # Passage batch 4 (9 B1-level passages, IDs 107-115)
-      passages-005.ts          # Passage batch 5 (10 B1-level passages, IDs 116-125)
-      passages.json            # Aggregated passage data
+      words/
+        b2.json                # B2 word core data (563 entries)
+      translations/
+        en/b2.json             # English definitions
+        zh-CN/b2.json          # Chinese translations
+      passages/
+        b1.json                # B1 passages (25 entries)
+        b2.json                # B2 passages (12 entries)
 
 packages/web/                  # @english-learning/web (Vue 3 + Vite)
   src/
@@ -147,7 +149,7 @@ packages/web/                  # @english-learning/web (Vue 3 + Vite)
       SettingsView.vue
   scripts/
     validate-data.ts           # Build-time validation: checks IDs, duplicates, levels, topics, fields, passage cross-refs
-    generate-tts.ts            # TTS audio + sentence timestamps generation (Google Cloud TTS with SSML marks)
+    generate-tts.ts            # TTS audio + sentence timestamps (Google Cloud TTS); loads data from packages/api/scripts/data/
 ```
 
 ### Routes
