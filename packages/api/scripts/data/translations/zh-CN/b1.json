@@ -1198,5 +1198,805 @@
   {
     "wordId": 30300,
     "translation": "稍微；轻微地"
+  },
+  {
+    "wordId": 30301,
+    "translation": "食谱；烹饪法"
+  },
+  {
+    "wordId": 30302,
+    "translation": "原料；食材"
+  },
+  {
+    "wordId": 30303,
+    "translation": "味道；风味"
+  },
+  {
+    "wordId": 30304,
+    "translation": "零食；小吃"
+  },
+  {
+    "wordId": 30305,
+    "translation": "甜点；甜食"
+  },
+  {
+    "wordId": 30306,
+    "translation": "一份；一客"
+  },
+  {
+    "wordId": 30307,
+    "translation": "卡路里；热量"
+  },
+  {
+    "wordId": 30308,
+    "translation": "香料；调味品"
+  },
+  {
+    "wordId": 30309,
+    "translation": "谷物；粮食"
+  },
+  {
+    "wordId": 30310,
+    "translation": "有机的"
+  },
+  {
+    "wordId": 30311,
+    "translation": "营养；营养学"
+  },
+  {
+    "wordId": 30312,
+    "translation": "素食者"
+  },
+  {
+    "wordId": 30313,
+    "translation": "面包店；烘焙坊"
+  },
+  {
+    "wordId": 30314,
+    "translation": "盛宴；宴会"
+  },
+  {
+    "wordId": 30315,
+    "translation": "成熟的；熟的"
+  },
+  {
+    "wordId": 30316,
+    "translation": "烤；烘烤"
+  },
+  {
+    "wordId": 30317,
+    "translation": "搅拌"
+  },
+  {
+    "wordId": 30318,
+    "translation": "切碎；砍"
+  },
+  {
+    "wordId": 30319,
+    "translation": "煮沸；沸腾"
+  },
+  {
+    "wordId": 30320,
+    "translation": "烧烤；烤"
+  },
+  {
+    "wordId": 30321,
+    "translation": "体育场；运动场"
+  },
+  {
+    "wordId": 30322,
+    "translation": "锦标赛；联赛"
+  },
+  {
+    "wordId": 30323,
+    "translation": "冠军赛；锦标赛"
+  },
+  {
+    "wordId": 30324,
+    "translation": "运动员"
+  },
+  {
+    "wordId": 30325,
+    "translation": "奖牌；奖章"
+  },
+  {
+    "wordId": 30326,
+    "translation": "队友"
+  },
+  {
+    "wordId": 30327,
+    "translation": "球场"
+  },
+  {
+    "wordId": 30328,
+    "translation": "球拍"
+  },
+  {
+    "wordId": 30329,
+    "translation": "裁判"
+  },
+  {
+    "wordId": 30330,
+    "translation": "战术；策略"
+  },
+  {
+    "wordId": 30331,
+    "translation": "联赛；联盟"
+  },
+  {
+    "wordId": 30332,
+    "translation": "冲刺；短跑"
+  },
+  {
+    "wordId": 30333,
+    "translation": "哨子；口哨"
+  },
+  {
+    "wordId": 30334,
+    "translation": "奖杯；战利品"
+  },
+  {
+    "wordId": 30335,
+    "translation": "对手；竞争者"
+  },
+  {
+    "wordId": 30336,
+    "translation": "健康；体能"
+  },
+  {
+    "wordId": 30337,
+    "translation": "马拉松"
+  },
+  {
+    "wordId": 30338,
+    "translation": "阵容；小队"
+  },
+  {
+    "wordId": 30339,
+    "translation": "加时赛；加班"
+  },
+  {
+    "wordId": 30340,
+    "translation": "软件"
+  },
+  {
+    "wordId": 30341,
+    "translation": "硬件"
+  },
+  {
+    "wordId": 30342,
+    "translation": "下载"
+  },
+  {
+    "wordId": 30343,
+    "translation": "上传"
+  },
+  {
+    "wordId": 30344,
+    "translation": "密码"
+  },
+  {
+    "wordId": 30345,
+    "translation": "键盘"
+  },
+  {
+    "wordId": 30346,
+    "translation": "智能手机"
+  },
+  {
+    "wordId": 30347,
+    "translation": "网站"
+  },
+  {
+    "wordId": 30348,
+    "translation": "数据库"
+  },
+  {
+    "wordId": 30349,
+    "translation": "网络"
+  },
+  {
+    "wordId": 30350,
+    "translation": "设备；装置"
+  },
+  {
+    "wordId": 30351,
+    "translation": "平台"
+  },
+  {
+    "wordId": 30352,
+    "translation": "数字的；数码的"
+  },
+  {
+    "wordId": 30353,
+    "translation": "浏览器"
+  },
+  {
+    "wordId": 30354,
+    "translation": "更新"
+  },
+  {
+    "wordId": 30355,
+    "translation": "病毒"
+  },
+  {
+    "wordId": 30356,
+    "translation": "代码；编码"
+  },
+  {
+    "wordId": 30357,
+    "translation": "点击"
+  },
+  {
+    "wordId": 30358,
+    "translation": "流式播放；串流"
+  },
+  {
+    "wordId": 30359,
+    "translation": "应用程序"
+  },
+  {
+    "wordId": 30360,
+    "translation": "备份"
+  },
+  {
+    "wordId": 30361,
+    "translation": "陪审团"
+  },
+  {
+    "wordId": 30362,
+    "translation": "审判；审讯"
+  },
+  {
+    "wordId": 30363,
+    "translation": "无辜的；天真的"
+  },
+  {
+    "wordId": 30364,
+    "translation": "律师"
+  },
+  {
+    "wordId": 30365,
+    "translation": "法庭；法院"
+  },
+  {
+    "wordId": 30366,
+    "translation": "犯罪；罪行"
+  },
+  {
+    "wordId": 30367,
+    "translation": "嫌疑人"
+  },
+  {
+    "wordId": 30368,
+    "translation": "逮捕；拘留"
+  },
+  {
+    "wordId": 30369,
+    "translation": "判决；刑罚"
+  },
+  {
+    "wordId": 30370,
+    "translation": "规定；条例"
+  },
+  {
+    "wordId": 30371,
+    "translation": "立法；法律"
+  },
+  {
+    "wordId": 30372,
+    "translation": "检察官"
+  },
+  {
+    "wordId": 30373,
+    "translation": "被告"
+  },
+  {
+    "wordId": 30374,
+    "translation": "宪法"
+  },
+  {
+    "wordId": 30375,
+    "translation": "正义；公正"
+  },
+  {
+    "wordId": 30376,
+    "translation": "裁决；判决"
+  },
+  {
+    "wordId": 30377,
+    "translation": "候选人"
+  },
+  {
+    "wordId": 30378,
+    "translation": "运动；竞选活动"
+  },
+  {
+    "wordId": 30379,
+    "translation": "公民；市民"
+  },
+  {
+    "wordId": 30380,
+    "translation": "投票；选举"
+  },
+  {
+    "wordId": 30381,
+    "translation": "部长；大臣"
+  },
+  {
+    "wordId": 30382,
+    "translation": "反对；反对党"
+  },
+  {
+    "wordId": 30383,
+    "translation": "政策；方针"
+  },
+  {
+    "wordId": 30384,
+    "translation": "改革"
+  },
+  {
+    "wordId": 30385,
+    "translation": "当局；权力"
+  },
+  {
+    "wordId": 30386,
+    "translation": "共和国"
+  },
+  {
+    "wordId": 30387,
+    "translation": "福利；幸福"
+  },
+  {
+    "wordId": 30388,
+    "translation": "议会；国会"
+  },
+  {
+    "wordId": 30389,
+    "translation": "参议员"
+  },
+  {
+    "wordId": 30390,
+    "translation": "条约；协定"
+  },
+  {
+    "wordId": 30391,
+    "translation": "外交官"
+  },
+  {
+    "wordId": 30392,
+    "translation": "抗议；示威"
+  },
+  {
+    "wordId": 30393,
+    "translation": "症状"
+  },
+  {
+    "wordId": 30394,
+    "translation": "治疗；疗法"
+  },
+  {
+    "wordId": 30395,
+    "translation": "手术"
+  },
+  {
+    "wordId": 30396,
+    "translation": "疫苗"
+  },
+  {
+    "wordId": 30397,
+    "translation": "治疗；疗法"
+  },
+  {
+    "wordId": 30398,
+    "translation": "感染；传染"
+  },
+  {
+    "wordId": 30399,
+    "translation": "肌肉"
+  },
+  {
+    "wordId": 30400,
+    "translation": "蛋白质"
+  },
+  {
+    "wordId": 30401,
+    "translation": "维生素"
+  },
+  {
+    "wordId": 30402,
+    "translation": "处方；药方"
+  },
+  {
+    "wordId": 30403,
+    "translation": "诊断"
+  },
+  {
+    "wordId": 30404,
+    "translation": "诊所；门诊部"
+  },
+  {
+    "wordId": 30405,
+    "translation": "研究"
+  },
+  {
+    "wordId": 30406,
+    "translation": "实验室"
+  },
+  {
+    "wordId": 30407,
+    "translation": "理论；学说"
+  },
+  {
+    "wordId": 30408,
+    "translation": "物种"
+  },
+  {
+    "wordId": 30409,
+    "translation": "细胞"
+  },
+  {
+    "wordId": 30410,
+    "translation": "重力；引力"
+  },
+  {
+    "wordId": 30411,
+    "translation": "氧气"
+  },
+  {
+    "wordId": 30412,
+    "translation": "原子"
+  },
+  {
+    "wordId": 30413,
+    "translation": "矿物；矿物质"
+  },
+  {
+    "wordId": 30414,
+    "translation": "污染"
+  },
+  {
+    "wordId": 30415,
+    "translation": "野生动物"
+  },
+  {
+    "wordId": 30416,
+    "translation": "回收利用"
+  },
+  {
+    "wordId": 30417,
+    "translation": "干旱"
+  },
+  {
+    "wordId": 30418,
+    "translation": "生态系统"
+  },
+  {
+    "wordId": 30419,
+    "translation": "栖息地"
+  },
+  {
+    "wordId": 30420,
+    "translation": "可再生的"
+  },
+  {
+    "wordId": 30421,
+    "translation": "画廊；美术馆"
+  },
+  {
+    "wordId": 30422,
+    "translation": "雕塑"
+  },
+  {
+    "wordId": 30423,
+    "translation": "展览"
+  },
+  {
+    "wordId": 30424,
+    "translation": "肖像；画像"
+  },
+  {
+    "wordId": 30425,
+    "translation": "排练；彩排"
+  },
+  {
+    "wordId": 30426,
+    "translation": "歌词"
+  },
+  {
+    "wordId": 30427,
+    "translation": "小说；虚构作品"
+  },
+  {
+    "wordId": 30428,
+    "translation": "杰作；名作"
+  },
+  {
+    "wordId": 30429,
+    "translation": "奖学金"
+  },
+  {
+    "wordId": 30430,
+    "translation": "作业；任务"
+  },
+  {
+    "wordId": 30431,
+    "translation": "家教；导师"
+  },
+  {
+    "wordId": 30432,
+    "translation": "学期"
+  },
+  {
+    "wordId": 30433,
+    "translation": "文凭；毕业证书"
+  },
+  {
+    "wordId": 30434,
+    "translation": "教学大纲"
+  },
+  {
+    "wordId": 30435,
+    "translation": "校园"
+  },
+  {
+    "wordId": 30436,
+    "translation": "房东"
+  },
+  {
+    "wordId": 30437,
+    "translation": "租户；房客"
+  },
+  {
+    "wordId": 30438,
+    "translation": "洗衣；待洗的衣物"
+  },
+  {
+    "wordId": 30439,
+    "translation": "差事；跑腿"
+  },
+  {
+    "wordId": 30440,
+    "translation": "通勤"
+  },
+  {
+    "wordId": 30441,
+    "translation": "杂货；食品"
+  },
+  {
+    "wordId": 30442,
+    "translation": "家用电器"
+  },
+  {
+    "wordId": 30443,
+    "translation": "社区；街区"
+  },
+  {
+    "wordId": 30444,
+    "translation": "家务事；杂务"
+  },
+  {
+    "wordId": 30445,
+    "translation": "薪水；工资"
+  },
+  {
+    "wordId": 30446,
+    "translation": "晋升；提升"
+  },
+  {
+    "wordId": 30447,
+    "translation": "辞职"
+  },
+  {
+    "wordId": 30448,
+    "translation": "招聘；招募"
+  },
+  {
+    "wordId": 30449,
+    "translation": "发票；账单"
+  },
+  {
+    "wordId": 30450,
+    "translation": "收入；营收"
+  },
+  {
+    "wordId": 30451,
+    "translation": "客户"
+  },
+  {
+    "wordId": 30452,
+    "translation": "初创企业"
+  },
+  {
+    "wordId": 30453,
+    "translation": "行李"
+  },
+  {
+    "wordId": 30454,
+    "translation": "航站楼；终点站"
+  },
+  {
+    "wordId": 30455,
+    "translation": "行程；旅行计划"
+  },
+  {
+    "wordId": 30456,
+    "translation": "纪念品"
+  },
+  {
+    "wordId": 30457,
+    "translation": "海关"
+  },
+  {
+    "wordId": 30458,
+    "translation": "出发；离开"
+  },
+  {
+    "wordId": 30459,
+    "translation": "兄弟姐妹"
+  },
+  {
+    "wordId": 30460,
+    "translation": "团聚；重聚"
+  },
+  {
+    "wordId": 30461,
+    "translation": "熟人"
+  },
+  {
+    "wordId": 30462,
+    "translation": "纽带；关系"
+  },
+  {
+    "wordId": 30463,
+    "translation": "感激；感恩"
+  },
+  {
+    "wordId": 30464,
+    "translation": "热情；热忱"
+  },
+  {
+    "wordId": 30465,
+    "translation": "方言"
+  },
+  {
+    "wordId": 30466,
+    "translation": "谣言；传闻"
+  },
+  {
+    "wordId": 30467,
+    "translation": "口号；标语"
+  },
+  {
+    "wordId": 30468,
+    "translation": "慈善机构；慈善"
+  },
+  {
+    "wordId": 30469,
+    "translation": "志愿者"
+  },
+  {
+    "wordId": 30470,
+    "translation": "贫困；贫穷"
+  },
+  {
+    "wordId": 30471,
+    "translation": "扫描；浏览"
+  },
+  {
+    "wordId": 30472,
+    "translation": "收获；收割"
+  },
+  {
+    "wordId": 30473,
+    "translation": "出口；输出"
+  },
+  {
+    "wordId": 30474,
+    "translation": "安装"
+  },
+  {
+    "wordId": 30475,
+    "translation": "注册；登记"
+  },
+  {
+    "wordId": 30476,
+    "translation": "监控；监测"
+  },
+  {
+    "wordId": 30477,
+    "translation": "恢复；修复"
+  },
+  {
+    "wordId": 30478,
+    "translation": "暂停；中止"
+  },
+  {
+    "wordId": 30479,
+    "translation": "转换；改变"
+  },
+  {
+    "wordId": 30480,
+    "translation": "捐赠；捐献"
+  },
+  {
+    "wordId": 30481,
+    "translation": "计算"
+  },
+  {
+    "wordId": 30482,
+    "translation": "作曲；创作"
+  },
+  {
+    "wordId": 30483,
+    "translation": "救援；营救"
+  },
+  {
+    "wordId": 30484,
+    "translation": "击败；战胜"
+  },
+  {
+    "wordId": 30485,
+    "translation": "保证；担保"
+  },
+  {
+    "wordId": 30486,
+    "translation": "生的；未加工的"
+  },
+  {
+    "wordId": 30487,
+    "translation": "便携的；手提的"
+  },
+  {
+    "wordId": 30488,
+    "translation": "城市的"
+  },
+  {
+    "wordId": 30489,
+    "translation": "农村的；乡村的"
+  },
+  {
+    "wordId": 30490,
+    "translation": "业余的"
+  },
+  {
+    "wordId": 30491,
+    "translation": "有毒的"
+  },
+  {
+    "wordId": 30492,
+    "translation": "带宽"
+  },
+  {
+    "wordId": 30493,
+    "translation": "补贴；津贴"
+  },
+  {
+    "wordId": 30494,
+    "translation": "标本；样本"
+  },
+  {
+    "wordId": 30495,
+    "translation": "进口；输入"
+  },
+  {
+    "wordId": 30496,
+    "translation": "翻译"
+  },
+  {
+    "wordId": 30497,
+    "translation": "预测；预言"
+  },
+  {
+    "wordId": 30498,
+    "translation": "扩大；扩展"
+  },
+  {
+    "wordId": 30499,
+    "translation": "激励；激发"
+  },
+  {
+    "wordId": 30500,
+    "translation": "分类；归类"
   }
 ]

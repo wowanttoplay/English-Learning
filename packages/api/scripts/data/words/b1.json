@@ -4389,5 +4389,2897 @@
       "daily-life",
       "emotions"
     ]
+  },
+  {
+    "id": 30301,
+    "word": "recipe",
+    "pos": "noun",
+    "phonetic": "/ˈresəpi/",
+    "examples": [
+      "She found a great recipe for chocolate cake online.",
+      "He followed the recipe step by step to cook dinner."
+    ],
+    "level": "B1",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 30302,
+    "word": "ingredient",
+    "pos": "noun",
+    "phonetic": "/ɪnˈɡriːdiənt/",
+    "examples": [
+      "Fresh ingredients make a big difference in cooking.",
+      "The main ingredient in this soup is chicken."
+    ],
+    "level": "B1",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 30303,
+    "word": "flavour",
+    "pos": "noun",
+    "phonetic": "/ˈfleɪvə/",
+    "examples": [
+      "This ice cream has a strong strawberry flavour.",
+      "The soup had a rich and delicious flavour."
+    ],
+    "level": "B1",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 30304,
+    "word": "snack",
+    "pos": "noun",
+    "phonetic": "/snæk/",
+    "examples": [
+      "I usually have a small snack between lunch and dinner.",
+      "She brought some healthy snacks to share at work."
+    ],
+    "level": "B1",
+    "topics": [
+      "food",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30305,
+    "word": "dessert",
+    "pos": "noun",
+    "phonetic": "/dɪˈzɜːt/",
+    "examples": [
+      "We ordered a chocolate dessert after our main meal.",
+      "The restaurant is famous for its wonderful desserts."
+    ],
+    "level": "B1",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 30306,
+    "word": "portion",
+    "pos": "noun",
+    "phonetic": "/ˈpɔːʃn/",
+    "examples": [
+      "The restaurant serves very generous portions of food.",
+      "She ate only a small portion of the cake."
+    ],
+    "level": "B1",
+    "topics": [
+      "food",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30307,
+    "word": "calorie",
+    "pos": "noun",
+    "phonetic": "/ˈkæləri/",
+    "examples": [
+      "This salad is low in calories but high in vitamins.",
+      "She counts her calories to stay at a healthy weight."
+    ],
+    "level": "B1",
+    "topics": [
+      "food",
+      "health"
+    ]
+  },
+  {
+    "id": 30308,
+    "word": "spice",
+    "pos": "noun",
+    "phonetic": "/spaɪs/",
+    "examples": [
+      "Indian food uses many different spices in its cooking.",
+      "He added some spice to make the dish taste better."
+    ],
+    "level": "B1",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 30309,
+    "word": "grain",
+    "pos": "noun",
+    "phonetic": "/ɡreɪn/",
+    "examples": [
+      "Rice is one of the most important grains in Asia.",
+      "Farmers grow different types of grain in these fields."
+    ],
+    "level": "B1",
+    "topics": [
+      "food",
+      "environment"
+    ]
+  },
+  {
+    "id": 30310,
+    "word": "organic",
+    "pos": "adjective",
+    "phonetic": "/ɔːˈɡænɪk/",
+    "examples": [
+      "She prefers to buy organic fruit and vegetables.",
+      "Organic farming does not use artificial chemicals."
+    ],
+    "level": "B1",
+    "topics": [
+      "food",
+      "environment"
+    ]
+  },
+  {
+    "id": 30311,
+    "word": "nutrition",
+    "pos": "noun",
+    "phonetic": "/njuːˈtrɪʃn/",
+    "examples": [
+      "Good nutrition is important for a healthy life.",
+      "The school teaches children about nutrition and exercise."
+    ],
+    "level": "B1",
+    "topics": [
+      "food",
+      "health"
+    ]
+  },
+  {
+    "id": 30312,
+    "word": "vegetarian",
+    "pos": "noun",
+    "phonetic": "/ˌvedʒəˈteəriən/",
+    "examples": [
+      "She became a vegetarian because she loves animals.",
+      "The restaurant has a special menu for vegetarians."
+    ],
+    "level": "B1",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 30313,
+    "word": "bakery",
+    "pos": "noun",
+    "phonetic": "/ˈbeɪkəri/",
+    "examples": [
+      "I bought some fresh bread from the bakery this morning.",
+      "The bakery on the corner makes the best cakes."
+    ],
+    "level": "B1",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 30314,
+    "word": "feast",
+    "pos": "noun",
+    "phonetic": "/fiːst/",
+    "examples": [
+      "The family prepared a feast for the holiday celebration.",
+      "The wedding feast included food from five different countries."
+    ],
+    "level": "B1",
+    "topics": [
+      "food",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30315,
+    "word": "ripe",
+    "pos": "adjective",
+    "phonetic": "/raɪp/",
+    "examples": [
+      "Wait until the bananas are ripe before you eat them.",
+      "She picked the ripe tomatoes from the garden."
+    ],
+    "level": "B1",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 30316,
+    "word": "roast",
+    "pos": "verb",
+    "phonetic": "/rəʊst/",
+    "examples": [
+      "We roast a chicken every Sunday for family dinner.",
+      "He roasted the vegetables with oil and herbs."
+    ],
+    "level": "B1",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 30317,
+    "word": "stir",
+    "pos": "verb",
+    "phonetic": "/stɜː/",
+    "examples": [
+      "Stir the soup slowly so it does not burn.",
+      "She stirred sugar into her coffee every morning."
+    ],
+    "level": "B1",
+    "topics": [
+      "food",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30318,
+    "word": "chop",
+    "pos": "verb",
+    "phonetic": "/tʃɒp/",
+    "examples": [
+      "He chopped the onions into small pieces for the salad.",
+      "She chopped some wood for the fire outside."
+    ],
+    "level": "B1",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 30319,
+    "word": "boil",
+    "pos": "verb",
+    "phonetic": "/bɔɪl/",
+    "examples": [
+      "Boil the water before you add the pasta.",
+      "She boiled some eggs for breakfast this morning."
+    ],
+    "level": "B1",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 30320,
+    "word": "grill",
+    "pos": "verb",
+    "phonetic": "/ɡrɪl/",
+    "examples": [
+      "We grilled some fish and vegetables for dinner tonight.",
+      "He likes to grill burgers in the garden in summer."
+    ],
+    "level": "B1",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 30321,
+    "word": "stadium",
+    "pos": "noun",
+    "phonetic": "/ˈsteɪdiəm/",
+    "examples": [
+      "The new stadium can hold up to fifty thousand people.",
+      "We watched the football match at the city stadium."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 30322,
+    "word": "tournament",
+    "pos": "noun",
+    "phonetic": "/ˈtʊənəmənt/",
+    "examples": [
+      "She won the tennis tournament for the third year.",
+      "The school is organizing a basketball tournament next month."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 30323,
+    "word": "championship",
+    "pos": "noun",
+    "phonetic": "/ˈtʃæmpiənʃɪp/",
+    "examples": [
+      "The team won the national championship last season.",
+      "She dreams of winning the world championship one day."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 30324,
+    "word": "athlete",
+    "pos": "noun",
+    "phonetic": "/ˈæθliːt/",
+    "examples": [
+      "The athlete trained every day for the big competition.",
+      "She is a professional athlete who competes in running."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports",
+      "health"
+    ]
+  },
+  {
+    "id": 30325,
+    "word": "medal",
+    "pos": "noun",
+    "phonetic": "/ˈmedl/",
+    "examples": [
+      "She won a gold medal at the Olympic Games.",
+      "He was proud to receive a medal for his performance."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 30326,
+    "word": "teammate",
+    "pos": "noun",
+    "phonetic": "/ˈtiːmmeɪt/",
+    "examples": [
+      "His teammates helped him improve his football skills.",
+      "She shared the good news with all her teammates."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports",
+      "relationships"
+    ]
+  },
+  {
+    "id": 30327,
+    "word": "pitch",
+    "pos": "noun",
+    "phonetic": "/pɪtʃ/",
+    "examples": [
+      "The players ran onto the pitch before the game started.",
+      "The football pitch was wet from the rain last night."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 30328,
+    "word": "racket",
+    "pos": "noun",
+    "phonetic": "/ˈrækɪt/",
+    "examples": [
+      "She bought a new tennis racket for the summer season.",
+      "He forgot his racket so he could not play today."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 30329,
+    "word": "referee",
+    "pos": "noun",
+    "phonetic": "/ˌrefəˈriː/",
+    "examples": [
+      "The referee stopped the game after the foul.",
+      "A good referee must be fair to both teams."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 30330,
+    "word": "tactics",
+    "pos": "noun",
+    "phonetic": "/ˈtæktɪks/",
+    "examples": [
+      "The coach changed the team tactics at half time.",
+      "Good tactics are important for winning any game."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports",
+      "work"
+    ]
+  },
+  {
+    "id": 30331,
+    "word": "league",
+    "pos": "noun",
+    "phonetic": "/liːɡ/",
+    "examples": [
+      "Their team finished top of the league this season.",
+      "He plays football in the local youth league."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 30332,
+    "word": "sprint",
+    "pos": "verb",
+    "phonetic": "/sprɪnt/",
+    "examples": [
+      "She sprinted to the finish line and won the race.",
+      "He sprinted across the field to catch the ball."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 30333,
+    "word": "whistle",
+    "pos": "noun",
+    "phonetic": "/ˈwɪsl/",
+    "examples": [
+      "The referee blew the whistle to start the game.",
+      "He heard a loud whistle from across the field."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 30334,
+    "word": "trophy",
+    "pos": "noun",
+    "phonetic": "/ˈtrəʊfi/",
+    "examples": [
+      "The captain lifted the trophy after winning the final.",
+      "She keeps all her trophies on a shelf at home."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 30335,
+    "word": "opponent",
+    "pos": "noun",
+    "phonetic": "/əˈpəʊnənt/",
+    "examples": [
+      "She beat her opponent in straight sets in tennis.",
+      "His opponent was much taller and stronger than him."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports",
+      "communication"
+    ]
+  },
+  {
+    "id": 30336,
+    "word": "fitness",
+    "pos": "noun",
+    "phonetic": "/ˈfɪtnəs/",
+    "examples": [
+      "He goes to the gym every day to improve his fitness.",
+      "Physical fitness is important for both body and mind."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports",
+      "health"
+    ]
+  },
+  {
+    "id": 30337,
+    "word": "marathon",
+    "pos": "noun",
+    "phonetic": "/ˈmærəθən/",
+    "examples": [
+      "She ran her first marathon when she was twenty-five.",
+      "The city marathon attracts thousands of runners every year."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports",
+      "health"
+    ]
+  },
+  {
+    "id": 30338,
+    "word": "squad",
+    "pos": "noun",
+    "phonetic": "/skwɒd/",
+    "examples": [
+      "The coach selected a squad of twenty players for tomorrow.",
+      "She was chosen for the national squad last year."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 30339,
+    "word": "overtime",
+    "pos": "noun",
+    "phonetic": "/ˈəʊvətaɪm/",
+    "examples": [
+      "The game went into overtime after a draw.",
+      "She worked overtime to finish the project on time."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports",
+      "work"
+    ]
+  },
+  {
+    "id": 30340,
+    "word": "software",
+    "pos": "noun",
+    "phonetic": "/ˈsɒftweə/",
+    "examples": [
+      "You need to install the latest software on your computer.",
+      "The company develops software for small businesses."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30341,
+    "word": "hardware",
+    "pos": "noun",
+    "phonetic": "/ˈhɑːdweə/",
+    "examples": [
+      "The hardware in this computer is already five years old.",
+      "They sell computer hardware such as keyboards and screens."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30342,
+    "word": "download",
+    "pos": "verb",
+    "phonetic": "/ˌdaʊnˈləʊd/",
+    "examples": [
+      "You can download the app for free from the store.",
+      "She downloaded all her photos onto her new laptop."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30343,
+    "word": "upload",
+    "pos": "verb",
+    "phonetic": "/ˌʌpˈləʊd/",
+    "examples": [
+      "He uploaded his holiday photos to share with friends.",
+      "Please upload the document before the deadline tomorrow."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30344,
+    "word": "password",
+    "pos": "noun",
+    "phonetic": "/ˈpɑːswɜːd/",
+    "examples": [
+      "Make sure you choose a strong password for your account.",
+      "She forgot her password and had to reset it."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30345,
+    "word": "keyboard",
+    "pos": "noun",
+    "phonetic": "/ˈkiːbɔːd/",
+    "examples": [
+      "He types very fast on his new wireless keyboard.",
+      "The keyboard on my laptop stopped working last week."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30346,
+    "word": "smartphone",
+    "pos": "noun",
+    "phonetic": "/ˈsmɑːtfəʊn/",
+    "examples": [
+      "Most people carry a smartphone with them everywhere.",
+      "She uses her smartphone to check the news every morning."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30347,
+    "word": "website",
+    "pos": "noun",
+    "phonetic": "/ˈwebsaɪt/",
+    "examples": [
+      "The company launched a new website to sell its products.",
+      "You can find more information on their official website."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30348,
+    "word": "database",
+    "pos": "noun",
+    "phonetic": "/ˈdeɪtəbeɪs/",
+    "examples": [
+      "All customer information is stored in a secure database.",
+      "The database contains records of every order since last year."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology",
+      "work"
+    ]
+  },
+  {
+    "id": 30349,
+    "word": "network",
+    "pos": "noun",
+    "phonetic": "/ˈnetwɜːk/",
+    "examples": [
+      "The school has a fast wireless network for all students.",
+      "She built a strong professional network over many years."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology",
+      "communication"
+    ]
+  },
+  {
+    "id": 30350,
+    "word": "device",
+    "pos": "noun",
+    "phonetic": "/dɪˈvaɪs/",
+    "examples": [
+      "Smartphones are the most popular electronic devices today.",
+      "This device can measure your heart rate very accurately."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30351,
+    "word": "platform",
+    "pos": "noun",
+    "phonetic": "/ˈplætfɔːm/",
+    "examples": [
+      "The company uses an online platform to sell its products.",
+      "Social media platforms have billions of users worldwide."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology",
+      "business"
+    ]
+  },
+  {
+    "id": 30352,
+    "word": "digital",
+    "pos": "adjective",
+    "phonetic": "/ˈdɪdʒɪtl/",
+    "examples": [
+      "Digital technology has changed the way we live and work.",
+      "She prefers reading digital books on her tablet."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30353,
+    "word": "browser",
+    "pos": "noun",
+    "phonetic": "/ˈbraʊzə/",
+    "examples": [
+      "Open your web browser and type the address into the bar.",
+      "Which browser do you use to search the internet?"
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30354,
+    "word": "update",
+    "pos": "noun",
+    "phonetic": "/ˈʌpdeɪt/",
+    "examples": [
+      "The phone update fixed several problems with the camera.",
+      "She read the latest update about the project online."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30355,
+    "word": "virus",
+    "pos": "noun",
+    "phonetic": "/ˈvaɪrəs/",
+    "examples": [
+      "A computer virus destroyed all the files on his laptop.",
+      "You should install protection against viruses on your device."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology",
+      "health"
+    ]
+  },
+  {
+    "id": 30356,
+    "word": "code",
+    "pos": "noun",
+    "phonetic": "/kəʊd/",
+    "examples": [
+      "She is learning to write code in her computer class.",
+      "The programmer found a mistake in the code and fixed it."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology",
+      "education"
+    ]
+  },
+  {
+    "id": 30357,
+    "word": "click",
+    "pos": "verb",
+    "phonetic": "/klɪk/",
+    "examples": [
+      "Click on the link to open the page.",
+      "She clicked the button to send the email."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30358,
+    "word": "stream",
+    "pos": "verb",
+    "phonetic": "/striːm/",
+    "examples": [
+      "We streamed a new movie on our television last night.",
+      "Many people stream music instead of buying albums now."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology",
+      "arts"
+    ]
+  },
+  {
+    "id": 30359,
+    "word": "app",
+    "pos": "noun",
+    "phonetic": "/æp/",
+    "examples": [
+      "I downloaded a new app to help me learn languages.",
+      "The weather app says it will rain all day tomorrow."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30360,
+    "word": "backup",
+    "pos": "noun",
+    "phonetic": "/ˈbækʌp/",
+    "examples": [
+      "Always keep a backup of your important files.",
+      "He lost all his work because he had no backup."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30361,
+    "word": "jury",
+    "pos": "noun",
+    "phonetic": "/ˈdʒʊəri/",
+    "examples": [
+      "The jury found the man guilty of the crime.",
+      "She was selected to be a member of the jury."
+    ],
+    "level": "B1",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 30362,
+    "word": "trial",
+    "pos": "noun",
+    "phonetic": "/ˈtraɪəl/",
+    "examples": [
+      "The trial lasted for three weeks before a decision.",
+      "He went on trial for stealing money from the company."
+    ],
+    "level": "B1",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 30363,
+    "word": "innocent",
+    "pos": "adjective",
+    "phonetic": "/ˈɪnəsnt/",
+    "examples": [
+      "The lawyer proved that his client was completely innocent.",
+      "She looked at him with an innocent smile."
+    ],
+    "level": "B1",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 30364,
+    "word": "lawyer",
+    "pos": "noun",
+    "phonetic": "/ˈlɔːjə/",
+    "examples": [
+      "She hired a lawyer to help her with the case.",
+      "He studied for six years to become a lawyer."
+    ],
+    "level": "B1",
+    "topics": [
+      "law",
+      "work"
+    ]
+  },
+  {
+    "id": 30365,
+    "word": "court",
+    "pos": "noun",
+    "phonetic": "/kɔːt/",
+    "examples": [
+      "The case will be heard in court next Monday morning.",
+      "She appeared in court to give evidence about the accident."
+    ],
+    "level": "B1",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 30366,
+    "word": "crime",
+    "pos": "noun",
+    "phonetic": "/kraɪm/",
+    "examples": [
+      "The police are trying to reduce crime in the city.",
+      "He was arrested for committing a very serious crime."
+    ],
+    "level": "B1",
+    "topics": [
+      "law",
+      "society"
+    ]
+  },
+  {
+    "id": 30367,
+    "word": "suspect",
+    "pos": "noun",
+    "phonetic": "/ˈsʌspekt/",
+    "examples": [
+      "The police questioned the suspect for several hours.",
+      "There were three suspects in the robbery case."
+    ],
+    "level": "B1",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 30368,
+    "word": "arrest",
+    "pos": "verb",
+    "phonetic": "/əˈrest/",
+    "examples": [
+      "The police arrested two men after the bank robbery.",
+      "She was arrested for driving too fast on the motorway."
+    ],
+    "level": "B1",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 30369,
+    "word": "sentence",
+    "pos": "noun",
+    "phonetic": "/ˈsentəns/",
+    "examples": [
+      "The judge gave him a two-year prison sentence.",
+      "She received a light sentence because it was her first crime."
+    ],
+    "level": "B1",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 30370,
+    "word": "regulation",
+    "pos": "noun",
+    "phonetic": "/ˌreɡjuˈleɪʃn/",
+    "examples": [
+      "New regulations were introduced to protect the environment.",
+      "The company must follow strict safety regulations."
+    ],
+    "level": "B1",
+    "topics": [
+      "law",
+      "business"
+    ]
+  },
+  {
+    "id": 30371,
+    "word": "legislation",
+    "pos": "noun",
+    "phonetic": "/ˌledʒɪsˈleɪʃn/",
+    "examples": [
+      "The government introduced new legislation to fight pollution.",
+      "This legislation will protect the rights of workers."
+    ],
+    "level": "B1",
+    "topics": [
+      "law",
+      "politics"
+    ]
+  },
+  {
+    "id": 30372,
+    "word": "prosecutor",
+    "pos": "noun",
+    "phonetic": "/ˈprɒsɪkjuːtə/",
+    "examples": [
+      "The prosecutor presented strong evidence against the accused.",
+      "She works as a prosecutor in the city court."
+    ],
+    "level": "B1",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 30373,
+    "word": "defendant",
+    "pos": "noun",
+    "phonetic": "/dɪˈfendənt/",
+    "examples": [
+      "The defendant denied all the charges against him.",
+      "The lawyer asked the defendant to explain what happened."
+    ],
+    "level": "B1",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 30374,
+    "word": "constitution",
+    "pos": "noun",
+    "phonetic": "/ˌkɒnstɪˈtjuːʃn/",
+    "examples": [
+      "The constitution protects the basic rights of every citizen.",
+      "The country wrote a new constitution after the revolution."
+    ],
+    "level": "B1",
+    "topics": [
+      "law",
+      "politics"
+    ]
+  },
+  {
+    "id": 30375,
+    "word": "justice",
+    "pos": "noun",
+    "phonetic": "/ˈdʒʌstɪs/",
+    "examples": [
+      "Everyone deserves equal justice under the law.",
+      "The family fought for justice after the terrible accident."
+    ],
+    "level": "B1",
+    "topics": [
+      "law",
+      "society"
+    ]
+  },
+  {
+    "id": 30376,
+    "word": "verdict",
+    "pos": "noun",
+    "phonetic": "/ˈvɜːdɪkt/",
+    "examples": [
+      "The jury took three days to reach a final verdict.",
+      "The verdict was not guilty and the man was set free."
+    ],
+    "level": "B1",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 30377,
+    "word": "candidate",
+    "pos": "noun",
+    "phonetic": "/ˈkændɪdət/",
+    "examples": [
+      "There are five candidates running for president this year.",
+      "She is the best candidate for the job."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics"
+    ]
+  },
+  {
+    "id": 30378,
+    "word": "campaign",
+    "pos": "noun",
+    "phonetic": "/kæmˈpeɪn/",
+    "examples": [
+      "The election campaign lasted for three months.",
+      "They started a campaign to save the old library."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics",
+      "society"
+    ]
+  },
+  {
+    "id": 30379,
+    "word": "citizen",
+    "pos": "noun",
+    "phonetic": "/ˈsɪtɪzn/",
+    "examples": [
+      "Every citizen has the right to vote in elections.",
+      "She became a citizen of this country five years ago."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics",
+      "society"
+    ]
+  },
+  {
+    "id": 30380,
+    "word": "vote",
+    "pos": "verb",
+    "phonetic": "/vəʊt/",
+    "examples": [
+      "She voted for the first time when she turned eighteen.",
+      "The people will vote on the new law next week."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics"
+    ]
+  },
+  {
+    "id": 30381,
+    "word": "minister",
+    "pos": "noun",
+    "phonetic": "/ˈmɪnɪstə/",
+    "examples": [
+      "The prime minister gave a speech about the new plans.",
+      "She was appointed as the minister of education last month."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics"
+    ]
+  },
+  {
+    "id": 30382,
+    "word": "opposition",
+    "pos": "noun",
+    "phonetic": "/ˌɒpəˈzɪʃn/",
+    "examples": [
+      "The opposition party disagreed with the new tax plans.",
+      "There was strong opposition to building the new road."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics"
+    ]
+  },
+  {
+    "id": 30383,
+    "word": "policy",
+    "pos": "noun",
+    "phonetic": "/ˈpɒləsi/",
+    "examples": [
+      "The government announced a new policy on education.",
+      "The company changed its policy on working from home."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics",
+      "business"
+    ]
+  },
+  {
+    "id": 30384,
+    "word": "reform",
+    "pos": "noun",
+    "phonetic": "/rɪˈfɔːm/",
+    "examples": [
+      "The president promised important reforms to the health system.",
+      "Education reform is needed to improve schools in the country."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics",
+      "society"
+    ]
+  },
+  {
+    "id": 30385,
+    "word": "authority",
+    "pos": "noun",
+    "phonetic": "/ɔːˈθɒrəti/",
+    "examples": [
+      "The local authority is responsible for road repairs.",
+      "He spoke with authority about the history of the building."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics",
+      "society"
+    ]
+  },
+  {
+    "id": 30386,
+    "word": "republic",
+    "pos": "noun",
+    "phonetic": "/rɪˈpʌblɪk/",
+    "examples": [
+      "France became a republic after the revolution in 1789.",
+      "The country changed from a kingdom to a republic."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics"
+    ]
+  },
+  {
+    "id": 30387,
+    "word": "welfare",
+    "pos": "noun",
+    "phonetic": "/ˈwelfeə/",
+    "examples": [
+      "The government must protect the welfare of all citizens.",
+      "She works for a charity that supports child welfare."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics",
+      "society"
+    ]
+  },
+  {
+    "id": 30388,
+    "word": "parliament",
+    "pos": "noun",
+    "phonetic": "/ˈpɑːləmənt/",
+    "examples": [
+      "The new law was passed by parliament last week.",
+      "She was elected to parliament for the first time."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics"
+    ]
+  },
+  {
+    "id": 30389,
+    "word": "senator",
+    "pos": "noun",
+    "phonetic": "/ˈsenətə/",
+    "examples": [
+      "The senator made a speech about climate change today.",
+      "She became a senator after winning the state election."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics"
+    ]
+  },
+  {
+    "id": 30390,
+    "word": "treaty",
+    "pos": "noun",
+    "phonetic": "/ˈtriːti/",
+    "examples": [
+      "The two countries signed a peace treaty after the war.",
+      "The treaty was designed to reduce pollution worldwide."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics",
+      "law"
+    ]
+  },
+  {
+    "id": 30391,
+    "word": "diplomat",
+    "pos": "noun",
+    "phonetic": "/ˈdɪpləmæt/",
+    "examples": [
+      "The diplomat helped to arrange the peace talks.",
+      "She worked as a diplomat in three different countries."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics"
+    ]
+  },
+  {
+    "id": 30392,
+    "word": "protest",
+    "pos": "noun",
+    "phonetic": "/ˈprəʊtest/",
+    "examples": [
+      "Thousands of people joined the protest in the city centre.",
+      "The students organized a protest against the new rules."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics",
+      "society"
+    ]
+  },
+  {
+    "id": 30393,
+    "word": "symptom",
+    "pos": "noun",
+    "phonetic": "/ˈsɪmptəm/",
+    "examples": [
+      "A sore throat is a common symptom of a cold.",
+      "She noticed the first symptoms of the illness last week."
+    ],
+    "level": "B1",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 30394,
+    "word": "treatment",
+    "pos": "noun",
+    "phonetic": "/ˈtriːtmənt/",
+    "examples": [
+      "The doctor recommended a new treatment for her condition.",
+      "Early treatment can help patients recover much faster."
+    ],
+    "level": "B1",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 30395,
+    "word": "surgery",
+    "pos": "noun",
+    "phonetic": "/ˈsɜːdʒəri/",
+    "examples": [
+      "He had surgery on his knee after the sports injury.",
+      "The surgery took four hours but it was very successful."
+    ],
+    "level": "B1",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 30396,
+    "word": "vaccine",
+    "pos": "noun",
+    "phonetic": "/ˈvæksiːn/",
+    "examples": [
+      "Scientists developed a vaccine to prevent the disease.",
+      "Children receive several vaccines before they start school."
+    ],
+    "level": "B1",
+    "topics": [
+      "health",
+      "science"
+    ]
+  },
+  {
+    "id": 30397,
+    "word": "therapy",
+    "pos": "noun",
+    "phonetic": "/ˈθerəpi/",
+    "examples": [
+      "She started therapy to help with her back pain.",
+      "Music therapy can help people feel calmer and happier."
+    ],
+    "level": "B1",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 30398,
+    "word": "infection",
+    "pos": "noun",
+    "phonetic": "/ɪnˈfekʃn/",
+    "examples": [
+      "The doctor gave her medicine to fight the infection.",
+      "Washing your hands regularly helps prevent infections."
+    ],
+    "level": "B1",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 30399,
+    "word": "muscle",
+    "pos": "noun",
+    "phonetic": "/ˈmʌsl/",
+    "examples": [
+      "He pulled a muscle in his leg during the football game.",
+      "Regular exercise helps build strong muscles."
+    ],
+    "level": "B1",
+    "topics": [
+      "health",
+      "sports"
+    ]
+  },
+  {
+    "id": 30400,
+    "word": "protein",
+    "pos": "noun",
+    "phonetic": "/ˈprəʊtiːn/",
+    "examples": [
+      "Eggs and fish are excellent sources of protein.",
+      "You need enough protein to build and repair your muscles."
+    ],
+    "level": "B1",
+    "topics": [
+      "health",
+      "food"
+    ]
+  },
+  {
+    "id": 30401,
+    "word": "vitamin",
+    "pos": "noun",
+    "phonetic": "/ˈvɪtəmɪn/",
+    "examples": [
+      "Oranges are a great source of vitamin C.",
+      "She takes a vitamin every morning with her breakfast."
+    ],
+    "level": "B1",
+    "topics": [
+      "health",
+      "food"
+    ]
+  },
+  {
+    "id": 30402,
+    "word": "prescription",
+    "pos": "noun",
+    "phonetic": "/prɪˈskrɪpʃn/",
+    "examples": [
+      "The doctor wrote a prescription for some strong medicine.",
+      "You need a prescription to buy this medicine."
+    ],
+    "level": "B1",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 30403,
+    "word": "diagnosis",
+    "pos": "noun",
+    "phonetic": "/ˌdaɪəɡˈnəʊsɪs/",
+    "examples": [
+      "The doctor made a diagnosis after running several tests.",
+      "Early diagnosis is important for treating the disease."
+    ],
+    "level": "B1",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 30404,
+    "word": "clinic",
+    "pos": "noun",
+    "phonetic": "/ˈklɪnɪk/",
+    "examples": [
+      "She went to the clinic for a regular health check.",
+      "The new clinic opened on the main street last month."
+    ],
+    "level": "B1",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 30405,
+    "word": "research",
+    "pos": "noun",
+    "phonetic": "/rɪˈsɜːtʃ/",
+    "examples": [
+      "The research showed that sleep is important for learning.",
+      "She is doing research on climate change at the university."
+    ],
+    "level": "B1",
+    "topics": [
+      "science",
+      "education"
+    ]
+  },
+  {
+    "id": 30406,
+    "word": "laboratory",
+    "pos": "noun",
+    "phonetic": "/ləˈbɒrətri/",
+    "examples": [
+      "The students did experiments in the science laboratory.",
+      "The laboratory has modern equipment for testing samples."
+    ],
+    "level": "B1",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 30407,
+    "word": "theory",
+    "pos": "noun",
+    "phonetic": "/ˈθɪəri/",
+    "examples": [
+      "His theory about the universe was proved correct years later.",
+      "She has an interesting theory about why birds sing."
+    ],
+    "level": "B1",
+    "topics": [
+      "science",
+      "education"
+    ]
+  },
+  {
+    "id": 30408,
+    "word": "species",
+    "pos": "noun",
+    "phonetic": "/ˈspiːʃiːz/",
+    "examples": [
+      "Many species of animals are in danger of disappearing.",
+      "Scientists discovered a new species of fish last year."
+    ],
+    "level": "B1",
+    "topics": [
+      "science",
+      "environment"
+    ]
+  },
+  {
+    "id": 30409,
+    "word": "cell",
+    "pos": "noun",
+    "phonetic": "/sel/",
+    "examples": [
+      "The human body is made up of trillions of tiny cells.",
+      "Scientists studied the cancer cells under a microscope."
+    ],
+    "level": "B1",
+    "topics": [
+      "science",
+      "health"
+    ]
+  },
+  {
+    "id": 30410,
+    "word": "gravity",
+    "pos": "noun",
+    "phonetic": "/ˈɡrævəti/",
+    "examples": [
+      "Gravity is the force that keeps us on the ground.",
+      "The moon has less gravity than the earth does."
+    ],
+    "level": "B1",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 30411,
+    "word": "oxygen",
+    "pos": "noun",
+    "phonetic": "/ˈɒksɪdʒən/",
+    "examples": [
+      "Trees produce the oxygen that we need to breathe.",
+      "Fish take oxygen from the water through their gills."
+    ],
+    "level": "B1",
+    "topics": [
+      "science",
+      "environment"
+    ]
+  },
+  {
+    "id": 30412,
+    "word": "atom",
+    "pos": "noun",
+    "phonetic": "/ˈætəm/",
+    "examples": [
+      "Everything in the world is made up of tiny atoms.",
+      "An atom is too small to see with your eyes."
+    ],
+    "level": "B1",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 30413,
+    "word": "mineral",
+    "pos": "noun",
+    "phonetic": "/ˈmɪnərəl/",
+    "examples": [
+      "Iron is an important mineral that our bodies need.",
+      "The area is rich in valuable minerals like gold."
+    ],
+    "level": "B1",
+    "topics": [
+      "science",
+      "health"
+    ]
+  },
+  {
+    "id": 30414,
+    "word": "pollution",
+    "pos": "noun",
+    "phonetic": "/pəˈluːʃn/",
+    "examples": [
+      "Air pollution is a serious problem in many large cities.",
+      "The factory caused water pollution in the nearby river."
+    ],
+    "level": "B1",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 30415,
+    "word": "wildlife",
+    "pos": "noun",
+    "phonetic": "/ˈwaɪldlaɪf/",
+    "examples": [
+      "The national park protects the local wildlife.",
+      "Pollution is a major threat to wildlife around the world."
+    ],
+    "level": "B1",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 30416,
+    "word": "recycle",
+    "pos": "verb",
+    "phonetic": "/ˌriːˈsaɪkl/",
+    "examples": [
+      "We recycle all our paper, glass, and plastic at home.",
+      "The city encourages people to recycle as much as possible."
+    ],
+    "level": "B1",
+    "topics": [
+      "environment",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30417,
+    "word": "drought",
+    "pos": "noun",
+    "phonetic": "/draʊt/",
+    "examples": [
+      "The long drought destroyed most of the crops this year.",
+      "Many animals died because of the terrible drought."
+    ],
+    "level": "B1",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 30418,
+    "word": "ecosystem",
+    "pos": "noun",
+    "phonetic": "/ˈiːkəʊsɪstəm/",
+    "examples": [
+      "The forest ecosystem includes trees, animals, and insects.",
+      "Pollution can destroy a whole ecosystem very quickly."
+    ],
+    "level": "B1",
+    "topics": [
+      "environment",
+      "science"
+    ]
+  },
+  {
+    "id": 30419,
+    "word": "habitat",
+    "pos": "noun",
+    "phonetic": "/ˈhæbɪtæt/",
+    "examples": [
+      "The panda is losing its natural habitat because of farming.",
+      "Forests provide a habitat for many different species."
+    ],
+    "level": "B1",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 30420,
+    "word": "renewable",
+    "pos": "adjective",
+    "phonetic": "/rɪˈnjuːəbl/",
+    "examples": [
+      "Solar and wind are examples of renewable energy sources.",
+      "The country plans to use more renewable energy by 2030."
+    ],
+    "level": "B1",
+    "topics": [
+      "environment",
+      "technology"
+    ]
+  },
+  {
+    "id": 30421,
+    "word": "gallery",
+    "pos": "noun",
+    "phonetic": "/ˈɡæləri/",
+    "examples": [
+      "We spent the afternoon looking at paintings in the gallery.",
+      "The gallery is showing works by a famous local artist."
+    ],
+    "level": "B1",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 30422,
+    "word": "sculpture",
+    "pos": "noun",
+    "phonetic": "/ˈskʌlptʃə/",
+    "examples": [
+      "The sculpture in the park is made of stone and metal.",
+      "She studied sculpture at art school for three years."
+    ],
+    "level": "B1",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 30423,
+    "word": "exhibition",
+    "pos": "noun",
+    "phonetic": "/ˌeksɪˈbɪʃn/",
+    "examples": [
+      "The museum is hosting an exhibition of modern art.",
+      "Over ten thousand people visited the exhibition last week."
+    ],
+    "level": "B1",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 30424,
+    "word": "portrait",
+    "pos": "noun",
+    "phonetic": "/ˈpɔːtrət/",
+    "examples": [
+      "The artist painted a portrait of the queen.",
+      "She hung a family portrait on the wall."
+    ],
+    "level": "B1",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 30425,
+    "word": "rehearsal",
+    "pos": "noun",
+    "phonetic": "/rɪˈhɜːsl/",
+    "examples": [
+      "The band had a final rehearsal before the big concert.",
+      "She missed the rehearsal because she was feeling ill."
+    ],
+    "level": "B1",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 30426,
+    "word": "lyric",
+    "pos": "noun",
+    "phonetic": "/ˈlɪrɪk/",
+    "examples": [
+      "She writes the lyrics for all the songs in the band.",
+      "The lyrics of this song are really beautiful."
+    ],
+    "level": "B1",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 30427,
+    "word": "fiction",
+    "pos": "noun",
+    "phonetic": "/ˈfɪkʃn/",
+    "examples": [
+      "She enjoys reading fiction more than non-fiction books.",
+      "The story is fiction but it feels very real."
+    ],
+    "level": "B1",
+    "topics": [
+      "arts",
+      "education"
+    ]
+  },
+  {
+    "id": 30428,
+    "word": "masterpiece",
+    "pos": "noun",
+    "phonetic": "/ˈmɑːstəpiːs/",
+    "examples": [
+      "Many people think this painting is his greatest masterpiece.",
+      "The film is considered a masterpiece of modern cinema."
+    ],
+    "level": "B1",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 30429,
+    "word": "scholarship",
+    "pos": "noun",
+    "phonetic": "/ˈskɒləʃɪp/",
+    "examples": [
+      "She won a scholarship to study at a top university.",
+      "The scholarship covers the cost of all tuition fees."
+    ],
+    "level": "B1",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 30430,
+    "word": "assignment",
+    "pos": "noun",
+    "phonetic": "/əˈsaɪnmənt/",
+    "examples": [
+      "The teacher gave us a difficult assignment to complete.",
+      "She finished her writing assignment before the deadline."
+    ],
+    "level": "B1",
+    "topics": [
+      "education",
+      "work"
+    ]
+  },
+  {
+    "id": 30431,
+    "word": "tutor",
+    "pos": "noun",
+    "phonetic": "/ˈtjuːtə/",
+    "examples": [
+      "She hired a tutor to help her son with mathematics.",
+      "The tutor meets with students twice a week."
+    ],
+    "level": "B1",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 30432,
+    "word": "semester",
+    "pos": "noun",
+    "phonetic": "/sɪˈmestə/",
+    "examples": [
+      "The first semester starts in September and ends in January.",
+      "She plans to study abroad for one semester next year."
+    ],
+    "level": "B1",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 30433,
+    "word": "diploma",
+    "pos": "noun",
+    "phonetic": "/dɪˈpləʊmə/",
+    "examples": [
+      "She received her diploma after completing the course.",
+      "A diploma in nursing can help you find a good job."
+    ],
+    "level": "B1",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 30434,
+    "word": "syllabus",
+    "pos": "noun",
+    "phonetic": "/ˈsɪləbəs/",
+    "examples": [
+      "The teacher handed out the syllabus on the first day.",
+      "The exam will cover everything listed in the syllabus."
+    ],
+    "level": "B1",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 30435,
+    "word": "campus",
+    "pos": "noun",
+    "phonetic": "/ˈkæmpəs/",
+    "examples": [
+      "The university campus has a beautiful park in the centre.",
+      "Students can live on campus or rent a flat nearby."
+    ],
+    "level": "B1",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 30436,
+    "word": "landlord",
+    "pos": "noun",
+    "phonetic": "/ˈlændlɔːd/",
+    "examples": [
+      "The landlord agreed to fix the broken window next week.",
+      "She pays rent to her landlord on the first of every month."
+    ],
+    "level": "B1",
+    "topics": [
+      "daily-life",
+      "business"
+    ]
+  },
+  {
+    "id": 30437,
+    "word": "tenant",
+    "pos": "noun",
+    "phonetic": "/ˈtenənt/",
+    "examples": [
+      "The tenant signed a one-year lease for the flat.",
+      "The building has twelve tenants living in six apartments."
+    ],
+    "level": "B1",
+    "topics": [
+      "daily-life",
+      "law"
+    ]
+  },
+  {
+    "id": 30438,
+    "word": "laundry",
+    "pos": "noun",
+    "phonetic": "/ˈlɔːndri/",
+    "examples": [
+      "I need to do the laundry before we run out of clothes.",
+      "She took her laundry to the cleaners on Saturday morning."
+    ],
+    "level": "B1",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30439,
+    "word": "errand",
+    "pos": "noun",
+    "phonetic": "/ˈerənd/",
+    "examples": [
+      "She ran a few errands in town before going home.",
+      "He had to do some errands like shopping and banking."
+    ],
+    "level": "B1",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30440,
+    "word": "commute",
+    "pos": "noun",
+    "phonetic": "/kəˈmjuːt/",
+    "examples": [
+      "His daily commute to work takes about forty-five minutes.",
+      "She reads a book during her commute on the train."
+    ],
+    "level": "B1",
+    "topics": [
+      "daily-life",
+      "travel"
+    ]
+  },
+  {
+    "id": 30441,
+    "word": "grocery",
+    "pos": "noun",
+    "phonetic": "/ˈɡrəʊsəri/",
+    "examples": [
+      "She went to the grocery store to buy fruit and milk.",
+      "The weekly grocery bill has become more expensive lately."
+    ],
+    "level": "B1",
+    "topics": [
+      "daily-life",
+      "food"
+    ]
+  },
+  {
+    "id": 30442,
+    "word": "appliance",
+    "pos": "noun",
+    "phonetic": "/əˈplaɪəns/",
+    "examples": [
+      "The kitchen has all modern appliances including a dishwasher.",
+      "She bought a new appliance to help clean the floors."
+    ],
+    "level": "B1",
+    "topics": [
+      "daily-life",
+      "technology"
+    ]
+  },
+  {
+    "id": 30443,
+    "word": "neighbourhood",
+    "pos": "noun",
+    "phonetic": "/ˈneɪbəhʊd/",
+    "examples": [
+      "They moved to a quiet neighbourhood outside the city centre.",
+      "The neighbourhood has many shops, parks, and good schools."
+    ],
+    "level": "B1",
+    "topics": [
+      "daily-life",
+      "society"
+    ]
+  },
+  {
+    "id": 30444,
+    "word": "chore",
+    "pos": "noun",
+    "phonetic": "/tʃɔː/",
+    "examples": [
+      "Cleaning the bathroom is my least favourite household chore.",
+      "The children help with chores like washing up after dinner."
+    ],
+    "level": "B1",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30445,
+    "word": "salary",
+    "pos": "noun",
+    "phonetic": "/ˈsæləri/",
+    "examples": [
+      "Her salary increased after she got a promotion.",
+      "The average salary for this job is quite competitive."
+    ],
+    "level": "B1",
+    "topics": [
+      "work",
+      "business"
+    ]
+  },
+  {
+    "id": 30446,
+    "word": "promotion",
+    "pos": "noun",
+    "phonetic": "/prəˈməʊʃn/",
+    "examples": [
+      "She got a promotion to manager after just two years.",
+      "Hard work and dedication can lead to a promotion."
+    ],
+    "level": "B1",
+    "topics": [
+      "work",
+      "business"
+    ]
+  },
+  {
+    "id": 30447,
+    "word": "resignation",
+    "pos": "noun",
+    "phonetic": "/ˌrezɪɡˈneɪʃn/",
+    "examples": [
+      "He handed in his resignation letter yesterday morning.",
+      "Her resignation came as a surprise to everyone."
+    ],
+    "level": "B1",
+    "topics": [
+      "work"
+    ]
+  },
+  {
+    "id": 30448,
+    "word": "recruit",
+    "pos": "verb",
+    "phonetic": "/rɪˈkruːt/",
+    "examples": [
+      "The company is recruiting new staff for the summer season.",
+      "They recruited her because of her excellent language skills."
+    ],
+    "level": "B1",
+    "topics": [
+      "work",
+      "business"
+    ]
+  },
+  {
+    "id": 30449,
+    "word": "invoice",
+    "pos": "noun",
+    "phonetic": "/ˈɪnvɔɪs/",
+    "examples": [
+      "The supplier sent an invoice for the goods we ordered.",
+      "Please pay the invoice within thirty days of receiving it."
+    ],
+    "level": "B1",
+    "topics": [
+      "business"
+    ]
+  },
+  {
+    "id": 30450,
+    "word": "revenue",
+    "pos": "noun",
+    "phonetic": "/ˈrevənjuː/",
+    "examples": [
+      "The company's revenue grew by ten percent last year.",
+      "Advertising is the main source of revenue for the website."
+    ],
+    "level": "B1",
+    "topics": [
+      "business"
+    ]
+  },
+  {
+    "id": 30451,
+    "word": "client",
+    "pos": "noun",
+    "phonetic": "/ˈklaɪənt/",
+    "examples": [
+      "She has a meeting with an important client this afternoon.",
+      "The law firm has many international clients."
+    ],
+    "level": "B1",
+    "topics": [
+      "business",
+      "work"
+    ]
+  },
+  {
+    "id": 30452,
+    "word": "startup",
+    "pos": "noun",
+    "phonetic": "/ˈstɑːtʌp/",
+    "examples": [
+      "He left his job to work at a technology startup.",
+      "The startup raised a lot of money from investors last month."
+    ],
+    "level": "B1",
+    "topics": [
+      "business",
+      "technology"
+    ]
+  },
+  {
+    "id": 30453,
+    "word": "luggage",
+    "pos": "noun",
+    "phonetic": "/ˈlʌɡɪdʒ/",
+    "examples": [
+      "She packed all her luggage the night before the flight.",
+      "You are allowed two pieces of luggage on this airline."
+    ],
+    "level": "B1",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 30454,
+    "word": "terminal",
+    "pos": "noun",
+    "phonetic": "/ˈtɜːmɪnl/",
+    "examples": [
+      "The flight leaves from terminal two at the airport.",
+      "We arrived at the bus terminal early in the morning."
+    ],
+    "level": "B1",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 30455,
+    "word": "itinerary",
+    "pos": "noun",
+    "phonetic": "/aɪˈtɪnərəri/",
+    "examples": [
+      "She planned a detailed itinerary for the two-week holiday.",
+      "The tour guide gave us an itinerary for each day."
+    ],
+    "level": "B1",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 30456,
+    "word": "souvenir",
+    "pos": "noun",
+    "phonetic": "/ˌsuːvəˈnɪə/",
+    "examples": [
+      "She bought a souvenir from every country she visited.",
+      "The shop near the beach sells souvenirs for tourists."
+    ],
+    "level": "B1",
+    "topics": [
+      "travel",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30457,
+    "word": "customs",
+    "pos": "noun",
+    "phonetic": "/ˈkʌstəmz/",
+    "examples": [
+      "We had to wait in line at customs for thirty minutes.",
+      "The officer at customs checked all our bags carefully."
+    ],
+    "level": "B1",
+    "topics": [
+      "travel",
+      "law"
+    ]
+  },
+  {
+    "id": 30458,
+    "word": "departure",
+    "pos": "noun",
+    "phonetic": "/dɪˈpɑːtʃə/",
+    "examples": [
+      "The departure time was changed from nine to ten o'clock.",
+      "Please arrive at the airport two hours before departure."
+    ],
+    "level": "B1",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 30459,
+    "word": "sibling",
+    "pos": "noun",
+    "phonetic": "/ˈsɪblɪŋ/",
+    "examples": [
+      "She has three siblings: two brothers and one sister.",
+      "The two siblings are very close and talk every day."
+    ],
+    "level": "B1",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 30460,
+    "word": "reunion",
+    "pos": "noun",
+    "phonetic": "/riːˈjuːniən/",
+    "examples": [
+      "The family reunion takes place every summer in July.",
+      "She organized a school reunion for her old classmates."
+    ],
+    "level": "B1",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 30461,
+    "word": "acquaintance",
+    "pos": "noun",
+    "phonetic": "/əˈkweɪntəns/",
+    "examples": [
+      "He is just an acquaintance, not a close friend.",
+      "She made many new acquaintances at the conference."
+    ],
+    "level": "B1",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 30462,
+    "word": "bond",
+    "pos": "noun",
+    "phonetic": "/bɒnd/",
+    "examples": [
+      "The bond between the two sisters is very strong.",
+      "They formed a close bond during their time at school."
+    ],
+    "level": "B1",
+    "topics": [
+      "relationships",
+      "emotions"
+    ]
+  },
+  {
+    "id": 30463,
+    "word": "gratitude",
+    "pos": "noun",
+    "phonetic": "/ˈɡrætɪtjuːd/",
+    "examples": [
+      "She expressed her gratitude to everyone who helped.",
+      "He felt deep gratitude for his teacher's support."
+    ],
+    "level": "B1",
+    "topics": [
+      "emotions",
+      "relationships"
+    ]
+  },
+  {
+    "id": 30464,
+    "word": "enthusiasm",
+    "pos": "noun",
+    "phonetic": "/ɪnˈθjuːziæzəm/",
+    "examples": [
+      "The children showed great enthusiasm for the science project.",
+      "Her enthusiasm for learning is really inspiring."
+    ],
+    "level": "B1",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 30465,
+    "word": "dialect",
+    "pos": "noun",
+    "phonetic": "/ˈdaɪəlekt/",
+    "examples": [
+      "People in the north speak a different dialect.",
+      "She studied the local dialect before moving to the region."
+    ],
+    "level": "B1",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 30466,
+    "word": "rumour",
+    "pos": "noun",
+    "phonetic": "/ˈruːmə/",
+    "examples": [
+      "There is a rumour that the company will close next month.",
+      "She heard a rumour about changes at the school."
+    ],
+    "level": "B1",
+    "topics": [
+      "communication",
+      "society"
+    ]
+  },
+  {
+    "id": 30467,
+    "word": "slogan",
+    "pos": "noun",
+    "phonetic": "/ˈsləʊɡən/",
+    "examples": [
+      "The company chose a new slogan for its advertising campaign.",
+      "The protesters carried signs with powerful slogans."
+    ],
+    "level": "B1",
+    "topics": [
+      "communication",
+      "business"
+    ]
+  },
+  {
+    "id": 30468,
+    "word": "charity",
+    "pos": "noun",
+    "phonetic": "/ˈtʃærəti/",
+    "examples": [
+      "She donates money to a children's charity every year.",
+      "The charity provides food and shelter to homeless people."
+    ],
+    "level": "B1",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 30469,
+    "word": "volunteer",
+    "pos": "noun",
+    "phonetic": "/ˌvɒlənˈtɪə/",
+    "examples": [
+      "The event could not happen without the help of volunteers.",
+      "She works as a volunteer at the local hospital."
+    ],
+    "level": "B1",
+    "topics": [
+      "society",
+      "work"
+    ]
+  },
+  {
+    "id": 30470,
+    "word": "poverty",
+    "pos": "noun",
+    "phonetic": "/ˈpɒvəti/",
+    "examples": [
+      "Millions of people around the world live in poverty.",
+      "The government is working to reduce poverty in rural areas."
+    ],
+    "level": "B1",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 30471,
+    "word": "scan",
+    "pos": "verb",
+    "phonetic": "/skæn/",
+    "examples": [
+      "She scanned the document and sent it by email.",
+      "He scanned the room quickly to find his friend."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30472,
+    "word": "harvest",
+    "pos": "verb",
+    "phonetic": "/ˈhɑːvɪst/",
+    "examples": [
+      "The farmers harvest the wheat in late summer.",
+      "They harvested a large amount of fruit this year."
+    ],
+    "level": "B1",
+    "topics": [
+      "food",
+      "environment"
+    ]
+  },
+  {
+    "id": 30473,
+    "word": "export",
+    "pos": "verb",
+    "phonetic": "/ɪkˈspɔːt/",
+    "examples": [
+      "The country exports oil to many parts of the world.",
+      "The company exports its products to over thirty countries."
+    ],
+    "level": "B1",
+    "topics": [
+      "business"
+    ]
+  },
+  {
+    "id": 30474,
+    "word": "install",
+    "pos": "verb",
+    "phonetic": "/ɪnˈstɔːl/",
+    "examples": [
+      "He installed the new software on his computer yesterday.",
+      "They installed a new heating system in the building."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30475,
+    "word": "register",
+    "pos": "verb",
+    "phonetic": "/ˈredʒɪstə/",
+    "examples": [
+      "You need to register online before you can use the service.",
+      "She registered for the language course at the university."
+    ],
+    "level": "B1",
+    "topics": [
+      "education",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30476,
+    "word": "monitor",
+    "pos": "verb",
+    "phonetic": "/ˈmɒnɪtə/",
+    "examples": [
+      "Doctors monitor the patient's heart rate during surgery.",
+      "The system monitors air quality in the city."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology",
+      "health"
+    ]
+  },
+  {
+    "id": 30477,
+    "word": "restore",
+    "pos": "verb",
+    "phonetic": "/rɪˈstɔː/",
+    "examples": [
+      "The team worked hard to restore the old painting.",
+      "Power was restored to the area after the storm."
+    ],
+    "level": "B1",
+    "topics": [
+      "arts",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 30478,
+    "word": "suspend",
+    "pos": "verb",
+    "phonetic": "/səˈspend/",
+    "examples": [
+      "The school suspended the student for breaking the rules.",
+      "The company suspended the project due to lack of money."
+    ],
+    "level": "B1",
+    "topics": [
+      "law",
+      "work"
+    ]
+  },
+  {
+    "id": 30479,
+    "word": "convert",
+    "pos": "verb",
+    "phonetic": "/kənˈvɜːt/",
+    "examples": [
+      "They converted the old factory into modern apartments.",
+      "The app converts currencies from around the world."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology",
+      "science"
+    ]
+  },
+  {
+    "id": 30480,
+    "word": "donate",
+    "pos": "verb",
+    "phonetic": "/dəʊˈneɪt/",
+    "examples": [
+      "She donated a large amount of money to the charity.",
+      "Many people donate blood to help save lives."
+    ],
+    "level": "B1",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 30481,
+    "word": "calculate",
+    "pos": "verb",
+    "phonetic": "/ˈkælkjuleɪt/",
+    "examples": [
+      "She calculated the total cost of the holiday.",
+      "Scientists calculated the distance between the two stars."
+    ],
+    "level": "B1",
+    "topics": [
+      "science",
+      "education"
+    ]
+  },
+  {
+    "id": 30482,
+    "word": "compose",
+    "pos": "verb",
+    "phonetic": "/kəmˈpəʊz/",
+    "examples": [
+      "He composed the music for the new film.",
+      "She composed a beautiful poem for her mother."
+    ],
+    "level": "B1",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 30483,
+    "word": "rescue",
+    "pos": "verb",
+    "phonetic": "/ˈreskjuː/",
+    "examples": [
+      "The team rescued three people from the burning building.",
+      "The dog was rescued from the river by a local farmer."
+    ],
+    "level": "B1",
+    "topics": [
+      "society",
+      "health"
+    ]
+  },
+  {
+    "id": 30484,
+    "word": "defeat",
+    "pos": "verb",
+    "phonetic": "/dɪˈfiːt/",
+    "examples": [
+      "The team defeated their rivals in the final match.",
+      "The candidate defeated her opponent by a large margin."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports",
+      "politics"
+    ]
+  },
+  {
+    "id": 30485,
+    "word": "guarantee",
+    "pos": "verb",
+    "phonetic": "/ˌɡærənˈtiː/",
+    "examples": [
+      "The company guarantees delivery within three working days.",
+      "I cannot guarantee that the weather will be good tomorrow."
+    ],
+    "level": "B1",
+    "topics": [
+      "business",
+      "law"
+    ]
+  },
+  {
+    "id": 30486,
+    "word": "raw",
+    "pos": "adjective",
+    "phonetic": "/rɔː/",
+    "examples": [
+      "Some people like to eat raw fish in Japanese restaurants.",
+      "The salad is made with raw vegetables and fresh herbs."
+    ],
+    "level": "B1",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 30487,
+    "word": "portable",
+    "pos": "adjective",
+    "phonetic": "/ˈpɔːtəbl/",
+    "examples": [
+      "She carries a portable charger in her bag every day.",
+      "The portable speaker is perfect for outdoor parties."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30488,
+    "word": "urban",
+    "pos": "adjective",
+    "phonetic": "/ˈɜːbən/",
+    "examples": [
+      "Urban areas have more people than rural areas.",
+      "The city is working to improve urban transport systems."
+    ],
+    "level": "B1",
+    "topics": [
+      "society",
+      "environment"
+    ]
+  },
+  {
+    "id": 30489,
+    "word": "rural",
+    "pos": "adjective",
+    "phonetic": "/ˈrʊərəl/",
+    "examples": [
+      "Many young people move from rural areas to find work.",
+      "Life in rural villages is quieter than in the city."
+    ],
+    "level": "B1",
+    "topics": [
+      "society",
+      "environment"
+    ]
+  },
+  {
+    "id": 30490,
+    "word": "amateur",
+    "pos": "adjective",
+    "phonetic": "/ˈæmətə/",
+    "examples": [
+      "He is an amateur photographer who takes beautiful pictures.",
+      "The amateur football league starts again in September."
+    ],
+    "level": "B1",
+    "topics": [
+      "sports",
+      "arts"
+    ]
+  },
+  {
+    "id": 30491,
+    "word": "toxic",
+    "pos": "adjective",
+    "phonetic": "/ˈtɒksɪk/",
+    "examples": [
+      "The factory released toxic waste into the river.",
+      "Some cleaning products contain toxic chemicals."
+    ],
+    "level": "B1",
+    "topics": [
+      "environment",
+      "health"
+    ]
+  },
+  {
+    "id": 30492,
+    "word": "bandwidth",
+    "pos": "noun",
+    "phonetic": "/ˈbændwɪdθ/",
+    "examples": [
+      "The video call needs a lot of bandwidth to work well.",
+      "The office upgraded its bandwidth for faster internet."
+    ],
+    "level": "B1",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 30493,
+    "word": "subsidy",
+    "pos": "noun",
+    "phonetic": "/ˈsʌbsədi/",
+    "examples": [
+      "The government provides subsidies to support local farmers.",
+      "The company received a subsidy to develop clean energy."
+    ],
+    "level": "B1",
+    "topics": [
+      "politics",
+      "business"
+    ]
+  },
+  {
+    "id": 30494,
+    "word": "specimen",
+    "pos": "noun",
+    "phonetic": "/ˈspesɪmɪn/",
+    "examples": [
+      "The scientist studied the specimen under the microscope.",
+      "They collected soil specimens from different parts of the field."
+    ],
+    "level": "B1",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 30495,
+    "word": "import",
+    "pos": "verb",
+    "phonetic": "/ɪmˈpɔːt/",
+    "examples": [
+      "The country imports most of its oil from abroad.",
+      "The company imports electronic parts from Asia."
+    ],
+    "level": "B1",
+    "topics": [
+      "business"
+    ]
+  },
+  {
+    "id": 30496,
+    "word": "translate",
+    "pos": "verb",
+    "phonetic": "/trænzˈleɪt/",
+    "examples": [
+      "She translated the letter from French into English.",
+      "Can you translate this sentence for me please?"
+    ],
+    "level": "B1",
+    "topics": [
+      "communication",
+      "education"
+    ]
+  },
+  {
+    "id": 30497,
+    "word": "predict",
+    "pos": "verb",
+    "phonetic": "/prɪˈdɪkt/",
+    "examples": [
+      "Scientists predict that temperatures will rise next year.",
+      "It is difficult to predict the result of the election."
+    ],
+    "level": "B1",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 30498,
+    "word": "expand",
+    "pos": "verb",
+    "phonetic": "/ɪkˈspænd/",
+    "examples": [
+      "The company plans to expand its business into Europe.",
+      "The city has expanded rapidly over the last twenty years."
+    ],
+    "level": "B1",
+    "topics": [
+      "business",
+      "society"
+    ]
+  },
+  {
+    "id": 30499,
+    "word": "motivate",
+    "pos": "verb",
+    "phonetic": "/ˈməʊtɪveɪt/",
+    "examples": [
+      "Good teachers know how to motivate their students.",
+      "The bonus motivated the team to work even harder."
+    ],
+    "level": "B1",
+    "topics": [
+      "education",
+      "work"
+    ]
+  },
+  {
+    "id": 30500,
+    "word": "classify",
+    "pos": "verb",
+    "phonetic": "/ˈklæsɪfaɪ/",
+    "examples": [
+      "Scientists classify animals into different groups.",
+      "The documents were classified as secret by the government."
+    ],
+    "level": "B1",
+    "topics": [
+      "science",
+      "education"
+    ]
   }
 ]

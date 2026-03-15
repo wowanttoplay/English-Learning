@@ -1198,5 +1198,805 @@
   {
     "wordId": 30300,
     "translation": "a little; to a small degree"
+  },
+  {
+    "wordId": 30301,
+    "translation": "a set of instructions for preparing a particular dish"
+  },
+  {
+    "wordId": 30302,
+    "translation": "one of the things used to make a particular dish"
+  },
+  {
+    "wordId": 30303,
+    "translation": "the particular taste of a food or drink"
+  },
+  {
+    "wordId": 30304,
+    "translation": "a small amount of food eaten between meals"
+  },
+  {
+    "wordId": 30305,
+    "translation": "sweet food eaten at the end of a meal"
+  },
+  {
+    "wordId": 30306,
+    "translation": "an amount of food served to one person"
+  },
+  {
+    "wordId": 30307,
+    "translation": "a unit for measuring the energy value of food"
+  },
+  {
+    "wordId": 30308,
+    "translation": "a substance used to add flavour to food"
+  },
+  {
+    "wordId": 30309,
+    "translation": "the seeds of plants such as wheat or rice"
+  },
+  {
+    "wordId": 30310,
+    "translation": "produced without artificial chemicals"
+  },
+  {
+    "wordId": 30311,
+    "translation": "the process of eating the right food for good health"
+  },
+  {
+    "wordId": 30312,
+    "translation": "a person who does not eat meat"
+  },
+  {
+    "wordId": 30313,
+    "translation": "a place where bread and cakes are made or sold"
+  },
+  {
+    "wordId": 30314,
+    "translation": "a large special meal for many people"
+  },
+  {
+    "wordId": 30315,
+    "translation": "fully grown and ready to eat"
+  },
+  {
+    "wordId": 30316,
+    "translation": "to cook food in an oven or over a fire"
+  },
+  {
+    "wordId": 30317,
+    "translation": "to move food around in a pot or cup"
+  },
+  {
+    "wordId": 30318,
+    "translation": "to cut something into pieces with a sharp tool"
+  },
+  {
+    "wordId": 30319,
+    "translation": "to heat a liquid until it makes bubbles"
+  },
+  {
+    "wordId": 30320,
+    "translation": "to cook food on a metal frame over heat"
+  },
+  {
+    "wordId": 30321,
+    "translation": "a large building for sports events with seats for spectators"
+  },
+  {
+    "wordId": 30322,
+    "translation": "a competition with several rounds of games"
+  },
+  {
+    "wordId": 30323,
+    "translation": "a competition to find the best team or player"
+  },
+  {
+    "wordId": 30324,
+    "translation": "a person who is good at sports or physical exercise"
+  },
+  {
+    "wordId": 30325,
+    "translation": "a flat piece of metal given as a prize"
+  },
+  {
+    "wordId": 30326,
+    "translation": "a person on the same team as you"
+  },
+  {
+    "wordId": 30327,
+    "translation": "an area of ground used for playing sports"
+  },
+  {
+    "wordId": 30328,
+    "translation": "a piece of equipment used to hit a ball in sports"
+  },
+  {
+    "wordId": 30329,
+    "translation": "a person who controls a sports game and enforces rules"
+  },
+  {
+    "wordId": 30330,
+    "translation": "the plans and methods used to achieve a goal"
+  },
+  {
+    "wordId": 30331,
+    "translation": "a group of teams that compete against each other"
+  },
+  {
+    "wordId": 30332,
+    "translation": "to run very fast for a short distance"
+  },
+  {
+    "wordId": 30333,
+    "translation": "a small device that makes a high sound when blown"
+  },
+  {
+    "wordId": 30334,
+    "translation": "a prize given to the winner of a competition"
+  },
+  {
+    "wordId": 30335,
+    "translation": "a person you compete or fight against"
+  },
+  {
+    "wordId": 30336,
+    "translation": "the condition of being healthy and strong"
+  },
+  {
+    "wordId": 30337,
+    "translation": "a running race of about 42 kilometres"
+  },
+  {
+    "wordId": 30338,
+    "translation": "a group of players from which a team is chosen"
+  },
+  {
+    "wordId": 30339,
+    "translation": "extra time added to a game or working hours"
+  },
+  {
+    "wordId": 30340,
+    "translation": "the programs and systems used by a computer"
+  },
+  {
+    "wordId": 30341,
+    "translation": "the physical parts of a computer system"
+  },
+  {
+    "wordId": 30342,
+    "translation": "to copy data from the internet to your device"
+  },
+  {
+    "wordId": 30343,
+    "translation": "to send data from your device to the internet"
+  },
+  {
+    "wordId": 30344,
+    "translation": "a secret word or phrase used to access a system"
+  },
+  {
+    "wordId": 30345,
+    "translation": "a set of keys used to type on a computer"
+  },
+  {
+    "wordId": 30346,
+    "translation": "a mobile phone that can connect to the internet"
+  },
+  {
+    "wordId": 30347,
+    "translation": "a set of pages on the internet about a topic"
+  },
+  {
+    "wordId": 30348,
+    "translation": "an organized collection of data stored on a computer"
+  },
+  {
+    "wordId": 30349,
+    "translation": "a system of connected computers or people"
+  },
+  {
+    "wordId": 30350,
+    "translation": "a piece of equipment made for a particular purpose"
+  },
+  {
+    "wordId": 30351,
+    "translation": "a system or website where people can share or buy things"
+  },
+  {
+    "wordId": 30352,
+    "translation": "using electronic technology to store and process data"
+  },
+  {
+    "wordId": 30353,
+    "translation": "a program used to look at websites on the internet"
+  },
+  {
+    "wordId": 30354,
+    "translation": "a new version of something with improvements"
+  },
+  {
+    "wordId": 30355,
+    "translation": "a harmful program that can damage a computer system"
+  },
+  {
+    "wordId": 30356,
+    "translation": "instructions written in a programming language"
+  },
+  {
+    "wordId": 30357,
+    "translation": "to press a button on a mouse or screen"
+  },
+  {
+    "wordId": 30358,
+    "translation": "to watch or listen to content over the internet"
+  },
+  {
+    "wordId": 30359,
+    "translation": "a program designed for mobile phones or tablets"
+  },
+  {
+    "wordId": 30360,
+    "translation": "a copy of data stored separately in case of loss"
+  },
+  {
+    "wordId": 30361,
+    "translation": "a group of people who decide if someone is guilty"
+  },
+  {
+    "wordId": 30362,
+    "translation": "a legal process to decide if someone has committed a crime"
+  },
+  {
+    "wordId": 30363,
+    "translation": "not guilty of a crime; not having done wrong"
+  },
+  {
+    "wordId": 30364,
+    "translation": "a person whose job is to advise about the law"
+  },
+  {
+    "wordId": 30365,
+    "translation": "a place where legal cases are decided by a judge"
+  },
+  {
+    "wordId": 30366,
+    "translation": "an illegal act that can be punished by law"
+  },
+  {
+    "wordId": 30367,
+    "translation": "a person thought to be guilty of a crime"
+  },
+  {
+    "wordId": 30368,
+    "translation": "to take someone to a police station because of a crime"
+  },
+  {
+    "wordId": 30369,
+    "translation": "the punishment given by a court to someone found guilty"
+  },
+  {
+    "wordId": 30370,
+    "translation": "an official rule made by a government or authority"
+  },
+  {
+    "wordId": 30371,
+    "translation": "a law or set of laws made by a government"
+  },
+  {
+    "wordId": 30372,
+    "translation": "a lawyer who tries to prove someone is guilty"
+  },
+  {
+    "wordId": 30373,
+    "translation": "a person accused of a crime in a court of law"
+  },
+  {
+    "wordId": 30374,
+    "translation": "the basic laws and principles of a country"
+  },
+  {
+    "wordId": 30375,
+    "translation": "fair treatment according to the law"
+  },
+  {
+    "wordId": 30376,
+    "translation": "the decision made by a jury at the end of a trial"
+  },
+  {
+    "wordId": 30377,
+    "translation": "a person who is trying to be elected or chosen"
+  },
+  {
+    "wordId": 30378,
+    "translation": "a planned set of activities to achieve a goal"
+  },
+  {
+    "wordId": 30379,
+    "translation": "a person who legally belongs to a particular country"
+  },
+  {
+    "wordId": 30380,
+    "translation": "to officially choose someone or something in an election"
+  },
+  {
+    "wordId": 30381,
+    "translation": "a senior member of a government department"
+  },
+  {
+    "wordId": 30382,
+    "translation": "the main political party that is not in government"
+  },
+  {
+    "wordId": 30383,
+    "translation": "a plan or set of rules for making decisions"
+  },
+  {
+    "wordId": 30384,
+    "translation": "a change made to improve a system or organization"
+  },
+  {
+    "wordId": 30385,
+    "translation": "the power or right to give orders and make decisions"
+  },
+  {
+    "wordId": 30386,
+    "translation": "a country governed by elected representatives"
+  },
+  {
+    "wordId": 30387,
+    "translation": "the health, happiness, and safety of a person or group"
+  },
+  {
+    "wordId": 30388,
+    "translation": "the group of people who make the laws of a country"
+  },
+  {
+    "wordId": 30389,
+    "translation": "a member of a senate in government"
+  },
+  {
+    "wordId": 30390,
+    "translation": "a formal agreement between two or more countries"
+  },
+  {
+    "wordId": 30391,
+    "translation": "a person who represents their country in another country"
+  },
+  {
+    "wordId": 30392,
+    "translation": "a public event to show disagreement with something"
+  },
+  {
+    "wordId": 30393,
+    "translation": "a change in your body showing that you are ill"
+  },
+  {
+    "wordId": 30394,
+    "translation": "something done to cure an illness or injury"
+  },
+  {
+    "wordId": 30395,
+    "translation": "a medical operation in which a doctor cuts the body"
+  },
+  {
+    "wordId": 30396,
+    "translation": "a substance given to protect against a disease"
+  },
+  {
+    "wordId": 30397,
+    "translation": "treatment to help cure an illness or problem"
+  },
+  {
+    "wordId": 30398,
+    "translation": "a disease caused by bacteria or a virus entering the body"
+  },
+  {
+    "wordId": 30399,
+    "translation": "a piece of body tissue that you use to move"
+  },
+  {
+    "wordId": 30400,
+    "translation": "a substance in food that your body needs to grow"
+  },
+  {
+    "wordId": 30401,
+    "translation": "a natural substance in food needed for good health"
+  },
+  {
+    "wordId": 30402,
+    "translation": "a written order from a doctor for medicine"
+  },
+  {
+    "wordId": 30403,
+    "translation": "the identification of an illness by examining someone"
+  },
+  {
+    "wordId": 30404,
+    "translation": "a place where people go to receive medical treatment"
+  },
+  {
+    "wordId": 30405,
+    "translation": "a careful study to discover new facts or information"
+  },
+  {
+    "wordId": 30406,
+    "translation": "a room or building used for scientific work"
+  },
+  {
+    "wordId": 30407,
+    "translation": "an idea that explains why something happens"
+  },
+  {
+    "wordId": 30408,
+    "translation": "a group of animals or plants that are similar"
+  },
+  {
+    "wordId": 30409,
+    "translation": "the smallest unit of a living thing"
+  },
+  {
+    "wordId": 30410,
+    "translation": "the force that pulls objects towards the earth"
+  },
+  {
+    "wordId": 30411,
+    "translation": "a gas in the air that all living things need"
+  },
+  {
+    "wordId": 30412,
+    "translation": "the smallest part of a chemical element"
+  },
+  {
+    "wordId": 30413,
+    "translation": "a natural substance found in the earth or in food"
+  },
+  {
+    "wordId": 30414,
+    "translation": "substances that make air, water, or land dirty"
+  },
+  {
+    "wordId": 30415,
+    "translation": "animals and plants that live in natural conditions"
+  },
+  {
+    "wordId": 30416,
+    "translation": "to process waste so it can be used again"
+  },
+  {
+    "wordId": 30417,
+    "translation": "a long period without rain"
+  },
+  {
+    "wordId": 30418,
+    "translation": "all the living things in an area and their environment"
+  },
+  {
+    "wordId": 30419,
+    "translation": "the natural home of an animal or plant"
+  },
+  {
+    "wordId": 30420,
+    "translation": "able to be replaced naturally and used again"
+  },
+  {
+    "wordId": 30421,
+    "translation": "a building where art is shown to the public"
+  },
+  {
+    "wordId": 30422,
+    "translation": "a work of art made by shaping stone, metal, or wood"
+  },
+  {
+    "wordId": 30423,
+    "translation": "a public display of art, objects, or other things"
+  },
+  {
+    "wordId": 30424,
+    "translation": "a painting, drawing, or photograph of a person"
+  },
+  {
+    "wordId": 30425,
+    "translation": "a practice session before a performance"
+  },
+  {
+    "wordId": 30426,
+    "translation": "the words of a song"
+  },
+  {
+    "wordId": 30427,
+    "translation": "books and stories about people and events that are not real"
+  },
+  {
+    "wordId": 30428,
+    "translation": "an extremely good piece of art, music, or writing"
+  },
+  {
+    "wordId": 30429,
+    "translation": "money given to a student to help pay for their studies"
+  },
+  {
+    "wordId": 30430,
+    "translation": "a task or piece of work given to someone"
+  },
+  {
+    "wordId": 30431,
+    "translation": "a teacher who works with one student or a small group"
+  },
+  {
+    "wordId": 30432,
+    "translation": "one of the two periods a school year is divided into"
+  },
+  {
+    "wordId": 30433,
+    "translation": "an official document showing you have completed a course"
+  },
+  {
+    "wordId": 30434,
+    "translation": "a list of topics to be studied in a course"
+  },
+  {
+    "wordId": 30435,
+    "translation": "the land and buildings of a university or college"
+  },
+  {
+    "wordId": 30436,
+    "translation": "a person who owns a building and rents it to others"
+  },
+  {
+    "wordId": 30437,
+    "translation": "a person who pays rent to live in a property"
+  },
+  {
+    "wordId": 30438,
+    "translation": "clothes that need to be washed or have just been washed"
+  },
+  {
+    "wordId": 30439,
+    "translation": "a short trip to do a particular task"
+  },
+  {
+    "wordId": 30440,
+    "translation": "a regular journey between home and work"
+  },
+  {
+    "wordId": 30441,
+    "translation": "food and other goods sold in a supermarket"
+  },
+  {
+    "wordId": 30442,
+    "translation": "a machine used in the home for a particular task"
+  },
+  {
+    "wordId": 30443,
+    "translation": "the area around where you live"
+  },
+  {
+    "wordId": 30444,
+    "translation": "a regular task you must do, especially in the home"
+  },
+  {
+    "wordId": 30445,
+    "translation": "the money you receive regularly for doing your job"
+  },
+  {
+    "wordId": 30446,
+    "translation": "a move to a higher position or rank at work"
+  },
+  {
+    "wordId": 30447,
+    "translation": "the act of officially leaving your job"
+  },
+  {
+    "wordId": 30448,
+    "translation": "to find new people to join a company or organization"
+  },
+  {
+    "wordId": 30449,
+    "translation": "a document listing goods or services and the cost"
+  },
+  {
+    "wordId": 30450,
+    "translation": "the money that a business receives from its activities"
+  },
+  {
+    "wordId": 30451,
+    "translation": "a person or company that uses the services of a professional"
+  },
+  {
+    "wordId": 30452,
+    "translation": "a new small business, especially in technology"
+  },
+  {
+    "wordId": 30453,
+    "translation": "the bags and cases you carry when travelling"
+  },
+  {
+    "wordId": 30454,
+    "translation": "a building at an airport or station for passengers"
+  },
+  {
+    "wordId": 30455,
+    "translation": "a plan of a journey including places to visit"
+  },
+  {
+    "wordId": 30456,
+    "translation": "something you buy to remember a place you visited"
+  },
+  {
+    "wordId": 30457,
+    "translation": "the place at a border where bags are checked"
+  },
+  {
+    "wordId": 30458,
+    "translation": "the act of leaving a place, especially to start a journey"
+  },
+  {
+    "wordId": 30459,
+    "translation": "a brother or sister"
+  },
+  {
+    "wordId": 30460,
+    "translation": "a meeting of people who have not seen each other for a long time"
+  },
+  {
+    "wordId": 30461,
+    "translation": "a person you know slightly but who is not a close friend"
+  },
+  {
+    "wordId": 30462,
+    "translation": "a strong feeling of connection between people"
+  },
+  {
+    "wordId": 30463,
+    "translation": "the feeling of being thankful for something"
+  },
+  {
+    "wordId": 30464,
+    "translation": "a strong feeling of excitement and interest"
+  },
+  {
+    "wordId": 30465,
+    "translation": "a form of a language spoken in a particular area"
+  },
+  {
+    "wordId": 30466,
+    "translation": "information that people talk about but may not be true"
+  },
+  {
+    "wordId": 30467,
+    "translation": "a short phrase used to advertise or promote something"
+  },
+  {
+    "wordId": 30468,
+    "translation": "an organization that helps people in need"
+  },
+  {
+    "wordId": 30469,
+    "translation": "a person who does work without being paid"
+  },
+  {
+    "wordId": 30470,
+    "translation": "the state of being very poor"
+  },
+  {
+    "wordId": 30471,
+    "translation": "to look at something carefully or copy it using a machine"
+  },
+  {
+    "wordId": 30472,
+    "translation": "to collect crops from the fields when they are ready"
+  },
+  {
+    "wordId": 30473,
+    "translation": "to send goods to another country for sale"
+  },
+  {
+    "wordId": 30474,
+    "translation": "to put a piece of equipment or software in place"
+  },
+  {
+    "wordId": 30475,
+    "translation": "to put your name on an official list"
+  },
+  {
+    "wordId": 30476,
+    "translation": "to watch and check something over a period of time"
+  },
+  {
+    "wordId": 30477,
+    "translation": "to bring something back to its original condition"
+  },
+  {
+    "wordId": 30478,
+    "translation": "to stop something temporarily"
+  },
+  {
+    "wordId": 30479,
+    "translation": "to change something into a different form or use"
+  },
+  {
+    "wordId": 30480,
+    "translation": "to give money or goods to help people in need"
+  },
+  {
+    "wordId": 30481,
+    "translation": "to find an answer using numbers and mathematics"
+  },
+  {
+    "wordId": 30482,
+    "translation": "to write a piece of music, poetry, or a formal letter"
+  },
+  {
+    "wordId": 30483,
+    "translation": "to save someone from a dangerous or difficult situation"
+  },
+  {
+    "wordId": 30484,
+    "translation": "to win against someone in a competition or battle"
+  },
+  {
+    "wordId": 30485,
+    "translation": "to promise that something will definitely happen"
+  },
+  {
+    "wordId": 30486,
+    "translation": "not cooked; in a natural state"
+  },
+  {
+    "wordId": 30487,
+    "translation": "easy to carry or move from one place to another"
+  },
+  {
+    "wordId": 30488,
+    "translation": "relating to a town or city"
+  },
+  {
+    "wordId": 30489,
+    "translation": "relating to the countryside rather than a town"
+  },
+  {
+    "wordId": 30490,
+    "translation": "doing something as a hobby rather than as a job"
+  },
+  {
+    "wordId": 30491,
+    "translation": "containing poison; very harmful"
+  },
+  {
+    "wordId": 30492,
+    "translation": "the amount of data that can be sent over a connection"
+  },
+  {
+    "wordId": 30493,
+    "translation": "money given by the government to help an industry"
+  },
+  {
+    "wordId": 30494,
+    "translation": "an example of something used for study or testing"
+  },
+  {
+    "wordId": 30495,
+    "translation": "to bring goods into a country from another country"
+  },
+  {
+    "wordId": 30496,
+    "translation": "to change words from one language into another"
+  },
+  {
+    "wordId": 30497,
+    "translation": "to say that something will happen in the future"
+  },
+  {
+    "wordId": 30498,
+    "translation": "to become larger in size, number, or amount"
+  },
+  {
+    "wordId": 30499,
+    "translation": "to give someone a reason to do something"
+  },
+  {
+    "wordId": 30500,
+    "translation": "to put things into groups based on their type"
   }
 ]
