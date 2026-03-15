@@ -8,5 +8,5 @@ dist
 package-lock.json
 output
 packages/api/seed.sql
-docs/superpowers/
+docs/superpowers/plans/
 .playwright-mcp/
