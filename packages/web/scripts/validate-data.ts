@@ -2,8 +2,9 @@
  * Validates word, translation, and passage JSON files:
  * 1. Word files in packages/api/scripts/data/words/ — id, word, pos, phonetic, examples, level, topics
  * 2. Translation files in packages/api/scripts/data/translations/ — wordId references, translation field
- * 3. Passage files in packages/api/scripts/data/passages/ — id, title, text, genre, level, topic, wordIds
- * 4. Cross-reference: passage wordIds must exist in word data
+ * 3. Passage files in packages/api/scripts/data/passages/ — id, title, genre, level, topic, newWordIds, reviewWordIds
+ * 4. Cross-reference: passage newWordIds/reviewWordIds must exist in word data
+ * 4b. Spiral progression: sequence contiguity, word counts, review provenance, review window
  * 5. Duplicate words (word+pos combination, case-insensitive)
  * 6. Duplicate IDs (words and passages)
  * 7. Invalid CEFR levels
