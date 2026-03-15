@@ -139,14 +139,24 @@ if (fs.existsSync(translationsDir)) {
   console.warn(`No translations directory found at ${translationsDir}`)
 }
 
-// --- Passages ---
-const passagesPath = path.join(dataDir, 'passages.json')
-if (!fs.existsSync(passagesPath)) {
-  console.error(`Missing ${passagesPath}`)
-  console.error('Run the extract-passages.js helper first.')
+// --- Passages: read all JSON files from data/passages/ ---
+const passagesDir = path.join(dataDir, 'passages')
+if (!fs.existsSync(passagesDir)) {
+  console.error(`Missing passages directory: ${passagesDir}`)
   process.exit(1)
 }
-const passages: Passage[] = JSON.parse(fs.readFileSync(passagesPath, 'utf-8'))
+
+const passageFiles = fs.readdirSync(passagesDir).filter(f => f.endsWith('.json')).sort()
+if (passageFiles.length === 0) {
+  console.error(`No passage JSON files found in ${passagesDir}`)
+  process.exit(1)
+}
+
+const passages: Passage[] = passageFiles.flatMap(f => {
+  const data = JSON.parse(fs.readFileSync(path.join(passagesDir, f), 'utf-8'))
+  console.log(`  Loaded passages/${f}: ${data.length} passages`)
+  return data
+})
 
 // ---------------------------------------------------------------------------
 // Build SQL
