@@ -15,6 +15,16 @@ pnpm build                  # Production build (packages/web: typecheck + bundle
 pnpm typecheck              # Type check all packages (pnpm -r typecheck)
 pnpm build:api              # Build API worker (packages/api)
 
+# Dev mode switching (local vs server database):
+pnpm dev                                                    # Frontend → local API (localhost:8787)
+pnpm --filter @english-learning/web dev:remote              # Frontend → production API (Cloudflare)
+
+# Local D1 database setup (run in order):
+pnpm --filter @english-learning/api dev                                    # Start local API
+npx wrangler d1 migrations apply english-learning --local                  # Apply schema
+pnpm --filter @english-learning/api migrate:content                        # Generate seed.sql
+npx wrangler d1 execute english-learning --local --file=seed.sql           # Seed data
+
 # Within packages/web:
 pnpm --filter @english-learning/web validate:data      # Validate word, translation, and passage JSON files
 pnpm --filter @english-learning/web generate-tts          # Generate TTS audio + sentence timestamps (Google Cloud TTS)
