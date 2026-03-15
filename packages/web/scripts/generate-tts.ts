@@ -1,11 +1,11 @@
 /**
- * Generate MP3 audio files + sentence timestamps using Google Cloud Text-to-Speech.
+ * Generate MP3 audio files + timestamps using Google Cloud Text-to-Speech (Chirp 3 HD).
  *
- * For passages, uses SSML <mark> tags to get sentence-level timepoints in a single
- * TTS call — no separate STT/Whisper step needed.
+ * For passages, generates one MP3 per dialogue turn using each speaker's assigned voice.
+ * Timestamps are built from cumulative MP3 durations.
  *
  * Output:
- *   - Passages:  public/audio/passages/passage-{id}.mp3 + passage-{id}.timestamps.json
+ *   - Passages:  public/audio/passages/passage-{id}-turn-{i}.mp3 + passage-{id}.timestamps.json
  *   - Words:     public/audio/words/word-{id}.mp3
  *   - Examples:  public/audio/examples/word-{id}-ex1.mp3, word-{id}-ex2.mp3
  *
@@ -23,26 +23,28 @@
  */
 
 import { resolve, dirname } from 'node:path'
-import { existsSync, mkdirSync, writeFileSync, readFileSync, readdirSync } from 'node:fs'
-import { fileURLToPath, pathToFileURL } from 'node:url'
+import { existsSync, mkdirSync, writeFileSync, readFileSync, readdirSync, unlinkSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const PROJECT_ROOT = resolve(__dirname, '..')
 const DATA_DIR = resolve(PROJECT_ROOT, '..', 'api', 'scripts', 'data')
 
-function loadPassages() {
+interface PassageSource {
+  id: number
+  title: string
+  speakers: Array<{ name: string; voice: string }>
+  turns: Array<{ speaker: number; text: string }>
+}
+
+function loadPassages(): PassageSource[] {
   const passagesDir = resolve(DATA_DIR, 'passages')
   const files = readdirSync(passagesDir).filter(f => f.endsWith('.json'))
   return files.flatMap(f => {
     const raw = readFileSync(resolve(passagesDir, f), 'utf-8')
-    return JSON.parse(raw) as Array<{ id: number; title: string; text: string }>
+    return JSON.parse(raw) as PassageSource[]
   })
-}
-
-async function loadSplitter() {
-  const mod = await import(pathToFileURL(resolve(PROJECT_ROOT, 'src/lib/sentence-splitter.ts')).href)
-  return mod.splitSentences as (text: string, _lang?: string) => Array<{ index: number; text: string; start: number; end: number }>
 }
 
 function loadWords() {
@@ -52,22 +54,6 @@ function loadWords() {
     const raw = readFileSync(resolve(wordsDir, f), 'utf-8')
     return JSON.parse(raw) as Array<{ id: number; word: string; examples: string[] }>
   })
-}
-
-function escapeXml(text: string): string {
-  return text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;')
-}
-
-interface TimestampEntry {
-  index: number
-  start: number
-  end: number
-  text: string
 }
 
 async function main() {
@@ -80,84 +66,75 @@ async function main() {
   const doWords = !only || only === 'words'
   const doExamples = !only || only === 'examples'
 
-  // Use v1beta1 for enable_time_pointing support
-  const { TextToSpeechClient } = await import('@google-cloud/text-to-speech/build/src/v1beta1')
+  const { TextToSpeechClient } = await import('@google-cloud/text-to-speech')
   const client = new TextToSpeechClient()
 
   let generated = 0
   let skipped = 0
 
-  // --- Passages (with timestamps) ---
+  // --- Passages (per-turn audio with timestamps) ---
   if (doPassages) {
     const passages = loadPassages()
-    const splitSentences = await loadSplitter()
     const audioDir = resolve(PROJECT_ROOT, 'public/audio/passages')
     mkdirSync(audioDir, { recursive: true })
     console.log(`\n=== Passages (${passages.length}) ===`)
 
     for (const p of passages) {
-      const mp3Path = resolve(audioDir, `passage-${p.id}.mp3`)
       const tsPath = resolve(audioDir, `passage-${p.id}.timestamps.json`)
-      if (!force && existsSync(mp3Path) && existsSync(tsPath)) {
-        skipped++
-        continue
-      }
+      const allExist = p.turns.every((_, i) =>
+        existsSync(resolve(audioDir, `passage-${p.id}-turn-${i}.mp3`))
+      ) && existsSync(tsPath)
+
+      if (!force && allExist) { skipped++; continue }
 
       console.log(`  [gen] passage-${p.id} — "${p.title}"`)
+      const timestamps: Array<{ turn: number; start: number; end: number }> = []
+      let cumulative = 0
+      let failed = false
 
-      // Split text into sentences
-      const sentences = splitSentences(p.text)
+      for (let i = 0; i < p.turns.length; i++) {
+        const turn = p.turns[i]
+        const voice = p.speakers[turn.speaker].voice
+        const mp3Path = resolve(audioDir, `passage-${p.id}-turn-${i}.mp3`)
 
-      // Build SSML with <mark> before each sentence
-      let ssml = '<speak>'
-      for (const s of sentences) {
-        ssml += `<mark name="s${s.index}"/>${escapeXml(s.text)} `
-      }
-      ssml += '</speak>'
+        try {
+          const [response] = await client.synthesizeSpeech({
+            input: { text: turn.text },
+            voice: { languageCode: 'en-US', name: voice },
+            audioConfig: { audioEncoding: 'MP3', sampleRateHertz: 24000 },
+          })
 
-      try {
-        const [response] = await client.synthesizeSpeech({
-          input: { ssml },
-          voice: { languageCode: 'en-US', name: 'en-US-Neural2-J' },
-          audioConfig: { audioEncoding: 'MP3', speakingRate: 0.92, sampleRateHertz: 24000 },
-          enableTimePointing: ['SSML_MARK'],
-        })
+          if (!response.audioContent) { failed = true; break }
 
-        // Write MP3
-        if (response.audioContent) {
           const buffer = response.audioContent instanceof Uint8Array
             ? Buffer.from(response.audioContent)
             : Buffer.from(response.audioContent as string, 'base64')
           writeFileSync(mp3Path, buffer)
-        } else {
-          console.error(`    Warning: no audio for passage ${p.id}`)
-          continue
-        }
 
-        // Build timestamps from timepoints
-        const timepoints = (response.timepoints ?? []) as Array<{ markName: string; timeSeconds: number }>
-        const timestamps: TimestampEntry[] = []
-
-        for (let i = 0; i < sentences.length; i++) {
-          const tp = timepoints.find(t => t.markName === `s${i}`)
-          const nextTp = timepoints.find(t => t.markName === `s${i + 1}`)
-          const start = tp?.timeSeconds ?? 0
-          // If no next mark, estimate end from audio duration or use a fallback
-          const end = nextTp?.timeSeconds ?? (start + 5)
-
-          timestamps.push({
-            index: i,
-            start: Math.round(start * 100) / 100,
-            end: Math.round(end * 100) / 100,
-            text: sentences[i].text,
+          // Get MP3 duration using mp3-duration package
+          const mp3Dur = (await import('mp3-duration')).default
+          const durationSec: number = await new Promise((res, rej) => {
+            mp3Dur(mp3Path, (err: Error | null, dur: number) => err ? rej(err) : res(dur))
           })
+          timestamps.push({ turn: i, start: Math.round(cumulative * 100) / 100, end: Math.round((cumulative + durationSec) * 100) / 100 })
+          cumulative += durationSec
+        } catch (err) {
+          console.error(`    Error turn ${i}: ${err}`)
+          failed = true
+          break
         }
+      }
 
+      if (failed) {
+        for (let i = 0; i < p.turns.length; i++) {
+          const mp3 = resolve(audioDir, `passage-${p.id}-turn-${i}.mp3`)
+          if (existsSync(mp3)) unlinkSync(mp3)
+        }
+        console.log(`    ✗ Skipped (error)`)
+      } else {
         writeFileSync(tsPath, JSON.stringify(timestamps, null, 2))
-        console.log(`    ✓ MP3 + ${timestamps.length} timestamps`)
+        console.log(`    ✓ ${p.turns.length} turns + timestamps`)
         generated++
-      } catch (err) {
-        console.error(`    Error: ${err}`)
       }
     }
   }
@@ -181,8 +158,8 @@ async function main() {
         try {
           const [response] = await client.synthesizeSpeech({
             input: { text: w.word },
-            voice: { languageCode: 'en-US', name: 'en-US-Neural2-J' },
-            audioConfig: { audioEncoding: 'MP3', speakingRate: 0.85, sampleRateHertz: 24000 },
+            voice: { languageCode: 'en-US', name: 'en-US-Chirp3-HD-Charon' },
+            audioConfig: { audioEncoding: 'MP3', sampleRateHertz: 24000 },
           })
           if (response.audioContent) {
             const buffer = response.audioContent instanceof Uint8Array
@@ -213,8 +190,8 @@ async function main() {
           try {
             const [response] = await client.synthesizeSpeech({
               input: { text: w.examples[i] },
-              voice: { languageCode: 'en-US', name: 'en-US-Neural2-J' },
-              audioConfig: { audioEncoding: 'MP3', speakingRate: 0.90, sampleRateHertz: 24000 },
+              voice: { languageCode: 'en-US', name: 'en-US-Chirp3-HD-Charon' },
+              audioConfig: { audioEncoding: 'MP3', sampleRateHertz: 24000 },
             })
             if (response.audioContent) {
               const buffer = response.audioContent instanceof Uint8Array
