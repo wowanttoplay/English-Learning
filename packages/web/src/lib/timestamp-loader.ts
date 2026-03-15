@@ -1,12 +1,12 @@
-import type { SentenceTimestamp } from '../types'
+import type { TurnTimestamp } from '../types'
 
-const cache = new Map<number, SentenceTimestamp[]>()
+const cache = new Map<number, TurnTimestamp[]>()
 
 function getAudioBase(): string {
   return import.meta.env.VITE_AUDIO_BASE_URL || (import.meta.env.BASE_URL + 'audio')
 }
 
-async function loadTimestamps(passageId: number): Promise<SentenceTimestamp[]> {
+async function loadTimestamps(passageId: number): Promise<TurnTimestamp[]> {
   if (passageId <= 0) return []
 
   const cached = cache.get(passageId)
@@ -16,7 +16,7 @@ async function loadTimestamps(passageId: number): Promise<SentenceTimestamp[]> {
   try {
     const res = await fetch(url)
     if (!res.ok) return []
-    const data: SentenceTimestamp[] = await res.json()
+    const data: TurnTimestamp[] = await res.json()
     cache.set(passageId, data)
     return data
   } catch {
@@ -24,7 +24,7 @@ async function loadTimestamps(passageId: number): Promise<SentenceTimestamp[]> {
   }
 }
 
-function getCached(passageId: number): SentenceTimestamp[] | undefined {
+function getCached(passageId: number): TurnTimestamp[] | undefined {
   return cache.get(passageId)
 }
 
