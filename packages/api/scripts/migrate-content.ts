@@ -45,7 +45,8 @@ interface Passage {
   id: number
   title: string
   genre: string
-  text: string
+  speakers: Array<{ name: string; voice: string }>
+  turns: Array<{ speaker: number; text: string }>
   wordIds: number[]
   level: string
   topic: string
@@ -211,8 +212,11 @@ for (const { locale, translations } of localeExampleTranslations) {
 // Passages + passage_words
 lines.push(`-- Passages (${passages.length} entries)`)
 for (const p of passages) {
+  const flatText = p.turns
+    .map(t => `${p.speakers[t.speaker].name}: ${t.text}`)
+    .join('\n')
   lines.push(
-    `INSERT OR IGNORE INTO passages (id, language_id, title, text, level, topic, genre) VALUES (${p.id}, 'en', ${sqlStr(p.title)}, ${sqlStr(p.text)}, ${sqlStr(p.level)}, ${sqlStr(p.topic)}, ${sqlStr(p.genre)});`
+    `INSERT OR IGNORE INTO passages (id, language_id, title, text, level, topic, genre, speakers, turns) VALUES (${p.id}, 'en', ${sqlStr(p.title)}, ${sqlStr(flatText)}, ${sqlStr(p.level)}, ${sqlStr(p.topic)}, ${sqlStr(p.genre)}, ${sqlStr(JSON.stringify(p.speakers))}, ${sqlStr(JSON.stringify(p.turns))});`
   )
 }
 lines.push('')
