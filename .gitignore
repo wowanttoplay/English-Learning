@@ -7,3 +7,5 @@ dist
 .wrangler/
 package-lock.json
 output
+packages/api/seed.sql
+docs/superpowers/specs/
