@@ -18,7 +18,7 @@ import { isValidLevel, VALID_TOPIC_IDS, VALID_GENRES } from '@english-learning/s
 const VALID_TOPICS = new Set<string>(VALID_TOPIC_IDS)
 const VALID_GENRE_SET = new Set<string>(VALID_GENRES)
 const REQUIRED_WORD_FIELDS = ['id', 'word', 'pos', 'phonetic', 'examples', 'level'] as const
-const REQUIRED_PASSAGE_FIELDS = ['id', 'title', 'speakers', 'turns', 'genre', 'level', 'topic', 'wordIds'] as const
+const REQUIRED_PASSAGE_FIELDS = ['id', 'title', 'speakers', 'turns', 'genre', 'level', 'topic', 'newWordIds', 'reviewWordIds'] as const
 
 interface WordEntry {
   id: number
@@ -43,7 +43,9 @@ interface PassageEntry {
   genre: string
   level: string
   topic: string
-  wordIds: number[]
+  sequence: number | null
+  newWordIds: number[]
+  reviewWordIds: number[]
 }
 
 let errors = 0
@@ -177,6 +179,27 @@ if (existsSync(translationsDir)) {
   }
 
   console.log(`\nValidated ${translationCount} translations`)
+
+  // English translation coverage: every word must have an en translation
+  const enDir = join(translationsDir, 'en')
+  if (existsSync(enDir)) {
+    const enWordIds = new Set<number>()
+    const enFiles = readdirSync(enDir).filter(f => f.endsWith('.json') && !f.endsWith('.examples.json')).sort()
+    for (const file of enFiles) {
+      const entries: TranslationEntry[] = JSON.parse(readFileSync(join(enDir, file), 'utf-8'))
+      for (const entry of entries) {
+        enWordIds.add(entry.wordId)
+      }
+    }
+    for (const w of allWords) {
+      if (!enWordIds.has(w.id)) {
+        error(`Word ID ${w.id} ("${w.word}"): missing English translation`)
+      }
+    }
+    console.log(`  English translation coverage: ${enWordIds.size}/${allWords.length} words`)
+  } else {
+    error('Missing English translations directory: translations/en/')
+  }
 } else {
   console.warn('WARNING: No translations directory found — skipping translation validation')
 }
@@ -272,12 +295,103 @@ if (existsSync(passagesDir)) {
     }
   }
 
-  // Cross-reference: every wordId in passage.wordIds must exist in word data
+  // Cross-reference: every wordId in passage.newWordIds and reviewWordIds must exist in word data
   for (const p of allPassages) {
-    if (Array.isArray(p.wordIds)) {
-      for (const wid of p.wordIds) {
+    if (Array.isArray(p.newWordIds)) {
+      for (const wid of p.newWordIds) {
         if (!idMap.has(wid)) {
-          error(`Passage ID ${p.id} ("${p.title}"): wordId ${wid} does not exist in word data`)
+          error(`Passage ID ${p.id} ("${p.title}"): newWordId ${wid} does not exist in word data`)
+        }
+      }
+    }
+    if (Array.isArray(p.reviewWordIds)) {
+      for (const wid of p.reviewWordIds) {
+        if (!idMap.has(wid)) {
+          error(`Passage ID ${p.id} ("${p.title}"): reviewWordId ${wid} does not exist in word data`)
+        }
+      }
+    }
+  }
+
+  // --- Spiral progression validation ---
+  // Group curriculum passages (non-null sequence) by level
+  const curriculumByLevel = new Map<string, PassageEntry[]>()
+  for (const p of allPassages) {
+    if (p.sequence != null) {
+      const list = curriculumByLevel.get(p.level) ?? []
+      list.push(p)
+      curriculumByLevel.set(p.level, list)
+    }
+  }
+
+  for (const [level, passages] of curriculumByLevel) {
+    // Sort by sequence
+    passages.sort((a, b) => a.sequence! - b.sequence!)
+
+    // Check sequence contiguity (1, 2, 3, ...)
+    for (let i = 0; i < passages.length; i++) {
+      if (passages[i].sequence !== i + 1) {
+        error(`Level ${level}: expected sequence ${i + 1}, got ${passages[i].sequence} (passage ${passages[i].id})`)
+      }
+    }
+
+    // Track introduced words across the level
+    const introducedWordIds = new Set<number>()
+
+    for (let i = 0; i < passages.length; i++) {
+      const p = passages[i]
+
+      // Check newWordIds count: 3-5
+      if (p.newWordIds.length < 3 || p.newWordIds.length > 5) {
+        error(`Passage ${p.id} (${level} seq ${p.sequence}): newWordIds count must be 3-5, got ${p.newWordIds.length}`)
+      }
+
+      // Check reviewWordIds count: 2-4 (first passage exempt)
+      if (i > 0 && (p.reviewWordIds.length < 2 || p.reviewWordIds.length > 4)) {
+        error(`Passage ${p.id} (${level} seq ${p.sequence}): reviewWordIds count must be 2-4, got ${p.reviewWordIds.length}`)
+      }
+
+      // Check reviewWordIds reference earlier-introduced words or lower-level words
+      if (i > 0) {
+        for (const wid of p.reviewWordIds) {
+          if (!introducedWordIds.has(wid)) {
+            // Could be a lower-level word — check if it exists in word data (that's acceptable)
+            // For now, just check it's in introducedWordIds (from earlier passages in same level)
+            // Lower-level words are also acceptable
+            const word = idMap.get(wid)
+            if (!word) {
+              error(`Passage ${p.id} (${level} seq ${p.sequence}): reviewWordId ${wid} not found in word data`)
+            }
+            // If the word is same level but not yet introduced, that's an error
+            if (word && word.level === level && !introducedWordIds.has(wid)) {
+              error(`Passage ${p.id} (${level} seq ${p.sequence}): reviewWordId ${wid} not yet introduced in earlier passages`)
+            }
+          }
+        }
+      }
+
+      // Add new words to introduced set
+      for (const wid of p.newWordIds) {
+        introducedWordIds.add(wid)
+      }
+    }
+
+    // Check spiral window: every newWordId must appear in reviewWordIds of at least one of the next 5 passages
+    for (let i = 0; i < passages.length; i++) {
+      const p = passages[i]
+      const windowEnd = Math.min(i + 5, passages.length - 1)
+      if (windowEnd === i) continue // last passage — skip
+
+      for (const wid of p.newWordIds) {
+        let found = false
+        for (let j = i + 1; j <= windowEnd; j++) {
+          if (passages[j].reviewWordIds.includes(wid)) {
+            found = true
+            break
+          }
+        }
+        if (!found) {
+          error(`Passage ${p.id} (${level} seq ${p.sequence}): newWordId ${wid} not reviewed in next 5 passages`)
         }
       }
     }
