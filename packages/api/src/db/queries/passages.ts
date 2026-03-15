@@ -1,15 +1,14 @@
-import type { Passage, SentenceTimestamp, Level, TopicId } from '@english-learning/shared'
+import type { Passage, PassageSummary, Level, TopicId } from '@english-learning/shared'
 
 interface PassageRow {
   id: number
   language_id: string
   title: string
-  text: string
   level: string
   topic: string
   genre: string
-  audio_url: string | null
-  timestamps: string | null
+  speakers: string | null
+  turns: string | null
 }
 
 interface PassageSummaryRow {
@@ -19,17 +18,7 @@ interface PassageSummaryRow {
   level: string
   topic: string
   genre: string
-  audio_url: string | null
-}
-
-export interface PassageSummary {
-  id: number
-  title: string
-  level: Level
-  topic: TopicId
-  genre: string
-  languageId: string
-  audioUrl?: string
+  speakers: string | null
 }
 
 function rowToPassageSummary(row: PassageSummaryRow): PassageSummary {
@@ -38,9 +27,11 @@ function rowToPassageSummary(row: PassageSummaryRow): PassageSummary {
     title: row.title,
     level: row.level as Level,
     topic: row.topic as TopicId,
-    genre: row.genre,
+    genre: row.genre || '',
     languageId: row.language_id,
-    ...(row.audio_url ? { audioUrl: row.audio_url } : {}),
+    speakers: row.speakers
+      ? JSON.parse(row.speakers).map((s: { name: string }) => ({ name: s.name }))
+      : [],
   }
 }
 
@@ -48,15 +39,12 @@ function rowToPassage(row: PassageRow): Passage {
   return {
     id: row.id,
     title: row.title,
-    text: row.text,
     level: row.level as Level,
     topic: row.topic as TopicId,
-    genre: row.genre,
+    genre: row.genre || '',
     languageId: row.language_id,
-    ...(row.audio_url ? { audioUrl: row.audio_url } : {}),
-    ...(row.timestamps
-      ? { timestamps: JSON.parse(row.timestamps) as SentenceTimestamp[] }
-      : {}),
+    speakers: row.speakers ? JSON.parse(row.speakers) : [],
+    turns: row.turns ? JSON.parse(row.turns) : [],
   }
 }
 
@@ -98,7 +86,7 @@ export async function getPassages(
 
   const { results } = await db
     .prepare(
-      `SELECT id, language_id, title, level, topic, genre, audio_url FROM passages WHERE ${where} ORDER BY id LIMIT ? OFFSET ?`
+      `SELECT id, language_id, title, level, topic, genre, speakers FROM passages WHERE ${where} ORDER BY id LIMIT ? OFFSET ?`
     )
     .bind(...params, pageSize, offset)
     .all<PassageSummaryRow>()
@@ -112,7 +100,7 @@ export async function getPassageById(
 ): Promise<Passage | null> {
   const row = await db
     .prepare(
-      'SELECT id, language_id, title, text, level, topic, genre, audio_url, timestamps FROM passages WHERE id = ?'
+      'SELECT id, language_id, title, level, topic, genre, speakers, turns FROM passages WHERE id = ?'
     )
     .bind(id)
     .first<PassageRow>()
