@@ -48,6 +48,9 @@ export interface Passage {
   languageId: string
   speakers: DialogueSpeaker[]
   turns: DialogueTurn[]
+  sequence: number | null
+  newWordIds: number[]
+  reviewWordIds: number[]
 }
 
 export interface TurnTimestamp {
@@ -68,6 +71,7 @@ export interface PassageSummary {
   genre: string
   languageId: string
   speakers: PassageSpeakerSummary[]
+  sequence: number | null
 }
 
 // === SRS Types ===
