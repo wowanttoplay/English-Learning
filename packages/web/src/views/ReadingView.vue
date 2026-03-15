@@ -85,6 +85,9 @@
           >
             <div class="passage-item-info">
               <div class="passage-item-title">{{ passage.title }}</div>
+              <span v-if="passage.speakers?.length" class="passage-speakers">
+                {{ passage.speakers.map(s => s.name).join(' & ') }}
+              </span>
               <div class="passage-item-meta">
                 <span class="passage-topic">{{ formatTopic(passage.topic) }}</span>
                 <LevelBadge :level="passage.level" />
@@ -105,6 +108,9 @@
           >
             <div class="passage-item-info">
               <div class="passage-item-title">{{ p.title }}</div>
+              <span v-if="p.speakers?.length" class="passage-speakers">
+                {{ p.speakers.map(s => s.name).join(' & ') }}
+              </span>
               <div class="passage-item-meta">
                 <span class="passage-topic">{{ formatTopic(p.topic) }}</span>
                 <LevelBadge :level="p.level" />
