@@ -18,7 +18,7 @@ import { isValidLevel, VALID_TOPIC_IDS, VALID_GENRES } from '@english-learning/s
 const VALID_TOPICS = new Set<string>(VALID_TOPIC_IDS)
 const VALID_GENRE_SET = new Set<string>(VALID_GENRES)
 const REQUIRED_WORD_FIELDS = ['id', 'word', 'pos', 'phonetic', 'examples', 'level'] as const
-const REQUIRED_PASSAGE_FIELDS = ['id', 'title', 'text', 'genre', 'level', 'topic', 'wordIds'] as const
+const REQUIRED_PASSAGE_FIELDS = ['id', 'title', 'speakers', 'turns', 'genre', 'level', 'topic', 'wordIds'] as const
 
 interface WordEntry {
   id: number
@@ -38,7 +38,8 @@ interface TranslationEntry {
 interface PassageEntry {
   id: number
   title: string
-  text: string
+  speakers: Array<{ name: string; voice: string }>
+  turns: Array<{ speaker: number; text: string }>
   genre: string
   level: string
   topic: string
@@ -238,6 +239,36 @@ if (existsSync(passagesDir)) {
   for (const p of allPassages) {
     if (!isValidLevel('en', p.level)) {
       error(`Passage ID ${p.id} ("${p.title}"): invalid level "${p.level}"`)
+    }
+  }
+
+  // Validate speakers
+  for (const p of allPassages) {
+    if (!Array.isArray(p.speakers) || p.speakers.length !== 2) {
+      error(`Passage ${p.id} ("${p.title}"): must have exactly 2 speakers`)
+      continue
+    }
+    for (const [i, s] of p.speakers.entries()) {
+      if (!s.name) error(`Passage ${p.id}: speaker ${i} missing name`)
+      if (!s.voice || !/^en-US-Chirp3-HD-/.test(s.voice)) {
+        error(`Passage ${p.id}: speaker ${i} invalid voice "${s.voice}"`)
+      }
+    }
+  }
+
+  // Validate turns
+  for (const p of allPassages) {
+    if (!Array.isArray(p.turns)) continue
+    if (p.turns.length < 8 || p.turns.length > 16) {
+      error(`Passage ${p.id} ("${p.title}"): must have 8-16 turns, got ${p.turns.length}`)
+    }
+    for (const [i, t] of p.turns.entries()) {
+      if (t.speaker !== 0 && t.speaker !== 1) {
+        error(`Passage ${p.id}: turn ${i} invalid speaker ${t.speaker}`)
+      }
+      if (!t.text || !t.text.trim()) {
+        error(`Passage ${p.id}: turn ${i} has empty text`)
+      }
     }
   }
 
