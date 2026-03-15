@@ -14,33 +14,46 @@ Based on Krashen's i+1 theory, Nation (2001), and Ebbinghaus spaced repetition r
 
 ### Word ID Segmentation
 
+All levels use consistent 10000-block ranges. B2 words are renumbered from 1-563 to 40001-40563.
+
 | Level | ID Range | Capacity |
 |-------|----------|----------|
 | A1    | 10001-19999 | 9999 |
 | A2    | 20001-29999 | 9999 |
 | B1    | 30001-39999 | 9999 |
-| B2    | 1-563 (unchanged) | existing |
+| B2    | 40001-49999 | 9999 |
 | C1    | 50001-59999 | 9999 |
 | C2    | 60001-69999 | 9999 |
 | User  | 100001+ | existing convention |
 
 ### Passage ID Segmentation (separate namespace from words)
 
-Word IDs and passage IDs live in separate database tables (`words` vs `passages`). To avoid human confusion during content generation, passage IDs use a distinct range:
+Word IDs and passage IDs live in separate database tables (`words` vs `passages`). Passage IDs use a distinct range ordered by CEFR progression:
 
 | Level | ID Range |
 |-------|----------|
-| B1    | 1001-1999 |
-| B2    | 2001-2999 |
-| A1    | 3001-3999 |
-| A2    | 4001-4999 |
+| A1    | 1001-1999 |
+| A2    | 2001-2999 |
+| B1    | 3001-3999 |
+| B2    | 4001-4999 |
 | C1    | 5001-5999 |
+| C2    | 6001-6999 |
 
-Old passage IDs (1-12, 101-125) are retired.
+Old passage IDs (1-12, 101-125) are retired. Both word and passage ID ranges are per-language — different languages use the same ranges independently (disambiguated by `language_id` in the DB).
+
+### B2 Renumbering
+
+B2 words are renumbered from 1-563 to 40001-40563. This is a one-time mechanical change affecting:
+- `packages/api/scripts/data/words/b2.json` — word IDs
+- `packages/api/scripts/data/translations/en/b2.json` — translation references
+- `packages/api/scripts/data/translations/zh-CN/b2.json` — translation references
+- Old passage files (being deleted anyway)
+
+A one-off script handles the renumbering before any other changes.
 
 ### Data Structure: Core vs Translation Separation
 
-The existing architecture already separates translations from core word data. English definitions (`en`) and Chinese translations (`zh`) both live in `translations/` directories, NOT in core word data. This spec maintains that convention for all new levels.
+The existing architecture separates translations from core word data. English definitions (`en`) and all other language translations live in `translations/` directories, NOT in core word data. This spec maintains that convention for all levels.
 
 **Core word data** (required, language-independent):
 ```json
@@ -72,8 +85,10 @@ Each translation file contains `{ id, <lang_field> }` mappings, following existi
 packages/api/scripts/data/words/
   a2.json    # new
   b1.json    # new
-  b2.json    # existing (unchanged)
+  b2.json    # existing (IDs renumbered to 40001+)
 ```
+
+One JSON file per level. At ~1500 words per level (~300KB), this is well within editor and toolchain limits. Do not split by topic.
 
 ### Word Generation Rules
 
@@ -83,6 +98,12 @@ packages/api/scripts/data/words/
 - `topics`: 1-3 subtopic IDs from existing 16-subtopic hierarchy
 - No duplicate entries within same level
 - English definitions and other translations generated as separate files in `translations/`
+
+### Translation Validation
+
+`validate-data.ts` must enforce:
+- Every word ID in `words/{level}.json` must have a corresponding entry in `translations/en/{level}.json` (English definitions are required)
+- Translation entries in other locales are optional, but if present, the `wordId` must exist in the corresponding word file
 
 ---
 
@@ -104,36 +125,64 @@ New fields added to Passage:
 
 ```typescript
 interface Passage {
-  // ...existing fields (id, title, level, topic, genre, speakers, turns)
-  sequence: number        // Learning order within this level
-  newWordIds: number[]    // New words introduced in this passage (3-5)
-  reviewWordIds: number[] // Previously learned words revisited (2-4)
+  // ...existing fields (id, title, level, topic, genre, languageId, speakers, turns)
+  sequence: number | null   // Learning order within this level (null = supplemental)
+  newWordIds: number[]      // New words introduced in this passage (3-5)
+  reviewWordIds: number[]   // Previously learned words revisited (2-4)
 }
 ```
 
 The legacy `wordIds` field is replaced by `newWordIds` and `reviewWordIds`.
 
+`sequence` is nullable — passages with `sequence = null` are supplemental/standalone and not part of the spiral curriculum. This allows adding extra practice passages without disrupting the ordered sequence.
+
+### Database Migration
+
+New migration file: `packages/api/src/db/migrations/0002_spiral_progression.sql`
+
+```sql
+-- Add sequence for ordered curriculum within a level
+ALTER TABLE passages ADD COLUMN sequence INTEGER;
+
+-- Unique constraint: sequence is unique per (language, level) pair,
+-- nullable to allow supplemental passages outside the curriculum
+CREATE UNIQUE INDEX idx_passages_sequence
+  ON passages(language_id, level, sequence)
+  WHERE sequence IS NOT NULL;
+
+-- Add role to passage-word relationships
+-- 'new'    = word is introduced for the first time in this passage
+-- 'review' = word was introduced in an earlier passage, revisited here
+ALTER TABLE passage_words ADD COLUMN role TEXT NOT NULL DEFAULT 'new'
+  CHECK (role IN ('new', 'review'));
+```
+
+Design notes:
+- `role` (not `word_type`) — describes the word's function in the passage, not the word itself
+- Partial unique index allows supplemental passages to coexist without sequence
+- CHECK constraint enforces the enum at the DB layer
+- The "first introduction" fact is derivable via query (`role='new'` + `sequence ORDER`), not stored redundantly
+
 ### Code Changes Required
 
-The following files must be updated to support the new structure:
-
 1. **`packages/shared/src/types.ts`** — Add `sequence`, `newWordIds`, `reviewWordIds` to `Passage` type; remove `wordIds`
-2. **`packages/api/src/db/migrations/0002_add_sequence.sql`** — New migration adding `sequence INTEGER` column to `passages` table, and `word_type TEXT` column (`'new'` or `'review'`) to `passage_words` table
-3. **`packages/api/src/db/queries/passages.ts`** — Update `getPassages()` to `ORDER BY sequence`; update `getPassageWordIds()` to return word type info
-4. **`packages/api/scripts/migrate-content.ts`** — Read `newWordIds` and `reviewWordIds` from JSON; insert into `passage_words` with `word_type` column; populate `sequence`
+2. **`packages/api/src/db/migrations/0002_spiral_progression.sql`** — As above
+3. **`packages/api/src/db/queries/passages.ts`** — Update `getPassages()` to `ORDER BY sequence NULLS LAST, id`; update `getPassageWordIds()` return type to `{ wordId: number; role: 'new' | 'review' }[]`
+4. **`packages/api/scripts/migrate-content.ts`** — Read `newWordIds` and `reviewWordIds` from JSON; insert into `passage_words` with `role` column; populate `sequence`
 5. **`packages/web/scripts/validate-data.ts`** — Replace `wordIds` with `newWordIds` + `reviewWordIds` in `REQUIRED_PASSAGE_FIELDS`; add new validation rules (see below)
 
 ### New Validation Rules for `validate-data.ts`
 
-- `newWordIds` length must be 3-5
-- `reviewWordIds` length must be 2-4
+- `newWordIds` length must be 3-5 (for passages with non-null sequence)
+- `reviewWordIds` length must be 2-4 (for passages with sequence > 1; first passage may have 0)
 - `sequence` must be unique within each level and contiguous (1, 2, 3, ...)
 - All IDs in `newWordIds` and `reviewWordIds` must reference existing words
-- `reviewWordIds` must reference words that appeared as `newWordIds` in earlier passages (lower sequence) of the same level
+- `reviewWordIds` must reference words that appeared as `newWordIds` in earlier passages (lower sequence) of the same level, OR belong to a lower CEFR level (cross-level review is allowed)
+- **Spiral window enforcement:** for each word W introduced as `newWordIds` in passage at sequence N, W must appear in `reviewWordIds` of at least one passage with sequence in [N+1, N+5] within the same level. This makes the spiral guarantee machine-checked, not just a generation convention.
 
 ### UI Treatment of New vs Review Words
 
-Both `newWordIds` and `reviewWordIds` populate `passage_words` and are tappable in PassageView. The `word_type` column enables future UI differentiation (e.g., badge or color), but Phase 1 treats them identically — all are highlighted and open WordTooltip. This avoids UI complexity while the core mechanism is validated.
+Both `newWordIds` and `reviewWordIds` populate `passage_words` and are tappable in PassageView. The `role` column enables future UI differentiation (e.g., badge or color), but Phase 1 treats them identically — all are highlighted and open WordTooltip. This avoids UI complexity while the core mechanism is validated.
 
 ### Difficulty Sequencing
 
@@ -163,7 +212,7 @@ B2 sequence:
 Before generating any dialogue, verify:
 
 1. New word count = 3-5, all same level
-2. Review word count = 2-4, from previous 5 passages
+2. Review word count = 2-4, from previous 5 passages (first passage exempt)
 3. Context vocabulary ≤ target level - 1
 4. Each new word is planned to reappear within next 5 passages
 5. Topic differs from at least one of the previous 2 passages
@@ -185,7 +234,7 @@ Before generating a batch of passages, create a JSON allocation plan:
 }
 ```
 
-This table is used to verify review coverage before generating any dialogue content.
+This table is used to verify review coverage before generating any dialogue content. It is a planning artifact, not a runtime file.
 
 ### Batch Generation Workflow
 
@@ -198,19 +247,31 @@ This table is used to verify review coverage before generating any dialogue cont
 
 ## 3. Migration Plan
 
-### Data Migration
+### Phase 0: B2 Renumbering
 
-- Delete old `passages/b1.json` and `passages/b2.json`
-- Replace with new files following spiral progression
-- Regenerate TTS audio and timestamps for new passages
+1. Write and run one-off script to renumber B2 word IDs from 1-563 to 40001-40563 across all data files
+2. Delete the script after use
 
-### Database Migration
+### Phase 1: Schema and Types
 
-- New migration file: `packages/api/src/db/migrations/0002_add_sequence.sql`
-  - `ALTER TABLE passages ADD COLUMN sequence INTEGER`
-  - `ALTER TABLE passage_words ADD COLUMN word_type TEXT DEFAULT 'new'`
-- Apply locally: `npx wrangler d1 migrations apply english-learning --local`
-- Apply remote: `npx wrangler d1 migrations apply english-learning --remote`
+1. Create `0002_spiral_progression.sql` migration
+2. Update `Passage` type in `packages/shared/src/types.ts`
+3. Apply migration locally
+
+### Phase 2: Content Restructuring
+
+1. Add B1 vocabulary (~200-300 words) in `words/b1.json` + `translations/en/b1.json` + `translations/zh-CN/b1.json`
+2. Delete old passage files (`passages/b1.json`, `passages/b2.json`)
+3. Generate new passages following spiral progression: B1×20 + B2×20
+4. Update `migrate-content.ts` to handle new structure
+5. Update `validate-data.ts` with new rules
+
+### Phase 3: Validation and Deployment
+
+1. Run `validate:data` to verify all constraints
+2. Run `migrate:content` to seed local D1
+3. Verify in dev server
+4. Regenerate TTS audio and timestamps for new passages
 
 ### Scale Projection
 
@@ -225,7 +286,7 @@ This table is used to verify review coverage before generating any dialogue cont
 
 ### Phased Delivery
 
-- **Phase 1 (current):** Add B1 vocabulary (200-300 words) + generate B1×20 + B2×20 passages → validate spiral mechanism
+- **Phase 1 (current):** Renumber B2 + add B1 vocabulary (200-300 words) + generate B1×20 + B2×20 passages → validate spiral mechanism
 - **Phase 2+:** Incrementally expand vocabulary and passages per level
 
 ---
@@ -234,8 +295,8 @@ This table is used to verify review coverage before generating any dialogue cont
 
 The following sections of CLAUDE.md need updating:
 
-1. **Adding Words** — add word ID segmentation table, clarify core/translation separation, per-level generation rules
-2. **Generating Passages** — replace with new spiral progression rules, passage ID segmentation, pre-generation checklist, word allocation table format, batch workflow
-3. **Type System > Levels** — document word and passage ID ranges
-4. **Architecture > Data flow** — document sequence-based passage ordering
-5. **validate-data.ts** — document new validation rules for `newWordIds`, `reviewWordIds`, `sequence`
+1. **Adding Words** — word ID segmentation table (all levels at 10000-block ranges), clarify core/translation separation, per-level generation rules, translation validation requirements
+2. **Generating Passages** — passage ID segmentation, spiral progression rules, pre-generation checklist, word allocation table format, batch workflow, `newWordIds`/`reviewWordIds` structure
+3. **Type System > Levels** — document word and passage ID ranges, note that ranges are per-language
+4. **Architecture > Data flow** — document sequence-based passage ordering, `role` column semantics
+5. **validate-data.ts** — document new validation rules including spiral window enforcement
