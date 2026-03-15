@@ -138,7 +138,7 @@ The legacy `wordIds` field is replaced by `newWordIds` and `reviewWordIds`.
 
 ### Database Migration
 
-New migration file: `packages/api/src/db/migrations/0002_spiral_progression.sql`
+New migration file: `packages/api/src/db/migrations/0004_spiral_progression.sql`
 
 ```sql
 -- Add sequence for ordered curriculum within a level
@@ -166,7 +166,7 @@ Design notes:
 ### Code Changes Required
 
 1. **`packages/shared/src/types.ts`** — Add `sequence`, `newWordIds`, `reviewWordIds` to `Passage` type; remove `wordIds`
-2. **`packages/api/src/db/migrations/0002_spiral_progression.sql`** — As above
+2. **`packages/api/src/db/migrations/0004_spiral_progression.sql`** — As above
 3. **`packages/api/src/db/queries/passages.ts`** — Update `getPassages()` to `ORDER BY sequence NULLS LAST, id`; update `getPassageWordIds()` return type to `{ wordId: number; role: 'new' | 'review' }[]`
 4. **`packages/api/scripts/migrate-content.ts`** — Read `newWordIds` and `reviewWordIds` from JSON; insert into `passage_words` with `role` column; populate `sequence`
 5. **`packages/web/scripts/validate-data.ts`** — Replace `wordIds` with `newWordIds` + `reviewWordIds` in `REQUIRED_PASSAGE_FIELDS`; add new validation rules (see below)
