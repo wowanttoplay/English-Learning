@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 30001,
+    "word": "accept",
+    "pos": "verb",
+    "phonetic": "/əkˈsept/",
+    "examples": [
+      "She accepted the job offer from the company.",
+      "He accepted the invitation to the dinner party."
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  },
+  {
+    "id": 30002,
+    "word": "achieve",
+    "pos": "verb",
+    "phonetic": "/əˈtʃiːv/",
+    "examples": [
+      "She worked hard to achieve her goals this year.",
+      "The team achieved a great result in the competition."
+    ],
+    "level": "B1",
+    "topics": ["education", "work"]
+  },
+  {
+    "id": 30003,
+    "word": "admit",
+    "pos": "verb",
+    "phonetic": "/ədˈmɪt/",
+    "examples": [
+      "He admitted that he had made a serious mistake.",
+      "She admitted to feeling nervous before the exam."
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  },
+  {
+    "id": 30004,
+    "word": "afford",
+    "pos": "verb",
+    "phonetic": "/əˈfɔːd/",
+    "examples": [
+      "They cannot afford to buy a new car right now.",
+      "She could not afford the expensive holiday this summer."
+    ],
+    "level": "B1",
+    "topics": ["business", "daily-life"]
+  },
+  {
+    "id": 30005,
+    "word": "agree",
+    "pos": "verb",
+    "phonetic": "/əˈɡriː/",
+    "examples": [
+      "We all agreed to meet at the park after school.",
+      "She agreed with his idea about the new project."
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  },
+  {
+    "id": 30006,
+    "word": "allow",
+    "pos": "verb",
+    "phonetic": "/əˈlaʊ/",
+    "examples": [
+      "The teacher allowed the students to leave class early.",
+      "Dogs are not allowed inside the restaurant building."
+    ],
+    "level": "B1",
+    "topics": ["law", "daily-life"]
+  },
+  {
+    "id": 30007,
+    "word": "appear",
+    "pos": "verb",
+    "phonetic": "/əˈpɪə/",
+    "examples": [
+      "The sun appeared from behind the clouds after the rain.",
+      "He appeared to be very tired after the long journey."
+    ],
+    "level": "B1",
+    "topics": ["daily-life"]
+  },
+  {
+    "id": 30008,
+    "word": "apply",
+    "pos": "verb",
+    "phonetic": "/əˈplaɪ/",
+    "examples": [
+      "She decided to apply for the teaching position online.",
+      "You need to apply the cream to your skin twice."
+    ],
+    "level": "B1",
+    "topics": ["work", "education"]
+  },
+  {
+    "id": 30009,
+    "word": "arrange",
+    "pos": "verb",
+    "phonetic": "/əˈreɪndʒ/",
+    "examples": [
+      "She arranged the flowers in a beautiful glass vase.",
+      "They arranged to meet at the cafe on Saturday morning."
+    ],
+    "level": "B1",
+    "topics": ["daily-life"]
+  },
+  {
+    "id": 30010,
+    "word": "attend",
+    "pos": "verb",
+    "phonetic": "/əˈtend/",
+    "examples": [
+      "Over two hundred people attended the meeting last night.",
+      "She attends a language class every Tuesday and Thursday."
+    ],
+    "level": "B1",
+    "topics": ["education"]
+  },
+  {
+    "id": 30011,
+    "word": "avoid",
+    "pos": "verb",
+    "phonetic": "/əˈvɔɪd/",
+    "examples": [
+      "He tried to avoid eating too much sugar every day.",
+      "She avoided the busy road by taking a different route."
+    ],
+    "level": "B1",
+    "topics": ["health", "daily-life"]
+  },
+  {
+    "id": 30012,
+    "word": "borrow",
+    "pos": "verb",
+    "phonetic": "/ˈbɒrəʊ/",
+    "examples": [
+      "Can I borrow your pen for a few minutes please?",
+      "She borrowed three books from the library last week."
+    ],
+    "level": "B1",
+    "topics": ["daily-life"]
+  },
+  {
+    "id": 30013,
+    "word": "cancel",
+    "pos": "verb",
+    "phonetic": "/ˈkænsəl/",
+    "examples": [
+      "They had to cancel the flight because of bad weather.",
+      "She cancelled her doctor appointment and made a new one."
+    ],
+    "level": "B1",
+    "topics": ["travel", "daily-life"]
+  },
+  {
+    "id": 30014,
+    "word": "compare",
+    "pos": "verb",
+    "phonetic": "/kəmˈpeə/",
+    "examples": [
+      "She compared the prices of both phones before buying one.",
+      "It is hard to compare the two very different cities."
+    ],
+    "level": "B1",
+    "topics": ["education"]
+  },
+  {
+    "id": 30015,
+    "word": "complain",
+    "pos": "verb",
+    "phonetic": "/kəmˈpleɪn/",
+    "examples": [
+      "The customer complained about the slow service at the hotel.",
+      "He always complains about the cold weather in winter months."
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  },
+  {
+    "id": 30016,
+    "word": "confirm",
+    "pos": "verb",
+    "phonetic": "/kənˈfɜːm/",
+    "examples": [
+      "Please confirm your booking by email before next Friday.",
+      "The doctor confirmed that the test results were all normal."
+    ],
+    "level": "B1",
+    "topics": ["communication", "work"]
+  },
+  {
+    "id": 30017,
+    "word": "connect",
+    "pos": "verb",
+    "phonetic": "/kəˈnekt/",
+    "examples": [
+      "This road connects the two small towns near the coast.",
+      "I cannot connect my phone to the wireless internet today."
+    ],
+    "level": "B1",
+    "topics": ["technology"]
+  },
+  {
+    "id": 30018,
+    "word": "consider",
+    "pos": "verb",
+    "phonetic": "/kənˈsɪdə/",
+    "examples": [
+      "We should consider all the options before making a decision.",
+      "Have you considered moving to a different city for work?"
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  },
+  {
+    "id": 30019,
+    "word": "contain",
+    "pos": "verb",
+    "phonetic": "/kənˈteɪn/",
+    "examples": [
+      "This box contains all the old photos from our holiday.",
+      "The drink contains a lot of sugar and is not healthy."
+    ],
+    "level": "B1",
+    "topics": ["daily-life"]
+  },
+  {
+    "id": 30020,
+    "word": "continue",
+    "pos": "verb",
+    "phonetic": "/kənˈtɪnjuː/",
+    "examples": [
+      "The rain continued all day and did not stop until night.",
+      "She continued reading her book after a short lunch break."
+    ],
+    "level": "B1",
+    "topics": ["daily-life"]
+  },
+  {
+    "id": 30021,
+    "word": "convince",
+    "pos": "verb",
+    "phonetic": "/kənˈvɪns/",
+    "examples": [
+      "She convinced her parents to let her study abroad next year.",
+      "He tried to convince me that his plan would really work."
+    ],
+    "level": "B1",
+    "topics": ["communication", "relationships"]
+  },
+  {
+    "id": 30022,
+    "word": "create",
+    "pos": "verb",
+    "phonetic": "/kriˈeɪt/",
+    "examples": [
+      "The artist created a beautiful painting of the mountain view.",
+      "They want to create a new park for children in town."
+    ],
+    "level": "B1",
+    "topics": ["arts", "work"]
+  },
+  {
+    "id": 30023,
+    "word": "deliver",
+    "pos": "verb",
+    "phonetic": "/dɪˈlɪvə/",
+    "examples": [
+      "The postman delivers letters to our house every single morning.",
+      "They promised to deliver the new furniture by next week."
+    ],
+    "level": "B1",
+    "topics": ["work", "business"]
+  },
+  {
+    "id": 30024,
+    "word": "demand",
+    "pos": "verb",
+    "phonetic": "/dɪˈmɑːnd/",
+    "examples": [
+      "The workers demanded better pay and safer working conditions today.",
+      "She demanded an explanation for the sudden change in plans."
+    ],
+    "level": "B1",
+    "topics": ["work", "politics"]
+  },
+  {
+    "id": 30025,
+    "word": "depend",
+    "pos": "verb",
+    "phonetic": "/dɪˈpend/",
+    "examples": [
+      "The price depends on how many tickets you want to buy.",
+      "Young children depend on their parents for food and care."
+    ],
+    "level": "B1",
+    "topics": ["relationships", "daily-life"]
+  },
+  {
+    "id": 30026,
+    "word": "describe",
+    "pos": "verb",
+    "phonetic": "/dɪˈskraɪb/",
+    "examples": [
+      "Can you describe what the man looked like to the police?",
+      "She described her holiday as the best trip of her life."
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  },
+  {
+    "id": 30027,
+    "word": "develop",
+    "pos": "verb",
+    "phonetic": "/dɪˈveləp/",
+    "examples": [
+      "The company developed a new app for learning languages online.",
+      "Children develop new skills quickly when they practice every day."
+    ],
+    "level": "B1",
+    "topics": ["technology", "education"]
+  },
+  {
+    "id": 30028,
+    "word": "discuss",
+    "pos": "verb",
+    "phonetic": "/dɪˈskʌs/",
+    "examples": [
+      "We need to discuss the problem before we make any decisions.",
+      "They discussed the plan for the school trip during lunch."
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  },
+  {
+    "id": 30029,
+    "word": "earn",
+    "pos": "verb",
+    "phonetic": "/ɜːn/",
+    "examples": [
+      "She earns a good salary working as a software engineer.",
+      "He earned enough money to take his family on holiday."
+    ],
+    "level": "B1",
+    "topics": ["work", "business"]
+  },
+  {
+    "id": 30030,
+    "word": "encourage",
+    "pos": "verb",
+    "phonetic": "/ɪnˈkʌrɪdʒ/",
+    "examples": [
+      "The teacher encouraged the students to ask questions in class.",
+      "Her parents always encouraged her to follow her own dreams."
+    ],
+    "level": "B1",
+    "topics": ["education", "relationships"]
+  },
+  {
+    "id": 30031,
+    "word": "expect",
+    "pos": "verb",
+    "phonetic": "/ɪkˈspekt/",
+    "examples": [
+      "We expect the train to arrive at the station by noon.",
+      "She did not expect so many people to come to the party."
+    ],
+    "level": "B1",
+    "topics": ["daily-life"]
+  },
+  {
+    "id": 30032,
+    "word": "explain",
+    "pos": "verb",
+    "phonetic": "/ɪkˈspleɪn/",
+    "examples": [
+      "The teacher explained the grammar rule to the class very clearly.",
+      "Can you explain how this machine works step by step?"
+    ],
+    "level": "B1",
+    "topics": ["education", "communication"]
+  },
+  {
+    "id": 30033,
+    "word": "express",
+    "pos": "verb",
+    "phonetic": "/ɪkˈspres/",
+    "examples": [
+      "She expressed her thanks to everyone who helped with the event.",
+      "It is important to express your feelings in a calm way."
+    ],
+    "level": "B1",
+    "topics": ["communication", "emotions"]
+  },
+  {
+    "id": 30034,
+    "word": "fail",
+    "pos": "verb",
+    "phonetic": "/feɪl/",
+    "examples": [
+      "He failed the driving test but will try again next month.",
+      "The plan failed because they did not have enough time."
+    ],
+    "level": "B1",
+    "topics": ["education"]
+  },
+  {
+    "id": 30035,
+    "word": "improve",
+    "pos": "verb",
+    "phonetic": "/ɪmˈpruːv/",
+    "examples": [
+      "She wants to improve her English before travelling to London.",
+      "The company improved its service after getting customer feedback last year."
+    ],
+    "level": "B1",
+    "topics": ["education", "work"]
+  },
+  {
+    "id": 30036,
+    "word": "include",
+    "pos": "verb",
+    "phonetic": "/ɪnˈkluːd/",
+    "examples": [
+      "The price includes breakfast and free parking at the hotel.",
+      "The list includes all the items we need for the trip."
+    ],
+    "level": "B1",
+    "topics": ["daily-life"]
+  },
+  {
+    "id": 30037,
+    "word": "increase",
+    "pos": "verb",
+    "phonetic": "/ɪnˈkriːs/",
+    "examples": [
+      "The company increased the price of its products by ten percent.",
+      "The number of students has increased a lot since last year."
+    ],
+    "level": "B1",
+    "topics": ["business"]
+  },
+  {
+    "id": 30038,
+    "word": "inform",
+    "pos": "verb",
+    "phonetic": "/ɪnˈfɔːm/",
+    "examples": [
+      "Please inform us if you cannot attend the meeting on Monday.",
+      "The school informed the parents about the change in schedule."
+    ],
+    "level": "B1",
+    "topics": ["communication", "work"]
+  },
+  {
+    "id": 30039,
+    "word": "insist",
+    "pos": "verb",
+    "phonetic": "/ɪnˈsɪst/",
+    "examples": [
+      "She insisted on paying for dinner even though I offered.",
+      "He insisted that the meeting should start at nine o'clock sharp."
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  },
+  {
+    "id": 30040,
+    "word": "introduce",
+    "pos": "verb",
+    "phonetic": "/ˌɪntrəˈdjuːs/",
+    "examples": [
+      "Let me introduce you to my friend from the university.",
+      "The company introduced a new product at the trade show."
+    ],
+    "level": "B1",
+    "topics": ["relationships", "communication"]
+  },
+  {
+    "id": 30041,
+    "word": "invite",
+    "pos": "verb",
+    "phonetic": "/ɪnˈvaɪt/",
+    "examples": [
+      "She invited all her friends to her birthday party on Saturday.",
+      "They invited us to have dinner at their house last weekend."
+    ],
+    "level": "B1",
+    "topics": ["relationships"]
+  },
+  {
+    "id": 30042,
+    "word": "involve",
+    "pos": "verb",
+    "phonetic": "/ɪnˈvɒlv/",
+    "examples": [
+      "The job involves a lot of travel to different countries.",
+      "The project involved working with people from many different teams."
+    ],
+    "level": "B1",
+    "topics": ["work"]
+  },
+  {
+    "id": 30043,
+    "word": "manage",
+    "pos": "verb",
+    "phonetic": "/ˈmænɪdʒ/",
+    "examples": [
+      "She manages a team of twenty people at the office.",
+      "He managed to finish the report before the deadline on Friday."
+    ],
+    "level": "B1",
+    "topics": ["work", "business"]
+  },
+  {
+    "id": 30044,
+    "word": "mention",
+    "pos": "verb",
+    "phonetic": "/ˈmenʃən/",
+    "examples": [
+      "She mentioned that she would be late for the meeting today.",
+      "He forgot to mention the most important point in his speech."
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  },
+  {
+    "id": 30045,
+    "word": "notice",
+    "pos": "verb",
+    "phonetic": "/ˈnəʊtɪs/",
+    "examples": [
+      "Did you notice the new painting on the wall in the hall?",
+      "She noticed that the door was open when she came home."
+    ],
+    "level": "B1",
+    "topics": ["daily-life"]
+  },
+  {
+    "id": 30046,
+    "word": "offer",
+    "pos": "verb",
+    "phonetic": "/ˈɒfə/",
+    "examples": [
+      "He offered to help her carry the heavy bags to the car.",
+      "The shop offered a twenty percent discount on all winter clothes."
+    ],
+    "level": "B1",
+    "topics": ["communication", "business"]
+  },
+  {
+    "id": 30047,
+    "word": "organize",
+    "pos": "verb",
+    "phonetic": "/ˈɔːɡənaɪz/",
+    "examples": [
+      "She organized a surprise party for her best friend last week.",
+      "We need to organize the files on the computer into folders."
+    ],
+    "level": "B1",
+    "topics": ["work", "daily-life"]
+  },
+  {
+    "id": 30048,
+    "word": "perform",
+    "pos": "verb",
+    "phonetic": "/pəˈfɔːm/",
+    "examples": [
+      "The band performed their new songs at the music festival.",
+      "She performed very well in the final exam last month."
+    ],
+    "level": "B1",
+    "topics": ["arts", "education"]
+  },
+  {
+    "id": 30049,
+    "word": "persuade",
+    "pos": "verb",
+    "phonetic": "/pəˈsweɪd/",
+    "examples": [
+      "She persuaded him to come to the party on Saturday night.",
+      "It was hard to persuade my parents to let me go."
+    ],
+    "level": "B1",
+    "topics": ["communication", "relationships"]
+  },
+  {
+    "id": 30050,
+    "word": "prefer",
+    "pos": "verb",
+    "phonetic": "/prɪˈfɜː/",
+    "examples": [
+      "I prefer tea to coffee in the morning before going out.",
+      "She prefers reading books rather than watching television at night."
+    ],
+    "level": "B1",
+    "topics": ["daily-life"]
+  },
+  {
+    "id": 30051,
+    "word": "prepare",
+    "pos": "verb",
+    "phonetic": "/prɪˈpeə/",
+    "examples": [
+      "She prepared a delicious meal for the family dinner tonight.",
+      "You should prepare well for your job interview next week."
+    ],
+    "level": "B1",
+    "topics": ["daily-life", "food"]
+  },
+  {
+    "id": 30052,
+    "word": "prevent",
+    "pos": "verb",
+    "phonetic": "/prɪˈvent/",
+    "examples": [
+      "Washing your hands can help prevent the spread of illness.",
+      "The heavy rain prevented us from going outside all morning."
+    ],
+    "level": "B1",
+    "topics": ["health"]
+  },
+  {
+    "id": 30053,
+    "word": "produce",
+    "pos": "verb",
+    "phonetic": "/prəˈdjuːs/",
+    "examples": [
+      "The factory produces over a thousand cars every single month.",
+      "The farm produces fresh milk and cheese for local shops."
+    ],
+    "level": "B1",
+    "topics": ["business", "environment"]
+  },
+  {
+    "id": 30054,
+    "word": "promise",
+    "pos": "verb",
+    "phonetic": "/ˈprɒmɪs/",
+    "examples": [
+      "He promised to call her as soon as he arrived home.",
+      "She promised that she would finish the work by Friday morning."
+    ],
+    "level": "B1",
+    "topics": ["relationships", "communication"]
+  },
+  {
+    "id": 30055,
+    "word": "protect",
+    "pos": "verb",
+    "phonetic": "/prəˈtekt/",
+    "examples": [
+      "Parents always try to protect their children from any danger.",
+      "You should wear sunscreen to protect your skin from the sun."
+    ],
+    "level": "B1",
+    "topics": ["health", "environment"]
+  },
+  {
+    "id": 30056,
+    "word": "provide",
+    "pos": "verb",
+    "phonetic": "/prəˈvaɪd/",
+    "examples": [
+      "The hotel provides free breakfast for all guests every morning.",
+      "The school provides books and materials for every new student."
+    ],
+    "level": "B1",
+    "topics": ["work", "daily-life"]
+  },
+  {
+    "id": 30057,
+    "word": "realize",
+    "pos": "verb",
+    "phonetic": "/ˈrɪəlaɪz/",
+    "examples": [
+      "She suddenly realized that she had left her keys at home.",
+      "He realized how important his family was to him after moving."
+    ],
+    "level": "B1",
+    "topics": ["emotions"]
+  },
+  {
+    "id": 30058,
+    "word": "receive",
+    "pos": "verb",
+    "phonetic": "/rɪˈsiːv/",
+    "examples": [
+      "She received a beautiful gift from her friend on her birthday.",
+      "We received your email and will reply as soon as possible."
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  },
+  {
+    "id": 30059,
+    "word": "recognize",
+    "pos": "verb",
+    "phonetic": "/ˈrekəɡnaɪz/",
+    "examples": [
+      "I did not recognize her because she had changed her hairstyle.",
+      "He recognized the song from a movie he watched years ago."
+    ],
+    "level": "B1",
+    "topics": ["daily-life"]
+  },
+  {
+    "id": 30060,
+    "word": "recommend",
+    "pos": "verb",
+    "phonetic": "/ˌrekəˈmend/",
+    "examples": [
+      "She recommended a good restaurant near the city centre for lunch.",
+      "The doctor recommended that he should exercise more often each week."
+    ],
+    "level": "B1",
+    "topics": ["communication", "health"]
+  },
+  {
+    "id": 30061,
+    "word": "reduce",
+    "pos": "verb",
+    "phonetic": "/rɪˈdjuːs/",
+    "examples": [
+      "The shop reduced the price of all summer clothes by half.",
+      "We need to reduce the amount of plastic we use daily."
+    ],
+    "level": "B1",
+    "topics": ["environment", "business"]
+  },
+  {
+    "id": 30062,
+    "word": "refuse",
+    "pos": "verb",
+    "phonetic": "/rɪˈfjuːz/",
+    "examples": [
+      "She refused to answer any questions about her personal life.",
+      "The restaurant refused to serve us because we arrived too late."
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  },
+  {
+    "id": 30063,
+    "word": "remind",
+    "pos": "verb",
+    "phonetic": "/rɪˈmaɪnd/",
+    "examples": [
+      "Please remind me to buy some milk on the way home.",
+      "The photo reminded her of the happy times she spent there."
+    ],
+    "level": "B1",
+    "topics": ["daily-life", "relationships"]
+  },
+  {
+    "id": 30064,
+    "word": "repair",
+    "pos": "verb",
+    "phonetic": "/rɪˈpeə/",
+    "examples": [
+      "The mechanic repaired the car engine in just two hours.",
+      "They need to repair the roof before the winter season starts."
+    ],
+    "level": "B1",
+    "topics": ["daily-life"]
+  },
+  {
+    "id": 30065,
+    "word": "replace",
+    "pos": "verb",
+    "phonetic": "/rɪˈpleɪs/",
+    "examples": [
+      "We need to replace the old batteries in the remote control.",
+      "She replaced the broken window with a new piece of glass."
+    ],
+    "level": "B1",
+    "topics": ["daily-life"]
+  },
+  {
+    "id": 30066,
+    "word": "require",
+    "pos": "verb",
+    "phonetic": "/rɪˈkwaɪə/",
+    "examples": [
+      "This job requires at least three years of work experience.",
+      "All students are required to wear a uniform to school daily."
+    ],
+    "level": "B1",
+    "topics": ["work", "education"]
+  },
+  {
+    "id": 30067,
+    "word": "respond",
+    "pos": "verb",
+    "phonetic": "/rɪˈspɒnd/",
+    "examples": [
+      "She responded to the email within an hour of receiving it.",
+      "The government responded quickly to the emergency situation last week."
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  },
+  {
+    "id": 30068,
+    "word": "search",
+    "pos": "verb",
+    "phonetic": "/sɜːtʃ/",
+    "examples": [
+      "She searched online for cheap flights to Paris next summer.",
+      "The police searched the whole building but found nothing unusual inside."
+    ],
+    "level": "B1",
+    "topics": ["technology", "daily-life"]
+  },
+  {
+    "id": 30069,
+    "word": "separate",
+    "pos": "verb",
+    "phonetic": "/ˈsepəreɪt/",
+    "examples": [
+      "Please separate the white clothes from the coloured ones before washing.",
+      "A thin wall separates the two bedrooms in their small apartment."
+    ],
+    "level": "B1",
+    "topics": ["daily-life"]
+  },
+  {
+    "id": 30070,
+    "word": "serve",
+    "pos": "verb",
+    "phonetic": "/sɜːv/",
+    "examples": [
+      "The restaurant serves lunch from twelve o'clock until three in the afternoon.",
+      "He served in the army for five years before becoming a teacher."
+    ],
+    "level": "B1",
+    "topics": ["food", "work"]
+  },
+  {
+    "id": 30071,
+    "word": "suggest",
+    "pos": "verb",
+    "phonetic": "/səˈdʒest/",
+    "examples": [
+      "She suggested going to the beach instead of staying at home.",
+      "The guide suggested that we visit the old castle before sunset."
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  },
+  {
+    "id": 30072,
+    "word": "support",
+    "pos": "verb",
+    "phonetic": "/səˈpɔːt/",
+    "examples": [
+      "Her family always supported her decision to study art at college.",
+      "The charity supports children who do not have access to education."
+    ],
+    "level": "B1",
+    "topics": ["relationships", "society"]
+  },
+  {
+    "id": 30073,
+    "word": "survive",
+    "pos": "verb",
+    "phonetic": "/səˈvaɪv/",
+    "examples": [
+      "The old bridge survived the flood and is still standing today.",
+      "She survived the accident with only a few minor cuts and bruises."
+    ],
+    "level": "B1",
+    "topics": ["health"]
+  },
+  {
+    "id": 30074,
+    "word": "warn",
+    "pos": "verb",
+    "phonetic": "/wɔːn/",
+    "examples": [
+      "The sign warned drivers about the dangerous curve in the road.",
+      "She warned him not to go swimming in the deep water."
+    ],
+    "level": "B1",
+    "topics": ["communication", "daily-life"]
+  },
+  {
+    "id": 30075,
+    "word": "advantage",
+    "pos": "noun",
+    "phonetic": "/ədˈvɑːntɪdʒ/",
+    "examples": [
+      "Living near the office is a big advantage for saving time.",
+      "One advantage of online shopping is that you can do it anytime."
+    ],
+    "level": "B1",
+    "topics": ["daily-life", "business"]
+  },
+  {
+    "id": 30076,
+    "word": "behavior",
+    "pos": "noun",
+    "phonetic": "/bɪˈheɪvjə/",
+    "examples": [
+      "The teacher talked to the parents about the child's bad behavior.",
+      "Good behavior in class helps everyone learn better and stay focused."
+    ],
+    "level": "B1",
+    "topics": ["education", "relationships"]
+  },
+  {
+    "id": 30077,
+    "word": "benefit",
+    "pos": "noun",
+    "phonetic": "/ˈbenɪfɪt/",
+    "examples": [
+      "Regular exercise has many health benefits for your body and mind.",
+      "One benefit of this job is the free health insurance for staff."
+    ],
+    "level": "B1",
+    "topics": ["health", "work"]
+  },
+  {
+    "id": 30078,
+    "word": "career",
+    "pos": "noun",
+    "phonetic": "/kəˈrɪə/",
+    "examples": [
+      "She had a long and successful career as a university professor.",
+      "He decided to change his career and become a web designer."
+    ],
+    "level": "B1",
+    "topics": ["work"]
+  },
+  {
+    "id": 30079,
+    "word": "challenge",
+    "pos": "noun",
+    "phonetic": "/ˈtʃælɪndʒ/",
+    "examples": [
+      "Learning a new language is always an exciting challenge for adults.",
+      "The biggest challenge was finding enough time to finish the project."
+    ],
+    "level": "B1",
+    "topics": ["education", "work"]
+  },
+  {
+    "id": 30080,
+    "word": "community",
+    "pos": "noun",
+    "phonetic": "/kəˈmjuːnəti/",
+    "examples": [
+      "The local community organized a festival in the park last summer.",
+      "She feels like an important part of her school community here."
+    ],
+    "level": "B1",
+    "topics": ["society"]
+  },
+  {
+    "id": 30081,
+    "word": "competition",
+    "pos": "noun",
+    "phonetic": "/ˌkɒmpəˈtɪʃən/",
+    "examples": [
+      "She won first place in the national singing competition last year.",
+      "There is strong competition between the two biggest phone companies now."
+    ],
+    "level": "B1",
+    "topics": ["sports", "business"]
+  },
+  {
+    "id": 30082,
+    "word": "confidence",
+    "pos": "noun",
+    "phonetic": "/ˈkɒnfɪdəns/",
+    "examples": [
+      "Speaking in public really helped to build her confidence over time.",
+      "He answered the interview questions with a lot of confidence today."
+    ],
+    "level": "B1",
+    "topics": ["emotions", "work"]
+  },
+  {
+    "id": 30083,
+    "word": "connection",
+    "pos": "noun",
+    "phonetic": "/kəˈnekʃən/",
+    "examples": [
+      "There is a strong connection between exercise and good mental health.",
+      "The internet connection in the hotel was very slow last night."
+    ],
+    "level": "B1",
+    "topics": ["technology", "relationships"]
+  },
+  {
+    "id": 30084,
+    "word": "consequence",
+    "pos": "noun",
+    "phonetic": "/ˈkɒnsɪkwəns/",
+    "examples": [
+      "Pollution has serious consequences for the environment and for human health.",
+      "He did not think about the consequences of his actions at all."
+    ],
+    "level": "B1",
+    "topics": ["environment", "society"]
+  },
+  {
+    "id": 30085,
+    "word": "customer",
+    "pos": "noun",
+    "phonetic": "/ˈkʌstəmə/",
+    "examples": [
+      "The shop has many regular customers who come back every week.",
+      "Good customer service is very important for any successful business today."
+    ],
+    "level": "B1",
+    "topics": ["business"]
+  },
+  {
+    "id": 30086,
+    "word": "decision",
+    "pos": "noun",
+    "phonetic": "/dɪˈsɪʒən/",
+    "examples": [
+      "Making the decision to move abroad was not easy for her.",
+      "The manager made a quick decision about the new office layout."
+    ],
+    "level": "B1",
+    "topics": ["work", "daily-life"]
+  },
+  {
+    "id": 30087,
+    "word": "destination",
+    "pos": "noun",
+    "phonetic": "/ˌdestɪˈneɪʃən/",
+    "examples": [
+      "Paris is one of the most popular tourist destinations in Europe.",
+      "We reached our destination after driving for about six hours straight."
+    ],
+    "level": "B1",
+    "topics": ["travel"]
+  },
+  {
+    "id": 30088,
+    "word": "environment",
+    "pos": "noun",
+    "phonetic": "/ɪnˈvaɪrənmənt/",
+    "examples": [
+      "We should all do more to protect the natural environment around us.",
+      "A clean working environment helps people feel happier and more productive."
+    ],
+    "level": "B1",
+    "topics": ["environment"]
+  },
+  {
+    "id": 30089,
+    "word": "equipment",
+    "pos": "noun",
+    "phonetic": "/ɪˈkwɪpmənt/",
+    "examples": [
+      "The gym has all the modern equipment you need for training.",
+      "We bought new camping equipment for our trip to the mountains."
+    ],
+    "level": "B1",
+    "topics": ["sports", "daily-life"]
+  },
+  {
+    "id": 30090,
+    "word": "experience",
+    "pos": "noun",
+    "phonetic": "/ɪkˈspɪəriəns/",
+    "examples": [
+      "Travelling to Japan was an amazing experience that she will never forget.",
+      "He has ten years of experience working in the banking industry."
+    ],
+    "level": "B1",
+    "topics": ["work", "travel"]
+  },
+  {
+    "id": 30091,
+    "word": "government",
+    "pos": "noun",
+    "phonetic": "/ˈɡʌvənmənt/",
+    "examples": [
+      "The government announced new rules to reduce air pollution in cities.",
+      "She works for the local government in the department of education."
+    ],
+    "level": "B1",
+    "topics": ["politics", "society"]
+  },
+  {
+    "id": 30092,
+    "word": "opportunity",
+    "pos": "noun",
+    "phonetic": "/ˌɒpəˈtjuːnəti/",
+    "examples": [
+      "This job gives her the opportunity to travel around the world.",
+      "There are many opportunities for young people in the technology industry."
+    ],
+    "level": "B1",
+    "topics": ["work", "education"]
+  },
+  {
+    "id": 30093,
+    "word": "population",
+    "pos": "noun",
+    "phonetic": "/ˌpɒpjuˈleɪʃən/",
+    "examples": [
+      "The population of the city has grown a lot in ten years.",
+      "Almost half the population voted in the last national election held."
+    ],
+    "level": "B1",
+    "topics": ["society", "politics"]
+  },
+  {
+    "id": 30094,
+    "word": "quality",
+    "pos": "noun",
+    "phonetic": "/ˈkwɒləti/",
+    "examples": [
+      "The quality of the food at this restaurant is always excellent.",
+      "She looks for good quality clothes that will last a long time."
+    ],
+    "level": "B1",
+    "topics": ["business", "daily-life"]
+  },
+  {
+    "id": 30095,
+    "word": "available",
+    "pos": "adjective",
+    "phonetic": "/əˈveɪləbəl/",
+    "examples": [
+      "The meeting room is available every afternoon from two o'clock onwards.",
+      "There are no tickets available for the concert on Saturday night."
+    ],
+    "level": "B1",
+    "topics": ["work", "daily-life"]
+  },
+  {
+    "id": 30096,
+    "word": "comfortable",
+    "pos": "adjective",
+    "phonetic": "/ˈkʌmftəbəl/",
+    "examples": [
+      "The hotel room was very comfortable and had a lovely view.",
+      "She does not feel comfortable speaking in front of large groups."
+    ],
+    "level": "B1",
+    "topics": ["daily-life", "travel"]
+  },
+  {
+    "id": 30097,
+    "word": "essential",
+    "pos": "adjective",
+    "phonetic": "/ɪˈsenʃəl/",
+    "examples": [
+      "Water is essential for all living things on the planet Earth.",
+      "Good communication skills are essential for working well in any team."
+    ],
+    "level": "B1",
+    "topics": ["education", "science"]
+  },
+  {
+    "id": 30098,
+    "word": "responsible",
+    "pos": "adjective",
+    "phonetic": "/rɪˈspɒnsəbəl/",
+    "examples": [
+      "She is responsible for managing the company's social media accounts online.",
+      "Every citizen should be responsible for keeping their neighbourhood clean and tidy."
+    ],
+    "level": "B1",
+    "topics": ["work", "society"]
+  },
+  {
+    "id": 30099,
+    "word": "successful",
+    "pos": "adjective",
+    "phonetic": "/səkˈsesfəl/",
+    "examples": [
+      "She became a very successful writer after publishing her first novel.",
+      "The event was successful and attracted more than five hundred visitors."
+    ],
+    "level": "B1",
+    "topics": ["work", "arts"]
+  },
+  {
+    "id": 30100,
+    "word": "unfortunately",
+    "pos": "adverb",
+    "phonetic": "/ʌnˈfɔːtʃənətli/",
+    "examples": [
+      "Unfortunately, the shop was closed when we arrived there at noon.",
+      "She studied hard but unfortunately did not pass the final exam."
+    ],
+    "level": "B1",
+    "topics": ["communication"]
+  }
+]
