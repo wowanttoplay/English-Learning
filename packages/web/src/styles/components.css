@@ -1120,18 +1120,11 @@
   flex-shrink: 0;
 }
 
-.player-speed-row {
-  display: flex;
-  gap: 8px;
-  margin-top: 12px;
-  justify-content: center;
-}
-
-.speed-btn {
-  padding: 4px 14px;
-  border-radius: 14px;
+.speed-pill {
+  padding: 4px 10px;
+  border-radius: 10px;
   border: 1px solid var(--border);
-  background: transparent;
+  background: var(--separator);
   color: var(--text-secondary);
   font-size: 13px;
   font-weight: 500;
@@ -1140,14 +1133,10 @@
   transition: all 0.15s;
 }
 
-.speed-btn.active {
-  background: var(--accent);
-  color: #fff;
+.speed-pill:hover {
+  background: var(--accent-soft);
   border-color: var(--accent);
-}
-
-.speed-btn:not(.active):hover {
-  background: var(--separator);
+  color: var(--accent);
 }
 
 .player-fallback-notice {

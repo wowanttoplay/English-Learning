@@ -40,17 +40,9 @@
       <button class="player-btn player-btn-stop" @click="stop" aria-label="Stop">
         &#9632;
       </button>
-    </div>
 
-    <div class="player-speed-row">
-      <button
-        v-for="s in speeds"
-        :key="s"
-        class="speed-btn"
-        :class="{ active: speed === s }"
-        @click="setSpeed(s)"
-      >
-        {{ s }}x
+      <button class="speed-pill" @click="cycleSpeed">
+        {{ speed }}x
       </button>
     </div>
 
@@ -86,6 +78,12 @@ defineEmits<{
 }>()
 
 const progressRef = ref<HTMLElement | null>(null)
+
+function cycleSpeed() {
+  const idx = props.speeds.indexOf(props.speed)
+  const next = props.speeds[(idx + 1) % props.speeds.length]
+  props.setSpeed(next)
+}
 
 function onProgressClick(e: MouseEvent) {
   if (!progressRef.value) return
