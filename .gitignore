@@ -10,3 +10,5 @@ output
 packages/api/seed.sql
 docs/superpowers/plans/
 .playwright-mcp/
+.superpowers/
+packages/web/public/audio/

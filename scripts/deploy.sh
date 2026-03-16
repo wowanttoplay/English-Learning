@@ -5,6 +5,9 @@
 set -e
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+API_DIR="$ROOT_DIR/packages/api"
+WEB_DIR="$ROOT_DIR/packages/web"
+
 cd "$ROOT_DIR"
 
 SKIP_SEED=false
@@ -41,9 +44,11 @@ pnpm --filter @english-learning/web build
 echo "  ✓ Frontend built"
 echo ""
 
-# 4. Apply remote DB migrations
+# 4. Apply remote DB migrations (must run from packages/api/ where wrangler.toml lives)
 echo "[4/7] Applying remote DB migrations..."
+cd "$API_DIR"
 npx wrangler d1 migrations apply english-learning --remote
+cd "$ROOT_DIR"
 echo "  ✓ Migrations applied"
 echo ""
 
@@ -51,27 +56,31 @@ echo ""
 if [ "$SKIP_SEED" = false ]; then
   echo "[5/7] Generating seed.sql and seeding remote DB..."
   pnpm --filter @english-learning/api migrate:content
+  cd "$API_DIR"
   npx wrangler d1 execute english-learning --remote --file=seed.sql
+  cd "$ROOT_DIR"
   echo "  ✓ Remote DB seeded"
 else
   echo "[5/7] Skipping seed (--skip-seed)"
 fi
 echo ""
 
-# 6. Deploy API Worker
+# 6. Deploy API Worker (must run from packages/api/)
 if [ "$SKIP_API" = false ]; then
   echo "[6/7] Deploying API Worker..."
+  cd "$API_DIR"
   npx wrangler deploy
+  cd "$ROOT_DIR"
   echo "  ✓ API Worker deployed"
 else
   echo "[6/7] Skipping API deploy (--skip-api)"
 fi
 echo ""
 
-# 7. Deploy frontend to Pages
+# 7. Deploy frontend to Pages (must run from packages/web/)
 if [ "$SKIP_FRONTEND" = false ]; then
   echo "[7/7] Deploying frontend to Cloudflare Pages..."
-  cd "$ROOT_DIR/packages/web"
+  cd "$WEB_DIR"
   npx wrangler pages deploy dist --project-name english-learning-web --commit-dirty=true
   cd "$ROOT_DIR"
   echo "  ✓ Frontend deployed"
