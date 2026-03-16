@@ -200,11 +200,17 @@
     margin: 0 auto;
   }
 
-  /* Passage audio player -- only in content area, not covering sidebar */
+  /* Passage audio player -- match .passage-screen width, centered in content area */
   .passage-player {
     bottom: 0;
     left: var(--sidebar-width, 220px);
     right: 0;
+    max-width: calc(750px + 48px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 16px 16px 0 0;
   }
 
   /* Tooltip as centered dialog on desktop */
