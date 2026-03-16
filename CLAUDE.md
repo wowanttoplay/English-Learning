@@ -91,13 +91,19 @@ packages/api/                  # @english-learning/api (Cloudflare Workers + D1)
     migrate-content.ts         # Seed D1 with word/passage data
     data/
       words/
-        b2.json                # B2 word core data (563 entries)
+        a2.json                # A2 word core data (400 entries, IDs 20001+)
+        b1.json                # B1 word core data (700 entries, IDs 30001+)
+        b2.json                # B2 word core data (563 entries, IDs 40001+)
       translations/
-        en/b2.json             # English definitions
-        zh-CN/b2.json          # Chinese translations
+        en/a2.json             # A2 English definitions
+        en/b1.json             # B1 English definitions
+        en/b2.json             # B2 English definitions
+        zh-CN/a2.json          # A2 Chinese translations
+        zh-CN/b1.json          # B1 Chinese translations
+        zh-CN/b2.json          # B2 Chinese translations
       passages/
-        b1.json                # B1 passages (25 entries)
-        b2.json                # B2 passages (12 entries)
+        b1.json                # B1 passages (pending spiral generation)
+        b2.json                # B2 passages (pending spiral generation)
 
 packages/web/                  # @english-learning/web (Vue 3 + Vite)
   src/
@@ -191,7 +197,7 @@ packages/web/                  # @english-learning/web (Vue 3 + Vite)
 
 **Authentication:** Clerk handles sign-in/sign-up. `useAuthStore` (packages/web) watches Clerk state and wires a token getter into the API client (`packages/web/src/api/client.ts`). The API client injects `Authorization: Bearer <token>` into all requests. Server-side, `packages/api/src/middleware/auth.ts` validates JWTs on protected routes.
 
-**Reading → Discovery:** user browses passage list (filterable by three simultaneous filter rows: Level [All / B1 / B2] + Domain [All / life / work / society / people / knowledge] + Subtopic [per-domain subtopics]) → reads passage → all words in passage text are tappable (`span.plain-word`). B2 highlighted words open `WordTooltip` (definition + "Save to Deck"), plain words open `FreeWordTooltip` (universal lookup via dictionaryapi.dev showing definition, phonetic, audio, with "Search on Google" fallback and "Save to Deck" button; handles loading, not-found, and cached states). The two tooltips are mutually exclusive. `useSrsStore.addWordFromReading()` creates an SRS card via the API with state `'learning'` immediately → card appears in next study session. For non-B2 words, `useSrsStore.addUserWordFromFreeTooltip()` persists a user-created Word (level `'user'`, IDs 100001+) via the API and creates an SRS card. B1-level passages use simpler sentence structures and more B1 vocabulary to ease the transition for lower-level learners. During audio playback, sentences are highlighted in sync via timestamp data loaded from R2. `usePassageSentenceSync` watches `currentTime` from the audio player and imperatively toggles `.sentence-active` class on sentence `<span>` elements. Highlighting is skipped in Web Speech API fallback mode.
+**Reading → Discovery:** user browses passage list (filterable by Level + Domain + Subtopic) → reads passage → all words in passage text are tappable (`span.plain-word`). Highlighted words (from `newWordIds` + `reviewWordIds`) open `WordTooltip` (definition + "Save to Deck"), plain words open `FreeWordTooltip` (universal lookup). Passages are ordered by `sequence` within each level (spiral progression). The `passage_words` table stores a `role` column (`'new'` or `'review'`) distinguishing word types — Phase 1 treats both identically in the UI. `useSrsStore.addWordFromReading()` creates an SRS card via the API with state `'learning'` immediately. For user-created words, `useSrsStore.addUserWordFromFreeTooltip()` persists a Word (level `'user'`, IDs 100001+) via the API and creates an SRS card. During audio playback, sentences are highlighted in sync via timestamp data loaded from R2. `usePassageSentenceSync` watches `currentTime` from the audio player and imperatively toggles `.sentence-active` class on sentence `<span>` elements. Highlighting is skipped in Web Speech API fallback mode.
 
 **Study → Review only:** `useSrsStore.getCardsForToday()` fetches cards due for review from the API → `useStudySessionStore` manages queue → user rates → SRS updates via API → store reactivity triggers recomputation.
 
@@ -229,6 +235,8 @@ packages/web/                  # @english-learning/web (Vue 3 + Vite)
 - Level definitions live in `packages/shared/src/levels.ts` — per-language registry with `{ id, name, order, color }`
 - To add a new language's levels, add an entry to the `LEVELS` record in `levels.ts`
 - `Word.level` uses `Level`; `Passage.level` uses `Level`
+- Word IDs use 10000-block ranges per level (see "Adding Words" section)
+- Passage IDs use separate ranges per level (see "Generating Passages" section)
 
 ### Topic Hierarchy (Domain → Subtopic)
 
@@ -248,66 +256,134 @@ Topics are used for word browsing/filtering in WordListView (Domain + Subtopic p
 
 ## Adding Words
 
-Words are stored as JSON in `packages/api/scripts/data/`. Currently there is one file (`b2.json`) containing all B2 words. Future CEFR levels will add more JSON files (e.g., `a1.json`, `b1.json`, `c1.json`).
+### Word ID Segmentation
 
-After editing JSON files, run `pnpm --filter @english-learning/api migrate:content` to seed the D1 database.
+Each CEFR level has a dedicated 10000-block ID range. All levels use the same convention.
 
-To add new words, edit the appropriate JSON file directly. Each word entry:
+| Level | Word ID Range | Current Count |
+|-------|--------------|---------------|
+| A1    | 10001-19999  | 0 (planned)   |
+| A2    | 20001-29999  | 400           |
+| B1    | 30001-39999  | 700           |
+| B2    | 40001-49999  | 563           |
+| C1    | 50001-59999  | 0 (planned)   |
+| C2    | 60001-69999  | 0 (planned)   |
+| User  | 100001+      | dynamic       |
+
+### Data Structure: Core vs Translation Separation
+
+**Core word data** (language-independent) is stored in `packages/api/scripts/data/words/{level}.json`. Does NOT contain definitions or translations — those live in translation files.
+
 ```json
 {
-  "id": 601,
-  "word": "negotiate",
+  "id": 30001,
+  "word": "accept",
   "pos": "verb",
-  "phonetic": "/nɪˈɡəʊʃieɪt/",
-  "zh": "谈判；协商",
-  "en": "to try to reach an agreement by formal discussion",
-  "examples": [
-    "The two sides agreed to negotiate a ceasefire.",
-    "She negotiated a higher salary before accepting the job."
-  ],
-  "level": "B2",
-  "topics": ["business", "work"]
+  "phonetic": "/əkˈsept/",
+  "examples": ["She accepted the job offer.", "He accepted the invitation to the party."],
+  "level": "B1",
+  "topics": ["communication"]
 }
 ```
 
-Rules:
-- `zh`: Chinese translation, max 20 characters
-- `en`: English definition, max 150 characters
-- `examples`: exactly 2 sentences, each 8-15 words, context vocabulary at A2-B1 level
+**Translation data** (per-language) is stored in `packages/api/scripts/data/translations/{locale}/{level}.json`:
+- `en/{level}.json` — English definitions (required)
+- `zh-CN/{level}.json` — Chinese translations
+- `ja/{level}.json` — Japanese translations (future)
+
+Each translation entry: `{ "wordId": N, "translation": "..." }`
+
+### Word Generation Rules
+
+- Each entry: id (from level's ID range), word, pos, phonetic, examples, level, topics
+- `examples`: exactly 2 sentences, each 8-15 words, context vocabulary ≤ current level
 - `topics`: 1-3 subtopic IDs from the hierarchy above
-- `level`: valid `CefrLevel` (typically `"B2"` for current dataset)
-- No duplicates with existing entries (checked by `validate:data` at build time)
+- No duplicates with existing entries across all levels (checked by `validate:data`)
+- English definitions (in `translations/en/`) ≤150 characters
+- Chinese translations (in `translations/zh-CN/`) ≤20 characters
+- One JSON file per level — do not split by topic
 - Validate: `pnpm --filter @english-learning/web validate:data`
+- After editing, run `pnpm --filter @english-learning/api migrate:content` to seed D1
 
 ## Generating Passages
 
-File naming: `packages/api/scripts/data/passages-{NNN}.ts` (sequential batch number, currently up to 005).
-Start ID: check max existing passage ID + 1 (currently 125).
+### Passage ID Segmentation
 
-Each passage entry must follow this structure:
-```ts
+| Level | Passage ID Range |
+|-------|-----------------|
+| A1    | 1001-1999       |
+| A2    | 2001-2999       |
+| B1    | 3001-3999       |
+| B2    | 4001-4999       |
+| C1    | 5001-5999       |
+| C2    | 6001-6999       |
+
+ID ranges are per-language (disambiguated by `language_id` in DB).
+
+### Spiral Progression Model
+
+Passages follow a spiral progression strategy. Each passage introduces 3-5 new words and revisits 2-4 previously learned words.
+
+```json
 {
-  id: 126,
-  title: "A Healthy Morning Routine",
-  genre: "explainer",
-  text: "Full passage text with target B2 words...",
-  wordIds: [185, 580, 257],
-  level: "B1",
-  topic: "health",
+  "id": 3001,
+  "title": "Morning Routine",
+  "genre": "dialogue",
+  "level": "B1",
+  "topic": "daily-life",
+  "sequence": 1,
+  "newWordIds": [30001, 30002, 30003],
+  "reviewWordIds": [],
+  "speakers": [
+    { "name": "Kate", "voice": "en-US-Chirp3-HD-Kore" },
+    { "name": "Ben", "voice": "en-US-Chirp3-HD-Charon" }
+  ],
+  "turns": [
+    { "speaker": 0, "text": "Good morning! Did you sleep well?" },
+    { "speaker": 1, "text": "Yes, thanks. I had a great night." }
+  ]
 }
 ```
 
-Rules:
-- `level`: `CefrCoreLevel` — use `'B1'` for easier bridge passages, `'B2'` for standard passages
-- `genre`: choose from existing genres (`news`, `essay`, `travel`, `opinion`, `story`, `interview`, `explainer`)
-- `topic`: one of the 16 `SubtopicId` values
-- `text`: 120-180 words; sentence length 8-18 words; surrounding vocabulary mostly A2-B1 for B1-level passages
-- `wordIds`: array of word IDs (numbers) for B2 target words that appear in the passage text and exist in the word list
-- Each passage covers one topic; aim for diverse topic coverage across a batch
-- After creating, run `pnpm --filter @english-learning/api migrate:content` to seed D1
-- Validate: `pnpm typecheck`
+### Core Parameters
 
-Current passage counts: 12 B2-level (batch 002) + 25 B1-level (batches 003-005) = 37 total passages.
+| Rule | Value |
+|------|-------|
+| New words per passage | 3-5 (same level) |
+| Review words per passage | 2-4 (from previous 5 passages; first passage exempt) |
+| Review window | Each new word must reappear within next 5 passages |
+| Context vocabulary ceiling | Target level - 1 (B1 uses A2 context; B2 uses A2+B1) |
+| Dialogue length | 10-14 turns, 120-180 words |
+| `sequence` | Learning order within level (nullable for supplemental passages) |
+
+### Pre-Generation Checklist
+
+1. New word count = 3-5, all same level
+2. Review word count = 2-4, from previous 5 passages (first passage exempt)
+3. Context vocabulary ≤ target level - 1
+4. Each new word is planned to reappear within next 5 passages
+5. Topic differs from at least one of the previous 2 passages
+6. Dialogue length: 10-14 turns, 120-180 words
+7. Dialogue is natural, with clear situation and character motivation
+
+### Batch Generation Workflow
+
+1. Plan the word allocation table (JSON: which passage introduces which words, which reviews which)
+2. Verify review coverage: every new word reappears within 5 passages
+3. Generate dialogue content passage by passage
+4. Run `pnpm --filter @english-learning/web validate:data` after generation
+5. Run `pnpm --filter @english-learning/api migrate:content` to seed D1
+
+### Validation Rules (validate-data.ts)
+
+- `newWordIds` length: 3-5 (curriculum passages)
+- `reviewWordIds` length: 2-4 (sequence > 1)
+- `sequence` unique within level, contiguous (1, 2, 3...)
+- All word IDs must reference existing words
+- `reviewWordIds` must reference words introduced as `newWordIds` in earlier passages or from a lower CEFR level
+- Spiral window: every `newWordId` must appear in `reviewWordIds` of at least one of the next 5 passages
+
+Current passage counts: 0 (old passages retired; new spiral passages pending generation).
 
 ## Generating Timestamps
 
