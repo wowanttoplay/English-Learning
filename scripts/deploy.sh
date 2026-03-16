@@ -81,7 +81,7 @@ echo ""
 if [ "$SKIP_FRONTEND" = false ]; then
   echo "[7/7] Deploying frontend to Cloudflare Pages..."
   cd "$WEB_DIR"
-  npx wrangler pages deploy dist --project-name english-learning-web --commit-dirty=true
+  npx wrangler pages deploy dist --project-name english-learning-web --commit-dirty=true --branch=main
   cd "$ROOT_DIR"
   echo "  ✓ Frontend deployed"
 else
