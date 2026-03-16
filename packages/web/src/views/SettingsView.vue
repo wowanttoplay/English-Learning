@@ -5,18 +5,21 @@
         <h1>Settings</h1>
       </div>
 
-      <div class="settings-section">
+      <div class="settings-card">
+        <div class="settings-card-title">Appearance</div>
         <div class="settings-item">
           <span class="settings-label">Theme</span>
           <div class="settings-value">
-            <button class="filter-tab" :class="{ active: !theme.isDark.value }" @click="theme.setTheme('light')">Light</button>
-            <button class="filter-tab" :class="{ active: theme.isDark.value }" @click="theme.setTheme('dark')">Dark</button>
+            <div class="theme-pills">
+              <button class="theme-pill" :class="{ active: !theme.isDark.value }" @click="theme.setTheme('light')">Light</button>
+              <button class="theme-pill" :class="{ active: theme.isDark.value }" @click="theme.setTheme('dark')">Dark</button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="settings-section">
-        <div class="settings-section-title">Audio</div>
+      <div class="settings-card">
+        <div class="settings-card-title">Audio</div>
         <div class="settings-item">
           <span class="settings-label">Auto-play pronunciation</span>
           <div class="settings-value">
@@ -27,33 +30,39 @@
         </div>
       </div>
 
-      <section class="settings-section">
-        <h3>Translation Languages</h3>
-        <div v-for="loc in availableLocales" :key="loc.locale" class="setting-row">
-          <label class="toggle-label">
-            <input
-              type="checkbox"
-              :checked="settingsStore.settings.selectedLocales?.includes(loc.locale)"
-              @change="toggleLocale(loc.locale)"
-            />
-            {{ loc.name }}
-          </label>
+      <div class="settings-card">
+        <div class="settings-card-title">Translation Languages</div>
+        <div v-for="loc in availableLocales" :key="loc.locale" class="settings-item locale-item">
+          <span class="settings-label">{{ loc.name }}</span>
+          <button
+            class="circle-check"
+            :class="{ checked: settingsStore.settings.selectedLocales?.includes(loc.locale) }"
+            @click="toggleLocale(loc.locale)"
+          >
+            <svg v-if="settingsStore.settings.selectedLocales?.includes(loc.locale)" width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 7.5L5.5 10L11 4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
         </div>
-      </section>
+      </div>
 
-      <div class="settings-section">
-        <div class="settings-section-title">Statistics</div>
+      <div class="settings-card">
+        <div class="settings-card-title">Statistics</div>
         <div class="settings-item">
           <span class="settings-label">Total words in list</span>
-          <span>{{ stats.totalWords }}</span>
+          <span class="settings-stat-value">{{ stats.totalWords }}</span>
         </div>
         <div class="settings-item">
           <span class="settings-label">Words in deck</span>
-          <span>{{ stats.deckSize }}</span>
+          <span class="settings-stat-value">{{ stats.deckSize }}</span>
+        </div>
+        <div class="settings-item">
+          <span class="settings-label">Known</span>
+          <span class="settings-stat-value">{{ stats.totalKnown }}</span>
         </div>
         <div class="settings-item">
           <span class="settings-label">Mastered (21+ day interval)</span>
-          <span>{{ stats.totalMastered }}</span>
+          <span class="settings-stat-value">{{ stats.totalMastered }}</span>
         </div>
       </div>
     </div>

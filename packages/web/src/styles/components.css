@@ -1303,6 +1303,131 @@
   text-decoration: underline;
 }
 
+/* === Greeting Card (Dashboard) === */
+.greeting-card {
+  position: relative;
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .greeting-card {
+  background: linear-gradient(135deg, #2a2419, #1f1b14);
+}
+
+.greeting-circle {
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: rgba(251, 191, 36, 0.15);
+  pointer-events: none;
+}
+
+.greeting-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.greeting-streak {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.greeting-streak-num {
+  color: var(--accent);
+  font-size: 28px;
+  font-weight: 800;
+}
+
+/* === Progress Percentage === */
+.progress-pct {
+  color: var(--accent);
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+/* === Settings Cards === */
+.settings-card {
+  background: var(--bg-card);
+  border-radius: 14px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.settings-card-title {
+  color: var(--speaker-a-text);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 14px 20px 6px;
+}
+
+/* === Theme Pills === */
+.theme-pills {
+  display: flex;
+  gap: 6px;
+}
+
+.theme-pill {
+  padding: 6px 18px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.theme-pill.active {
+  background: var(--speaker-a-bg);
+  border-color: var(--accent);
+  color: var(--speaker-a-text);
+}
+
+/* === Circle Checkmark === */
+.locale-item {
+  cursor: pointer;
+}
+
+.circle-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.circle-check.checked {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+/* === Settings Stat Values === */
+.settings-stat-value {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 16px;
+}
+
 /* === Clerk UI Isolation (keep Clerk blue while app uses amber) === */
 .cl-rootBox, .cl-modalContent, .cl-card {
   --accent: #007aff;

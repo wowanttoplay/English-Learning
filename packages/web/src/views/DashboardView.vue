@@ -17,6 +17,12 @@
       </div>
     </div>
 
+    <div class="greeting-card">
+      <div class="greeting-circle"></div>
+      <div class="greeting-text">Keep it up! &#x1F4AA;</div>
+      <div class="greeting-streak">&#x1F525; <span class="greeting-streak-num">{{ stats.streak }}</span> day streak</div>
+    </div>
+
     <StatsGrid :items="topStats" />
 
     <ProgressBar
@@ -41,7 +47,7 @@
         class="btn btn-secondary"
         @click="router.push('/reading')"
       >
-        Go Read
+        &#x1F4D6; Go Read
       </button>
     </div>
 
