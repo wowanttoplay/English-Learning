@@ -211,6 +211,7 @@ packages/web/                  # @english-learning/web (Vue 3 + Vite)
 - **Layout/Logic separation**: Views are pure templates — business logic lives in per-view composables (`usePassageView`, etc.). Components are presentational — logic in composables (`usePassageAudioPlayer`, `useFreeWordLookup`). Stores are focused single-responsibility (`studySession`, `wordListQuery`, `uiState`)
 - **Date handling**: `formatDate(d)` in `packages/shared/src/date-utils.ts` (not `toISOString`) to avoid timezone bugs
 - **Audio**: 3-tier fallback: dictionaryapi.dev audio URLs > Web Speech API > silent. Async preload with HTMLAudioElement caching; dict-api uses in-memory Map cache to avoid repeated JSON.parse of localStorage. Passage audio supports sentence-level highlighting via timestamp sidecar files (`passage-{id}.timestamps.json`) on R2; `usePassageAudioPlayer` is instantiated in `PassageView.vue` (lifted from component) to share `currentTime` with sentence sync
+- **R2 Storage**: Bucket `english-learning-audio`, public URL `https://pub-56950774e76246b39c3df6e3b9d85f5f.r2.dev/`. Upload via rclone (remote name `r2`). Audio files are gitignored (`packages/web/public/audio/`)
 - **localStorage**: Only used for client-side caching/preferences: `dict_cache_<lang>`, `theme`, `settings_audio`. All user data (SRS cards, passages read, user words, settings) stored in D1 via API
 - **Dependency direction**: `shared → api`, `shared → web`; within web: `api → stores → composables → components → views` (no reverse imports)
 - **User word IDs**: User-created words use IDs starting at 100001, with level `'user'`; WordListView has a "My Words" filter tab
@@ -404,5 +405,27 @@ Generation: Timestamps are generated alongside MP3 audio by `generate-tts.ts` us
 - `pnpm --filter @english-learning/web generate-tts` — generate all (skip existing)
 - `pnpm --filter @english-learning/web generate-tts -- --force` — regenerate all
 - `pnpm --filter @english-learning/web generate-tts -- --only passages` — passages only
-- Upload to R2: `rclone copy public/audio/ r2:$R2_BUCKET/audio/ --progress`
+- Upload to R2: `rclone copy packages/web/public/audio/passages/ r2:english-learning-audio/audio/passages/ --transfers=16 --progress`
 - Uses `splitSentences()` from `lib/sentence-splitter.ts` to build SSML with per-sentence marks
+
+## Deployment
+
+One-click: `bash scripts/deploy.sh` (typecheck → validate → build → migrate → seed → deploy API → deploy Pages)
+Flags: `--skip-seed`, `--skip-frontend`, `--skip-api`
+
+### Manual deployment commands
+
+- API Worker: `cd packages/api && npx wrangler deploy`
+- Pages frontend: `cd packages/web && npx wrangler pages deploy dist --project-name english-learning-web --commit-dirty=true --branch=main`
+- Remote DB migrate: `cd packages/api && npx wrangler d1 migrations apply english-learning --remote`
+- Remote DB seed: `cd packages/api && npx wrangler d1 execute english-learning --remote --file=seed.sql`
+- R2 audio upload: `rclone copy packages/web/public/audio/passages/ r2:english-learning-audio/audio/passages/ --transfers=16 --progress`
+- Wrangler login (if auth expires): `npx wrangler login`
+
+### Gotchas
+
+- Wrangler commands MUST run from `packages/api/` (where `wrangler.toml` lives), not repo root
+- Pages production branch is `main` (not `master`) — omitting `--branch=main` deploys to Preview
+- `ALLOWED_ORIGIN` in `wrangler.toml` must include all frontend domains (comma-separated)
+- `packages/web/.env.production` must have `VITE_API_BASE_URL` pointing to Workers API
+- Audio files are hosted on R2, not in git — `packages/web/public/audio/` is gitignored
