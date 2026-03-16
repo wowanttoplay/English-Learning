@@ -1,202 +1,1602 @@
 [
-  { "wordId": 20001, "translation": "事故；意外" },
-  { "wordId": 20002, "translation": "建议；忠告" },
-  { "wordId": 20003, "translation": "地区；区域" },
-  { "wordId": 20004, "translation": "注意；注意力" },
-  { "wordId": 20005, "translation": "银行" },
-  { "wordId": 20006, "translation": "海滩；沙滩" },
-  { "wordId": 20007, "translation": "血；血液" },
-  { "wordId": 20008, "translation": "骨头；骨骼" },
-  { "wordId": 20009, "translation": "桥；桥梁" },
-  { "wordId": 20010, "translation": "营地；露营" },
-  { "wordId": 20011, "translation": "首都；首府" },
-  { "wordId": 20012, "translation": "情况；案例" },
-  { "wordId": 20013, "translation": "中心；中央" },
-  { "wordId": 20014, "translation": "机会；可能性" },
-  { "wordId": 20015, "translation": "教堂" },
-  { "wordId": 20016, "translation": "大学；学院" },
-  { "wordId": 20017, "translation": "角落；拐角" },
-  { "wordId": 20018, "translation": "一对；夫妇" },
-  { "wordId": 20019, "translation": "课程" },
-  { "wordId": 20020, "translation": "日期" },
-  { "wordId": 20021, "translation": "差异；不同" },
-  { "wordId": 20022, "translation": "菜肴；盘子" },
-  { "wordId": 20023, "translation": "梦；梦想" },
-  { "wordId": 20024, "translation": "司机；驾驶员" },
-  { "wordId": 20025, "translation": "地球；大地" },
-  { "wordId": 20026, "translation": "边缘；边" },
-  { "wordId": 20027, "translation": "敌人" },
-  { "wordId": 20028, "translation": "考试" },
-  { "wordId": 20029, "translation": "借口；理由" },
-  { "wordId": 20030, "translation": "事实；真相" },
-  { "wordId": 20031, "translation": "农场；农庄" },
-  { "wordId": 20032, "translation": "恐惧；害怕" },
-  { "wordId": 20033, "translation": "田地；领域" },
-  { "wordId": 20034, "translation": "电影；影片" },
-  { "wordId": 20035, "translation": "手指" },
-  { "wordId": 20036, "translation": "森林" },
-  { "wordId": 20037, "translation": "前面；正面" },
-  { "wordId": 20038, "translation": "乐趣；有趣的事" },
-  { "wordId": 20039, "translation": "未来；将来" },
-  { "wordId": 20040, "translation": "大门；登机口" },
-  { "wordId": 20041, "translation": "礼物；赠品" },
-  { "wordId": 20042, "translation": "金子；黄金" },
-  { "wordId": 20043, "translation": "草；草地" },
-  { "wordId": 20044, "translation": "地面；地上" },
-  { "wordId": 20045, "translation": "群；组；团体" },
-  { "wordId": 20046, "translation": "客人；宾客" },
-  { "wordId": 20047, "translation": "枪" },
-  { "wordId": 20048, "translation": "小山；山丘" },
-  { "wordId": 20049, "translation": "洞；孔" },
-  { "wordId": 20050, "translation": "工业；产业" },
-  { "wordId": 20051, "translation": "岛；岛屿" },
-  { "wordId": 20052, "translation": "果汁" },
-  { "wordId": 20053, "translation": "国王" },
-  { "wordId": 20054, "translation": "膝盖" },
-  { "wordId": 20055, "translation": "湖；湖泊" },
-  { "wordId": 20056, "translation": "叶子；树叶" },
-  { "wordId": 20057, "translation": "课；教训" },
-  { "wordId": 20058, "translation": "图书馆" },
-  { "wordId": 20059, "translation": "运气；幸运" },
-  { "wordId": 20060, "translation": "机器" },
-  { "wordId": 20061, "translation": "邮件；信件" },
-  { "wordId": 20062, "translation": "市场；集市" },
-  { "wordId": 20063, "translation": "一餐；饭" },
-  { "wordId": 20064, "translation": "媒体" },
-  { "wordId": 20065, "translation": "会议" },
-  { "wordId": 20066, "translation": "记忆；回忆" },
-  { "wordId": 20067, "translation": "消息；信息" },
-  { "wordId": 20068, "translation": "金属" },
-  { "wordId": 20069, "translation": "方法" },
-  { "wordId": 20070, "translation": "镜子" },
-  { "wordId": 20071, "translation": "错误；失误" },
-  { "wordId": 20072, "translation": "片刻；瞬间" },
-  { "wordId": 20073, "translation": "月亮" },
-  { "wordId": 20074, "translation": "山；山脉" },
-  { "wordId": 20075, "translation": "国家；民族" },
-  { "wordId": 20076, "translation": "自然；大自然" },
-  { "wordId": 20077, "translation": "脖子；颈部" },
-  { "wordId": 20078, "translation": "邻居" },
-  { "wordId": 20079, "translation": "噪音；响声" },
-  { "wordId": 20080, "translation": "便条；笔记" },
-  { "wordId": 20081, "translation": "护士" },
-  { "wordId": 20082, "translation": "海洋；大海" },
-  { "wordId": 20083, "translation": "意见；看法" },
-  { "wordId": 20084, "translation": "一对；一双" },
-  { "wordId": 20085, "translation": "小路；路径" },
-  { "wordId": 20086, "translation": "和平" },
-  { "wordId": 20087, "translation": "时期；期间" },
-  { "wordId": 20088, "translation": "口袋" },
-  { "wordId": 20089, "translation": "游泳池；水池" },
-  { "wordId": 20090, "translation": "位置；职位" },
-  { "wordId": 20091, "translation": "力量；权力" },
-  { "wordId": 20092, "translation": "价格；价钱" },
-  { "wordId": 20093, "translation": "问题；难题" },
-  { "wordId": 20094, "translation": "产品；制品" },
-  { "wordId": 20095, "translation": "节目；程序" },
-  { "wordId": 20096, "translation": "项目；工程" },
-  { "wordId": 20097, "translation": "女王" },
-  { "wordId": 20098, "translation": "原因；理由" },
-  { "wordId": 20099, "translation": "地区；区域" },
-  { "wordId": 20100, "translation": "戒指；环" },
-  { "wordId": 20101, "translation": "到达；抵达" },
-  { "wordId": 20102, "translation": "烘烤；烘焙" },
-  { "wordId": 20103, "translation": "打败；击败" },
-  { "wordId": 20104, "translation": "属于；归属" },
-  { "wordId": 20105, "translation": "吹；刮" },
-  { "wordId": 20106, "translation": "搬运；携带" },
-  { "wordId": 20107, "translation": "追赶；追逐" },
-  { "wordId": 20108, "translation": "收集；收藏" },
-  { "wordId": 20109, "translation": "数；计数" },
-  { "wordId": 20110, "translation": "覆盖；遮盖" },
-  { "wordId": 20111, "translation": "穿过；横过" },
-  { "wordId": 20112, "translation": "哭；哭泣" },
-  { "wordId": 20113, "translation": "切；割；剪" },
-  { "wordId": 20114, "translation": "跳舞" },
-  { "wordId": 20115, "translation": "决定；做决定" },
-  { "wordId": 20116, "translation": "分；分割" },
-  { "wordId": 20117, "translation": "享受；喜欢" },
-  { "wordId": 20118, "translation": "进入；进去" },
-  { "wordId": 20119, "translation": "逃跑；逃脱" },
-  { "wordId": 20120, "translation": "落下；摔倒" },
-  { "wordId": 20121, "translation": "喂；喂养" },
-  { "wordId": 20122, "translation": "装满；填满" },
-  { "wordId": 20123, "translation": "生长；成长" },
-  { "wordId": 20124, "translation": "猜；猜测" },
-  { "wordId": 20125, "translation": "发生" },
-  { "wordId": 20126, "translation": "讨厌；恨" },
-  { "wordId": 20127, "translation": "躲藏；隐藏" },
-  { "wordId": 20128, "translation": "握住；拿着" },
-  { "wordId": 20129, "translation": "赶紧；匆忙" },
-  { "wordId": 20130, "translation": "发明；创造" },
-  { "wordId": 20131, "translation": "加入；参加" },
-  { "wordId": 20132, "translation": "借出；借给" },
-  { "wordId": 20133, "translation": "举起；抬起" },
-  { "wordId": 20134, "translation": "想念；错过" },
-  { "wordId": 20135, "translation": "拥有" },
-  { "wordId": 20136, "translation": "通过；递给" },
-  { "wordId": 20137, "translation": "挑选；采摘" },
-  { "wordId": 20138, "translation": "倒；倾倒" },
-  { "wordId": 20139, "translation": "拉；拖" },
-  { "wordId": 20140, "translation": "推" },
-  { "wordId": 20141, "translation": "录制；记录" },
-  { "wordId": 20142, "translation": "移走；去除" },
-  { "wordId": 20143, "translation": "重复" },
-  { "wordId": 20144, "translation": "回答；回复" },
-  { "wordId": 20145, "translation": "休息" },
-  { "wordId": 20146, "translation": "返回；归还" },
-  { "wordId": 20147, "translation": "骑；乘" },
-  { "wordId": 20148, "translation": "上升；升起" },
-  { "wordId": 20149, "translation": "赶紧；冲" },
-  { "wordId": 20150, "translation": "节省；拯救" },
-  { "wordId": 20151, "translation": "害怕的" },
-  { "wordId": 20152, "translation": "独自的；单独的" },
-  { "wordId": 20153, "translation": "生气的；愤怒的" },
-  { "wordId": 20154, "translation": "糟糕的；可怕的" },
-  { "wordId": 20155, "translation": "无聊的" },
-  { "wordId": 20156, "translation": "勇敢的" },
-  { "wordId": 20157, "translation": "明亮的；鲜艳的" },
-  { "wordId": 20158, "translation": "忙碌的" },
-  { "wordId": 20159, "translation": "便宜的" },
-  { "wordId": 20160, "translation": "聪明的" },
-  { "wordId": 20161, "translation": "疯狂的；荒唐的" },
-  { "wordId": 20162, "translation": "好奇的" },
-  { "wordId": 20163, "translation": "危险的" },
-  { "wordId": 20164, "translation": "美味的" },
-  { "wordId": 20165, "translation": "不同的" },
-  { "wordId": 20166, "translation": "困难的" },
-  { "wordId": 20167, "translation": "脏的" },
-  { "wordId": 20168, "translation": "兴奋的；激动的" },
-  { "wordId": 20169, "translation": "昂贵的" },
-  { "wordId": 20170, "translation": "著名的" },
-  { "wordId": 20171, "translation": "外国的" },
-  { "wordId": 20172, "translation": "新鲜的" },
-  { "wordId": 20173, "translation": "友好的" },
-  { "wordId": 20174, "translation": "有趣的；好笑的" },
-  { "wordId": 20175, "translation": "重的" },
-  { "wordId": 20176, "translation": "饿的" },
-  { "wordId": 20177, "translation": "国际的" },
-  { "wordId": 20178, "translation": "善良的；亲切的" },
-  { "wordId": 20179, "translation": "懒惰的" },
-  { "wordId": 20180, "translation": "孤独的；寂寞的" },
-  { "wordId": 20181, "translation": "大声的；响亮的" },
-  { "wordId": 20182, "translation": "幸运的" },
-  { "wordId": 20183, "translation": "必要的；必需的" },
-  { "wordId": 20184, "translation": "紧张的；焦虑的" },
-  { "wordId": 20185, "translation": "有礼貌的" },
-  { "wordId": 20186, "translation": "贫穷的" },
-  { "wordId": 20187, "translation": "可能的" },
-  { "wordId": 20188, "translation": "私人的；私密的" },
-  { "wordId": 20189, "translation": "自豪的；骄傲的" },
-  { "wordId": 20190, "translation": "安全的" },
-  { "wordId": 20191, "translation": "奇怪的；陌生的" },
-  { "wordId": 20192, "translation": "已经" },
-  { "wordId": 20193, "translation": "几乎；差不多" },
-  { "wordId": 20194, "translation": "容易地" },
-  { "wordId": 20195, "translation": "快速地" },
-  { "wordId": 20196, "translation": "安静地" },
-  { "wordId": 20197, "translation": "慢慢地" },
-  { "wordId": 20198, "translation": "突然地" },
-  { "wordId": 20199, "translation": "一起" },
-  { "wordId": 20200, "translation": "可能；大概" }
+  {
+    "wordId": 20001,
+    "translation": "事故；意外"
+  },
+  {
+    "wordId": 20002,
+    "translation": "建议；忠告"
+  },
+  {
+    "wordId": 20003,
+    "translation": "地区；区域"
+  },
+  {
+    "wordId": 20004,
+    "translation": "注意；注意力"
+  },
+  {
+    "wordId": 20005,
+    "translation": "银行"
+  },
+  {
+    "wordId": 20006,
+    "translation": "海滩；沙滩"
+  },
+  {
+    "wordId": 20007,
+    "translation": "血；血液"
+  },
+  {
+    "wordId": 20008,
+    "translation": "骨头；骨骼"
+  },
+  {
+    "wordId": 20009,
+    "translation": "桥；桥梁"
+  },
+  {
+    "wordId": 20010,
+    "translation": "营地；露营"
+  },
+  {
+    "wordId": 20011,
+    "translation": "首都；首府"
+  },
+  {
+    "wordId": 20012,
+    "translation": "情况；案例"
+  },
+  {
+    "wordId": 20013,
+    "translation": "中心；中央"
+  },
+  {
+    "wordId": 20014,
+    "translation": "机会；可能性"
+  },
+  {
+    "wordId": 20015,
+    "translation": "教堂"
+  },
+  {
+    "wordId": 20016,
+    "translation": "大学；学院"
+  },
+  {
+    "wordId": 20017,
+    "translation": "角落；拐角"
+  },
+  {
+    "wordId": 20018,
+    "translation": "一对；夫妇"
+  },
+  {
+    "wordId": 20019,
+    "translation": "课程"
+  },
+  {
+    "wordId": 20020,
+    "translation": "日期"
+  },
+  {
+    "wordId": 20021,
+    "translation": "差异；不同"
+  },
+  {
+    "wordId": 20022,
+    "translation": "菜肴；盘子"
+  },
+  {
+    "wordId": 20023,
+    "translation": "梦；梦想"
+  },
+  {
+    "wordId": 20024,
+    "translation": "司机；驾驶员"
+  },
+  {
+    "wordId": 20025,
+    "translation": "地球；大地"
+  },
+  {
+    "wordId": 20026,
+    "translation": "边缘；边"
+  },
+  {
+    "wordId": 20027,
+    "translation": "敌人"
+  },
+  {
+    "wordId": 20028,
+    "translation": "考试"
+  },
+  {
+    "wordId": 20029,
+    "translation": "借口；理由"
+  },
+  {
+    "wordId": 20030,
+    "translation": "事实；真相"
+  },
+  {
+    "wordId": 20031,
+    "translation": "农场；农庄"
+  },
+  {
+    "wordId": 20032,
+    "translation": "恐惧；害怕"
+  },
+  {
+    "wordId": 20033,
+    "translation": "田地；领域"
+  },
+  {
+    "wordId": 20034,
+    "translation": "电影；影片"
+  },
+  {
+    "wordId": 20035,
+    "translation": "手指"
+  },
+  {
+    "wordId": 20036,
+    "translation": "森林"
+  },
+  {
+    "wordId": 20037,
+    "translation": "前面；正面"
+  },
+  {
+    "wordId": 20038,
+    "translation": "乐趣；有趣的事"
+  },
+  {
+    "wordId": 20039,
+    "translation": "未来；将来"
+  },
+  {
+    "wordId": 20040,
+    "translation": "大门；登机口"
+  },
+  {
+    "wordId": 20041,
+    "translation": "礼物；赠品"
+  },
+  {
+    "wordId": 20042,
+    "translation": "金子；黄金"
+  },
+  {
+    "wordId": 20043,
+    "translation": "草；草地"
+  },
+  {
+    "wordId": 20044,
+    "translation": "地面；地上"
+  },
+  {
+    "wordId": 20045,
+    "translation": "群；组；团体"
+  },
+  {
+    "wordId": 20046,
+    "translation": "客人；宾客"
+  },
+  {
+    "wordId": 20047,
+    "translation": "枪"
+  },
+  {
+    "wordId": 20048,
+    "translation": "小山；山丘"
+  },
+  {
+    "wordId": 20049,
+    "translation": "洞；孔"
+  },
+  {
+    "wordId": 20050,
+    "translation": "工业；产业"
+  },
+  {
+    "wordId": 20051,
+    "translation": "岛；岛屿"
+  },
+  {
+    "wordId": 20052,
+    "translation": "果汁"
+  },
+  {
+    "wordId": 20053,
+    "translation": "国王"
+  },
+  {
+    "wordId": 20054,
+    "translation": "膝盖"
+  },
+  {
+    "wordId": 20055,
+    "translation": "湖；湖泊"
+  },
+  {
+    "wordId": 20056,
+    "translation": "叶子；树叶"
+  },
+  {
+    "wordId": 20057,
+    "translation": "课；教训"
+  },
+  {
+    "wordId": 20058,
+    "translation": "图书馆"
+  },
+  {
+    "wordId": 20059,
+    "translation": "运气；幸运"
+  },
+  {
+    "wordId": 20060,
+    "translation": "机器"
+  },
+  {
+    "wordId": 20061,
+    "translation": "邮件；信件"
+  },
+  {
+    "wordId": 20062,
+    "translation": "市场；集市"
+  },
+  {
+    "wordId": 20063,
+    "translation": "一餐；饭"
+  },
+  {
+    "wordId": 20064,
+    "translation": "媒体"
+  },
+  {
+    "wordId": 20065,
+    "translation": "会议"
+  },
+  {
+    "wordId": 20066,
+    "translation": "记忆；回忆"
+  },
+  {
+    "wordId": 20067,
+    "translation": "消息；信息"
+  },
+  {
+    "wordId": 20068,
+    "translation": "金属"
+  },
+  {
+    "wordId": 20069,
+    "translation": "方法"
+  },
+  {
+    "wordId": 20070,
+    "translation": "镜子"
+  },
+  {
+    "wordId": 20071,
+    "translation": "错误；失误"
+  },
+  {
+    "wordId": 20072,
+    "translation": "片刻；瞬间"
+  },
+  {
+    "wordId": 20073,
+    "translation": "月亮"
+  },
+  {
+    "wordId": 20074,
+    "translation": "山；山脉"
+  },
+  {
+    "wordId": 20075,
+    "translation": "国家；民族"
+  },
+  {
+    "wordId": 20076,
+    "translation": "自然；大自然"
+  },
+  {
+    "wordId": 20077,
+    "translation": "脖子；颈部"
+  },
+  {
+    "wordId": 20078,
+    "translation": "邻居"
+  },
+  {
+    "wordId": 20079,
+    "translation": "噪音；响声"
+  },
+  {
+    "wordId": 20080,
+    "translation": "便条；笔记"
+  },
+  {
+    "wordId": 20081,
+    "translation": "护士"
+  },
+  {
+    "wordId": 20082,
+    "translation": "海洋；大海"
+  },
+  {
+    "wordId": 20083,
+    "translation": "意见；看法"
+  },
+  {
+    "wordId": 20084,
+    "translation": "一对；一双"
+  },
+  {
+    "wordId": 20085,
+    "translation": "小路；路径"
+  },
+  {
+    "wordId": 20086,
+    "translation": "和平"
+  },
+  {
+    "wordId": 20087,
+    "translation": "时期；期间"
+  },
+  {
+    "wordId": 20088,
+    "translation": "口袋"
+  },
+  {
+    "wordId": 20089,
+    "translation": "游泳池；水池"
+  },
+  {
+    "wordId": 20090,
+    "translation": "位置；职位"
+  },
+  {
+    "wordId": 20091,
+    "translation": "力量；权力"
+  },
+  {
+    "wordId": 20092,
+    "translation": "价格；价钱"
+  },
+  {
+    "wordId": 20093,
+    "translation": "问题；难题"
+  },
+  {
+    "wordId": 20094,
+    "translation": "产品；制品"
+  },
+  {
+    "wordId": 20095,
+    "translation": "节目；程序"
+  },
+  {
+    "wordId": 20096,
+    "translation": "项目；工程"
+  },
+  {
+    "wordId": 20097,
+    "translation": "女王"
+  },
+  {
+    "wordId": 20098,
+    "translation": "原因；理由"
+  },
+  {
+    "wordId": 20099,
+    "translation": "地区；区域"
+  },
+  {
+    "wordId": 20100,
+    "translation": "戒指；环"
+  },
+  {
+    "wordId": 20101,
+    "translation": "到达；抵达"
+  },
+  {
+    "wordId": 20102,
+    "translation": "烘烤；烘焙"
+  },
+  {
+    "wordId": 20103,
+    "translation": "打败；击败"
+  },
+  {
+    "wordId": 20104,
+    "translation": "属于；归属"
+  },
+  {
+    "wordId": 20105,
+    "translation": "吹；刮"
+  },
+  {
+    "wordId": 20106,
+    "translation": "搬运；携带"
+  },
+  {
+    "wordId": 20107,
+    "translation": "追赶；追逐"
+  },
+  {
+    "wordId": 20108,
+    "translation": "收集；收藏"
+  },
+  {
+    "wordId": 20109,
+    "translation": "数；计数"
+  },
+  {
+    "wordId": 20110,
+    "translation": "覆盖；遮盖"
+  },
+  {
+    "wordId": 20111,
+    "translation": "穿过；横过"
+  },
+  {
+    "wordId": 20112,
+    "translation": "哭；哭泣"
+  },
+  {
+    "wordId": 20113,
+    "translation": "切；割；剪"
+  },
+  {
+    "wordId": 20114,
+    "translation": "跳舞"
+  },
+  {
+    "wordId": 20115,
+    "translation": "决定；做决定"
+  },
+  {
+    "wordId": 20116,
+    "translation": "分；分割"
+  },
+  {
+    "wordId": 20117,
+    "translation": "享受；喜欢"
+  },
+  {
+    "wordId": 20118,
+    "translation": "进入；进去"
+  },
+  {
+    "wordId": 20119,
+    "translation": "逃跑；逃脱"
+  },
+  {
+    "wordId": 20120,
+    "translation": "落下；摔倒"
+  },
+  {
+    "wordId": 20121,
+    "translation": "喂；喂养"
+  },
+  {
+    "wordId": 20122,
+    "translation": "装满；填满"
+  },
+  {
+    "wordId": 20123,
+    "translation": "生长；成长"
+  },
+  {
+    "wordId": 20124,
+    "translation": "猜；猜测"
+  },
+  {
+    "wordId": 20125,
+    "translation": "发生"
+  },
+  {
+    "wordId": 20126,
+    "translation": "讨厌；恨"
+  },
+  {
+    "wordId": 20127,
+    "translation": "躲藏；隐藏"
+  },
+  {
+    "wordId": 20128,
+    "translation": "握住；拿着"
+  },
+  {
+    "wordId": 20129,
+    "translation": "赶紧；匆忙"
+  },
+  {
+    "wordId": 20130,
+    "translation": "发明；创造"
+  },
+  {
+    "wordId": 20131,
+    "translation": "加入；参加"
+  },
+  {
+    "wordId": 20132,
+    "translation": "借出；借给"
+  },
+  {
+    "wordId": 20133,
+    "translation": "举起；抬起"
+  },
+  {
+    "wordId": 20134,
+    "translation": "想念；错过"
+  },
+  {
+    "wordId": 20135,
+    "translation": "拥有"
+  },
+  {
+    "wordId": 20136,
+    "translation": "通过；递给"
+  },
+  {
+    "wordId": 20137,
+    "translation": "挑选；采摘"
+  },
+  {
+    "wordId": 20138,
+    "translation": "倒；倾倒"
+  },
+  {
+    "wordId": 20139,
+    "translation": "拉；拖"
+  },
+  {
+    "wordId": 20140,
+    "translation": "推"
+  },
+  {
+    "wordId": 20141,
+    "translation": "录制；记录"
+  },
+  {
+    "wordId": 20142,
+    "translation": "移走；去除"
+  },
+  {
+    "wordId": 20143,
+    "translation": "重复"
+  },
+  {
+    "wordId": 20144,
+    "translation": "回答；回复"
+  },
+  {
+    "wordId": 20145,
+    "translation": "休息"
+  },
+  {
+    "wordId": 20146,
+    "translation": "返回；归还"
+  },
+  {
+    "wordId": 20147,
+    "translation": "骑；乘"
+  },
+  {
+    "wordId": 20148,
+    "translation": "上升；升起"
+  },
+  {
+    "wordId": 20149,
+    "translation": "赶紧；冲"
+  },
+  {
+    "wordId": 20150,
+    "translation": "节省；拯救"
+  },
+  {
+    "wordId": 20151,
+    "translation": "害怕的"
+  },
+  {
+    "wordId": 20152,
+    "translation": "独自的；单独的"
+  },
+  {
+    "wordId": 20153,
+    "translation": "生气的；愤怒的"
+  },
+  {
+    "wordId": 20154,
+    "translation": "糟糕的；可怕的"
+  },
+  {
+    "wordId": 20155,
+    "translation": "无聊的"
+  },
+  {
+    "wordId": 20156,
+    "translation": "勇敢的"
+  },
+  {
+    "wordId": 20157,
+    "translation": "明亮的；鲜艳的"
+  },
+  {
+    "wordId": 20158,
+    "translation": "忙碌的"
+  },
+  {
+    "wordId": 20159,
+    "translation": "便宜的"
+  },
+  {
+    "wordId": 20160,
+    "translation": "聪明的"
+  },
+  {
+    "wordId": 20161,
+    "translation": "疯狂的；荒唐的"
+  },
+  {
+    "wordId": 20162,
+    "translation": "好奇的"
+  },
+  {
+    "wordId": 20163,
+    "translation": "危险的"
+  },
+  {
+    "wordId": 20164,
+    "translation": "美味的"
+  },
+  {
+    "wordId": 20165,
+    "translation": "不同的"
+  },
+  {
+    "wordId": 20166,
+    "translation": "困难的"
+  },
+  {
+    "wordId": 20167,
+    "translation": "脏的"
+  },
+  {
+    "wordId": 20168,
+    "translation": "兴奋的；激动的"
+  },
+  {
+    "wordId": 20169,
+    "translation": "昂贵的"
+  },
+  {
+    "wordId": 20170,
+    "translation": "著名的"
+  },
+  {
+    "wordId": 20171,
+    "translation": "外国的"
+  },
+  {
+    "wordId": 20172,
+    "translation": "新鲜的"
+  },
+  {
+    "wordId": 20173,
+    "translation": "友好的"
+  },
+  {
+    "wordId": 20174,
+    "translation": "有趣的；好笑的"
+  },
+  {
+    "wordId": 20175,
+    "translation": "重的"
+  },
+  {
+    "wordId": 20176,
+    "translation": "饿的"
+  },
+  {
+    "wordId": 20177,
+    "translation": "国际的"
+  },
+  {
+    "wordId": 20178,
+    "translation": "善良的；亲切的"
+  },
+  {
+    "wordId": 20179,
+    "translation": "懒惰的"
+  },
+  {
+    "wordId": 20180,
+    "translation": "孤独的；寂寞的"
+  },
+  {
+    "wordId": 20181,
+    "translation": "大声的；响亮的"
+  },
+  {
+    "wordId": 20182,
+    "translation": "幸运的"
+  },
+  {
+    "wordId": 20183,
+    "translation": "必要的；必需的"
+  },
+  {
+    "wordId": 20184,
+    "translation": "紧张的；焦虑的"
+  },
+  {
+    "wordId": 20185,
+    "translation": "有礼貌的"
+  },
+  {
+    "wordId": 20186,
+    "translation": "贫穷的"
+  },
+  {
+    "wordId": 20187,
+    "translation": "可能的"
+  },
+  {
+    "wordId": 20188,
+    "translation": "私人的；私密的"
+  },
+  {
+    "wordId": 20189,
+    "translation": "自豪的；骄傲的"
+  },
+  {
+    "wordId": 20190,
+    "translation": "安全的"
+  },
+  {
+    "wordId": 20191,
+    "translation": "奇怪的；陌生的"
+  },
+  {
+    "wordId": 20192,
+    "translation": "已经"
+  },
+  {
+    "wordId": 20193,
+    "translation": "几乎；差不多"
+  },
+  {
+    "wordId": 20194,
+    "translation": "容易地"
+  },
+  {
+    "wordId": 20195,
+    "translation": "快速地"
+  },
+  {
+    "wordId": 20196,
+    "translation": "安静地"
+  },
+  {
+    "wordId": 20197,
+    "translation": "慢慢地"
+  },
+  {
+    "wordId": 20198,
+    "translation": "突然地"
+  },
+  {
+    "wordId": 20199,
+    "translation": "一起"
+  },
+  {
+    "wordId": 20200,
+    "translation": "可能；大概"
+  },
+  {
+    "wordId": 20201,
+    "translation": "雨伞"
+  },
+  {
+    "wordId": 20202,
+    "translation": "毛巾"
+  },
+  {
+    "wordId": 20203,
+    "translation": "楼梯"
+  },
+  {
+    "wordId": 20204,
+    "translation": "轮子；车轮"
+  },
+  {
+    "wordId": 20205,
+    "translation": "蜡烛"
+  },
+  {
+    "wordId": 20206,
+    "translation": "桶；水桶"
+  },
+  {
+    "wordId": 20207,
+    "translation": "架子；搁板"
+  },
+  {
+    "wordId": 20208,
+    "translation": "抽屉"
+  },
+  {
+    "wordId": 20209,
+    "translation": "胃；肚子"
+  },
+  {
+    "wordId": 20210,
+    "translation": "发烧"
+  },
+  {
+    "wordId": 20211,
+    "translation": "药；药物"
+  },
+  {
+    "wordId": 20212,
+    "translation": "头痛"
+  },
+  {
+    "wordId": 20213,
+    "translation": "肩膀"
+  },
+  {
+    "wordId": 20214,
+    "translation": "喉咙；嗓子"
+  },
+  {
+    "wordId": 20215,
+    "translation": "病人；患者"
+  },
+  {
+    "wordId": 20216,
+    "translation": "绷带"
+  },
+  {
+    "wordId": 20217,
+    "translation": "乘客；旅客"
+  },
+  {
+    "wordId": 20218,
+    "translation": "手提箱；行李箱"
+  },
+  {
+    "wordId": 20219,
+    "translation": "港口；海港"
+  },
+  {
+    "wordId": 20220,
+    "translation": "游客；观光客"
+  },
+  {
+    "wordId": 20221,
+    "translation": "导游；指南"
+  },
+  {
+    "wordId": 20222,
+    "translation": "胡椒；辣椒"
+  },
+  {
+    "wordId": 20223,
+    "translation": "酱；酱汁"
+  },
+  {
+    "wordId": 20224,
+    "translation": "醋"
+  },
+  {
+    "wordId": 20225,
+    "translation": "烤箱"
+  },
+  {
+    "wordId": 20226,
+    "translation": "冰箱"
+  },
+  {
+    "wordId": 20227,
+    "translation": "比分；分数"
+  },
+  {
+    "wordId": 20228,
+    "translation": "赛跑；比赛"
+  },
+  {
+    "wordId": 20229,
+    "translation": "网"
+  },
+  {
+    "wordId": 20230,
+    "translation": "粉丝；迷"
+  },
+  {
+    "wordId": 20231,
+    "translation": "球棒；球拍"
+  },
+  {
+    "wordId": 20232,
+    "translation": "健身房"
+  },
+  {
+    "wordId": 20233,
+    "translation": "头盔"
+  },
+  {
+    "wordId": 20234,
+    "translation": "课本；教科书"
+  },
+  {
+    "wordId": 20235,
+    "translation": "制服；校服"
+  },
+  {
+    "wordId": 20236,
+    "translation": "成绩；年级"
+  },
+  {
+    "wordId": 20237,
+    "translation": "操场；游乐场"
+  },
+  {
+    "wordId": 20238,
+    "translation": "粉笔"
+  },
+  {
+    "wordId": 20239,
+    "translation": "词典；字典"
+  },
+  {
+    "wordId": 20240,
+    "translation": "人群"
+  },
+  {
+    "wordId": 20241,
+    "translation": "旗；旗帜"
+  },
+  {
+    "wordId": 20242,
+    "translation": "传统；惯例"
+  },
+  {
+    "wordId": 20243,
+    "translation": "仪式；典礼"
+  },
+  {
+    "wordId": 20244,
+    "translation": "宗教；信仰"
+  },
+  {
+    "wordId": 20245,
+    "translation": "总统；主席"
+  },
+  {
+    "wordId": 20246,
+    "translation": "税；税款"
+  },
+  {
+    "wordId": 20247,
+    "translation": "市长"
+  },
+  {
+    "wordId": 20248,
+    "translation": "警察"
+  },
+  {
+    "wordId": 20249,
+    "translation": "监狱"
+  },
+  {
+    "wordId": 20250,
+    "translation": "小偷；窃贼"
+  },
+  {
+    "wordId": 20251,
+    "translation": "惩罚"
+  },
+  {
+    "wordId": 20252,
+    "translation": "法官"
+  },
+  {
+    "wordId": 20253,
+    "translation": "抢劫"
+  },
+  {
+    "wordId": 20254,
+    "translation": "行星"
+  },
+  {
+    "wordId": 20255,
+    "translation": "太空；空间"
+  },
+  {
+    "wordId": 20256,
+    "translation": "星星；恒星"
+  },
+  {
+    "wordId": 20257,
+    "translation": "电；电力"
+  },
+  {
+    "wordId": 20258,
+    "translation": "温度"
+  },
+  {
+    "wordId": 20259,
+    "translation": "磁铁"
+  },
+  {
+    "wordId": 20260,
+    "translation": "绘画；油画"
+  },
+  {
+    "wordId": 20261,
+    "translation": "诗；诗歌"
+  },
+  {
+    "wordId": 20262,
+    "translation": "音乐会；演唱会"
+  },
+  {
+    "wordId": 20263,
+    "translation": "舞台"
+  },
+  {
+    "wordId": 20264,
+    "translation": "乐器"
+  },
+  {
+    "wordId": 20265,
+    "translation": "雕像"
+  },
+  {
+    "wordId": 20266,
+    "translation": "服装；戏服"
+  },
+  {
+    "wordId": 20267,
+    "translation": "屏幕"
+  },
+  {
+    "wordId": 20268,
+    "translation": "打印机"
+  },
+  {
+    "wordId": 20269,
+    "translation": "相机；摄像机"
+  },
+  {
+    "wordId": 20270,
+    "translation": "信号"
+  },
+  {
+    "wordId": 20271,
+    "translation": "电缆；线缆"
+  },
+  {
+    "wordId": 20272,
+    "translation": "暴风雨"
+  },
+  {
+    "wordId": 20273,
+    "translation": "沙漠"
+  },
+  {
+    "wordId": 20274,
+    "translation": "波浪；海浪"
+  },
+  {
+    "wordId": 20275,
+    "translation": "日落"
+  },
+  {
+    "wordId": 20276,
+    "translation": "垃圾；废物"
+  },
+  {
+    "wordId": 20277,
+    "translation": "彩虹"
+  },
+  {
+    "wordId": 20278,
+    "translation": "伙伴；搭档"
+  },
+  {
+    "wordId": 20279,
+    "translation": "陌生人"
+  },
+  {
+    "wordId": 20280,
+    "translation": "幸福；快乐"
+  },
+  {
+    "wordId": 20281,
+    "translation": "惊喜；意外"
+  },
+  {
+    "wordId": 20282,
+    "translation": "愤怒；怒气"
+  },
+  {
+    "wordId": 20283,
+    "translation": "口音；腔调"
+  },
+  {
+    "wordId": 20284,
+    "translation": "经理；管理者"
+  },
+  {
+    "wordId": 20285,
+    "translation": "工厂"
+  },
+  {
+    "wordId": 20286,
+    "translation": "包裹；包装"
+  },
+  {
+    "wordId": 20287,
+    "translation": "扫；打扫"
+  },
+  {
+    "wordId": 20288,
+    "translation": "咳嗽"
+  },
+  {
+    "wordId": 20289,
+    "translation": "打喷嚏"
+  },
+  {
+    "wordId": 20290,
+    "translation": "流血；出血"
+  },
+  {
+    "wordId": 20291,
+    "translation": "愈合；痊愈"
+  },
+  {
+    "wordId": 20292,
+    "translation": "踢"
+  },
+  {
+    "wordId": 20293,
+    "translation": "扔；投掷"
+  },
+  {
+    "wordId": 20294,
+    "translation": "接住；抓住"
+  },
+  {
+    "wordId": 20295,
+    "translation": "游泳"
+  },
+  {
+    "wordId": 20296,
+    "translation": "比赛；竞争"
+  },
+  {
+    "wordId": 20297,
+    "translation": "喊；大声叫"
+  },
+  {
+    "wordId": 20298,
+    "translation": "低语；耳语"
+  },
+  {
+    "wordId": 20299,
+    "translation": "道歉"
+  },
+  {
+    "wordId": 20300,
+    "translation": "问候；打招呼"
+  },
+  {
+    "wordId": 20301,
+    "translation": "点头"
+  },
+  {
+    "wordId": 20302,
+    "translation": "发音"
+  },
+  {
+    "wordId": 20303,
+    "translation": "笑；大笑"
+  },
+  {
+    "wordId": 20304,
+    "translation": "微笑"
+  },
+  {
+    "wordId": 20305,
+    "translation": "担心；忧虑"
+  },
+  {
+    "wordId": 20306,
+    "translation": "信任；信赖"
+  },
+  {
+    "wordId": 20307,
+    "translation": "惹恼；使生气"
+  },
+  {
+    "wordId": 20308,
+    "translation": "雇用；聘请"
+  },
+  {
+    "wordId": 20309,
+    "translation": "辞职；放弃"
+  },
+  {
+    "wordId": 20310,
+    "translation": "打印；印刷"
+  },
+  {
+    "wordId": 20311,
+    "translation": "拼写"
+  },
+  {
+    "wordId": 20312,
+    "translation": "记住；背诵"
+  },
+  {
+    "wordId": 20313,
+    "translation": "复习"
+  },
+  {
+    "wordId": 20314,
+    "translation": "污染"
+  },
+  {
+    "wordId": 20315,
+    "translation": "种植"
+  },
+  {
+    "wordId": 20316,
+    "translation": "插入；插上电源"
+  },
+  {
+    "wordId": 20317,
+    "translation": "删除"
+  },
+  {
+    "wordId": 20318,
+    "translation": "偷；偷窃"
+  },
+  {
+    "wordId": 20319,
+    "translation": "惩罚"
+  },
+  {
+    "wordId": 20320,
+    "translation": "服从；遵守"
+  },
+  {
+    "wordId": 20321,
+    "translation": "测量；衡量"
+  },
+  {
+    "wordId": 20322,
+    "translation": "称重"
+  },
+  {
+    "wordId": 20323,
+    "translation": "登上；上车"
+  },
+  {
+    "wordId": 20324,
+    "translation": "鼓掌；拍手"
+  },
+  {
+    "wordId": 20325,
+    "translation": "画画；涂颜色"
+  },
+  {
+    "wordId": 20326,
+    "translation": "交换；互换"
+  },
+  {
+    "wordId": 20327,
+    "translation": "尖叫"
+  },
+  {
+    "wordId": 20328,
+    "translation": "擦；擦拭"
+  },
+  {
+    "wordId": 20329,
+    "translation": "祈祷；祷告"
+  },
+  {
+    "wordId": 20330,
+    "translation": "挖；挖掘"
+  },
+  {
+    "wordId": 20331,
+    "translation": "浪费"
+  },
+  {
+    "wordId": 20332,
+    "translation": "尝；品尝"
+  },
+  {
+    "wordId": 20333,
+    "translation": "切片"
+  },
+  {
+    "wordId": 20334,
+    "translation": "咀嚼"
+  },
+  {
+    "wordId": 20335,
+    "translation": "咬"
+  },
+  {
+    "wordId": 20336,
+    "translation": "油炸；煎"
+  },
+  {
+    "wordId": 20337,
+    "translation": "预订；预约"
+  },
+  {
+    "wordId": 20338,
+    "translation": "摇；摇晃"
+  },
+  {
+    "wordId": 20339,
+    "translation": "大喊；叫喊"
+  },
+  {
+    "wordId": 20340,
+    "translation": "指；指向"
+  },
+  {
+    "wordId": 20341,
+    "translation": "擦；摩擦"
+  },
+  {
+    "wordId": 20342,
+    "translation": "抓；挠"
+  },
+  {
+    "wordId": 20343,
+    "translation": "削皮；剥皮"
+  },
+  {
+    "wordId": 20344,
+    "translation": "拥抱"
+  },
+  {
+    "wordId": 20345,
+    "translation": "亲吻"
+  },
+  {
+    "wordId": 20346,
+    "translation": "柔软的"
+  },
+  {
+    "wordId": 20347,
+    "translation": "光滑的；平滑的"
+  },
+  {
+    "wordId": 20348,
+    "translation": "湿的"
+  },
+  {
+    "wordId": 20349,
+    "translation": "干的；干燥的"
+  },
+  {
+    "wordId": 20350,
+    "translation": "厚的；粗的"
+  },
+  {
+    "wordId": 20351,
+    "translation": "薄的；瘦的"
+  },
+  {
+    "wordId": 20352,
+    "translation": "生病的"
+  },
+  {
+    "wordId": 20353,
+    "translation": "健康的"
+  },
+  {
+    "wordId": 20354,
+    "translation": "健壮的；合适的"
+  },
+  {
+    "wordId": 20355,
+    "translation": "虚弱的"
+  },
+  {
+    "wordId": 20356,
+    "translation": "高兴的"
+  },
+  {
+    "wordId": 20357,
+    "translation": "不安的；难过的"
+  },
+  {
+    "wordId": 20358,
+    "translation": "嫉妒的"
+  },
+  {
+    "wordId": 20359,
+    "translation": "困惑的"
+  },
+  {
+    "wordId": 20360,
+    "translation": "无聊的；厌烦的"
+  },
+  {
+    "wordId": 20361,
+    "translation": "野生的"
+  },
+  {
+    "wordId": 20362,
+    "translation": "纯净的"
+  },
+  {
+    "wordId": 20363,
+    "translation": "冷冻的"
+  },
+  {
+    "wordId": 20364,
+    "translation": "酸的"
+  },
+  {
+    "wordId": 20365,
+    "translation": "辣的"
+  },
+  {
+    "wordId": 20366,
+    "translation": "当地的；本地的"
+  },
+  {
+    "wordId": 20367,
+    "translation": "木制的"
+  },
+  {
+    "wordId": 20368,
+    "translation": "无线的"
+  },
+  {
+    "wordId": 20369,
+    "translation": "自动的"
+  },
+  {
+    "wordId": 20370,
+    "translation": "兼职的"
+  },
+  {
+    "wordId": 20371,
+    "translation": "室内的"
+  },
+  {
+    "wordId": 20372,
+    "translation": "户外的"
+  },
+  {
+    "wordId": 20373,
+    "translation": "已婚的"
+  },
+  {
+    "wordId": 20374,
+    "translation": "年长的；老年的"
+  },
+  {
+    "wordId": 20375,
+    "translation": "英俊的；帅的"
+  },
+  {
+    "wordId": 20376,
+    "translation": "丑的；难看的"
+  },
+  {
+    "wordId": 20377,
+    "translation": "圆的"
+  },
+  {
+    "wordId": 20378,
+    "translation": "正方形的"
+  },
+  {
+    "wordId": 20379,
+    "translation": "直的；笔直的"
+  },
+  {
+    "wordId": 20380,
+    "translation": "聋的"
+  },
+  {
+    "wordId": 20381,
+    "translation": "害羞的"
+  },
+  {
+    "wordId": 20382,
+    "translation": "宽的；宽阔的"
+  },
+  {
+    "wordId": 20383,
+    "translation": "害怕的；恐惧的"
+  },
+  {
+    "wordId": 20384,
+    "translation": "高兴的；满意的"
+  },
+  {
+    "wordId": 20385,
+    "translation": "粗鲁的；无礼的"
+  },
+  {
+    "wordId": 20386,
+    "translation": "在国外"
+  },
+  {
+    "wordId": 20387,
+    "translation": "不管怎样"
+  },
+  {
+    "wordId": 20388,
+    "translation": "此外；而且"
+  },
+  {
+    "wordId": 20389,
+    "translation": "在楼下"
+  },
+  {
+    "wordId": 20390,
+    "translation": "在楼上"
+  },
+  {
+    "wordId": 20391,
+    "translation": "到处；处处"
+  },
+  {
+    "wordId": 20392,
+    "translation": "任何地方都不"
+  },
+  {
+    "wordId": 20393,
+    "translation": "向前"
+  },
+  {
+    "wordId": 20394,
+    "translation": "很少；不常"
+  },
+  {
+    "wordId": 20395,
+    "translation": "主要地；大部分"
+  },
+  {
+    "wordId": 20396,
+    "translation": "也许；可能"
+  },
+  {
+    "wordId": 20397,
+    "translation": "无论何时"
+  },
+  {
+    "wordId": 20398,
+    "translation": "因此；所以"
+  },
+  {
+    "wordId": 20399,
+    "translation": "在线；网上"
+  },
+  {
+    "wordId": 20400,
+    "translation": "出声地；大声地"
+  }
 ]
