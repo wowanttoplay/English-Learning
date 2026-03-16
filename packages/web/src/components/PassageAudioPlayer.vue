@@ -1,6 +1,40 @@
 <template>
   <div class="passage-player">
+    <!-- Row 1: progress bar + time -->
+    <div class="player-progress-row">
+      <span class="player-time">{{ formatTime(currentTime) }}</span>
+      <div
+        class="player-progress-wrapper"
+        @click="onProgressClick"
+        ref="progressRef"
+        :class="{ disabled: isFallback }"
+      >
+        <div class="player-progress-track">
+          <div class="player-progress-fill" :style="{ width: progressPercent + '%' }"></div>
+        </div>
+      </div>
+      <span class="player-time">{{ formatTime(duration) }}</span>
+    </div>
+
+    <!-- Row 2: controls -->
     <div class="player-controls">
+      <div class="speed-picker">
+        <button class="speed-pill" @click="showSpeedMenu = !showSpeedMenu">
+          {{ speed }}x
+        </button>
+        <div v-if="showSpeedMenu" class="speed-menu">
+          <button
+            v-for="s in speeds"
+            :key="s"
+            class="speed-menu-item"
+            :class="{ active: speed === s }"
+            @click="setSpeed(s); showSpeedMenu = false"
+          >
+            {{ s }}x
+          </button>
+        </div>
+      </div>
+
       <button
         @click="$emit('skip-prev')"
         :disabled="currentTurnIndex <= 0"
@@ -24,39 +58,9 @@
         title="Next turn"
       >&#9197;</button>
 
-      <div
-        class="player-progress-wrapper"
-        @click="onProgressClick"
-        ref="progressRef"
-        :class="{ disabled: isFallback }"
-      >
-        <div class="player-progress-track">
-          <div class="player-progress-fill" :style="{ width: progressPercent + '%' }"></div>
-        </div>
-      </div>
-
-      <span class="player-time">{{ formatTime(currentTime) }} / {{ formatTime(duration) }}</span>
-
       <button class="player-btn player-btn-stop" @click="stop" aria-label="Stop">
         &#9632;
       </button>
-
-      <div class="speed-picker">
-        <button class="speed-pill" @click="showSpeedMenu = !showSpeedMenu">
-          {{ speed }}x
-        </button>
-        <div v-if="showSpeedMenu" class="speed-menu">
-          <button
-            v-for="s in speeds"
-            :key="s"
-            class="speed-menu-item"
-            :class="{ active: speed === s }"
-            @click="setSpeed(s); showSpeedMenu = false"
-          >
-            {{ s }}x
-          </button>
-        </div>
-      </div>
     </div>
 
     <div v-if="isFallback" class="player-fallback-notice">
