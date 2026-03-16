@@ -200,14 +200,11 @@
     margin: 0 auto;
   }
 
-  /* Passage audio player -- centered in content area, not covering sidebar */
+  /* Passage audio player -- only in content area, not covering sidebar */
   .passage-player {
     bottom: 0;
-    /* Remove full-width left:0/right:0, instead position within content area */
-    left: 50%;
-    right: auto;
-    transform: translateX(calc(-50% + var(--sidebar-width, 220px) / 2));
-    width: min(750px, calc(100vw - var(--sidebar-width, 220px) - 96px));
+    left: var(--sidebar-width, 220px);
+    right: 0;
   }
 
   /* Tooltip as centered dialog on desktop */
