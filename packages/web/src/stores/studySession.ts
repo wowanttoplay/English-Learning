@@ -8,6 +8,7 @@ export const useStudySessionStore = defineStore('studySession', () => {
   const revealed = ref(false)
   const sessionType = ref<'review' | ''>('')
   const completeStats = ref<{ reviewed: number; type: string } | null>(null)
+  const sessionStreak = ref(0)
 
   const currentCard = computed<SrsCard | null>(() => {
     if (index.value >= queue.value.length) return null
@@ -27,17 +28,25 @@ export const useStudySessionStore = defineStore('studySession', () => {
     revealed.value = false
     sessionType.value = type
     completeStats.value = null
+    sessionStreak.value = 0
   }
 
   function reveal() {
     revealed.value = true
   }
 
-  function advance(updatedCard: SrsCard) {
+  function advance(updatedCard: SrsCard, rating?: 1 | 2 | 3 | 4) {
     if (updatedCard.state === 'learning' || updatedCard.state === 'relearning') {
       if (Date.now() >= updatedCard.dueTimestamp) {
         queue.value.push(updatedCard)
       }
+    }
+
+    // Update session streak based on rating
+    if (rating === 1) {
+      sessionStreak.value = 0
+    } else if (rating === 3 || rating === 4) {
+      sessionStreak.value++
     }
 
     index.value++
@@ -68,6 +77,7 @@ export const useStudySessionStore = defineStore('studySession', () => {
     revealed,
     sessionType,
     completeStats,
+    sessionStreak,
     currentCard,
     progressPct,
     isComplete,

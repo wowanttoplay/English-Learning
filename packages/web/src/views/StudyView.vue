@@ -37,12 +37,32 @@
             {{ studySession.index + 1 }} / {{ studySession.queue.length }} &middot; {{ stateLabel }}
           </span>
         </div>
-        <div class="card-progress-bar">
-          <div class="card-progress-fill" :style="{ width: studySession.progressPct + '%' }"></div>
+
+        <!-- Dot progress indicator -->
+        <div class="study-dots" style="display:flex;align-items:center;gap:6px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;">
+          <span
+            v-for="(_, di) in Math.min(studySession.queue.length, 30)"
+            :key="di"
+            :style="{
+              width: '8px', height: '8px', borderRadius: '50%', display: 'inline-block',
+              background: di < studySession.index ? 'var(--green)' : di === studySession.index ? 'var(--accent)' : 'var(--separator)',
+              boxShadow: di === studySession.index ? '0 0 0 3px var(--accent-soft)' : 'none',
+              transition: 'all 0.2s'
+            }"
+          ></span>
+          <span style="font-size:12px;color:var(--text-secondary);margin-left:4px;">{{ studySession.index + 1 }}/{{ studySession.queue.length }}</span>
         </div>
 
         <div class="flashcard" @click="!studySession.revealed && studySession.reveal()">
+          <!-- Decorative circle -->
+          <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(251,191,36,0.15);pointer-events:none;"></div>
+
           <div class="card-front">
+            <!-- Streak pill -->
+            <div
+              v-if="studySession.sessionStreak > 0"
+              style="pointer-events:none;background:#fff;border-radius:20px;padding:4px 12px;font-size:13px;font-weight:600;color:var(--accent);margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,0.06);"
+            >&#128293; {{ studySession.sessionStreak }} streak</div>
             <div class="card-word">{{ currentWord.word }}</div>
             <div class="card-phonetic">{{ currentWord.phonetic }}</div>
             <div class="card-pos">{{ currentWord.pos }}</div>
@@ -116,7 +136,7 @@ async function onRate(rating: Rating) {
   const card = currentCard.value
   if (!card) return
   const updated = await srsStore.rateCard(card.wordId, rating)
-  studySession.advance(updated)
+  studySession.advance(updated, rating)
 }
 
 async function markCurrentAsKnown() {
