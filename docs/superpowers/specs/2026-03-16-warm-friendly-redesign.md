@@ -153,41 +153,89 @@ No font stack change. Add weight variations:
 
 ## 8. Dark Mode Adjustments
 
-- Background: `#1a1917` (warm dark, not pure black)
-- Card background: `#2a2826`
-- Accent amber stays vibrant
-- Speaker colors: slightly lighter for contrast
-- Flashcard gradient: dark warm tones `linear-gradient(145deg, #2a2419, #1f1b14)`
+- `--bg`: `#1a1917` (warm dark, not pure black)
+- `--bg-card`: `#2a2826`
+- `--accent` amber stays vibrant
+- `--speaker-a`: `#fbbf24` (lighter amber for dark bg contrast)
+- `--speaker-a-bg`: `#2a1f00` (dark amber tint)
+- `--speaker-a-text`: `#fbbf24`
+- `--speaker-b`: `#818cf8` (lighter indigo)
+- `--speaker-b-bg`: `#1e1b3a` (dark indigo tint)
+- `--speaker-b-text`: `#a5b4fc`
+- `--flashcard-gradient`: `linear-gradient(145deg, #2a2419, #1f1b14)` — defined as token, not inline
 - Text: warm white `#fafaf9` (not pure white)
 
 ---
 
-## 9. Files to Modify
+## 9. Clerk UI Isolation
+
+Changing `--accent` from blue to amber will affect Clerk's sign-in modal (it inherits CSS custom properties). Fix by scoping Clerk components:
+
+```css
+/* Re-declare blue accent inside Clerk's DOM scope */
+.cl-rootBox, .cl-modalContent, .cl-card {
+  --accent: #007aff;
+  --accent-hover: #0066d6;
+  --accent-soft: rgba(0, 122, 255, 0.10);
+}
+```
+
+This keeps Clerk's UI blue while the rest of the app uses amber. Place in `components.css`.
+
+Also update two hardcoded blue values in `components.css` (`rgba(0, 122, 255, 0.4)` in `.highlight-word` rules) to use `var(--accent-soft)`.
+
+---
+
+## 10. Small Data Changes Required
+
+These are minimal additions to support new UI elements. They stay within `packages/web/` except for `PassageSummary`.
+
+### Streak Counter (StudyView)
+Add `sessionStreak: Ref<number>` to `useStudySessionStore`:
+- Increment on "Good" or "Easy" rating
+- Reset to 0 on "Again"
+- Purely local session state, no API change
+
+### New Word Count (ReadingView)
+Add `newWordCount: number` to `PassageSummary` in `packages/shared/src/types.ts` and populate it in the passages query (`packages/api/src/db/queries/passages.ts`). This is a single integer derived from `COUNT(*) WHERE role='new'` — no new endpoint needed.
+
+### Decorative Elements Safety
+All decorative overlays (flashcard circle, streak pill) must use `pointer-events: none` to avoid blocking the card's `@click` handler.
+
+### Sequence Null Guard
+ReadingView template must use `v-if="passage.sequence != null"` when rendering the sequence circle, since supplemental passages have `sequence: null`.
+
+---
+
+## 11. Files to Modify
 
 | File | Changes |
 |------|---------|
-| `packages/web/src/styles/tokens.css` | Color palette, spacing, radius, new speaker tokens |
+| `packages/web/src/styles/tokens.css` | Color palette, spacing, radius, speaker tokens, `--flashcard-gradient`, dark mode overrides |
 | `packages/web/src/styles/base.css` | Button styles, progress bar colors |
 | `packages/web/src/styles/layout.css` | Max-width, nav active states |
-| `packages/web/src/styles/components.css` | Flashcard, tooltip, player, filter, passage card styles |
+| `packages/web/src/styles/components.css` | Flashcard, tooltip, player, filter, passage card styles, Clerk isolation, hardcoded blue fixes |
 | `packages/web/src/views/DashboardView.vue` | Stats card styling, heatmap colors, button style |
 | `packages/web/src/views/StudyView.vue` | Flashcard template (gradient card, dots, streak) |
 | `packages/web/src/views/WordListView.vue` | Filter pill styling, card hover |
-| `packages/web/src/views/ReadingView.vue` | Rich card template (avatars, progress, sequence circle) |
+| `packages/web/src/views/ReadingView.vue` | Rich card template (avatars, progress, sequence circle, word count) |
 | `packages/web/src/views/PassageView.vue` | Script layout (borders, avatars, highlights) |
 | `packages/web/src/components/BottomNav.vue` | Active state amber |
 | `packages/web/src/components/PassageAudioPlayer.vue` | Player warm colors |
 | `packages/web/src/components/RatingButtons.vue` | Warm button styles, Good highlighted |
 | `packages/web/src/components/WordTooltip.vue` | Warm styling |
+| `packages/web/src/stores/studySession.ts` | Add `sessionStreak` ref |
+| `packages/shared/src/types.ts` | Add `newWordCount` to `PassageSummary` |
+| `packages/api/src/db/queries/passages.ts` | Populate `newWordCount` in list query |
 
 ---
 
-## 10. What Does NOT Change
+## 12. What Does NOT Change
 
 - App architecture, routing, data flow
 - Responsive breakpoint (768px) stays the same
-- Store/composable/API logic — no business logic changes
+- SRS logic, card review logic, word matching — no business logic changes
 - Functionality — all features remain identical
 - Font stack — keep system fonts
 
-**Note:** While this is primarily a visual redesign, some views require template changes (new HTML elements) in addition to CSS. Specifically: StudyView (dot progress, streak pill), ReadingView (sequence circle, avatars, word count footer), PassageView (script layout with borders/avatars). These are presentational template changes, not logic changes.
+**Note:** This is primarily a visual redesign with template changes. Two small data additions are needed: `sessionStreak` (local store ref) and `newWordCount` (derived integer on `PassageSummary`). Neither changes the SRS algorithm or API contracts beyond adding one field to the passage list response.
