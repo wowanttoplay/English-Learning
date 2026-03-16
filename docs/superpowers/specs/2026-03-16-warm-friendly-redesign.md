@@ -18,10 +18,10 @@ Redesign all pages to a Warm & Friendly visual style: amber/green/indigo color p
 |-------|---------|-----|---------|
 | `--accent` | `#007aff` (blue) | `#f59e0b` (amber) | Primary action, active nav |
 | `--accent-hover` | `#0066d6` | `#d97706` | Hover state |
-| `--accent-bg` | `rgba(0,122,255,0.1)` | `rgba(245,158,11,0.1)` | Light accent background |
-| `--bg-primary` | `#f2f2f7` | `#faf9f6` | Page background (warm gray) |
+| `--accent-soft` | `rgba(0,122,255,0.1)` | `rgba(245,158,11,0.1)` | Light accent background |
+| `--bg` | `#f2f2f7` | `#faf9f6` | Page background (warm gray) |
 | `--bg-card` | `#ffffff` | `#ffffff` | Card background (unchanged) |
-| `--success` | `#34c759` | `#10b981` | Progress, completion |
+| `--green` | `#34c759` | `#10b981` | Progress, completion |
 | `--speaker-a` | n/a (new) | `#f59e0b` | Speaker A color (amber) |
 | `--speaker-a-bg` | n/a (new) | `#fef3c7` | Speaker A light background |
 | `--speaker-a-text` | n/a (new) | `#92400e` | Speaker A text color |
@@ -60,7 +60,7 @@ No font stack change. Add weight variations:
 ## 3. Dashboard View
 
 - Stats cards: white cards with subtle warm shadow, stat numbers in 800 weight
-- Weekly heatmap: amber→green color scale (empty=`#f5f5f4`, low=`#fef3c7`, mid=`#fde68a`, high=`#10b981`)
+- Weekly heatmap: amber→green color scale for bar levels (level-1=`#fef3c7`, level-2=`#fde68a`, level-3=`#f59e0b`, level-4=`#10b981`)
 - "Start Review" button: amber gradient background (`#f59e0b` → `#fbbf24`), white text, 700 weight
 - Progress bar: green gradient (`#10b981` → `#34d399`)
 - Section headers: warm brown text `#92400e` instead of gray
@@ -184,8 +184,10 @@ No font stack change. Add weight variations:
 
 ## 10. What Does NOT Change
 
-- App architecture, routing, data flow — purely visual changes
+- App architecture, routing, data flow
 - Responsive breakpoint (768px) stays the same
-- Component/composable/store structure — no logic changes
+- Store/composable/API logic — no business logic changes
 - Functionality — all features remain identical
 - Font stack — keep system fonts
+
+**Note:** While this is primarily a visual redesign, some views require template changes (new HTML elements) in addition to CSS. Specifically: StudyView (dot progress, streak pill), ReadingView (sequence circle, avatars, word count footer), PassageView (script layout with borders/avatars). These are presentational template changes, not logic changes.
