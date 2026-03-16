@@ -200,6 +200,12 @@
     margin: 0 auto;
   }
 
+  /* Passage audio player -- sits above bottom, offset by sidebar */
+  .passage-player {
+    bottom: 0;
+    left: var(--sidebar-width, 220px);
+  }
+
   /* Tooltip as centered dialog on desktop */
   .tooltip-overlay {
     align-items: center;

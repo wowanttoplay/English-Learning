@@ -880,6 +880,7 @@
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   padding: 28px 24px;
+  padding-bottom: 140px;
   margin-bottom: 16px;
   position: relative;
 }
@@ -1030,12 +1031,13 @@
 /* === Passage Audio Player === */
 .passage-player {
   background: var(--bg-card);
-  border-radius: var(--radius);
-  padding: 16px 20px;
-  margin-bottom: 16px;
-  position: sticky;
-  top: env(safe-area-inset-top, 0);
-  z-index: 10;
+  padding: 12px 20px;
+  position: fixed;
+  bottom: var(--nav-height, 72px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .player-controls {

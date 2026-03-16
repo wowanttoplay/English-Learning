@@ -8,25 +8,6 @@
       <span class="card-progress"><LevelBadge :level="passage.level" /> &middot; {{ formatTopic(passage.topic) }}</span>
     </div>
 
-    <PassageAudioPlayer
-      :speeds="audio.speeds"
-      :speed="audio.speed.value"
-      :isPlaying="audio.isPlaying.value"
-      :currentTime="audio.currentTime.value"
-      :duration="audio.duration.value"
-      :isFallback="audio.isFallback.value"
-      :progressPercent="audio.progressPercent.value"
-      :currentTurnIndex="audio.currentTurnIndex.value"
-      :turnCount="passage?.turns?.length ?? 0"
-      :formatTime="audio.formatTime"
-      :togglePlay="audio.togglePlay"
-      :stop="audio.stop"
-      :seekTo="audio.seekTo"
-      :setSpeed="audio.setSpeed"
-      @skip-prev="audio.skipPrev"
-      @skip-next="audio.skipNext"
-    />
-
     <div class="passage-content">
       <h2 class="passage-title" style="font-size:24px;font-weight:800;">{{ passage.title }}</h2>
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;font-size:13px;color:var(--text-secondary);">
@@ -89,6 +70,25 @@
         </div>
       </div>
     </Teleport>
+
+    <PassageAudioPlayer
+      :speeds="audio.speeds"
+      :speed="audio.speed.value"
+      :isPlaying="audio.isPlaying.value"
+      :currentTime="audio.currentTime.value"
+      :duration="audio.duration.value"
+      :isFallback="audio.isFallback.value"
+      :progressPercent="audio.progressPercent.value"
+      :currentTurnIndex="audio.currentTurnIndex.value"
+      :turnCount="passage?.turns?.length ?? 0"
+      :formatTime="audio.formatTime"
+      :togglePlay="audio.togglePlay"
+      :stop="audio.stop"
+      :seekTo="audio.seekTo"
+      :setSpeed="audio.setSpeed"
+      @skip-prev="audio.skipPrev"
+      @skip-next="audio.skipNext"
+    />
 
     <div class="passage-actions">
       <button
