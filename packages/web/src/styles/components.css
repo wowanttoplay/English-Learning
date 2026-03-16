@@ -787,7 +787,7 @@
 .passage-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
 .passage-item {

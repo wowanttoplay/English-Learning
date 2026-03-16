@@ -28,16 +28,41 @@
     />
 
     <div class="passage-content">
-      <h2 class="passage-title">{{ passage.title }}</h2>
+      <h2 class="passage-title" style="font-size:24px;font-weight:800;">{{ passage.title }}</h2>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;font-size:13px;color:var(--text-secondary);">
+        <LevelBadge :level="passage.level" />
+        <span>{{ formatTopic(passage.topic) }}</span>
+        <span v-if="passage.speakers?.length">
+          &middot; {{ passage.speakers.map(s => s.name).join(' & ') }}
+        </span>
+      </div>
       <div ref="passageTextRef" class="passage-text">
         <div v-for="(turn, i) in passage.turns" :key="i"
              class="dialogue-turn"
              :class="{ 'turn-active': audio.currentTurnIndex.value === i }"
-             :data-turn-index="i">
-          <span class="speaker-name" :class="`speaker-${turn.speaker}`">
-            {{ passage.speakers[turn.speaker].name }}
-          </span>
-          <span class="turn-text" v-html="highlightedTurns[i]"></span>
+             :data-turn-index="i"
+             :style="{
+               borderLeft: '3px solid ' + (turn.speaker === 0 ? 'var(--speaker-a)' : 'var(--speaker-b)'),
+               paddingLeft: '12px',
+               marginBottom: '18px',
+               display: 'flex',
+               alignItems: 'flex-start',
+               gap: '10px'
+             }">
+          <span
+            :style="{
+              width: '24px', height: '24px', borderRadius: '50%', flexShrink: '0', marginTop: '2px',
+              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+              fontSize: '11px', fontWeight: '700', color: '#fff',
+              background: turn.speaker === 0 ? 'linear-gradient(135deg, var(--speaker-a), #fbbf24)' : 'linear-gradient(135deg, var(--speaker-b), #818cf8)'
+            }"
+          >{{ passage.speakers[turn.speaker].name.charAt(0) }}</span>
+          <div style="flex:1;">
+            <span class="speaker-name" :class="`speaker-${turn.speaker}`">
+              {{ passage.speakers[turn.speaker].name }}
+            </span>
+            <span class="turn-text" style="font-size:14px;line-height:1.65;" v-html="highlightedTurns[i]"></span>
+          </div>
         </div>
       </div>
     </div>

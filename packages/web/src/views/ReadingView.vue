@@ -83,14 +83,32 @@
             class="passage-item"
             @click="router.push('/reading/' + passage.id)"
           >
+            <div
+              v-if="passage.sequence != null"
+              style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0;"
+            >{{ passage.sequence }}</div>
             <div class="passage-item-info">
               <div class="passage-item-title">{{ passage.title }}</div>
-              <span v-if="passage.speakers?.length" class="passage-speakers">
-                {{ passage.speakers.map(s => s.name).join(' & ') }}
-              </span>
               <div class="passage-item-meta">
-                <span class="passage-topic">{{ formatTopic(passage.topic) }}</span>
                 <LevelBadge :level="passage.level" />
+                <span class="passage-topic">{{ formatTopic(passage.topic) }}</span>
+              </div>
+              <div v-if="passage.speakers?.length" style="display:flex;align-items:center;gap:4px;margin-top:4px;">
+                <span
+                  v-for="(s, si) in passage.speakers.slice(0, 2)"
+                  :key="si"
+                  :style="{
+                    width: '20px', height: '20px', borderRadius: '50%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                    fontSize: '10px', fontWeight: '700', color: '#fff',
+                    background: si === 0 ? 'var(--speaker-a)' : 'var(--speaker-b)',
+                    marginLeft: si > 0 ? '-6px' : '0',
+                    border: '2px solid var(--bg-card)'
+                  }"
+                >{{ s.name.charAt(0) }}</span>
+                <span style="font-size:12px;color:var(--text-secondary);margin-left:4px;">{{ passage.speakers.map(s => s.name).join(' & ') }}</span>
+              </div>
+              <div v-if="passage.newWordCount > 0" style="display:flex;align-items:center;gap:6px;margin-top:6px;font-size:12px;color:var(--green);">
+                <span>&#128065; {{ passage.newWordCount }} new words</span>
               </div>
             </div>
           </div>
@@ -103,17 +121,33 @@
           <div
             v-for="p in completedPassages"
             :key="p.id"
-            class="passage-item completed"
+            class="passage-item"
+            style="opacity:0.55;"
             @click="router.push('/reading/' + p.id)"
           >
+            <div
+              v-if="p.sequence != null"
+              style="width:40px;height:40px;border-radius:50%;background:var(--text-tertiary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0;"
+            >&#10003;</div>
             <div class="passage-item-info">
               <div class="passage-item-title">{{ p.title }}</div>
-              <span v-if="p.speakers?.length" class="passage-speakers">
-                {{ p.speakers.map(s => s.name).join(' & ') }}
-              </span>
               <div class="passage-item-meta">
-                <span class="passage-topic">{{ formatTopic(p.topic) }}</span>
                 <LevelBadge :level="p.level" />
+                <span class="passage-topic">{{ formatTopic(p.topic) }}</span>
+              </div>
+              <div v-if="p.speakers?.length" style="display:flex;align-items:center;gap:4px;margin-top:4px;">
+                <span
+                  v-for="(s, si) in p.speakers.slice(0, 2)"
+                  :key="si"
+                  :style="{
+                    width: '20px', height: '20px', borderRadius: '50%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                    fontSize: '10px', fontWeight: '700', color: '#fff',
+                    background: si === 0 ? 'var(--speaker-a)' : 'var(--speaker-b)',
+                    marginLeft: si > 0 ? '-6px' : '0',
+                    border: '2px solid var(--bg-card)'
+                  }"
+                >{{ s.name.charAt(0) }}</span>
+                <span style="font-size:12px;color:var(--text-secondary);margin-left:4px;">{{ p.speakers.map(s => s.name).join(' & ') }}</span>
               </div>
             </div>
             <span class="passage-done-badge">&#10003; Read</span>

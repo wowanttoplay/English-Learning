@@ -21,6 +21,7 @@ interface PassageSummaryRow {
   genre: string
   speakers: string | null
   sequence: number | null
+  new_word_count: number
 }
 
 function rowToPassageSummary(row: PassageSummaryRow): PassageSummary {
@@ -35,6 +36,7 @@ function rowToPassageSummary(row: PassageSummaryRow): PassageSummary {
       ? JSON.parse(row.speakers).map((s: { name: string }) => ({ name: s.name }))
       : [],
     sequence: row.sequence ?? null,
+    newWordCount: row.new_word_count ?? 0,
   }
 }
 
@@ -68,19 +70,23 @@ export async function getPassages(
   const pageSize = opts.pageSize ?? 50
   const offset = (page - 1) * pageSize
 
-  const conditions: string[] = ['language_id = ?']
+  const baseConditions: string[] = ['language_id = ?']
+  const aliasedConditions: string[] = ['p.language_id = ?']
   const params: (string | number)[] = [opts.lang]
 
   if (opts.level) {
-    conditions.push('level = ?')
+    baseConditions.push('level = ?')
+    aliasedConditions.push('p.level = ?')
     params.push(opts.level)
   }
   if (opts.topic) {
-    conditions.push('topic = ?')
+    baseConditions.push('topic = ?')
+    aliasedConditions.push('p.topic = ?')
     params.push(opts.topic)
   }
 
-  const where = conditions.join(' AND ')
+  const where = baseConditions.join(' AND ')
+  const aliasedWhere = aliasedConditions.join(' AND ')
 
   const countResult = await db
     .prepare(`SELECT COUNT(*) as total FROM passages WHERE ${where}`)
@@ -90,7 +96,7 @@ export async function getPassages(
 
   const { results } = await db
     .prepare(
-      `SELECT id, language_id, title, level, topic, genre, speakers, sequence FROM passages WHERE ${where} ORDER BY sequence NULLS LAST, id LIMIT ? OFFSET ?`
+      `SELECT p.id, p.language_id, p.title, p.level, p.topic, p.genre, p.speakers, p.sequence, COALESCE((SELECT COUNT(*) FROM passage_words pw WHERE pw.passage_id = p.id AND pw.role = 'new'), 0) as new_word_count FROM passages p WHERE ${aliasedWhere} ORDER BY p.sequence NULLS LAST, p.id LIMIT ? OFFSET ?`
     )
     .bind(...params, pageSize, offset)
     .all<PassageSummaryRow>()

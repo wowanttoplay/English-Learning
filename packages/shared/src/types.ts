@@ -72,6 +72,7 @@ export interface PassageSummary {
   languageId: string
   speakers: PassageSpeakerSummary[]
   sequence: number | null
+  newWordCount: number
 }
 
 // === SRS Types ===
