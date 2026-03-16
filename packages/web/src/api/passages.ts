@@ -1,5 +1,5 @@
 import { apiFetch } from './client'
-import type { Passage, Word } from '@/types'
+import type { Passage, PassageSummary, Word } from '@/types'
 
 interface GetPassagesOpts {
   lang: string
@@ -9,7 +9,7 @@ interface GetPassagesOpts {
   pageSize?: number
 }
 
-export async function getPassages(opts: GetPassagesOpts): Promise<{ items: Passage[]; total: number }> {
+export async function getPassages(opts: GetPassagesOpts): Promise<{ items: PassageSummary[]; total: number }> {
   const params = new URLSearchParams({ lang: opts.lang })
   if (opts.level) params.set('level', opts.level)
   if (opts.topic) params.set('topic', opts.topic)

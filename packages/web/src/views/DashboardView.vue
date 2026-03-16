@@ -17,6 +17,12 @@
       </div>
     </div>
 
+    <div class="greeting-card">
+      <div class="greeting-circle"></div>
+      <div class="greeting-text">Keep it up! &#x1F4AA;</div>
+      <div class="greeting-streak">&#x1F525; <span class="greeting-streak-num">{{ stats.streak }}</span> day streak</div>
+    </div>
+
     <StatsGrid :items="topStats" />
 
     <ProgressBar
@@ -30,7 +36,8 @@
     <div class="action-buttons">
       <button
         v-if="due.total > 0"
-        class="btn btn-primary"
+        class="btn btn-primary start-study-btn"
+        style="background: linear-gradient(135deg, #f59e0b, #fbbf24); font-weight: 700;"
         @click="startStudy"
       >
         Start Review
@@ -40,7 +47,7 @@
         class="btn btn-secondary"
         @click="router.push('/reading')"
       >
-        Go Read
+        &#x1F4D6; Go Read
       </button>
     </div>
 

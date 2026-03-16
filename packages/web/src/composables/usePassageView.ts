@@ -3,7 +3,7 @@ import { useRoute } from 'vue-router'
 import { usePassagesStore } from '@/stores/passages'
 import { useSettingsStore } from '@/stores/settings'
 import * as passagesApi from '@/api/passages'
-import { splitSentences, getWordPattern } from '@/lib/sentence-splitter'
+import { getWordPattern } from '@/lib/sentence-splitter'
 import { AudioPlayer } from '@/lib/audio'
 import type { Passage, Word } from '@/types'
 import { useInflectionMatcher } from '@/composables/useInflectionMatcher'
@@ -35,43 +35,43 @@ export function usePassageView() {
     return passagesStore.isRead(passage.value.id)
   })
 
-  const highlightedText = computed(() => {
-    if (!passage.value) return ''
-    const text = passage.value.text
-    const sentences = splitSentences(text)
-    let result = ''
-    let lastEnd = 0
+  const highlightedTurns = computed(() => {
+    const p = passage.value
+    if (!p || !p.turns) return []
 
-    for (const sentence of sentences) {
-      if (sentence.start > lastEnd) {
-        result += escapeHtml(text.slice(lastEnd, sentence.start))
-      }
-      result += `<span class="sentence" data-sentence-index="${sentence.index}">`
+    return p.turns.map(turn => {
+      const tokens = turn.text.split(getWordPattern())
+      let html = ''
 
-      const sentenceText = text.slice(sentence.start, sentence.end)
-      const tokens = sentenceText.split(getWordPattern())
       for (const token of tokens) {
         if (/^[a-zA-ZÀ-ÿ'-]+$/.test(token)) {
           const w = wordsByText.value.get(token.toLowerCase())
           if (w && targetWordIds.value.has(w.id)) {
-            result += `<span class="highlight-word-target" data-word-id="${w.id}">${escapeHtml(token)}</span>`
+            html += `<span class="highlight-word-target" data-word-id="${w.id}">${escapeHtml(token)}</span>`
           } else if (w) {
-            result += `<span class="highlight-word-vocab" data-word-id="${w.id}">${escapeHtml(token)}</span>`
+            html += `<span class="highlight-word-vocab" data-word-id="${w.id}">${escapeHtml(token)}</span>`
           } else {
-            result += `<span class="plain-word" data-word="${escapeHtml(token)}">${escapeHtml(token)}</span>`
+            html += `<span class="plain-word" data-word="${escapeHtml(token.toLowerCase())}">${escapeHtml(token)}</span>`
           }
         } else {
-          result += escapeHtml(token)
+          html += escapeHtml(token)
         }
       }
-      result += '</span>'
-      lastEnd = sentence.end
-    }
+      return html
+    })
+  })
 
-    if (lastEnd < text.length) {
-      result += escapeHtml(text.slice(lastEnd))
-    }
-    return result
+  const turnUrls = computed(() => {
+    const p = passage.value
+    if (!p) return []
+    const base = import.meta.env.VITE_AUDIO_BASE_URL || (import.meta.env.BASE_URL + 'audio')
+    return p.turns.map((_, i) => `${base}/passages/passage-${p.id}-turn-${i}.mp3`)
+  })
+
+  const fallbackText = computed(() => {
+    const p = passage.value
+    if (!p) return ''
+    return p.turns.map(t => t.text).join(' ')
   })
 
   // Load passage from API when route changes
@@ -157,7 +157,9 @@ export function usePassageView() {
     tooltipWordId,
     freeTooltipWord,
     isRead,
-    highlightedText,
+    highlightedTurns,
+    turnUrls,
+    fallbackText,
     loading,
     closeTooltips,
     markRead

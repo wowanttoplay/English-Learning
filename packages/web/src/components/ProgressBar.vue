@@ -1,7 +1,7 @@
 <template>
   <div class="progress-section">
     <div class="progress-header">
-      <span>Progress</span>
+      <span>Progress <span class="progress-pct">{{ Math.round((started / (total || 1)) * 100) }}%</span></span>
       <span>{{ started }} / {{ total }} words</span>
     </div>
     <div class="progress-bar-multi">

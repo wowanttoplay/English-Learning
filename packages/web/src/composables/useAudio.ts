@@ -1,21 +1,21 @@
 import { AudioPlayer } from '@/lib/audio'
 
 export function useAudio() {
-  function speak(word: string, speed?: 'normal' | 'slow') {
-    AudioPlayer.playWord(word, speed || 'normal')
+  function speak(word: string, speed?: 'normal' | 'slow', wordId?: number) {
+    AudioPlayer.playWord(word, speed || 'normal', wordId)
   }
 
-  function speakSlow(word: string) {
-    AudioPlayer.playWord(word, 'slow')
+  function speakSlow(word: string, wordId?: number) {
+    AudioPlayer.playWord(word, 'slow', wordId)
   }
 
-  function speakSentence(text: string, speed?: 'normal' | 'slow', word?: string, exIndex?: number) {
-    AudioPlayer.playSentence(text, speed || 'normal', word, exIndex)
+  function speakSentence(text: string, speed?: 'normal' | 'slow', wordId?: number, exIndex?: number) {
+    AudioPlayer.playSentence(text, speed || 'normal', wordId, exIndex)
   }
 
-  function autoPlayWord(word: string) {
+  function autoPlayWord(word: string, wordId?: number) {
     if (AudioPlayer.getAutoPlay()) {
-      AudioPlayer.playWord(word, 'normal')
+      AudioPlayer.playWord(word, 'normal', wordId)
     }
   }
 

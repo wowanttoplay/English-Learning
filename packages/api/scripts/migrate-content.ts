@@ -45,8 +45,11 @@ interface Passage {
   id: number
   title: string
   genre: string
-  text: string
-  wordIds: number[]
+  speakers: Array<{ name: string; voice: string }>
+  turns: Array<{ speaker: number; text: string }>
+  newWordIds: number[]
+  reviewWordIds: number[]
+  sequence: number | null
   level: string
   topic: string
 }
@@ -211,18 +214,25 @@ for (const { locale, translations } of localeExampleTranslations) {
 // Passages + passage_words
 lines.push(`-- Passages (${passages.length} entries)`)
 for (const p of passages) {
+  const flatText = p.turns
+    .map(t => `${p.speakers[t.speaker].name}: ${t.text}`)
+    .join('\n')
   lines.push(
-    `INSERT OR IGNORE INTO passages (id, language_id, title, text, level, topic, genre) VALUES (${p.id}, 'en', ${sqlStr(p.title)}, ${sqlStr(p.text)}, ${sqlStr(p.level)}, ${sqlStr(p.topic)}, ${sqlStr(p.genre)});`
+    `INSERT OR IGNORE INTO passages (id, language_id, title, text, level, topic, genre, speakers, turns, sequence) VALUES (${p.id}, 'en', ${sqlStr(p.title)}, ${sqlStr(flatText)}, ${sqlStr(p.level)}, ${sqlStr(p.topic)}, ${sqlStr(p.genre)}, ${sqlStr(JSON.stringify(p.speakers))}, ${sqlStr(JSON.stringify(p.turns))}, ${p.sequence ?? 'NULL'});`
   )
 }
 lines.push('')
 
 lines.push('-- Passage–word associations')
 for (const p of passages) {
-  if (!p.wordIds || p.wordIds.length === 0) continue
-  for (const wordId of p.wordIds) {
+  for (const wordId of (p.newWordIds ?? [])) {
     lines.push(
-      `INSERT OR IGNORE INTO passage_words (passage_id, word_id) VALUES (${p.id}, ${wordId});`
+      `INSERT OR IGNORE INTO passage_words (passage_id, word_id, role) VALUES (${p.id}, ${wordId}, 'new');`
+    )
+  }
+  for (const wordId of (p.reviewWordIds ?? [])) {
+    lines.push(
+      `INSERT OR IGNORE INTO passage_words (passage_id, word_id, role) VALUES (${p.id}, ${wordId}, 'review');`
     )
   }
 }
@@ -239,7 +249,7 @@ const wordCount = allWords.length
 const translationCount = localeTranslations.reduce((sum, lt) => sum + lt.translations.length, 0)
 const exampleTranslationCount = localeExampleTranslations.reduce((sum, lt) => sum + lt.translations.length, 0)
 const passageCount = passages.length
-const pwCount = passages.reduce((sum, p) => sum + (p.wordIds?.length ?? 0), 0)
+const pwCount = passages.reduce((sum, p) => sum + (p.newWordIds?.length ?? 0) + (p.reviewWordIds?.length ?? 0), 0)
 console.log(`Generated ${outputPath}`)
 console.log(`  ${wordCount} words`)
 console.log(`  ${translationCount} word translations`)

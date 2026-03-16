@@ -27,25 +27,52 @@ export interface Word {
   audioUrl?: string
 }
 
+// === Dialogue Types ===
+export interface DialogueSpeaker {
+  name: string
+  voice: string
+}
+
+export interface DialogueTurn {
+  speaker: number
+  text: string
+}
+
 // === Passage (multi-language) ===
 export interface Passage {
   id: number
   title: string
-  text: string
   level: Level
   topic: TopicId
   genre: string
   languageId: string
-  audioUrl?: string
-  timestamps?: SentenceTimestamp[]
+  speakers: DialogueSpeaker[]
+  turns: DialogueTurn[]
+  sequence: number | null
+  newWordIds: number[]
+  reviewWordIds: number[]
 }
 
-// === Sentence Timestamps ===
-export interface SentenceTimestamp {
-  index: number
+export interface TurnTimestamp {
+  turn: number
   start: number
   end: number
-  text: string
+}
+
+export interface PassageSpeakerSummary {
+  name: string
+}
+
+export interface PassageSummary {
+  id: number
+  title: string
+  level: Level
+  topic: TopicId
+  genre: string
+  languageId: string
+  speakers: PassageSpeakerSummary[]
+  sequence: number | null
+  newWordCount: number
 }
 
 // === SRS Types ===

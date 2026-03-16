@@ -1,16 +1,16 @@
 /* === Design Tokens === */
 :root {
-  --bg: #f2f2f7;
+  --bg: #faf9f6;
   --bg-card: #ffffff;
   --bg-elevated: #ffffff;
   --text: #1c1c1e;
   --text-secondary: #8e8e93;
   --text-tertiary: #aeaeb2;
-  --accent: #007aff;
-  --accent-hover: #0066d6;
-  --accent-soft: rgba(0, 122, 255, 0.10);
-  --green: #34c759;
-  --green-soft: rgba(52, 199, 89, 0.12);
+  --accent: #f59e0b;
+  --accent-hover: #d97706;
+  --accent-soft: rgba(245, 158, 11, 0.10);
+  --green: #10b981;
+  --green-soft: rgba(16, 185, 129, 0.12);
   --orange: #ff9500;
   --orange-soft: rgba(255, 149, 0, 0.12);
   --red: #ff3b30;
@@ -25,20 +25,27 @@
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
   --shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.15);
-  --radius-sm: 10px;
-  --radius: 14px;
+  --radius-sm: 12px;
+  --radius: 16px;
   --radius-lg: 20px;
-  --max-width: 480px;
+  --max-width: 560px;
   --nav-height: 72px;
   --sidebar-width: 220px;
   --font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  --speaker-a: #f59e0b;
+  --speaker-a-bg: #fef3c7;
+  --speaker-a-text: #92400e;
+  --speaker-b: #6366f1;
+  --speaker-b-bg: #eef2ff;
+  --speaker-b-text: #4338ca;
+  --flashcard-gradient: linear-gradient(145deg, #fffbeb, #fef3c7);
 }
 
 [data-theme="dark"] {
-  --bg: #000000;
-  --bg-card: #1c1c1e;
+  --bg: #1a1917;
+  --bg-card: #2a2826;
   --bg-elevated: #2c2c2e;
-  --text: #ffffff;
+  --text: #fafaf9;
   --text-secondary: #8e8e93;
   --text-tertiary: #636366;
   --border: rgba(255, 255, 255, 0.10);
@@ -48,9 +55,16 @@
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
   --shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.7);
-  --accent-soft: rgba(10, 132, 255, 0.15);
-  --green-soft: rgba(52, 199, 89, 0.15);
+  --accent-soft: rgba(245, 158, 11, 0.15);
+  --green-soft: rgba(16, 185, 129, 0.15);
   --orange-soft: rgba(255, 159, 10, 0.15);
   --red-soft: rgba(255, 69, 58, 0.15);
   --purple-soft: rgba(191, 90, 242, 0.15);
+  --speaker-a: #fbbf24;
+  --speaker-a-bg: #2a1f00;
+  --speaker-a-text: #fbbf24;
+  --speaker-b: #818cf8;
+  --speaker-b-bg: #1e1b3a;
+  --speaker-b-text: #a5b4fc;
+  --flashcard-gradient: linear-gradient(145deg, #2a2419, #1f1b14);
 }

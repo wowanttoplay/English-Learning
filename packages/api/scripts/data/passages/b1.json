@@ -1,493 +1,562 @@
 [
   {
-    "id": 101,
-    "title": "Small Changes, Big Results",
-    "genre": "essay",
-    "text": "Most people know that a healthy life requires good habits, but turning that knowledge into action is harder than it sounds. The key is to start with moderate changes rather than dramatic ones. For example, walking for twenty minutes each day can enhance your energy levels and help you sleep better at night. You do not need to follow a strict plan. Even small, consistent steps lead to real progress over time. Many doctors point out that chronic tiredness is often linked to poor sleep and a lack of movement. If you allow adequate time for rest each evening, you will notice a steady decline in stress. The duration of each healthy habit matters less than doing it every single day. What counts is showing up, again and again, until the new behaviour feels natural.",
-    "wordIds": [
-      283,
-      139,
-      153,
-      85,
-      49,
-      10,
-      109,
-      140
-    ],
+    "id": 3001,
+    "title": "Weekend Plans",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "health"
+    "topic": "daily-life",
+    "sequence": 1,
+    "newWordIds": [30009, 30051, 30050, 30096],
+    "reviewWordIds": [],
+    "speakers": [
+      { "name": "Kate", "voice": "en-US-Chirp3-HD-Kore" },
+      { "name": "Ben", "voice": "en-US-Chirp3-HD-Charon" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Hey Ben, do you have any plans for Saturday?" },
+      { "speaker": 1, "text": "Not yet. I was thinking about staying home, but that sounds boring." },
+      { "speaker": 0, "text": "Well, I want to arrange a picnic in the park. Do you want to come?" },
+      { "speaker": 1, "text": "That sounds great! What do we need to prepare?" },
+      { "speaker": 0, "text": "I'll make some sandwiches. Can you bring drinks and a blanket?" },
+      { "speaker": 1, "text": "Sure. Do you prefer the park near the river or the one by the library?" },
+      { "speaker": 0, "text": "I prefer the one near the river. There are big trees, and it's really comfortable to sit under them." },
+      { "speaker": 1, "text": "Good idea. I like that park too. It's less crowded on weekends." },
+      { "speaker": 0, "text": "Perfect. Let's meet at ten in the morning. I'll prepare everything the night before." },
+      { "speaker": 1, "text": "Sounds like a plan. I'll arrange to pick you up on the way." },
+      { "speaker": 0, "text": "Thanks! It'll be a comfortable and relaxing day." },
+      { "speaker": 1, "text": "I can't wait. See you Saturday!" }
+    ]
   },
   {
-    "id": 102,
-    "title": "Making the Most of a Tiny Flat",
-    "genre": "story",
-    "text": "When Mei moved into her new flat, she could barely fit a bed and a desk in the same room. The interior felt dark and cramped. Her first impulse was to buy more furniture, but she quickly realised that would only make things worse. Instead, she decided to eliminate everything she did not use. Old clothes, spare cables, books she would never read again — all of it went into boxes for charity. She found subtle ways to create space: a mirror on the wall made the room look wider, and a tall shelf replaced the stiff old bookcase that had blocked the window. Within a week, her surplus of clutter had vanished. The flat was still small, but it finally felt like home. Mei learned that sometimes you gain more by removing things than by adding them. A squeeze on space can actually push you toward smarter choices.",
-    "wordIds": [
-      235,
-      203,
-      144,
-      417,
-      443,
-      431,
-      449,
-      422
-    ],
+    "id": 3002,
+    "title": "A New Job Offer",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "daily-life"
+    "topic": "work",
+    "sequence": 2,
+    "newWordIds": [30029, 30445, 30078, 30446],
+    "reviewWordIds": [30009, 30051, 30050, 30096],
+    "speakers": [
+      { "name": "Tom", "voice": "en-US-Chirp3-HD-Puck" },
+      { "name": "Sophie", "voice": "en-US-Chirp3-HD-Leda" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Sophie, I got a job offer from a big company downtown!" },
+      { "speaker": 1, "text": "That's amazing! What kind of career path does it offer?" },
+      { "speaker": 0, "text": "It's in marketing. The salary is much better than what I earn now." },
+      { "speaker": 1, "text": "How much more would you earn?" },
+      { "speaker": 0, "text": "About thirty percent more. And there's a chance for a promotion after one year." },
+      { "speaker": 1, "text": "That's a big step for your career. Do you prefer this company over your current one?" },
+      { "speaker": 0, "text": "I think so. The office looks comfortable and modern." },
+      { "speaker": 1, "text": "You should prepare for the move soon. When do they need your answer?" },
+      { "speaker": 0, "text": "By Friday. I need to arrange a meeting with my current boss first." },
+      { "speaker": 1, "text": "Good idea. Prepare what you want to say so it goes smoothly." },
+      { "speaker": 0, "text": "A higher salary and a promotion path — it's exactly what I need right now." },
+      { "speaker": 1, "text": "I'm happy for you. Go arrange everything and start this new chapter!" }
+    ]
   },
   {
-    "id": 103,
-    "title": "The First Week",
-    "genre": "story",
-    "text": "On Monday morning, Priya arrived at the office thirty minutes early. She did not want to seem awkward on her first day. A colleague named Sam showed her around and explained how things worked. The pace was overwhelming at first — so many names, so many rules. Priya felt keen to do well, but she worried about making mistakes. On Wednesday she missed a deadline because she had not understood the task properly. Her manager did not seem angry, though. Instead, he offered clear guidance and told her that the outcome of the first week did not define her future at the company. By Friday, Priya felt calmer. She realised that no one expected her to impress everyone straight away. Settling in takes time, and asking for help is not a weakness — it is a sign of good judgement.",
-    "wordIds": [
-      36,
-      58,
-      333,
-      245,
-      103,
-      189,
-      324,
-      202
-    ],
+    "id": 3003,
+    "title": "Cleaning Up the Park",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "work"
+    "topic": "environment",
+    "sequence": 3,
+    "newWordIds": [30088, 30416, 30414, 30243],
+    "reviewWordIds": [30029, 30445, 30078, 30446],
+    "speakers": [
+      { "name": "Emma", "voice": "en-US-Chirp3-HD-Zephyr" },
+      { "name": "Jack", "voice": "en-US-Chirp3-HD-Fenrir" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Jack, have you seen all the rubbish in the park? The pollution is terrible." },
+      { "speaker": 1, "text": "I know. We need to take care of our environment." },
+      { "speaker": 0, "text": "I want to start a clean-up group. We could recycle the bottles and cans we find." },
+      { "speaker": 1, "text": "Great idea. But we'd need some money for bags and gloves. Can we earn it somehow?" },
+      { "speaker": 0, "text": "Maybe the city will help. Protecting natural spaces is part of their job." },
+      { "speaker": 1, "text": "True. I heard they have a salary for people who work on environmental projects." },
+      { "speaker": 0, "text": "Not a full salary, but they give small payments. It could help with costs." },
+      { "speaker": 1, "text": "We should also teach people to recycle properly. Most pollution comes from laziness." },
+      { "speaker": 0, "text": "Exactly. If we keep the park natural and clean, more people will enjoy it." },
+      { "speaker": 1, "text": "This could even help my career. I want to work in environmental science." },
+      { "speaker": 0, "text": "That's wonderful. Maybe this project will lead to a promotion of some kind for your studies." },
+      { "speaker": 1, "text": "I hope so. Let's start by cleaning the river path and recycling everything we find." }
+    ]
   },
   {
-    "id": 104,
-    "title": "How a Search Engine Finds What You Need",
-    "genre": "explainer",
-    "text": "When you type a question into a search engine, the answer appears in less than a second. But what happens behind the screen? First, small programs crawl across billions of web pages to detect new or updated content. They store this information in a huge index, much like a library catalogue. When you search, the engine does not look at every page on the internet. Instead, it checks the index and uses a logical set of rules to decide which results match your words most precisely. An indicator of quality is how many other trusted pages link to a result. The system also tracks how users interact with the results — if people click on a page and stay, that is a good sign. Thanks to constant innovation, search engines now handle random spelling mistakes and even understand what you mean when your words are not exact.",
-    "wordIds": [
-      100,
-      117,
-      261,
-      358,
-      208,
-      233,
-      220,
-      391
-    ],
+    "id": 3004,
+    "title": "Cooking Together",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "technology"
+    "topic": "food",
+    "sequence": 4,
+    "newWordIds": [30301, 30302, 30303, 30305],
+    "reviewWordIds": [30088, 30416, 30414, 30243],
+    "speakers": [
+      { "name": "Lisa", "voice": "en-US-Chirp3-HD-Aoede" },
+      { "name": "Mark", "voice": "en-US-Chirp3-HD-Orus" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Mark, I found a great recipe for pasta online. Want to try it tonight?" },
+      { "speaker": 1, "text": "Sure! What ingredients do we need?" },
+      { "speaker": 0, "text": "Tomatoes, garlic, cheese, and fresh herbs. The flavour should be amazing." },
+      { "speaker": 1, "text": "I'll go to the shop. Should I use my own bags? I want to help the environment." },
+      { "speaker": 0, "text": "Yes, please. We should recycle the old ones too — don't throw them away." },
+      { "speaker": 1, "text": "Of course. I also want to buy some fruit for dessert." },
+      { "speaker": 0, "text": "Good idea. Get some strawberries — they have a natural sweetness that's perfect." },
+      { "speaker": 1, "text": "Love it. So the recipe needs fresh ingredients for the best flavour?" },
+      { "speaker": 0, "text": "Exactly. Canned tomatoes don't taste the same. Fresh ones have more natural flavour." },
+      { "speaker": 1, "text": "I agree. Less pollution from packaging too, if we buy loose vegetables." },
+      { "speaker": 0, "text": "That's true! And for dessert, I'll make chocolate mousse. The recipe looks simple." },
+      { "speaker": 1, "text": "Pasta and dessert — sounds like a perfect evening. Let me get the ingredients now." }
+    ]
   },
   {
-    "id": 105,
-    "title": "A Weekend Away Without the Stress",
-    "genre": "essay",
-    "text": "Planning a short trip does not have to be complicated. Start by choosing a nearby destination that you can reach in two or three hours. You do not need a passport or an expensive flight — sometimes the best places are close to home. Before you go, check a map and learn how to navigate the area on foot or by bus. If the landscape includes steep hills, pack comfortable shoes. Read a few reviews to find an outstanding place to eat, and look for authentic local dishes rather than tourist restaurants. The biggest obstacle most travellers face is trying to do too much. A weekend is not long enough to overcome exhaustion from a packed schedule. Pick two or three things you truly want to see, and leave the rest for another visit. The goal is to return home feeling rested, not more tired than when you left.",
-    "wordIds": [
-      292,
-      337,
-      291,
-      246,
-      428,
-      329,
-      34,
-      314,
-      330
-    ],
+    "id": 3005,
+    "title": "The New Neighbour",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "travel"
+    "topic": "relationships",
+    "sequence": 5,
+    "newWordIds": [30040, 30041, 30461, 30462],
+    "reviewWordIds": [30301, 30302, 30303, 30305],
+    "speakers": [
+      { "name": "Amy", "voice": "en-US-Chirp3-HD-Kore" },
+      { "name": "David", "voice": "en-US-Chirp3-HD-Charon" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "David, did you meet the new woman who moved in next door?" },
+      { "speaker": 1, "text": "Not really. She's still just an acquaintance — we only said hello once." },
+      { "speaker": 0, "text": "Her name is Sarah. I want to introduce you properly." },
+      { "speaker": 1, "text": "That would be nice. Should we invite her over for dinner?" },
+      { "speaker": 0, "text": "Great idea! I have a recipe for chicken that everyone loves." },
+      { "speaker": 1, "text": "What ingredients do you need? I'll go shopping." },
+      { "speaker": 0, "text": "Just chicken, lemon, and herbs. The flavour is simple but really good." },
+      { "speaker": 1, "text": "Perfect. And maybe a dessert too? We want to make a good first impression." },
+      { "speaker": 0, "text": "Definitely. A nice dinner is a great way to bond with someone new." },
+      { "speaker": 1, "text": "I agree. An acquaintance can become a true friend if you make the effort." },
+      { "speaker": 0, "text": "Let's invite her for Friday. I'll introduce you both and we'll have a lovely evening." },
+      { "speaker": 1, "text": "Sounds wonderful. Building a bond with neighbours is important." }
+    ]
   },
   {
-    "id": 106,
-    "title": "The Friends We Forget to Call",
-    "genre": "essay",
-    "text": "Old friendships are easy to neglect. Life gets busy, and before you know it, months have passed since you last spoke. The problem is rarely a lack of loyalty — it is simply that daily tasks take over. Yet the people who knew us years ago hold something valuable: a mutual understanding that newer friends may not share. Keeping in touch does not require a grand gesture. A short message, a photo from a place you both remember, or a quick voice call can be enough. What matters is that the effort feels genuine, not forced. Some people linger in our thoughts without us ever reaching out. There is a common assumption that they are too busy or that too much time has passed. But most of the time, they are waiting for the same thing we are — a simple sign that somebody still cares. Do not let an old friendship fade. Embrace the awkwardness of reconnecting, and you may find that the bond is stronger than you thought.",
-    "wordIds": [
-      293,
-      264,
-      289,
-      187,
-      186,
-      258,
-      30,
-      145
-    ],
+    "id": 3006,
+    "title": "Planning a Holiday",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "relationships"
+    "topic": "travel",
+    "sequence": 6,
+    "newWordIds": [30087, 30177, 30453, 30166],
+    "reviewWordIds": [30040, 30041, 30461, 30462],
+    "speakers": [
+      { "name": "Mia", "voice": "en-US-Chirp3-HD-Leda" },
+      { "name": "James", "voice": "en-US-Chirp3-HD-Puck" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "James, I've been looking at holiday destinations. How about Greece?" },
+      { "speaker": 1, "text": "Greece sounds amazing. Is there a direct flight from here?" },
+      { "speaker": 0, "text": "Yes, about three hours. The journey isn't long at all." },
+      { "speaker": 1, "text": "Great. Should we invite anyone else? Maybe your friend Laura?" },
+      { "speaker": 0, "text": "She's just an acquaintance really. I'd prefer it to be just us." },
+      { "speaker": 1, "text": "Fair enough. When should we go? I need to book the flight early." },
+      { "speaker": 0, "text": "June would be perfect. I'll introduce you to a great travel website." },
+      { "speaker": 1, "text": "Thanks. I need to buy new luggage too — my old bag is broken." },
+      { "speaker": 0, "text": "There's a sale at the mall. We should get luggage that's light and easy to carry." },
+      { "speaker": 1, "text": "Good thinking. The destination has beaches and old towns, so we'll need different clothes." },
+      { "speaker": 0, "text": "The bond we'll build on this journey will be amazing. Just us and the sea." },
+      { "speaker": 1, "text": "I can't wait. Let me book the flight tonight!" }
+    ]
   },
   {
-    "id": 107,
-    "title": "Study Smarter, Not Harder",
-    "genre": "essay",
-    "text": "Many students believe that spending more hours at their desk will lead to better exam results. However, research shows that the way you study matters more than the time you spend. First, set a clear deadline for each topic and stick to it. Break large subjects into smaller parts and tackle them one by one. Taking short breaks helps your brain stay fresh and productive. Another useful approach is to evaluate what you already know before revising new material. This helps you focus your energy where it is truly needed. Some students overlook the importance of sleep, but resting well the night before an exam is crucial. Finally, do not neglect practice tests. They demonstrate how well you have prepared and highlight areas that still need attention. With discipline and a logical plan, any student can improve their results.",
-    "wordIds": [
-      103,
-      458,
-      375,
-      161,
-      331,
-      101,
-      293,
-      114,
-      123,
-      261
-    ],
+    "id": 3007,
+    "title": "Getting Healthier",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "education"
+    "topic": "health",
+    "sequence": 7,
+    "newWordIds": [30141, 30158, 30172, 30060],
+    "reviewWordIds": [30087, 30177, 30453, 30166],
+    "speakers": [
+      { "name": "Rachel", "voice": "en-US-Chirp3-HD-Zephyr" },
+      { "name": "Alex", "voice": "en-US-Chirp3-HD-Fenrir" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Alex, I went to the doctor. She said I need to change my diet." },
+      { "speaker": 1, "text": "What did she recommend?" },
+      { "speaker": 0, "text": "More vegetables, less sugar. And I need regular exercise." },
+      { "speaker": 1, "text": "I started running every morning. It's become a habit now." },
+      { "speaker": 0, "text": "That's great. I want to build a good habit like that too." },
+      { "speaker": 1, "text": "Start small. Even twenty minutes of exercise helps a lot." },
+      { "speaker": 0, "text": "She also said stress is bad. I was so tired after our journey last month." },
+      { "speaker": 1, "text": "Travel can be hard. Remember how heavy your luggage was at the airport?" },
+      { "speaker": 0, "text": "Yes! I could barely lift it. Next time I'll pack lighter for the flight." },
+      { "speaker": 1, "text": "I recommend walking as exercise. Pick a nice destination nearby and walk there." },
+      { "speaker": 0, "text": "Good idea. A healthy diet and walking would change everything for me." },
+      { "speaker": 1, "text": "It really would. Start this week — make exercise a daily habit." }
+    ]
   },
   {
-    "id": 108,
-    "title": "Small Steps to a Greener Home",
-    "genre": "explainer",
-    "text": "Recycling at home does not have to be difficult. Start with the basics: separate paper, plastic, and glass into different bins. Even this small gesture can make a significant difference over time. Many people overlook items like batteries and old electronics, which should never go in regular rubbish. Check if your local area has a collection point for these. Another way to help the environment is to reduce food waste. Plan your meals for the week and buy only what you need. Leftover vegetables can be used to make soup rather than being thrown away. Choosing sustainable products is also a practical step. Look for items with less packaging or packaging that can be recycled readily. These changes may seem subtle, but when an entire community adopts them, the impact is tremendous.",
-    "wordIds": [
-      187,
-      410,
-      331,
-      452,
-      443,
-      393,
-      479
-    ],
+    "id": 3008,
+    "title": "Setting Up a New Tablet",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "environment"
+    "topic": "technology",
+    "sequence": 8,
+    "newWordIds": [30350, 30342, 30344, 30354],
+    "reviewWordIds": [30141, 30158, 30172, 30060],
+    "speakers": [
+      { "name": "Sarah", "voice": "en-US-Chirp3-HD-Aoede" },
+      { "name": "Ryan", "voice": "en-US-Chirp3-HD-Orus" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Ryan, I just got a new tablet. Can you help me set up this device?" },
+      { "speaker": 1, "text": "Sure! First, create a strong password so your device stays safe." },
+      { "speaker": 0, "text": "What kind of password should I use?" },
+      { "speaker": 1, "text": "Mix numbers and letters. Then check for a software update — they fix problems." },
+      { "speaker": 0, "text": "Okay. I also want to download some fitness apps. The doctor says I need more exercise." },
+      { "speaker": 1, "text": "Good idea! I recommend this one — it tracks your diet and exercise together." },
+      { "speaker": 0, "text": "Perfect. I'm trying to make healthy eating a habit." },
+      { "speaker": 1, "text": "The app sends reminders, so it helps you build the habit." },
+      { "speaker": 0, "text": "I'll download it right now. Is the update finished yet?" },
+      { "speaker": 1, "text": "Almost. The device needs a few more minutes." },
+      { "speaker": 0, "text": "While we wait, can you recommend any other apps to download?" },
+      { "speaker": 1, "text": "Try a language app. Set a strong password for each account and keep your device updated." }
+    ]
   },
   {
-    "id": 109,
-    "title": "The Art of Writing a Good Email",
-    "genre": "essay",
-    "text": "In today's world, email is one of the most common ways to communicate at work. Yet many people struggle to write messages that are clear and effective. The first step is to think about your reader. What do they need to know? Keep your sentences short and avoid vague language that could confuse them. A strong subject line helps the reader grasp the purpose of your email immediately. If you are making a request, state it clearly near the beginning. It is also important to convey a polite and professional tone, even when the topic is difficult. Before you click send, take a moment to revise your draft. Check for spelling mistakes and make sure the message is not too long. A well-written email can enhance your reputation and strengthen your relationships with colleagues. Good communication is a valuable skill that improves steadily with practice.",
-    "wordIds": [
-      492,
-      188,
-      94,
-      138,
-      153,
-      58,
-      427
-    ],
+    "id": 3009,
+    "title": "Before the Big Game",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "communication"
+    "topic": "sports",
+    "sequence": 9,
+    "newWordIds": [30120, 30324, 30170, 30322],
+    "reviewWordIds": [30350, 30342, 30344, 30354],
+    "speakers": [
+      { "name": "Jack", "voice": "en-US-Chirp3-HD-Charon" },
+      { "name": "Emma", "voice": "en-US-Chirp3-HD-Kore" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Emma, the football tournament starts next week. My brother is playing!" },
+      { "speaker": 1, "text": "That's exciting! Is he a good athlete?" },
+      { "speaker": 0, "text": "He's one of the best. Their coach has been training them hard." },
+      { "speaker": 1, "text": "What's their goal for the tournament?" },
+      { "speaker": 0, "text": "To reach the final. The coach thinks they have a real chance." },
+      { "speaker": 1, "text": "I'd love to watch. Can I download the schedule on my device?" },
+      { "speaker": 0, "text": "Yes, the tournament has its own app. Just check for the latest update first." },
+      { "speaker": 1, "text": "Good, I'll set a password and log in. Who are they playing first?" },
+      { "speaker": 0, "text": "The city team from the north. My brother, the athlete, says they're tough." },
+      { "speaker": 1, "text": "Every athlete wants to win. The goal is always the same — play your best." },
+      { "speaker": 0, "text": "True. The coach told them to focus and stay sharp." },
+      { "speaker": 1, "text": "I'll download the app now and make sure I don't miss any tournament games!" }
+    ]
   },
   {
-    "id": 110,
-    "title": "The Painting That Changed Everything",
-    "genre": "story",
-    "text": "Last spring, my friend Sara dragged me to the city art museum. I had never been particularly keen on paintings, and I expected to be bored. The first few rooms were filled with landscapes and portraits that meant little to me. Then we turned a corner and I encountered a large painting of a storm at sea. The colours were intense — dark blues and greens crashing against each other. I could almost feel the wind. I stood there for several minutes, unable to move. Something about it triggered an emotion I could not name. Sara noticed my reaction and smiled. She said art does not need to be logical to be meaningful. That single painting transformed my afternoon into something truly memorable. I have been back to the museum three times since then, each visit revealing subtle details I missed before.",
-    "wordIds": [
-      245,
-      246,
-      149,
-      232,
-      480,
-      261,
-      476,
-      482,
-      443
-    ],
+    "id": 3010,
+    "title": "Nervous About the Speech",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "arts"
+    "topic": "emotions",
+    "sequence": 10,
+    "newWordIds": [30033, 30151, 30188, 30128],
+    "reviewWordIds": [30120, 30324, 30170, 30322],
+    "speakers": [
+      { "name": "Sophie", "voice": "en-US-Chirp3-HD-Leda" },
+      { "name": "Tom", "voice": "en-US-Chirp3-HD-Puck" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Tom, I have to give a speech at work tomorrow and I'm so nervous." },
+      { "speaker": 1, "text": "I understand that emotion. Public speaking can be really scary." },
+      { "speaker": 0, "text": "I don't know how to express my ideas clearly in front of everyone." },
+      { "speaker": 1, "text": "Try to stay calm. Take a deep breath before you begin." },
+      { "speaker": 0, "text": "What if my mind goes blank? I need more courage." },
+      { "speaker": 1, "text": "Think of it like an athlete before a tournament. They're nervous too, but they focus." },
+      { "speaker": 0, "text": "That's a good way to look at it. An athlete has a coach to help them." },
+      { "speaker": 1, "text": "And you have me! Your goal is simple — share what you know." },
+      { "speaker": 0, "text": "The emotion I feel is mostly fear. But I'll try to stay calm." },
+      { "speaker": 1, "text": "Good. Express your points one at a time and don't rush." },
+      { "speaker": 0, "text": "You're right. I need to find the courage to just start talking." },
+      { "speaker": 1, "text": "You'll do great. Even the best athletes feel nervous before the tournament starts." }
+    ]
   },
   {
-    "id": 111,
-    "title": "Why Volunteering Matters More Than You Think",
-    "genre": "essay",
-    "text": "Volunteering is often seen as something people do in their spare time to feel good about themselves. While that is partly true, the benefits go much deeper. When you dedicate a few hours each week to helping others, you gain skills that are hard to acquire elsewhere. Working at a food bank or a shelter teaches patience, teamwork, and coordination. It can also shift your perspective on life. Many volunteers say they become more aware of the challenges their neighbours face. This exposure to different situations helps them develop genuine sympathy for others. Communities that encourage volunteering tend to be stronger and more connected. The impact is not merely personal — it is widespread. If you are looking for a way to make your local area a better place, consider giving your time. Even a small commitment can yield remarkable results.",
-    "wordIds": [
-      110,
-      338,
-      600,
-      344,
-      167,
-      186,
-      274,
-      498,
-      63,
-      497
-    ],
+    "id": 3011,
+    "title": "Struggling with Studies",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "society"
+    "topic": "education",
+    "sequence": 11,
+    "newWordIds": [30010, 30430, 30178, 30034],
+    "reviewWordIds": [30033, 30151, 30188, 30128],
+    "speakers": [
+      { "name": "Lisa", "voice": "en-US-Chirp3-HD-Zephyr" },
+      { "name": "Mark", "voice": "en-US-Chirp3-HD-Fenrir" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Mark, I'm worried about my history assignment. It's due on Friday." },
+      { "speaker": 1, "text": "Do you attend all the classes? That usually helps." },
+      { "speaker": 0, "text": "I attend every one, but the knowledge needed for this paper is really deep." },
+      { "speaker": 1, "text": "Don't let the emotion of stress take over. Stay calm and work through it." },
+      { "speaker": 0, "text": "I'm trying, but I don't want to fail. This assignment is worth a lot of marks." },
+      { "speaker": 1, "text": "You won't fail if you keep at it. Have the courage to ask the teacher for help." },
+      { "speaker": 0, "text": "That's true. I should express my problems to her instead of hiding them." },
+      { "speaker": 1, "text": "Exactly. Courage means asking for help when you need it." },
+      { "speaker": 0, "text": "The assignment asks us to show deep knowledge of three different time periods." },
+      { "speaker": 1, "text": "Start with the one you know best. Stay calm and build from there." },
+      { "speaker": 0, "text": "Good advice. I'll attend the study group tomorrow too." },
+      { "speaker": 1, "text": "Smart. Express your ideas clearly in the assignment and you won't fail." }
+    ]
   },
   {
-    "id": 112,
-    "title": "When Stress Takes Over",
-    "genre": "essay",
-    "text": "Everyone feels stressed from time to time, but when the pressure becomes ongoing, it can seriously affect your health. The strain of too many responsibilities may lead to poor sleep, headaches, and difficulty concentrating. Recognising the early signs is crucial. Pay attention to how your body reacts when you feel overwhelmed. Tense shoulders, a tight stomach, and a racing heart are all common indicators. Once you identify the triggers, you can take steps to manage them. Simple habits like walking outdoors, writing in a journal, or talking to a trusted friend can make a profound difference. It is also important not to neglect your basic needs — eating well, sleeping enough, and taking breaks throughout the day. Learning to cope with stress is not about eliminating it entirely. It is about building tolerance so that difficult moments do not define your life.",
-    "wordIds": [
-      319,
-      433,
-      101,
-      461,
-      208,
-      480,
-      243,
-      376,
-      293,
-      473
-    ],
+    "id": 3012,
+    "title": "Joining a Band",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "emotions"
+    "topic": "arts",
+    "sequence": 12,
+    "newWordIds": [30108, 30425, 30048, 30482],
+    "reviewWordIds": [30010, 30430, 30178, 30034],
+    "speakers": [
+      { "name": "Mia", "voice": "en-US-Chirp3-HD-Aoede" },
+      { "name": "James", "voice": "en-US-Chirp3-HD-Orus" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "James, I heard you joined a band! Are you going to perform at the festival?" },
+      { "speaker": 1, "text": "Yes! We have a rehearsal tonight. Our singer likes to compose her own songs." },
+      { "speaker": 0, "text": "She composes her own music? That takes a lot of knowledge." },
+      { "speaker": 1, "text": "It does. She studied music at college and still attends writing workshops." },
+      { "speaker": 0, "text": "How big is the audience at the festival?" },
+      { "speaker": 1, "text": "About five hundred people. A big audience makes me nervous, but I'm excited." },
+      { "speaker": 0, "text": "You'll be fine. Think of the rehearsal as your practice assignment." },
+      { "speaker": 1, "text": "Good point. If I prepare well, I won't fail on stage." },
+      { "speaker": 0, "text": "Exactly. When do you attend the next rehearsal?" },
+      { "speaker": 1, "text": "Tomorrow evening. We need to perform five songs and compose a new ending for one." },
+      { "speaker": 0, "text": "The audience will love it. Use your knowledge of music to give a great show." },
+      { "speaker": 1, "text": "Thanks, Mia. I don't want to fail — I'll practise hard at every rehearsal." }
+    ]
   },
   {
-    "id": 113,
-    "title": "How Weather Forecasts Are Made",
-    "genre": "explainer",
-    "text": "Every morning, millions of people check the weather forecast before leaving home. But how do experts predict what the sky will do? The process begins with data collection. Weather stations, satellites, and special balloons detect changes in temperature, wind, and air pressure. This information is fed into powerful computers that use complex models to anticipate future conditions. The computers generate predictions for the next few hours, days, and even weeks. However, forecasts become less accurate the further ahead they look. A five-day outlook is generally reliable, but anything beyond that is increasingly vague. Scientists are constantly working to enhance these models by integrating new technology. Despite the limitations, modern forecasting has undergone a tremendous transformation over the past few decades. It saves lives by giving people sufficient time to prepare for storms and other severe weather events.",
-    "wordIds": [
-      176,
-      117,
-      18,
-      326,
-      492,
-      153,
-      229,
-      116,
-      484,
-      479,
-      476,
-      445
-    ],
+    "id": 3013,
+    "title": "Saturday Morning Routine",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "science"
+    "topic": "daily-life",
+    "sequence": 13,
+    "newWordIds": [30438, 30444, 30441, 30439],
+    "reviewWordIds": [30108, 30425, 30048, 30482],
+    "speakers": [
+      { "name": "Kate", "voice": "en-US-Chirp3-HD-Kore" },
+      { "name": "Ben", "voice": "en-US-Chirp3-HD-Charon" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Ben, I have so many things to do today. The laundry is piling up." },
+      { "speaker": 1, "text": "Same here. I need to run some errands before the shops close." },
+      { "speaker": 0, "text": "What errands do you have?" },
+      { "speaker": 1, "text": "I need to go to the grocery store and return a book to the library." },
+      { "speaker": 0, "text": "I hate doing chores on the weekend, but they have to get done." },
+      { "speaker": 1, "text": "True. My sister has a rehearsal for her dance show today. She composes the moves herself." },
+      { "speaker": 0, "text": "Wow, that's cool. Does she perform in front of a big audience?" },
+      { "speaker": 1, "text": "Yes, about two hundred people come to watch her perform." },
+      { "speaker": 0, "text": "Amazing. Meanwhile, I'm here doing laundry and grocery shopping!" },
+      { "speaker": 1, "text": "That's life. Let's finish the chores quickly — I have three errands left." },
+      { "speaker": 0, "text": "I'll do the laundry first, then go to the grocery store." },
+      { "speaker": 1, "text": "Good plan. After the errands, we can relax. Even the audience at a show gets to sit down!" }
+    ]
   },
   {
-    "id": 114,
-    "title": "A Weekend Idea That Grew",
-    "genre": "story",
-    "text": "It started as a small side project on Saturday mornings. My colleague Tom had always been keen on baking, and he began selling cakes at the local market. At first, sales were modest. He barely made enough to cover the cost of ingredients. But Tom was patient and dedicated. He listened to feedback, modified his recipes, and steadily improved the quality. Within a few months, a surge in orders forced him to rethink his approach. He launched a simple website and started taking orders online. The transition from hobby to small business was not easy. Tom had to negotiate with suppliers and tackle problems he had never anticipated. Yet the setbacks only made him more determined. Today, his bakery delivers across the city. When I asked him what made the difference, he said it was the commitment to keep going, even when the outcome was uncertain.",
-    "wordIds": [
-      245,
-      338,
-      110,
-      284,
-      427,
-      448,
-      249,
-      477,
-      294,
-      458,
-      18,
-      403,
-      63,
-      324
-    ],
+    "id": 3014,
+    "title": "Opening a Small Shop",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "business"
+    "topic": "business",
+    "sequence": 14,
+    "newWordIds": [30085, 30094, 30134, 30137],
+    "reviewWordIds": [30438, 30444, 30441, 30439],
+    "speakers": [
+      { "name": "Amy", "voice": "en-US-Chirp3-HD-Leda" },
+      { "name": "David", "voice": "en-US-Chirp3-HD-Puck" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "David, I'm thinking about opening a small bakery. How do I get customers?" },
+      { "speaker": 1, "text": "Quality is the key. If the bread is good, customers will come back." },
+      { "speaker": 0, "text": "That makes sense. I also need to think about delivery for people who can't come in." },
+      { "speaker": 1, "text": "Good idea. Did you find a deal on a shop space?" },
+      { "speaker": 0, "text": "Yes, there's a place near the grocery store on Green Street. The rent is a good deal." },
+      { "speaker": 1, "text": "Nice. Running a bakery has a lot of daily chores though — baking, cleaning, ordering." },
+      { "speaker": 0, "text": "I know. I'll need to do laundry for the aprons every day too." },
+      { "speaker": 1, "text": "And errands — picking up flour, butter, all the supplies." },
+      { "speaker": 0, "text": "True. But if the quality stays high, I'll build a loyal group of customers." },
+      { "speaker": 1, "text": "Delivery will help too. Some customers want fresh bread at their door." },
+      { "speaker": 0, "text": "I've already planned the delivery area. The grocery store owner might send people my way too." },
+      { "speaker": 1, "text": "That's a great deal for both of you. Just be ready for all the errands and chores that come with it!" }
+    ]
   },
   {
-    "id": 115,
-    "title": "Finding Joy in the Kitchen",
-    "genre": "essay",
-    "text": "Learning to cook can feel overwhelming at first. There are so many recipes, techniques, and ingredients to learn about. The key is to start simple. Pick a dish you already enjoy eating and try to make it at home. Do not worry if the outcome is not perfect — even experienced cooks make mistakes. The crucial thing is to keep trying. Gradually, you will develop an instinct for flavours and textures. One of the most rewarding aspects of cooking is the chance to experiment. Substitute one ingredient for another and see what happens. Add a herb you have never used before. Each attempt enhances your skills and builds your confidence. Cooking also provides a wonderful way to interact with family and friends. Preparing a meal together can transform an ordinary evening into something special. With patience and a keen appetite for learning, anyone can become a competent home cook.",
-    "wordIds": [
-      324,
-      101,
-      227,
-      463,
-      27,
-      153,
-      233,
-      476,
-      338,
-      245,
-      68
-    ],
+    "id": 3015,
+    "title": "The Science Fair",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "food"
+    "topic": "science",
+    "sequence": 15,
+    "newWordIds": [30405, 30159, 30527, 30497],
+    "reviewWordIds": [30085, 30094, 30134, 30137],
+    "speakers": [
+      { "name": "Rachel", "voice": "en-US-Chirp3-HD-Zephyr" },
+      { "name": "Alex", "voice": "en-US-Chirp3-HD-Fenrir" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Alex, the science fair is next week. Have you finished your research?" },
+      { "speaker": 1, "text": "Almost. I did an experiment about how plants grow in different soils." },
+      { "speaker": 0, "text": "What did you discover?" },
+      { "speaker": 1, "text": "Plants in dark soil grew twice as fast. My research showed the quality of soil matters most." },
+      { "speaker": 0, "text": "Can you predict which plant will be tallest by the fair?" },
+      { "speaker": 1, "text": "I think the one by the window. I can predict it'll grow three more centimetres." },
+      { "speaker": 0, "text": "That's great. My experiment is about water — I want to discover if cold water helps flowers last longer." },
+      { "speaker": 1, "text": "Interesting! The customer at the flower shop near school might know about that." },
+      { "speaker": 0, "text": "Maybe. She said there's a deal on fresh flowers if I need more for testing." },
+      { "speaker": 1, "text": "Nice. Does the delivery come quickly? You need them fresh for the experiment." },
+      { "speaker": 0, "text": "Same-day delivery. The quality of the flowers has been really good so far." },
+      { "speaker": 1, "text": "Let's both do our best. I'll predict the results tonight and finish my research." }
+    ]
   },
   {
-    "id": 116,
-    "title": "How a Screen Draws a Picture",
-    "genre": "explainer",
-    "text": "When you open a web page, your computer does a lot of work behind the scenes. The rendering engine reads the code and turns it into what you see on screen. First, it builds a tree of all the elements on the page. Then it works out where each element should go and how big it should be. This is a fundamental step because even a small mistake can make the whole page look wrong. Next, the engine paints the colours and shapes onto the screen. Each component of the page goes through this process in a linear order. Modern engines are sophisticated enough to skip parts that have not changed. Understanding this mechanism helps developers write faster, smoother websites. Although users rarely think about it, the output they see is the result of many careful steps working together.",
-    "wordIds": [
-      185,
-      580,
-      257,
-      415,
-      272,
-      327
-    ],
+    "id": 3016,
+    "title": "A Parking Dispute",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "technology"
+    "topic": "law",
+    "sequence": 16,
+    "newWordIds": [30364, 30365, 30156, 30215],
+    "reviewWordIds": [30405, 30159, 30527, 30497],
+    "speakers": [
+      { "name": "Tom", "voice": "en-US-Chirp3-HD-Orus" },
+      { "name": "Sophie", "voice": "en-US-Chirp3-HD-Aoede" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Sophie, I got a parking ticket yesterday. I don't think it's fair." },
+      { "speaker": 1, "text": "What happened? Were you parked in the wrong place?" },
+      { "speaker": 0, "text": "No. The sign was hidden by a tree. There's no clear evidence I could see it." },
+      { "speaker": 1, "text": "You should fight it. Do you need a lawyer?" },
+      { "speaker": 0, "text": "Maybe. I did some research online and discovered that others had the same problem." },
+      { "speaker": 1, "text": "That's useful evidence. If many people made the same mistake, the sign is the problem." },
+      { "speaker": 0, "text": "Exactly. I want to go to court and explain what happened." },
+      { "speaker": 1, "text": "A good lawyer can help in court. I'd predict the judge will agree with you." },
+      { "speaker": 0, "text": "I hope so. My friend is a lawyer and she said it sounds like a simple experiment in fairness." },
+      { "speaker": 1, "text": "An experiment in fairness — that's one way to put it! The evidence is clear though." },
+      { "speaker": 0, "text": "She discovered that most people win these cases when the sign isn't visible." },
+      { "speaker": 1, "text": "Then it should be fair in the end. Take your evidence to court and let the lawyer handle it." }
+    ]
   },
   {
-    "id": 117,
-    "title": "Tracking Down a Rendering Bug",
-    "genre": "story",
-    "text": "Last week, I noticed that a button on our app was not showing in the right place. It only happened on certain screen sizes, which made it hard to detect. I started by checking the recent code changes to trace the problem. After an hour of reading through files, I found that a small update had triggered the layout to break. The underlying cause was a missing value in the style rules. It was a minor issue, but it had a significant effect on how the page looked. I felt some frustration at first, but staying patient helped me think clearly. Once I fixed the code, I tested it thoroughly on different devices. The bug was gone. My colleague said she had overlooked the same problem earlier. It reminded me that even small details can have a tremendous impact on quality.",
-    "wordIds": [
-      117,
-      474,
-      480,
-      485,
-      281,
-      410,
-      183,
-      58,
-      331,
-      479
-    ],
+    "id": 3017,
+    "title": "At the Farmers' Market",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "technology"
+    "topic": "food",
+    "sequence": 17,
+    "newWordIds": [30309, 30310, 30472, 30604],
+    "reviewWordIds": [30364, 30365, 30156, 30215],
+    "speakers": [
+      { "name": "Emma", "voice": "en-US-Chirp3-HD-Kore" },
+      { "name": "Jack", "voice": "en-US-Chirp3-HD-Fenrir" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Jack, look at all this fresh food at the farmers' market!" },
+      { "speaker": 1, "text": "This farmer says his crops are all organic. No chemicals at all." },
+      { "speaker": 0, "text": "That's great. They harvest the vegetables early in the morning for the best taste." },
+      { "speaker": 1, "text": "I want to try this grain bread. It's made from wheat, oats, and rye." },
+      { "speaker": 0, "text": "Looks delicious. My neighbour's a lawyer and she buys everything organic here." },
+      { "speaker": 1, "text": "Really? Well, the evidence shows organic food is better for you." },
+      { "speaker": 0, "text": "True. She says it's only fair that farmers get good prices for quality crops." },
+      { "speaker": 1, "text": "I agree. They work so hard to harvest everything by hand." },
+      { "speaker": 0, "text": "This grain bread is amazing. We should buy some for the week." },
+      { "speaker": 1, "text": "And some organic tomatoes. The crops here look so much fresher than the supermarket." },
+      { "speaker": 0, "text": "The court of public opinion says fresh is best! Let's get a bag of everything." },
+      { "speaker": 1, "text": "Ha! Fair point. These organic crops are worth every penny." }
+    ]
   },
   {
-    "id": 118,
-    "title": "Learning from a Code Review",
-    "genre": "essay",
-    "text": "Code review is a common practice in software teams. When a developer finishes a piece of work, a colleague looks at the code before it goes live. The goal is to assess the quality and find anything that might cause problems later. Good reviewers do not merely point out mistakes. They also explain why a certain approach is better. This helps the whole team improve steadily over time. It can feel awkward to have someone inspect your work, but most people learn to see it as a chance to grow. A thorough review often catches issues that testing alone would miss. It is important to convey your comments in a kind and clear way. When done well, code review builds trust and leads to more consistent output across the project.",
-    "wordIds": [
-      29,
-      274,
-      58,
-      427,
-      223,
-      466,
-      94,
-      85,
-      327
-    ],
+    "id": 3018,
+    "title": "The Community Centre",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "work"
+    "topic": "society",
+    "sequence": 18,
+    "newWordIds": [30468, 30469, 30480, 30470],
+    "reviewWordIds": [30309, 30310, 30472, 30604],
+    "speakers": [
+      { "name": "Sarah", "voice": "en-US-Chirp3-HD-Leda" },
+      { "name": "Ryan", "voice": "en-US-Chirp3-HD-Puck" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Ryan, the community centre needs volunteers for the food bank. Want to help?" },
+      { "speaker": 1, "text": "I'd love to volunteer. What do they do there?" },
+      { "speaker": 0, "text": "They collect food and give it to families living in poverty." },
+      { "speaker": 1, "text": "That's important. You can also donate money, right?" },
+      { "speaker": 0, "text": "Yes. The charity accepts food, money, and clothes." },
+      { "speaker": 1, "text": "I'll donate some canned food. But fresh organic food would be better for them." },
+      { "speaker": 0, "text": "The charity works with local farmers. They harvest extra crops and give them to the centre." },
+      { "speaker": 1, "text": "That's wonderful. Grain and vegetables straight from the farm." },
+      { "speaker": 0, "text": "Exactly. Poverty is a big problem here, but people are helping." },
+      { "speaker": 1, "text": "How often do volunteers work at the food bank?" },
+      { "speaker": 0, "text": "Most come once a week. Even a few hours helps. You can donate time or food." },
+      { "speaker": 1, "text": "Count me in. Helping fight poverty through this charity is something I really want to do." }
+    ]
   },
   {
-    "id": 119,
-    "title": "A Productive Team Meeting",
-    "genre": "story",
-    "text": "Every Monday, our team holds a short meeting to talk about the week ahead. The lead engineer starts by giving an outline of the main tasks. Then each person shares what they are working on and any obstacles they face. Last Monday, two developers had different ideas about how to solve a rendering problem. One wanted to modify the existing code, while the other suggested writing it from scratch. The discussion was intense at times, but everyone listened carefully. In the end, the team reached a consensus and agreed to try the first approach. These meetings facilitate better communication and help us anticipate problems before they grow. I have noticed that when people feel heard, they become more productive and keen to contribute.",
-    "wordIds": [
-      325,
-      314,
-      284,
-      232,
-      82,
-      171,
-      18,
-      375,
-      245
-    ],
+    "id": 3019,
+    "title": "Election Day",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "communication"
+    "topic": "politics",
+    "sequence": 19,
+    "newWordIds": [30377, 30378, 30380, 30383],
+    "reviewWordIds": [30468, 30469, 30480, 30470],
+    "speakers": [
+      { "name": "Lisa", "voice": "en-US-Chirp3-HD-Zephyr" },
+      { "name": "Mark", "voice": "en-US-Chirp3-HD-Orus" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Mark, did you vote today? It's election day!" },
+      { "speaker": 1, "text": "Yes, I voted this morning. Which candidate did you choose?" },
+      { "speaker": 0, "text": "The one with the strongest policy on education and health." },
+      { "speaker": 1, "text": "Her campaign has been really good. She talks about real problems." },
+      { "speaker": 0, "text": "She wants to help charities that fight poverty. That matters to me." },
+      { "speaker": 1, "text": "Me too. She also said she'd support volunteers in schools and hospitals." },
+      { "speaker": 0, "text": "The other candidate doesn't have a clear policy on those issues." },
+      { "speaker": 1, "text": "His campaign focuses mostly on business. Not bad, but not enough." },
+      { "speaker": 0, "text": "I think people should donate their time to help during elections — volunteer at the polling station." },
+      { "speaker": 1, "text": "Good point. Fighting poverty and helping communities is what we should vote for." },
+      { "speaker": 0, "text": "Exactly. Every vote counts. The right candidate with the right policy can change things." },
+      { "speaker": 1, "text": "I hope the results show that people care about charities, poverty, and real change." }
+    ]
   },
   {
-    "id": 120,
-    "title": "Making the App Run Faster",
-    "genre": "explainer",
-    "text": "Performance is a crucial aspect of any application. If a page takes too long to load, users will leave. The first step is to evaluate where the slowness comes from. Developers use special tools to measure how long each part of the code takes to run. Sometimes the problem is that the app does too many things simultaneously. Other times, a single slow function can become an obstacle for the whole system. One common strategy is to minimize the amount of work the browser has to do on each frame. Another is to eliminate unnecessary calculations that happen again and again. Setting a clear benchmark helps the team track progress over time. Even a swift improvement of a few milliseconds can make the experience feel much smoother for the user.",
-    "wordIds": [
-      101,
-      27,
-      161,
-      411,
-      314,
-      279,
-      144,
-      541,
-      455
-    ],
+    "id": 3020,
+    "title": "The New App",
+    "genre": "dialogue",
     "level": "B1",
-    "topic": "technology"
-  },
-  {
-    "id": 121,
-    "title": "Racing Against the Deadline",
-    "genre": "story",
-    "text": "We had two weeks to finish the new feature, but halfway through, a major setback slowed us down. The design changed, and we had to redo a large part of the work. The strain on the team was obvious. Some people stayed late every night, and the atmosphere became tense. Our manager tried to allocate extra help, but it was hard to find people who understood the code. I felt a growing anxiety about whether we would finish on time. Nevertheless, we kept going and split the remaining tasks into smaller pieces. Each person was dedicated to one part and worked hard. On the last day, we submitted the feature just before the deadline. The outcome was not perfect, but it was good enough to launch. The experience taught me that patience and teamwork matter most under pressure.",
-    "wordIds": [
-      403,
-      433,
-      461,
-      13,
-      19,
-      302,
-      420,
-      110,
-      439,
-      103,
-      324,
-      249,
-      338
+    "topic": "technology",
+    "sequence": 20,
+    "newWordIds": [30346, 30353, 30359, 30347],
+    "reviewWordIds": [30377, 30378, 30380, 30383],
+    "speakers": [
+      { "name": "Mia", "voice": "en-US-Chirp3-HD-Aoede" },
+      { "name": "James", "voice": "en-US-Chirp3-HD-Charon" }
     ],
-    "level": "B1",
-    "topic": "work"
-  },
-  {
-    "id": 122,
-    "title": "Solving a Hard Problem Together",
-    "genre": "story",
-    "text": "Our rendering engine had a persistent bug that no one could fix alone. Images would flicker on screen whenever the user scrolled quickly. Three of us decided to collaborate and tackle the issue as a group. We started by listing every possible cause and then testing each assumption one by one. It took two full days of careful work. At one point, we discovered that the engine was trying to draw the same image twice in the same frame. The solution was to add a check that would prevent this from happening. It was a breakthrough moment for the team. Working alongside each other helped us grasp the problem from different angles. I learned that some obstacles are too complex for one person and that genuine teamwork, where people cooperate openly, can yield remarkable results.",
-    "wordIds": [
-      343,
-      568,
-      458,
-      30,
-      43,
-      516,
-      188,
-      314,
-      186,
-      95,
-      497
-    ],
-    "level": "B1",
-    "topic": "work"
-  },
-  {
-    "id": 123,
-    "title": "Writing Clear Technical Documentation",
-    "genre": "essay",
-    "text": "Good documentation is just as important as good code. When a new developer joins the team, they need to grasp how the system works without asking too many questions. A comprehensive guide saves time and reduces confusion. The first step is to outline the main parts of the system and how they connect. Use simple language and avoid vague descriptions that could be interpreted in different ways. It helps to include examples that demonstrate how each feature behaves. Many teams neglect documentation because they are busy writing code. However, this tendency leads to problems when someone leaves or when the project grows. Keeping your documents up to date requires ongoing effort and discipline. A well-written guide can transform a confusing codebase into one that any competent developer can understand readily.",
-    "wordIds": [
-      188,
-      73,
-      325,
-      492,
-      237,
-      114,
-      293,
-      460,
-      319,
-      476,
-      68,
-      393
-    ],
-    "level": "B1",
-    "topic": "communication"
-  },
-  {
-    "id": 124,
-    "title": "Cleaning Up Old Code",
-    "genre": "essay",
-    "text": "Refactoring means changing the structure of code without changing what it does. Over time, software projects accumulate layers of quick fixes that make the code harder to read. A developer may encounter functions that are too long or logic that is difficult to follow. The goal of refactoring is to make the code cleaner and easier to modify in the future. It is a fundamental practice that many teams overlook because the results are not immediately visible. However, neglecting it can trigger serious problems down the road. Before starting, it is important to have good tests so you can verify that nothing breaks. A rational approach is to refactor small sections at a time rather than rewriting everything at once. The subsequent code is usually simpler and more stable. Teams that dedicate time to refactoring find that new features become easier to implement.",
-    "wordIds": [
-      149,
-      284,
-      185,
-      331,
-      293,
-      480,
-      392,
-      440,
-      110,
-      200
-    ],
-    "level": "B1",
-    "topic": "technology"
-  },
-  {
-    "id": 125,
-    "title": "Welcome to the Rendering Team",
-    "genre": "story",
-    "text": "Last month, a new developer named Li joined our rendering team. She had just finished university and was keen to learn. On her first day, we gave her a comprehensive overview of the project and its framework. She asked many thoughtful questions, which showed that she was eager to grasp the details. Her manager paired her with a senior colleague who would provide guidance during the first few weeks. Li found the codebase overwhelming at first, but she adapted quickly. By the end of her second week, she had already submitted her first code change. The team acknowledged her effort and gave her positive comments. Watching someone new integrate into the group reminded us all of how important it is to be patient and supportive. A welcoming atmosphere can transform a nervous newcomer into a dedicated team member.",
-    "wordIds": [
-      245,
-      73,
-      182,
-      188,
-      58,
-      189,
-      333,
-      9,
-      439,
-      7,
-      229,
-      476,
-      110
-    ],
-    "level": "B1",
-    "topic": "relationships"
+    "turns": [
+      { "speaker": 0, "text": "James, have you seen this new app? It helps you find local events on your smartphone." },
+      { "speaker": 1, "text": "No, tell me more. What's the app called?" },
+      { "speaker": 0, "text": "CityLife. You can find it on their website or in the app store." },
+      { "speaker": 1, "text": "Let me open the browser and look. Is it free?" },
+      { "speaker": 0, "text": "Yes, completely free. You just sign up with your email." },
+      { "speaker": 1, "text": "Nice. What kind of events does the app show on the website?" },
+      { "speaker": 0, "text": "Markets, concerts, sports — everything. One candidate even uses it for campaign events." },
+      { "speaker": 1, "text": "Really? So you can follow a candidate's campaign right on your smartphone?" },
+      { "speaker": 0, "text": "Yes! And there's a section where you can vote for your favourite local events." },
+      { "speaker": 1, "text": "That's clever. Any policy news or just fun things?" },
+      { "speaker": 0, "text": "Mostly fun, but they share local policy updates too. Open the browser and try it." },
+      { "speaker": 1, "text": "I'm downloading the app now. My smartphone needed something like this. Great website too!" }
+    ]
   }
 ]

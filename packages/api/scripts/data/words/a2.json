@@ -1,0 +1,5658 @@
+[
+  {
+    "id": 20001,
+    "word": "accident",
+    "pos": "noun",
+    "phonetic": "/ˈæksɪdənt/",
+    "examples": [
+      "There was a bad accident on the road today.",
+      "He had an accident while riding his bike."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20002,
+    "word": "advice",
+    "pos": "noun",
+    "phonetic": "/ədˈvaɪs/",
+    "examples": [
+      "Can you give me some advice about my job?",
+      "She always gives good advice to her friends."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20003,
+    "word": "area",
+    "pos": "noun",
+    "phonetic": "/ˈeəriə/",
+    "examples": [
+      "This area of the city is very quiet.",
+      "There is a play area for children in the park."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20004,
+    "word": "attention",
+    "pos": "noun",
+    "phonetic": "/əˈtenʃn/",
+    "examples": [
+      "Please pay attention to what the teacher says.",
+      "The loud noise got everyone's attention in the room."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20005,
+    "word": "bank",
+    "pos": "noun",
+    "phonetic": "/bæŋk/",
+    "examples": [
+      "I need to go to the bank to get money.",
+      "The bank is open from nine to five every day."
+    ],
+    "level": "A2",
+    "topics": [
+      "business"
+    ]
+  },
+  {
+    "id": 20006,
+    "word": "beach",
+    "pos": "noun",
+    "phonetic": "/biːtʃ/",
+    "examples": [
+      "We went to the beach and played in the sand.",
+      "The beach was full of people on the hot day."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20007,
+    "word": "blood",
+    "pos": "noun",
+    "phonetic": "/blʌd/",
+    "examples": [
+      "The doctor took some blood for a test.",
+      "There was a little blood when he cut his finger."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20008,
+    "word": "bone",
+    "pos": "noun",
+    "phonetic": "/bəʊn/",
+    "examples": [
+      "She broke a bone in her arm last week.",
+      "The dog likes to play with a big bone."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20009,
+    "word": "bridge",
+    "pos": "noun",
+    "phonetic": "/brɪdʒ/",
+    "examples": [
+      "We walked across the bridge over the river.",
+      "The old bridge was made of stone and wood."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20010,
+    "word": "camp",
+    "pos": "noun",
+    "phonetic": "/kæmp/",
+    "examples": [
+      "The children went to a summer camp last year.",
+      "We set up camp near the lake in the forest."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel",
+      "sports"
+    ]
+  },
+  {
+    "id": 20011,
+    "word": "capital",
+    "pos": "noun",
+    "phonetic": "/ˈkæpɪtl/",
+    "examples": [
+      "Paris is the capital of France and very beautiful.",
+      "We visited the capital city during our holiday trip."
+    ],
+    "level": "A2",
+    "topics": [
+      "society",
+      "travel"
+    ]
+  },
+  {
+    "id": 20012,
+    "word": "case",
+    "pos": "noun",
+    "phonetic": "/keɪs/",
+    "examples": [
+      "Put your glasses in a case so they stay safe.",
+      "In that case, we should leave a bit earlier."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20013,
+    "word": "center",
+    "pos": "noun",
+    "phonetic": "/ˈsentər/",
+    "examples": [
+      "The shopping center is in the middle of town.",
+      "She stood in the center of the room and waited."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20014,
+    "word": "chance",
+    "pos": "noun",
+    "phonetic": "/tʃɑːns/",
+    "examples": [
+      "I had the chance to visit a new country.",
+      "Give me one more chance to try again please."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20015,
+    "word": "church",
+    "pos": "noun",
+    "phonetic": "/tʃɜːtʃ/",
+    "examples": [
+      "They go to church every Sunday morning together.",
+      "The old church in the village is very beautiful."
+    ],
+    "level": "A2",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 20016,
+    "word": "college",
+    "pos": "noun",
+    "phonetic": "/ˈkɒlɪdʒ/",
+    "examples": [
+      "She is studying science at college this year.",
+      "He wants to go to college after he finishes school."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20017,
+    "word": "corner",
+    "pos": "noun",
+    "phonetic": "/ˈkɔːnər/",
+    "examples": [
+      "The shop is on the corner of the street.",
+      "She sat in the corner of the room reading quietly."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20018,
+    "word": "couple",
+    "pos": "noun",
+    "phonetic": "/ˈkʌpl/",
+    "examples": [
+      "The young couple moved into a new house together.",
+      "I need a couple of minutes to finish my work."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20019,
+    "word": "course",
+    "pos": "noun",
+    "phonetic": "/kɔːs/",
+    "examples": [
+      "I am taking a cooking course this summer.",
+      "Of course you can come to the party with us."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20020,
+    "word": "date",
+    "pos": "noun",
+    "phonetic": "/deɪt/",
+    "examples": [
+      "What is the date of your birthday this year?",
+      "We need to set a date for the meeting soon."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20021,
+    "word": "difference",
+    "pos": "noun",
+    "phonetic": "/ˈdɪfrəns/",
+    "examples": [
+      "There is a big difference between the two pictures.",
+      "Can you see the difference between red and pink?"
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20022,
+    "word": "dish",
+    "pos": "noun",
+    "phonetic": "/dɪʃ/",
+    "examples": [
+      "This dish is made with chicken and vegetables.",
+      "Please put the dirty dishes in the kitchen sink."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20023,
+    "word": "dream",
+    "pos": "noun",
+    "phonetic": "/driːm/",
+    "examples": [
+      "I had a strange dream about flying last night.",
+      "Her dream is to become a doctor one day."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20024,
+    "word": "driver",
+    "pos": "noun",
+    "phonetic": "/ˈdraɪvər/",
+    "examples": [
+      "The bus driver was very friendly and helpful today.",
+      "She is a careful driver and always follows the rules."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20025,
+    "word": "earth",
+    "pos": "noun",
+    "phonetic": "/ɜːθ/",
+    "examples": [
+      "The Earth goes around the sun once every year.",
+      "We should take care of the earth and its nature."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment",
+      "science"
+    ]
+  },
+  {
+    "id": 20026,
+    "word": "edge",
+    "pos": "noun",
+    "phonetic": "/edʒ/",
+    "examples": [
+      "Be careful near the edge of the swimming pool.",
+      "She sat on the edge of the bed and waited."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20027,
+    "word": "enemy",
+    "pos": "noun",
+    "phonetic": "/ˈenəmi/",
+    "examples": [
+      "In the story, the hero must fight his enemy.",
+      "They were enemies before but now they are friends."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20028,
+    "word": "exam",
+    "pos": "noun",
+    "phonetic": "/ɪɡˈzæm/",
+    "examples": [
+      "I have a math exam tomorrow so I must study.",
+      "She passed her English exam with a very high mark."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20029,
+    "word": "excuse",
+    "pos": "noun",
+    "phonetic": "/ɪkˈskjuːs/",
+    "examples": [
+      "He always has an excuse for being late to class.",
+      "That is not a good excuse for missing the meeting."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20030,
+    "word": "fact",
+    "pos": "noun",
+    "phonetic": "/fækt/",
+    "examples": [
+      "It is a fact that water turns to ice when cold.",
+      "In fact, she is the best student in the class."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20031,
+    "word": "farm",
+    "pos": "noun",
+    "phonetic": "/fɑːm/",
+    "examples": [
+      "My uncle has a big farm with cows and sheep.",
+      "We visited a farm and saw how cheese is made."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20032,
+    "word": "fear",
+    "pos": "noun",
+    "phonetic": "/fɪər/",
+    "examples": [
+      "She has a strong fear of spiders and snakes.",
+      "He could not hide his fear during the scary movie."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20033,
+    "word": "field",
+    "pos": "noun",
+    "phonetic": "/fiːld/",
+    "examples": [
+      "The children play football in the field after school.",
+      "There are beautiful flowers growing in the green field."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20034,
+    "word": "film",
+    "pos": "noun",
+    "phonetic": "/fɪlm/",
+    "examples": [
+      "We watched a really good film at the cinema.",
+      "The film is about a family living in a village."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 20035,
+    "word": "finger",
+    "pos": "noun",
+    "phonetic": "/ˈfɪŋɡər/",
+    "examples": [
+      "She cut her finger while making dinner last night.",
+      "He put a ring on his finger for the wedding."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20036,
+    "word": "forest",
+    "pos": "noun",
+    "phonetic": "/ˈfɒrɪst/",
+    "examples": [
+      "We went for a long walk through the forest.",
+      "The forest is home to many birds and wild animals."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20037,
+    "word": "front",
+    "pos": "noun",
+    "phonetic": "/frʌnt/",
+    "examples": [
+      "Please wait for me in front of the school.",
+      "The front of the house has a small garden."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20038,
+    "word": "fun",
+    "pos": "noun",
+    "phonetic": "/fʌn/",
+    "examples": [
+      "We had a lot of fun at the birthday party.",
+      "Playing games with friends is always great fun together."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20039,
+    "word": "future",
+    "pos": "noun",
+    "phonetic": "/ˈfjuːtʃər/",
+    "examples": [
+      "What do you want to do in the future?",
+      "In the future, cars might fly through the sky."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20040,
+    "word": "gate",
+    "pos": "noun",
+    "phonetic": "/ɡeɪt/",
+    "examples": [
+      "Please close the gate when you leave the garden.",
+      "We waited at the airport gate for our flight."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20041,
+    "word": "gift",
+    "pos": "noun",
+    "phonetic": "/ɡɪft/",
+    "examples": [
+      "She gave me a lovely gift for my birthday.",
+      "The gift was wrapped in beautiful red and gold paper."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20042,
+    "word": "gold",
+    "pos": "noun",
+    "phonetic": "/ɡəʊld/",
+    "examples": [
+      "She wore a beautiful ring made of gold today.",
+      "Gold is a very expensive metal found in the ground."
+    ],
+    "level": "A2",
+    "topics": [
+      "business"
+    ]
+  },
+  {
+    "id": 20043,
+    "word": "grass",
+    "pos": "noun",
+    "phonetic": "/ɡrɑːs/",
+    "examples": [
+      "The children sat on the grass in the park.",
+      "The grass in our garden grows very fast in summer."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20044,
+    "word": "ground",
+    "pos": "noun",
+    "phonetic": "/ɡraʊnd/",
+    "examples": [
+      "The ball fell and rolled along the ground slowly.",
+      "After the rain, the ground was wet and very muddy."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20045,
+    "word": "group",
+    "pos": "noun",
+    "phonetic": "/ɡruːp/",
+    "examples": [
+      "A group of students went on a trip together.",
+      "We worked in a small group to finish the project."
+    ],
+    "level": "A2",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 20046,
+    "word": "guest",
+    "pos": "noun",
+    "phonetic": "/ɡest/",
+    "examples": [
+      "We have a guest staying at our house this week.",
+      "The hotel guest asked for an extra pillow at night."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20047,
+    "word": "gun",
+    "pos": "noun",
+    "phonetic": "/ɡʌn/",
+    "examples": [
+      "The police officer was carrying a gun at work.",
+      "In the movie, the hero uses a gun to fight."
+    ],
+    "level": "A2",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 20048,
+    "word": "hill",
+    "pos": "noun",
+    "phonetic": "/hɪl/",
+    "examples": [
+      "We climbed to the top of the hill to see.",
+      "Their house is on a small hill near the river."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel",
+      "environment"
+    ]
+  },
+  {
+    "id": 20049,
+    "word": "hole",
+    "pos": "noun",
+    "phonetic": "/həʊl/",
+    "examples": [
+      "The dog dug a big hole in the garden today.",
+      "There is a hole in my sock near the toe."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20050,
+    "word": "industry",
+    "pos": "noun",
+    "phonetic": "/ˈɪndəstri/",
+    "examples": [
+      "The car industry is very important in this country.",
+      "Many people work in the food industry around here."
+    ],
+    "level": "A2",
+    "topics": [
+      "business",
+      "work"
+    ]
+  },
+  {
+    "id": 20051,
+    "word": "island",
+    "pos": "noun",
+    "phonetic": "/ˈaɪlənd/",
+    "examples": [
+      "We took a boat to a small island for vacation.",
+      "The island has beautiful beaches and clear blue water."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20052,
+    "word": "juice",
+    "pos": "noun",
+    "phonetic": "/dʒuːs/",
+    "examples": [
+      "Would you like a glass of orange juice for breakfast?",
+      "She made fresh apple juice from the garden fruit."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20053,
+    "word": "king",
+    "pos": "noun",
+    "phonetic": "/kɪŋ/",
+    "examples": [
+      "The king lived in a large castle on the hill.",
+      "In the story, the king was kind to all people."
+    ],
+    "level": "A2",
+    "topics": [
+      "society",
+      "politics"
+    ]
+  },
+  {
+    "id": 20054,
+    "word": "knee",
+    "pos": "noun",
+    "phonetic": "/niː/",
+    "examples": [
+      "She hurt her knee while playing in the park.",
+      "The baby sat on his father's knee and smiled."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20055,
+    "word": "lake",
+    "pos": "noun",
+    "phonetic": "/leɪk/",
+    "examples": [
+      "We went swimming in the lake on a hot day.",
+      "The lake is very deep and surrounded by tall mountains."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment",
+      "travel"
+    ]
+  },
+  {
+    "id": 20056,
+    "word": "leaf",
+    "pos": "noun",
+    "phonetic": "/liːf/",
+    "examples": [
+      "In autumn, every leaf on the tree turns red or yellow.",
+      "She picked up a green leaf from the ground."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20057,
+    "word": "lesson",
+    "pos": "noun",
+    "phonetic": "/ˈlesn/",
+    "examples": [
+      "The English lesson starts at nine o'clock every morning.",
+      "I learned an important lesson from that mistake last year."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20058,
+    "word": "library",
+    "pos": "noun",
+    "phonetic": "/ˈlaɪbrəri/",
+    "examples": [
+      "I borrowed three books from the library this week.",
+      "The library is a quiet place to study and read."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20059,
+    "word": "luck",
+    "pos": "noun",
+    "phonetic": "/lʌk/",
+    "examples": [
+      "Good luck with your exam tomorrow at school.",
+      "It was just bad luck that it rained on our trip."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20060,
+    "word": "machine",
+    "pos": "noun",
+    "phonetic": "/məˈʃiːn/",
+    "examples": [
+      "The washing machine broke down again this morning.",
+      "This machine can make one hundred bottles every hour."
+    ],
+    "level": "A2",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 20061,
+    "word": "mail",
+    "pos": "noun",
+    "phonetic": "/meɪl/",
+    "examples": [
+      "I check my mail every morning before going to work.",
+      "She sent the letter by mail to her friend."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20062,
+    "word": "market",
+    "pos": "noun",
+    "phonetic": "/ˈmɑːkɪt/",
+    "examples": [
+      "We buy fresh fruit and vegetables at the market.",
+      "The market is open every Saturday morning in the town."
+    ],
+    "level": "A2",
+    "topics": [
+      "food",
+      "business"
+    ]
+  },
+  {
+    "id": 20063,
+    "word": "meal",
+    "pos": "noun",
+    "phonetic": "/miːl/",
+    "examples": [
+      "Dinner is the biggest meal of the day for us.",
+      "She cooked a delicious meal for the whole family."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20064,
+    "word": "media",
+    "pos": "noun",
+    "phonetic": "/ˈmiːdiə/",
+    "examples": [
+      "The media reported the news about the big storm.",
+      "Social media is very popular with young people today."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication",
+      "technology"
+    ]
+  },
+  {
+    "id": 20065,
+    "word": "meeting",
+    "pos": "noun",
+    "phonetic": "/ˈmiːtɪŋ/",
+    "examples": [
+      "We have a team meeting at two o'clock today.",
+      "The meeting was about the new plans for the school."
+    ],
+    "level": "A2",
+    "topics": [
+      "work"
+    ]
+  },
+  {
+    "id": 20066,
+    "word": "memory",
+    "pos": "noun",
+    "phonetic": "/ˈmeməri/",
+    "examples": [
+      "I have a good memory of our holiday last summer.",
+      "His memory is not very good so he writes things down."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20067,
+    "word": "message",
+    "pos": "noun",
+    "phonetic": "/ˈmesɪdʒ/",
+    "examples": [
+      "She sent me a text message on my phone today.",
+      "I left a message for him at the front desk."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20068,
+    "word": "metal",
+    "pos": "noun",
+    "phonetic": "/ˈmetl/",
+    "examples": [
+      "The gate is made of strong metal and very heavy.",
+      "Gold and silver are types of metal that cost a lot."
+    ],
+    "level": "A2",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 20069,
+    "word": "method",
+    "pos": "noun",
+    "phonetic": "/ˈmeθəd/",
+    "examples": [
+      "This is the best method for learning new words.",
+      "The teacher showed us a new method to solve the problem."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20070,
+    "word": "mirror",
+    "pos": "noun",
+    "phonetic": "/ˈmɪrər/",
+    "examples": [
+      "She looked at herself in the mirror before leaving.",
+      "There is a large mirror on the wall in the bedroom."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20071,
+    "word": "mistake",
+    "pos": "noun",
+    "phonetic": "/mɪˈsteɪk/",
+    "examples": [
+      "I made a mistake in my math test at school.",
+      "Everyone makes mistakes, so do not worry about it."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20072,
+    "word": "moment",
+    "pos": "noun",
+    "phonetic": "/ˈməʊmənt/",
+    "examples": [
+      "Wait a moment please, I will be right back.",
+      "That was the happiest moment of my whole life."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20073,
+    "word": "moon",
+    "pos": "noun",
+    "phonetic": "/muːn/",
+    "examples": [
+      "The moon was very bright and full last night.",
+      "We sat outside and looked at the beautiful moon together."
+    ],
+    "level": "A2",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 20074,
+    "word": "mountain",
+    "pos": "noun",
+    "phonetic": "/ˈmaʊntɪn/",
+    "examples": [
+      "We climbed the mountain and saw a beautiful view.",
+      "The mountain is covered with snow during the winter months."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel",
+      "environment"
+    ]
+  },
+  {
+    "id": 20075,
+    "word": "nation",
+    "pos": "noun",
+    "phonetic": "/ˈneɪʃn/",
+    "examples": [
+      "People from every nation came to the big sports event.",
+      "The whole nation celebrated when the team won the game."
+    ],
+    "level": "A2",
+    "topics": [
+      "politics",
+      "society"
+    ]
+  },
+  {
+    "id": 20076,
+    "word": "nature",
+    "pos": "noun",
+    "phonetic": "/ˈneɪtʃər/",
+    "examples": [
+      "I love spending time in nature during the weekend.",
+      "Nature is beautiful in spring when the flowers start growing."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20077,
+    "word": "neck",
+    "pos": "noun",
+    "phonetic": "/nek/",
+    "examples": [
+      "She wore a pretty necklace around her neck today.",
+      "My neck hurts because I slept in a bad position."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20078,
+    "word": "neighbor",
+    "pos": "noun",
+    "phonetic": "/ˈneɪbər/",
+    "examples": [
+      "Our neighbor is very kind and always says hello.",
+      "The new neighbor moved in next door to us yesterday."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20079,
+    "word": "noise",
+    "pos": "noun",
+    "phonetic": "/nɔɪz/",
+    "examples": [
+      "The noise from the street kept me awake all night.",
+      "Please do not make so much noise in the library."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20080,
+    "word": "note",
+    "pos": "noun",
+    "phonetic": "/nəʊt/",
+    "examples": [
+      "She wrote a short note to say thank you.",
+      "I left a note on the table for my mother."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20081,
+    "word": "nurse",
+    "pos": "noun",
+    "phonetic": "/nɜːs/",
+    "examples": [
+      "The nurse helped the patient take his medicine today.",
+      "She wants to become a nurse and work at a hospital."
+    ],
+    "level": "A2",
+    "topics": [
+      "health",
+      "work"
+    ]
+  },
+  {
+    "id": 20082,
+    "word": "ocean",
+    "pos": "noun",
+    "phonetic": "/ˈəʊʃn/",
+    "examples": [
+      "The ocean is very deep and full of sea life.",
+      "We could see the ocean from our hotel room window."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20083,
+    "word": "opinion",
+    "pos": "noun",
+    "phonetic": "/əˈpɪnjən/",
+    "examples": [
+      "In my opinion, this is the best restaurant in town.",
+      "Everyone has a different opinion about the new movie."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20084,
+    "word": "pair",
+    "pos": "noun",
+    "phonetic": "/peər/",
+    "examples": [
+      "I bought a new pair of shoes for the party.",
+      "She needs a pair of glasses to read small letters."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20085,
+    "word": "path",
+    "pos": "noun",
+    "phonetic": "/pɑːθ/",
+    "examples": [
+      "We followed the path through the forest to the lake.",
+      "There is a narrow path between the two old buildings."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20086,
+    "word": "peace",
+    "pos": "noun",
+    "phonetic": "/piːs/",
+    "examples": [
+      "Everyone in the world hopes for peace and happiness.",
+      "I like the peace and quiet of the countryside."
+    ],
+    "level": "A2",
+    "topics": [
+      "politics",
+      "society"
+    ]
+  },
+  {
+    "id": 20087,
+    "word": "period",
+    "pos": "noun",
+    "phonetic": "/ˈpɪəriəd/",
+    "examples": [
+      "We lived in that city for a short period of time.",
+      "The teacher spoke for the whole period about history."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20088,
+    "word": "pocket",
+    "pos": "noun",
+    "phonetic": "/ˈpɒkɪt/",
+    "examples": [
+      "He put his phone in his pocket and walked out.",
+      "There is a hole in the pocket of my old jacket."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20089,
+    "word": "pool",
+    "pos": "noun",
+    "phonetic": "/puːl/",
+    "examples": [
+      "The children love swimming in the pool every summer.",
+      "The hotel has a big pool with blue warm water."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 20090,
+    "word": "position",
+    "pos": "noun",
+    "phonetic": "/pəˈzɪʃn/",
+    "examples": [
+      "She got a new position at her company last month.",
+      "Make sure you sleep in a comfortable position every night."
+    ],
+    "level": "A2",
+    "topics": [
+      "work"
+    ]
+  },
+  {
+    "id": 20091,
+    "word": "power",
+    "pos": "noun",
+    "phonetic": "/ˈpaʊər/",
+    "examples": [
+      "The power went off during the storm last night.",
+      "The president has a lot of power in the country."
+    ],
+    "level": "A2",
+    "topics": [
+      "politics"
+    ]
+  },
+  {
+    "id": 20092,
+    "word": "price",
+    "pos": "noun",
+    "phonetic": "/praɪs/",
+    "examples": [
+      "The price of this jacket is too high for me.",
+      "Food prices go up a little bit every single year."
+    ],
+    "level": "A2",
+    "topics": [
+      "business"
+    ]
+  },
+  {
+    "id": 20093,
+    "word": "problem",
+    "pos": "noun",
+    "phonetic": "/ˈprɒbləm/",
+    "examples": [
+      "We need to find a solution to this big problem.",
+      "The main problem is that we do not have enough time."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20094,
+    "word": "product",
+    "pos": "noun",
+    "phonetic": "/ˈprɒdʌkt/",
+    "examples": [
+      "This product is made from natural materials only.",
+      "The company sells its products to many different countries."
+    ],
+    "level": "A2",
+    "topics": [
+      "business"
+    ]
+  },
+  {
+    "id": 20095,
+    "word": "program",
+    "pos": "noun",
+    "phonetic": "/ˈprəʊɡræm/",
+    "examples": [
+      "There is a good program on television tonight.",
+      "The school has a special program for new students this year."
+    ],
+    "level": "A2",
+    "topics": [
+      "technology",
+      "education"
+    ]
+  },
+  {
+    "id": 20096,
+    "word": "project",
+    "pos": "noun",
+    "phonetic": "/ˈprɒdʒekt/",
+    "examples": [
+      "We are working on a school project about animals.",
+      "The building project will take about two years to finish."
+    ],
+    "level": "A2",
+    "topics": [
+      "work",
+      "education"
+    ]
+  },
+  {
+    "id": 20097,
+    "word": "queen",
+    "pos": "noun",
+    "phonetic": "/kwiːn/",
+    "examples": [
+      "The queen lives in a large and beautiful palace.",
+      "In chess, the queen is the most powerful piece."
+    ],
+    "level": "A2",
+    "topics": [
+      "society",
+      "politics"
+    ]
+  },
+  {
+    "id": 20098,
+    "word": "reason",
+    "pos": "noun",
+    "phonetic": "/ˈriːzn/",
+    "examples": [
+      "What is the reason you were late for school today?",
+      "There must be a good reason why she did not come."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20099,
+    "word": "region",
+    "pos": "noun",
+    "phonetic": "/ˈriːdʒən/",
+    "examples": [
+      "This region of the country has very hot summers.",
+      "People in this region grow rice and vegetables for food."
+    ],
+    "level": "A2",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 20100,
+    "word": "ring",
+    "pos": "noun",
+    "phonetic": "/rɪŋ/",
+    "examples": [
+      "He gave her a beautiful gold ring for their wedding.",
+      "The phone started to ring during the middle of dinner."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20101,
+    "word": "arrive",
+    "pos": "verb",
+    "phonetic": "/əˈraɪv/",
+    "examples": [
+      "The train will arrive at the station at ten o'clock.",
+      "We arrived at the hotel late in the evening yesterday."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20102,
+    "word": "bake",
+    "pos": "verb",
+    "phonetic": "/beɪk/",
+    "examples": [
+      "She likes to bake cakes and cookies on weekends.",
+      "We baked a chocolate cake for my sister's birthday party."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20103,
+    "word": "beat",
+    "pos": "verb",
+    "phonetic": "/biːt/",
+    "examples": [
+      "Our team beat the other team three goals to one.",
+      "You can hear my heart beat fast when I run."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 20104,
+    "word": "belong",
+    "pos": "verb",
+    "phonetic": "/bɪˈlɒŋ/",
+    "examples": [
+      "This book does not belong to me, it is yours.",
+      "She feels like she belongs in this small friendly town."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20105,
+    "word": "blow",
+    "pos": "verb",
+    "phonetic": "/bləʊ/",
+    "examples": [
+      "The wind started to blow very hard during the night.",
+      "She blew out all the candles on her birthday cake."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20106,
+    "word": "carry",
+    "pos": "verb",
+    "phonetic": "/ˈkæri/",
+    "examples": [
+      "Can you help me carry these heavy bags to the car?",
+      "She always carries her phone and keys in her bag."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20107,
+    "word": "chase",
+    "pos": "verb",
+    "phonetic": "/tʃeɪs/",
+    "examples": [
+      "The dog loves to chase the cat around the garden.",
+      "The police officer chased the thief down the street quickly."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20108,
+    "word": "collect",
+    "pos": "verb",
+    "phonetic": "/kəˈlekt/",
+    "examples": [
+      "He likes to collect old stamps from different countries.",
+      "I need to collect my children from school at three."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20109,
+    "word": "count",
+    "pos": "verb",
+    "phonetic": "/kaʊnt/",
+    "examples": [
+      "Can you count how many people are in the room?",
+      "She learned to count to one hundred in English class."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20110,
+    "word": "cover",
+    "pos": "verb",
+    "phonetic": "/ˈkʌvər/",
+    "examples": [
+      "Please cover the food so the flies cannot reach it.",
+      "Snow covered the ground and everything looked white and beautiful."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20111,
+    "word": "cross",
+    "pos": "verb",
+    "phonetic": "/krɒs/",
+    "examples": [
+      "Look both ways before you cross the busy street.",
+      "We crossed the river by walking over the old bridge."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20112,
+    "word": "cry",
+    "pos": "verb",
+    "phonetic": "/kraɪ/",
+    "examples": [
+      "The baby started to cry because she was hungry.",
+      "She cried tears of happiness when she heard the good news."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20113,
+    "word": "cut",
+    "pos": "verb",
+    "phonetic": "/kʌt/",
+    "examples": [
+      "Be careful when you cut vegetables with a sharp knife.",
+      "She cut the paper into small pieces for the art class."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20114,
+    "word": "dance",
+    "pos": "verb",
+    "phonetic": "/dɑːns/",
+    "examples": [
+      "They love to dance together at parties every weekend.",
+      "She learned to dance when she was only five years old."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 20115,
+    "word": "decide",
+    "pos": "verb",
+    "phonetic": "/dɪˈsaɪd/",
+    "examples": [
+      "I cannot decide which color I like best today.",
+      "They decided to go to the beach for their holiday."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20116,
+    "word": "divide",
+    "pos": "verb",
+    "phonetic": "/dɪˈvaɪd/",
+    "examples": [
+      "The teacher asked us to divide into two groups.",
+      "We divided the cake into eight equal pieces for everyone."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20117,
+    "word": "enjoy",
+    "pos": "verb",
+    "phonetic": "/ɪnˈdʒɔɪ/",
+    "examples": [
+      "I really enjoy reading books in my free time.",
+      "Did you enjoy the film we watched last night together?"
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20118,
+    "word": "enter",
+    "pos": "verb",
+    "phonetic": "/ˈentər/",
+    "examples": [
+      "Please knock on the door before you enter the room.",
+      "She entered the building through the side door on the left."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20119,
+    "word": "escape",
+    "pos": "verb",
+    "phonetic": "/ɪˈskeɪp/",
+    "examples": [
+      "The bird escaped from the cage and flew away.",
+      "They escaped the rain by running into a nearby shop."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20120,
+    "word": "fall",
+    "pos": "verb",
+    "phonetic": "/fɔːl/",
+    "examples": [
+      "Be careful, you might fall on the wet floor today.",
+      "The leaves fall from the trees every year in autumn."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20121,
+    "word": "feed",
+    "pos": "verb",
+    "phonetic": "/fiːd/",
+    "examples": [
+      "She feeds the cat twice a day, morning and evening.",
+      "We went to the park to feed the ducks some bread."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20122,
+    "word": "fill",
+    "pos": "verb",
+    "phonetic": "/fɪl/",
+    "examples": [
+      "Please fill this glass with water for me.",
+      "She filled in the form with her name and address."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20123,
+    "word": "grow",
+    "pos": "verb",
+    "phonetic": "/ɡrəʊ/",
+    "examples": [
+      "The flowers in our garden grow very fast in spring.",
+      "Children grow taller every year until they become adults."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20124,
+    "word": "guess",
+    "pos": "verb",
+    "phonetic": "/ɡes/",
+    "examples": [
+      "Can you guess what I got you for your birthday?",
+      "I guess we should leave now before it gets too late."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20125,
+    "word": "happen",
+    "pos": "verb",
+    "phonetic": "/ˈhæpən/",
+    "examples": [
+      "What happened to your arm? Did you fall down today?",
+      "Accidents can happen to anyone at any time and place."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20126,
+    "word": "hate",
+    "pos": "verb",
+    "phonetic": "/heɪt/",
+    "examples": [
+      "I hate getting up early on cold winter mornings.",
+      "She hates spiders and always runs away from them quickly."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20127,
+    "word": "hide",
+    "pos": "verb",
+    "phonetic": "/haɪd/",
+    "examples": [
+      "The children like to hide behind the big tree outside.",
+      "She tried to hide her sadness but her eyes were red."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20128,
+    "word": "hold",
+    "pos": "verb",
+    "phonetic": "/həʊld/",
+    "examples": [
+      "Can you hold my bag for a minute please?",
+      "She held the baby carefully in her arms and smiled."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20129,
+    "word": "hurry",
+    "pos": "verb",
+    "phonetic": "/ˈhʌri/",
+    "examples": [
+      "We need to hurry or we will miss the bus.",
+      "She hurried to the shop before it closed at five."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20130,
+    "word": "invent",
+    "pos": "verb",
+    "phonetic": "/ɪnˈvent/",
+    "examples": [
+      "Who invented the telephone? It was Alexander Graham Bell.",
+      "She wants to invent something new that helps many people."
+    ],
+    "level": "A2",
+    "topics": [
+      "science",
+      "technology"
+    ]
+  },
+  {
+    "id": 20131,
+    "word": "join",
+    "pos": "verb",
+    "phonetic": "/dʒɔɪn/",
+    "examples": [
+      "Would you like to join us for lunch at noon?",
+      "He joined the football club at his school last month."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships",
+      "sports"
+    ]
+  },
+  {
+    "id": 20132,
+    "word": "lend",
+    "pos": "verb",
+    "phonetic": "/lend/",
+    "examples": [
+      "Can you lend me your pen for a few minutes?",
+      "She lent me her umbrella because it was raining outside."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20133,
+    "word": "lift",
+    "pos": "verb",
+    "phonetic": "/lɪft/",
+    "examples": [
+      "This box is too heavy for me to lift alone.",
+      "He lifted the child up so she could see the parade."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20134,
+    "word": "miss",
+    "pos": "verb",
+    "phonetic": "/mɪs/",
+    "examples": [
+      "I miss my family when I am away from home.",
+      "If you miss the bus, you will have to walk instead."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20135,
+    "word": "own",
+    "pos": "verb",
+    "phonetic": "/əʊn/",
+    "examples": [
+      "She owns a small shop in the center of town.",
+      "I would love to own a house by the sea someday."
+    ],
+    "level": "A2",
+    "topics": [
+      "business"
+    ]
+  },
+  {
+    "id": 20136,
+    "word": "pass",
+    "pos": "verb",
+    "phonetic": "/pɑːs/",
+    "examples": [
+      "Can you pass me the salt on the table please?",
+      "She passed all her exams and was very happy about it."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20137,
+    "word": "pick",
+    "pos": "verb",
+    "phonetic": "/pɪk/",
+    "examples": [
+      "She picked some flowers from the garden for her mother.",
+      "You can pick any color you like for your new room."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20138,
+    "word": "pour",
+    "pos": "verb",
+    "phonetic": "/pɔːr/",
+    "examples": [
+      "She poured some milk into her tea and stirred it.",
+      "It started to pour with rain just as we left home."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20139,
+    "word": "pull",
+    "pos": "verb",
+    "phonetic": "/pʊl/",
+    "examples": [
+      "You need to pull the door to open it.",
+      "The child pulled her mother's hand to go to the park."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20140,
+    "word": "push",
+    "pos": "verb",
+    "phonetic": "/pʊʃ/",
+    "examples": [
+      "Push this button to start the coffee machine right now.",
+      "She pushed the door open and walked into the room."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20141,
+    "word": "record",
+    "pos": "verb",
+    "phonetic": "/rɪˈkɔːd/",
+    "examples": [
+      "She recorded a video of the concert on her phone.",
+      "The teacher asked us to record our voices in English."
+    ],
+    "level": "A2",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 20142,
+    "word": "remove",
+    "pos": "verb",
+    "phonetic": "/rɪˈmuːv/",
+    "examples": [
+      "Please remove your shoes before you enter the house.",
+      "She removed the old picture from the wall in her room."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20143,
+    "word": "repeat",
+    "pos": "verb",
+    "phonetic": "/rɪˈpiːt/",
+    "examples": [
+      "Could you repeat that please? I did not hear you.",
+      "The teacher asked the student to repeat the new word."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication",
+      "education"
+    ]
+  },
+  {
+    "id": 20144,
+    "word": "reply",
+    "pos": "verb",
+    "phonetic": "/rɪˈplaɪ/",
+    "examples": [
+      "She did not reply to my message all day yesterday.",
+      "He replied quickly that he would come to the party."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20145,
+    "word": "rest",
+    "pos": "verb",
+    "phonetic": "/rest/",
+    "examples": [
+      "You should rest at home if you feel sick today.",
+      "After the long walk, we sat down to rest our legs."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20146,
+    "word": "return",
+    "pos": "verb",
+    "phonetic": "/rɪˈtɜːn/",
+    "examples": [
+      "I need to return these books to the library today.",
+      "She returned home from work at six o'clock every evening."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20147,
+    "word": "ride",
+    "pos": "verb",
+    "phonetic": "/raɪd/",
+    "examples": [
+      "She rides her bicycle to school every morning at eight.",
+      "Would you like to ride the horse along the beach today?"
+    ],
+    "level": "A2",
+    "topics": [
+      "travel",
+      "sports"
+    ]
+  },
+  {
+    "id": 20148,
+    "word": "rise",
+    "pos": "verb",
+    "phonetic": "/raɪz/",
+    "examples": [
+      "The sun rises in the east every single morning.",
+      "Prices rise a little bit every year in this country."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20149,
+    "word": "rush",
+    "pos": "verb",
+    "phonetic": "/rʌʃ/",
+    "examples": [
+      "Do not rush, we have plenty of time to get there.",
+      "She rushed to the airport because her plane was leaving soon."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20150,
+    "word": "save",
+    "pos": "verb",
+    "phonetic": "/seɪv/",
+    "examples": [
+      "I am trying to save money for a new computer.",
+      "The doctor saved the man's life with a quick operation."
+    ],
+    "level": "A2",
+    "topics": [
+      "business"
+    ]
+  },
+  {
+    "id": 20151,
+    "word": "afraid",
+    "pos": "adjective",
+    "phonetic": "/əˈfreɪd/",
+    "examples": [
+      "She is afraid of the dark and keeps a light on.",
+      "Do not be afraid, the dog is very friendly."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20152,
+    "word": "alone",
+    "pos": "adjective",
+    "phonetic": "/əˈləʊn/",
+    "examples": [
+      "She lives alone in a small flat near the school.",
+      "I do not like eating alone, I prefer company."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20153,
+    "word": "angry",
+    "pos": "adjective",
+    "phonetic": "/ˈæŋɡri/",
+    "examples": [
+      "My mother was angry when I came home very late.",
+      "He got angry because someone took his seat at lunch."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20154,
+    "word": "awful",
+    "pos": "adjective",
+    "phonetic": "/ˈɔːfl/",
+    "examples": [
+      "The weather was awful today, it rained all day long.",
+      "The food at that restaurant was truly awful and cold."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20155,
+    "word": "boring",
+    "pos": "adjective",
+    "phonetic": "/ˈbɔːrɪŋ/",
+    "examples": [
+      "The film was so boring that I fell asleep watching.",
+      "I think math class is boring but my friend likes it."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20156,
+    "word": "brave",
+    "pos": "adjective",
+    "phonetic": "/breɪv/",
+    "examples": [
+      "The brave girl was not afraid of the big dog.",
+      "You were very brave to speak in front of everyone."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20157,
+    "word": "bright",
+    "pos": "adjective",
+    "phonetic": "/braɪt/",
+    "examples": [
+      "The sun was very bright and I needed my sunglasses.",
+      "She wore a bright yellow dress to the party today."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20158,
+    "word": "busy",
+    "pos": "adjective",
+    "phonetic": "/ˈbɪzi/",
+    "examples": [
+      "I am very busy at work this week with meetings.",
+      "The streets are always busy during the morning rush hour."
+    ],
+    "level": "A2",
+    "topics": [
+      "work"
+    ]
+  },
+  {
+    "id": 20159,
+    "word": "cheap",
+    "pos": "adjective",
+    "phonetic": "/tʃiːp/",
+    "examples": [
+      "This shop sells cheap clothes that look very nice.",
+      "Flying is often cheaper than taking the train in summer."
+    ],
+    "level": "A2",
+    "topics": [
+      "business"
+    ]
+  },
+  {
+    "id": 20160,
+    "word": "clever",
+    "pos": "adjective",
+    "phonetic": "/ˈklevər/",
+    "examples": [
+      "She is very clever and always gets top marks at school.",
+      "That was a clever idea to fix the broken chair."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20161,
+    "word": "crazy",
+    "pos": "adjective",
+    "phonetic": "/ˈkreɪzi/",
+    "examples": [
+      "That is a crazy idea, but it might actually work.",
+      "The fans went crazy when the team scored the winning goal."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20162,
+    "word": "curious",
+    "pos": "adjective",
+    "phonetic": "/ˈkjʊəriəs/",
+    "examples": [
+      "The curious child asked many questions about everything around her.",
+      "I am curious to know what is inside the big box."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20163,
+    "word": "dangerous",
+    "pos": "adjective",
+    "phonetic": "/ˈdeɪndʒərəs/",
+    "examples": [
+      "It is dangerous to swim in the river when it rains.",
+      "Driving too fast on a wet road is very dangerous."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20164,
+    "word": "delicious",
+    "pos": "adjective",
+    "phonetic": "/dɪˈlɪʃəs/",
+    "examples": [
+      "The cake she made for the party was really delicious.",
+      "This soup is delicious, can you give me the recipe?"
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20165,
+    "word": "different",
+    "pos": "adjective",
+    "phonetic": "/ˈdɪfrənt/",
+    "examples": [
+      "These two pictures look the same but they are different.",
+      "People from different countries have their own special food traditions."
+    ],
+    "level": "A2",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 20166,
+    "word": "difficult",
+    "pos": "adjective",
+    "phonetic": "/ˈdɪfɪkəlt/",
+    "examples": [
+      "The math test was very difficult for most of us.",
+      "Learning a new language can be difficult but also fun."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20167,
+    "word": "dirty",
+    "pos": "adjective",
+    "phonetic": "/ˈdɜːti/",
+    "examples": [
+      "Your hands are dirty, please wash them before eating dinner.",
+      "The children got dirty after playing outside in the mud."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20168,
+    "word": "excited",
+    "pos": "adjective",
+    "phonetic": "/ɪkˈsaɪtɪd/",
+    "examples": [
+      "The children are very excited about their holiday next week.",
+      "She was so excited to see her old friends again."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20169,
+    "word": "expensive",
+    "pos": "adjective",
+    "phonetic": "/ɪkˈspensɪv/",
+    "examples": [
+      "That restaurant is too expensive for us to eat at.",
+      "She bought an expensive watch as a gift for her husband."
+    ],
+    "level": "A2",
+    "topics": [
+      "business"
+    ]
+  },
+  {
+    "id": 20170,
+    "word": "famous",
+    "pos": "adjective",
+    "phonetic": "/ˈfeɪməs/",
+    "examples": [
+      "Paris is famous for the Eiffel Tower and good food.",
+      "He became famous after he won the singing competition."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts",
+      "society"
+    ]
+  },
+  {
+    "id": 20171,
+    "word": "foreign",
+    "pos": "adjective",
+    "phonetic": "/ˈfɒrɪn/",
+    "examples": [
+      "She speaks three foreign languages very well and fluently.",
+      "Many foreign tourists visit this city during the summer months."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20172,
+    "word": "fresh",
+    "pos": "adjective",
+    "phonetic": "/freʃ/",
+    "examples": [
+      "The bread is fresh from the bakery and smells wonderful.",
+      "We always buy fresh vegetables from the market on Saturday."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20173,
+    "word": "friendly",
+    "pos": "adjective",
+    "phonetic": "/ˈfrendli/",
+    "examples": [
+      "The people in this town are very friendly and helpful.",
+      "Our new teacher is really friendly and always smiles at us."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20174,
+    "word": "funny",
+    "pos": "adjective",
+    "phonetic": "/ˈfʌni/",
+    "examples": [
+      "He told a very funny joke and everyone laughed.",
+      "The funny movie made us laugh for the whole evening."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts",
+      "emotions"
+    ]
+  },
+  {
+    "id": 20175,
+    "word": "heavy",
+    "pos": "adjective",
+    "phonetic": "/ˈhevi/",
+    "examples": [
+      "This bag is too heavy for me to carry alone.",
+      "There was heavy rain all day so we stayed inside."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20176,
+    "word": "hungry",
+    "pos": "adjective",
+    "phonetic": "/ˈhʌŋɡri/",
+    "examples": [
+      "I am so hungry because I did not eat lunch today.",
+      "The hungry children ate all the food on the table."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20177,
+    "word": "international",
+    "pos": "adjective",
+    "phonetic": "/ˌɪntəˈnæʃnəl/",
+    "examples": [
+      "She works for an international company based in London.",
+      "The international airport is about thirty minutes from our hotel."
+    ],
+    "level": "A2",
+    "topics": [
+      "business",
+      "travel"
+    ]
+  },
+  {
+    "id": 20178,
+    "word": "kind",
+    "pos": "adjective",
+    "phonetic": "/kaɪnd/",
+    "examples": [
+      "Our neighbor is very kind and always helps everyone around.",
+      "It was very kind of you to bring me some food."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20179,
+    "word": "lazy",
+    "pos": "adjective",
+    "phonetic": "/ˈleɪzi/",
+    "examples": [
+      "He is too lazy to clean his room on Saturday mornings.",
+      "On Sundays, I have a lazy morning and stay in bed."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20180,
+    "word": "lonely",
+    "pos": "adjective",
+    "phonetic": "/ˈləʊnli/",
+    "examples": [
+      "She felt lonely when all her friends went on holiday.",
+      "The old man lives alone and sometimes feels very lonely."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20181,
+    "word": "loud",
+    "pos": "adjective",
+    "phonetic": "/laʊd/",
+    "examples": [
+      "The music was too loud and I could not hear you.",
+      "Please do not speak so loud in the library today."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20182,
+    "word": "lucky",
+    "pos": "adjective",
+    "phonetic": "/ˈlʌki/",
+    "examples": [
+      "She was lucky to find her lost phone in the park.",
+      "I feel very lucky to have such wonderful friends around me."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20183,
+    "word": "necessary",
+    "pos": "adjective",
+    "phonetic": "/ˈnesəsəri/",
+    "examples": [
+      "It is necessary to bring your passport when you travel.",
+      "Sleep is necessary for your body to stay healthy and strong."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20184,
+    "word": "nervous",
+    "pos": "adjective",
+    "phonetic": "/ˈnɜːvəs/",
+    "examples": [
+      "She always feels nervous before an important exam at school.",
+      "Do not be nervous, everything will be fine on your first day."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20185,
+    "word": "polite",
+    "pos": "adjective",
+    "phonetic": "/pəˈlaɪt/",
+    "examples": [
+      "It is polite to say please and thank you always.",
+      "The waiter was very polite and helped us choose our food."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication",
+      "relationships"
+    ]
+  },
+  {
+    "id": 20186,
+    "word": "poor",
+    "pos": "adjective",
+    "phonetic": "/pɔːr/",
+    "examples": [
+      "The poor family could not buy new clothes for winter.",
+      "He comes from a poor village but he works very hard."
+    ],
+    "level": "A2",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 20187,
+    "word": "possible",
+    "pos": "adjective",
+    "phonetic": "/ˈpɒsəbl/",
+    "examples": [
+      "Is it possible to change my seat on this flight?",
+      "We will finish as soon as possible, please wait a moment."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20188,
+    "word": "private",
+    "pos": "adjective",
+    "phonetic": "/ˈpraɪvɪt/",
+    "examples": [
+      "This is a private garden and you cannot come in.",
+      "She goes to a private school near the city center."
+    ],
+    "level": "A2",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 20189,
+    "word": "proud",
+    "pos": "adjective",
+    "phonetic": "/praʊd/",
+    "examples": [
+      "Her parents are very proud of her good school results.",
+      "I am proud of myself for finishing the whole race today."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20190,
+    "word": "safe",
+    "pos": "adjective",
+    "phonetic": "/seɪf/",
+    "examples": [
+      "Make sure the children are safe before you leave them.",
+      "This neighborhood is very safe and quiet at all times."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20191,
+    "word": "strange",
+    "pos": "adjective",
+    "phonetic": "/streɪndʒ/",
+    "examples": [
+      "I heard a strange noise coming from outside last night.",
+      "It feels strange to be in a new school for the first time."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20192,
+    "word": "already",
+    "pos": "adverb",
+    "phonetic": "/ɔːlˈredi/",
+    "examples": [
+      "I have already finished my homework for this evening.",
+      "She has already been to London three times this year."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20193,
+    "word": "almost",
+    "pos": "adverb",
+    "phonetic": "/ˈɔːlməʊst/",
+    "examples": [
+      "I have almost finished reading this very good book.",
+      "We are almost there, just five more minutes of walking."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20194,
+    "word": "easily",
+    "pos": "adverb",
+    "phonetic": "/ˈiːzɪli/",
+    "examples": [
+      "She can easily run five kilometers without stopping at all.",
+      "You can easily find the shop on the main street."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20195,
+    "word": "quickly",
+    "pos": "adverb",
+    "phonetic": "/ˈkwɪkli/",
+    "examples": [
+      "She ate her breakfast quickly and ran to catch the bus.",
+      "The fire spread quickly through the old wooden building in town."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20196,
+    "word": "quietly",
+    "pos": "adverb",
+    "phonetic": "/ˈkwaɪətli/",
+    "examples": [
+      "She quietly opened the door so she would not wake anyone.",
+      "The children sat quietly and listened to the teacher telling a story."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20197,
+    "word": "slowly",
+    "pos": "adverb",
+    "phonetic": "/ˈsləʊli/",
+    "examples": [
+      "Please speak slowly so I can understand your English better.",
+      "The old man walked slowly down the street with his dog."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20198,
+    "word": "suddenly",
+    "pos": "adverb",
+    "phonetic": "/ˈsʌdnli/",
+    "examples": [
+      "Suddenly the lights went off and the room was very dark.",
+      "The cat suddenly jumped off the table and ran outside quickly."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20199,
+    "word": "together",
+    "pos": "adverb",
+    "phonetic": "/təˈɡeðər/",
+    "examples": [
+      "We always eat dinner together as a family every evening.",
+      "The two friends walked to school together every single morning."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20200,
+    "word": "probably",
+    "pos": "adverb",
+    "phonetic": "/ˈprɒbəbli/",
+    "examples": [
+      "It will probably rain tomorrow so bring your umbrella with you.",
+      "She is probably the best singer in our whole school."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20201,
+    "word": "umbrella",
+    "pos": "noun",
+    "phonetic": "/ʌmˈbrelə/",
+    "examples": [
+      "Take your umbrella because it will rain today.",
+      "She left her umbrella on the bus by mistake."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20202,
+    "word": "towel",
+    "pos": "noun",
+    "phonetic": "/ˈtaʊəl/",
+    "examples": [
+      "I need a clean towel after my shower.",
+      "She dried her hands with a small towel."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20203,
+    "word": "stairs",
+    "pos": "noun",
+    "phonetic": "/steəz/",
+    "examples": [
+      "We walked up the stairs to the second floor.",
+      "Be careful on the stairs when they are wet."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20204,
+    "word": "wheel",
+    "pos": "noun",
+    "phonetic": "/wiːl/",
+    "examples": [
+      "The front wheel of my bike is broken.",
+      "A car has four wheels and a steering wheel."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life",
+      "travel"
+    ]
+  },
+  {
+    "id": 20205,
+    "word": "candle",
+    "pos": "noun",
+    "phonetic": "/ˈkændl/",
+    "examples": [
+      "She lit a candle when the power went out.",
+      "There were candles on the birthday cake."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20206,
+    "word": "bucket",
+    "pos": "noun",
+    "phonetic": "/ˈbʌkɪt/",
+    "examples": [
+      "He filled the bucket with water from the tap.",
+      "The children played with a bucket on the beach."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20207,
+    "word": "shelf",
+    "pos": "noun",
+    "phonetic": "/ʃelf/",
+    "examples": [
+      "Please put the books back on the shelf.",
+      "The top shelf is too high for me to reach."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20208,
+    "word": "drawer",
+    "pos": "noun",
+    "phonetic": "/drɔːr/",
+    "examples": [
+      "She keeps her socks in the top drawer.",
+      "The drawer is full so I cannot close it."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20209,
+    "word": "stomach",
+    "pos": "noun",
+    "phonetic": "/ˈstʌmək/",
+    "examples": [
+      "My stomach hurts because I ate too much.",
+      "You should not swim on a full stomach."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20210,
+    "word": "fever",
+    "pos": "noun",
+    "phonetic": "/ˈfiːvər/",
+    "examples": [
+      "She stayed in bed because she had a fever.",
+      "The doctor said his fever would go down soon."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20211,
+    "word": "medicine",
+    "pos": "noun",
+    "phonetic": "/ˈmedsɪn/",
+    "examples": [
+      "Take this medicine three times a day after meals.",
+      "The medicine made her feel better very quickly."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20212,
+    "word": "headache",
+    "pos": "noun",
+    "phonetic": "/ˈhedeɪk/",
+    "examples": [
+      "I have a bad headache and need to rest.",
+      "Loud music gives me a terrible headache."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20213,
+    "word": "shoulder",
+    "pos": "noun",
+    "phonetic": "/ˈʃəʊldər/",
+    "examples": [
+      "He carried the bag over his shoulder.",
+      "My left shoulder hurts after playing tennis."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20214,
+    "word": "throat",
+    "pos": "noun",
+    "phonetic": "/θrəʊt/",
+    "examples": [
+      "I have a sore throat and cannot speak well.",
+      "She drank warm tea to help her sore throat."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20215,
+    "word": "patient",
+    "pos": "noun",
+    "phonetic": "/ˈpeɪʃnt/",
+    "examples": [
+      "The doctor sees about twenty patients every day.",
+      "The patient waited in the hospital for two hours."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20216,
+    "word": "bandage",
+    "pos": "noun",
+    "phonetic": "/ˈbændɪdʒ/",
+    "examples": [
+      "The nurse put a bandage on his injured arm.",
+      "She wrapped a bandage around her sore knee."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20217,
+    "word": "passenger",
+    "pos": "noun",
+    "phonetic": "/ˈpæsɪndʒər/",
+    "examples": [
+      "The bus can carry fifty passengers at one time.",
+      "All passengers must show their tickets before boarding."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20218,
+    "word": "suitcase",
+    "pos": "noun",
+    "phonetic": "/ˈsuːtkeɪs/",
+    "examples": [
+      "She packed her suitcase the night before the trip.",
+      "My suitcase was too heavy to carry up the stairs."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20219,
+    "word": "harbour",
+    "pos": "noun",
+    "phonetic": "/ˈhɑːbər/",
+    "examples": [
+      "The fishing boats came back to the harbour at sunset.",
+      "We watched the ships from the harbour wall."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20220,
+    "word": "tourist",
+    "pos": "noun",
+    "phonetic": "/ˈtʊərɪst/",
+    "examples": [
+      "Many tourists visit this city in the summer.",
+      "The tourist asked for directions to the museum."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20221,
+    "word": "guide",
+    "pos": "noun",
+    "phonetic": "/ɡaɪd/",
+    "examples": [
+      "The tour guide showed us around the old castle.",
+      "This book is a useful guide to the city."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20222,
+    "word": "pepper",
+    "pos": "noun",
+    "phonetic": "/ˈpepər/",
+    "examples": [
+      "Would you like some salt and pepper on your food?",
+      "She added red pepper to make the soup spicy."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20223,
+    "word": "sauce",
+    "pos": "noun",
+    "phonetic": "/sɔːs/",
+    "examples": [
+      "This pasta tastes better with tomato sauce.",
+      "He put too much sauce on his meat."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20224,
+    "word": "vinegar",
+    "pos": "noun",
+    "phonetic": "/ˈvɪnɪɡər/",
+    "examples": [
+      "She put oil and vinegar on her salad.",
+      "Vinegar has a very strong and sour taste."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20225,
+    "word": "oven",
+    "pos": "noun",
+    "phonetic": "/ˈʌvn/",
+    "examples": [
+      "She put the cake in the oven to bake.",
+      "The oven needs to be hot before you cook."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20226,
+    "word": "fridge",
+    "pos": "noun",
+    "phonetic": "/frɪdʒ/",
+    "examples": [
+      "Put the milk back in the fridge after you use it.",
+      "There is some cheese in the fridge for lunch."
+    ],
+    "level": "A2",
+    "topics": [
+      "food",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20227,
+    "word": "score",
+    "pos": "noun",
+    "phonetic": "/skɔːr/",
+    "examples": [
+      "The final score of the game was three to one.",
+      "She got a high score on her English test."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 20228,
+    "word": "race",
+    "pos": "noun",
+    "phonetic": "/reɪs/",
+    "examples": [
+      "She won the race and got a gold medal.",
+      "The children had a running race in the park."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 20229,
+    "word": "net",
+    "pos": "noun",
+    "phonetic": "/net/",
+    "examples": [
+      "The ball went over the net and hit the ground.",
+      "The fisherman used a large net to catch fish."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 20230,
+    "word": "fan",
+    "pos": "noun",
+    "phonetic": "/fæn/",
+    "examples": [
+      "He is a big fan of the local football team.",
+      "The fans cheered loudly when their team scored."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 20231,
+    "word": "bat",
+    "pos": "noun",
+    "phonetic": "/bæt/",
+    "examples": [
+      "He hit the ball hard with the cricket bat.",
+      "You need a bat and a ball to play baseball."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 20232,
+    "word": "gym",
+    "pos": "noun",
+    "phonetic": "/dʒɪm/",
+    "examples": [
+      "He goes to the gym every morning before work.",
+      "The school gym is used for basketball and volleyball."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports",
+      "health"
+    ]
+  },
+  {
+    "id": 20233,
+    "word": "helmet",
+    "pos": "noun",
+    "phonetic": "/ˈhelmɪt/",
+    "examples": [
+      "You must wear a helmet when you ride a bicycle.",
+      "The helmet protected his head when he fell off."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20234,
+    "word": "textbook",
+    "pos": "noun",
+    "phonetic": "/ˈtekstbʊk/",
+    "examples": [
+      "Open your textbook to page twenty-five please.",
+      "This textbook has many pictures and examples."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20235,
+    "word": "uniform",
+    "pos": "noun",
+    "phonetic": "/ˈjuːnɪfɔːm/",
+    "examples": [
+      "Students at this school must wear a uniform.",
+      "She washed her school uniform every weekend."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20236,
+    "word": "grade",
+    "pos": "noun",
+    "phonetic": "/ɡreɪd/",
+    "examples": [
+      "She got a very good grade on her math test.",
+      "Students in grade five are about ten years old."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20237,
+    "word": "playground",
+    "pos": "noun",
+    "phonetic": "/ˈpleɪɡraʊnd/",
+    "examples": [
+      "The children played on the swings in the playground.",
+      "The school playground is closed when it rains."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20238,
+    "word": "chalk",
+    "pos": "noun",
+    "phonetic": "/tʃɔːk/",
+    "examples": [
+      "The teacher wrote the answer on the board with chalk.",
+      "She drew pictures on the ground with coloured chalk."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20239,
+    "word": "dictionary",
+    "pos": "noun",
+    "phonetic": "/ˈdɪkʃənəri/",
+    "examples": [
+      "Use a dictionary to find the meaning of new words.",
+      "She bought an English dictionary for her class."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20240,
+    "word": "crowd",
+    "pos": "noun",
+    "phonetic": "/kraʊd/",
+    "examples": [
+      "A large crowd of people waited outside the shop.",
+      "It is hard to walk through the crowd at the market."
+    ],
+    "level": "A2",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 20241,
+    "word": "flag",
+    "pos": "noun",
+    "phonetic": "/flæɡ/",
+    "examples": [
+      "Every country has its own flag with special colours.",
+      "They put up the flag at the start of the game."
+    ],
+    "level": "A2",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 20242,
+    "word": "tradition",
+    "pos": "noun",
+    "phonetic": "/trəˈdɪʃn/",
+    "examples": [
+      "It is a tradition to eat cake on your birthday.",
+      "This festival is an old tradition in our town."
+    ],
+    "level": "A2",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 20243,
+    "word": "ceremony",
+    "pos": "noun",
+    "phonetic": "/ˈserəməni/",
+    "examples": [
+      "The wedding ceremony was beautiful and very short.",
+      "We attended the opening ceremony of the new school."
+    ],
+    "level": "A2",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 20244,
+    "word": "religion",
+    "pos": "noun",
+    "phonetic": "/rɪˈlɪdʒən/",
+    "examples": [
+      "There are many different religions around the world.",
+      "People should respect each other's religion and beliefs."
+    ],
+    "level": "A2",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 20245,
+    "word": "president",
+    "pos": "noun",
+    "phonetic": "/ˈprezɪdənt/",
+    "examples": [
+      "The president gave a speech on television last night.",
+      "She wants to become the president of her country."
+    ],
+    "level": "A2",
+    "topics": [
+      "politics"
+    ]
+  },
+  {
+    "id": 20246,
+    "word": "tax",
+    "pos": "noun",
+    "phonetic": "/tæks/",
+    "examples": [
+      "Everyone must pay tax on the money they earn.",
+      "The price in the shop does not include tax."
+    ],
+    "level": "A2",
+    "topics": [
+      "politics",
+      "business"
+    ]
+  },
+  {
+    "id": 20247,
+    "word": "mayor",
+    "pos": "noun",
+    "phonetic": "/meər/",
+    "examples": [
+      "The mayor opened the new library in the town centre.",
+      "People voted for a new mayor last month."
+    ],
+    "level": "A2",
+    "topics": [
+      "politics"
+    ]
+  },
+  {
+    "id": 20248,
+    "word": "police",
+    "pos": "noun",
+    "phonetic": "/pəˈliːs/",
+    "examples": [
+      "She called the police when she heard a strange noise.",
+      "The police officer helped the lost child find his mother."
+    ],
+    "level": "A2",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 20249,
+    "word": "prison",
+    "pos": "noun",
+    "phonetic": "/ˈprɪzn/",
+    "examples": [
+      "He was sent to prison for stealing a car.",
+      "The old prison is now a museum for visitors."
+    ],
+    "level": "A2",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 20250,
+    "word": "thief",
+    "pos": "noun",
+    "phonetic": "/θiːf/",
+    "examples": [
+      "The thief stole her bag and ran away quickly.",
+      "The police caught the thief near the train station."
+    ],
+    "level": "A2",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 20251,
+    "word": "punishment",
+    "pos": "noun",
+    "phonetic": "/ˈpʌnɪʃmənt/",
+    "examples": [
+      "The punishment for cheating is to fail the test.",
+      "He received a fair punishment for breaking the rule."
+    ],
+    "level": "A2",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 20252,
+    "word": "judge",
+    "pos": "noun",
+    "phonetic": "/dʒʌdʒ/",
+    "examples": [
+      "The judge decided the man was not guilty.",
+      "She wants to become a judge when she finishes law school."
+    ],
+    "level": "A2",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 20253,
+    "word": "robbery",
+    "pos": "noun",
+    "phonetic": "/ˈrɒbəri/",
+    "examples": [
+      "There was a robbery at the bank last night.",
+      "The police are looking for the man after the robbery."
+    ],
+    "level": "A2",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 20254,
+    "word": "planet",
+    "pos": "noun",
+    "phonetic": "/ˈplænɪt/",
+    "examples": [
+      "Earth is the third planet from the sun.",
+      "Scientists want to learn more about other planets."
+    ],
+    "level": "A2",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 20255,
+    "word": "space",
+    "pos": "noun",
+    "phonetic": "/speɪs/",
+    "examples": [
+      "He dreams of travelling to space one day.",
+      "There is not enough space in this room for everyone."
+    ],
+    "level": "A2",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 20256,
+    "word": "star",
+    "pos": "noun",
+    "phonetic": "/stɑːr/",
+    "examples": [
+      "We could see thousands of stars in the sky.",
+      "The north star helps people find their way at night."
+    ],
+    "level": "A2",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 20257,
+    "word": "electricity",
+    "pos": "noun",
+    "phonetic": "/ɪˌlekˈtrɪsəti/",
+    "examples": [
+      "We cannot use the computer without electricity.",
+      "The storm cut off the electricity for three hours."
+    ],
+    "level": "A2",
+    "topics": [
+      "science",
+      "technology"
+    ]
+  },
+  {
+    "id": 20258,
+    "word": "temperature",
+    "pos": "noun",
+    "phonetic": "/ˈtemprətʃər/",
+    "examples": [
+      "The temperature today is thirty degrees.",
+      "Check the temperature of the water before you swim."
+    ],
+    "level": "A2",
+    "topics": [
+      "science",
+      "environment"
+    ]
+  },
+  {
+    "id": 20259,
+    "word": "magnet",
+    "pos": "noun",
+    "phonetic": "/ˈmæɡnɪt/",
+    "examples": [
+      "A magnet can pick up small pieces of metal.",
+      "She put a magnet on the fridge to hold her photo."
+    ],
+    "level": "A2",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 20260,
+    "word": "painting",
+    "pos": "noun",
+    "phonetic": "/ˈpeɪntɪŋ/",
+    "examples": [
+      "There is a beautiful painting of the sea on the wall.",
+      "She is taking a painting class on Saturday mornings."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 20261,
+    "word": "poem",
+    "pos": "noun",
+    "phonetic": "/ˈpəʊɪm/",
+    "examples": [
+      "She wrote a short poem about her cat.",
+      "We had to learn a poem by heart for class."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 20262,
+    "word": "concert",
+    "pos": "noun",
+    "phonetic": "/ˈkɒnsət/",
+    "examples": [
+      "We went to a rock concert last Saturday night.",
+      "The concert in the park was free for everyone."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 20263,
+    "word": "stage",
+    "pos": "noun",
+    "phonetic": "/steɪdʒ/",
+    "examples": [
+      "The singer walked onto the stage and waved.",
+      "The actors stood on the stage and bowed."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 20264,
+    "word": "instrument",
+    "pos": "noun",
+    "phonetic": "/ˈɪnstrəmənt/",
+    "examples": [
+      "The guitar is my favourite musical instrument.",
+      "She can play three different instruments very well."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 20265,
+    "word": "statue",
+    "pos": "noun",
+    "phonetic": "/ˈstætʃuː/",
+    "examples": [
+      "There is a big statue in the middle of the square.",
+      "The statue was made of stone many years ago."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 20266,
+    "word": "costume",
+    "pos": "noun",
+    "phonetic": "/ˈkɒstjuːm/",
+    "examples": [
+      "She wore a beautiful costume in the school play.",
+      "The children dressed up in funny costumes for the party."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 20267,
+    "word": "screen",
+    "pos": "noun",
+    "phonetic": "/skriːn/",
+    "examples": [
+      "Do not sit too close to the computer screen.",
+      "The phone has a large screen that is easy to read."
+    ],
+    "level": "A2",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 20268,
+    "word": "printer",
+    "pos": "noun",
+    "phonetic": "/ˈprɪntər/",
+    "examples": [
+      "The printer needs more paper to print the document.",
+      "We bought a new printer for the home office."
+    ],
+    "level": "A2",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 20269,
+    "word": "camera",
+    "pos": "noun",
+    "phonetic": "/ˈkæmərə/",
+    "examples": [
+      "She took photos of the sunset with her camera.",
+      "This camera can take very clear pictures at night."
+    ],
+    "level": "A2",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 20270,
+    "word": "signal",
+    "pos": "noun",
+    "phonetic": "/ˈsɪɡnəl/",
+    "examples": [
+      "There is no phone signal in the mountains.",
+      "Wait for the green signal before you cross the road."
+    ],
+    "level": "A2",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 20271,
+    "word": "cable",
+    "pos": "noun",
+    "phonetic": "/ˈkeɪbl/",
+    "examples": [
+      "I need a cable to connect my phone to the computer.",
+      "The television cable goes behind the wall."
+    ],
+    "level": "A2",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 20272,
+    "word": "storm",
+    "pos": "noun",
+    "phonetic": "/stɔːm/",
+    "examples": [
+      "A big storm is coming so please stay inside.",
+      "The storm last night broke many tree branches."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20273,
+    "word": "desert",
+    "pos": "noun",
+    "phonetic": "/ˈdezət/",
+    "examples": [
+      "It is very hot during the day in the desert.",
+      "Not many plants can grow in the dry desert."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20274,
+    "word": "wave",
+    "pos": "noun",
+    "phonetic": "/weɪv/",
+    "examples": [
+      "The waves at the beach were very big today.",
+      "She gave a friendly wave as she left the house."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20275,
+    "word": "sunset",
+    "pos": "noun",
+    "phonetic": "/ˈsʌnset/",
+    "examples": [
+      "We watched the sunset from the top of the hill.",
+      "The sunset painted the sky orange and pink."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20276,
+    "word": "rubbish",
+    "pos": "noun",
+    "phonetic": "/ˈrʌbɪʃ/",
+    "examples": [
+      "Please put your rubbish in the bin.",
+      "There was too much rubbish on the beach after the party."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20277,
+    "word": "rainbow",
+    "pos": "noun",
+    "phonetic": "/ˈreɪnbəʊ/",
+    "examples": [
+      "We saw a beautiful rainbow after the rain stopped.",
+      "A rainbow has seven different colours in it."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20278,
+    "word": "partner",
+    "pos": "noun",
+    "phonetic": "/ˈpɑːtnər/",
+    "examples": [
+      "She and her partner have been together for five years.",
+      "You will work with a partner on this class project."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20279,
+    "word": "stranger",
+    "pos": "noun",
+    "phonetic": "/ˈstreɪndʒər/",
+    "examples": [
+      "Do not talk to strangers when you are alone.",
+      "A kind stranger helped her find the right bus."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20280,
+    "word": "happiness",
+    "pos": "noun",
+    "phonetic": "/ˈhæpinəs/",
+    "examples": [
+      "The children were full of happiness on Christmas morning.",
+      "Good friends are important for true happiness."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20281,
+    "word": "surprise",
+    "pos": "noun",
+    "phonetic": "/sərˈpraɪz/",
+    "examples": [
+      "The birthday party was a big surprise for her.",
+      "What a nice surprise to see you here today."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20282,
+    "word": "anger",
+    "pos": "noun",
+    "phonetic": "/ˈæŋɡər/",
+    "examples": [
+      "She could not hide her anger when he lied.",
+      "He spoke with anger because the plan had failed."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20283,
+    "word": "accent",
+    "pos": "noun",
+    "phonetic": "/ˈæksent/",
+    "examples": [
+      "She speaks English with a French accent.",
+      "People from different places have different accents."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20284,
+    "word": "manager",
+    "pos": "noun",
+    "phonetic": "/ˈmænɪdʒər/",
+    "examples": [
+      "The manager of the shop is very friendly.",
+      "She asked to speak to the manager about the problem."
+    ],
+    "level": "A2",
+    "topics": [
+      "work",
+      "business"
+    ]
+  },
+  {
+    "id": 20285,
+    "word": "factory",
+    "pos": "noun",
+    "phonetic": "/ˈfæktəri/",
+    "examples": [
+      "He works in a car factory near the town.",
+      "The factory makes shoes and sends them to many countries."
+    ],
+    "level": "A2",
+    "topics": [
+      "work",
+      "business"
+    ]
+  },
+  {
+    "id": 20286,
+    "word": "wrap",
+    "pos": "verb",
+    "phonetic": "/ræp/",
+    "examples": [
+      "She wrapped the present in beautiful red paper.",
+      "Please wrap the glass carefully so it does not break."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20287,
+    "word": "sweep",
+    "pos": "verb",
+    "phonetic": "/swiːp/",
+    "examples": [
+      "He sweeps the kitchen floor every morning.",
+      "Please sweep the leaves off the path before it rains."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20288,
+    "word": "cough",
+    "pos": "verb",
+    "phonetic": "/kɒf/",
+    "examples": [
+      "He could not stop coughing during the night.",
+      "Cover your mouth when you cough near other people."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20289,
+    "word": "sneeze",
+    "pos": "verb",
+    "phonetic": "/sniːz/",
+    "examples": [
+      "The dust in the room made me sneeze.",
+      "She sneezes a lot in spring because of the flowers."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20290,
+    "word": "bleed",
+    "pos": "verb",
+    "phonetic": "/bliːd/",
+    "examples": [
+      "His finger started to bleed after he cut it.",
+      "Put a bandage on it to stop it from bleeding."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20291,
+    "word": "heal",
+    "pos": "verb",
+    "phonetic": "/hiːl/",
+    "examples": [
+      "The cut on her hand took a week to heal.",
+      "Rest and sleep help your body to heal faster."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20292,
+    "word": "kick",
+    "pos": "verb",
+    "phonetic": "/kɪk/",
+    "examples": [
+      "He kicked the ball into the goal.",
+      "Do not kick the table with your feet."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 20293,
+    "word": "throw",
+    "pos": "verb",
+    "phonetic": "/θrəʊ/",
+    "examples": [
+      "She threw the ball to her friend across the park.",
+      "Do not throw rubbish on the ground."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 20294,
+    "word": "catch",
+    "pos": "verb",
+    "phonetic": "/kætʃ/",
+    "examples": [
+      "He tried to catch the ball but he missed it.",
+      "We need to catch the last bus home tonight."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20295,
+    "word": "swim",
+    "pos": "verb",
+    "phonetic": "/swɪm/",
+    "examples": [
+      "She learned to swim when she was five years old.",
+      "We went to the lake to swim on the hot day."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 20296,
+    "word": "compete",
+    "pos": "verb",
+    "phonetic": "/kəmˈpiːt/",
+    "examples": [
+      "She will compete in the swimming race next week.",
+      "Ten teams are going to compete for the prize."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 20297,
+    "word": "shout",
+    "pos": "verb",
+    "phonetic": "/ʃaʊt/",
+    "examples": [
+      "Please do not shout in the library.",
+      "She shouted for help when she saw the fire."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20298,
+    "word": "whisper",
+    "pos": "verb",
+    "phonetic": "/ˈwɪspər/",
+    "examples": [
+      "She whispered the answer so nobody else could hear.",
+      "He whispered a secret into his friend's ear."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20299,
+    "word": "apologise",
+    "pos": "verb",
+    "phonetic": "/əˈpɒlədʒaɪz/",
+    "examples": [
+      "He apologised for being late to the meeting.",
+      "You should apologise when you make a mistake."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20300,
+    "word": "greet",
+    "pos": "verb",
+    "phonetic": "/ɡriːt/",
+    "examples": [
+      "She greeted us with a big smile at the door.",
+      "In Japan people greet each other with a bow."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20301,
+    "word": "nod",
+    "pos": "verb",
+    "phonetic": "/nɒd/",
+    "examples": [
+      "He nodded his head to show he understood.",
+      "She asked if I was ready and I nodded yes."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20302,
+    "word": "pronounce",
+    "pos": "verb",
+    "phonetic": "/prəˈnaʊns/",
+    "examples": [
+      "How do you pronounce this word in English?",
+      "She finds it hard to pronounce some French words."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication",
+      "education"
+    ]
+  },
+  {
+    "id": 20303,
+    "word": "laugh",
+    "pos": "verb",
+    "phonetic": "/lɑːf/",
+    "examples": [
+      "The funny film made everyone laugh out loud.",
+      "She laughed when she heard the joke."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20304,
+    "word": "smile",
+    "pos": "verb",
+    "phonetic": "/smaɪl/",
+    "examples": [
+      "The baby smiled when she saw her mother.",
+      "He always smiles and says good morning to everyone."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20305,
+    "word": "worry",
+    "pos": "verb",
+    "phonetic": "/ˈwʌri/",
+    "examples": [
+      "Do not worry about the exam, you will do well.",
+      "Her parents worry when she comes home late."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20306,
+    "word": "trust",
+    "pos": "verb",
+    "phonetic": "/trʌst/",
+    "examples": [
+      "I trust my best friend with all my secrets.",
+      "You can trust him because he always tells the truth."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions",
+      "relationships"
+    ]
+  },
+  {
+    "id": 20307,
+    "word": "annoy",
+    "pos": "verb",
+    "phonetic": "/əˈnɔɪ/",
+    "examples": [
+      "Loud music from the neighbours really annoys me.",
+      "It annoys her when people are late for meetings."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20308,
+    "word": "hire",
+    "pos": "verb",
+    "phonetic": "/ˈhaɪər/",
+    "examples": [
+      "The company wants to hire ten new workers.",
+      "She was hired for the job after her first interview."
+    ],
+    "level": "A2",
+    "topics": [
+      "work",
+      "business"
+    ]
+  },
+  {
+    "id": 20309,
+    "word": "quit",
+    "pos": "verb",
+    "phonetic": "/kwɪt/",
+    "examples": [
+      "He quit his job and moved to another city.",
+      "She does not want to quit even though work is hard."
+    ],
+    "level": "A2",
+    "topics": [
+      "work"
+    ]
+  },
+  {
+    "id": 20310,
+    "word": "print",
+    "pos": "verb",
+    "phonetic": "/prɪnt/",
+    "examples": [
+      "Can you print this document for me please?",
+      "She printed fifty copies of the report for the meeting."
+    ],
+    "level": "A2",
+    "topics": [
+      "work",
+      "technology"
+    ]
+  },
+  {
+    "id": 20311,
+    "word": "spell",
+    "pos": "verb",
+    "phonetic": "/spel/",
+    "examples": [
+      "Can you spell your name for me please?",
+      "She learned to spell new words every week."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20312,
+    "word": "memorise",
+    "pos": "verb",
+    "phonetic": "/ˈmeməraɪz/",
+    "examples": [
+      "I need to memorise these words for the test.",
+      "He memorised the poem and said it to the class."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20313,
+    "word": "revise",
+    "pos": "verb",
+    "phonetic": "/rɪˈvaɪz/",
+    "examples": [
+      "She revised all night before the big exam.",
+      "You should revise your notes before the test on Monday."
+    ],
+    "level": "A2",
+    "topics": [
+      "education"
+    ]
+  },
+  {
+    "id": 20314,
+    "word": "pollute",
+    "pos": "verb",
+    "phonetic": "/pəˈluːt/",
+    "examples": [
+      "Cars and factories pollute the air in big cities.",
+      "We must not pollute the rivers with rubbish."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20315,
+    "word": "plant",
+    "pos": "verb",
+    "phonetic": "/plɑːnt/",
+    "examples": [
+      "We planted some flowers in the garden last spring.",
+      "The school asked students to plant a tree each year."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20316,
+    "word": "plug",
+    "pos": "verb",
+    "phonetic": "/plʌɡ/",
+    "examples": [
+      "Please plug in the lamp so we can have some light.",
+      "She plugged her phone into the wall to get power."
+    ],
+    "level": "A2",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 20317,
+    "word": "delete",
+    "pos": "verb",
+    "phonetic": "/dɪˈliːt/",
+    "examples": [
+      "She deleted the old photos from her phone.",
+      "Be careful not to delete important files by mistake."
+    ],
+    "level": "A2",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 20318,
+    "word": "steal",
+    "pos": "verb",
+    "phonetic": "/stiːl/",
+    "examples": [
+      "Someone stole my bicycle from outside the shop.",
+      "It is wrong to steal things that belong to others."
+    ],
+    "level": "A2",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 20319,
+    "word": "punish",
+    "pos": "verb",
+    "phonetic": "/ˈpʌnɪʃ/",
+    "examples": [
+      "The teacher punished him for not doing his homework.",
+      "Parents should not punish children too harshly."
+    ],
+    "level": "A2",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 20320,
+    "word": "obey",
+    "pos": "verb",
+    "phonetic": "/əˈbeɪ/",
+    "examples": [
+      "You must obey the rules at school.",
+      "The dog was trained to obey simple commands."
+    ],
+    "level": "A2",
+    "topics": [
+      "law"
+    ]
+  },
+  {
+    "id": 20321,
+    "word": "measure",
+    "pos": "verb",
+    "phonetic": "/ˈmeʒər/",
+    "examples": [
+      "She measured the room before buying the new table.",
+      "The nurse measured his height and weight."
+    ],
+    "level": "A2",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 20322,
+    "word": "weigh",
+    "pos": "verb",
+    "phonetic": "/weɪ/",
+    "examples": [
+      "The doctor asked her to step on the scale to weigh herself.",
+      "This bag of sugar weighs about one kilogram."
+    ],
+    "level": "A2",
+    "topics": [
+      "science",
+      "health"
+    ]
+  },
+  {
+    "id": 20323,
+    "word": "board",
+    "pos": "verb",
+    "phonetic": "/bɔːd/",
+    "examples": [
+      "Passengers can board the plane at gate number five.",
+      "We boarded the train just before it left the station."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20324,
+    "word": "clap",
+    "pos": "verb",
+    "phonetic": "/klæp/",
+    "examples": [
+      "The audience clapped when the singer finished her song.",
+      "Everyone clapped their hands along with the music."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 20325,
+    "word": "paint",
+    "pos": "verb",
+    "phonetic": "/peɪnt/",
+    "examples": [
+      "He painted a picture of his house for art class.",
+      "She painted the bedroom walls a light blue colour."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 20326,
+    "word": "swap",
+    "pos": "verb",
+    "phonetic": "/swɒp/",
+    "examples": [
+      "Can I swap seats with you on the bus?",
+      "The children like to swap cards with their friends."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20327,
+    "word": "scream",
+    "pos": "verb",
+    "phonetic": "/skriːm/",
+    "examples": [
+      "She screamed when she saw the big spider.",
+      "The children screamed with excitement on the ride."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication",
+      "emotions"
+    ]
+  },
+  {
+    "id": 20328,
+    "word": "wipe",
+    "pos": "verb",
+    "phonetic": "/waɪp/",
+    "examples": [
+      "She wiped the table clean after dinner.",
+      "He wiped the rain off his face with his hand."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20329,
+    "word": "pray",
+    "pos": "verb",
+    "phonetic": "/preɪ/",
+    "examples": [
+      "She prays every morning before she starts her day.",
+      "People go to the church to pray on Sundays."
+    ],
+    "level": "A2",
+    "topics": [
+      "society"
+    ]
+  },
+  {
+    "id": 20330,
+    "word": "dig",
+    "pos": "verb",
+    "phonetic": "/dɪɡ/",
+    "examples": [
+      "The dog likes to dig holes in the garden.",
+      "They dug a big hole to plant the new tree."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20331,
+    "word": "waste",
+    "pos": "verb",
+    "phonetic": "/weɪst/",
+    "examples": [
+      "Do not waste water when you brush your teeth.",
+      "She does not like to waste food so she eats everything."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20332,
+    "word": "taste",
+    "pos": "verb",
+    "phonetic": "/teɪst/",
+    "examples": [
+      "This soup tastes delicious with a little salt.",
+      "Would you like to taste the cake before I add more sugar?"
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20333,
+    "word": "slice",
+    "pos": "verb",
+    "phonetic": "/slaɪs/",
+    "examples": [
+      "She sliced the bread into thin pieces for the sandwich.",
+      "He sliced the tomato and put it on the plate."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20334,
+    "word": "chew",
+    "pos": "verb",
+    "phonetic": "/tʃuː/",
+    "examples": [
+      "You should chew your food well before you swallow.",
+      "The dog was chewing on a large bone in the garden."
+    ],
+    "level": "A2",
+    "topics": [
+      "food",
+      "health"
+    ]
+  },
+  {
+    "id": 20335,
+    "word": "bite",
+    "pos": "verb",
+    "phonetic": "/baɪt/",
+    "examples": [
+      "She bit into the apple and it was very sweet.",
+      "Be careful because that dog might bite you."
+    ],
+    "level": "A2",
+    "topics": [
+      "food",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20336,
+    "word": "fry",
+    "pos": "verb",
+    "phonetic": "/fraɪ/",
+    "examples": [
+      "She fried the eggs in a pan for breakfast.",
+      "You can fry the fish in a little oil until it is brown."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20337,
+    "word": "reserve",
+    "pos": "verb",
+    "phonetic": "/rɪˈzɜːv/",
+    "examples": [
+      "I reserved a table for two at the restaurant.",
+      "You can reserve tickets online before the concert."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20338,
+    "word": "shake",
+    "pos": "verb",
+    "phonetic": "/ʃeɪk/",
+    "examples": [
+      "He shook my hand when we met for the first time.",
+      "The earthquake made the whole building shake."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20339,
+    "word": "yell",
+    "pos": "verb",
+    "phonetic": "/jel/",
+    "examples": [
+      "He yelled across the field to get his friend's attention.",
+      "The teacher told the children not to yell in class."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20340,
+    "word": "point",
+    "pos": "verb",
+    "phonetic": "/pɔɪnt/",
+    "examples": [
+      "He pointed at the map to show where we are.",
+      "It is rude to point at people with your finger."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20341,
+    "word": "rub",
+    "pos": "verb",
+    "phonetic": "/rʌb/",
+    "examples": [
+      "She rubbed her eyes because she was very tired.",
+      "He rubbed the dirt off his shoes with a cloth."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20342,
+    "word": "scratch",
+    "pos": "verb",
+    "phonetic": "/skrætʃ/",
+    "examples": [
+      "The cat scratched the sofa with its claws.",
+      "Do not scratch the insect bite or it will get worse."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life",
+      "health"
+    ]
+  },
+  {
+    "id": 20343,
+    "word": "peel",
+    "pos": "verb",
+    "phonetic": "/piːl/",
+    "examples": [
+      "She peeled the orange and shared it with her friend.",
+      "You need to peel the potatoes before you cook them."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20344,
+    "word": "hug",
+    "pos": "verb",
+    "phonetic": "/hʌɡ/",
+    "examples": [
+      "She hugged her mother when she arrived at the airport.",
+      "The children hugged each other after winning the game."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships",
+      "emotions"
+    ]
+  },
+  {
+    "id": 20345,
+    "word": "kiss",
+    "pos": "verb",
+    "phonetic": "/kɪs/",
+    "examples": [
+      "She kissed her baby on the forehead before bed.",
+      "He kissed his wife goodbye and left for work."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20346,
+    "word": "soft",
+    "pos": "adjective",
+    "phonetic": "/sɒft/",
+    "examples": [
+      "This pillow is very soft and comfortable.",
+      "The cat has beautiful soft fur that I like to touch."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20347,
+    "word": "smooth",
+    "pos": "adjective",
+    "phonetic": "/smuːð/",
+    "examples": [
+      "The table has a smooth surface that is easy to clean.",
+      "The road was smooth and nice to drive on."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20348,
+    "word": "wet",
+    "pos": "adjective",
+    "phonetic": "/wet/",
+    "examples": [
+      "My clothes got wet because of the rain.",
+      "Do not walk on the floor because it is still wet."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20349,
+    "word": "dry",
+    "pos": "adjective",
+    "phonetic": "/draɪ/",
+    "examples": [
+      "Wait until your hair is dry before you go outside.",
+      "The weather has been very dry with no rain this month."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life",
+      "environment"
+    ]
+  },
+  {
+    "id": 20350,
+    "word": "thick",
+    "pos": "adjective",
+    "phonetic": "/θɪk/",
+    "examples": [
+      "She wore a thick coat because it was very cold.",
+      "The book is very thick with over five hundred pages."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20351,
+    "word": "thin",
+    "pos": "adjective",
+    "phonetic": "/θɪn/",
+    "examples": [
+      "The walls of this house are very thin.",
+      "She cut the bread into thin slices for the sandwich."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20352,
+    "word": "sick",
+    "pos": "adjective",
+    "phonetic": "/sɪk/",
+    "examples": [
+      "She felt sick after eating the old cheese.",
+      "He stayed home from school because he was sick."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20353,
+    "word": "healthy",
+    "pos": "adjective",
+    "phonetic": "/ˈhelθi/",
+    "examples": [
+      "Eating fruit and vegetables keeps you healthy.",
+      "She looks healthy after her holiday by the sea."
+    ],
+    "level": "A2",
+    "topics": [
+      "health",
+      "food"
+    ]
+  },
+  {
+    "id": 20354,
+    "word": "fit",
+    "pos": "adjective",
+    "phonetic": "/fɪt/",
+    "examples": [
+      "He goes running every day to stay fit.",
+      "She is very fit because she exercises a lot."
+    ],
+    "level": "A2",
+    "topics": [
+      "health",
+      "sports"
+    ]
+  },
+  {
+    "id": 20355,
+    "word": "weak",
+    "pos": "adjective",
+    "phonetic": "/wiːk/",
+    "examples": [
+      "She felt weak after being ill for a week.",
+      "The old bridge was too weak for heavy cars."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20356,
+    "word": "glad",
+    "pos": "adjective",
+    "phonetic": "/ɡlæd/",
+    "examples": [
+      "I am glad you could come to my party.",
+      "She was glad to hear the good news about her friend."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20357,
+    "word": "upset",
+    "pos": "adjective",
+    "phonetic": "/ʌpˈset/",
+    "examples": [
+      "She was upset when she lost her favourite book.",
+      "Do not get upset about things you cannot change."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20358,
+    "word": "jealous",
+    "pos": "adjective",
+    "phonetic": "/ˈdʒeləs/",
+    "examples": [
+      "He was jealous of his friend's new phone.",
+      "She gets jealous when her sister gets more attention."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20359,
+    "word": "confused",
+    "pos": "adjective",
+    "phonetic": "/kənˈfjuːzd/",
+    "examples": [
+      "I am confused because the instructions are not clear.",
+      "She looked confused when she heard the new rules."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20360,
+    "word": "bored",
+    "pos": "adjective",
+    "phonetic": "/bɔːd/",
+    "examples": [
+      "The children were bored because they had nothing to do.",
+      "I get bored when I have to wait a long time."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20361,
+    "word": "wild",
+    "pos": "adjective",
+    "phonetic": "/waɪld/",
+    "examples": [
+      "We saw some wild animals in the national park.",
+      "Wild flowers grow along the side of the road."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment"
+    ]
+  },
+  {
+    "id": 20362,
+    "word": "pure",
+    "pos": "adjective",
+    "phonetic": "/pjʊər/",
+    "examples": [
+      "The water from this mountain spring is very pure.",
+      "She wants to breathe pure fresh air in the countryside."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment",
+      "science"
+    ]
+  },
+  {
+    "id": 20363,
+    "word": "frozen",
+    "pos": "adjective",
+    "phonetic": "/ˈfrəʊzn/",
+    "examples": [
+      "The lake was frozen so we could walk on it.",
+      "She bought some frozen vegetables from the shop."
+    ],
+    "level": "A2",
+    "topics": [
+      "environment",
+      "food"
+    ]
+  },
+  {
+    "id": 20364,
+    "word": "sour",
+    "pos": "adjective",
+    "phonetic": "/ˈsaʊər/",
+    "examples": [
+      "The lemon juice is very sour on its own.",
+      "This milk smells sour so do not drink it."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20365,
+    "word": "spicy",
+    "pos": "adjective",
+    "phonetic": "/ˈspaɪsi/",
+    "examples": [
+      "I do not like spicy food because it burns my mouth.",
+      "This curry is too spicy for the children."
+    ],
+    "level": "A2",
+    "topics": [
+      "food"
+    ]
+  },
+  {
+    "id": 20366,
+    "word": "local",
+    "pos": "adjective",
+    "phonetic": "/ˈləʊkl/",
+    "examples": [
+      "We buy our bread from the local bakery.",
+      "The local people were very friendly and helpful."
+    ],
+    "level": "A2",
+    "topics": [
+      "society",
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20367,
+    "word": "wooden",
+    "pos": "adjective",
+    "phonetic": "/ˈwʊdn/",
+    "examples": [
+      "The house has a beautiful old wooden floor.",
+      "She sat on a wooden chair in the garden."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20368,
+    "word": "wireless",
+    "pos": "adjective",
+    "phonetic": "/ˈwaɪələs/",
+    "examples": [
+      "This café has free wireless internet for customers.",
+      "She bought wireless headphones for her morning run."
+    ],
+    "level": "A2",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 20369,
+    "word": "automatic",
+    "pos": "adjective",
+    "phonetic": "/ˌɔːtəˈmætɪk/",
+    "examples": [
+      "The doors at the supermarket are automatic.",
+      "She has an automatic washing machine in her kitchen."
+    ],
+    "level": "A2",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 20370,
+    "word": "part-time",
+    "pos": "adjective",
+    "phonetic": "/ˌpɑːtˈtaɪm/",
+    "examples": [
+      "She has a part-time job at the bookshop on weekends.",
+      "Many students find part-time work during the summer."
+    ],
+    "level": "A2",
+    "topics": [
+      "work"
+    ]
+  },
+  {
+    "id": 20371,
+    "word": "indoor",
+    "pos": "adjective",
+    "phonetic": "/ˈɪndɔːr/",
+    "examples": [
+      "The hotel has an indoor swimming pool.",
+      "Indoor sports are good when the weather is bad."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 20372,
+    "word": "outdoor",
+    "pos": "adjective",
+    "phonetic": "/ˈaʊtdɔːr/",
+    "examples": [
+      "We had an outdoor party in the garden last Saturday.",
+      "Outdoor activities are more fun in the summer."
+    ],
+    "level": "A2",
+    "topics": [
+      "sports"
+    ]
+  },
+  {
+    "id": 20373,
+    "word": "married",
+    "pos": "adjective",
+    "phonetic": "/ˈmærid/",
+    "examples": [
+      "They have been married for twenty years.",
+      "Are you married or are you still single?"
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20374,
+    "word": "elderly",
+    "pos": "adjective",
+    "phonetic": "/ˈeldəli/",
+    "examples": [
+      "The elderly man sat on the bench in the park.",
+      "We should help elderly people carry their bags."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships",
+      "society"
+    ]
+  },
+  {
+    "id": 20375,
+    "word": "handsome",
+    "pos": "adjective",
+    "phonetic": "/ˈhænsəm/",
+    "examples": [
+      "He is a very handsome man with dark hair.",
+      "She thinks the actor in the film is very handsome."
+    ],
+    "level": "A2",
+    "topics": [
+      "relationships"
+    ]
+  },
+  {
+    "id": 20376,
+    "word": "ugly",
+    "pos": "adjective",
+    "phonetic": "/ˈʌɡli/",
+    "examples": [
+      "The old building was ugly but strong.",
+      "She thought the painting was ugly and did not buy it."
+    ],
+    "level": "A2",
+    "topics": [
+      "arts"
+    ]
+  },
+  {
+    "id": 20377,
+    "word": "round",
+    "pos": "adjective",
+    "phonetic": "/raʊnd/",
+    "examples": [
+      "The earth is round like a big ball.",
+      "She sat at a round table with her friends."
+    ],
+    "level": "A2",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 20378,
+    "word": "square",
+    "pos": "adjective",
+    "phonetic": "/skweər/",
+    "examples": [
+      "The room has a square shape with four equal walls.",
+      "He put the gift in a small square box."
+    ],
+    "level": "A2",
+    "topics": [
+      "science"
+    ]
+  },
+  {
+    "id": 20379,
+    "word": "straight",
+    "pos": "adjective",
+    "phonetic": "/streɪt/",
+    "examples": [
+      "Draw a straight line from one side to the other.",
+      "The road is long and straight with no turns."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20380,
+    "word": "deaf",
+    "pos": "adjective",
+    "phonetic": "/def/",
+    "examples": [
+      "My grandmother is a little deaf so please speak loudly.",
+      "The school has special classes for deaf children."
+    ],
+    "level": "A2",
+    "topics": [
+      "health"
+    ]
+  },
+  {
+    "id": 20381,
+    "word": "shy",
+    "pos": "adjective",
+    "phonetic": "/ʃaɪ/",
+    "examples": [
+      "She is very shy and does not like speaking in class.",
+      "The shy boy hid behind his mother at the party."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions",
+      "relationships"
+    ]
+  },
+  {
+    "id": 20382,
+    "word": "wide",
+    "pos": "adjective",
+    "phonetic": "/waɪd/",
+    "examples": [
+      "The river is very wide at this point.",
+      "She opened her eyes wide when she saw the surprise."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20383,
+    "word": "scared",
+    "pos": "adjective",
+    "phonetic": "/skeəd/",
+    "examples": [
+      "She was scared of the dark when she was little.",
+      "The loud thunder made the dog very scared."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20384,
+    "word": "pleased",
+    "pos": "adjective",
+    "phonetic": "/pliːzd/",
+    "examples": [
+      "She was very pleased with her exam results.",
+      "I am pleased to meet you for the first time."
+    ],
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ]
+  },
+  {
+    "id": 20385,
+    "word": "rude",
+    "pos": "adjective",
+    "phonetic": "/ruːd/",
+    "examples": [
+      "It is rude to talk when someone else is speaking.",
+      "The waiter was rude so we did not leave a tip."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication",
+      "society"
+    ]
+  },
+  {
+    "id": 20386,
+    "word": "abroad",
+    "pos": "adverb",
+    "phonetic": "/əˈbrɔːd/",
+    "examples": [
+      "She went abroad for the first time last summer.",
+      "Many people dream of studying abroad in another country."
+    ],
+    "level": "A2",
+    "topics": [
+      "travel"
+    ]
+  },
+  {
+    "id": 20387,
+    "word": "anyway",
+    "pos": "adverb",
+    "phonetic": "/ˈeniweɪ/",
+    "examples": [
+      "It was raining but we went for a walk anyway.",
+      "I do not like the film, but thank you anyway."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20388,
+    "word": "besides",
+    "pos": "adverb",
+    "phonetic": "/bɪˈsaɪdz/",
+    "examples": [
+      "I do not want to go out, and besides, it is raining.",
+      "Besides English, she also speaks French and German."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20389,
+    "word": "downstairs",
+    "pos": "adverb",
+    "phonetic": "/ˌdaʊnˈsteəz/",
+    "examples": [
+      "She ran downstairs to answer the front door.",
+      "The kitchen and living room are downstairs in our house."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20390,
+    "word": "upstairs",
+    "pos": "adverb",
+    "phonetic": "/ˌʌpˈsteəz/",
+    "examples": [
+      "The bedrooms are upstairs on the second floor.",
+      "She went upstairs to get changed for the party."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20391,
+    "word": "everywhere",
+    "pos": "adverb",
+    "phonetic": "/ˈevriweər/",
+    "examples": [
+      "I looked everywhere but I could not find my keys.",
+      "There were flowers everywhere in the garden."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20392,
+    "word": "nowhere",
+    "pos": "adverb",
+    "phonetic": "/ˈnəʊweər/",
+    "examples": [
+      "There is nowhere to sit because every seat is taken.",
+      "The bus goes nowhere near the hospital."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20393,
+    "word": "forward",
+    "pos": "adverb",
+    "phonetic": "/ˈfɔːwəd/",
+    "examples": [
+      "Please step forward so everyone can see you.",
+      "She looked forward to seeing her family at the weekend."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20394,
+    "word": "seldom",
+    "pos": "adverb",
+    "phonetic": "/ˈseldəm/",
+    "examples": [
+      "He seldom eats fast food because he prefers cooking.",
+      "It seldom rains in the desert during the summer."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20395,
+    "word": "mostly",
+    "pos": "adverb",
+    "phonetic": "/ˈməʊstli/",
+    "examples": [
+      "The weather here is mostly sunny and warm.",
+      "She mostly reads books about history and science."
+    ],
+    "level": "A2",
+    "topics": [
+      "daily-life"
+    ]
+  },
+  {
+    "id": 20396,
+    "word": "perhaps",
+    "pos": "adverb",
+    "phonetic": "/pəˈhæps/",
+    "examples": [
+      "Perhaps we should leave a little earlier today.",
+      "Perhaps she forgot about the meeting this afternoon."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20397,
+    "word": "whenever",
+    "pos": "adverb",
+    "phonetic": "/wenˈevər/",
+    "examples": [
+      "You can call me whenever you need help.",
+      "She smiles whenever she sees a baby in the park."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20398,
+    "word": "therefore",
+    "pos": "adverb",
+    "phonetic": "/ˈðeəfɔːr/",
+    "examples": [
+      "She was ill, therefore she stayed home from work.",
+      "The shop was closed, therefore we went to another one."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication"
+    ]
+  },
+  {
+    "id": 20399,
+    "word": "online",
+    "pos": "adverb",
+    "phonetic": "/ˌɒnˈlaɪn/",
+    "examples": [
+      "You can buy tickets online before you go.",
+      "She does her shopping online to save time."
+    ],
+    "level": "A2",
+    "topics": [
+      "technology"
+    ]
+  },
+  {
+    "id": 20400,
+    "word": "aloud",
+    "pos": "adverb",
+    "phonetic": "/əˈlaʊd/",
+    "examples": [
+      "The teacher asked her to read the poem aloud.",
+      "He laughed aloud when he heard the funny story."
+    ],
+    "level": "A2",
+    "topics": [
+      "communication",
+      "education"
+    ]
+  }
+]
