@@ -19,7 +19,7 @@
 
 .stat-value {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.5px;
 }
@@ -157,9 +157,9 @@
 }
 
 .flashcard {
-  background: var(--bg-card);
+  background: var(--flashcard-gradient);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 32px rgba(245, 158, 11, 0.15);
   padding: 36px 28px;
   flex: 1;
   display: flex;
@@ -168,6 +168,8 @@
   user-select: none;
   min-height: 300px;
   transition: box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
 }
 
 .flashcard:active {
@@ -184,23 +186,33 @@
 }
 
 .card-word {
-  font-size: 40px;
-  font-weight: 700;
+  font-size: 38px;
+  font-weight: 800;
   letter-spacing: -0.5px;
   margin-bottom: 10px;
 }
 
 .card-phonetic {
   font-size: 17px;
-  color: var(--text-secondary);
+  color: #92400e;
   margin-bottom: 4px;
+}
+
+[data-theme="dark"] .card-phonetic {
+  color: var(--text-secondary);
 }
 
 .card-pos {
   font-size: 14px;
-  color: var(--text-tertiary);
+  color: #92400e;
   font-style: italic;
   margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+[data-theme="dark"] .card-pos {
+  color: var(--text-tertiary);
+  opacity: 1;
 }
 
 /* Audio controls */
@@ -361,17 +373,17 @@
 .rate-btn {
   padding: 16px 4px;
   border: none;
-  border-radius: var(--radius);
+  border-radius: 14px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.1s;
   font-family: var(--font);
-  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .rate-btn:active {
@@ -384,10 +396,14 @@
   opacity: 0.75;
 }
 
-.rate-btn.again { background: var(--red); }
-.rate-btn.hard { background: var(--orange); }
-.rate-btn.good { background: var(--green); }
-.rate-btn.easy { background: var(--blue); }
+.rate-btn.again { background: #fff; color: var(--red); }
+.rate-btn.hard { background: #fff; color: var(--orange); }
+.rate-btn.good { background: var(--green); color: #fff; }
+.rate-btn.easy { background: #fff; color: var(--blue); }
+
+[data-theme="dark"] .rate-btn.again { background: var(--bg-elevated); }
+[data-theme="dark"] .rate-btn.hard { background: var(--bg-elevated); }
+[data-theme="dark"] .rate-btn.easy { background: var(--bg-elevated); }
 
 /* === Word List === */
 .wordlist-header {
@@ -723,10 +739,10 @@
 }
 
 .heatmap-bar.level-0 { background: transparent; }
-.heatmap-bar.level-1 { background: rgba(52, 199, 89, 0.30); }
-.heatmap-bar.level-2 { background: rgba(52, 199, 89, 0.50); }
-.heatmap-bar.level-3 { background: rgba(52, 199, 89, 0.75); }
-.heatmap-bar.level-4 { background: var(--green); }
+.heatmap-bar.level-1 { background: #fef3c7; }
+.heatmap-bar.level-2 { background: #fde68a; }
+.heatmap-bar.level-3 { background: #f59e0b; }
+.heatmap-bar.level-4 { background: #10b981; }
 
 .heatmap-count {
   width: 28px;
@@ -889,7 +905,7 @@
 }
 
 .sentence-active {
-  background: var(--accent-soft, rgba(0, 122, 255, 0.08));
+  background: var(--accent-soft);
 }
 
 .highlight-word {
@@ -897,7 +913,7 @@
   font-weight: 500;
   cursor: pointer;
   text-decoration: underline;
-  text-decoration-color: rgba(0, 122, 255, 0.4);
+  text-decoration-color: var(--accent-soft);
   text-underline-offset: 3px;
   border-radius: 2px;
   transition: background 0.15s;
@@ -912,7 +928,7 @@
   font-weight: 500;
   cursor: pointer;
   text-decoration: underline;
-  text-decoration-color: rgba(0, 122, 255, 0.4);
+  text-decoration-color: var(--accent-soft);
   text-underline-offset: 3px;
 }
 
@@ -1146,7 +1162,7 @@
 }
 
 .dialogue-turn.turn-active {
-  background-color: var(--color-highlight-bg, rgba(59, 130, 246, 0.08));
+  background-color: var(--accent-soft);
 }
 
 .speaker-name {
@@ -1155,8 +1171,8 @@
   font-size: 0.875rem;
 }
 
-.speaker-0 { color: var(--color-speaker-0, #2563eb); }
-.speaker-1 { color: var(--color-speaker-1, #d946ef); }
+.speaker-0 { color: var(--speaker-a-text); }
+.speaker-1 { color: var(--speaker-b-text); }
 
 .turn-text {
   line-height: 1.6;
@@ -1285,4 +1301,11 @@
 
 .free-tooltip-search:hover {
   text-decoration: underline;
+}
+
+/* === Clerk UI Isolation (keep Clerk blue while app uses amber) === */
+.cl-rootBox, .cl-modalContent, .cl-card {
+  --accent: #007aff;
+  --accent-hover: #0066d6;
+  --accent-soft: rgba(0, 122, 255, 0.10);
 }
