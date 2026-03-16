@@ -1133,10 +1133,53 @@
   transition: all 0.15s;
 }
 
+.speed-picker {
+  position: relative;
+}
+
 .speed-pill:hover {
   background: var(--accent-soft);
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.speed-menu {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--border);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  min-width: 64px;
+  z-index: 60;
+}
+
+.speed-menu-item {
+  padding: 8px 14px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font);
+  text-align: center;
+  transition: all 0.1s;
+}
+
+.speed-menu-item:hover {
+  background: var(--separator);
+}
+
+.speed-menu-item.active {
+  color: var(--accent);
+  font-weight: 700;
+  background: var(--accent-soft);
 }
 
 .player-fallback-notice {

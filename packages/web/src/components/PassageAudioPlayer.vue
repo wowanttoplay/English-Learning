@@ -41,9 +41,22 @@
         &#9632;
       </button>
 
-      <button class="speed-pill" @click="cycleSpeed">
-        {{ speed }}x
-      </button>
+      <div class="speed-picker">
+        <button class="speed-pill" @click="showSpeedMenu = !showSpeedMenu">
+          {{ speed }}x
+        </button>
+        <div v-if="showSpeedMenu" class="speed-menu">
+          <button
+            v-for="s in speeds"
+            :key="s"
+            class="speed-menu-item"
+            :class="{ active: speed === s }"
+            @click="setSpeed(s); showSpeedMenu = false"
+          >
+            {{ s }}x
+          </button>
+        </div>
+      </div>
     </div>
 
     <div v-if="isFallback" class="player-fallback-notice">
@@ -78,12 +91,7 @@ defineEmits<{
 }>()
 
 const progressRef = ref<HTMLElement | null>(null)
-
-function cycleSpeed() {
-  const idx = props.speeds.indexOf(props.speed)
-  const next = props.speeds[(idx + 1) % props.speeds.length]
-  props.setSpeed(next)
-}
+const showSpeedMenu = ref(false)
 
 function onProgressClick(e: MouseEvent) {
   if (!progressRef.value) return
