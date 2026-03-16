@@ -1032,12 +1032,14 @@
 .passage-player {
   background: var(--bg-card);
   padding: 12px 20px;
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
   position: fixed;
-  bottom: var(--nav-height, 72px);
+  bottom: 0;
   left: 0;
   right: 0;
-  z-index: 50;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
+  z-index: 101; /* above bottom-nav (z-index: 100) */
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+  border-top: 0.5px solid var(--border);
 }
 
 .player-controls {
