@@ -3,7 +3,7 @@ main = "src/index.ts"
 compatibility_date = "2025-03-01"
 
 [vars]
-ALLOWED_ORIGIN = "http://localhost:5173"
+ALLOWED_ORIGIN = "http://localhost:5173,https://english-learning-web.pages.dev"
 
 [[d1_databases]]
 binding = "DB"
