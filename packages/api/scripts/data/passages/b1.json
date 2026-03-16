@@ -1,1 +1,562 @@
-[]
+[
+  {
+    "id": 3001,
+    "title": "Weekend Plans",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "daily-life",
+    "sequence": 1,
+    "newWordIds": [30009, 30051, 30050, 30096],
+    "reviewWordIds": [],
+    "speakers": [
+      { "name": "Kate", "voice": "en-US-Chirp3-HD-Kore" },
+      { "name": "Ben", "voice": "en-US-Chirp3-HD-Charon" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Hey Ben, do you have any plans for Saturday?" },
+      { "speaker": 1, "text": "Not yet. I was thinking about staying home, but that sounds boring." },
+      { "speaker": 0, "text": "Well, I want to arrange a picnic in the park. Do you want to come?" },
+      { "speaker": 1, "text": "That sounds great! What do we need to prepare?" },
+      { "speaker": 0, "text": "I'll make some sandwiches. Can you bring drinks and a blanket?" },
+      { "speaker": 1, "text": "Sure. Do you prefer the park near the river or the one by the library?" },
+      { "speaker": 0, "text": "I prefer the one near the river. There are big trees, and it's really comfortable to sit under them." },
+      { "speaker": 1, "text": "Good idea. I like that park too. It's less crowded on weekends." },
+      { "speaker": 0, "text": "Perfect. Let's meet at ten in the morning. I'll prepare everything the night before." },
+      { "speaker": 1, "text": "Sounds like a plan. I'll arrange to pick you up on the way." },
+      { "speaker": 0, "text": "Thanks! It'll be a comfortable and relaxing day." },
+      { "speaker": 1, "text": "I can't wait. See you Saturday!" }
+    ]
+  },
+  {
+    "id": 3002,
+    "title": "A New Job Offer",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "work",
+    "sequence": 2,
+    "newWordIds": [30029, 30445, 30078, 30446],
+    "reviewWordIds": [30009, 30051, 30050, 30096],
+    "speakers": [
+      { "name": "Tom", "voice": "en-US-Chirp3-HD-Puck" },
+      { "name": "Sophie", "voice": "en-US-Chirp3-HD-Leda" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Sophie, I got a job offer from a big company downtown!" },
+      { "speaker": 1, "text": "That's amazing! What kind of career path does it offer?" },
+      { "speaker": 0, "text": "It's in marketing. The salary is much better than what I earn now." },
+      { "speaker": 1, "text": "How much more would you earn?" },
+      { "speaker": 0, "text": "About thirty percent more. And there's a chance for a promotion after one year." },
+      { "speaker": 1, "text": "That's a big step for your career. Do you prefer this company over your current one?" },
+      { "speaker": 0, "text": "I think so. The office looks comfortable and modern." },
+      { "speaker": 1, "text": "You should prepare for the move soon. When do they need your answer?" },
+      { "speaker": 0, "text": "By Friday. I need to arrange a meeting with my current boss first." },
+      { "speaker": 1, "text": "Good idea. Prepare what you want to say so it goes smoothly." },
+      { "speaker": 0, "text": "A higher salary and a promotion path — it's exactly what I need right now." },
+      { "speaker": 1, "text": "I'm happy for you. Go arrange everything and start this new chapter!" }
+    ]
+  },
+  {
+    "id": 3003,
+    "title": "Cleaning Up the Park",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "environment",
+    "sequence": 3,
+    "newWordIds": [30088, 30416, 30414, 30243],
+    "reviewWordIds": [30029, 30445, 30078, 30446],
+    "speakers": [
+      { "name": "Emma", "voice": "en-US-Chirp3-HD-Zephyr" },
+      { "name": "Jack", "voice": "en-US-Chirp3-HD-Fenrir" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Jack, have you seen all the rubbish in the park? The pollution is terrible." },
+      { "speaker": 1, "text": "I know. We need to take care of our environment." },
+      { "speaker": 0, "text": "I want to start a clean-up group. We could recycle the bottles and cans we find." },
+      { "speaker": 1, "text": "Great idea. But we'd need some money for bags and gloves. Can we earn it somehow?" },
+      { "speaker": 0, "text": "Maybe the city will help. Protecting natural spaces is part of their job." },
+      { "speaker": 1, "text": "True. I heard they have a salary for people who work on environmental projects." },
+      { "speaker": 0, "text": "Not a full salary, but they give small payments. It could help with costs." },
+      { "speaker": 1, "text": "We should also teach people to recycle properly. Most pollution comes from laziness." },
+      { "speaker": 0, "text": "Exactly. If we keep the park natural and clean, more people will enjoy it." },
+      { "speaker": 1, "text": "This could even help my career. I want to work in environmental science." },
+      { "speaker": 0, "text": "That's wonderful. Maybe this project will lead to a promotion of some kind for your studies." },
+      { "speaker": 1, "text": "I hope so. Let's start by cleaning the river path and recycling everything we find." }
+    ]
+  },
+  {
+    "id": 3004,
+    "title": "Cooking Together",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "food",
+    "sequence": 4,
+    "newWordIds": [30301, 30302, 30303, 30305],
+    "reviewWordIds": [30088, 30416, 30414, 30243],
+    "speakers": [
+      { "name": "Lisa", "voice": "en-US-Chirp3-HD-Aoede" },
+      { "name": "Mark", "voice": "en-US-Chirp3-HD-Orus" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Mark, I found a great recipe for pasta online. Want to try it tonight?" },
+      { "speaker": 1, "text": "Sure! What ingredients do we need?" },
+      { "speaker": 0, "text": "Tomatoes, garlic, cheese, and fresh herbs. The flavour should be amazing." },
+      { "speaker": 1, "text": "I'll go to the shop. Should I use my own bags? I want to help the environment." },
+      { "speaker": 0, "text": "Yes, please. We should recycle the old ones too — don't throw them away." },
+      { "speaker": 1, "text": "Of course. I also want to buy some fruit for dessert." },
+      { "speaker": 0, "text": "Good idea. Get some strawberries — they have a natural sweetness that's perfect." },
+      { "speaker": 1, "text": "Love it. So the recipe needs fresh ingredients for the best flavour?" },
+      { "speaker": 0, "text": "Exactly. Canned tomatoes don't taste the same. Fresh ones have more natural flavour." },
+      { "speaker": 1, "text": "I agree. Less pollution from packaging too, if we buy loose vegetables." },
+      { "speaker": 0, "text": "That's true! And for dessert, I'll make chocolate mousse. The recipe looks simple." },
+      { "speaker": 1, "text": "Pasta and dessert — sounds like a perfect evening. Let me get the ingredients now." }
+    ]
+  },
+  {
+    "id": 3005,
+    "title": "The New Neighbour",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "relationships",
+    "sequence": 5,
+    "newWordIds": [30040, 30041, 30461, 30462],
+    "reviewWordIds": [30301, 30302, 30303, 30305],
+    "speakers": [
+      { "name": "Amy", "voice": "en-US-Chirp3-HD-Kore" },
+      { "name": "David", "voice": "en-US-Chirp3-HD-Charon" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "David, did you meet the new woman who moved in next door?" },
+      { "speaker": 1, "text": "Not really. She's still just an acquaintance — we only said hello once." },
+      { "speaker": 0, "text": "Her name is Sarah. I want to introduce you properly." },
+      { "speaker": 1, "text": "That would be nice. Should we invite her over for dinner?" },
+      { "speaker": 0, "text": "Great idea! I have a recipe for chicken that everyone loves." },
+      { "speaker": 1, "text": "What ingredients do you need? I'll go shopping." },
+      { "speaker": 0, "text": "Just chicken, lemon, and herbs. The flavour is simple but really good." },
+      { "speaker": 1, "text": "Perfect. And maybe a dessert too? We want to make a good first impression." },
+      { "speaker": 0, "text": "Definitely. A nice dinner is a great way to bond with someone new." },
+      { "speaker": 1, "text": "I agree. An acquaintance can become a true friend if you make the effort." },
+      { "speaker": 0, "text": "Let's invite her for Friday. I'll introduce you both and we'll have a lovely evening." },
+      { "speaker": 1, "text": "Sounds wonderful. Building a bond with neighbours is important." }
+    ]
+  },
+  {
+    "id": 3006,
+    "title": "Planning a Holiday",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "travel",
+    "sequence": 6,
+    "newWordIds": [30087, 30177, 30453, 30166],
+    "reviewWordIds": [30040, 30041, 30461, 30462],
+    "speakers": [
+      { "name": "Mia", "voice": "en-US-Chirp3-HD-Leda" },
+      { "name": "James", "voice": "en-US-Chirp3-HD-Puck" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "James, I've been looking at holiday destinations. How about Greece?" },
+      { "speaker": 1, "text": "Greece sounds amazing. Is there a direct flight from here?" },
+      { "speaker": 0, "text": "Yes, about three hours. The journey isn't long at all." },
+      { "speaker": 1, "text": "Great. Should we invite anyone else? Maybe your friend Laura?" },
+      { "speaker": 0, "text": "She's just an acquaintance really. I'd prefer it to be just us." },
+      { "speaker": 1, "text": "Fair enough. When should we go? I need to book the flight early." },
+      { "speaker": 0, "text": "June would be perfect. I'll introduce you to a great travel website." },
+      { "speaker": 1, "text": "Thanks. I need to buy new luggage too — my old bag is broken." },
+      { "speaker": 0, "text": "There's a sale at the mall. We should get luggage that's light and easy to carry." },
+      { "speaker": 1, "text": "Good thinking. The destination has beaches and old towns, so we'll need different clothes." },
+      { "speaker": 0, "text": "The bond we'll build on this journey will be amazing. Just us and the sea." },
+      { "speaker": 1, "text": "I can't wait. Let me book the flight tonight!" }
+    ]
+  },
+  {
+    "id": 3007,
+    "title": "Getting Healthier",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "health",
+    "sequence": 7,
+    "newWordIds": [30141, 30158, 30172, 30060],
+    "reviewWordIds": [30087, 30177, 30453, 30166],
+    "speakers": [
+      { "name": "Rachel", "voice": "en-US-Chirp3-HD-Zephyr" },
+      { "name": "Alex", "voice": "en-US-Chirp3-HD-Fenrir" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Alex, I went to the doctor. She said I need to change my diet." },
+      { "speaker": 1, "text": "What did she recommend?" },
+      { "speaker": 0, "text": "More vegetables, less sugar. And I need regular exercise." },
+      { "speaker": 1, "text": "I started running every morning. It's become a habit now." },
+      { "speaker": 0, "text": "That's great. I want to build a good habit like that too." },
+      { "speaker": 1, "text": "Start small. Even twenty minutes of exercise helps a lot." },
+      { "speaker": 0, "text": "She also said stress is bad. I was so tired after our journey last month." },
+      { "speaker": 1, "text": "Travel can be hard. Remember how heavy your luggage was at the airport?" },
+      { "speaker": 0, "text": "Yes! I could barely lift it. Next time I'll pack lighter for the flight." },
+      { "speaker": 1, "text": "I recommend walking as exercise. Pick a nice destination nearby and walk there." },
+      { "speaker": 0, "text": "Good idea. A healthy diet and walking would change everything for me." },
+      { "speaker": 1, "text": "It really would. Start this week — make exercise a daily habit." }
+    ]
+  },
+  {
+    "id": 3008,
+    "title": "Setting Up a New Tablet",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "technology",
+    "sequence": 8,
+    "newWordIds": [30350, 30342, 30344, 30354],
+    "reviewWordIds": [30141, 30158, 30172, 30060],
+    "speakers": [
+      { "name": "Sarah", "voice": "en-US-Chirp3-HD-Aoede" },
+      { "name": "Ryan", "voice": "en-US-Chirp3-HD-Orus" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Ryan, I just got a new tablet. Can you help me set up this device?" },
+      { "speaker": 1, "text": "Sure! First, create a strong password so your device stays safe." },
+      { "speaker": 0, "text": "What kind of password should I use?" },
+      { "speaker": 1, "text": "Mix numbers and letters. Then check for a software update — they fix problems." },
+      { "speaker": 0, "text": "Okay. I also want to download some fitness apps. The doctor says I need more exercise." },
+      { "speaker": 1, "text": "Good idea! I recommend this one — it tracks your diet and exercise together." },
+      { "speaker": 0, "text": "Perfect. I'm trying to make healthy eating a habit." },
+      { "speaker": 1, "text": "The app sends reminders, so it helps you build the habit." },
+      { "speaker": 0, "text": "I'll download it right now. Is the update finished yet?" },
+      { "speaker": 1, "text": "Almost. The device needs a few more minutes." },
+      { "speaker": 0, "text": "While we wait, can you recommend any other apps to download?" },
+      { "speaker": 1, "text": "Try a language app. Set a strong password for each account and keep your device updated." }
+    ]
+  },
+  {
+    "id": 3009,
+    "title": "Before the Big Game",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "sports",
+    "sequence": 9,
+    "newWordIds": [30120, 30324, 30170, 30322],
+    "reviewWordIds": [30350, 30342, 30344, 30354],
+    "speakers": [
+      { "name": "Jack", "voice": "en-US-Chirp3-HD-Charon" },
+      { "name": "Emma", "voice": "en-US-Chirp3-HD-Kore" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Emma, the football tournament starts next week. My brother is playing!" },
+      { "speaker": 1, "text": "That's exciting! Is he a good athlete?" },
+      { "speaker": 0, "text": "He's one of the best. Their coach has been training them hard." },
+      { "speaker": 1, "text": "What's their goal for the tournament?" },
+      { "speaker": 0, "text": "To reach the final. The coach thinks they have a real chance." },
+      { "speaker": 1, "text": "I'd love to watch. Can I download the schedule on my device?" },
+      { "speaker": 0, "text": "Yes, the tournament has its own app. Just check for the latest update first." },
+      { "speaker": 1, "text": "Good, I'll set a password and log in. Who are they playing first?" },
+      { "speaker": 0, "text": "The city team from the north. My brother, the athlete, says they're tough." },
+      { "speaker": 1, "text": "Every athlete wants to win. The goal is always the same — play your best." },
+      { "speaker": 0, "text": "True. The coach told them to focus and stay sharp." },
+      { "speaker": 1, "text": "I'll download the app now and make sure I don't miss any tournament games!" }
+    ]
+  },
+  {
+    "id": 3010,
+    "title": "Nervous About the Speech",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "emotions",
+    "sequence": 10,
+    "newWordIds": [30033, 30151, 30188, 30128],
+    "reviewWordIds": [30120, 30324, 30170, 30322],
+    "speakers": [
+      { "name": "Sophie", "voice": "en-US-Chirp3-HD-Leda" },
+      { "name": "Tom", "voice": "en-US-Chirp3-HD-Puck" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Tom, I have to give a speech at work tomorrow and I'm so nervous." },
+      { "speaker": 1, "text": "I understand that emotion. Public speaking can be really scary." },
+      { "speaker": 0, "text": "I don't know how to express my ideas clearly in front of everyone." },
+      { "speaker": 1, "text": "Try to stay calm. Take a deep breath before you begin." },
+      { "speaker": 0, "text": "What if my mind goes blank? I need more courage." },
+      { "speaker": 1, "text": "Think of it like an athlete before a tournament. They're nervous too, but they focus." },
+      { "speaker": 0, "text": "That's a good way to look at it. An athlete has a coach to help them." },
+      { "speaker": 1, "text": "And you have me! Your goal is simple — share what you know." },
+      { "speaker": 0, "text": "The emotion I feel is mostly fear. But I'll try to stay calm." },
+      { "speaker": 1, "text": "Good. Express your points one at a time and don't rush." },
+      { "speaker": 0, "text": "You're right. I need to find the courage to just start talking." },
+      { "speaker": 1, "text": "You'll do great. Even the best athletes feel nervous before the tournament starts." }
+    ]
+  },
+  {
+    "id": 3011,
+    "title": "Struggling with Studies",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "education",
+    "sequence": 11,
+    "newWordIds": [30010, 30430, 30178, 30034],
+    "reviewWordIds": [30033, 30151, 30188, 30128],
+    "speakers": [
+      { "name": "Lisa", "voice": "en-US-Chirp3-HD-Zephyr" },
+      { "name": "Mark", "voice": "en-US-Chirp3-HD-Fenrir" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Mark, I'm worried about my history assignment. It's due on Friday." },
+      { "speaker": 1, "text": "Do you attend all the classes? That usually helps." },
+      { "speaker": 0, "text": "I attend every one, but the knowledge needed for this paper is really deep." },
+      { "speaker": 1, "text": "Don't let the emotion of stress take over. Stay calm and work through it." },
+      { "speaker": 0, "text": "I'm trying, but I don't want to fail. This assignment is worth a lot of marks." },
+      { "speaker": 1, "text": "You won't fail if you keep at it. Have the courage to ask the teacher for help." },
+      { "speaker": 0, "text": "That's true. I should express my problems to her instead of hiding them." },
+      { "speaker": 1, "text": "Exactly. Courage means asking for help when you need it." },
+      { "speaker": 0, "text": "The assignment asks us to show deep knowledge of three different time periods." },
+      { "speaker": 1, "text": "Start with the one you know best. Stay calm and build from there." },
+      { "speaker": 0, "text": "Good advice. I'll attend the study group tomorrow too." },
+      { "speaker": 1, "text": "Smart. Express your ideas clearly in the assignment and you won't fail." }
+    ]
+  },
+  {
+    "id": 3012,
+    "title": "Joining a Band",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "arts",
+    "sequence": 12,
+    "newWordIds": [30108, 30425, 30048, 30482],
+    "reviewWordIds": [30010, 30430, 30178, 30034],
+    "speakers": [
+      { "name": "Mia", "voice": "en-US-Chirp3-HD-Aoede" },
+      { "name": "James", "voice": "en-US-Chirp3-HD-Orus" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "James, I heard you joined a band! Are you going to perform at the festival?" },
+      { "speaker": 1, "text": "Yes! We have a rehearsal tonight. Our singer likes to compose her own songs." },
+      { "speaker": 0, "text": "She composes her own music? That takes a lot of knowledge." },
+      { "speaker": 1, "text": "It does. She studied music at college and still attends writing workshops." },
+      { "speaker": 0, "text": "How big is the audience at the festival?" },
+      { "speaker": 1, "text": "About five hundred people. A big audience makes me nervous, but I'm excited." },
+      { "speaker": 0, "text": "You'll be fine. Think of the rehearsal as your practice assignment." },
+      { "speaker": 1, "text": "Good point. If I prepare well, I won't fail on stage." },
+      { "speaker": 0, "text": "Exactly. When do you attend the next rehearsal?" },
+      { "speaker": 1, "text": "Tomorrow evening. We need to perform five songs and compose a new ending for one." },
+      { "speaker": 0, "text": "The audience will love it. Use your knowledge of music to give a great show." },
+      { "speaker": 1, "text": "Thanks, Mia. I don't want to fail — I'll practise hard at every rehearsal." }
+    ]
+  },
+  {
+    "id": 3013,
+    "title": "Saturday Morning Routine",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "daily-life",
+    "sequence": 13,
+    "newWordIds": [30438, 30444, 30441, 30439],
+    "reviewWordIds": [30108, 30425, 30048, 30482],
+    "speakers": [
+      { "name": "Kate", "voice": "en-US-Chirp3-HD-Kore" },
+      { "name": "Ben", "voice": "en-US-Chirp3-HD-Charon" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Ben, I have so many things to do today. The laundry is piling up." },
+      { "speaker": 1, "text": "Same here. I need to run some errands before the shops close." },
+      { "speaker": 0, "text": "What errands do you have?" },
+      { "speaker": 1, "text": "I need to go to the grocery store and return a book to the library." },
+      { "speaker": 0, "text": "I hate doing chores on the weekend, but they have to get done." },
+      { "speaker": 1, "text": "True. My sister has a rehearsal for her dance show today. She composes the moves herself." },
+      { "speaker": 0, "text": "Wow, that's cool. Does she perform in front of a big audience?" },
+      { "speaker": 1, "text": "Yes, about two hundred people come to watch her perform." },
+      { "speaker": 0, "text": "Amazing. Meanwhile, I'm here doing laundry and grocery shopping!" },
+      { "speaker": 1, "text": "That's life. Let's finish the chores quickly — I have three errands left." },
+      { "speaker": 0, "text": "I'll do the laundry first, then go to the grocery store." },
+      { "speaker": 1, "text": "Good plan. After the errands, we can relax. Even the audience at a show gets to sit down!" }
+    ]
+  },
+  {
+    "id": 3014,
+    "title": "Opening a Small Shop",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "business",
+    "sequence": 14,
+    "newWordIds": [30085, 30094, 30134, 30137],
+    "reviewWordIds": [30438, 30444, 30441, 30439],
+    "speakers": [
+      { "name": "Amy", "voice": "en-US-Chirp3-HD-Leda" },
+      { "name": "David", "voice": "en-US-Chirp3-HD-Puck" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "David, I'm thinking about opening a small bakery. How do I get customers?" },
+      { "speaker": 1, "text": "Quality is the key. If the bread is good, customers will come back." },
+      { "speaker": 0, "text": "That makes sense. I also need to think about delivery for people who can't come in." },
+      { "speaker": 1, "text": "Good idea. Did you find a deal on a shop space?" },
+      { "speaker": 0, "text": "Yes, there's a place near the grocery store on Green Street. The rent is a good deal." },
+      { "speaker": 1, "text": "Nice. Running a bakery has a lot of daily chores though — baking, cleaning, ordering." },
+      { "speaker": 0, "text": "I know. I'll need to do laundry for the aprons every day too." },
+      { "speaker": 1, "text": "And errands — picking up flour, butter, all the supplies." },
+      { "speaker": 0, "text": "True. But if the quality stays high, I'll build a loyal group of customers." },
+      { "speaker": 1, "text": "Delivery will help too. Some customers want fresh bread at their door." },
+      { "speaker": 0, "text": "I've already planned the delivery area. The grocery store owner might send people my way too." },
+      { "speaker": 1, "text": "That's a great deal for both of you. Just be ready for all the errands and chores that come with it!" }
+    ]
+  },
+  {
+    "id": 3015,
+    "title": "The Science Fair",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "science",
+    "sequence": 15,
+    "newWordIds": [30405, 30159, 30527, 30497],
+    "reviewWordIds": [30085, 30094, 30134, 30137],
+    "speakers": [
+      { "name": "Rachel", "voice": "en-US-Chirp3-HD-Zephyr" },
+      { "name": "Alex", "voice": "en-US-Chirp3-HD-Fenrir" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Alex, the science fair is next week. Have you finished your research?" },
+      { "speaker": 1, "text": "Almost. I did an experiment about how plants grow in different soils." },
+      { "speaker": 0, "text": "What did you discover?" },
+      { "speaker": 1, "text": "Plants in dark soil grew twice as fast. My research showed the quality of soil matters most." },
+      { "speaker": 0, "text": "Can you predict which plant will be tallest by the fair?" },
+      { "speaker": 1, "text": "I think the one by the window. I can predict it'll grow three more centimetres." },
+      { "speaker": 0, "text": "That's great. My experiment is about water — I want to discover if cold water helps flowers last longer." },
+      { "speaker": 1, "text": "Interesting! The customer at the flower shop near school might know about that." },
+      { "speaker": 0, "text": "Maybe. She said there's a deal on fresh flowers if I need more for testing." },
+      { "speaker": 1, "text": "Nice. Does the delivery come quickly? You need them fresh for the experiment." },
+      { "speaker": 0, "text": "Same-day delivery. The quality of the flowers has been really good so far." },
+      { "speaker": 1, "text": "Let's both do our best. I'll predict the results tonight and finish my research." }
+    ]
+  },
+  {
+    "id": 3016,
+    "title": "A Parking Dispute",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "law",
+    "sequence": 16,
+    "newWordIds": [30364, 30365, 30156, 30215],
+    "reviewWordIds": [30405, 30159, 30527, 30497],
+    "speakers": [
+      { "name": "Tom", "voice": "en-US-Chirp3-HD-Orus" },
+      { "name": "Sophie", "voice": "en-US-Chirp3-HD-Aoede" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Sophie, I got a parking ticket yesterday. I don't think it's fair." },
+      { "speaker": 1, "text": "What happened? Were you parked in the wrong place?" },
+      { "speaker": 0, "text": "No. The sign was hidden by a tree. There's no clear evidence I could see it." },
+      { "speaker": 1, "text": "You should fight it. Do you need a lawyer?" },
+      { "speaker": 0, "text": "Maybe. I did some research online and discovered that others had the same problem." },
+      { "speaker": 1, "text": "That's useful evidence. If many people made the same mistake, the sign is the problem." },
+      { "speaker": 0, "text": "Exactly. I want to go to court and explain what happened." },
+      { "speaker": 1, "text": "A good lawyer can help in court. I'd predict the judge will agree with you." },
+      { "speaker": 0, "text": "I hope so. My friend is a lawyer and she said it sounds like a simple experiment in fairness." },
+      { "speaker": 1, "text": "An experiment in fairness — that's one way to put it! The evidence is clear though." },
+      { "speaker": 0, "text": "She discovered that most people win these cases when the sign isn't visible." },
+      { "speaker": 1, "text": "Then it should be fair in the end. Take your evidence to court and let the lawyer handle it." }
+    ]
+  },
+  {
+    "id": 3017,
+    "title": "At the Farmers' Market",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "food",
+    "sequence": 17,
+    "newWordIds": [30309, 30310, 30472, 30604],
+    "reviewWordIds": [30364, 30365, 30156, 30215],
+    "speakers": [
+      { "name": "Emma", "voice": "en-US-Chirp3-HD-Kore" },
+      { "name": "Jack", "voice": "en-US-Chirp3-HD-Fenrir" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Jack, look at all this fresh food at the farmers' market!" },
+      { "speaker": 1, "text": "This farmer says his crops are all organic. No chemicals at all." },
+      { "speaker": 0, "text": "That's great. They harvest the vegetables early in the morning for the best taste." },
+      { "speaker": 1, "text": "I want to try this grain bread. It's made from wheat, oats, and rye." },
+      { "speaker": 0, "text": "Looks delicious. My neighbour's a lawyer and she buys everything organic here." },
+      { "speaker": 1, "text": "Really? Well, the evidence shows organic food is better for you." },
+      { "speaker": 0, "text": "True. She says it's only fair that farmers get good prices for quality crops." },
+      { "speaker": 1, "text": "I agree. They work so hard to harvest everything by hand." },
+      { "speaker": 0, "text": "This grain bread is amazing. We should buy some for the week." },
+      { "speaker": 1, "text": "And some organic tomatoes. The crops here look so much fresher than the supermarket." },
+      { "speaker": 0, "text": "The court of public opinion says fresh is best! Let's get a bag of everything." },
+      { "speaker": 1, "text": "Ha! Fair point. These organic crops are worth every penny." }
+    ]
+  },
+  {
+    "id": 3018,
+    "title": "The Community Centre",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "society",
+    "sequence": 18,
+    "newWordIds": [30468, 30469, 30480, 30470],
+    "reviewWordIds": [30309, 30310, 30472, 30604],
+    "speakers": [
+      { "name": "Sarah", "voice": "en-US-Chirp3-HD-Leda" },
+      { "name": "Ryan", "voice": "en-US-Chirp3-HD-Puck" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Ryan, the community centre needs volunteers for the food bank. Want to help?" },
+      { "speaker": 1, "text": "I'd love to volunteer. What do they do there?" },
+      { "speaker": 0, "text": "They collect food and give it to families living in poverty." },
+      { "speaker": 1, "text": "That's important. You can also donate money, right?" },
+      { "speaker": 0, "text": "Yes. The charity accepts food, money, and clothes." },
+      { "speaker": 1, "text": "I'll donate some canned food. But fresh organic food would be better for them." },
+      { "speaker": 0, "text": "The charity works with local farmers. They harvest extra crops and give them to the centre." },
+      { "speaker": 1, "text": "That's wonderful. Grain and vegetables straight from the farm." },
+      { "speaker": 0, "text": "Exactly. Poverty is a big problem here, but people are helping." },
+      { "speaker": 1, "text": "How often do volunteers work at the food bank?" },
+      { "speaker": 0, "text": "Most come once a week. Even a few hours helps. You can donate time or food." },
+      { "speaker": 1, "text": "Count me in. Helping fight poverty through this charity is something I really want to do." }
+    ]
+  },
+  {
+    "id": 3019,
+    "title": "Election Day",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "politics",
+    "sequence": 19,
+    "newWordIds": [30377, 30378, 30380, 30383],
+    "reviewWordIds": [30468, 30469, 30480, 30470],
+    "speakers": [
+      { "name": "Lisa", "voice": "en-US-Chirp3-HD-Zephyr" },
+      { "name": "Mark", "voice": "en-US-Chirp3-HD-Orus" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "Mark, did you vote today? It's election day!" },
+      { "speaker": 1, "text": "Yes, I voted this morning. Which candidate did you choose?" },
+      { "speaker": 0, "text": "The one with the strongest policy on education and health." },
+      { "speaker": 1, "text": "Her campaign has been really good. She talks about real problems." },
+      { "speaker": 0, "text": "She wants to help charities that fight poverty. That matters to me." },
+      { "speaker": 1, "text": "Me too. She also said she'd support volunteers in schools and hospitals." },
+      { "speaker": 0, "text": "The other candidate doesn't have a clear policy on those issues." },
+      { "speaker": 1, "text": "His campaign focuses mostly on business. Not bad, but not enough." },
+      { "speaker": 0, "text": "I think people should donate their time to help during elections — volunteer at the polling station." },
+      { "speaker": 1, "text": "Good point. Fighting poverty and helping communities is what we should vote for." },
+      { "speaker": 0, "text": "Exactly. Every vote counts. The right candidate with the right policy can change things." },
+      { "speaker": 1, "text": "I hope the results show that people care about charities, poverty, and real change." }
+    ]
+  },
+  {
+    "id": 3020,
+    "title": "The New App",
+    "genre": "dialogue",
+    "level": "B1",
+    "topic": "technology",
+    "sequence": 20,
+    "newWordIds": [30346, 30353, 30359, 30347],
+    "reviewWordIds": [30377, 30378, 30380, 30383],
+    "speakers": [
+      { "name": "Mia", "voice": "en-US-Chirp3-HD-Aoede" },
+      { "name": "James", "voice": "en-US-Chirp3-HD-Charon" }
+    ],
+    "turns": [
+      { "speaker": 0, "text": "James, have you seen this new app? It helps you find local events on your smartphone." },
+      { "speaker": 1, "text": "No, tell me more. What's the app called?" },
+      { "speaker": 0, "text": "CityLife. You can find it on their website or in the app store." },
+      { "speaker": 1, "text": "Let me open the browser and look. Is it free?" },
+      { "speaker": 0, "text": "Yes, completely free. You just sign up with your email." },
+      { "speaker": 1, "text": "Nice. What kind of events does the app show on the website?" },
+      { "speaker": 0, "text": "Markets, concerts, sports — everything. One candidate even uses it for campaign events." },
+      { "speaker": 1, "text": "Really? So you can follow a candidate's campaign right on your smartphone?" },
+      { "speaker": 0, "text": "Yes! And there's a section where you can vote for your favourite local events." },
+      { "speaker": 1, "text": "That's clever. Any policy news or just fun things?" },
+      { "speaker": 0, "text": "Mostly fun, but they share local policy updates too. Open the browser and try it." },
+      { "speaker": 1, "text": "I'm downloading the app now. My smartphone needed something like this. Great website too!" }
+    ]
+  }
+]
