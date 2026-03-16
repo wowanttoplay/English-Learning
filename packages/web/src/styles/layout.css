@@ -200,16 +200,13 @@
     margin: 0 auto;
   }
 
-  /* Passage audio player -- match .passage-screen width, centered in content area */
+  /* Passage audio player -- align with .app-main content area */
   .passage-player {
     bottom: 0;
-    left: var(--sidebar-width, 220px);
-    right: 0;
-    max-width: calc(750px + 48px);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 24px;
-    padding-right: 24px;
+    left: calc(var(--sidebar-width, 220px) + 48px);
+    right: 48px;
+    max-width: 750px;
+    margin: 0 auto;
     border-radius: 16px 16px 0 0;
   }
 
